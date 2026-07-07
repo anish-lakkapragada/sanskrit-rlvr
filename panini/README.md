@@ -16,7 +16,9 @@ mechanized result about any part of Pāṇini's grammar in a theorem prover.
 | [`Panini/Pratyahara.lean`](Panini/Pratyahara.lean) | ① | The abbreviations denote what the tradition says: `aC = vowels`, `haL = consonants`, `aL = univ`, … — each closed by `decide`. Defines `Encodes` / `IsSAlphabet`. |
 | [`Panini/Interval.lean`](Panini/Interval.lean) | ② (Moves 1–2) | All `sorry`-free: **Move 1** — a pratyāhāra is a contiguous infix of the sound sequence (`Encodes.exists_infix`); **Move 2** — three *positionally independent* sounds (Petersen's `K⁵`-triple shape, arbitrary-size witnessing classes) force a duplicated sound, proved by elementary convexity/betweenness instead of her graph-planarity argument (`one_le_duplications_of_independent_triple`). Also holds `cost` / `numMarkers` / `duplications`. |
 | [`Panini/Markers.lean`](Panini/Markers.lean) | ② (Move 3) | All `sorry`-free: markers are **right edges**. A pratyāhāra interval ends at a definite position (`endPos`); two classes sharing that edge are ⊆-nested (`subset_or_subset_of_endPos_eq`); hence a ⊆-**antichain** of `k` encoded classes forces `k − 1` marker occurrences (`card_le_numMarkers_succ_of_antichain`), counted index-free via marker-headed suffixes (`markerTails`). |
-| [`Panini/Optimality.lean`](Panini/Optimality.lean) | ② | Petersen Prop. 4.2 over the **full attested class family** (43 named pratyāhāras of the Aṣṭādhyāyī, each with its sūtra citation), the hypothesis-free duplication-optimality theorem, the antichain-derived marker bound, and the conditional full cost-optimality theorem. |
+| [`Panini/Optimality.lean`](Panini/Optimality.lean) | ② | Petersen Prop. 4.2 over the **full attested class family** (43 named pratyāhāras of the Aṣṭādhyāyī, each with its sūtra citation), the hypothesis-free duplication-optimality theorem, the antichain-derived marker bound, the lax-semantics refutation, and the strict theorems. |
+| [`Panini/Necessity.lean`](Panini/Necessity.lean) | ③ | **No anubandha is redundant**: deleting any one of the 14 markers breaks the well-formed encoding of some attested class (`no_marker_redundant`, one kernel search over all rescue encodings per marker); the duplicated `h` of line 14 is necessary even laxly (`noH2_not_lax`). Kernel-verified pratyāhāra counts refining Petersen fn. 2: **304** well-formed pratyāhāras and **13** singletons under first-occurrence semantics. |
+| [`Panini/Pingala.lean`](Panini/Pingala.lean) | ⓪ | Sanskrit prosody: **the mātrā-meters of total weight `n` number `fib (n+1)`** (Virahāṅka c. 700, Hemacandra c. 1150 — the "Fibonacci" numbers five centuries early), proved as a full combinatorial characterization (`mem_patterns`, `nodup_patterns`, `card_matra_patterns`), plus Piṅgala's `2^n` prastāra count for fixed syllable counts. |
 
 ## What is proved vs. open
 
@@ -65,6 +67,30 @@ traditional and Petersen-faithful reading):**
 - `twelve_le_cost` — unconditional: every strict rival costs **≥ 12** (vs. 15).
 - `shivasutra_cost_optimal_of_marker_bound_strict` — full cost-optimality,
   conditional on the tight strict bound `14 ≤ numMarkers`.
+
+**Proved (irredundancy and counting — `Necessity.lean`):**
+- `no_marker_redundant` — **every one of the 14 anubandhas is individually
+  load-bearing**: delete any single marker and some attested class loses its
+  well-formed pratyāhāra. This is the economy principle (*lāghava*) as a theorem,
+  at the Śivasūtra level: the kernel verifies, for each of the 14 truncated
+  alphabets, that no rescue encoding exists among all 588 candidate pairs.
+- `noH2_not_lax` / `noH2_not_strict` — Pāṇini's one duplicated sound (the second
+  `h`) cannot be dropped, even under the lax semantics: `raL` becomes flatly
+  unencodable. Together with `noL_not_strict`, the entire apparatus — 14 markers
+  plus 1 duplication — is pointwise indispensable.
+- `card_wellFormed_pratyaharas = 304`, `card_singleton_pratyaharas = 13` —
+  kernel-verified counts, refining Petersen's occurrence-based 305/14 (fn. 2 of
+  the 2004 paper): first-occurrence semantics merges her pair (h′, L) into
+  (h, L) = `haL`.
+
+**Proved (prosody — `Pingala.lean`):**
+- `card_matra_patterns` — the laghu/guru patterns of total duration `n` mātrās
+  number exactly `Nat.fib (n + 1)`: the Virahāṅka–Hemacandra ("Fibonacci")
+  theorem, proved as a genuine combinatorial statement (sound + complete +
+  duplicate-free enumeration, `mem_patterns` / `nodup_patterns`), not just the
+  recurrence.
+- `card_varna_patterns` — Piṅgala's prastāra count: `2^n` patterns of `n`
+  syllables.
 
 **Open (no `sorry` — one honest gap, diagnosed at the end of `Optimality.lean`):**
 - The tight strict marker bound `14 ≤ numMarkers`. This is Petersen's

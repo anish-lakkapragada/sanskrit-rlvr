@@ -70,6 +70,9 @@ lax reading admits marker-dropping rivals the tradition would reject (see
 `shivasutras_noL` in `Optimality.lean`); `EncodesT` below is the faithful reading. -/
 def Encodes (A : SAlphabet) (C : Class) : Prop := ∃ s m, pratyahara A s m = C
 
+instance (A : SAlphabet) (C : Class) : Decidable (Encodes A C) :=
+  inferInstanceAs (Decidable (∃ s m, pratyahara A s m = C))
+
 /-- `A` is an **S-alphabet for a family `𝒞`** when it encodes every class in `𝒞`
 and every sound appears in it at least once. (Lax reading — see `IsSAlphabetT`.) -/
 def IsSAlphabet (A : SAlphabet) (𝒞 : Finset Class) : Prop :=
@@ -114,6 +117,10 @@ pratyāhāra, and every sound occurs. This is the faithful counterpart of Peters
 S-alphabets, where a pratyāhāra `aM` always names an existing marker `M`. -/
 def IsSAlphabetT (A : SAlphabet) (𝒞 : Finset Class) : Prop :=
   (∀ C ∈ 𝒞, EncodesT A C) ∧ (∀ s : Sound, Item.snd s ∈ A)
+
+instance (A : SAlphabet) (𝒞 : Finset Class) : Decidable (IsSAlphabetT A 𝒞) :=
+  inferInstanceAs
+    (Decidable ((∀ C ∈ 𝒞, EncodesT A C) ∧ (∀ s : Sound, Item.snd s ∈ A)))
 
 theorem IsSAlphabetT.isSAlphabet {A : SAlphabet} {𝒞 : Finset Class}
     (h : IsSAlphabetT A 𝒞) : IsSAlphabet A 𝒞 :=
