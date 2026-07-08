@@ -18,6 +18,8 @@ mechanized result about any part of Pāṇini's grammar in a theorem prover.
 | [`Panini/Markers.lean`](Panini/Markers.lean) | ② (Move 3) | All `sorry`-free: markers are **right edges**. A pratyāhāra interval ends at a definite position (`endPos`); two classes sharing that edge are ⊆-nested (`subset_or_subset_of_endPos_eq`); hence a ⊆-**antichain** of `k` encoded classes forces `k − 1` marker occurrences (`card_le_numMarkers_succ_of_antichain`), counted index-free via marker-headed suffixes (`markerTails`). |
 | [`Panini/Optimality.lean`](Panini/Optimality.lean) | ② | Petersen Prop. 4.2 over the **full attested class family** (43 named pratyāhāras of the Aṣṭādhyāyī, each with its sūtra citation), the hypothesis-free duplication-optimality theorem, the antichain-derived marker bound, the lax-semantics refutation, and the strict theorems. |
 | [`Panini/Necessity.lean`](Panini/Necessity.lean) | ③ | **No anubandha is redundant**: deleting any one of the 14 markers breaks the well-formed encoding of some attested class (`no_marker_redundant`, one kernel search over all rescue encodings per marker); the duplicated `h` of line 14 is necessary even laxly (`noH2_not_lax`). Kernel-verified pratyāhāra counts refining Petersen fn. 2: **304** well-formed pratyāhāras and **13** singletons under first-occurrence semantics. |
+| [`Panini/Ordering.lean`](Panini/Ordering.lean) | ④ | **The forced/free map**: for each of the 29 adjacent within-line sound transpositions, a kernel verdict on whether the 43 attested classes survive — **11 junctures forced** (incl. Patañjali's *ha ya va ra* order), **18 free** (incl. `e‑o`, `ai‑au`). A quantitative answer to the Staal / Kiparsky / Cardona dispute. |
+| [`Panini/Ambiguity.lean`](Panini/Ambiguity.lean) | ④ | **The doubled Ṇ as recited** (one token, per Kātyāyana/Patañjali's complaint): exactly 3 pratyāhāras are ambiguous (`aṆ, iṆ, uṆ`); neither the uniform-near nor uniform-far convention covers the attested classes; the Aṣṭādhyāyī needs **both** readings; the mixed rule-by-rule reading covers all 43. |
 | [`Panini/Pingala.lean`](Panini/Pingala.lean) | ⓪ | Sanskrit prosody: **the mātrā-meters of total weight `n` number `fib (n+1)`** (Virahāṅka c. 700, Hemacandra c. 1150 — the "Fibonacci" numbers five centuries early), proved as a full combinatorial characterization (`mem_patterns`, `nodup_patterns`, `card_matra_patterns`), plus Piṅgala's `2^n` prastāra count for fixed syllable counts. |
 
 ## What is proved vs. open
@@ -82,6 +84,30 @@ traditional and Petersen-faithful reading):**
   kernel-verified counts, refining Petersen's occurrence-based 305/14 (fn. 2 of
   the 2004 paper): first-occurrence semantics merges her pair (h′, L) into
   (h, L) = `haL`.
+
+**Proved (the ordering dispute — `Ordering.lean`):**
+- The **forced/free map** of the Śivasūtra ordering: for every adjacent
+  transposition of two sounds within a line (29 junctures), whether the 43
+  attested classes still admit well-formed pratyāhāras. **11 are forced**
+  (`a‑i, i‑u, h‑y, y‑v, v‑r, ñ‑m, m‑ṅ, jh‑bh, j‑b, ph‑ch, th‑c` — each with a
+  witness class killed by an exhaustive kernel search), **18 are free** (each
+  with 43 explicit surviving pratyāhāras, re-spelled where needed). The kernel
+  thus settles Patañjali's *ha ya va ra* question (fully pinned) while showing
+  `e‑o` and `ai‑au` are pure convention — economy determines the within-line
+  order at 11 of 29 junctures and leaves 18 to phonetics or tradition, a
+  checkable middle verdict on Kiparsky vs. Staal/Cardona.
+
+**Proved (the doubled Ṇ — `Ambiguity.lean`):**
+- Modeling the recitation faithfully (line 1 and line 6 closed by the *same*
+  token `Ṇ`, the re-use Kātyāyana and Patañjali questioned): exactly **3**
+  pratyāhāras are ambiguous (`aṆ, iṆ, uṆ` — `ambiguous_pratyaharas`); the
+  uniform **nearest** convention loses the attested `aṆ₂` and the uniform
+  **farthest** convention loses `aṆ₁` (`nearest_convention_fails` /
+  `farthest_convention_fails`); the Aṣṭādhyāyī's own usage needs **both**
+  readings (`both_readings_attested`); and the rule-by-rule mixed reading
+  covers all 43 attested classes (`mixed_reading_covers`). Patañjali's
+  complaint, as a theorem: the saved marker letter is purchased with
+  irreducible context-dependence.
 
 **Proved (prosody — `Pingala.lean`):**
 - `card_matra_patterns` — the laghu/guru patterns of total duration `n` mātrās

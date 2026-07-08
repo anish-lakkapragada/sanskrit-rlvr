@@ -5,4 +5,6 @@ import Panini.Interval     -- route (b) engine, Moves 1–2: encoding = interval
 import Panini.Markers      -- route (b) Move 3: markers are right-endpoints; antichains force markers
 import Panini.Optimality   -- Rung ②: the ordering is an optimal S-alphabet (Petersen 2004)
 import Panini.Necessity    -- no anubandha is redundant; the duplicated h is load-bearing; counts
+import Panini.Ordering     -- the forced/free map: 11 of 29 within-line junctures are pinned by economy
+import Panini.Ambiguity    -- the doubled Ṇ as recited: irreducibly ambiguous, both readings required
 import Panini.Pingala      -- Piṅgala/Virahāṅka: mātrā-meters are counted by Fibonacci
