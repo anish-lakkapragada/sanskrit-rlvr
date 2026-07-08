@@ -1,10 +1,8 @@
--- Pāṇini's Śivasūtras in Lean 4 — the build path from the `thinking/` notes.
+-- The forced/free map of the Śivasūtra ordering (Lean 4).
 import Panini.Basic        -- the model: sounds, markers, the 14 Śivasūtras, pratyāhāra
-import Panini.Pratyahara   -- Rung ①: the abbreviations denote what the tradition says
-import Panini.Interval     -- route (b) engine, Moves 1–2: encoding = interval; independence forces duplication
-import Panini.Markers      -- route (b) Move 3: markers are right-endpoints; antichains force markers
-import Panini.Optimality   -- Rung ②: the ordering is an optimal S-alphabet (Petersen 2004)
-import Panini.Necessity    -- no anubandha is redundant; the duplicated h is load-bearing; counts
-import Panini.Ordering     -- the forced/free map: 11 of 29 within-line junctures are pinned by economy
-import Panini.Ambiguity    -- the doubled Ṇ as recited: irreducibly ambiguous, both readings required
-import Panini.Pingala      -- Piṅgala/Virahāṅka: mātrā-meters are counted by Fibonacci
+import Panini.Pratyahara   -- lax and strict pratyāhāra semantics
+import Panini.Interval     -- infrastructure (duplication obstruction)
+import Panini.Markers      -- infrastructure (right-edge rigidity)
+import Panini.Optimality   -- infrastructure here: defines the 43 attested classes
+import Panini.Necessity    -- infrastructure here: the single-witness refutation lemma
+import Panini.Ordering     -- THE RESULT: 11 forced / 18 free adjacent transpositions

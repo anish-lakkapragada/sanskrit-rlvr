@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Forced or Free? — How Determined is the Śivasūtra Ordering (Lean-checked)</title>
+<style>
+  :root{
+    --saffron:#E8743B; --maroon:#7B1E3B; --indigo:#2C2A52; --gold:#D4A017;
+    --cream:#FBF6EC; --ink:#241f24; --sage:#3E6B5A; --paper:#fffdf8;
+    --line:#e6dcc6; --muted:#6c6256; --bad:#b4543f;
+  }
+  *{box-sizing:border-box}
+  body{margin:0; background:var(--cream); color:var(--ink);
+    font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+    line-height:1.6; font-size:18px;}
+  .wrap{max-width:940px; margin:0 auto; padding:0 22px 110px}
+  header.hero{background:linear-gradient(135deg,var(--indigo),var(--maroon) 70%,var(--saffron));
+    color:#fff; padding:56px 22px 48px; text-align:center; border-bottom:6px solid var(--gold);}
+  .hero .deva{font-size:38px; color:#ffe9b8; margin:0 0 6px}
+  .hero h1{font-size:33px; margin:.1em 0 .25em; line-height:1.18}
+  .hero p.sub{max-width:680px; margin:10px auto 0; font-size:18px; color:#f6ead4; font-style:italic}
+  h2{font-size:26px; color:var(--maroon); margin:48px 0 6px; border-bottom:2px solid var(--line); padding-bottom:8px;}
+  h2 .num{color:var(--saffron); margin-right:.4em}
+  code{font-family:ui-monospace,Menlo,Consolas,monospace; font-size:.85em;
+    background:#f1e7d2; color:var(--maroon); padding:1px 6px; border-radius:5px;}
+  pre{background:var(--indigo); color:#ede6d4; padding:14px 16px; border-radius:10px; overflow:auto;
+    font-family:ui-monospace,Menlo,Consolas,monospace; font-size:13.5px; line-height:1.5;
+    border-left:5px solid var(--gold);}
+  blockquote{margin:16px 0; padding:12px 18px; background:#fff7e8; border-left:5px solid var(--saffron);
+    border-radius:0 10px 10px 0; color:#5a4632; font-style:italic;}
+  .widget{background:var(--paper); border:2px solid var(--gold); border-radius:14px;
+    padding:20px 22px; margin:22px 0; box-shadow:0 6px 22px rgba(60,40,20,.07)}
+  .widget h3{margin:0 0 8px; color:var(--indigo); font-family:system-ui,sans-serif; font-size:16px;
+    text-transform:uppercase; letter-spacing:1px}
+  .widget p.help{font-family:system-ui,sans-serif; font-size:14px; color:var(--muted); margin:4px 0 12px}
+  #sutras{line-height:1}
+  .row{display:flex; flex-wrap:wrap; align-items:center; gap:2px; margin:3px 0}
+  .item{display:inline-flex; align-items:center; justify-content:center; min-width:34px; height:34px;
+    padding:0 8px; border-radius:8px; font-family:system-ui,sans-serif; font-weight:700; font-size:15px;
+    user-select:none;}
+  .snd{background:#f7f0df; border:1.5px solid var(--line); color:var(--ink)}
+  .mrk{background:var(--maroon); color:#fff; border:1.5px solid var(--maroon)}
+  .swapped{background:var(--gold) !important; border-color:#b8880e !important; color:#3a2b00 !important}
+  .handle{display:inline-flex; align-items:center; justify-content:center; width:22px; height:34px;
+    border-radius:6px; cursor:pointer; font-size:14px; font-weight:900;
+    font-family:system-ui,sans-serif; transition:transform .08s}
+  .handle:hover{transform:scale(1.25)}
+  .handle.forced{color:var(--bad)}
+  .handle.free{color:var(--sage)}
+  .handle.active{background:var(--indigo); color:#fff}
+  #verdict{margin-top:14px; font-family:system-ui,sans-serif; font-size:15px; background:#fff7e8;
+    border-left:5px solid var(--saffron); border-radius:0 10px 10px 0; padding:12px 16px; min-height:56px}
+  #verdict b.name{color:var(--maroon); font-size:17px}
+  .chip{display:inline-block; background:#eaf3ee; color:var(--sage); border:1px solid #bcd9c8;
+    border-radius:6px; padding:1px 7px; margin:2px 2px; font-weight:600; font-size:14px;
+    font-family:system-ui,sans-serif}
+  .chip.extra{background:#fbe9e6; color:var(--bad); border-color:#e7b6ac}
+  .btnrow{margin-top:10px; display:flex; gap:8px; flex-wrap:wrap}
+  .btn{font-family:system-ui,sans-serif; font-size:14px; font-weight:700; background:var(--maroon);
+    color:#fff; border:none; border-radius:8px; padding:8px 14px; cursor:pointer}
+  table{width:100%; border-collapse:collapse; margin:16px 0; font-size:15px;
+    font-family:system-ui,sans-serif; background:var(--paper)}
+  th,td{padding:9px 12px; text-align:left; border-bottom:1px solid var(--line); vertical-align:top}
+  th{background:var(--indigo); color:#fff; font-size:12.5px; text-transform:uppercase; letter-spacing:.4px}
+  .key{background:#eaf3ee; border:1px solid #bcd9c8; border-left:5px solid var(--sage);
+    border-radius:0 10px 10px 0; padding:14px 18px; margin:18px 0}
+  .footnote{font-size:14px; color:var(--muted)}
+  .verdict-forced{color:var(--bad); font-weight:800}
+  .verdict-free{color:var(--sage); font-weight:800}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="deva">ह य व र — किमर्थम्?</div>
+  <h1>Forced or Free?<br/>How Determined is the Order of Pāṇini's Sound-Alphabet</h1>
+  <p class="sub">Scholars have argued for decades — and Patañjali for two millennia —
+  about why the Śivasūtras run in exactly this order. For every neighbouring pair
+  of sounds, the Lean kernel now says whether swapping them is fatal or harmless.</p>
+</header>
+
+<div class="wrap">
+
+<h2><span class="num">1.</span>The question</h2>
+
+<p>Pāṇini's grammar of Sanskrit (4th c. BCE) opens with the <b>Śivasūtras</b>: all the
+sounds of the language in 14 short lines, each closed by a dummy <b>marker</b> letter
+(dark below). Any stretch from a sound to a later marker names a class the grammar
+uses — <code>aC</code> = the vowels, <code>haL</code> = the consonants, and 41 more.
+For the whole scheme to work, every needed class must sit <em>contiguously</em>
+somewhere in the list. That constrains the order. But by how much?</p>
+
+<p>This is a real scholarly dispute. <b>Kiparsky</b> (1991) argues the ordering is
+essentially <em>unique</em> given economy; <b>Staal</b> and <b>Cardona</b> counter
+that independent phonetic principles must be doing real work; <b>Petersen</b> (2008)
+counted millions of equally cheap arrangements. And the puzzle is ancient:</p>
+
+<blockquote>Kātyāyana and Patañjali (the <i>Mahābhāṣya</i>, c. 150 BCE) already asked:
+why does line 5 read <i>ha ya va ra</i> — could the sounds not stand in another order?</blockquote>
+
+<p>This page answers the checkable core of the question. Take the <b>29 places where two
+sounds stand side by side within a line</b>, and swap each pair. Sometimes some class
+the grammar actually uses stops being contiguous — the order there is <b>forced</b>.
+Sometimes every class survives (at worst under a new name) — the order there is
+<b>free</b>, and something other than economy must explain it.</p>
+
+<h2><span class="num">2.</span>Swap it yourself</h2>
+
+<div class="widget">
+  <h3>Transposition lab</h3>
+  <p class="help"><b>Click any ⇄ handle to swap the two sounds around it.</b>
+  Handles are pre-coloured with the kernel's verdict: <span class="verdict-forced">red
+  = forced</span> (a class dies), <span class="verdict-free">green = free</span> (all
+  43 classes survive). The panel below shows why — this page recomputes, live, the very
+  check the Lean kernel replayed.</p>
+  <div id="sutras"></div>
+  <div class="btnrow">
+    <button class="btn" onclick="restore()">restore Pāṇini's order</button>
+  </div>
+  <div id="verdict">Pāṇini's order, intact. Click a ⇄ handle between two sounds.</div>
+</div>
+
+<h2><span class="num">3.</span>The map</h2>
+
+<p>The full kernel-checked verdict, one theorem per juncture
+(<code>panini/Panini/Ordering.lean</code>):</p>
+
+<table>
+<tr><th>Swap</th><th>Verdict</th><th>Why</th></tr>
+<tr><td>a‑i</td><td class="verdict-forced">forced</td><td><b>iK</b> = i u ṛ ḷ dies (an <i>a</i> intrudes)</td></tr>
+<tr><td>i‑u</td><td class="verdict-forced">forced</td><td><b>uK</b> = u ṛ ḷ dies</td></tr>
+<tr><td>ṛ‑ḷ</td><td class="verdict-free">free</td><td>no attested class separates ṛ from ḷ</td></tr>
+<tr><td>e‑o</td><td class="verdict-free">free</td><td><b>eṄ</b>, <b>eC</b> survive re-spelled “oṄ”, “oC” — <i>e</i>-before-<i>o</i> is pure convention</td></tr>
+<tr><td>ai‑au</td><td class="verdict-free">free</td><td><b>aiC</b> survives re-spelled “auC”</td></tr>
+<tr><td>h‑y</td><td class="verdict-forced">forced</td><td><b>yaR</b> (consonants − h) dies</td></tr>
+<tr><td>y‑v</td><td class="verdict-forced">forced</td><td><b>vaL</b> dies</td></tr>
+<tr><td>v‑r</td><td class="verdict-forced">forced</td><td><b>raL</b> dies — with the two above, Patañjali's <i>ha ya va ra</i> is fully pinned</td></tr>
+<tr><td>ñ‑m</td><td class="verdict-forced">forced</td><td><b>maY</b> dies</td></tr>
+<tr><td>m‑ṅ</td><td class="verdict-forced">forced</td><td><b>ṅaM</b> dies</td></tr>
+<tr><td>ṅ‑ṇ</td><td class="verdict-free">free</td><td><b>ṅaM</b> survives re-spelled “ṇaM”</td></tr>
+<tr><td>ṇ‑n</td><td class="verdict-free">free</td><td>every spelling survives verbatim</td></tr>
+<tr><td>jh‑bh</td><td class="verdict-forced">forced</td><td><b>bhaṢ</b> dies</td></tr>
+<tr><td>gh‑ḍh, ḍh‑dh</td><td class="verdict-free">free</td><td>every spelling survives verbatim</td></tr>
+<tr><td>j‑b</td><td class="verdict-forced">forced</td><td><b>baŚ</b> dies</td></tr>
+<tr><td>b‑g</td><td class="verdict-free">free</td><td><b>baŚ</b> survives re-spelled “gaŚ”</td></tr>
+<tr><td>g‑ḍ, ḍ‑d</td><td class="verdict-free">free</td><td>every spelling survives verbatim</td></tr>
+<tr><td>kh‑ph</td><td class="verdict-free">free</td><td><b>khaR</b>, <b>khaY</b> survive re-spelled from <i>ph</i></td></tr>
+<tr><td>ph‑ch</td><td class="verdict-forced">forced</td><td><b>chaV</b> dies — an attested class boundary</td></tr>
+<tr><td>ch‑ṭh, ṭh‑th</td><td class="verdict-free">free / free</td><td><b>chaV</b> re-spells “ṭhaV” / verbatim</td></tr>
+<tr><td>th‑c</td><td class="verdict-forced">forced</td><td><b>caY</b> dies — the other class boundary</td></tr>
+<tr><td>c‑ṭ, ṭ‑t</td><td class="verdict-free">free</td><td><b>caY</b>, <b>caR</b> re-spell from <i>ṭ</i> / verbatim</td></tr>
+<tr><td>k‑p</td><td class="verdict-free">free</td><td>every spelling survives verbatim</td></tr>
+<tr><td>ś‑ṣ, ṣ‑s</td><td class="verdict-free">free</td><td><b>śaL</b>, <b>śaR</b> re-spell from <i>ṣ</i> / verbatim</td></tr>
+</table>
+
+<div class="key">
+<b>The verdict on the dispute.</b> Economy pins the within-line order at
+<b>11 of 29</b> junctures — including the whole of Patañjali's <i>ha ya va ra</i> —
+but leaves <b>18 free</b>. Strikingly, <i>e</i>-before-<i>o</i> and
+<i>ai</i>-before-<i>au</i> do no grammatical work at all: swap them and every class
+survives under a new name. So neither side wins outright: the attested class
+boundaries are rigid (Kiparsky's instinct), while short-before-long and much of the
+stop order is phonetics or tradition, exactly as Staal and Cardona insisted.
+</div>
+
+<h2><span class="num">4.</span>What exactly was proved</h2>
+
+<p>For each juncture <i>k</i>, either a <b>forced</b> theorem — a witness class plus an
+exhaustive kernel search over all 42 × 14 = 588 candidate (sound, marker) encodings of
+the swapped alphabet, proving none names the class — or a <b>free</b> theorem — an
+explicit surviving pratyāhāra for each of the 43 attested classes, each replayed by
+<code>decide</code>:</p>
+
+<pre><span style="color:#9fb3a8">-- forced: swap h‑y and the class yaR (consonants minus h) is unnameable</span>
+theorem swap_h_y_breaks : ¬ IsSAlphabetT (swapAdj shivasutras 13) paniniClasses
+
+<span style="color:#9fb3a8">-- free: swap e‑o and all 43 classes survive (eṄ, eC re-spelled from o)</span>
+theorem swap_e_o_free : IsSAlphabetT (swapAdj shivasutras 7) paniniClasses</pre>
+
+<p class="footnote">Formalized in Lean 4 + Mathlib; the result file is
+<code>panini/Panini/Ordering.lean</code> (the 43 attested classes it quantifies over are
+defined in <code>Optimality.lean</code>; that file's own optimality theorems live on the
+<code>result/shivasutra-optimality</code> branch, and the marker-irredundancy theorems on
+<code>result/marker-irredundancy</code>). All proofs are <code>sorry</code>-free and
+depend only on the three standard axioms.</p>
+
+</div>
+
+<script>
+// The 14 Śivasūtras. kind: "s" sound, "m" marker (with token id).
+const LINES = [
+  [["a","s"],["i","s"],["u","s"],["Ṇ","m","N1"]],
+  [["ṛ","s"],["ḷ","s"],["K","m","K"]],
+  [["e","s"],["o","s"],["Ṅ","m","Ng"]],
+  [["ai","s"],["au","s"],["C","m","C"]],
+  [["h","s"],["y","s"],["v","s"],["r","s"],["Ṭ","m","T1"]],
+  [["l","s"],["Ṇ","m","N2"]],
+  [["ñ","s"],["m","s"],["ṅ","s"],["ṇ","s"],["n","s"],["M","m","M"]],
+  [["jh","s"],["bh","s"],["Ñ","m","Ny"]],
+  [["gh","s"],["ḍh","s"],["dh","s"],["Ṣ","m","Sh"]],
+  [["j","s"],["b","s"],["g","s"],["ḍ","s"],["d","s"],["Ś","m","Sx"]],
+  [["kh","s"],["ph","s"],["ch","s"],["ṭh","s"],["th","s"],["c","s"],["ṭ","s"],["t","s"],["V","m","V"]],
+  [["k","s"],["p","s"],["Y","m","Y"]],
+  [["ś","s"],["ṣ","s"],["s","s"],["R","m","R"]],
+  [["h","s"],["L","m","L"]],
+];
+const MDISP = {N1:"Ṇ",K:"K",Ng:"Ṅ",C:"C",T1:"Ṭ",N2:"Ṇ",M:"M",Ny:"Ñ",Sh:"Ṣ",Sx:"Ś",V:"V",Y:"Y",R:"R",L:"L"};
+const VOWELS = new Set(["a","i","u","ṛ","ḷ","e","o","ai","au"]);
+// citation form: consonant starts take an -a- (y + Ṇ is recited "yaṆ")
+const spell = (s,m)=>s+(VOWELS.has(s)?"":"a")+MDISP[m];
+// The 43 attested classes, by Pāṇini's spelling (name, start sound, marker token).
+const ATTESTED = [
+  ["aṆ₁","a","N1"],["aK","a","K"],["aC","a","C"],["aṬ","a","T1"],["aṆ₂","a","N2"],
+  ["aM","a","M"],["aŚ","a","Sx"],["aL","a","L"],
+  ["iK","i","K"],["iC","i","C"],["iṆ","i","N2"],["uK","u","K"],
+  ["eṄ","e","Ng"],["eC","e","C"],["aiC","ai","C"],
+  ["haL","h","L"],["haŚ","h","Sx"],
+  ["yaR","y","R"],["yaY","y","Y"],["yaÑ","y","Ny"],["yaM","y","M"],["yaṆ","y","N2"],
+  ["vaL","v","L"],["vaŚ","v","Sx"],["raL","r","L"],
+  ["ñaM","ñ","M"],["maY","m","Y"],["ṅaM","ṅ","M"],
+  ["jhaL","jh","L"],["jhaR","jh","R"],["jhaY","jh","Y"],["jhaŚ","jh","Sx"],["jhaṢ","jh","Sh"],
+  ["bhaṢ","bh","Sh"],["jaŚ","j","Sx"],["baŚ","b","Sx"],
+  ["khaR","kh","R"],["khaY","kh","Y"],["chaV","ch","V"],
+  ["caY","c","Y"],["caR","c","R"],["śaL","ś","L"],["śaR","ś","R"],
+];
+
+// Flatten to a working array. Each item: {label, kind, mid, line}.
+function baseFlat(){
+  const f=[];
+  LINES.forEach((line,li)=>line.forEach(it=>f.push({label:it[0],kind:it[1],mid:it[2],line:li})));
+  return f;
+}
+const SOUNDS=[...new Set(baseFlat().filter(f=>f.kind==="s").map(f=>f.label))]; // 42
+const MARKS=baseFlat().filter(f=>f.kind==="m").map(f=>f.mid); // 14
+
+// Strict pratyāhāra: first occurrence of sound → first following marker token. null if ill-formed.
+function pratyahara(A,s,m){
+  const start=A.findIndex(f=>f.kind==="s"&&f.label===s);
+  if(start<0) return null;
+  let end=-1;
+  for(let i=start+1;i<A.length;i++) if(A[i].kind==="m"&&A[i].mid===m){end=i;break;}
+  if(end<0) return null;
+  const set=new Set();
+  for(let i=start;i<end;i++) if(A[i].kind==="s") set.add(A[i].label);
+  return set;
+}
+const setEq=(x,y)=>x.size===y.size&&[...x].every(e=>y.has(e));
+// Target class contents, fixed once from Pāṇini's own alphabet.
+const STD=baseFlat();
+const TARGETS=ATTESTED.map(([name,s,m])=>({name,s,m,set:pratyahara(STD,s,m)}));
+// Find any encoding of a target set in alphabet A (prefer the standard spelling).
+function encode(A,t){
+  const std=pratyahara(A,t.s,t.m);
+  if(std&&setEq(std,t.set)) return {s:t.s,m:t.m,std:true};
+  for(const s of SOUNDS) for(const m of MARKS){
+    const got=pratyahara(A,s,m);
+    if(got&&setEq(got,t.set)) return {s,m,std:false};
+  }
+  return null;
+}
+// Verdict for swapping flat positions k,k+1.
+function judge(A){
+  const dead=[],resp=[];
+  for(const t of TARGETS){
+    const e=encode(A,t);
+    if(!e) dead.push(t);
+    else if(!e.std) resp.push({t,e});
+  }
+  return {dead,resp};
+}
+function swappedAlphabet(k){
+  const A=baseFlat();
+  [A[k],A[k+1]]=[A[k+1],A[k]];
+  return A;
+}
+
+// Handles: adjacent sound–sound pairs within a line (29 of them).
+const flat0=baseFlat();
+const handles=[];
+for(let i=0;i+1<flat0.length;i++)
+  if(flat0[i].kind==="s"&&flat0[i+1].kind==="s"&&flat0[i].line===flat0[i+1].line)
+    handles.push(i);
+
+// Precompute verdicts.
+const VERDICT={};
+handles.forEach(k=>{VERDICT[k]=judge(swappedAlphabet(k));});
+
+let activeSwap=null;
+function render(){
+  const cont=document.getElementById("sutras");
+  cont.innerHTML="";
+  const A=activeSwap===null?baseFlat():swappedAlphabet(activeSwap);
+  let pos=0;
+  LINES.forEach((line,li)=>{
+    const row=document.createElement("div"); row.className="row";
+    line.forEach((_,j)=>{
+      const f=A[pos], k=pos;
+      const el=document.createElement("span");
+      el.className="item "+(f.kind==="s"?"snd":"mrk");
+      if(activeSwap!==null&&(k===activeSwap||k===activeSwap+1)) el.classList.add("swapped");
+      el.textContent=f.label;
+      row.appendChild(el);
+      if(handles.includes(k)){
+        const h=document.createElement("span");
+        h.className="handle "+(VERDICT[k].dead.length?"forced":"free")+(activeSwap===k?" active":"");
+        h.textContent="⇄"; h.title="swap"; h.onclick=()=>doSwap(k);
+        row.appendChild(h);
+      }
+      pos++;
+    });
+    cont.appendChild(row);
+  });
+}
+function chips(set,target){
+  return [...set].map(s=>"<span class='chip"+(target&&!target.has(s)?" extra":"")+"'>"+s+"</span>").join("");
+}
+function doSwap(k){
+  activeSwap=k; render();
+  const A=swappedAlphabet(k);
+  const a=baseFlat()[k].label, b=baseFlat()[k+1].label;
+  const v=VERDICT[k];
+  let html="Swapped <b>"+a+" ‑ "+b+"</b> ⇒ ";
+  if(v.dead.length){
+    const t=v.dead[0];
+    const attempt=pratyahara(A,t.s,t.m);
+    html+="<span class='verdict-forced'>FORCED</span>. The class <b class='name'>"+t.name+
+      "</b> dies"+(v.dead.length>1?" (and "+v.dead.slice(1).map(d=>"<b>"+d.name+"</b>").join(", ")+")":"")+".<br/>"+
+      "It should be: "+chips(t.set)+"<br/>"+
+      "Its spelling now gives: "+(attempt?chips(attempt,t.set):"<i>nothing well-formed</i>")+
+      "<br/><span style='color:var(--muted)'>The Lean kernel searched all 588 possible encodings of "+
+      t.name+" in the swapped alphabet — none works.</span>";
+  }else{
+    html+="<span class='verdict-free'>FREE</span>. All 43 classes survive";
+    if(v.resp.length){
+      html+=", "+v.resp.length+" under a new spelling:<br/>"+
+        v.resp.map(({t,e})=>"<b>"+t.name+"</b> → “"+spell(e.s,e.m)+"”").join(", ")+
+        ".<br/><span style='color:var(--muted)'>Lean exhibits a surviving pratyāhāra for each class; economy cannot distinguish the two orders.</span>";
+    }else{
+      html+=" — every one of Pāṇini's own spellings still works verbatim."+
+        "<br/><span style='color:var(--muted)'>Economy is completely silent here; phonetics or tradition must explain the order.</span>";
+    }
+  }
+  document.getElementById("verdict").innerHTML=html;
+}
+function restore(){
+  activeSwap=null; render();
+  document.getElementById("verdict").innerHTML="Pāṇini's order, intact. Click a ⇄ handle between two sounds.";
+}
+render();
+</script>
+</body>
+</html>
