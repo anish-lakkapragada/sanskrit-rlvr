@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Pāṇini in Lean 4 — Five Machine-Checked Results, Rated by Controversy</title>
+<style>
+  :root{
+    --saffron:#E8743B; --maroon:#7B1E3B; --indigo:#2C2A52; --gold:#D4A017;
+    --cream:#FBF6EC; --ink:#241f24; --sage:#3E6B5A; --paper:#fffdf8;
+    --line:#e6dcc6; --muted:#6c6256;
+  }
+  *{box-sizing:border-box}
+  body{margin:0; background:var(--cream); color:var(--ink);
+    font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+    line-height:1.6; font-size:18px;}
+  .wrap{max-width:940px; margin:0 auto; padding:0 22px 110px}
+  header.hero{background:linear-gradient(135deg,var(--indigo),var(--maroon) 70%,var(--saffron));
+    color:#fff; padding:56px 22px 48px; text-align:center; border-bottom:6px solid var(--gold);}
+  .hero .deva{font-size:40px; color:#ffe9b8; margin:0 0 6px}
+  .hero h1{font-size:33px; margin:.1em 0 .25em; line-height:1.18}
+  .hero p.sub{max-width:700px; margin:10px auto 0; font-size:18px; color:#f6ead4; font-style:italic}
+  h2{font-size:26px; color:var(--maroon); margin:48px 0 6px; border-bottom:2px solid var(--line); padding-bottom:8px;}
+  h2 .num{color:var(--saffron); margin-right:.4em}
+  h3{color:var(--indigo); margin:28px 0 6px}
+  code{font-family:ui-monospace,Menlo,Consolas,monospace; font-size:.85em;
+    background:#f1e7d2; color:var(--maroon); padding:1px 6px; border-radius:5px;}
+  pre{background:var(--indigo); color:#ede6d4; padding:14px 16px; border-radius:10px; overflow:auto;
+    font-family:ui-monospace,Menlo,Consolas,monospace; font-size:13.5px; line-height:1.5;
+    border-left:5px solid var(--gold);}
+  a{color:var(--maroon)}
+  .key{background:#eaf3ee; border:1px solid #bcd9c8; border-left:5px solid var(--sage);
+    border-radius:0 10px 10px 0; padding:14px 18px; margin:18px 0}
+  .myth{background:#fbe9e6; border:1px solid #e7b6ac; border-left:5px solid #b4543f;
+    border-radius:0 10px 10px 0; padding:14px 18px; margin:18px 0}
+  table{width:100%; border-collapse:collapse; margin:16px 0; font-size:15px;
+    font-family:system-ui,sans-serif; background:var(--paper)}
+  th,td{padding:9px 12px; text-align:left; border-bottom:1px solid var(--line); vertical-align:top}
+  th{background:var(--indigo); color:#fff; font-size:12.5px; text-transform:uppercase; letter-spacing:.4px}
+  .footnote{font-size:14px; color:var(--muted)}
+  blockquote{margin:16px 0; padding:12px 18px; background:#fff7e8; border-left:5px solid var(--saffron);
+    border-radius:0 10px 10px 0; color:#5a4632; font-style:italic;}
+  .card{background:var(--paper); border:2px solid var(--gold); border-radius:14px;
+    padding:22px 26px; margin:26px 0; box-shadow:0 6px 22px rgba(60,40,20,.07)}
+  .card h3{margin:0 0 2px; font-size:22px; color:var(--maroon)}
+  .card .branch{font-family:ui-monospace,Menlo,Consolas,monospace; font-size:13px; color:var(--muted); margin:0 0 12px}
+  .card .branch a{color:var(--sage); font-weight:700}
+  .meter{display:flex; align-items:center; gap:10px; margin:10px 0 14px;
+    font-family:system-ui,sans-serif}
+  .meter .dots{display:flex; gap:4px}
+  .meter .dot{width:18px; height:18px; border-radius:50%; border:2px solid var(--line); background:#f7f0df}
+  .meter .dot.on{border-color:var(--maroon); background:linear-gradient(135deg,var(--saffron),var(--maroon))}
+  .meter .lab{font-weight:700; font-size:14px; color:var(--maroon); text-transform:uppercase; letter-spacing:.5px}
+  .skeptic{background:#f4eefa; border:1px solid #d3c3e8; border-left:5px solid #6a4b8a;
+    border-radius:0 10px 10px 0; padding:12px 16px; margin:14px 0; font-size:16px}
+  .skeptic b{color:#6a4b8a}
+  .src{font-family:system-ui,sans-serif; font-size:14.5px; margin:12px 0 0; padding:10px 14px;
+    background:#fff7e8; border-radius:10px; border:1px solid var(--line)}
+  .src b{color:var(--indigo); text-transform:uppercase; font-size:12px; letter-spacing:.6px}
+  .src ul{margin:6px 0 0; padding-left:20px}
+  .src li{margin:3px 0}
+  ul li{margin:4px 0}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="deva">अइउण् · ऋऌक् · एओङ्</div>
+  <h1>Pāṇini in Lean 4:<br/>Five Machine-Checked Results, Rated by Controversy</h1>
+  <p class="sub">The first mechanization of any part of Pāṇini's Sanskrit grammar in a theorem
+  prover — from a settled Fibonacci fact to a kernel-checked refutation that brushes against
+  the published literature.</p>
+</header>
+
+<div class="wrap">
+
+<h2><span class="num">1.</span>What this repository is</h2>
+
+<p>Around the 4th century BCE, <b>Pāṇini</b> compressed a complete grammar of Sanskrit
+into ~4,000 rules — the <i>Aṣṭādhyāyī</i>. Its front matter, the <b>14 Śivasūtras</b>,
+arranges every sound of Sanskrit so that any sound-class his rules need can be named by
+just two letters (a <b>pratyāhāra</b>). This repository formalizes that system in
+<b>Lean 4</b> — the 42 sounds, the 14 marker letters, the strict pratyāhāra semantics,
+and the <b>43 sound-classes the grammar actually uses</b> — and proves five families of
+theorems about it. Everything is <code>sorry</code>-free and rests only on the standard
+axioms <code>propext</code>, <code>Classical.choice</code>, <code>Quot.sound</code>;
+the heavy combinatorial claims are replayed by the Lean kernel itself
+(<code>decide</code>), not by tactics you have to trust.</p>
+
+<p>Each result lives on its own <b>showcase branch</b> with a full README and an
+interactive explainer. <b>This page is the map</b>: what each branch proves, and an
+honest <b>controversy rating</b> — because these theorems do not all have the same
+standing. Some confirm what everyone already believed; one of them machine-checks a
+counterexample to the natural reading of a published claim.</p>
+
+<h2><span class="num">2.</span>The controversy scale</h2>
+
+<table>
+  <tr><th style="width:110px">Rating</th><th>Meaning</th></tr>
+  <tr><td><b>1 — Settled</b></td><td>The mathematics and the history are undisputed; the formalization adds certainty, not controversy.</td></tr>
+  <tr><td><b>2 — Mild</b></td><td>Confirms the consensus, but corrects a detail in the published literature along the way.</td></tr>
+  <tr><td><b>3 — Interpretive</b></td><td>Formalizes one side of an ancient debate; the verdict depends on a modeling choice a scholar could reasonably reject.</td></tr>
+  <tr><td><b>4 — Live dispute</b></td><td>Takes a quantitative position in an <em>active</em> scholarly controversy; both camps have something to contest.</td></tr>
+  <tr><td><b>5 — Against the literature</b></td><td>Contains a machine-checked result that contradicts the natural reading of a published claim or received doctrine.</td></tr>
+</table>
+
+<h2><span class="num">3.</span>The five results at a glance</h2>
+
+<table>
+  <tr><th>Branch</th><th>Headline result</th><th style="width:120px">Controversy</th></tr>
+  <tr>
+    <td><a href="https://github.com/anish-lakkapragada/sanskrit/tree/result/pingala-fibonacci"><code>result/pingala-fibonacci</code></a></td>
+    <td>Sanskrit prosody's light/heavy patterns of duration <i>n</i> number exactly <code>fib(n+1)</code> — the Fibonacci sequence, five centuries before Fibonacci.</td>
+    <td><b>1 / 5</b> settled</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/anish-lakkapragada/sanskrit/tree/result/marker-irredundancy"><code>result/marker-irredundancy</code></a></td>
+    <td>No Śivasūtra marker is redundant, and neither is the duplicated <i>h</i>; kernel-verified counts 304 / 13 refine Petersen's published 305 / 14.</td>
+    <td><b>2 / 5</b> mild</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/anish-lakkapragada/sanskrit/tree/result/doubled-n-ambiguity"><code>result/doubled-n-ambiguity</code></a></td>
+    <td>The doubled marker Ṇ makes exactly 3 pratyāhāras ambiguous, and <em>no uniform convention</em> is consistent with Pāṇini's own usage — Patañjali's complaint, as a theorem.</td>
+    <td><b>3 / 5</b> interpretive</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/anish-lakkapragada/sanskrit/tree/result/ordering-forced-free"><code>result/ordering-forced-free</code></a></td>
+    <td>Of the 29 adjacent within-line sound orderings, exactly 11 are forced by the class system and 18 are free — a middle verdict in the Kiparsky vs. Staal/Cardona dispute.</td>
+    <td><b>4 / 5</b> live dispute</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/anish-lakkapragada/sanskrit/tree/result/shivasutra-optimality"><code>result/shivasutra-optimality</code></a></td>
+    <td>Petersen's optimality theorem, mechanized — including a kernel-checked <em>refutation</em> of its naive reading, and a full-optimality theorem still conditional on her unmechanized Satz 6.1.1.</td>
+    <td><b>5 / 5</b> against the literature</td>
+  </tr>
+</table>
+
+<p class="footnote">Also in the repo: <code>main</code> carries the complete formalization
+(all five results' Lean files); <code>formalization/shivasutra-optimality</code> is the
+historical development branch of the first result.</p>
+
+<h2><span class="num">4.</span>The results, in order of rising controversy</h2>
+
+<!-- ============================================================ 1 -->
+<div class="card">
+  <h3>The Virahāṅka–Hemacandra (Fibonacci) theorem</h3>
+  <p class="branch">branch: <a href="https://github.com/anish-lakkapragada/sanskrit/tree/result/pingala-fibonacci">result/pingala-fibonacci</a> · file: <code>panini/Panini/Pingala.lean</code></p>
+  <div class="meter"><div class="dots"><span class="dot on"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div><span class="lab">1 / 5 — settled</span></div>
+
+  <p>In Sanskrit prosody a light syllable (<i>laghu</i>) lasts one beat and a heavy
+  syllable (<i>guru</i>) two. <b>Theorem:</b> the light/heavy patterns of total duration
+  <i>n</i> number exactly <code>Nat.fib (n+1)</code>. Mechanized as the genuine
+  combinatorial statement, not just the recurrence: Virahāṅka's enumeration is proved
+  <b>sound, complete, and duplicate-free</b> (<code>mem_patterns</code>,
+  <code>nodup_patterns</code>, <code>length_patterns</code>), alongside Piṅgala's
+  <i>prastāra</i> count of <code>2^n</code> syllable patterns. The recursion was stated
+  by Virahāṅka (c. 700 CE) and elaborated by Gopāla and Hemacandra (c. 1150) —
+  Fibonacci's <i>Liber Abaci</i> is from 1202.</p>
+
+  <div class="skeptic"><b>What a skeptic would say:</b> almost nothing. The mathematics
+  is textbook and the historical priority is documented in the standard history-of-mathematics
+  literature. The only care needed is attribution — Piṅgala's own text (3rd–2nd c. BCE) gives
+  the enumeration cryptically, and the explicit recursion is Virahāṅka's, which is exactly how
+  this branch names things.</div>
+
+  <div class="src"><b>Sources</b>
+    <ul>
+      <li>Parmanand Singh, <a href="https://doi.org/10.1016/0315-0860(85)90021-7">“The So-called Fibonacci Numbers in Ancient and Medieval India”</a>, <i>Historia Mathematica</i> 12 (1985) 229–244 — <a href="https://www.cs.umd.edu/~gasarch/BLOGPAPERS/fibfibs.pdf">open PDF</a>.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ============================================================ 2 -->
+<div class="card">
+  <h3>No anubandha is redundant (marker irredundancy)</h3>
+  <p class="branch">branch: <a href="https://github.com/anish-lakkapragada/sanskrit/tree/result/marker-irredundancy">result/marker-irredundancy</a> · file: <code>panini/Panini/Necessity.lean</code></p>
+  <div class="meter"><div class="dots"><span class="dot on"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div><span class="lab">2 / 5 — mild</span></div>
+
+  <p>The tradition's economy principle (<i>lāghava</i> — “grammarians rejoice over the
+  saving of half a mora as over the birth of a son”) asserts nothing in Pāṇini is
+  superfluous. At the Śivasūtra level this is now a theorem:
+  <code>no_marker_redundant</code> shows that deleting <em>any one</em> of the 14 markers
+  breaks a class the grammar actually uses — for each truncated alphabet the kernel
+  searches all 588 candidate encodings and confirms none rescues the witness class.
+  <code>noH2_not_lax/strict</code> shows the duplicated <i>h</i> can't be dropped either,
+  under <em>any</em> reading. And the kernel counts the Śivasūtras' well-formed
+  pratyāhāras exactly: <b>304, of which 13 are singletons</b>.</p>
+
+  <div class="skeptic"><b>What a skeptic would say:</b> the headline confirms what everyone
+  from Kātyāyana onward believed, so no fight there. The mild friction is the count:
+  Petersen (2004, fn. 2) reports 305 / 14, counting by marker <em>occurrences</em>; this
+  formalization counts by denotation-relevant type and gets 304 / 13. It's a definitional
+  correction to a published number, not a refutation — but it is a discrepancy with the
+  literature that the kernel now adjudicates.</div>
+
+  <div class="src"><b>Sources</b>
+    <ul>
+      <li>Wiebke Petersen, <a href="https://doi.org/10.1007/s10849-004-2117-7">“A Mathematical Analysis of Pāṇini's Śivasūtras”</a>, <i>J. of Logic, Language and Information</i> 13 (2004) 471–489, fn. 2 — <a href="https://user.phil-fak.uni-duesseldorf.de/~petersen/paper/petersen_jolli_proof.pdf">open PDF</a>.</li>
+      <li>On <i>lāghava</i>: George Cardona, <a href="https://www.jstor.org/stable/1005972">“Studies in Indian Grammarians I: The Method of Description Reflected in the Śivasūtras”</a>, <i>Trans. Am. Philos. Soc.</i> 59.1 (1969) 3–48.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ============================================================ 3 -->
+<div class="card">
+  <h3>The doubled Ṇ is irreducibly ambiguous</h3>
+  <p class="branch">branch: <a href="https://github.com/anish-lakkapragada/sanskrit/tree/result/doubled-n-ambiguity">result/doubled-n-ambiguity</a> · file: <code>panini/Panini/Ambiguity.lean</code></p>
+  <div class="meter"><div class="dots"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span></div><span class="lab">3 / 5 — interpretive</span></div>
+
+  <p>As actually recited, lines 1 and 6 of the Śivasūtras end in the <em>same</em> marker
+  letter Ṇ — the only re-use, and one Kātyāyana and Patañjali already questioned
+  (<i>Mahābhāṣya</i>, c. 150 BCE: was there a “dearth of letters”?). Modeling the
+  recitation faithfully (one Ṇ token), the kernel shows <b>exactly 3</b> pratyāhāras are
+  ambiguous (<code>aṆ, iṆ, uṆ</code>); the uniform nearest-Ṇ convention makes an attested
+  class unencodable, the uniform farthest-Ṇ convention kills another, Pāṇini's own rules
+  need <b>both</b> readings (1.1.69 vs. 8.3.57), and only rule-by-rule resolution serves
+  all 43 attested classes. That is Patañjali's complaint as a theorem: the economy of one
+  saved letter is purchased with context-dependence in the metalanguage.</p>
+
+  <div class="skeptic"><b>What a skeptic would say:</b> the verdict hangs on a modeling
+  choice. Most formal treatments (including Petersen's, and the other branches here)
+  simply treat the two Ṇ's as distinct symbols, dissolving the ambiguity by fiat — a
+  Pāṇinian can argue that markers are individuated by position, not letter-shape, so
+  the “irreducibility” is an artifact of the single-token model. The reply is that the
+  single-token model is what is <em>recited</em>, and the ancients themselves debated it —
+  but that is a genuine interpretive stance, not a neutral fact.</div>
+
+  <div class="src"><b>Sources</b>
+    <ul>
+      <li>The <i>Mahābhāṣya</i> discussion of the Śivasūtras (Kātyāyana's vārttikas and Patañjali's commentary on the re-used Ṇ), surveyed in: George Cardona, <a href="https://www.jstor.org/stable/1005972">“Studies in Indian Grammarians I”</a>, <i>TAPS</i> 59.1 (1969).</li>
+      <li>Paul Kiparsky, <a href="https://web.stanford.edu/~kiparsky/Papers/siva-t.pdf">“Economy and the Construction of the Śivasūtras”</a> (1991), on the anubandha system and its economy.</li>
+      <li>Rules using both readings: Aṣṭādhyāyī 1.1.69 (far reading of <code>aṆ</code>) vs. its use elsewhere (near reading), 8.3.57 (<code>iṆ</code>, far reading).</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ============================================================ 4 -->
+<div class="card">
+  <h3>The forced/free map of the Śivasūtra ordering</h3>
+  <p class="branch">branch: <a href="https://github.com/anish-lakkapragada/sanskrit/tree/result/ordering-forced-free">result/ordering-forced-free</a> · file: <code>panini/Panini/Ordering.lean</code></p>
+  <div class="meter"><div class="dots"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span></div><span class="lab">4 / 5 — live dispute</span></div>
+
+  <p>How much of Pāṇini's ordering is actually <em>determined</em> by the class system?
+  <b>Kiparsky</b> argues economy makes the order essentially unique; <b>Staal</b> and
+  <b>Cardona</b> hold that independent phonetic principles must be doing real work. This
+  branch settles the checkable core with a kernel-verified map of all <b>29 adjacent
+  within-line transpositions</b>: <b>11 are FORCED</b> (each by a witness class plus an
+  exhaustive 588-encoding kernel search — including the <i>h-y, y-v, v-r</i> verdicts
+  that pin Patañjali's ancient <i>ha ya va ra</i> question) and <b>18 are FREE</b> (each
+  by explicit surviving pratyāhāras for all 43 classes). Verdict: economy pins the
+  within-line order at 11 of 29 junctures and leaves 18 — including such “obvious” pairs
+  as <i>e-o</i> and <i>ai-au</i> — to phonetics or tradition.</p>
+
+  <div class="skeptic"><b>What a skeptic would say:</b> both camps can object, which is
+  what makes this the most actively contestable branch. A Kiparskyan will note that
+  “economy” here means only <em>survival of the 43 attested classes under adjacent
+  within-line swaps</em> — Kiparsky's uniqueness argument also invokes marker economy and
+  global rearrangements, which this map deliberately does not measure. A Staal/Cardona
+  partisan will counter that 18 free junctures still under-counts the phonetic
+  contribution, since line membership itself was held fixed. The branch's own framing —
+  a “quantitative middle verdict” — is precisely the kind of claim both sides of a live
+  dispute have reason to push back on.</div>
+
+  <div class="src"><b>Sources</b>
+    <ul>
+      <li>Paul Kiparsky, <a href="https://web.stanford.edu/~kiparsky/Papers/siva-t.pdf">“Economy and the Construction of the Śivasūtras”</a>, in <i>Pāṇinian Studies: Prof. S. D. Joshi Felicitation Volume</i> (Ann Arbor, 1991) — the uniqueness side.</li>
+      <li>J. F. Staal, <a href="https://www.semanticscholar.org/paper/4cb5106d40d5cea71a8dfd0978c345bba11bfccf">“A Method of Linguistic Description: The Order of Consonants According to Pāṇini”</a>, <i>Language</i> 38.1 (1962) 1–10 — the phonetic-principles side.</li>
+      <li>George Cardona, <a href="https://www.jstor.org/stable/1005972">“Studies in Indian Grammarians I”</a>, <i>TAPS</i> 59.1 (1969) 3–48.</li>
+      <li>Wiebke Petersen, <a href="https://doi.org/10.1007/s10849-004-2117-7">“A Mathematical Analysis of Pāṇini's Śivasūtras”</a>, JoLLI 13 (2004), on what the class system does and does not determine.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ============================================================ 5 -->
+<div class="card">
+  <h3>The Śivasūtra optimality theorem — and a machine-checked refutation</h3>
+  <p class="branch">branch: <a href="https://github.com/anish-lakkapragada/sanskrit/tree/result/shivasutra-optimality">result/shivasutra-optimality</a> · files: <code>panini/Panini/{Interval,Markers,Optimality}.lean</code></p>
+  <div class="meter"><div class="dots"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span></div><span class="lab">5 / 5 — against the literature</span></div>
+
+  <p>Petersen (2004/2008) proved the Śivasūtras <b>optimal</b>: fewest duplicated sounds
+  first, fewest markers second. This branch mechanizes the theorem's skeleton
+  unconditionally: duplication is <b>forced</b> for any rival
+  (<code>one_le_duplications_for_panini</code>, via a convexity obstruction on
+  <i>h, v, l</i>), so Pāṇini's single repeated <i>h</i> is <b>exactly optimal</b>
+  (<code>shivasutra_duplication_optimal</code>, hypothesis-free); every strict rival
+  carries <b>≥ 11 markers</b> and costs <b>≥ 12</b> against Pāṇini's 15. But it also
+  contains the repository's most explosive artifact:</p>
+
+  <div class="myth"><b><code>lax_marker_bound_false</code>:</b> under the naive,
+  marker-optional reading of “encodes all the pratyāhāras” — the natural formalization
+  of the claim Petersen's 2004 paper calls <i>obvious</i> — deleting the final marker
+  <code>L</code> yields a valid <b>13-marker rival that beats Pāṇini by 2</b>. Kernel-checked.
+  Under that semantics, the Śivasūtras are <em>not</em> optimal, full stop.</div>
+
+  <p>The branch's response is that the lax semantics is the wrong arena, and it develops
+  the strict semantics (<code>EncodesT</code>) throughout. Full cost-optimality is then
+  proved <em>conditional</em> on the tight bound <code>14 ≤ numMarkers</code> — Petersen's
+  Satz 6.1.1, whose proof (plane Hasse diagrams, S-graphs, boundary runs) remains
+  unmechanized and is carefully diagnosed, with two honest caveats, at the end of
+  <code>Optimality.lean</code>.</p>
+
+  <div class="skeptic"><b>What a skeptic would say:</b> three things, each sharper than
+  anything on the other branches. (i) The refutation touches a published claim — the 2004
+  JoLLI paper treats the 14-marker count as “obvious,” and only the 2008 dissertation
+  proves it, under assumptions. (ii) The rescue is contestable: the strict semantics
+  could be accused of being chosen <em>because</em> it makes Pāṇini optimal. (iii) The
+  headline theorem is conditional: Satz 6.1.1 is proved by Petersen only relative to
+  duplication-minimal extensions, and in a model whose pratyāhāras may start at a
+  <em>chosen</em> copy of a sound rather than the first — so her bound does not transfer
+  verbatim, and the tight strict bound remains genuinely open here. It also brushes the
+  tradition itself: the necessity of the final <code>L</code> is a centuries-old debate
+  among the grammarians, and this is the result that formally feeds it.</div>
+
+  <div class="src"><b>Sources</b>
+    <ul>
+      <li>Wiebke Petersen, <a href="https://doi.org/10.1007/s10849-004-2117-7">“A Mathematical Analysis of Pāṇini's Śivasūtras”</a>, <i>J. of Logic, Language and Information</i> 13 (2004) 471–489 — <a href="https://user.phil-fak.uni-duesseldorf.de/~petersen/paper/petersen_jolli_proof.pdf">open PDF</a>.</li>
+      <li>Wiebke Petersen, <a href="https://docserv.uni-duesseldorf.de/servlets/DocumentServlet?id=15491"><i>Zur Minimalität von Pāṇinis Śivasūtras — Eine Untersuchung mit Methoden der Formalen Begriffsanalyse</i></a>, dissertation, Univ. Düsseldorf 2008 (Satz 6.1.1: pp. 149–152) — <a href="https://d-nb.info/1007126175/34">open PDF (DNB)</a>.</li>
+      <li>Paul Kiparsky, <a href="https://web.stanford.edu/~kiparsky/Papers/siva-t.pdf">“Economy and the Construction of the Śivasūtras”</a> (1991), on the economy criteria the optimality claim formalizes.</li>
+    </ul>
+  </div>
+</div>
+
+<h2><span class="num">5.</span>How the ratings were assigned</h2>
+
+<p>The rating measures <b>how much a competent scholar could dispute</b>, not how hard the
+theorem was to prove. Three questions drive it:</p>
+
+<ul>
+  <li><b>Does it contradict anything?</b> Confirming consensus (Fibonacci, irredundancy)
+  scores low; correcting a published count scores a little higher; a kernel-checked
+  counterexample to the natural reading of a published optimality claim scores highest.</li>
+  <li><b>Is the dispute alive?</b> Patañjali's Ṇ question is ancient and the tradition
+  already settled on rule-by-rule resolution (3); Kiparsky vs. Staal/Cardona is a live
+  modern disagreement that this repo takes a quantitative position in (4).</li>
+  <li><b>How load-bearing are the modeling choices?</b> Where a differently-reasonable
+  formalization flips the verdict (single-token Ṇ; lax vs. strict semantics), the rating
+  rises — the kernel guarantees the theorem, never the choice of statement.</li>
+</ul>
+
+<div class="key"><b>One caution the ratings share:</b> a Lean kernel check makes the
+<em>theorem</em> indisputable, given the model. Every controversy above lives in the gap
+between Pāṇini's Sanskrit and the Lean model — the 43-class list, the strict semantics,
+the single-token recitation. That gap is documented, per branch, in each branch's README
+and in the source files' closing comments.</div>
+
+<h2><span class="num">6.</span>Building and verifying</h2>
+
+<pre>git checkout &lt;branch&gt;     # any of the five result/* branches, or main
+cd panini
+lake exe cache get         # download prebuilt Mathlib
+lake build                 # replays every proof through the Lean kernel</pre>
+
+<p class="footnote">All results are <code>sorry</code>-free; the axiom footprint of every
+theorem is <code>propext</code>, <code>Classical.choice</code>, <code>Quot.sound</code>
+(checked with <code>#print axioms</code>). Each showcase branch's own
+<code>README.html</code> is an interactive explainer — the optimality branch has a
+clickable pratyāhāra explorer, the irredundancy branch lets you delete markers yourself,
+the ordering branch lets you perform the swaps, and the ambiguity branch lets you read
+the doubled Ṇ both ways.</p>
+
+</div>
+</body>
+</html>
