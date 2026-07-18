@@ -1,0 +1,374 @@
+{
+ "model": "/Users/anish/Documents/git-repos/sanskrit/runs/sft-baseline/fused_4bit",
+ "checkpoint": "/Users/anish/Documents/git-repos/sanskrit/runs/sft-then-grpo/checkpoints/adapters.safetensors",
+ "benchmark": "data/eval/beyond_fragment.jsonl",
+ "summary": {
+  "n": 36,
+  "compile_rate": null,
+  "qa_exact": null,
+  "mean_reward": null,
+  "chrf_pp": 12.98
+ },
+ "records": [
+  {
+   "id": "b0",
+   "type": "beyond",
+   "prompt": "Translate into Sanskrit (one sentence): \"Truth alone triumphs.\"",
+   "completion": "<think>\n\n</think>\n\n<ans>satyam vīrāgāt karoti</ans>",
+   "answer": "satyam vīrāgāt karoti",
+   "format": true,
+   "reference": "satyam eva jayate",
+   "judge": "chrf"
+  },
+  {
+   "id": "b1",
+   "type": "beyond",
+   "prompt": "Translate into Sanskrit (one sentence): \"Non-violence is the highest duty.\"",
+   "completion": "<think>\n\n</think>\n\n<ans>śāntiḥ karaṇam parā karaṇam</ans>",
+   "answer": "śāntiḥ karaṇam parā karaṇam",
+   "format": true,
+   "reference": "ahiṃsā paramo dharmaḥ",
+   "judge": "chrf"
+  },
+  {
+   "id": "b2",
+   "type": "beyond",
+   "prompt": "Translate into Sanskrit (one sentence): \"Knowledge gives humility.\"",
+   "completion": "<think>\n\n</think>\n\n<ans>jñānam humblīm karoti</ans>",
+   "answer": "jñānam humblīm karoti",
+   "format": true,
+   "reference": "vidyā dadāti vinayam",
+   "judge": "chrf"
+  },
+  {
+   "id": "b3",
+   "type": "beyond",
+   "prompt": "Translate into Sanskrit (one sentence): \"The guest is a god.\"",
+   "completion": "<think>\n\n</think>\n\n<ans>atithiḥ devam karoti</ans>",
+   "answer": "atithiḥ devam karoti",
+   "format": true,
+   "reference": "atithir devo bhavati",
+   "judge": "chrf"
+  },
+  {
+   "id": "b4",
+   "type": "beyond",
+   "prompt": "Translate into Sanskrit (one sentence): \"The world is one family.\"",
+   "completion": "<think>\n\n</think>\n\n<ans>jagat ekā kālā</ans>",
+   "answer": "jagat ekā kālā",
+   "format": true,
+   "reference": "vasudhaiva kuṭumbakam",
+   "judge": "chrf"
+  },
+  {
+   "id": "b5",
+   "type": "beyond",
+   "prompt": "Translate into Sanskrit (one sentence): \"May all be happy.\"",
+   "completion": "<think>\n\n</think>\n\n<ans>śatāni śatāni sukhasamjāyanti</ans>",
+   "answer": "śatāni śatāni sukhasamjāyanti",
+   "format": true,
+   "reference": "sarve bhavantu sukhinaḥ",
+   "judge": "chrf"
+  },
+  {
+   "id": "b6",
+   "type": "beyond",
+   "prompt": "Translate into Sanskrit (one sentence): \"May all be free from illness.\"",
+   "completion": "<think>\n\n</think>\n\n<ans>śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śat",
+   "answer": "<ans>śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śatāniḥ śat",
+   "format": false,
+   "reference": "sarve santu nirāmayāḥ",
+   "judge": "chrf"
+  },
+  {
+   "id": "b7",
+   "type": "beyond",
+   "prompt": "Translate into Sanskrit (one sentence): \"Speak the truth; follow the dharma.\"",
+   "completion": "<think>\n\n</think>\n\n<ans>satyam vadati; dharmaḥ sevate</ans>",
+   "answer": "satyam vadati dharmaḥ sevate",
+   "format": true,
+   "reference": "satyaṃ vada dharmaṃ cara",
+   "judge": "chrf"
+  },
+  {
+   "id": "b8",
+   "type": "beyond",
+   "prompt": "Translate into Sanskrit (one sentence): \"Lead me from darkness to light.\"",
+   "completion": "<think>\n\n</think>\n\n<ans>nayāmiḥ tārāṇi phalāni</ans>",
+   "answer": "nayāmiḥ tārāṇi phalāni",
+   "format": true,
+   "reference": "tamaso mā jyotir gamaya",
+   "judge": "chrf"
+  },
+  {
+   "id": "b9",
+   "type": "beyond",
+   "prompt": "Translate into Sanskrit (one sentence): \"Lead me from the unreal to the real.\"",
+   "completion": "<think>\n\n</think>\n\n<ans>nayāniḥ satyam nayāniḥ</ans>",
+   "answer": "nayāniḥ satyam nayāniḥ",
+   "format": true,
+   "reference": "asato mā sad gamaya",
+   "judge": "chrf"
+  },
+  {
+   "id": "b10",
+   "type": "beyond",
+   "prompt": "Translate into Sanskrit (one sentence): \"There is no friend equal to knowledge.\"",
+   "completion": "<think>\n\n</think>\n\n<ans>mitram jñānam samānām</ans>",
+   "answer": "mitram jñānam samānām",
+   "format": true,
+   "reference": "nāsti vidyāsamo bandhuḥ",
+   "judge": "chrf"
+  },
+  {
+   "id": "b11",
+   "type": "beyond",
+   "prompt": "Translate into Sanskrit (one sentence): \"There is no enemy equal to anger.\"",
+   "completion": "<think>\n\n</think>\n\n<ans>śatruḥ ātmaḥ nāsati</ans>",
+   "answer": "śatruḥ ātmaḥ nāsati",
+   "format": true,
+   "reference": "nāsti krodhasamo ripuḥ",
+   "judge": "chrf"
+  },
+  {
+   "id": "b12",
+   "type": "beyond",
+   "prompt": "Translate into Sanskrit (one sentence): \"Contentment is the highest happiness.\"",
+   "completion": "<think>\n\n</think>\n\n<ans>śāntiḥ parā sukhaḥ</ans>",
+   "answer": "śāntiḥ parā sukhaḥ",
+   "format": true,
+   "reference": "santoṣaḥ paramaṃ sukham",
+   "judge": "chrf"
+  },
+  {
+   "id": "b13",
+   "type": "beyond",
+   "prompt": "Translate into Sanskrit (one sentence): \"The mind is indeed restless, O Krishna.\"",
+   "completion": "<think>\n\n</think>\n\n<ans>chitram krishnam restleshtam</ans>",
+   "answer": "chitram krishnam restleshtam",
+   "format": true,
+   "reference": "cañcalaṃ hi manaḥ kṛṣṇa",
+   "judge": "chrf"
+  },
+  {
+   "id": "b14",
+   "type": "beyond",
+   "prompt": "Translate into Sanskrit (one sentence): \"You have a right to action alone, never to its fruits.\"",
+   "completion": "<think>\n\n</think>\n\n<ans>karuṇā kārāṇi, phalāni nām</ans>",
+   "answer": "karuṇā kārāṇi phalāni nām",
+   "format": true,
+   "reference": "karmaṇy evādhikāras te mā phaleṣu kadācana",
+   "judge": "chrf"
+  },
+  {
+   "id": "b15",
+   "type": "beyond",
+   "prompt": "Translate into Sanskrit (one sentence): \"Yoga is skill in action.\"",
+   "completion": "<think>\n\n</think>\n\n<ans>yogaḥ kriyāyām karoti</ans>",
+   "answer": "yogaḥ kriyāyām karoti",
+   "format": true,
+   "reference": "yogaḥ karmasu kauśalam",
+   "judge": "chrf"
+  },
+  {
+   "id": "b16",
+   "type": "beyond",
+   "prompt": "Translate into Sanskrit (one sentence): \"One should know a friend in adversity.\"",
+   "completion": "<think>\n\n</think>\n\n<ans>śatruḥ mitram jñānam</ans>",
+   "answer": "śatruḥ mitram jñānam",
+   "format": true,
+   "reference": "āpatsu mitraṃ jānīyāt",
+   "judge": "chrf"
+  },
+  {
+   "id": "b17",
+   "type": "beyond",
+   "prompt": "Translate into Sanskrit (one sentence): \"Time cooks all beings.\"",
+   "completion": "<think>\n\n</think>\n\n<ans>kālaḥ sarvāṇi jīvāṇi khādati</ans>",
+   "answer": "kālaḥ sarvāṇi jīvāṇi khādati",
+   "format": true,
+   "reference": "kālaḥ pacati bhūtāni",
+   "judge": "chrf"
+  },
+  {
+   "id": "b18",
+   "type": "beyond",
+   "prompt": "Translate into Sanskrit (one sentence): \"Health is the highest fortune.\"",
+   "completion": "<think>\n\n</think>\n\n<ans>sundarī śatāḥ</ans>",
+   "answer": "sundarī śatāḥ",
+   "format": true,
+   "reference": "ārogyaṃ paramaṃ bhāgyam",
+   "judge": "chrf"
+  },
+  {
+   "id": "b19",
+   "type": "beyond",
+   "prompt": "Translate into Sanskrit (one sentence): \"Where there is dharma, there is victory.\"",
+   "completion": "<think>\n\n</think>\n\n<ans>dharmam jñānam sukhasam samādāt</ans>",
+   "answer": "dharmam jñānam sukhasam samādāt",
+   "format": true,
+   "reference": "yato dharmas tato jayaḥ",
+   "judge": "chrf"
+  },
+  {
+   "id": "b20",
+   "type": "beyond",
+   "prompt": "Translate into Sanskrit (one sentence): \"The powers of the good are for helping others.\"",
+   "completion": "<think>\n\n</think>\n\n<ans>śatāḥ kārāṇi dhīrāṇi karoti</ans>",
+   "answer": "śatāḥ kārāṇi dhīrāṇi karoti",
+   "format": true,
+   "reference": "paropakārāya satāṃ vibhūtayaḥ",
+   "judge": "chrf"
+  },
+  {
+   "id": "b21",
+   "type": "beyond",
+   "prompt": "Translate into Sanskrit (one sentence): \"For one who is born, death is certain.\"",
+   "completion": "<think>\n\n</think>\n\n<ans>navām jīvati kṣatram</ans>",
+   "answer": "navām jīvati kṣatram",
+   "format": true,
+   "reference": "jātasya hi dhruvo mṛtyuḥ",
+   "judge": "chrf"
+  },
+  {
+   "id": "b22",
+   "type": "beyond",
+   "prompt": "Translate into Sanskrit (one sentence): \"It is never born, nor does it ever die.\"",
+   "completion": "<think>\n\n</think>\n\n<ans>navam jīvati, nām mṛtati</ans>",
+   "answer": "navam jīvati nām mṛtati",
+   "format": true,
+   "reference": "na jāyate mriyate vā kadācit",
+   "judge": "chrf"
+  },
+  {
+   "id": "b23",
+   "type": "beyond",
+   "prompt": "Translate into Sanskrit (one sentence): \"The king protects the people.\"",
+   "completion": "<think>\n\n</think>\n\n<ans>nṛpam jānati</ans>",
+   "answer": "nṛpam jānati",
+   "format": true,
+   "reference": "rājā prajāḥ rakṣati",
+   "judge": "chrf"
+  },
+  {
+   "id": "b24",
+   "type": "beyond",
+   "prompt": "Translate into Sanskrit (one sentence): \"The king conquers the earth.\"",
+   "completion": "<think>\n\n</think>\n\n<ans>nṛpah pṛthivīm labhate</ans>",
+   "answer": "nṛpah pṛthivīm labhate",
+   "format": true,
+   "reference": "rājā pṛthivīṃ jayati",
+   "judge": "chrf"
+  },
+  {
+   "id": "b25",
+   "type": "beyond",
+   "prompt": "Translate into Sanskrit (one sentence): \"The boy went to the village.\"",
+   "completion": "<think>\n\n</think>\n\n<ans>bālaḥ grāme gacchati</ans>",
+   "answer": "bālaḥ grāme gacchati",
+   "format": true,
+   "reference": "bālo grāmam agacchat",
+   "judge": "chrf"
+  },
+  {
+   "id": "b26",
+   "type": "beyond",
+   "prompt": "Translate into Sanskrit (one sentence): \"The girl saw the moon.\"",
+   "completion": "<think>\n\n</think>\n\n<ans>kanyā candraḥ paśyati</ans>",
+   "answer": "kanyā candraḥ paśyati",
+   "format": true,
+   "reference": "kanyā candram apaśyat",
+   "judge": "chrf"
+  },
+  {
+   "id": "b27",
+   "type": "beyond",
+   "prompt": "Translate into Sanskrit (one sentence): \"Rāma slew Rāvaṇa in battle.\"",
+   "completion": "<think>\n\n</think>\n\n<ans>rāmaḥ rāvānām sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvā",
+   "answer": "<ans>rāmaḥ rāvānām sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvārtham śatruḥ sāvā",
+   "format": false,
+   "reference": "rāmo yuddhe rāvaṇaṃ hatavān",
+   "judge": "chrf"
+  },
+  {
+   "id": "b28",
+   "type": "beyond",
+   "prompt": "Translate into Sanskrit (one sentence): \"The sage spoke the truth.\"",
+   "completion": "<think>\n\n</think>\n\n<ans>munin satyam vadati</ans>",
+   "answer": "munin satyam vadati",
+   "format": true,
+   "reference": "muniḥ satyam avadat",
+   "judge": "chrf"
+  },
+  {
+   "id": "b29",
+   "type": "beyond",
+   "prompt": "Translate into Sanskrit (one sentence): \"The men will go to the city.\"",
+   "completion": "<think>\n\n</think>\n\n<ans>narāḥ nagare gacchanti</ans>",
+   "answer": "narāḥ nagare gacchanti",
+   "format": true,
+   "reference": "narā nagaraṃ gamiṣyanti",
+   "judge": "chrf"
+  },
+  {
+   "id": "b30",
+   "type": "beyond",
+   "prompt": "Translate into Sanskrit (one sentence): \"The teacher told a story.\"",
+   "completion": "<think>\n\n</think>\n\n<ans>guruḥ kathām vadati</ans>",
+   "answer": "guruḥ kathām vadati",
+   "format": true,
+   "reference": "guruḥ kathām akathayat",
+   "judge": "chrf"
+  },
+  {
+   "id": "b31",
+   "type": "beyond",
+   "prompt": "Translate into Sanskrit (one sentence): \"The heroes fought in the battle.\"",
+   "completion": "<think>\n\n</think>\n\n<ans>vīrāḥ strīyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām",
+   "answer": "<ans>vīrāḥ strīyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām seyām",
+   "format": false,
+   "reference": "vīrā yuddhe ayudhyanta",
+   "judge": "chrf"
+  },
+  {
+   "id": "b32",
+   "type": "beyond",
+   "prompt": "Translate into Sanskrit (one sentence): \"The king gave wealth to the poet.\"",
+   "completion": "<think>\n\n</think>\n\n<ans>nṛpah kavim sevate</ans>",
+   "answer": "nṛpah kavim sevate",
+   "format": true,
+   "reference": "rājā kavaye dhanam adadāt",
+   "judge": "chrf"
+  },
+  {
+   "id": "b33",
+   "type": "beyond",
+   "prompt": "Translate into Sanskrit (one sentence): \"The child drank the milk.\"",
+   "completion": "<think>\n\n</think>\n\n<ans>bālaḥ gālām pibati</ans>",
+   "answer": "bālaḥ gālām pibati",
+   "format": true,
+   "reference": "śiśur dugdham apibat",
+   "judge": "chrf"
+  },
+  {
+   "id": "b34",
+   "type": "beyond",
+   "prompt": "Translate into Sanskrit (one sentence): \"The monkeys crossed the ocean.\"",
+   "completion": "<think>\n\n</think>\n\n<ans>śarīrāṇi cālāyanti</ans>",
+   "answer": "śarīrāṇi cālāyanti",
+   "format": true,
+   "reference": "vānarāḥ sāgaram ataran",
+   "judge": "chrf"
+  },
+  {
+   "id": "b35",
+   "type": "beyond",
+   "prompt": "Translate into Sanskrit (one sentence): \"The rivers go to the sea.\"",
+   "completion": "<think>\n\n</think>\n\n<ans>nadyaḥ samudre gacchanti</ans>",
+   "answer": "nadyaḥ samudre gacchanti",
+   "format": true,
+   "reference": "nadyaḥ samudraṃ gacchanti",
+   "judge": "chrf"
+  }
+ ]
+}
