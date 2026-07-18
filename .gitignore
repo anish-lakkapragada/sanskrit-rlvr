@@ -1,5 +1,16 @@
-# Lean build artifacts
-panini/.lake/
+# Old Lean build artifacts left on disk from main (not part of this branch)
+panini/
 
-# Claude Code local settings (contains credentials)
-.claude/
+# Python
+__pycache__/
+.venv/
+
+# Lean build
+lean/.lake/
+
+# Experiment outputs (curated copies land in results/)
+runs/
+
+# Legacy local model artifacts
+training/
+models/

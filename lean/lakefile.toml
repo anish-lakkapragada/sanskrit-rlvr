@@ -1,0 +1,14 @@
+name = "sanskrit"
+version = "0.1.0"
+defaultTargets = ["Sanskrit", "check"]
+
+[[lean_lib]]
+name = "Sanskrit"
+
+[[lean_exe]]
+name = "check"
+root = "Check"
+
+[[lean_exe]]
+name = "export"
+root = "Export"
