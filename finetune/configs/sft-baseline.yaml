@@ -1,0 +1,24 @@
+# Arm 1 of the report: pure supervised fine-tuning on answers the Lean
+# grammar generates for itself (zero human labels).
+run_name: sft-baseline
+backend: mlx
+mode: sft
+model:
+  base: mlx-community/Qwen3-4B-Instruct-2507-4bit
+  init_from_run: null
+data:
+  dir: data/sft
+hyperparameters:
+  learning_rate: 1.0e-4
+  epochs: 2
+  batch_size: 2
+  num_layers: 16
+  max_seq_length: 768
+eval:
+  prompts: data/eval/in_fragment.jsonl
+  samples_per_checkpoint: 60
+  temperature: 0.0
+  checkpoints: 4
+dashboard:
+  enabled: true
+  port: 8777

@@ -1,0 +1,30 @@
+# Arm 2 of the report: the canonical industry pipeline — GRPO (RLVR against
+# the Lean checker) on top of the SFT run. init_from_run fuses sft-baseline's
+# adapter and re-quantizes it to 4-bit (measured, reported), then GRPO trains
+# a fresh adapter with that model as both base and KL reference.
+run_name: sft-then-grpo
+backend: mlx
+mode: grpo
+model:
+  base: mlx-community/Qwen3-4B-Instruct-2507-4bit
+  init_from_run: sft-baseline
+data:
+  dir: data/grpo
+hyperparameters:
+  learning_rate: 8.0e-6
+  iters: 1200
+  batch_size: 1
+  num_layers: 16
+  max_seq_length: 768
+  group_size: 6
+  beta: 0.1
+  temperature: 0.8
+  max_completion_length: 200
+eval:
+  prompts: data/eval/in_fragment.jsonl
+  samples_per_checkpoint: 60
+  temperature: 0.0
+  checkpoints: 4
+dashboard:
+  enabled: true
+  port: 8777

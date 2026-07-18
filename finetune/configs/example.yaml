@@ -1,0 +1,70 @@
+# =============================================================================
+# Example fine-tuning configuration — every field documented.
+# Copy this file, change run_name, and launch with:
+#
+#     bash finetune/run.sh finetune/configs/<your-copy>.yaml
+#
+# Everything the run produces lands under runs/<run_name>/:
+#     config.yaml      frozen copy of this file
+#     train.log        raw trainer output
+#     checkpoints/     LoRA adapter checkpoints (4 across the run + final)
+#     metrics.jsonl    one line per checkpoint: compile-rate, chrF++, reward
+#     snapshots/       the model's actual generations at each checkpoint
+# =============================================================================
+
+# Unique name for this experiment. Names the runs/<run_name>/ directory;
+# a run refuses to start if that directory already exists.
+run_name: example
+
+# Training backend. Only "mlx" (Apple Silicon, via mlx-lm-lora) is supported.
+backend: mlx
+
+# "sft"  — supervised fine-tuning on chat-format data (data/sft/)
+# "grpo" — RLVR: the model samples answers, the Lean checker scores them,
+#          GRPO reinforces above-average samples (data/grpo/)
+mode: sft
+
+model:
+  # HF repo id or local path of the (quantized) base model.
+  base: mlx-community/Qwen3-4B-Instruct-2507-4bit
+  # Optional: initialize from a previous run instead of the raw base —
+  # the canonical SFT→GRPO pipeline. The named run's final adapter is fused
+  # into its base and re-quantized to 4-bit (a measured cost, reported in
+  # metrics.jsonl as the "init" entry), and that model becomes this run's
+  # base. null = train from model.base directly.
+  init_from_run: null
+
+data:
+  # Directory containing train.jsonl and valid.jsonl in the format that
+  # matches `mode` (see data/README.md).
+  dir: data/sft
+
+hyperparameters:
+  # --- common ---------------------------------------------------------------
+  learning_rate: 1.0e-4   # SFT default 1e-4; GRPO stable recipe uses 8e-6
+  iters: null             # explicit iteration count; null (SFT only) = derive
+  epochs: 2               # from epochs × dataset size ÷ batch_size
+  batch_size: 2           # GRPO uses 1 (each item spawns group_size samples)
+  num_layers: 16          # how many transformer layers get LoRA adapters
+  max_seq_length: 768
+  # --- GRPO only (ignored for SFT) -------------------------------------------
+  group_size: 6           # samples per prompt; advantage = vs group mean
+  beta: 0.1               # KL leash to the reference (= this run's base)
+  temperature: 0.8        # sampling temperature during rollouts
+  max_completion_length: 200
+
+eval:
+  # Evaluated at every checkpoint (4 per run + final): the model generates
+  # answers for these prompts, the Lean checker judges them, and chrF++ is
+  # computed against the references. Appends to metrics.jsonl + snapshots/.
+  prompts: data/eval/in_fragment.jsonl
+  samples_per_checkpoint: 60   # how many eval prompts to run per checkpoint
+  temperature: 0.0             # greedy decoding for evaluation
+  checkpoints: 4               # checkpoint (and eval) every iters/4
+
+dashboard:
+  # Live view of the run at http://localhost:<port> — reward curve from
+  # train.log, checkpoint metrics, and the latest sample generations with
+  # their Lean verdicts. Auto-refreshes; watches all runs, not just this one.
+  enabled: true
+  port: 8777
