@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sanskrit is a programmable language — we ran it on a compiler</title>
+<style>
+:root { color-scheme: light; }
+.pg {
+  --plane:#f9f9f7; --surface:#fcfcfb; --ink:#0b0b0b; --ink2:#52514e;
+  --muted:#898781; --grid:#e1e0d9; --axis:#c3c2b7; --border:rgba(11,11,11,.10);
+  --accent:#2a78d6; --accent-soft:rgba(42,120,214,.10);
+  --good:#006300; --bad:#a11d1d; --gray:#898781;
+}
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) .pg {
+    color-scheme: dark;
+    --plane:#0d0d0d; --surface:#1a1a19; --ink:#fff; --ink2:#c3c2b7;
+    --muted:#898781; --grid:#2c2c2a; --axis:#383835; --border:rgba(255,255,255,.10);
+    --accent:#3987e5; --accent-soft:rgba(57,135,229,.14);
+    --good:#0ca30c; --bad:#e66767; --gray:#898781;
+  }
+}
+*{box-sizing:border-box} body{margin:0}
+.pg{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--plane);
+    color:var(--ink);line-height:1.58;padding-bottom:90px}
+.wrap{max-width:880px;margin:0 auto;padding:0 20px}
+header{padding:66px 0 8px}
+h1{font-size:40px;line-height:1.14;margin:0 0 14px;letter-spacing:-.02em}
+h1 .deva{color:var(--accent)}
+.sub{font-size:18px;color:var(--ink2);max-width:730px;margin:0}
+section{margin-top:58px}
+h2{font-size:24px;margin:0 0 6px;letter-spacing:-.01em}
+h2 .n{color:var(--muted);font-weight:600;margin-right:8px}
+h3{font-size:16px;margin:18px 0 4px}
+.lede{color:var(--ink2);margin:0 0 16px;max-width:730px}
+p{max-width:730px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;
+      padding:20px 22px;margin-top:14px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:20px}
+.tile{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 16px}
+.tile .l{font-size:12.5px;color:var(--ink2)}
+.tile .v{font-size:28px;font-weight:600;margin-top:2px}
+.tile .d{font-size:12.5px;color:var(--good);font-weight:600}
+.tile .m{font-size:11.5px;color:var(--muted);margin-top:2px}
+pre.lean{background:var(--surface);border:1px solid var(--border);border-radius:12px;
+     padding:18px 20px;font-size:13.5px;line-height:1.65;overflow-x:auto;
+     font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+pre.lean .kw{color:var(--accent);font-weight:600}
+pre.lean .ok{color:var(--good);font-weight:600}
+pre.lean .bad{color:var(--bad);font-weight:600}
+pre.lean .cm{color:var(--muted)}
+svg{width:100%;height:auto;display:block}
+svg text{font-family:inherit}
+.grid{stroke:var(--grid);stroke-width:1}
+.axis{stroke:var(--axis);stroke-width:1}
+.tick,.atitle{fill:var(--muted);font-size:11.5px}
+.rowl{fill:var(--ink2);font-size:13px}
+.vl{fill:var(--ink2);font-size:12px;font-variant-numeric:tabular-nums}
+.bar-g{fill:var(--gray)} .bar-a{fill:var(--accent)}
+.line-a{fill:none;stroke:var(--accent);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.dlab{fill:var(--ink);font-size:12.5px;font-weight:600}
+.dot{fill:var(--accent);stroke:var(--surface);stroke-width:2}
+.flow .fbox{fill:var(--surface);stroke:var(--border)}
+.flow .facc{fill:var(--accent-soft);stroke:var(--accent)}
+.flow .ft{fill:var(--ink);font-size:14px;font-weight:600}
+.flow .fs{fill:var(--ink2);font-size:11.5px}
+.flow .fd{fill:var(--accent);font-size:13.5px;font-weight:600}
+.flow .ar{stroke:var(--muted);stroke-width:1.6;fill:none}
+.flow .al{fill:var(--ink2);font-size:12px}
+.flow .ah{fill:var(--muted)}
+table.res{border-collapse:collapse;width:100%;font-size:14px;margin-top:6px}
+table.res th,table.res td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--grid);
+  font-variant-numeric:tabular-nums}
+table.res th{color:var(--ink2);font-size:12.5px}
+table.res tr.hl td{font-weight:600}
+table.der{border-collapse:collapse;width:100%;font-size:14.5px;margin-top:8px}
+table.der td,table.der th{padding:8px 10px;border-bottom:1px solid var(--grid);text-align:left}
+table.der th{color:var(--ink2);font-size:12.5px}
+table.der .dv{font-size:17px}
+table.der .why{color:var(--muted);font-size:12.5px}
+.snap{margin-top:12px;border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.snap .p{padding:10px 16px;background:var(--plane);font-size:13px;color:var(--ink2);
+  border-bottom:1px solid var(--grid)}
+.snap .row{display:grid;grid-template-columns:96px 1fr 30px;gap:10px;padding:8px 16px;
+  border-bottom:1px solid var(--grid);font-size:14px;align-items:baseline;background:var(--surface)}
+.snap .row:last-child{border-bottom:none}
+.snap .who{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.snap .ok{color:var(--good);font-weight:700}
+.snap .bad{color:var(--bad);font-weight:700}
+.qa{border-left:3px solid var(--accent);padding:4px 0 4px 16px;margin:16px 0}
+.qa .q{font-weight:600;margin:0 0 6px}
+.qa p{color:var(--ink2);margin:6px 0}
+.footnote{color:var(--muted);font-size:13px}
+code{background:var(--accent-soft);border-radius:5px;padding:1px 6px;font-size:.92em}
+a{color:var(--accent)}
+ul.scope li{margin-bottom:6px}
+.kicker{font-size:20px;font-weight:600;margin-top:26px;letter-spacing:-.01em}
+@media (max-width:640px){ h1{font-size:31px} .snap .row{grid-template-columns:76px 1fr 24px} }
+</style>
+</head>
+<body class="pg"><div class="wrap">
+
+<header>
+  <h1>Sanskrit is a programmable language.<br>
+  <span class="deva">We ran it on a compiler.</span></h1>
+  <p class="sub">Around 400 BCE, Pāṇini compressed the grammar of Sanskrit into ~4,000
+  ordered, exception-handled rewrite rules — the oldest formal system humanity has.
+  For 2,300 years it could only run on people. We ported a fragment of it to the
+  Lean&nbsp;4 proof assistant, where a sentence of Sanskrit is grammatical <em>if and
+  only if its check compiles</em> — and then used that compiler to teach a language
+  model to write Sanskrit, with no human labels anywhere.</p>
+  <div class="tiles">
+    <div class="tile"><div class="l">Model's sentences that compile</div><div class="v">85%</div>
+      <div class="d">from 2% before training</div><div class="m">150 held-out prompts, judged by Lean</div></div>
+    <div class="tile"><div class="l">Word forms derived from rules</div><div class="v">1,989</div>
+      <div class="m">computed, not listed — like Pāṇini did it</div></div>
+    <div class="tile"><div class="l">Human labels used</div><div class="v">0</div>
+      <div class="m">the grammar generates its own truth</div></div>
+  </div>
+</header>
+
+<section>
+  <h2><span class="n">01</span>The oldest program</h2>
+  <p class="lede">Pāṇini's Aṣṭādhyāyī is not a description of Sanskrit. It is a
+  <em>generator</em> of it: start from a stem and a meaning-slot, apply the rules in
+  order, and the correct word falls out. Rules trigger other rules; metarules say which
+  rule wins when two apply. Modern linguists call it the first generative grammar;
+  programmers will recognize something more familiar — <strong>a rewrite system with a
+  well-defined execution order</strong>. That is code, and code can be ported.</p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Grammar as derivation, not lookup</h3>
+    <p class="footnote" style="margin-top:2px">Watch forms being <em>computed</em>. No
+    table anywhere contains "rāmeṇa" — a rule fires because of the r earlier in the
+    word, and the machine derives the retroflex ṇ the same way a Pāṇinian would:</p>
+    <table class="der">
+      <thead><tr><th>input</th><th>derived form</th><th></th><th>the rule that fired</th></tr></thead>
+      <tbody>
+        <tr><td>rāma + instrumental sg</td><td><strong>rāmeṇa</strong></td>
+            <td class="dv">रामेण</td><td class="why">n → ṇ after r within the word (ṇatva)</td></tr>
+        <tr><td>deva + locative pl</td><td><strong>deveṣu</strong></td>
+            <td class="dv">देवेषु</td><td class="why">s → ṣ after e (ruki class)</td></tr>
+        <tr><td>dṛś + present 3rd pl</td><td><strong>paśyanti</strong></td>
+            <td class="dv">पश्यन्ति</td><td class="why">the root 'see' swaps to a different stem entirely (suppletion)</td></tr>
+        <tr><td>devaḥ + gacchati</td><td><strong>devo gacchati</strong></td>
+            <td class="dv">देवो गच्छति</td><td class="why">words fuse at boundaries (sandhi): -aḥ → -o before a voiced sound</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="kicker">What "formalized in Lean" means</p>
+  <p class="lede">A proof assistant is a program that checks proofs — mathematics with
+  a compiler behind it. We wrote the grammar's rules as executable Lean definitions:
+  the sound inventory, the declension of seven noun classes across 8 cases × 3 numbers,
+  verb conjugation, the sandhi rules for undoing word-boundary fusion, and the
+  agreement laws (subject–verb, adjective–noun). Stacked together they define one
+  decidable proposition, <code>Grammatical s</code> — and "decidable" means the machine
+  can settle it, one way or the other, for any sentence you hand it:</p>
+
+<pre class="lean">
+<span class="cm">-- "Rāma goes to the village" — the kernel accepts the proof ✓</span>
+<span class="kw">example</span> : Grammatical <span class="ok">"rāmo grāmaṃ gacchati"</span> := <span class="kw">by</span> native_decide
+
+<span class="cm">-- plural subject, singular verb — this file does not build ✗</span>
+<span class="kw">example</span> : Grammatical <span class="bad">"bālāḥ grāmaṃ gacchati"</span> := <span class="kw">by</span> native_decide
+
+<span class="cm">-- and the rejection is itself a theorem ✓</span>
+<span class="kw">example</span> : ¬ Grammatical <span class="bad">"bālāḥ grāmaṃ gacchati"</span> := <span class="kw">by</span> native_decide
+</pre>
+
+  <div class="card">
+  <h3 style="margin-top:0">How one judgment runs</h3>
+  <svg class="flow" viewBox="0 0 900 150" role="img"
+       aria-label="Pipeline of a single judgment: sandhi undo, then morphological analysis, then agreement checks, then the verdict.">
+    <defs><marker id="a1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" class="ah"/></marker></defs>
+    <rect class="fbox" x="10" y="40" width="170" height="76" rx="10"/>
+    <text class="ft" x="95" y="70" text-anchor="middle">devo gacchati</text>
+    <text class="fs" x="95" y="90" text-anchor="middle">input sentence</text>
+    <rect class="fbox" x="240" y="40" width="170" height="76" rx="10"/>
+    <text class="ft" x="325" y="66" text-anchor="middle">undo sandhi</text>
+    <text class="fs" x="325" y="86" text-anchor="middle">devo = devaḥ before</text>
+    <text class="fs" x="325" y="100" text-anchor="middle">a voiced sound</text>
+    <rect class="fbox" x="470" y="40" width="170" height="76" rx="10"/>
+    <text class="ft" x="555" y="66" text-anchor="middle">analyze words</text>
+    <text class="fs" x="555" y="86" text-anchor="middle">devaḥ = deva, nom. sg</text>
+    <text class="fs" x="555" y="100" text-anchor="middle">gacchati = gam, 3rd sg</text>
+    <rect class="fbox facc" x="700" y="40" width="190" height="76" rx="10"/>
+    <text class="ft" x="795" y="66" text-anchor="middle">check agreement</text>
+    <text class="fs" x="795" y="86" text-anchor="middle">nom.sg ↔ 3rd sg ✓</text>
+    <text class="fd" x="795" y="104" text-anchor="middle">Grammatical ✓</text>
+    <path class="ar" d="M 180 78 L 238 78" marker-end="url(#a1)"/>
+    <path class="ar" d="M 410 78 L 468 78" marker-end="url(#a1)"/>
+    <path class="ar" d="M 640 78 L 698 78" marker-end="url(#a1)"/>
+  </svg>
+  <p class="footnote">The gold paradigm tables are stated as theorems inside the library
+  and re-proved by the kernel at every build — the grammar tests itself. The same
+  definitions compile to a 20&nbsp;ms command-line judge, which is what makes the next
+  part possible.</p>
+  </div>
+
+  <p class="lede"><strong>Scope, plainly:</strong> this is a fragment — seven vowel-stem
+  noun classes, present tense, ~100 lemmas, boundary sandhi undone rather than applied.
+  But it is a <em>real</em> fragment, derivational all the way down, and it grows by
+  adding rules, not data. (The declension tables were cross-checked against
+  vidyut-prakriya, an independent Pāṇinian engine, on 2,496 cells.)</p>
+</section>
+
+<section>
+  <h2><span class="n">02</span>If it compiles, you can teach with it</h2>
+  <p class="lede">Anything a program can verify, a model can be trained on. That recipe
+  — RLVR, reinforcement learning with verifiable rewards — is what powers the current
+  wave of math and code models: math has answer-checkers, code has tests. <strong>And
+  now a natural language has a compiler.</strong> A compiler is a teacher that never
+  tires, never guesses, and cannot be flattered.</p>
+  <div class="card">
+  <svg class="flow" viewBox="0 0 900 230" role="img"
+       aria-label="The training loop: the model writes candidate answers, Lean judges each one, the better-than-average ones are reinforced.">
+    <defs><marker id="a2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" class="ah"/></marker></defs>
+    <rect class="fbox" x="20" y="70" width="230" height="100" rx="12"/>
+    <text class="ft" x="135" y="102" text-anchor="middle">Qwen3-4B  (the writer)</text>
+    <text class="fs" x="135" y="122" text-anchor="middle">6 candidate answers per prompt</text>
+    <text class="fd" x="135" y="146" text-anchor="middle">वीरो ग्रामं रक्षति · वीरा ग्रामः …</text>
+    <rect class="fbox facc" x="335" y="70" width="230" height="100" rx="12"/>
+    <text class="ft" x="450" y="102" text-anchor="middle">Lean 4  (the referee)</text>
+    <text class="fs" x="450" y="122" text-anchor="middle">Grammatical? Right words in</text>
+    <text class="fs" x="450" y="138" text-anchor="middle">the right cases? 20 ms per verdict</text>
+    <rect class="fbox" x="650" y="70" width="230" height="100" rx="12"/>
+    <text class="ft" x="765" y="102" text-anchor="middle">GRPO  (the coach)</text>
+    <text class="fs" x="765" y="122" text-anchor="middle">reinforce answers that beat</text>
+    <text class="fs" x="765" y="138" text-anchor="middle">their group's average</text>
+    <path class="ar" d="M 250 120 L 333 120" marker-end="url(#a2)"/>
+    <text class="al" x="291" y="110" text-anchor="middle">answers</text>
+    <path class="ar" d="M 565 120 L 648 120" marker-end="url(#a2)"/>
+    <text class="al" x="606" y="110" text-anchor="middle">rewards</text>
+    <path class="ar" d="M 765 68 C 730 18, 180 18, 137 66" marker-end="url(#a2)"/>
+    <text class="al" x="450" y="30" text-anchor="middle">weight update (LoRA)</text>
+  </svg>
+  <p class="footnote">The tasks come from the formalization itself — its lexicon exports
+  1,989 inflected forms that seed grammar questions ("what is the instrumental singular
+  of rāma?"), translation ("The beautiful girl obtains the garland"), and free
+  composition. The reward is structural, not string-matching: the Lean checker verifies
+  <em>who does what to whom</em>, so a grammatical sentence with the roles reversed
+  scores low. Supervised examples, where used, are also generated by the grammar —
+  zero human labels end to end. Everything ran on an 18&nbsp;GB MacBook.</p>
+  </div>
+</section>
+
+<section>
+  <h2><span class="n">03</span>What happened</h2>
+  <p class="lede">150 held-out prompts the model never trained on; the metric is the
+  share of its Sanskrit accepted by the Lean checker:</p>
+  <div class="card">
+  <svg viewBox="0 0 860 200" role="img" aria-label="Compile rates: base 2 percent, RL alone 3 percent, trained on the grammar's own answers 85 percent, plus RL 82 percent.">
+    <line class="axis" x1="250" y1="4" x2="250" y2="184"/>
+    <text class="rowl" x="238" y="30" text-anchor="end">Qwen3-4B, untrained</text>
+    <rect class="bar-g" x="250" y="16" width="12" height="20" rx="4"/>
+    <text class="vl" x="270" y="31">2%</text>
+    <text class="rowl" x="238" y="74" text-anchor="end">RL alone (no examples)</text>
+    <rect class="bar-g" x="250" y="60" width="17" height="20" rx="4"/>
+    <text class="vl" x="275" y="75">3%</text>
+    <text class="rowl" x="238" y="118" text-anchor="end">taught by the grammar (SFT)</text>
+    <rect class="bar-a" x="250" y="104" width="512" height="20" rx="4"/>
+    <text class="vl" x="768" y="119">85%</text>
+    <text class="rowl" x="238" y="162" text-anchor="end">+ RL on top</text>
+    <rect class="bar-a" x="250" y="148" width="494" height="20" rx="4"/>
+    <text class="vl" x="750" y="163">82%</text>
+  </svg>
+  <table class="res">
+    <thead><tr><th>condition (all judged by Lean)</th><th>compiles</th><th>QA exact</th><th>mean reward</th><th>chrF++</th></tr></thead>
+    <tbody>
+      <tr><td>Qwen3-4B, untrained</td><td>1.9%</td><td>9.5%</td><td>0.25</td><td>13.0</td></tr>
+      <tr><td>RL (GRPO) alone, no examples</td><td>2.8%</td><td>9.5%</td><td>0.26</td><td>14.1</td></tr>
+      <tr class="hl"><td>SFT on grammar-generated answers</td><td>85.2%</td><td>69.0%</td><td>0.90</td><td>78.9</td></tr>
+      <tr><td>&nbsp;&nbsp;→ re-quantized to 4-bit for the RL stage</td><td>81.5%</td><td>64.3%</td><td>0.88</td><td>77.3</td></tr>
+      <tr><td>&nbsp;&nbsp;→ + GRPO, 1,200 iterations</td><td>82.4%</td><td>64.3%</td><td>0.88</td><td>77.6</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="qa">
+    <p class="q">The curiosity we tested along the way: which teaches better, supervised
+    examples or reinforcement learning?</p>
+    <p>Both signals come from the same place — the compiler. The difference is how you
+    use it. <strong>Distillation does the lifting:</strong> supervised training on
+    answers the grammar generates for itself took the model from 2% to 85% in two
+    epochs. <strong>RL alone cannot bootstrap:</strong> with almost no correct samples
+    to reinforce, 600 iterations from the untrained model moved nothing (2% → 3%) —
+    and pushed further, the run eventually destabilized. <strong>RL after distillation
+    polishes at the margin:</strong> from its true starting point (the re-quantized SFT
+    model) GRPO recovered about a point of compile rate (81.5% → 82.4%), less than the
+    quantization step between stages had cost. If you can enumerate the truth, teach by
+    example; RL's room begins where enumeration ends.</p>
+  </div>
+
+  <div class="card">
+  <p class="footnote" style="margin-top:0">The RL phase itself, for the record: 1,200
+  iterations, group-mean verifier reward (smoothed), numerically clean throughout —
+  climbing on its training distribution even where held-out gains were modest:</p>
+  <svg viewBox="0 0 860 240" role="img" aria-label="RL training reward over 1200 iterations, around 0.85 to 0.91.">
+    <line class="grid" x1="46" y1="12" x2="846" y2="12"/>
+    <text class="tick" x="38" y="16" text-anchor="end">1.0</text>
+    <line class="grid" x1="46" y1="109" x2="846" y2="109"/>
+    <text class="tick" x="38" y="113" text-anchor="end">0.5</text>
+    <line class="axis" x1="46" y1="206" x2="846" y2="206"/>
+    <text class="tick" x="38" y="210" text-anchor="end">0.0</text>
+    <polyline class="line-a" points="46,56.8 55,46.8 63,48.2 72,40.7 81,37.7 89,33.9 98,33.0 107,30.9 115,34.1 124,37.8 133,39.1 141,41.9 150,41.8 159,41.4 167,42.0 176,41.3 185,40.6 193,41.3 202,40.5 211,40.0 219,37.6 228,38.3 237,40.2 245,42.6 254,40.4 263,45.1 272,37.0 280,36.8 289,39.8 298,45.5 306,46.9 315,46.5 324,47.9 332,45.4 341,36.0 350,38.0 358,35.6 367,36.3 376,40.8 384,42.2 393,39.4 402,40.1 410,44.0 419,38.7 428,38.8 436,38.8 445,38.8 454,39.0 462,37.6 471,39.8 480,38.5 488,34.0 497,33.5 506,32.1 514,33.2 523,38.9 532,40.4 540,41.7 549,41.4 558,38.3 566,37.5 575,40.2 584,40.0 592,43.5 601,44.8 610,41.5 618,43.5 627,42.0 636,45.2 644,51.5 653,53.1 662,52.9 671,46.8 679,40.6 688,33.6 697,32.4 705,31.9 714,34.0 723,38.8 731,39.7 740,42.4 749,41.0 757,40.2 766,39.6 775,39.6 783,40.2 792,41.2 801,41.1 809,44.3 818,41.3 827,34.9 835,33.2 844,30.3"/>
+    <circle class="dot" cx="844" cy="30.3" r="4.5"/>
+    <text class="dlab" x="838" y="20" text-anchor="end">0.91</text>
+    <text class="atitle" x="446" y="232" text-anchor="middle">GRPO iteration (0 → 1,200)</text>
+  </svg>
+  </div>
+</section>
+
+<section id="snapshots">
+  <h2><span class="n">04</span>Watch it learn</h2>
+  <p class="lede">The same probes, before and after, every answer judged by Lean.
+  Across six sentence probes: <strong>0/6 compiled before training → 5/6 after</strong>
+  — with the failures left in, because they're the interesting part:</p>
+
+  <div class="snap">
+    <div class="p">"The beautiful girl obtains the garland."</div>
+    <div class="row"><span class="who">before</span><span>śṛṅgāleṣu gṛhṇāti vāsūnām rūpam garbhaṃ prāptā devīḥ</span><span class="bad">✗</span></div>
+    <div class="row"><span class="who">after</span><span>sundarī kanyā mālām labhate &nbsp;<em class="footnote">feminine adjective agreement + middle-voice verb, both right</em></span><span class="ok">✓</span></div>
+  </div>
+  <div class="snap">
+    <div class="p">"The young sage dwells in the forest."</div>
+    <div class="row"><span class="who">before</span><span>śūdraṁ gurūnām āśramaṁ vṛṣṭiḥ sādhuḥ sādhuḥ sādhuḥ…</span><span class="bad">✗</span></div>
+    <div class="row"><span class="who">after</span><span>taruṇaḥ muniḥ vane jīvati &nbsp;<em class="footnote">adjective + locative, composed correctly</em></span><span class="ok">✓</span></div>
+  </div>
+  <div class="snap">
+    <div class="p">"The heroes protect the village."</div>
+    <div class="row"><span class="who">before</span><span>वीराः स्थानं विलासात् सर्वं रक्षयन्ति</span><span class="bad">✗</span></div>
+    <div class="row"><span class="who">after</span><span>vīrāḥ grāmaṃ rakṣanti</span><span class="ok">✓</span></div>
+  </div>
+  <div class="snap">
+    <div class="p">An honest failure — compose with labh, kanyā, mālā, śveta ('white')</div>
+    <div class="row"><span class="who">after</span><span>śvetaḥ śvetaḥ kanyā mālām labhate &nbsp;<em class="footnote">stuttered adjective in the masculine; kanyā is feminine — the checker rejects it</em></span><span class="bad">✗</span></div>
+  </div>
+  <div class="snap">
+    <div class="p">And the near-miss we can't stop thinking about — "genitive plural of guru?"</div>
+    <div class="row"><span class="who">after</span><span>gurūnām &nbsp;<em class="footnote">the true form is gurūṇām — the retroflexion rule the verifier derives. The model is one dot short of a proof.</em></span><span class="bad">✗</span></div>
+  </div>
+  <p class="footnote">Every checkpoint's answers to every probe:
+  <code>results/snapshots.jsonl</code>.</p>
+</section>
+
+<section>
+  <h2><span class="n">05</span>What this shows — and doesn't</h2>
+  <ul class="scope lede" style="font-size:15px">
+    <li><strong>Shown (i):</strong> a natural language's grammar — a genuine fragment of
+    Pāṇinian Sanskrit — can live in a general-purpose proof assistant, with
+    grammaticality as a machine-checkable proposition and the paradigm tables as
+    theorems. Type-theoretic linguistics has a real lineage (Grammatical Framework;
+    natural-language <em>semantics</em> in Coq and Agda); to our knowledge this is the
+    first machine-checked Pāṇinian grammar fragment in a prover.</li>
+    <li><strong>Shown (ii):</strong> the standard RLVR pipeline runs end-to-end against
+    it — to our knowledge the first RL training whose verifiable reward is a
+    prover-checked judgment of natural-language grammaticality rather than math or
+    code.</li>
+    <li><strong>Not shown:</strong> all of Sanskrit (one tense, no consonant stems, no
+    compounds); semantic understanding (the checker verifies structure, not meaning);
+    any claim that RL beats supervised learning here — it didn't, and we report that
+    straight.</li>
+  </ul>
+  <p class="kicker">Pāṇini's grammar was always a program.<br>
+  <span style="color:var(--ink2)">It just waited 2,300 years for a runtime.</span></p>
+</section>
+
+<section>
+  <h2><span class="n">06</span>Reproduce</h2>
+  <p class="footnote">One Lean library (<code>lean/</code> — <code>lake build</code>
+  replays every theorem), one Python file (<code>rlvr.py</code> — tasks, reward, eval,
+  snapshots), one reward shim (<code>rewards.py</code>). Data and gold answers are
+  generated by the formalization itself. Evals in <code>results/</code>. Model:
+  Qwen3-4B-Instruct-2507 (4-bit, MLX) with LoRA; trainer:
+  <a href="https://github.com/Goekdeniz-Guelmez/mlx-lm-lora">mlx-lm-lora</a>; metrics:
+  Lean compile rate, exact match, chrF++ (<a href="https://github.com/mjpost/sacrebleu">sacrebleu</a>).
+  Hardware: one 18&nbsp;GB M3&nbsp;Pro MacBook.</p>
+</section>
+
+</div></body>
+</html>

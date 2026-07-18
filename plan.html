@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PLAN — report sketch: Sanskrit is a programmable language</title>
+<style>
+:root { color-scheme: light; }
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+     background:#f9f9f7;color:#0b0b0b;line-height:1.55;padding-bottom:90px}
+.wrap{max-width:880px;margin:0 auto;padding:0 20px}
+.banner{background:#fff7e0;border-bottom:1px solid #e8d9a0;padding:10px 20px;
+        font-size:13.5px;color:#6b5900}
+.banner b{color:#0b0b0b}
+header{padding:48px 0 6px}
+h1{font-size:32px;line-height:1.2;margin:0 0 10px;letter-spacing:-.02em}
+h1 .deva{color:#2a78d6}
+.sub{font-size:17px;color:#52514e;max-width:720px;margin:0}
+section{margin-top:44px}
+h2{font-size:21px;margin:0 0 4px}
+h2 .n{color:#898781;font-weight:600;margin-right:8px}
+.purpose{font-size:13px;color:#8a6d00;background:#fff7e0;border:1px solid #e8d9a0;
+         border-radius:8px;padding:8px 12px;margin:8px 0 14px}
+.purpose b{text-transform:uppercase;letter-spacing:.04em;font-size:11px}
+.card{background:#fcfcfb;border:1px solid rgba(11,11,11,.1);border-radius:12px;
+      padding:18px 20px;margin-top:12px}
+.fig{border:2px dashed #c3c2b7;border-radius:12px;padding:22px;margin-top:12px;
+     color:#52514e;background:repeating-linear-gradient(45deg,#fcfcfb,#fcfcfb 14px,#f5f5f2 14px,#f5f5f2 15px)}
+.fig .t{font-weight:600;color:#0b0b0b;margin-bottom:4px}
+.fig .d{font-size:13.5px}
+.data{display:inline-block;background:#e7f0fc;color:#1c5cab;border-radius:6px;
+      padding:1px 8px;font-size:12px;font-weight:600;margin:2px 2px 2px 0}
+pre.lean{background:#fcfcfb;border:1px solid rgba(11,11,11,.1);border-radius:12px;
+     padding:14px 18px;font-size:13px;line-height:1.6;overflow-x:auto;
+     font-family:ui-monospace,Menlo,monospace}
+pre.lean .ok{color:#006300;font-weight:600}
+pre.lean .bad{color:#a11d1d;font-weight:600}
+pre.lean .kw{color:#2a78d6;font-weight:600}
+pre.lean .cm{color:#898781}
+.copy{color:#52514e;font-size:14.5px}
+.copy em.hook{color:#0b0b0b;font-style:normal;font-weight:600}
+ul{margin:8px 0}
+li{margin-bottom:5px;font-size:14.5px;color:#52514e}
+li b{color:#0b0b0b}
+.small{font-size:12.5px;color:#898781}
+</style>
+</head>
+<body>
+<div class="banner"><b>THIS IS A SKETCH, NOT THE REPORT.</b> Each section below shows:
+the section's job in the narrative, draft copy where it matters, and dashed boxes for
+planned figures with the data that will fill them. The finished piece replaces
+<span class="data">DATA</span> chips with real numbers from <code>results/</code>.</div>
+<div class="wrap">
+
+<header>
+  <h1>Sanskrit is a programmable language.<br>
+      <span class="deva">We ran it on a compiler.</span></h1>
+  <p class="sub">Working title. The sentiment every reader should leave with:
+  <strong>Pāṇini wrote Sanskrit down as a formal system 2,300 years before formal
+  systems had a name — and it is so rigorous that today it literally compiles.</strong>
+  The LLM/RL material is the demonstration, not the point.</p>
+</header>
+
+<section>
+  <h2><span class="n">00</span>Hero</h2>
+  <div class="purpose"><b>Job</b> — land the whole thesis in 10 seconds, before any scrolling.</div>
+  <div class="card">
+    <p class="copy">Big Devanagari headline (रामो ग्रामं गच्छति), then immediately the
+    one artifact that carries the entire piece:</p>
+<pre class="lean">
+<span class="cm">-- "Rāma goes to the village" — the proof assistant accepts this ✓</span>
+<span class="kw">example</span> : Grammatical <span class="ok">"rāmo grāmaṃ gacchati"</span> := <span class="kw">by</span> native_decide
+
+<span class="cm">-- plural subject, singular verb — this does not build ✗</span>
+<span class="kw">example</span> : Grammatical <span class="bad">"bālāḥ grāmaṃ gacchati"</span> := <span class="kw">by</span> native_decide
+</pre>
+    <p class="copy">Three stat tiles max (fewer than the current draft — the hero should
+    breathe): <span class="data">compile-rate before → after RL pipeline</span>
+    <span class="data">1,989 word forms derived from rules</span>
+    <span class="data">0 human labels</span></p>
+  </div>
+</section>
+
+<section>
+  <h2><span class="n">01</span>Part I — The oldest program</h2>
+  <div class="purpose"><b>Job</b> — make "Sanskrit is programmable" feel earned, not a
+  metaphor. This is the emotional core; give it the most room.</div>
+  <div class="card">
+    <p class="copy">Draft opening: <em class="hook">"Around 400 BCE, Pāṇini compressed
+    the entire grammar of Sanskrit into ~4,000 rewrite rules — ordered, exception-handled,
+    with metarules about how rules apply. It is the oldest formal system we have. For
+    2,300 years it could only run on people. This project ports a fragment of it to a
+    machine."</em></p>
+    <ul>
+      <li>One tight paragraph on <b>what makes Pāṇini's grammar code</b>: derivation, not
+      description — forms are <i>computed</i> from stems + rules (show rāma + ins.sg →
+      rām<b>eṇa</b>, the ṇ appearing because a rule fires, not because a table says so).</li>
+      <li><b>What "formalized in Lean" means for a lay reader</b>: a proof assistant is a
+      program that checks proofs; we wrote the grammar as executable definitions, so
+      "this sentence is grammatical" becomes a statement the machine can prove or refute.
+      Gold paradigms are theorems, re-proved at every build.</li>
+      <li>The fragment, honestly: 7 noun classes × 8 cases × 3 numbers, present tense,
+      ~100 words, sandhi undone at boundaries. <b>A fragment — but a real one, and the
+      method scales by adding rules, not data.</b></li>
+    </ul>
+  </div>
+  <div class="fig">
+    <div class="t">FIG 1 — "The pipeline of a single judgment"</div>
+    <div class="d">Horizontal flow for one sentence: <code>devo gacchati</code> → sandhi
+    undo (devo = devaḥ before a voiced sound) → morphological analysis (devaḥ = deva,
+    nom.sg; gacchati = gam, 3rd sg) → agreement checks → ✓ Grammatical. Each hop labeled
+    with the Lean module that does it. Data: none needed, hand-drawn SVG.</div>
+  </div>
+  <div class="fig">
+    <div class="t">FIG 2 — "Grammar as derivation" mini-table</div>
+    <div class="d">3–4 rows showing forms being computed: rāma→rāmeṇa (retroflexion),
+    deva→deveṣu (locative plural), dṛś→paśyati (suppletion). IAST + Devanagari columns.
+    Data: <span class="data">lake exe export</span></div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="n">02</span>Part II — If it compiles, you can teach with it</h2>
+  <div class="purpose"><b>Job</b> — the RLVR PoC. Explain that a compiler is a teacher
+  that never tires and can't be fooled, then show the loop.</div>
+  <div class="card">
+    <p class="copy">Draft bridge: <em class="hook">"Anything a program can verify, a
+    model can be trained on — that's RLVR, the recipe behind the current wave of math
+    and code models. Math has checkers; code has tests; and now Sanskrit has a
+    compiler."</em></p>
+    <ul>
+      <li>The loop diagram (model → N answers → Lean judges each → reinforce the
+      above-average). Keep the existing three-box design.</li>
+      <li>Tasks in one row of cards: grammar QA / translation / composition — every one
+      machine-checkable, generated from the formalization's own lexicon.</li>
+      <li>One paragraph on the reward being <b>structural</b>: the checker knows who does
+      what to whom, so "grammatical but role-reversed" scores low.</li>
+    </ul>
+  </div>
+  <div class="fig">
+    <div class="t">FIG 3 — the RLVR loop (reuse current diagram, tightened)</div>
+    <div class="d">Writer (Qwen3-4B) → referee (Lean, highlighted box) → coach (GRPO) →
+    LoRA update. No model-choice discussion here — one sentence: "a 4B open model,
+    trained entirely on an 18 GB MacBook."</div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="n">03</span>Part III — What happened</h2>
+  <div class="purpose"><b>Job</b> — the arc in one chart, then the texture. Numbers
+  pending tonight's runs fill in here.</div>
+  <div class="fig">
+    <div class="t">FIG 4 — THE chart: "share of the model's Sanskrit that compiles"</div>
+    <div class="d">Four horizontal bars, one metric: base model
+    <span class="data">1.9%</span> → RL alone <span class="data">grpo_only, pending</span>
+    → supervised on the grammar's own answers <span class="data">85.2%</span> → +RL
+    <span class="data">82.4% greedy / sampled-eval pending</span>. Full metric table
+    (QA accuracy, chrF++) collapses below it as a detail element.</div>
+  </div>
+  <div class="fig">
+    <div class="t">FIG 5 — Watch it learn (snapshots)</div>
+    <div class="d">Before/after answer pairs on fixed probes with the Lean verdict —
+    lead with the suppletion catch (dṛśanti ✗ → paśyanti ✓). 4–5 rows.
+    Data: <span class="data">results/snapshots*.jsonl, re-run pending</span></div>
+  </div>
+  <div class="card">
+    <p class="copy"><strong>Findings box: "So which teaches better — SFT or RL?"</strong>
+    (framed as the curiosity it was, ~120 words, not a headline claim):
+    <em class="hook">"Both training signals come from the same place — the compiler. The
+    difference is how you use it: distillation (SFT on answers the verifier generates)
+    does the heavy lifting; RL alone can't bootstrap a model that's never right; and RL
+    after distillation improves the sampled distribution rather than the greedy
+    argmax."</em> One small table: the four conditions ×
+    <span class="data">greedy + sampled eval, pending</span>. Whatever tonight's numbers
+    say, this box reports it straight.</p>
+  </div>
+</section>
+
+<section>
+  <h2><span class="n">04</span>What this shows — and doesn't</h2>
+  <div class="purpose"><b>Job</b> — credibility. Two claims, their limits, prior art.</div>
+  <div class="card">
+    <ul>
+      <li><b>Claim (i):</b> a natural language's grammar — Pāṇini's Sanskrit, fragment —
+      formalized in a general-purpose prover such that grammaticality is a kernel-checkable
+      proposition. Prior art paragraph: GF / Coq-NLI did type-theoretic <i>semantics</i>;
+      "to our knowledge, first machine-checked Pāṇinian fragment."</li>
+      <li><b>Claim (ii):</b> the standard RLVR pipeline runs end-to-end against it —
+      first prover-checked <i>natural-language grammaticality</i> reward (Lean rewards
+      for math are common; the domain is the novelty).</li>
+      <li><b>Not claimed:</b> all of Sanskrit; semantic understanding; that RL beats
+      SFT here. The fragment's edges stated plainly.</li>
+      <li>Close on the sentiment, one line: <em class="hook">"Pāṇini's grammar was
+      always a program. It just waited 2,300 years for a runtime."</em> ← candidate
+      closing line / X-post kicker.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2><span class="n">05</span>Footer — reproduce</h2>
+  <div class="purpose"><b>Job</b> — everything inspectable in five lines: repo layout
+  (one Lean library, one Python file), <code>lake build</code> replays every theorem,
+  eval commands, stack credits. No hardware saga in the main text.</div>
+</section>
+
+<section>
+  <h2 class="small">Report-wide notes</h2>
+  <ul class="small">
+    <li>Order of emphasis: Part I gets ~40% of the length; the model stuff is the demo.</li>
+    <li>Every Sanskrit example shown in IAST <i>and</i> Devanagari; every claim of
+    grammaticality backed by a green/red Lean verdict glyph.</li>
+    <li>Light + dark from the same tokens as the current draft; Qwen3-4B is the
+    only model mentioned.</li>
+    <li>X-post: main post = hero (headline + Lean snippet + one number + link);
+    thread = Parts I→III compressed to one tweet each.</li>
+  </ul>
+</section>
+
+</div>
+</body>
+</html>
