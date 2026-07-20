@@ -9,7 +9,7 @@ model:
   base: mlx-community/Qwen3-4B-Instruct-2507-4bit
   init_from_run: sft-baseline
 data:
-  dir: data/grpo
+  dir: data/in_fragment/grpo
 hyperparameters:
   learning_rate: 8.0e-6
   iters: 1200
@@ -21,7 +21,7 @@ hyperparameters:
   temperature: 0.8
   max_completion_length: 200
 eval:
-  prompts: data/eval/in_fragment.jsonl
+  prompts: data/in_fragment/eval.jsonl
   samples_per_checkpoint: 60
   temperature: 0.0
   checkpoints: 4

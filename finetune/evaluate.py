@@ -1,9 +1,9 @@
 """Benchmark any model (a run's checkpoint, or a raw base model) against any
 eval file, judged per-row by its `judge` field:
 
-    python -m finetune.evaluate --run sft-baseline --benchmark data/eval/held_out_vocab.jsonl
+    python -m finetune.evaluate --run sft-baseline --benchmark data/in_fragment/eval.jsonl
     python -m finetune.evaluate --model mlx-community/Qwen3-4B-Instruct-2507-4bit \
-        --benchmark data/eval/beyond_fragment.jsonl --tag base
+        --benchmark data/out_of_fragment/eval.jsonl --tag base
 
 Writes results/<tag>__<benchmark-stem>.json with a summary + every record.
 """
@@ -47,13 +47,15 @@ def main():
     if args.limit:
         rows = rows[: args.limit]
     summary, records = eval_checkpoint(base, ckpt, rows)
-    out = ROOT / "results" / f"{tag}__{args.benchmark.stem}.json"
+    # both benchmarks are named eval.jsonl — key results by their group dir
+    bench_id = "_".join(args.benchmark.parts[-2:]).removesuffix(".jsonl")
+    out = ROOT / "results" / f"{tag}__{bench_id}.json"
     out.parent.mkdir(exist_ok=True)
     out.write_text(json.dumps(
         {"model": base, "checkpoint": str(ckpt) if ckpt else None,
          "benchmark": str(args.benchmark), "summary": summary,
          "records": records}, ensure_ascii=False, indent=1))
-    print(json.dumps({"tag": tag, "benchmark": args.benchmark.stem, **summary},
+    print(json.dumps({"tag": tag, "benchmark": bench_id, **summary},
                      indent=2))
 
 

@@ -5,10 +5,9 @@ import shutil
 import tempfile
 from pathlib import Path
 
-from .lean import check
+from .lean import ROOT, check
 from .reward import extract, normalize, reward
 
-ROOT = Path(__file__).resolve().parent.parent
 RUNS = ROOT / "runs"
 
 
@@ -64,20 +63,25 @@ def judge_rows(model, tok, rows: list[dict], temp: float = 0.0) -> list[dict]:
 
 
 def summarize(records: list[dict]) -> dict:
-    from sacrebleu.metrics import CHRF
+    from sacrebleu.metrics import CHRF, TER
     mean = lambda xs: round(sum(xs) / len(xs), 4) if xs else None
     lean_rows = [r for r in records if r["judge"].startswith("lean")]
     sent = [r for r in lean_rows if r["type"] != "qa"]
     qa = [r for r in lean_rows if r["type"] == "qa"]
+    hyps = [r["answer"] for r in records]
+    refs = [[r["reference"] for r in records]]
+    # chrF++ (character n-grams, mildly order-sensitive) and TER (edit rate,
+    # lower is better; a block move costs one shift) — read as a pair: high
+    # chrF++ with high TER means right words in a different order, which
+    # free-word-order Sanskrit permits.
     chrf = CHRF(word_order=2)  # chrF++, standard settings (nc:6 nw:2 beta:2)
     return {
         "n": len(records),
         "compile_rate": mean([1.0 * r["grammatical"] for r in sent]),
         "qa_exact": mean([1.0 * (r["task"] == 1.0) for r in qa]),
         "mean_reward": mean([r["reward"] for r in lean_rows]),
-        "chrf_pp": round(chrf.corpus_score(
-            [r["answer"] for r in records],
-            [[r["reference"] for r in records]]).score, 2),
+        "chrf_pp": round(chrf.corpus_score(hyps, refs).score, 2),
+        "ter": round(TER().corpus_score(hyps, refs).score, 2),
     }
 
 

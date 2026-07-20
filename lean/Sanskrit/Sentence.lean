@@ -91,11 +91,11 @@ def pronounAnalyses (w : String) : List Analysis :=
          number := some n, person := some p }]
     else []
 
-/-- Every reading of one pausa word (both vocabulary tiers). -/
+/-- Every reading of one pausa word. -/
 def wordAnalyses (w : String) : List Analysis :=
-  allNouns.flatMap (nounAnalyses · w)
-  ++ allAdjectives.flatMap (adjAnalyses · w)
-  ++ allVerbs.flatMap (verbAnalyses · w)
+  nouns.flatMap (nounAnalyses · w)
+  ++ adjectives.flatMap (adjAnalyses · w)
+  ++ verbs.flatMap (verbAnalyses · w)
   ++ pronounAnalyses w
   ++ indeclinables.flatMap fun (f, _) =>
        if f == w then [{ lemma? := f, pos := "ind" }] else []

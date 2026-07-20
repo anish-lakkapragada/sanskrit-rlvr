@@ -21,13 +21,154 @@ the full story, no Sanskrit or Lean background assumed.
 
 | Path | What it is |
 |---|---|
-| `lean/` | The formalization. `Sanskrit/` modules: phonology, transliteration, declension (7 vowel-stem classes, retroflexion derived by rule), conjugation, sandhi undoing, sentence-level agreement; `Grammatical : String → Prop` is decidable. `Tests.lean` re-proves gold paradigms + positive/negative sentences at every `lake build`. Executables: `check` (`--json` diagnostics; exit 0 iff grammatical) and `export` (every inflected form as TSV, tagged `core` or `heldout`). |
-| `data/` | All training/eval sets, with a README mapping each file to the experiment that uses it. Training draws only from core vocabulary; two generalization benchmarks (held-out lemmas; beyond-fragment classical lines) never appear in training. Regenerate with `python -m finetune.tasks`. |
-| `finetune/` | The framework (below) plus per-module code: `lean.py` (checker bridge), `reward.py` (score in [0,1]), `tasks.py` (data generation), `common.py` (generation + checkpoint eval), `rewards_shim.py` (GRPO hook), `dashboard.py` (live view). |
-| `finetune/configs/` | One YAML per experiment. `example.yaml` documents every field. |
-| `runs/` | One directory per experiment run (gitignored): frozen config, train.log, checkpoints, metrics.jsonl, generation snapshots. |
-| `results/` | Committed benchmark outputs the report's figures are built from. |
-| `report.html` | The technical report. |
+| [`lean/`](lean/) | **The verifier.** The Sanskrit fragment as a Lean 4 library — `Grammatical : String → Prop`, decidable, re-proved at every `lake build`. Its two executables, `check` (exit 0 iff grammatical, `--json` diagnostics) and `export` (every inflected form as TSV), are the *only* interface the rest of the repo uses. Full spec of what's covered: [lean/README.md](lean/README.md). |
+| [`finetune/`](finetune/) | **The experiment framework** — ~800 lines of Python: data generation, SFT/GRPO orchestration, the Lean-backed reward, checkpoint evaluation, benchmarking, live dashboard. File-by-file tour below. |
+| [`finetune/configs/`](finetune/configs/) | One YAML per experiment — a config is the *entire* experiment definition. [`example.yaml`](finetune/configs/example.yaml) documents every field. |
+| [`data/`](data/) | Two groups: `in_fragment/` (trains SFT + GRPO, and evaluates) and `out_of_fragment/` (evaluates only — the generalization axis); per-file table in [data/README.md](data/README.md). |
+| `runs/` | One directory per training run (gitignored): frozen config, train.log, adapter checkpoints, metrics, generation snapshots. Anatomy below. |
+| `results/` | Benchmark outputs (created by `finetune.evaluate`). Empty since the in/out-fragment restructure — populated by the next training + benchmarking pass. |
+| [`report.html`](report.html) | The technical report (its numbers predate the restructure and the clearing of runs/results). |
+
+## How an experiment flows
+
+Two pipelines, both rooted in the Lean verifier. The Python layer never
+makes a linguistic decision of its own — every judgment is delegated to the
+compiled `check` binary, every word form comes from `export`.
+
+**Data generation** — run once, or whenever the Lean lexicon changes:
+
+```
+lean export ─────▶ python -m finetune.tasks ─────▶ data/in_fragment/{sft,grpo,eval}
+(all 2,882         one seeded, deduplicated        (disjoint slices: no eval prompt
+ inflected forms)  stream of tasks                  ever appears in training)
+
+data/out_of_fragment/eval.jsonl — hand-curated classical Sanskrit, never generated
+```
+
+**Training + evaluation** — one YAML config = one experiment:
+
+```
+finetune/configs/<exp>.yaml
+    │    bash finetune/run.sh finetune/configs/<exp>.yaml
+    ▼
+finetune/train.py — the orchestrator
+    │  1. resolve the base model: a plain HF model, or (model.init_from_run)
+    │     fuse a previous run's adapter into its base and re-quantize to
+    │     4-bit — the SFT→GRPO handoff
+    │  2. judge the starting point            → metrics.jsonl (checkpoint 0)
+    │  3. hand off to mlx_lm_lora.train       → train.log, checkpoints/
+    │        SFT:  imitate <ans>gold</ans> completions from data/in_fragment/sft
+    │        GRPO: sample group_size completions per prompt, score each via
+    │              rewards_shim.py → reward.py → lean.py → the check binary
+    │  4. judge every checkpoint: generate on the eval prompts, run the
+    │     Lean checker, compute chrF++ + TER  → metrics.jsonl, snapshots/
+    ▼
+runs/<run_name>/ — a self-describing artifact
+    │    python -m finetune.evaluate --run <name> \
+    │        --benchmark data/{in_fragment,out_of_fragment}/eval.jsonl
+    ▼
+results/<tag>__<group>_eval.json ─────▶ report.html figures
+```
+
+## The fine-tuning code, file by file
+
+| File | Role |
+|---|---|
+| [`run.sh`](finetune/run.sh) | Entry point. `cd`s to the repo root, forces offline mode (`HF_HUB_OFFLINE=1` — models must already be in the HF cache), and `exec`s `python -m finetune.train`. |
+| [`train.py`](finetune/train.py) | The orchestrator (the flow above). Validates the config, refuses to clobber an existing run, derives the iteration count (`epochs` × dataset rows ÷ `batch_size` when `iters: null`), spaces checkpoints at `iters ÷ eval.checkpoints`, assembles the `mlx_lm_lora.train` command line (SFT vs GRPO flags), and evaluates checkpoint 0, every intermediate adapter, and the final one. |
+| [`tasks.py`](finetune/tasks.py) | Data generator. Pulls the lexicon through `lean.py`, emits the three task families from one seeded, deduplicated stream, and slices that stream into disjoint train/valid/eval splits. Also owns the English half of the templates (pluralization, glosses). |
+| [`lean.py`](finetune/lean.py) | The only bridge to the verifier. `check(sentence, constraints)` shells out to `lean/.lake/build/bin/check --json` (memoized, 200k entries — GRPO re-scores duplicates constantly); `lexicon()` parses `export`'s TSV into `{noun, adj, verb, ind}`. |
+| [`reward.py`](finetune/reward.py) | Completion → score in [0, 1] (next section). Also defines the shared system prompt and the `<ans>…</ans>` extraction + Unicode normalization used everywhere. |
+| [`rewards_shim.py`](finetune/rewards_shim.py) | The 18 lines mlx-lm-lora actually loads: registers `lean_sanskrit_reward`, which replays each dataset row's `answer` spec against the sampled completion. |
+| [`common.py`](finetune/common.py) | Shared evaluation machinery: model + adapter loading, generation, per-row judging (respecting each row's `judge` field), and the summary metrics — `compile_rate`, `qa_exact`, `mean_reward`, `chrf_pp`, `ter`. Used identically by `train.py` checkpoints and `evaluate.py` benchmarks, so numbers are comparable across both. |
+| [`evaluate.py`](finetune/evaluate.py) | Standalone benchmark CLI: any run checkpoint (`--run`, optionally `--checkpoint N`) or any raw model (`--model`) × any eval file → `results/<tag>__<benchmark>.json` with the summary plus every individual generation and judgment. |
+| [`dashboard.py`](finetune/dashboard.py) | Zero-dependency stdlib HTTP server that watches **all** of `runs/`: live loss/reward curve parsed from `train.log` as it grows, checkpoint metrics, and the latest sample generations with their Lean verdicts. Polls every 5 s. |
+| [`configs/`](finetune/configs/) | The experiments: [`sft-baseline.yaml`](finetune/configs/sft-baseline.yaml), [`sft-then-grpo.yaml`](finetune/configs/sft-then-grpo.yaml), [`smoke.yaml`](finetune/configs/smoke.yaml) (fast end-to-end check), and the fully documented [`example.yaml`](finetune/configs/example.yaml). |
+
+### The reward, precisely
+
+GRPO optimizes [`reward.py`](finetune/reward.py):
+
+```
+reward = 0.15 · format + 0.85 · task          ∈ [0, 1]
+```
+
+- **format** — the answer arrived inside `<ans></ans>` tags (fallback:
+  last non-empty line, format = 0).
+- **task, `qa`** — exact match against the Lean-exported gold forms after
+  normalization. A near-miss earns at most `0.25 × similarity`, and only
+  above 50% similarity — partial credit exists but can't be farmed.
+- **task, `translate` / `compose`** — three *multiplied* factors:
+
+  ```
+  task = grammar × (0.15 + 0.85 · content) × length-damping
+  ```
+
+  *grammar* = the five component verdicts from `check --json`, weighted
+  (words 0.40, subject 0.20, clauses 0.15, object 0.15, adjective 0.10);
+  *content* = the fraction of the prompt's constraint bits satisfied
+  (`rāma:nom:sg`, `verb:gam:3:sg`, bare lemmas);
+  *length-damping* = 1.0 up to 9 tokens (translate) / 12 (compose), then
+  decaying toward a 0.05 floor.
+
+The multiplication is the anti-gaming design: a fluent sentence that ignores
+the prompt and a constraint-hitting word salad both score near the floor.
+This shape survived an adversarial red-team in an earlier iteration of the
+project (see the report).
+
+### data/ — two groups, three task families
+
+Everything under `data/in_fragment/` is regenerated by
+`python -m finetune.tasks`; `data/out_of_fragment/eval.jsonl` is hand-curated
+and never regenerated. The per-file table lives in
+[data/README.md](data/README.md).
+
+The task families (all machine-checkable — no human labels):
+
+- **qa** — produce one inflected form (*"What is the instrumental singular
+  of the Sanskrit noun rāma?"*); judged by exact match.
+- **translate** — a templated English sentence with **no vocabulary hints**
+  (*"Translate into Sanskrit: 'The heroes protect the village.'"*); judged
+  structurally — the output must compile *and* satisfy specs like
+  `vīra:nom:pl`, `verb:rakṣ:3:pl`, `grāma:acc:sg`.
+- **compose** — one grammatical sentence using four required words (a verb,
+  two nouns, an adjective), inflected however the model likes.
+
+The two on-disk formats: `sft/` rows are chat transcripts whose assistant
+turn is `<ans>gold</ans>`; `grpo/` rows carry the task spec in an `answer`
+field that the reward replays at sampling time.
+
+The two groups:
+
+| Group | Files | Role |
+|---|---|---|
+| **in-fragment** | `in_fragment/sft/` + `in_fragment/grpo/` train/valid (1000 + 64 rows each), `in_fragment/eval.jsonl` (150) | trains both arms; evaluates in-distribution skill (eval prompts disjoint from training; judged by Lean + chrF++/TER) |
+| **out-of-fragment** | `out_of_fragment/eval.jsonl` (36, hand-curated) | the generalization axis: real classical Sanskrit outside the formalization — judged by chrF++/TER only, since Lean has no model of it |
+
+### runs/ — what a training run leaves behind (gitignored)
+
+```
+runs/<run_name>/
+├── config.yaml      frozen copy of the launch config
+├── train.log        raw mlx-lm-lora output (what the dashboard tails)
+├── checkpoints/     0000250_adapters.safetensors … + final adapters.safetensors
+├── fused_4bit/      appears only when a later run chains from this one
+│                    (init_from_run fuses + re-quantizes into the source run)
+├── metrics.jsonl    one line per checkpoint: compile_rate, qa_exact,
+│                    mean_reward, chrf_pp, ter (line 0 = the untrained start)
+└── snapshots/       checkpoint_<it>.jsonl — every eval generation with its
+                     extracted answer, reward breakdown, and Lean verdict
+```
+
+### results/ — the committed outputs
+
+- `results/<tag>__<benchmark>.json` — one file per `evaluate.py` invocation
+  (e.g. `sft-then-grpo__in_fragment_eval.json`): the summary metrics plus
+  every record, so any number in the report can be traced to the exact
+  generation behind it.
+- `results/runs/` — frozen copies of each headline run's `config.yaml`,
+  `metrics.jsonl`, and `snapshots/`, so the report's training curves are
+  reproducible without re-running training.
 
 ## Running an experiment
 
@@ -57,12 +198,13 @@ Copy any config, edit, launch. The fields that matter most:
   existing directory (pass `--force` to replace it).
 - `mode: sft | grpo` — supervised imitation of grammar-generated answers vs
   RLVR against the checker (GRPO). Point `data.dir` at the matching format
-  (`data/sft` or `data/grpo`).
+  (`data/in_fragment/sft` or `data/in_fragment/grpo`).
 - `model.init_from_run` — chain runs: fuses the named run's final adapter
   into its base, re-quantizes to 4-bit, and starts from that (the SFT→GRPO
   handoff; the quantization cost is measured into `metrics.jsonl`).
 - `hyperparameters` — mirrored onto mlx-lm-lora flags; `iters: null` +
-  `epochs: N` derives the count for SFT.
+  `epochs: N` derives the count for SFT. GRPO knobs: `group_size`, `beta`
+  (KL leash), `temperature`, `max_completion_length`.
 - `eval` — which prompts, how many per checkpoint, decoding temperature,
   number of checkpoints.
 - `backend: mlx` — the only supported backend (validated at startup).
@@ -71,15 +213,17 @@ Copy any config, edit, launch. The fields that matter most:
 
 ```sh
 .venv/bin/python -m finetune.evaluate --run sft-then-grpo \
-    --benchmark data/eval/held_out_vocab.jsonl
+    --benchmark data/in_fragment/eval.jsonl
 .venv/bin/python -m finetune.evaluate --model mlx-community/Qwen3-4B-Instruct-2507-4bit \
-    --tag base --benchmark data/eval/beyond_fragment.jsonl
+    --tag base --benchmark data/out_of_fragment/eval.jsonl
 ```
 
 Each row is judged per its `judge` field: `lean+chrf` (compile-rate, QA
-exact-match, reward, chrF++) or `chrf` (reference similarity only — used
-beyond the fragment, where Lean has no model to judge with). Outputs land in
-`results/<tag>__<benchmark>.json`.
+exact-match, reward, chrF++, TER) or `chrf` (reference similarity only —
+used out of fragment, where Lean has no model to judge with). Because
+Sanskrit word order is free, read chrF++ and TER (↓) as a pair: high chrF++
+with high TER means right words in a different order. Outputs land in
+`results/<tag>__<group>_eval.json`.
 
 ## The two claims, honestly scoped
 

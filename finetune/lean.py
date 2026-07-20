@@ -3,7 +3,7 @@
 Every linguistic decision lives in lean/; this module just shells out to the
 compiled binaries and caches. `check()` returns the full JSON diagnostics of
 one sentence; `lexicon()` parses the exported form table (the single source
-of truth for data generation), keyed by vocabulary tier.
+of truth for data generation).
 """
 
 import json
@@ -31,15 +31,14 @@ def check(sentence: str, constraints: tuple[str, ...] = ()) -> dict:
 
 @lru_cache(maxsize=1)
 def lexicon() -> dict:
-    """{'core': {'noun': {lemma: {...}}, ...}, 'heldout': {...}} from
-    `lean/Export.lean` (TSV, one line per inflected form)."""
+    """{'noun': {lemma: {...}}, 'adj': {...}, 'verb': {...}, 'ind': {...}}
+    from `lean/Export.lean` (TSV, one line per inflected form)."""
     out = subprocess.run([EXPORT_BIN], capture_output=True, text=True).stdout
-    lex = {"core": {"noun": {}, "adj": {}, "verb": {}, "ind": {}},
-           "heldout": {"noun": {}, "adj": {}, "verb": {}, "ind": {}}}
+    lex = {"noun": {}, "adj": {}, "verb": {}, "ind": {}}
     for line in out.splitlines():
-        kind, lemma, extra, gloss, slot1, slot2, form, tier = line.split("\t")
-        e = lex[tier][kind].setdefault(lemma, {"gloss": gloss, "extra": extra,
-                                               "forms": {}})
+        kind, lemma, extra, gloss, slot1, slot2, form = line.split("\t")
+        e = lex[kind].setdefault(lemma, {"gloss": gloss, "extra": extra,
+                                         "forms": {}})
         key = (extra, slot1, slot2) if kind == "adj" else (slot1, slot2)
         e["forms"].setdefault(key, []).append(form)
     return lex

@@ -61,7 +61,7 @@ example : Grammatical
 example : ¬ Grammatical "rāmo gacchati kanyā mālāṃ labhate" := by native_decide
 example : ¬ Grammatical "rāmo gacchati gacchanti ca" := by native_decide
 
--- held-out vocabulary is fully checkable (it is just excluded from training)
+-- spot-checks across the later lexicon additions
 example : decline "meGa" .a_m .nom .pl = ["meGAH"] := by native_decide
 example : decline "gaNgA" .A_f .loc .sg = ["gaNgAyAm"] := by native_decide
 example : decline "banDu" .u_m .gen .pl = ["banDUnAm"] := by native_decide

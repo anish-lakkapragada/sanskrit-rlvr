@@ -182,10 +182,17 @@ ul.scope li{margin-bottom:6px}
 <span class="kw">example</span> : ¬ Grammatical <span class="bad">"bālāḥ grāmaṃ gacchati"</span> := <span class="kw">by</span> native_decide
 </pre>
   <p class="footnote">The paradigm tables are theorems, re-proved by the kernel at
-  every build — the grammar tests itself. The same definitions compile to a
-  20&nbsp;ms command-line judge with <code>--json</code> diagnostics, which is what
-  makes the next part affordable: it scored roughly half a million model outputs
-  overnight. <strong>Scope, plainly:</strong> a fragment — 7 vowel-stem classes,
+  every build — the grammar tests itself. And the same definitions become ordinary
+  programs: alongside the grammar modules sit two small Lean files,
+  <code>Check.lean</code> and <code>Export.lean</code>, declared as executables in
+  the project manifest, so Lake — Lean's build tool — compiles them to native
+  binaries, <code>bin/check</code> and <code>bin/export</code>. One
+  <code>lake build</code> replays the proofs <em>and</em> produces both binaries
+  from the very definitions the kernel just checked — the judge is the checked
+  grammar itself, not a reimplementation of it. <code>check</code> answers in
+  ~20&nbsp;ms with <code>--json</code> diagnostics, which is what makes the next
+  part affordable: it scored roughly half a million model outputs overnight.
+  <strong>Scope, plainly:</strong> a fragment — 7 vowel-stem classes,
   present tense, ~125 lemmas, sandhi undone rather than applied. Real, derivational
   all the way down, and it grows by adding rules, not data.</p>
 </section>
@@ -221,8 +228,29 @@ ul.scope li{margin-bottom:6px}
     <path class="ar" d="M 765 68 C 730 18, 180 18, 137 66" marker-end="url(#a2)"/>
     <text class="al" x="450" y="30" text-anchor="middle">weight update (LoRA)</text>
   </svg>
-  <p class="footnote">Tasks come from the formalization itself: its lexicon exports
-  2,286 inflected forms that seed grammar questions, hint-free translation, and
+  <p class="footnote">Tasks come from the formalization itself:
+  <code>bin/export</code> — the second executable from the same
+  <code>lake build</code> — prints the lexicon's 2,286 inflected forms as
+  <strong>TSV</strong> (tab-separated values): a plain text file in which each
+  line is one row of a table and a tab character separates the columns — the
+  simplest table format a program can read. One line per word form. Two real
+  lines of it, with the columns labeled:</p>
+
+<pre class="lean">
+<span class="cm">kind    lemma   class   gloss   slot₁   slot₂   form        tier</span>
+noun    rāma    m       Rāma    ins     sg      <span class="ok">rāmeṇa</span>      core
+verb    gam     i       go      3       sg      <span class="ok">gacchati</span>    core
+</pre>
+
+  <p class="footnote">There is <em>rāmeṇa</em> again — the form the grammar
+  <em>derived</em> in section 01, now as a row of data. Reading across: the word
+  class, the dictionary lemma, a class flag (<code>m</code>&nbsp;=&nbsp;masculine
+  noun, <code>i</code>&nbsp;=&nbsp;intransitive verb), the English gloss, the
+  grammatical slot (case&nbsp;+&nbsp;number for nouns, person&nbsp;+&nbsp;number
+  for verbs), the inflected form itself, and its vocabulary tier
+  (<code>core</code> may appear in training data; <code>heldout</code> is
+  evaluation-only). The Python data generator reads this table and nothing else,
+  and from it seeds grammar questions, hint-free translation, and
   four-word composition. The reward is structural — the checker verifies <em>who
   does what to whom</em>, so a grammatical sentence with reversed roles scores low.
   Supervised data, where used, is also grammar-generated: zero human labels end to
@@ -373,7 +401,9 @@ ul.scope li{margin-bottom:6px}
 <section>
   <h2><span class="n">06</span>Reproduce</h2>
   <p class="footnote">One Lean library (<code>lean/</code> — <code>lake build</code>
-  replays every theorem), one experiment framework (<code>finetune/</code> — YAML
+  replays every theorem and emits the <code>check</code> and <code>export</code>
+  binaries under <code>lean/.lake/build/bin/</code>), one experiment framework
+  (<code>finetune/</code> — YAML
   configs in, self-describing run directories out), one data directory with a README
   that maps every file to its experiment. <code>bash finetune/run.sh
   finetune/configs/sft-baseline.yaml</code> reproduces Phase 1;

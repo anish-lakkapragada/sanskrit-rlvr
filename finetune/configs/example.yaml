@@ -19,9 +19,9 @@ run_name: example
 # Training backend. Only "mlx" (Apple Silicon, via mlx-lm-lora) is supported.
 backend: mlx
 
-# "sft"  — supervised fine-tuning on chat-format data (data/sft/)
+# "sft"  — supervised fine-tuning on chat-format data (data/in_fragment/sft/)
 # "grpo" — RLVR: the model samples answers, the Lean checker scores them,
-#          GRPO reinforces above-average samples (data/grpo/)
+#          GRPO reinforces above-average samples (data/in_fragment/grpo/)
 mode: sft
 
 model:
@@ -37,7 +37,7 @@ model:
 data:
   # Directory containing train.jsonl and valid.jsonl in the format that
   # matches `mode` (see data/README.md).
-  dir: data/sft
+  dir: data/in_fragment/sft
 
 hyperparameters:
   # --- common ---------------------------------------------------------------
@@ -57,7 +57,7 @@ eval:
   # Evaluated at every checkpoint (4 per run + final): the model generates
   # answers for these prompts, the Lean checker judges them, and chrF++ is
   # computed against the references. Appends to metrics.jsonl + snapshots/.
-  prompts: data/eval/in_fragment.jsonl
+  prompts: data/in_fragment/eval.jsonl
   samples_per_checkpoint: 60   # how many eval prompts to run per checkpoint
   temperature: 0.0             # greedy decoding for evaluation
   checkpoints: 4               # checkpoint (and eval) every iters/4

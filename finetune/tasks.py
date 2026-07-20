@@ -1,29 +1,24 @@
 """Task generation from the Lean lexicon export — and the data/ writer.
 
-Three machine-checkable task families over a vocabulary tier:
+Three machine-checkable task families over the fragment's vocabulary:
   qa         inflect one form (exact-match against Lean-exported gold)
   translate  templated English sentence, no vocabulary hints; verified
              structurally (right lemmas in the right cases, by Lean)
   compose    one sentence using four required words (verb, two nouns, an
              adjective) — grammar by Lean, coverage by constraint bits
 
-`python -m finetune.tasks` regenerates every file under data/ except the
-hand-curated data/eval/beyond_fragment.jsonl. All splits come from one
-deduplicated stream, so nothing in any eval file ever appears in training.
-
-Training files draw ONLY from the core tier. data/eval/held_out_vocab.jsonl
-draws ONLY from held-out lemmas — words the model never saw in fine-tuning
-but the Lean checker still judges natively.
+`python -m finetune.tasks` regenerates everything under data/in_fragment/.
+All splits come from one deduplicated stream, so no eval prompt ever appears
+in a training file. The hand-curated data/out_of_fragment/eval.jsonl (real
+classical Sanskrit the grammar does not model) is never touched.
 """
 
 import json
 import random
 from pathlib import Path
 
-from .lean import lexicon
+from .lean import ROOT, lexicon
 from .reward import SYSTEM
-
-ROOT = Path(__file__).resolve().parent.parent
 
 CASE_NAMES = {"nom": "nominative", "acc": "accusative", "ins": "instrumental",
               "dat": "dative", "abl": "ablative", "gen": "genitive",
@@ -56,8 +51,8 @@ def _v3sg(g):
     return g + "s"
 
 
-def make_tasks(n: int, seed: int, tier: str = "core") -> list[dict]:
-    lex = lexicon()[tier]
+def make_tasks(n: int, seed: int) -> list[dict]:
+    lex = lexicon()
     rng = random.Random(seed)
     nouns = list(lex["noun"].items())
     verbs = [(l, e) for l, e in lex["verb"].items() if l not in ("as", "bhū")]
@@ -168,10 +163,9 @@ def _write(path: Path, rows: list[dict]):
 
 
 def main():
-    core = make_tasks(150 + 64 + 64 + 1000 + 1000, seed=42, tier="core")
-    eval_in, valid_sft, valid_grpo = core[:150], core[150:214], core[214:278]
-    train_sft, train_grpo = core[278:1278], core[1278:2278]
-    heldout = make_tasks(100, seed=7, tier="heldout")
+    stream = make_tasks(150 + 64 + 64 + 1000 + 1000, seed=42)
+    eval_in, valid_sft, valid_grpo = stream[:150], stream[150:214], stream[214:278]
+    train_sft, train_grpo = stream[278:1278], stream[1278:2278]
 
     def eval_row(t, i, judge):
         return {"id": f"e{i}", "type": t["type"], "prompt": t["prompt"],
@@ -188,14 +182,16 @@ def main():
         return {"prompt": t["prompt"], "system": SYSTEM, "type": t["type"],
                 "answer": _spec_json(t)}
 
-    _write(ROOT / "data/sft/train.jsonl", [sft_row(t) for t in train_sft])
-    _write(ROOT / "data/sft/valid.jsonl", [sft_row(t) for t in valid_sft])
-    _write(ROOT / "data/grpo/train.jsonl", [grpo_row(t) for t in train_grpo])
-    _write(ROOT / "data/grpo/valid.jsonl", [grpo_row(t) for t in valid_grpo])
-    _write(ROOT / "data/eval/in_fragment.jsonl",
+    _write(ROOT / "data/in_fragment/sft/train.jsonl",
+           [sft_row(t) for t in train_sft])
+    _write(ROOT / "data/in_fragment/sft/valid.jsonl",
+           [sft_row(t) for t in valid_sft])
+    _write(ROOT / "data/in_fragment/grpo/train.jsonl",
+           [grpo_row(t) for t in train_grpo])
+    _write(ROOT / "data/in_fragment/grpo/valid.jsonl",
+           [grpo_row(t) for t in valid_grpo])
+    _write(ROOT / "data/in_fragment/eval.jsonl",
            [eval_row(t, i, "lean+chrf") for i, t in enumerate(eval_in)])
-    _write(ROOT / "data/eval/held_out_vocab.jsonl",
-           [eval_row(t, i, "lean+chrf") for i, t in enumerate(heldout)])
 
 
 if __name__ == "__main__":
