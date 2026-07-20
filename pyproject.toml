@@ -1,0 +1,40 @@
+# Two install profiles, one per training backend:
+#
+#     uv sync --extra mlx     # Apple Silicon (local): mlx-lm-lora trainer
+#     uv sync --extra cuda    # Lambda/CUDA: TRL + vLLM trainer
+#
+# The base dependencies are what the backend-agnostic layer (data generation,
+# Lean bridge, reward, metrics, dashboard) needs; everything heavy lives in
+# the platform-marked extras so either profile locks and installs cleanly
+# from the same uv.lock.
+[project]
+name = "sanskrit-rlvr"
+version = "1.0.0"
+description = "RLVR against a Lean 4 verifier for a Pāṇinian Sanskrit fragment"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "pyyaml>=6.0",
+    "sacrebleu>=2.4",
+]
+
+[project.optional-dependencies]
+mlx = [
+    "mlx-lm>=0.31,<0.32; sys_platform == 'darwin'",
+    "mlx-lm-lora>=3.0,<4; sys_platform == 'darwin'",
+]
+cuda = [
+    "torch>=2.6; sys_platform == 'linux'",
+    # <5: trl 0.25's import guards break against transformers 5.x
+    # (_is_package_available returns a tuple there; trl treats it as a bool)
+    "transformers>=4.55,<5; sys_platform == 'linux'",
+    "datasets>=3.0; sys_platform == 'linux'",
+    "accelerate>=1.0; sys_platform == 'linux'",
+    "peft>=0.15; sys_platform == 'linux'",
+    "trl>=0.23,<0.26; sys_platform == 'linux'",
+    "vllm>=0.10; sys_platform == 'linux'",
+]
+
+[tool.uv]
+package = false
+# The two extras never coexist: mlx is Darwin-only, cuda is Linux-only.
+conflicts = [[{ extra = "mlx" }, { extra = "cuda" }]]

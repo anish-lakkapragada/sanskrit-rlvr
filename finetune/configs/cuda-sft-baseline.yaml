@@ -1,0 +1,24 @@
+# Arm 1 on CUDA: full-parameter SFT in bf16 — no LoRA bottleneck, no
+# quantization. The final checkpoint doubles as the base (and KL reference)
+# for cuda-sft-then-grpo.yaml.
+run_name: cuda-sft-baseline
+backend: cuda
+mode: sft
+model:
+  base: Qwen/Qwen3-4B-Instruct-2507
+  init_from_run: null
+data:
+  dir: data/in_fragment/sft
+hyperparameters:
+  learning_rate: 1.0e-5   # full-parameter: ~10x below the LoRA recipe
+  iters: 1000
+  batch_size: 4
+  max_seq_length: 768
+eval:
+  prompts: data/in_fragment/eval.jsonl
+  samples_per_checkpoint: 60
+  temperature: 0.0
+  checkpoints: 4
+dashboard:
+  enabled: true
+  port: 8777

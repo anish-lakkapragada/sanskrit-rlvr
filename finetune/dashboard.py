@@ -20,8 +20,19 @@ from pathlib import Path
 
 RUNS = Path(__file__).resolve().parent.parent / "runs"
 
-_REWARD = re.compile(r"Total Rewards:\s*μ=([0-9.]+)")
-_LOSS = re.compile(r"Train loss ([0-9.]+)")
+# one pattern per trainer's log format: mlx-lm-lora prose, TRL log dicts
+_REWARDS = [re.compile(r"Total Rewards:\s*μ=([0-9.]+)"),
+            re.compile(r"'reward':\s*(-?[0-9.]+)")]
+_LOSSES = [re.compile(r"Train loss ([0-9.]+)"),
+           re.compile(r"'loss':\s*(-?[0-9.]+)")]
+
+
+def _first_match(text: str, patterns) -> list[float]:
+    for pat in patterns:
+        found = pat.findall(text)
+        if found:
+            return [float(x) for x in found]
+    return []
 
 
 def run_state(run: Path) -> dict:
@@ -30,12 +41,12 @@ def run_state(run: Path) -> dict:
     log = run / "train.log"
     if log.exists():
         text = log.read_text(errors="replace")
-        rewards = _REWARD.findall(text)
+        rewards = _first_match(text, _REWARDS)
         if rewards:
-            state["curve"] = [float(x) for x in rewards][-2000:]
+            state["curve"] = rewards[-2000:]
             state["curve_kind"] = "group-mean reward"
         else:
-            state["curve"] = [float(x) for x in _LOSS.findall(text)][-2000:]
+            state["curve"] = _first_match(text, _LOSSES)[-2000:]
             state["curve_kind"] = "train loss"
     m = run / "metrics.jsonl"
     if m.exists():

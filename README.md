@@ -9,10 +9,13 @@ example : Grammatical "bālāḥ grāmaṃ gacchati" := by native_decide
 
 A fragment of Pāṇini's Sanskrit grammar formalized in **Lean 4**, so that a
 sentence is grammatical iff its check compiles — and a small experiment
-framework that fine-tunes an open LLM (Qwen3-4B, Apple MLX) against that
-checker, comparing **pure SFT** with the canonical **SFT → GRPO** pipeline.
-No human labels anywhere: the grammar generates its own training answers and
-judges every model output.
+framework that fine-tunes an open LLM (Qwen3-4B) against that checker,
+comparing **pure SFT** with the canonical **SFT → GRPO** pipeline. Two
+interchangeable training backends: **mlx** (Apple Silicon, LoRA on a 4-bit
+base) and **cuda** (Lambda-class GPUs via TRL — full-parameter SFT, LoRA
+GRPO with vLLM rollouts, bf16 throughout, no quantization). No human labels
+anywhere: the grammar generates its own training answers and judges every
+model output.
 
 **Read the report → [`report.html`](report.html)** — results, figures, and
 the full story, no Sanskrit or Lean background assumed.
@@ -27,6 +30,8 @@ the full story, no Sanskrit or Lean background assumed.
 | [`data/`](data/) | Two groups: `in_fragment/` (trains SFT + GRPO, and evaluates) and `out_of_fragment/` (evaluates only — the generalization axis); per-file table in [data/README.md](data/README.md). |
 | `runs/` | One directory per training run (gitignored): frozen config, train.log, adapter checkpoints, metrics, generation snapshots. Anatomy below. |
 | `results/` | Benchmark outputs (created by `finetune.evaluate`). Empty since the in/out-fragment restructure — populated by the next training + benchmarking pass. |
+| [`scripts/`](scripts/) | [`lambda_setup.sh`](scripts/lambda_setup.sh) — one-shot bring-up of a fresh CUDA box (uv, elan, `lake build`, `uv sync --extra cuda`). |
+| [`pyproject.toml`](pyproject.toml) | The uv project: shared deps plus one platform-marked extra per backend (`mlx` / `cuda`), locked together in `uv.lock`. |
 | [`report.html`](report.html) | The technical report (its numbers predate the restructure and the clearing of runs/results). |
 
 ## How an experiment flows
@@ -53,13 +58,15 @@ finetune/configs/<exp>.yaml
     ▼
 finetune/train.py — the orchestrator
     │  1. resolve the base model: a plain HF model, or (model.init_from_run)
-    │     fuse a previous run's adapter into its base and re-quantize to
-    │     4-bit — the SFT→GRPO handoff
+    │     the SFT→GRPO handoff — cuda: the source run's full checkpoint
+    │     becomes the base directly; mlx: fuse the source adapter into its
+    │     base and re-quantize to 4-bit
     │  2. judge the starting point            → metrics.jsonl (checkpoint 0)
-    │  3. hand off to mlx_lm_lora.train       → train.log, checkpoints/
+    │  3. hand off to the backend trainer     → train.log, checkpoints/
+    │     (mlx: mlx_lm_lora.train · cuda: finetune.cuda_train, i.e. TRL)
     │        SFT:  imitate <ans>gold</ans> completions from data/in_fragment/sft
     │        GRPO: sample group_size completions per prompt, score each via
-    │              rewards_shim.py → reward.py → lean.py → the check binary
+    │              the reward shim → reward.py → lean.py → the check binary
     │  4. judge every checkpoint: generate on the eval prompts, run the
     │     Lean checker, compute chrF++ + TER  → metrics.jsonl, snapshots/
     ▼
@@ -74,16 +81,18 @@ results/<tag>__<group>_eval.json ─────▶ report.html figures
 
 | File | Role |
 |---|---|
-| [`run.sh`](finetune/run.sh) | Entry point. `cd`s to the repo root, forces offline mode (`HF_HUB_OFFLINE=1` — models must already be in the HF cache), and `exec`s `python -m finetune.train`. |
-| [`train.py`](finetune/train.py) | The orchestrator (the flow above). Validates the config, refuses to clobber an existing run, derives the iteration count (`epochs` × dataset rows ÷ `batch_size` when `iters: null`), spaces checkpoints at `iters ÷ eval.checkpoints`, assembles the `mlx_lm_lora.train` command line (SFT vs GRPO flags), and evaluates checkpoint 0, every intermediate adapter, and the final one. |
+| [`run.sh`](finetune/run.sh) | Entry point. Reads the config's `backend:` line, syncs the matching uv extra, and `exec`s `uv run python -m finetune.train` from the repo root. The mlx path additionally forces offline mode (`HF_HUB_OFFLINE=1` — models must already be in the HF cache). |
+| [`train.py`](finetune/train.py) | The orchestrator (the flow above). Validates the config, refuses to clobber an existing run, derives the iteration count (`epochs` × dataset rows ÷ `batch_size` when `iters: null`), spaces checkpoints at `iters ÷ eval.checkpoints`, assembles the backend trainer command (mlx: `mlx_lm_lora.train` flags · cuda: `finetune.cuda_train`), and evaluates checkpoint 0, every intermediate checkpoint, and the final one. |
+| [`cuda_train.py`](finetune/cuda_train.py) | The CUDA trainer (TRL). `mode: sft` = full-parameter bf16 fine-tune; `mode: grpo` = fresh LoRA on the last `num_layers` blocks with vLLM colocated on the training GPU for rollouts. Disabling the adapter recovers the base exactly, which is what TRL uses as GRPO's KL reference — the fuse/requantize step of the mlx handoff disappears. Defines the TRL-side `lean_sanskrit_reward`. |
+| [`cuda_eval.py`](finetune/cuda_eval.py) | CUDA-side checkpoint evaluation: loads a full checkpoint or base+adapter (merged), generates in batches, then judges through the same shared machinery as mlx. |
 | [`tasks.py`](finetune/tasks.py) | Data generator. Pulls the lexicon through `lean.py`, emits the three task families from one seeded, deduplicated stream, and slices that stream into disjoint train/valid/eval splits. Also owns the English half of the templates (pluralization, glosses). |
 | [`lean.py`](finetune/lean.py) | The only bridge to the verifier. `check(sentence, constraints)` shells out to `lean/.lake/build/bin/check --json` (memoized, 200k entries — GRPO re-scores duplicates constantly); `lexicon()` parses `export`'s TSV into `{noun, adj, verb, ind}`. |
 | [`reward.py`](finetune/reward.py) | Completion → score in [0, 1] (next section). Also defines the shared system prompt and the `<ans>…</ans>` extraction + Unicode normalization used everywhere. |
-| [`rewards_shim.py`](finetune/rewards_shim.py) | The 18 lines mlx-lm-lora actually loads: registers `lean_sanskrit_reward`, which replays each dataset row's `answer` spec against the sampled completion. |
+| [`rewards_shim.py`](finetune/rewards_shim.py) | The 18 lines mlx-lm-lora actually loads: registers `lean_sanskrit_reward`, which replays each dataset row's `answer` spec against the sampled completion. (The cuda backend registers its equivalent inside `cuda_train.py`.) |
 | [`common.py`](finetune/common.py) | Shared evaluation machinery: model + adapter loading, generation, per-row judging (respecting each row's `judge` field), and the summary metrics — `compile_rate`, `qa_exact`, `mean_reward`, `chrf_pp`, `ter`. Used identically by `train.py` checkpoints and `evaluate.py` benchmarks, so numbers are comparable across both. |
 | [`evaluate.py`](finetune/evaluate.py) | Standalone benchmark CLI: any run checkpoint (`--run`, optionally `--checkpoint N`) or any raw model (`--model`) × any eval file → `results/<tag>__<benchmark>.json` with the summary plus every individual generation and judgment. |
 | [`dashboard.py`](finetune/dashboard.py) | Zero-dependency stdlib HTTP server that watches **all** of `runs/`: live loss/reward curve parsed from `train.log` as it grows, checkpoint metrics, and the latest sample generations with their Lean verdicts. Polls every 5 s. |
-| [`configs/`](finetune/configs/) | The experiments: [`sft-baseline.yaml`](finetune/configs/sft-baseline.yaml), [`sft-then-grpo.yaml`](finetune/configs/sft-then-grpo.yaml), [`smoke.yaml`](finetune/configs/smoke.yaml) (fast end-to-end check), and the fully documented [`example.yaml`](finetune/configs/example.yaml). |
+| [`configs/`](finetune/configs/) | The experiments, one pair per backend: mlx — [`sft-baseline.yaml`](finetune/configs/sft-baseline.yaml), [`sft-then-grpo.yaml`](finetune/configs/sft-then-grpo.yaml), [`smoke.yaml`](finetune/configs/smoke.yaml); cuda — [`cuda-sft-baseline.yaml`](finetune/configs/cuda-sft-baseline.yaml), [`cuda-sft-then-grpo.yaml`](finetune/configs/cuda-sft-then-grpo.yaml), [`cuda-smoke.yaml`](finetune/configs/cuda-smoke.yaml); plus the fully documented [`example.yaml`](finetune/configs/example.yaml). |
 
 ### The reward, precisely
 
@@ -150,10 +159,13 @@ The two groups:
 ```
 runs/<run_name>/
 ├── config.yaml      frozen copy of the launch config
-├── train.log        raw mlx-lm-lora output (what the dashboard tails)
-├── checkpoints/     0000250_adapters.safetensors … + final adapters.safetensors
-├── fused_4bit/      appears only when a later run chains from this one
-│                    (init_from_run fuses + re-quantizes into the source run)
+├── train.log        raw trainer output (what the dashboard tails)
+├── checkpoints/     mlx:  0000250_adapters.safetensors … + adapters.safetensors
+│                    cuda: checkpoint-250/ … + final/ (SFT: a full model;
+│                          GRPO: a PEFT adapter dir)
+├── fused_4bit/      mlx only, and only when a later run chains from this one
+│                    (init_from_run fuses + re-quantizes into the source run;
+│                    the cuda handoff needs no such artifact)
 ├── metrics.jsonl    one line per checkpoint: compile_rate, qa_exact,
 │                    mean_reward, chrf_pp, ter (line 0 = the untrained start)
 └── snapshots/       checkpoint_<it>.jsonl — every eval generation with its
@@ -172,16 +184,37 @@ runs/<run_name>/
 
 ## Running an experiment
 
+Dependencies are managed by [uv](https://docs.astral.sh/uv/) — one lockfile,
+two install profiles (`--extra mlx` / `--extra cuda`); `run.sh` picks the
+right one from the config's `backend:` line automatically.
+
+**Locally (Apple Silicon, mlx):**
+
 ```sh
 # one-time setup
 cd lean && lake build && cd ..                 # build the verifier (+ theorems)
-uv venv --python 3.12 .venv
-uv pip install --python .venv/bin/python mlx-lm-lora sacrebleu pyyaml
+uv sync --extra mlx
 
 # launch (config = the entire experiment definition)
 bash finetune/run.sh finetune/configs/sft-baseline.yaml
 bash finetune/run.sh finetune/configs/sft-then-grpo.yaml   # after the SFT run
 ```
+
+**On a CUDA box (Lambda etc.):**
+
+```sh
+bash scripts/lambda_setup.sh                   # uv + elan + lake build + uv sync
+bash finetune/run.sh finetune/configs/cuda-smoke.yaml       # ~5 min sanity check
+bash finetune/run.sh finetune/configs/cuda-sft-baseline.yaml
+bash finetune/run.sh finetune/configs/cuda-sft-then-grpo.yaml
+```
+
+The cuda backend trains full-parameter for SFT (no LoRA bottleneck where the
+model absorbs new vocabulary) and LoRA for GRPO (where the reference model
+comes free: TRL computes KL log-probs by disabling the adapter). Rollouts go
+through vLLM colocated on the training GPU. Everything runs in bf16 — the
+4-bit quantization of the mlx pipeline, including the lossy fuse-requantize
+handoff, does not exist here.
 
 Each run: evaluates its starting point, trains, saves a checkpoint every 25%
 of iterations, and at every checkpoint generates answers for the eval
@@ -199,23 +232,29 @@ Copy any config, edit, launch. The fields that matter most:
 - `mode: sft | grpo` — supervised imitation of grammar-generated answers vs
   RLVR against the checker (GRPO). Point `data.dir` at the matching format
   (`data/in_fragment/sft` or `data/in_fragment/grpo`).
-- `model.init_from_run` — chain runs: fuses the named run's final adapter
-  into its base, re-quantizes to 4-bit, and starts from that (the SFT→GRPO
-  handoff; the quantization cost is measured into `metrics.jsonl`).
-- `hyperparameters` — mirrored onto mlx-lm-lora flags; `iters: null` +
+- `model.init_from_run` — chain runs (the SFT→GRPO handoff). cuda: the named
+  run's final full-model checkpoint becomes this run's base, losslessly.
+  mlx: fuses the named run's final adapter into its base and re-quantizes to
+  4-bit (the quantization cost is measured into `metrics.jsonl`).
+- `hyperparameters` — mirrored onto the backend trainer; `iters: null` +
   `epochs: N` derives the count for SFT. GRPO knobs: `group_size`, `beta`
-  (KL leash), `temperature`, `max_completion_length`.
+  (KL leash), `temperature`, `max_completion_length`; cuda adds the LoRA
+  shape (`lora_rank`, `lora_alpha`) and vLLM controls (`use_vllm`,
+  `vllm_gpu_memory_utilization`).
 - `eval` — which prompts, how many per checkpoint, decoding temperature,
   number of checkpoints.
-- `backend: mlx` — the only supported backend (validated at startup).
+- `backend: mlx | cuda` — which trainer runs the experiment (validated at
+  startup); everything else in the config means the same thing on both.
 
 ### Benchmarking any model
 
 ```sh
-.venv/bin/python -m finetune.evaluate --run sft-then-grpo \
+uv run python -m finetune.evaluate --run sft-then-grpo \
     --benchmark data/in_fragment/eval.jsonl
-.venv/bin/python -m finetune.evaluate --model mlx-community/Qwen3-4B-Instruct-2507-4bit \
+uv run python -m finetune.evaluate --model mlx-community/Qwen3-4B-Instruct-2507-4bit \
     --tag base --benchmark data/out_of_fragment/eval.jsonl
+# on a CUDA box, raw models need the backend spelled out:
+#   ... --model Qwen/Qwen3-4B-Instruct-2507 --backend cuda --tag base ...
 ```
 
 Each row is judged per its `judge` field: `lean+chrf` (compile-rate, QA

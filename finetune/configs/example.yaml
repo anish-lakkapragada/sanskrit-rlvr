@@ -16,7 +16,10 @@
 # a run refuses to start if that directory already exists.
 run_name: example
 
-# Training backend. Only "mlx" (Apple Silicon, via mlx-lm-lora) is supported.
+# Training backend.
+#   "mlx"  — Apple Silicon (mlx-lm-lora): LoRA for both modes, 4-bit base.
+#   "cuda" — Lambda-class GPUs (TRL): full-parameter SFT, LoRA GRPO with
+#            vLLM rollouts. bf16 everywhere — no quantization.
 backend: mlx
 
 # "sft"  — supervised fine-tuning on chat-format data (data/in_fragment/sft/)
@@ -25,13 +28,16 @@ backend: mlx
 mode: sft
 
 model:
-  # HF repo id or local path of the (quantized) base model.
+  # HF repo id or local path of the base model. Match it to the backend:
+  #   mlx:  mlx-community/Qwen3-4B-Instruct-2507-4bit   (pre-quantized)
+  #   cuda: Qwen/Qwen3-4B-Instruct-2507                 (bf16, unquantized)
   base: mlx-community/Qwen3-4B-Instruct-2507-4bit
   # Optional: initialize from a previous run instead of the raw base —
-  # the canonical SFT→GRPO pipeline. The named run's final adapter is fused
+  # the canonical SFT→GRPO pipeline. On cuda the named run's final
+  # full-model checkpoint simply becomes this run's base (and GRPO's KL
+  # reference), losslessly. On mlx the named run's final adapter is fused
   # into its base and re-quantized to 4-bit (a measured cost, reported in
-  # metrics.jsonl as the "init" entry), and that model becomes this run's
-  # base. null = train from model.base directly.
+  # metrics.jsonl as the "init" entry). null = train from model.base.
   init_from_run: null
 
 data:
@@ -41,17 +47,27 @@ data:
 
 hyperparameters:
   # --- common ---------------------------------------------------------------
-  learning_rate: 1.0e-4   # SFT default 1e-4; GRPO stable recipe uses 8e-6
+  # LoRA SFT (mlx) default 1e-4; full-parameter SFT (cuda) wants ~1e-5;
+  # the stable GRPO recipe uses 8e-6 on either backend.
+  learning_rate: 1.0e-4
   iters: null             # explicit iteration count; null (SFT only) = derive
   epochs: 2               # from epochs × dataset size ÷ batch_size
   batch_size: 2           # GRPO uses 1 (each item spawns group_size samples)
-  num_layers: 16          # how many transformer layers get LoRA adapters
+  num_layers: 16          # transformer layers that get LoRA adapters
+                          # (cuda SFT is full-parameter: ignored there)
   max_seq_length: 768
+  # --- LoRA shape, cuda GRPO only (mlx pins these in mlx-lm) -----------------
+  lora_rank: 8
+  lora_alpha: 80          # peft scales by alpha/rank; 10×rank matches mlx
   # --- GRPO only (ignored for SFT) -------------------------------------------
   group_size: 6           # samples per prompt; advantage = vs group mean
   beta: 0.1               # KL leash to the reference (= this run's base)
   temperature: 0.8        # sampling temperature during rollouts
   max_completion_length: 200
+  # --- cuda GRPO rollout engine ----------------------------------------------
+  use_vllm: true          # vLLM colocated on the training GPU; false = slow
+                          # transformers fallback (debugging only)
+  vllm_gpu_memory_utilization: 0.25
 
 eval:
   # Evaluated at every checkpoint (4 per run + final): the model generates

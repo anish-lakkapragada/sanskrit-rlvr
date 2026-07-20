@@ -1,0 +1,35 @@
+# Arm 2 on CUDA: GRPO (RLVR against the Lean checker) on top of the
+# full-parameter SFT run. The SFT checkpoint becomes the base directly —
+# no fusing, no requantization — and a fresh LoRA adapter trains on top;
+# disabling it recovers the SFT model exactly, which is what TRL uses as
+# the KL reference. Rollouts run through vLLM colocated on the same GPU.
+run_name: cuda-sft-then-grpo
+backend: cuda
+mode: grpo
+model:
+  base: Qwen/Qwen3-4B-Instruct-2507
+  init_from_run: cuda-sft-baseline
+data:
+  dir: data/in_fragment/grpo
+hyperparameters:
+  learning_rate: 8.0e-6
+  iters: 1000
+  batch_size: 1
+  num_layers: 16
+  lora_rank: 8
+  lora_alpha: 80
+  max_seq_length: 768
+  group_size: 8           # H100 headroom: bigger groups are nearly free
+  beta: 0.1
+  temperature: 0.8
+  max_completion_length: 200
+  use_vllm: true
+  vllm_gpu_memory_utilization: 0.25
+eval:
+  prompts: data/in_fragment/eval.jsonl
+  samples_per_checkpoint: 60
+  temperature: 0.0
+  checkpoints: 4
+dashboard:
+  enabled: true
+  port: 8777

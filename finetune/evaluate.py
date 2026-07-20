@@ -24,6 +24,8 @@ def main():
     ap.add_argument("--checkpoint", type=int,
                     help="specific checkpoint iteration (default: final)")
     ap.add_argument("--model", help="raw model instead of a run")
+    ap.add_argument("--backend", choices=("mlx", "cuda"),
+                    help="generation backend for --model (a run uses its own)")
     ap.add_argument("--tag", help="results file prefix (default: run name/model)")
     ap.add_argument("--limit", type=int)
     args = ap.parse_args()
@@ -33,20 +35,29 @@ def main():
     if args.run:
         run_dir = RUNS / args.run
         cfg = yaml.safe_load((run_dir / "config.yaml").read_text())
+        backend = cfg.get("backend", "mlx")
         base = cfg["model"]["base"]
         if cfg["model"].get("init_from_run"):
-            base = str(RUNS / cfg["model"]["init_from_run"] / "fused_4bit")
-        ckpt = (run_dir / "checkpoints" /
-                (f"{args.checkpoint:07d}_adapters.safetensors"
-                 if args.checkpoint else "adapters.safetensors"))
+            src = RUNS / cfg["model"]["init_from_run"]
+            base = str(src / "checkpoints" / "final") if backend == "cuda" \
+                else str(src / "fused_4bit")
+        if backend == "cuda":
+            ckpt = (run_dir / "checkpoints" /
+                    (f"checkpoint-{args.checkpoint}"
+                     if args.checkpoint else "final"))
+        else:
+            ckpt = (run_dir / "checkpoints" /
+                    (f"{args.checkpoint:07d}_adapters.safetensors"
+                     if args.checkpoint else "adapters.safetensors"))
         tag = args.tag or args.run
     else:
+        backend = args.backend or "mlx"
         base, ckpt, tag = args.model, None, (args.tag or Path(args.model).name)
 
     rows = read_jsonl(ROOT / args.benchmark)
     if args.limit:
         rows = rows[: args.limit]
-    summary, records = eval_checkpoint(base, ckpt, rows)
+    summary, records = eval_checkpoint(base, ckpt, rows, backend=backend)
     # both benchmarks are named eval.jsonl — key results by their group dir
     bench_id = "_".join(args.benchmark.parts[-2:]).removesuffix(".jsonl")
     out = ROOT / "results" / f"{tag}__{bench_id}.json"

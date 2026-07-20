@@ -29,9 +29,8 @@ def fail(msg: str):
 
 def load_config(path: Path) -> dict:
     cfg = yaml.safe_load(path.read_text())
-    if cfg.get("backend") != "mlx":
-        fail(f"backend must be 'mlx' (got {cfg.get('backend')!r}); "
-             "no other backend is supported yet")
+    if cfg.get("backend") not in ("mlx", "cuda"):
+        fail(f"backend must be 'mlx' or 'cuda' (got {cfg.get('backend')!r})")
     if cfg.get("mode") not in ("sft", "grpo"):
         fail(f"mode must be 'sft' or 'grpo' (got {cfg.get('mode')!r})")
     for k in ("run_name", "model", "data", "hyperparameters", "eval"):
@@ -41,13 +40,21 @@ def load_config(path: Path) -> dict:
 
 
 def resolve_base_model(cfg: dict, run_dir: Path) -> str:
-    """If init_from_run is set, fuse that run's final adapter into its base
-    and re-quantize to 4-bit (the canonical SFT→GRPO handoff on 18 GB —
-    the quantization cost is measured and recorded in metrics.jsonl)."""
+    """The SFT→GRPO handoff. cuda: the source run's final full-model
+    checkpoint simply becomes this run's base (bf16, lossless). mlx: fuse
+    that run's final adapter into its base and re-quantize to 4-bit (the
+    18 GB compromise — the quantization cost is measured and recorded in
+    metrics.jsonl)."""
     src_name = cfg["model"].get("init_from_run")
     if not src_name:
         return cfg["model"]["base"]
     src = RUNS / src_name
+    if cfg["backend"] == "cuda":
+        final = src / "checkpoints" / "final"
+        if not (final / "config.json").exists():
+            fail(f"init_from_run: runs/{src_name}/checkpoints/final is not a "
+                 "full model checkpoint (cuda runs must init from a cuda SFT run)")
+        return str(final)
     if not (src / "checkpoints" / "adapters.safetensors").exists():
         fail(f"init_from_run: no final adapter under runs/{src_name}/checkpoints")
     src_cfg = yaml.safe_load((src / "config.yaml").read_text())
@@ -70,6 +77,10 @@ def resolve_base_model(cfg: dict, run_dir: Path) -> str:
 def backend_command(cfg: dict, base: str, run_dir: Path,
                     iters: int, save_every: int) -> list[str]:
     hp = cfg["hyperparameters"]
+    if cfg["backend"] == "cuda":
+        return [sys.executable, "-m", "finetune.cuda_train",
+                "--config", str(run_dir / "config.yaml"), "--base", base,
+                "--iters", str(iters), "--save-every", str(save_every)]
     cmd = [sys.executable, "-m", "mlx_lm_lora.train",
            "--model", base, "--train", "--train-type", "lora",
            "--data", str(ROOT / cfg["data"]["dir"]),
@@ -133,7 +144,8 @@ def main():
     eval_rows = eval_rows[: int(cfg["eval"].get("samples_per_checkpoint", 60))]
     print(f"[eval] baseline of {Path(base).name} …", flush=True)
     summary, records = eval_checkpoint(base, None, eval_rows,
-                                       temp=float(cfg["eval"].get("temperature", 0)))
+                                       temp=float(cfg["eval"].get("temperature", 0)),
+                                       backend=cfg["backend"])
     append_jsonl(run_dir / "metrics.jsonl",
                  {"checkpoint": 0, "kind": "init", **summary, "t": time.time()})
     with (run_dir / "snapshots" / "checkpoint_0.jsonl").open("w") as f:
@@ -148,15 +160,23 @@ def main():
     if r.returncode != 0:
         fail(f"training exited {r.returncode} — see runs/{cfg['run_name']}/train.log")
 
-    # evaluate every saved checkpoint, in order, then the final adapter
-    ckpts = sorted((run_dir / "checkpoints").glob("0*_adapters.safetensors"))
-    points = [(int(c.name.split("_")[0]), c) for c in ckpts]
+    # evaluate every saved checkpoint, in order, then the final one
+    if cfg["backend"] == "cuda":
+        ckpts = sorted((run_dir / "checkpoints").glob("checkpoint-*"),
+                       key=lambda c: int(c.name.split("-")[1]))
+        points = [(int(c.name.split("-")[1]), c) for c in ckpts]
+        final = run_dir / "checkpoints" / "final"
+    else:
+        ckpts = sorted((run_dir / "checkpoints").glob("0*_adapters.safetensors"))
+        points = [(int(c.name.split("_")[0]), c) for c in ckpts]
+        final = run_dir / "checkpoints" / "adapters.safetensors"
     if not points or points[-1][0] != iters:
-        points.append((iters, run_dir / "checkpoints" / "adapters.safetensors"))
+        points.append((iters, final))
     for it, ckpt in points:
         print(f"[eval] checkpoint {it}/{iters} …", flush=True)
         summary, records = eval_checkpoint(
-            base, ckpt, eval_rows, temp=float(cfg["eval"].get("temperature", 0)))
+            base, ckpt, eval_rows, temp=float(cfg["eval"].get("temperature", 0)),
+            backend=cfg["backend"])
         append_jsonl(run_dir / "metrics.jsonl",
                      {"checkpoint": it, "kind": "checkpoint", **summary,
                       "t": time.time()})

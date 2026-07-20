@@ -39,11 +39,11 @@ def adapter_dir_for(checkpoint_file: Path) -> str:
     return str(tmp)
 
 
-def judge_rows(model, tok, rows: list[dict], temp: float = 0.0) -> list[dict]:
-    """Generate + judge each eval row (per its `judge` field)."""
+def judge_rows(rows: list[dict], completions: list[str]) -> list[dict]:
+    """Judge each eval row's completion (per the row's `judge` field).
+    Generation is backend-specific and happens before this call."""
     out = []
-    for r in rows:
-        completion = generate(model, tok, r["system"], r["prompt"], temp=temp)
+    for r, completion in zip(rows, completions):
         spec = {"type": r["type"], "gold": r.get("gold", []),
                 "specs": r.get("specs", [])}
         ans, fmt = extract(completion)
@@ -86,11 +86,17 @@ def summarize(records: list[dict]) -> dict:
 
 
 def eval_checkpoint(base: str, ckpt: Path | None, rows: list[dict],
-                    temp: float = 0.0) -> tuple[dict, list[dict]]:
+                    temp: float = 0.0, backend: str = "mlx"
+                    ) -> tuple[dict, list[dict]]:
+    if backend == "cuda":
+        from .cuda_eval import eval_checkpoint_cuda
+        return eval_checkpoint_cuda(base, ckpt, rows, temp=temp)
     adapter = adapter_dir_for(ckpt) if ckpt else None
     model, tok = load_model(base, adapter)
-    records = judge_rows(model, tok, rows, temp=temp)
+    completions = [generate(model, tok, r["system"], r["prompt"], temp=temp)
+                   for r in rows]
     del model
+    records = judge_rows(rows, completions)
     return summarize(records), records
 
 
