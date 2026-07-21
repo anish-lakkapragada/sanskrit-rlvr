@@ -17,7 +17,7 @@ GRPO with vLLM rollouts, bf16 throughout, no quantization). No human labels
 anywhere: the grammar generates its own training answers and judges every
 model output.
 
-**Read the report → [`report.html`](report.html)** — results, figures, and
+**Read the report → [`report/report.html`](report/report.html)** — results, figures, and
 the full story, no Sanskrit or Lean background assumed.
 
 ## Repository map
@@ -32,7 +32,7 @@ the full story, no Sanskrit or Lean background assumed.
 | `results/` | Benchmark outputs (created by `finetune.evaluate`). Empty since the in/out-fragment restructure — populated by the next training + benchmarking pass. |
 | [`scripts/`](scripts/) | [`lambda_setup.sh`](scripts/lambda_setup.sh) — one-shot bring-up of a fresh CUDA box (uv, elan, `lake build`, `uv sync --extra cuda`). |
 | [`pyproject.toml`](pyproject.toml) | The uv project: shared deps plus one platform-marked extra per backend (`mlx` / `cuda`), locked together in `uv.lock`. |
-| [`report.html`](report.html) | The technical report (its numbers predate the restructure and the clearing of runs/results). |
+| [`report/`](report/) | The technical report (markdown draft + rendered HTML; its numbers predate the restructure and the clearing of runs/results). |
 
 ## How an experiment flows
 
@@ -74,7 +74,7 @@ runs/<run_name>/ — a self-describing artifact
     │    python -m finetune.evaluate --run <name> \
     │        --benchmark data/{in_fragment,out_of_fragment}/eval.jsonl
     ▼
-results/<tag>__<group>_eval.json ─────▶ report.html figures
+results/<tag>__<group>_eval.json ─────▶ report figures
 ```
 
 ## The fine-tuning code, file by file
@@ -92,7 +92,7 @@ results/<tag>__<group>_eval.json ─────▶ report.html figures
 | [`common.py`](finetune/common.py) | Shared evaluation machinery: model + adapter loading, generation, per-row judging (respecting each row's `judge` field), and the summary metrics — `compile_rate`, `qa_exact`, `mean_reward`, `chrf_pp`, `ter`. Used identically by `train.py` checkpoints and `evaluate.py` benchmarks, so numbers are comparable across both. |
 | [`evaluate.py`](finetune/evaluate.py) | Standalone benchmark CLI: any run checkpoint (`--run`, optionally `--checkpoint N`) or any raw model (`--model`) × any eval file → `results/<tag>__<benchmark>.json` with the summary plus every individual generation and judgment. |
 | [`dashboard.py`](finetune/dashboard.py) | Zero-dependency stdlib HTTP server that watches **all** of `runs/`: live loss/reward curve parsed from `train.log` as it grows, checkpoint metrics, and the latest sample generations with their Lean verdicts. Polls every 5 s. |
-| [`configs/`](finetune/configs/) | The experiments, one pair per backend: mlx — [`sft-baseline.yaml`](finetune/configs/sft-baseline.yaml), [`sft-then-grpo.yaml`](finetune/configs/sft-then-grpo.yaml), [`smoke.yaml`](finetune/configs/smoke.yaml); cuda — [`cuda-sft-baseline.yaml`](finetune/configs/cuda-sft-baseline.yaml), [`cuda-sft-then-grpo.yaml`](finetune/configs/cuda-sft-then-grpo.yaml), [`cuda-smoke.yaml`](finetune/configs/cuda-smoke.yaml); plus the fully documented [`example.yaml`](finetune/configs/example.yaml). |
+| [`configs/`](finetune/configs/) | The experiments, one pair per backend: mlx — [`sft-baseline.yaml`](finetune/configs/sft-baseline.yaml), [`sft-then-grpo.yaml`](finetune/configs/sft-then-grpo.yaml); cuda — [`cuda-sft-baseline.yaml`](finetune/configs/cuda-sft-baseline.yaml), [`cuda-sft-then-grpo.yaml`](finetune/configs/cuda-sft-then-grpo.yaml), [`cuda-smoke.yaml`](finetune/configs/cuda-smoke.yaml) (fast end-to-end check); plus the fully documented [`example.yaml`](finetune/configs/example.yaml). |
 
 ### The reward, precisely
 
@@ -158,19 +158,42 @@ The two groups:
 
 ```
 runs/<run_name>/
-├── config.yaml      frozen copy of the launch config
+├── config.yaml      frozen, normalized copy of the launch config
 ├── train.log        raw trainer output (what the dashboard tails)
-├── checkpoints/     mlx:  0000250_adapters.safetensors … + adapters.safetensors
-│                    cuda: checkpoint-250/ … + final/ (SFT: a full model;
-│                          GRPO: a PEFT adapter dir)
+├── tb/              TensorBoard event files (cuda): per-step loss/reward/KL
+│                    + the eval/* scores at every eval point, live
+├── checkpoints/     every `eval.every` iterations —
+│                    mlx:  0000100_adapters.safetensors … + adapters.safetensors
+│                    cuda: checkpoint-100/ … + final/ (SFT: a full model;
+│                          GRPO: a PEFT adapter dir; final path is the
+│                          config's model.final_checkpoint)
 ├── fused_4bit/      mlx only, and only when a later run chains from this one
 │                    (init_from_run fuses + re-quantizes into the source run;
 │                    the cuda handoff needs no such artifact)
-├── metrics.jsonl    one line per checkpoint: compile_rate, qa_exact,
-│                    mean_reward, chrf_pp, ter (line 0 = the untrained start)
-└── snapshots/       checkpoint_<it>.jsonl — every eval generation with its
-                     extracted answer, reward breakdown, and Lean verdict
+├── metrics.jsonl    one line per eval point with one summary object per
+│                    benchmark group: in_fragment {compile_rate, qa_exact,
+│                    mean_reward, chrf_pp, ter}, out_of_fragment {chrf_pp,
+│                    ter} (line 0 = the untrained start)
+└── snapshots/       checkpoint_<it>/{in_fragment,out_of_fragment}.jsonl —
+                     every eval generation with its extracted answer,
+                     reward breakdown, and Lean verdict
 ```
+
+### Watching a cuda run live
+
+Per-step training metrics and the per-`eval.every` benchmark scores stream
+to TensorBoard as they happen (evals run *inside* the trainer, on the live
+model — you see compile-rate climb mid-run, not after):
+
+```sh
+# on the box
+uv run tensorboard --logdir runs --port 6006
+# from your laptop
+ssh -L 6006:localhost:6006 ubuntu@<lambda-ip>   # → http://localhost:6006
+```
+
+(mlx runs evaluate after training instead — the zero-dependency dashboard
+at :8777 is the live view there.)
 
 ### results/ — the committed outputs
 

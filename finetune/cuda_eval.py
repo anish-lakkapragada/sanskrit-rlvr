@@ -43,7 +43,10 @@ def _generate_all(model, tok, rows, temp, max_tokens=384, batch_size=16):
                 **enc, max_new_tokens=max_tokens,
                 do_sample=temp > 0,
                 temperature=temp if temp > 0 else None,
-                pad_token_id=tok.pad_token_id)
+                pad_token_id=tok.pad_token_id,
+                # gradient checkpointing disables the KV cache on the model
+                # config mid-training; force it back on for generation
+                use_cache=True)
         out += tok.batch_decode(gen[:, enc["input_ids"].shape[1]:],
                                 skip_special_tokens=True)
     return out

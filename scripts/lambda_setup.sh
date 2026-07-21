@@ -28,3 +28,5 @@ echo "[setup] syncing python env (cuda profile) …"
 uv sync --extra cuda
 
 echo "[setup] done — try: bash finetune/run.sh finetune/configs/cuda-smoke.yaml"
+echo "[setup] live view:   uv run tensorboard --logdir runs --port 6006"
+echo "[setup]              (tunnel: ssh -L 6006:localhost:6006 ubuntu@<this-box>)"

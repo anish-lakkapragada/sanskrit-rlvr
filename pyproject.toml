@@ -32,6 +32,7 @@ cuda = [
     "peft>=0.15; sys_platform == 'linux'",
     "trl>=0.23,<0.26; sys_platform == 'linux'",
     "vllm>=0.10; sys_platform == 'linux'",
+    "tensorboard>=2.16; sys_platform == 'linux'",
 ]
 
 [tool.uv]

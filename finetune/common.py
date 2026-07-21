@@ -3,6 +3,7 @@
 import json
 import shutil
 import tempfile
+import time
 from pathlib import Path
 
 from .lean import ROOT, check
@@ -83,6 +84,48 @@ def summarize(records: list[dict]) -> dict:
         "chrf_pp": round(chrf.corpus_score(hyps, refs).score, 2),
         "ter": round(TER().corpus_score(hyps, refs).score, 2),
     }
+
+
+def eval_point(benchmarks: dict[str, list[dict]], generate_rows
+               ) -> dict[str, tuple[dict, list[dict]]]:
+    """One eval point across every benchmark group. generate_rows(rows) is
+    the backend-specific completion source; judging and metrics are shared.
+    Returns {group: (summary, records)}."""
+    out = {}
+    for group, rows in benchmarks.items():
+        records = judge_rows(rows, generate_rows(rows))
+        out[group] = (summarize(records), records)
+    return out
+
+
+def record_eval_point(run_dir: Path, checkpoint: int, kind: str,
+                      results: dict[str, tuple[dict, list[dict]]]) -> dict:
+    """Persist one eval point: nested metrics row (one summary object per
+    benchmark group) + a snapshot folder holding every judged generation."""
+    row = {"checkpoint": checkpoint, "kind": kind}
+    snap = run_dir / "snapshots" / f"checkpoint_{checkpoint}"
+    snap.mkdir(parents=True, exist_ok=True)
+    for group, (summary, records) in results.items():
+        row[group] = summary
+        with (snap / f"{group}.jsonl").open("w") as f:
+            for r in records:
+                f.write(json.dumps(r, ensure_ascii=False) + "\n")
+    row["t"] = time.time()
+    append_jsonl(run_dir / "metrics.jsonl", row)
+    return row
+
+
+def eval_benchmarks_mlx(base: str, ckpt: Path | None,
+                        benchmarks: dict[str, list[dict]], temp: float = 0.0
+                        ) -> dict[str, tuple[dict, list[dict]]]:
+    """mlx eval point: load base(+adapter) once, judge every benchmark."""
+    adapter = adapter_dir_for(ckpt) if ckpt else None
+    model, tok = load_model(base, adapter)
+    results = eval_point(benchmarks, lambda rows: [
+        generate(model, tok, r["system"], r["prompt"], temp=temp)
+        for r in rows])
+    del model
+    return results
 
 
 def eval_checkpoint(base: str, ckpt: Path | None, rows: list[dict],

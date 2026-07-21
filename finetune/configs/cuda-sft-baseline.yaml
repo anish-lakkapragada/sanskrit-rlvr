@@ -7,6 +7,7 @@ mode: sft
 model:
   base: Qwen/Qwen3-4B-Instruct-2507
   init_from_run: null
+  final_checkpoint: runs/cuda-sft-baseline/checkpoints/final
 data:
   dir: data/in_fragment/sft
 hyperparameters:
@@ -15,10 +16,12 @@ hyperparameters:
   batch_size: 4
   max_seq_length: 768
 eval:
-  prompts: data/in_fragment/eval.jsonl
-  samples_per_checkpoint: 60
+  benchmarks:             # all metrics on both, at every eval point
+    in_fragment: data/in_fragment/eval.jsonl        # 150 rows, Lean + chrF++/TER
+    out_of_fragment: data/out_of_fragment/eval.jsonl  # 36 rows, chrF++/TER
+  every: 100              # checkpoint + full eval every N iterations
+  samples: null           # per-benchmark row cap; null = whole file
   temperature: 0.0
-  checkpoints: 4
 dashboard:
   enabled: true
   port: 8777

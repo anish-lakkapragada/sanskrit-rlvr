@@ -17,6 +17,11 @@ import yaml
 from .common import ROOT, RUNS, eval_checkpoint, read_jsonl
 
 
+def _resolve(p) -> Path:
+    p = Path(p)
+    return p if p.is_absolute() else ROOT / p
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--benchmark", required=True, type=Path)
@@ -39,12 +44,17 @@ def main():
         base = cfg["model"]["base"]
         if cfg["model"].get("init_from_run"):
             src = RUNS / cfg["model"]["init_from_run"]
-            base = str(src / "checkpoints" / "final") if backend == "cuda" \
-                else str(src / "fused_4bit")
+            if backend == "cuda":
+                src_cfg = yaml.safe_load((src / "config.yaml").read_text())
+                base = str(_resolve(src_cfg["model"].get("final_checkpoint")
+                                    or src / "checkpoints" / "final"))
+            else:
+                base = str(src / "fused_4bit")
         if backend == "cuda":
-            ckpt = (run_dir / "checkpoints" /
-                    (f"checkpoint-{args.checkpoint}"
-                     if args.checkpoint else "final"))
+            ckpt = (run_dir / "checkpoints" / f"checkpoint-{args.checkpoint}"
+                    if args.checkpoint else
+                    _resolve(cfg["model"].get("final_checkpoint")
+                             or run_dir / "checkpoints" / "final"))
         else:
             ckpt = (run_dir / "checkpoints" /
                     (f"{args.checkpoint:07d}_adapters.safetensors"

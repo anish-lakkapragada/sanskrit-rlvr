@@ -14,12 +14,12 @@ import math
 import shutil
 import subprocess
 import sys
-import time
 from pathlib import Path
 
 import yaml
 
-from .common import ROOT, RUNS, append_jsonl, eval_checkpoint, read_jsonl
+from .common import (ROOT, RUNS, eval_benchmarks_mlx, read_jsonl,
+                     record_eval_point)
 
 
 def fail(msg: str):
@@ -36,6 +36,14 @@ def load_config(path: Path) -> dict:
     for k in ("run_name", "model", "data", "hyperparameters", "eval"):
         if k not in cfg:
             fail(f"config missing required key: {k}")
+    ev = cfg["eval"]
+    # legacy schema: a single `prompts` file and `checkpoints: N` cadence
+    if "benchmarks" not in ev:
+        if "prompts" not in ev:
+            fail("eval needs `benchmarks: {group: file}` (or legacy `prompts`)")
+        ev["benchmarks"] = {"in_fragment": ev["prompts"]}
+    if "samples" not in ev and "samples_per_checkpoint" in ev:
+        ev["samples"] = ev["samples_per_checkpoint"]
     return cfg
 
 
@@ -50,10 +58,14 @@ def resolve_base_model(cfg: dict, run_dir: Path) -> str:
         return cfg["model"]["base"]
     src = RUNS / src_name
     if cfg["backend"] == "cuda":
-        final = src / "checkpoints" / "final"
+        src_cfg = yaml.safe_load((src / "config.yaml").read_text())
+        final = Path(src_cfg["model"].get("final_checkpoint")
+                     or src / "checkpoints" / "final")
+        if not final.is_absolute():
+            final = ROOT / final
         if not (final / "config.json").exists():
-            fail(f"init_from_run: runs/{src_name}/checkpoints/final is not a "
-                 "full model checkpoint (cuda runs must init from a cuda SFT run)")
+            fail(f"init_from_run: {final} is not a full model checkpoint "
+                 "(cuda runs must init from a completed cuda SFT run)")
         return str(final)
     if not (src / "checkpoints" / "adapters.safetensors").exists():
         fail(f"init_from_run: no final adapter under runs/{src_name}/checkpoints")
@@ -121,7 +133,10 @@ def main():
         shutil.rmtree(run_dir)
     (run_dir / "checkpoints").mkdir(parents=True)
     (run_dir / "snapshots").mkdir()
-    shutil.copy(args.config, run_dir / "config.yaml")
+    # freeze the *normalized* config (legacy fields resolved) — it is the
+    # contract the trainer subprocess, evaluate.py and the dashboard read
+    (run_dir / "config.yaml").write_text(
+        yaml.safe_dump(cfg, sort_keys=False, allow_unicode=True))
 
     # dashboard (idempotent: one server watches all runs)
     if cfg.get("dashboard", {}).get("enabled"):
@@ -136,21 +151,27 @@ def main():
     else:
         n = sum(1 for _ in (ROOT / cfg["data"]["dir"] / "train.jsonl").open())
         iters = math.ceil(n / hp.get("batch_size", 1)) * int(hp.get("epochs", 1))
-    n_ckpt = int(cfg["eval"].get("checkpoints", 4))
-    save_every = max(1, iters // n_ckpt)
+    ev = cfg["eval"]
+    if ev.get("every"):  # one knob: checkpoint + full eval every N iters
+        save_every = max(1, int(ev["every"]))
+    else:                # legacy: N evenly spaced checkpoints
+        save_every = max(1, iters // int(ev.get("checkpoints", 4)))
 
-    # measure the starting point (checkpoint 0 = the base this run trains from)
-    eval_rows = read_jsonl(ROOT / cfg["eval"]["prompts"])
-    eval_rows = eval_rows[: int(cfg["eval"].get("samples_per_checkpoint", 60))]
-    print(f"[eval] baseline of {Path(base).name} …", flush=True)
-    summary, records = eval_checkpoint(base, None, eval_rows,
-                                       temp=float(cfg["eval"].get("temperature", 0)),
-                                       backend=cfg["backend"])
-    append_jsonl(run_dir / "metrics.jsonl",
-                 {"checkpoint": 0, "kind": "init", **summary, "t": time.time()})
-    with (run_dir / "snapshots" / "checkpoint_0.jsonl").open("w") as f:
-        for r in records:
-            f.write(json.dumps(r, ensure_ascii=False) + "\n")
+    benchmarks = {}
+    for group, rel in ev["benchmarks"].items():
+        rows = read_jsonl(ROOT / rel)
+        if ev.get("samples"):
+            rows = rows[: int(ev["samples"])]
+        benchmarks[group] = rows
+    temp = float(ev.get("temperature", 0))
+
+    # measure the starting point (checkpoint 0 = the base this run trains
+    # from). cuda runs eval inside the trainer (live, incl. checkpoint 0) —
+    # the orchestrator only evaluates here for mlx.
+    if cfg["backend"] == "mlx":
+        print(f"[eval] baseline of {Path(base).name} …", flush=True)
+        record_eval_point(run_dir, 0, "init",
+                          eval_benchmarks_mlx(base, None, benchmarks, temp))
 
     cmd = backend_command(cfg, base, run_dir, iters, save_every)
     print(f"[train] {cfg['mode']} for {iters} iters, checkpoint every "
@@ -160,35 +181,26 @@ def main():
     if r.returncode != 0:
         fail(f"training exited {r.returncode} — see runs/{cfg['run_name']}/train.log")
 
-    # evaluate every saved checkpoint, in order, then the final one
-    if cfg["backend"] == "cuda":
-        ckpts = sorted((run_dir / "checkpoints").glob("checkpoint-*"),
-                       key=lambda c: int(c.name.split("-")[1]))
-        points = [(int(c.name.split("-")[1]), c) for c in ckpts]
-        final = run_dir / "checkpoints" / "final"
-    else:
+    # evaluate every saved checkpoint, in order, then the final one.
+    # (cuda already did this live, inside the trainer, at every save)
+    if cfg["backend"] == "mlx":
         ckpts = sorted((run_dir / "checkpoints").glob("0*_adapters.safetensors"))
         points = [(int(c.name.split("_")[0]), c) for c in ckpts]
-        final = run_dir / "checkpoints" / "adapters.safetensors"
-    if not points or points[-1][0] != iters:
-        points.append((iters, final))
-    for it, ckpt in points:
-        print(f"[eval] checkpoint {it}/{iters} …", flush=True)
-        summary, records = eval_checkpoint(
-            base, ckpt, eval_rows, temp=float(cfg["eval"].get("temperature", 0)),
-            backend=cfg["backend"])
-        append_jsonl(run_dir / "metrics.jsonl",
-                     {"checkpoint": it, "kind": "checkpoint", **summary,
-                      "t": time.time()})
-        with (run_dir / "snapshots" / f"checkpoint_{it}.jsonl").open("w") as f:
-            for r in records:
-                f.write(json.dumps(r, ensure_ascii=False) + "\n")
+        if not points or points[-1][0] != iters:
+            points.append((iters, run_dir / "checkpoints" / "adapters.safetensors"))
+        for it, ckpt in points:
+            print(f"[eval] checkpoint {it}/{iters} …", flush=True)
+            record_eval_point(run_dir, it, "checkpoint",
+                              eval_benchmarks_mlx(base, ckpt, benchmarks, temp))
 
     print(f"[done] runs/{cfg['run_name']}/metrics.jsonl:")
     for line in (run_dir / "metrics.jsonl").open():
         d = json.loads(line)
-        print(f"  ckpt {d['checkpoint']:>5}  compile={d['compile_rate']}  "
-              f"chrf++={d['chrf_pp']}  reward={d['mean_reward']}")
+        i, o = d.get("in_fragment", {}), d.get("out_of_fragment", {})
+        print(f"  ckpt {d['checkpoint']:>5}  "
+              f"compile={i.get('compile_rate')}  "
+              f"chrf++(in)={i.get('chrf_pp')}  ter(in)={i.get('ter')}  "
+              f"chrf++(out)={o.get('chrf_pp')}  ter(out)={o.get('ter')}")
 
 
 if __name__ == "__main__":

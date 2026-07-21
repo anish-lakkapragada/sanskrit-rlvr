@@ -51,14 +51,20 @@ def run_state(run: Path) -> dict:
     m = run / "metrics.jsonl"
     if m.exists():
         state["metrics"] = [json.loads(l) for l in m.open()]
-    snaps = sorted((run / "snapshots").glob("checkpoint_*.jsonl"),
+    # snapshots: new layout is a folder per eval point with one jsonl per
+    # benchmark group; old layout was a single checkpoint_<it>.jsonl
+    snaps = sorted((run / "snapshots").glob("checkpoint_*"),
                    key=lambda p: int(p.stem.split("_")[1])) \
         if (run / "snapshots").exists() else []
     if snaps:
-        rows = [json.loads(l) for l in snaps[-1].open()][:4]
-        state["samples"] = [{"prompt": r["prompt"][:110], "answer": r["answer"],
-                             "ok": r.get("grammatical")} for r in rows]
-        state["samples_from"] = snaps[-1].stem
+        latest = snaps[-1]
+        src = latest / "in_fragment.jsonl" if latest.is_dir() else latest
+        if src.exists():
+            rows = [json.loads(l) for l in src.open()][:4]
+            state["samples"] = [{"prompt": r["prompt"][:110],
+                                 "answer": r["answer"],
+                                 "ok": r.get("grammatical")} for r in rows]
+            state["samples_from"] = latest.stem
     return state
 
 
@@ -89,9 +95,12 @@ async function tick(){
             <div class="small">min ${mn.toFixed(3)} · max ${mx.toFixed(3)} · last ${s.curve[n-1].toFixed(3)}</div>`;
     }
     if (s.metrics.length){
-      h += '<table><tr><th>ckpt</th><th>compile</th><th>chrF++</th><th>reward</th></tr>';
-      for (const m of s.metrics)
-        h += `<tr><td>${m.checkpoint}${m.kind==='init'?' (init)':''}</td><td>${m.compile_rate}</td><td>${m.chrf_pp}</td><td>${m.mean_reward}</td></tr>`;
+      h += '<table><tr><th>ckpt</th><th>compile (in)</th><th>chrF++ (in)</th><th>TER (in)</th><th>chrF++ (out)</th><th>TER (out)</th><th>reward</th></tr>';
+      for (const m of s.metrics){
+        const i = m.in_fragment ?? m, o = m.out_of_fragment ?? {};   // ?? m: legacy flat rows
+        const f = v => v ?? '—';
+        h += `<tr><td>${m.checkpoint}${m.kind==='init'?' (init)':''}</td><td>${f(i.compile_rate)}</td><td>${f(i.chrf_pp)}</td><td>${f(i.ter)}</td><td>${f(o.chrf_pp)}</td><td>${f(o.ter)}</td><td>${f(i.mean_reward)}</td></tr>`;
+      }
       h += '</table>';
     }
     if (s.samples && s.samples.length){

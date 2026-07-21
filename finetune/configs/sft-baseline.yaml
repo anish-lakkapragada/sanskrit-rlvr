@@ -15,10 +15,12 @@ hyperparameters:
   num_layers: 16
   max_seq_length: 768
 eval:
-  prompts: data/in_fragment/eval.jsonl
-  samples_per_checkpoint: 60
+  benchmarks:             # all metrics on both, at every eval point
+    in_fragment: data/in_fragment/eval.jsonl        # 150 rows, Lean + chrF++/TER
+    out_of_fragment: data/out_of_fragment/eval.jsonl  # 36 rows, chrF++/TER
+  every: 100              # checkpoint + full eval every N iterations
+  samples: null           # per-benchmark row cap; null = whole file
   temperature: 0.0
-  checkpoints: 4
 dashboard:
   enabled: true
   port: 8777

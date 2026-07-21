@@ -1,12 +1,14 @@
-# Fast end-to-end check of the CUDA backend on a fresh box (~5 min on an
-# H100): full-parameter SFT for 8 iterations, 6 eval prompts per checkpoint.
-# Run this before committing to a real run.
+# Fast end-to-end check of the CUDA backend on a fresh box (~5-10 min on an
+# H100): full-parameter SFT for 8 iterations, both benchmarks at 6 rows,
+# eval every 2 steps — exercises the live eval callback, TensorBoard,
+# snapshots, and the final checkpoint. Run this before any paid run.
 run_name: cuda-smoke
 backend: cuda
 mode: sft
 model:
   base: Qwen/Qwen3-4B-Instruct-2507
   init_from_run: null
+  final_checkpoint: runs/cuda-smoke/checkpoints/final
 data:
   dir: data/in_fragment/sft
 hyperparameters:
@@ -15,10 +17,12 @@ hyperparameters:
   batch_size: 2
   max_seq_length: 512
 eval:
-  prompts: data/in_fragment/eval.jsonl
-  samples_per_checkpoint: 6
+  benchmarks:
+    in_fragment: data/in_fragment/eval.jsonl
+    out_of_fragment: data/out_of_fragment/eval.jsonl
+  every: 2
+  samples: 6
   temperature: 0.0
-  checkpoints: 4
 dashboard:
   enabled: true
   port: 8777

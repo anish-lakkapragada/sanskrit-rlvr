@@ -9,6 +9,7 @@ mode: grpo
 model:
   base: Qwen/Qwen3-4B-Instruct-2507
   init_from_run: cuda-sft-baseline
+  final_checkpoint: runs/cuda-sft-then-grpo/checkpoints/final
 data:
   dir: data/in_fragment/grpo
 hyperparameters:
@@ -26,10 +27,12 @@ hyperparameters:
   use_vllm: true
   vllm_gpu_memory_utilization: 0.25
 eval:
-  prompts: data/in_fragment/eval.jsonl
-  samples_per_checkpoint: 60
+  benchmarks:
+    in_fragment: data/in_fragment/eval.jsonl
+    out_of_fragment: data/out_of_fragment/eval.jsonl
+  every: 100
+  samples: null
   temperature: 0.0
-  checkpoints: 4
 dashboard:
   enabled: true
   port: 8777

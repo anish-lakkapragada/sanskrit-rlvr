@@ -8,16 +8,22 @@
 
 Invoked by finetune.train as a subprocess (the same shape as the mlx
 backend's mlx_lm_lora.train CLI); reads the run's frozen config.yaml.
-Checkpoints land as checkpoint-<step>/ dirs plus a standalone final/ under
-runs/<run_name>/checkpoints/.
+
+Telemetry: every `eval.every` iterations the trainer saves a checkpoint AND
+judges the live model on every configured benchmark (in-fragment: Lean
+compile-rate / chrF++ / TER; out-of-fragment: chrF++ / TER) — appending to
+metrics.jsonl, writing a snapshots/checkpoint_<step>/ folder, and mirroring
+the scores into TensorBoard (runs/<run_name>/tb) alongside the per-step
+training metrics. The final model lands at model.final_checkpoint.
 """
 
 import argparse
+import json
 from pathlib import Path
 
 import yaml
 
-from .common import ROOT, read_jsonl
+from .common import ROOT, eval_point, read_jsonl, record_eval_point
 from .reward import reward_from_answer_field
 
 
@@ -74,6 +80,66 @@ def lora_config(base: str, hp: dict):
     )
 
 
+def load_benchmarks(cfg: dict) -> dict:
+    ev = cfg["eval"]
+    groups = ev.get("benchmarks") or {"in_fragment": ev["prompts"]}
+    benchmarks = {}
+    for group, rel in groups.items():
+        rows = read_jsonl(ROOT / rel)
+        if ev.get("samples"):
+            rows = rows[: int(ev["samples"])]
+        benchmarks[group] = rows
+    return benchmarks
+
+
+def make_eval_callback(run_dir: Path, benchmarks: dict, temp: float):
+    """A TrainerCallback that judges the LIVE training model (SFT: the full
+    model; GRPO: base + current adapter) at step 0 and at every checkpoint
+    save, then mirrors the scores into TensorBoard via trainer.log."""
+    from transformers import TrainerCallback
+
+    from .cuda_eval import _generate_all
+
+    class EvalCallback(TrainerCallback):
+        trainer = None  # set after the trainer is constructed
+        _last_evaled = None
+
+        def _eval(self, step: int, kind: str):
+            import torch
+            model, tok = self.trainer.model, self.trainer.processing_class
+            was_training, padding_side = model.training, tok.padding_side
+            model.eval()
+            with torch.no_grad():
+                results = eval_point(
+                    benchmarks,
+                    lambda rows: _generate_all(model, tok, rows, temp))
+            tok.padding_side = padding_side
+            if was_training:
+                model.train()
+            row = record_eval_point(run_dir, step, kind, results)
+            scalars = {f"eval/{group}/{k}": v
+                       for group, (summary, _) in results.items()
+                       for k, v in summary.items()
+                       if isinstance(v, (int, float))}
+            self.trainer.log(scalars)
+            self._last_evaled = step
+            print(f"[eval] step {step}: " + json.dumps(
+                {g: row[g] for g in results}, ensure_ascii=False), flush=True)
+
+        def on_train_begin(self, args, state, control, **kwargs):
+            self._eval(0, "init")
+
+        def on_save(self, args, state, control, **kwargs):
+            self._eval(state.global_step, "checkpoint")
+
+        def on_train_end(self, args, state, control, **kwargs):
+            # covers iters not divisible by the save cadence
+            if state.global_step != self._last_evaled:
+                self._eval(state.global_step, "checkpoint")
+
+    return EvalCallback()
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--config", required=True, type=Path,
@@ -86,7 +152,8 @@ def main():
 
     cfg = yaml.safe_load(args.config.read_text())
     hp = cfg["hyperparameters"]
-    ckpt_dir = args.config.parent / "checkpoints"
+    run_dir = args.config.parent
+    ckpt_dir = run_dir / "checkpoints"
     data_dir = ROOT / cfg["data"]["dir"]
     batch = int(hp.get("batch_size", 1))
 
@@ -96,6 +163,8 @@ def main():
         max_steps=args.iters,
         lr_scheduler_type="constant",
         logging_steps=1,
+        logging_dir=str(run_dir / "tb"),
+        report_to=["tensorboard"],
         save_strategy="steps",
         save_steps=args.save_every,
         save_only_model=True,
@@ -104,7 +173,6 @@ def main():
         gradient_checkpointing_kwargs={"use_reentrant": False},
         model_init_kwargs={"dtype": "bfloat16"},
         seed=7,
-        report_to=[],
         disable_tqdm=True,
     )
 
@@ -115,16 +183,12 @@ def main():
         targs = SFTConfig(
             **common,
             per_device_train_batch_size=batch,
-            per_device_eval_batch_size=batch,
             max_length=int(hp.get("max_seq_length", 768)),
             completion_only_loss=True,
-            eval_strategy="steps",
-            eval_steps=max(args.save_every, 100),
         )
         trainer = SFTTrainer(
             model=args.base, args=targs, processing_class=tok,
-            train_dataset=sft_split(data_dir, tok, "train"),
-            eval_dataset=sft_split(data_dir, tok, "valid"))
+            train_dataset=sft_split(data_dir, tok, "train"))
     else:
         from trl import GRPOConfig, GRPOTrainer
         group = int(hp.get("group_size", 6))
@@ -149,8 +213,18 @@ def main():
             train_dataset=grpo_dataset(data_dir),
             peft_config=lora_config(args.base, hp))
 
+    cb = make_eval_callback(run_dir, load_benchmarks(cfg),
+                            float(cfg["eval"].get("temperature", 0)))
+    cb.trainer = trainer
+    trainer.add_callback(cb)
+
     trainer.train()
-    trainer.save_model(str(ckpt_dir / "final"))
+
+    final = Path(cfg["model"].get("final_checkpoint") or ckpt_dir / "final")
+    if not final.is_absolute():
+        final = ROOT / final
+    trainer.save_model(str(final))
+    print(f"[final] model saved to {final}", flush=True)
 
 
 if __name__ == "__main__":

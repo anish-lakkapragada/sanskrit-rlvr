@@ -39,6 +39,10 @@ model:
   # into its base and re-quantized to 4-bit (a measured cost, reported in
   # metrics.jsonl as the "init" entry). null = train from model.base.
   init_from_run: null
+  # Where the final trained model lands (cuda; repo-relative or absolute).
+  # null = runs/<run_name>/checkpoints/final. Chained runs (init_from_run)
+  # and evaluate.py resolve the source model through this same key.
+  final_checkpoint: null
 
 data:
   # Directory containing train.jsonl and valid.jsonl in the format that
@@ -70,13 +74,23 @@ hyperparameters:
   vllm_gpu_memory_utilization: 0.25
 
 eval:
-  # Evaluated at every checkpoint (4 per run + final): the model generates
-  # answers for these prompts, the Lean checker judges them, and chrF++ is
-  # computed against the references. Appends to metrics.jsonl + snapshots/.
-  prompts: data/in_fragment/eval.jsonl
-  samples_per_checkpoint: 60   # how many eval prompts to run per checkpoint
+  # Every benchmark group runs in full at every eval point; each group gets
+  # its own summary object in metrics.jsonl and its own file under
+  # snapshots/checkpoint_<it>/. in_fragment rows are judged by Lean
+  # (compile-rate, QA exact, reward) + chrF++/TER; out_of_fragment rows by
+  # chrF++/TER only. On cuda the eval runs LIVE inside training (scores
+  # stream to TensorBoard as they happen); on mlx it runs after training.
+  benchmarks:
+    in_fragment: data/in_fragment/eval.jsonl
+    out_of_fragment: data/out_of_fragment/eval.jsonl
+  # One knob for telemetry cadence: save a checkpoint AND run the full
+  # eval every N iterations. (Checkpoint 0 = the untrained starting point
+  # is always measured too.)
+  every: 100
+  samples: null                # per-benchmark row cap; null = whole file
   temperature: 0.0             # greedy decoding for evaluation
-  checkpoints: 4               # checkpoint (and eval) every iters/4
+  # Legacy fields still accepted: `prompts` (single in-fragment file),
+  # `checkpoints: N` (cadence = iters/N), `samples_per_checkpoint`.
 
 dashboard:
   # Live view of the run at http://localhost:<port> — reward curve from
