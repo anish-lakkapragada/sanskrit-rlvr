@@ -23,7 +23,9 @@ mlx = [
     "mlx-lm-lora>=3.0,<4; sys_platform == 'darwin'",
 ]
 cuda = [
-    "torch>=2.6; sys_platform == 'linux'",
+    # <2.9: torch 2.9+ default wheels target CUDA 13, which needs driver
+    # >=580 — Lambda's stock images ship driver 570 (CUDA <=12.8)
+    "torch>=2.6,<2.9; sys_platform == 'linux'",
     # <5: trl 0.25's import guards break against transformers 5.x
     # (_is_package_available returns a tuple there; trl treats it as a bool)
     "transformers>=4.55,<5; sys_platform == 'linux'",
@@ -31,7 +33,9 @@ cuda = [
     "accelerate>=1.0; sys_platform == 'linux'",
     "peft>=0.15; sys_platform == 'linux'",
     "trl>=0.23,<0.26; sys_platform == 'linux'",
-    "vllm>=0.10; sys_platform == 'linux'",
+    # ==0.10.2: exactly what trl 0.25 supports (its colocate mode reaches
+    # into vllm internals); also keeps torch on cu128 for driver 570
+    "vllm==0.10.2; sys_platform == 'linux'",
     "tensorboard>=2.16; sys_platform == 'linux'",
 ]
 
