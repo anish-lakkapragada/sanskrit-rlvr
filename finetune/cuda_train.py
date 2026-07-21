@@ -27,7 +27,7 @@ from .common import ROOT, eval_point, read_jsonl, record_eval_point
 from .reward import chrf_reward_from_answer_field, reward_from_answer_field
 
 
-def sft_split(data_dir: Path, tok, split: str):
+def sft_split(data_dir: Path, tok, split: str, chat_kwargs: dict | None = None):
     """messages -> prompt/completion text pairs (TRL masks the prompt)."""
     from datasets import Dataset
     rows = []
@@ -35,19 +35,27 @@ def sft_split(data_dir: Path, tok, split: str):
         msgs = r["messages"]
         rows.append({
             "prompt": tok.apply_chat_template(
-                msgs[:-1], add_generation_prompt=True, tokenize=False),
+                msgs[:-1], add_generation_prompt=True, tokenize=False,
+                **(chat_kwargs or {})),
             "completion": msgs[-1]["content"],
         })
     return Dataset.from_list(rows)
 
 
-def grpo_dataset(data_dir: Path):
-    """Conversational prompts; the grading contract rides in `answer` (an
-    opaque JSON string TRL hands back to the reward function per sample)."""
+def grpo_dataset(data_dir: Path, tok, chat_kwargs: dict | None = None):
+    """Prompts pre-rendered to text — our code owns all templating, exactly
+    like sft_split. (Conversational prompts would be rendered by TRL, but
+    its vLLM-colocate path drops GRPOConfig.chat_template_kwargs while the
+    logprob path applies it: rollouts and scoring would disagree on the
+    prompt.) The grading contract rides in `answer` (an opaque JSON string
+    TRL hands back to the reward function per sample)."""
     from datasets import Dataset
     return Dataset.from_list([
-        {"prompt": [{"role": "system", "content": r["system"]},
-                    {"role": "user", "content": r["prompt"]}],
+        {"prompt": tok.apply_chat_template(
+             [{"role": "system", "content": r["system"]},
+              {"role": "user", "content": r["prompt"]}],
+             add_generation_prompt=True, tokenize=False,
+             **(chat_kwargs or {})),
          "answer": r["answer"]}
         for r in read_jsonl(data_dir / "train.jsonl")])
 
@@ -103,7 +111,8 @@ def load_benchmarks(cfg: dict) -> dict:
     return benchmarks
 
 
-def make_eval_callback(run_dir: Path, benchmarks: dict, temp: float):
+def make_eval_callback(run_dir: Path, benchmarks: dict, temp: float,
+                       chat_kwargs: dict | None = None):
     """A TrainerCallback that judges the LIVE training model (SFT: the full
     model; GRPO: base + current adapter) at step 0 and at every checkpoint
     save, then mirrors the scores into TensorBoard via trainer.log."""
@@ -123,7 +132,8 @@ def make_eval_callback(run_dir: Path, benchmarks: dict, temp: float):
             with torch.no_grad():
                 results = eval_point(
                     benchmarks,
-                    lambda rows: _generate_all(model, tok, rows, temp))
+                    lambda rows: _generate_all(model, tok, rows, temp,
+                                               chat_kwargs=chat_kwargs))
             tok.padding_side = padding_side
             if was_training:
                 model.train()
@@ -173,10 +183,18 @@ def main():
     ckpt_dir = run_dir / "checkpoints"
     data_dir = ROOT / cfg["data"]["dir"]
     batch = int(hp.get("batch_size", 1))
+    # extra kwargs for every apply_chat_template call — training data,
+    # GRPO rollouts, and eval generations all render identically. Hybrid
+    # Qwen3 (8B/14B) needs {enable_thinking: false} here to pin the
+    # non-thinking prompt format everywhere.
+    ctk = cfg["model"].get("chat_template_kwargs") or {}
 
     common = dict(
         output_dir=str(ckpt_dir),
         learning_rate=float(hp["learning_rate"]),
+        # adamw_bnb_8bit shrinks optimizer state 4x — what makes full-param
+        # SFT of an 8B model fit on one 80 GB card
+        optim=hp.get("optim", "adamw_torch"),
         max_steps=args.iters,
         lr_scheduler_type="constant",
         logging_steps=1,
@@ -205,9 +223,11 @@ def main():
         )
         trainer = SFTTrainer(
             model=args.base, args=targs, processing_class=tok,
-            train_dataset=sft_split(data_dir, tok, "train"))
+            train_dataset=sft_split(data_dir, tok, "train", ctk))
     else:
+        from transformers import AutoTokenizer
         from trl import GRPOConfig, GRPOTrainer
+        tok = AutoTokenizer.from_pretrained(args.base)
         group = int(hp.get("group_size", 6))
         max_completion = int(hp.get("max_completion_length", 200))
         targs = GRPOConfig(
@@ -229,13 +249,13 @@ def main():
             raise SystemExit(f"hyperparameters.reward must be one of "
                              f"{sorted(REWARDS)} (got {reward_name!r})")
         trainer = GRPOTrainer(
-            model=args.base, args=targs,
+            model=args.base, args=targs, processing_class=tok,
             reward_funcs=REWARDS[reward_name],
-            train_dataset=grpo_dataset(data_dir),
+            train_dataset=grpo_dataset(data_dir, tok, ctk),
             peft_config=lora_config(args.base, hp))
 
     cb = make_eval_callback(run_dir, load_benchmarks(cfg),
-                            float(cfg["eval"].get("temperature", 0)))
+                            float(cfg["eval"].get("temperature", 0)), ctk)
     cb.trainer = trainer
     trainer.add_callback(cb)
 

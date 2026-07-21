@@ -133,11 +133,13 @@ def eval_benchmarks_mlx(base: str, ckpt: Path | None,
 
 
 def eval_checkpoint(base: str, ckpt: Path | None, rows: list[dict],
-                    temp: float = 0.0, backend: str = "mlx"
+                    temp: float = 0.0, backend: str = "mlx",
+                    chat_kwargs: dict | None = None
                     ) -> tuple[dict, list[dict]]:
     if backend == "cuda":
         from .cuda_eval import eval_checkpoint_cuda
-        return eval_checkpoint_cuda(base, ckpt, rows, temp=temp)
+        return eval_checkpoint_cuda(base, ckpt, rows, temp=temp,
+                                    chat_kwargs=chat_kwargs)
     adapter = adapter_dir_for(ckpt) if ckpt else None
     model, tok = load_model(base, adapter)
     completions = [generate(model, tok, r["system"], r["prompt"], temp=temp)

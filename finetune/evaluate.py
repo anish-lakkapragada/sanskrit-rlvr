@@ -33,15 +33,20 @@ def main():
                     help="generation backend for --model (a run uses its own)")
     ap.add_argument("--tag", help="results file prefix (default: run name/model)")
     ap.add_argument("--limit", type=int)
+    ap.add_argument("--no-think", action="store_true",
+                    help="render prompts with enable_thinking=False (hybrid "
+                         "Qwen3 raw models; runs read this from their config)")
     args = ap.parse_args()
     if bool(args.run) == bool(args.model):
         ap.error("exactly one of --run / --model")
 
+    chat_kwargs = {"enable_thinking": False} if args.no_think else None
     if args.run:
         run_dir = RUNS / args.run
         cfg = yaml.safe_load((run_dir / "config.yaml").read_text())
         backend = cfg.get("backend", "mlx")
         base = cfg["model"]["base"]
+        chat_kwargs = cfg["model"].get("chat_template_kwargs") or chat_kwargs
         if cfg["model"].get("init_from_run"):
             src = RUNS / cfg["model"]["init_from_run"]
             if backend == "cuda":
@@ -63,7 +68,8 @@ def main():
     rows = read_jsonl(ROOT / args.benchmark)
     if args.limit:
         rows = rows[: args.limit]
-    summary, records = eval_checkpoint(base, ckpt, rows, backend=backend)
+    summary, records = eval_checkpoint(base, ckpt, rows, backend=backend,
+                                       chat_kwargs=chat_kwargs)
     # both benchmarks are named eval.jsonl — key results by their group dir
     bench_id = "_".join(args.benchmark.parts[-2:]).removesuffix(".jsonl")
     out = ROOT / "results" / f"{tag}__{bench_id}.json"

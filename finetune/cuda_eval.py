@@ -25,7 +25,8 @@ def _load(base: str, ckpt: Path | None):
     return model.eval(), tok
 
 
-def _generate_all(model, tok, rows, temp, max_tokens=384, batch_size=16):
+def _generate_all(model, tok, rows, temp, max_tokens=384, batch_size=16,
+                  chat_kwargs=None):
     import torch
     if tok.pad_token_id is None:
         tok.pad_token = tok.eos_token
@@ -33,7 +34,8 @@ def _generate_all(model, tok, rows, temp, max_tokens=384, batch_size=16):
     prompts = [tok.apply_chat_template(
         [{"role": "system", "content": r["system"]},
          {"role": "user", "content": r["prompt"]}],
-        add_generation_prompt=True, tokenize=False) for r in rows]
+        add_generation_prompt=True, tokenize=False,
+        **(chat_kwargs or {})) for r in rows]
     out = []
     for i in range(0, len(prompts), batch_size):
         enc = tok(prompts[i:i + batch_size], return_tensors="pt",
@@ -53,10 +55,12 @@ def _generate_all(model, tok, rows, temp, max_tokens=384, batch_size=16):
 
 
 def eval_checkpoint_cuda(base: str, ckpt: Path | None, rows: list[dict],
-                         temp: float = 0.0) -> tuple[dict, list[dict]]:
+                         temp: float = 0.0, chat_kwargs: dict | None = None
+                         ) -> tuple[dict, list[dict]]:
     import torch
     model, tok = _load(base, ckpt)
-    records = judge_rows(rows, _generate_all(model, tok, rows, temp))
+    records = judge_rows(
+        rows, _generate_all(model, tok, rows, temp, chat_kwargs=chat_kwargs))
     del model
     gc.collect()
     torch.cuda.empty_cache()

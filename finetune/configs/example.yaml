@@ -43,6 +43,13 @@ model:
   # null = runs/<run_name>/checkpoints/final. Chained runs (init_from_run)
   # and evaluate.py resolve the source model through this same key.
   final_checkpoint: null
+  # Optional (cuda): extra kwargs for every apply_chat_template call — SFT
+  # training data, GRPO rollout prompts, and eval generations all render
+  # with these, so training and measurement see byte-identical prompts.
+  # Hybrid Qwen3 models (8B/14B — no non-thinking -2507 variant exists)
+  # need {enable_thinking: false} to pin non-thinking mode; the -2507
+  # Instruct models don't take (or need) the flag. null = none.
+  chat_template_kwargs: null
 
 data:
   # Directory containing train.jsonl and valid.jsonl in the format that
@@ -56,6 +63,10 @@ hyperparameters:
   learning_rate: 1.0e-4
   iters: null             # explicit iteration count; null (SFT only) = derive
   epochs: 2               # from epochs × dataset size ÷ batch_size
+  # cuda only: any transformers optimizer name. adamw_torch (default) keeps
+  # fp32 moments (~12 bytes/param — fine for 4B on 80 GB); adamw_bnb_8bit
+  # quantizes them (~6 bytes/param — required for full-param SFT of 8B).
+  optim: adamw_torch
   batch_size: 2           # GRPO uses 1 (each item spawns group_size samples)
   num_layers: 16          # transformer layers that get LoRA adapters
                           # (cuda SFT is full-parameter: ignored there)

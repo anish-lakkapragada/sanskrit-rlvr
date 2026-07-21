@@ -1,0 +1,49 @@
+# Scale arm 2: GRPO (RLVR against the Lean checker) on top of the Qwen3-8B
+# NON-THINKING SFT run. Same recipe as cuda-sft-then-grpo (the 4B arm):
+# the SFT checkpoint becomes the base directly, a fresh LoRA adapter trains
+# on top, and disabling it recovers the SFT model exactly — TRL's KL
+# reference. Rollouts run through vLLM colocated on the same GPU.
+#
+# Deltas vs the 4B arm, besides the model:
+#   vllm_gpu_memory_utilization: 0.40 — the colocated engine holds its own
+#   bf16 weight copy (16.4 GB for 8B) inside this fraction; 0.25 of 80 GB
+#   would leave almost no KV cache.
+#   chat_template_kwargs pins non-thinking rollout + eval prompts, matching
+#   the SFT arm byte-for-byte (our grpo_dataset pre-renders prompt text with
+#   it — TRL's colocate path can't be trusted to forward template kwargs).
+run_name: cuda-qwen3-8b-nothink-sft-then-grpo
+backend: cuda
+mode: grpo
+model:
+  base: Qwen/Qwen3-8B
+  init_from_run: cuda-qwen3-8b-nothink-sft-baseline
+  final_checkpoint: runs/cuda-qwen3-8b-nothink-sft-then-grpo/checkpoints/final
+  chat_template_kwargs:
+    enable_thinking: false
+data:
+  dir: data/in_fragment/grpo
+hyperparameters:
+  reward: lean            # GRPO training signal: the Lean checker (RLVR)
+  learning_rate: 8.0e-6
+  iters: 1000
+  batch_size: 1
+  num_layers: 16          # last 16 of 36 — Qwen3-8B has the same depth as 4B
+  lora_rank: 8
+  lora_alpha: 80
+  max_seq_length: 768
+  group_size: 8
+  beta: 0.1
+  temperature: 0.8
+  max_completion_length: 200
+  use_vllm: true
+  vllm_gpu_memory_utilization: 0.40
+eval:
+  benchmarks:
+    in_fragment: data/in_fragment/eval.jsonl
+    out_of_fragment: data/out_of_fragment/eval.jsonl
+  every: 100
+  samples: null
+  temperature: 0.0
+dashboard:
+  enabled: true
+  port: 8777

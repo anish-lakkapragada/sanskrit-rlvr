@@ -37,6 +37,9 @@ cuda = [
     # into vllm internals); also keeps torch on cu128 for driver 570
     "vllm==0.10.2; sys_platform == 'linux'",
     "tensorboard>=2.16; sys_platform == 'linux'",
+    # 8-bit AdamW (hyperparameters.optim: adamw_bnb_8bit) — shrinks full-param
+    # SFT optimizer state 4x so Qwen3-8B fits on one 80 GB card
+    "bitsandbytes>=0.45; sys_platform == 'linux'",
 ]
 
 [tool.uv]
