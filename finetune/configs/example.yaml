@@ -64,6 +64,11 @@ hyperparameters:
   lora_rank: 8
   lora_alpha: 80          # peft scales by alpha/rank; 10×rank matches mlx
   # --- GRPO only (ignored for SFT) -------------------------------------------
+  # The training reward signal, and the experiment's key switch:
+  #   lean — the Lean checker judges each sample (verified reward / RLVR)
+  #   chrf — chrF++ similarity to the reference (non-verified control;
+  #          same 0.15·format + 0.85·task shape, no compiler involved)
+  reward: lean
   group_size: 6           # samples per prompt; advantage = vs group mean
   beta: 0.1               # KL leash to the reference (= this run's base)
   temperature: 0.8        # sampling temperature during rollouts

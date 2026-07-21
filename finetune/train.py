@@ -147,7 +147,9 @@ def backend_command(cfg: dict, base: str, run_dir: Path,
                 "--temperature", str(hp.get("temperature", 0.8)),
                 "--max-completion-length", str(hp.get("max_completion_length", 200)),
                 "--reward-functions-file", str(ROOT / "finetune" / "rewards_shim.py"),
-                "--reward-functions", "lean_sanskrit_reward"]
+                "--reward-functions",
+                {"lean": "lean_sanskrit_reward",
+                 "chrf": "chrf_format_reward"}[hp.get("reward", "lean")]]
     return cmd
 
 

@@ -81,3 +81,23 @@ def reward_from_answer_field(answer_json: str, completion: str) -> float:
         return float(reward(json.loads(answer_json), completion)["reward"])
     except Exception:
         return 0.0
+
+
+def chrf_reward_from_answer_field(answer_json: str, completion: str) -> float:
+    """The non-verified control reward: same 0.15/0.85 shape as the Lean
+    reward, but task quality = chrF++ similarity to the reference instead
+    of the compiler's judgment. Isolates what verification itself buys."""
+    global _CHRF
+    try:
+        if _CHRF is None:
+            from sacrebleu.metrics import CHRF
+            _CHRF = CHRF(word_order=2)  # chrF++, same settings as eval
+        ref = json.loads(answer_json)["reference"]
+        ans, fmt = extract(completion)
+        task = _CHRF.sentence_score(normalize(ans), [ref]).score / 100.0
+        return round(0.15 * fmt + 0.85 * task, 4)
+    except Exception:
+        return 0.0
+
+
+_CHRF = None

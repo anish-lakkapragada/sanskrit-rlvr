@@ -24,7 +24,7 @@ from pathlib import Path
 import yaml
 
 from .common import ROOT, eval_point, read_jsonl, record_eval_point
-from .reward import reward_from_answer_field
+from .reward import chrf_reward_from_answer_field, reward_from_answer_field
 
 
 def sft_split(data_dir: Path, tok, split: str):
@@ -57,6 +57,17 @@ def lean_sanskrit_reward(prompts, completions, answer, **kwargs):
     texts = [c[0]["content"] if isinstance(c, list) else c for c in completions]
     return [reward_from_answer_field(spec, text)
             for text, spec in zip(texts, answer)]
+
+
+def chrf_format_reward(prompts, completions, answer, **kwargs):
+    """The non-verified control: same shape, chrF++ instead of the compiler."""
+    texts = [c[0]["content"] if isinstance(c, list) else c for c in completions]
+    return [chrf_reward_from_answer_field(spec, text)
+            for text, spec in zip(texts, answer)]
+
+
+# hyperparameters.reward selects the GRPO training signal
+REWARDS = {"lean": lean_sanskrit_reward, "chrf": chrf_format_reward}
 
 
 def lora_config(base: str, hp: dict):
@@ -213,9 +224,13 @@ def main():
             vllm_gpu_memory_utilization=float(
                 hp.get("vllm_gpu_memory_utilization", 0.25)),
         )
+        reward_name = hp.get("reward", "lean")
+        if reward_name not in REWARDS:
+            raise SystemExit(f"hyperparameters.reward must be one of "
+                             f"{sorted(REWARDS)} (got {reward_name!r})")
         trainer = GRPOTrainer(
             model=args.base, args=targs,
-            reward_funcs=lean_sanskrit_reward,
+            reward_funcs=REWARDS[reward_name],
             train_dataset=grpo_dataset(data_dir),
             peft_config=lora_config(args.base, hp))
 

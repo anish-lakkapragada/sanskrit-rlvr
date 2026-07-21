@@ -150,8 +150,11 @@ def make_tasks(n: int, seed: int) -> list[dict]:
 # --- data/ writer -----------------------------------------------------------
 
 def _spec_json(t):
+    # the whole grading contract rides in this opaque string: Lean-judged
+    # rewards use gold/specs, the chrF++ control reward uses reference
     return json.dumps({"type": t["type"], "gold": t["gold"],
-                       "specs": t["specs"]}, ensure_ascii=False)
+                       "specs": t["specs"], "reference": t["reference"]},
+                      ensure_ascii=False)
 
 
 def _write(path: Path, rows: list[dict]):

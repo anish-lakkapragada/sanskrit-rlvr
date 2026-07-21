@@ -11,6 +11,7 @@ model:
 data:
   dir: data/in_fragment/grpo
 hyperparameters:
+  reward: lean            # GRPO training signal: the Lean checker (RLVR)
   learning_rate: 8.0e-6
   iters: 1200
   batch_size: 1
