@@ -1,0 +1,45 @@
+# Control arm at 8B: identical to cuda-qwen3-8b-nothink-sft-then-grpo in
+# every respect — same SFT init (and KL reference), same prompts, same
+# optimizer, same reward SHAPE (0.15·format + 0.85·task) — except task
+# quality is judged by chrF++ similarity to the reference instead of the
+# Lean compiler. The one-variable comparison that isolates what verification
+# itself buys, now at the second model scale. Note the control actually gets
+# MORE gradient signal (chrF++ is continuous, so rollout groups almost never
+# tie — the Lean arm ran at 77% zero-variance), so a Lean win here is a
+# conservative result.
+run_name: cuda-qwen3-8b-nothink-sft-then-grpo-chrf
+backend: cuda
+mode: grpo
+model:
+  base: Qwen/Qwen3-8B
+  init_from_run: cuda-qwen3-8b-nothink-sft-baseline
+  final_checkpoint: runs/cuda-qwen3-8b-nothink-sft-then-grpo-chrf/checkpoints/final
+  chat_template_kwargs:
+    enable_thinking: false
+data:
+  dir: data/in_fragment/grpo
+hyperparameters:
+  reward: chrf            # GRPO training signal: chrF++ vs reference (control)
+  learning_rate: 8.0e-6
+  iters: 1000
+  batch_size: 1
+  num_layers: 16
+  lora_rank: 8
+  lora_alpha: 80
+  max_seq_length: 768
+  group_size: 8
+  beta: 0.1
+  temperature: 0.8
+  max_completion_length: 200
+  use_vllm: true
+  vllm_gpu_memory_utilization: 0.40
+eval:
+  benchmarks:
+    in_fragment: data/in_fragment/eval.jsonl
+    out_of_fragment: data/out_of_fragment/eval.jsonl
+  every: 100
+  samples: null
+  temperature: 0.0
+dashboard:
+  enabled: true
+  port: 8777
