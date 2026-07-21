@@ -67,7 +67,10 @@ def resolve_base_model(cfg: dict, run_dir: Path) -> str:
             fail(f"init_from_run: {final} is not a full model checkpoint "
                  "(cuda runs must init from a completed cuda SFT run)")
         return str(final)
-    if not (src / "checkpoints" / "adapters.safetensors").exists():
+    adapter_dir = src / "checkpoints" / "final"
+    if not (adapter_dir / "adapters.safetensors").exists():
+        adapter_dir = src / "checkpoints"  # runs from before the <it>/ layout
+    if not (adapter_dir / "adapters.safetensors").exists():
         fail(f"init_from_run: no final adapter under runs/{src_name}/checkpoints")
     src_cfg = yaml.safe_load((src / "config.yaml").read_text())
     fused = src / "fused_4bit"
@@ -76,7 +79,7 @@ def resolve_base_model(cfg: dict, run_dir: Path) -> str:
         tmp = src / "fused_bf16"
         subprocess.run([sys.executable, "-m", "mlx_lm", "fuse",
                         "--model", src_cfg["model"]["base"],
-                        "--adapter-path", str(src / "checkpoints"),
+                        "--adapter-path", str(adapter_dir),
                         "--save-path", str(tmp)], check=True)
         print("[init] re-quantizing fused model to 4-bit …", flush=True)
         subprocess.run([sys.executable, "-m", "mlx_lm", "convert",
@@ -84,6 +87,36 @@ def resolve_base_model(cfg: dict, run_dir: Path) -> str:
                         "-q"], check=True)
         shutil.rmtree(tmp, ignore_errors=True)
     return str(fused)
+
+
+def organize_mlx_checkpoints(ckpt_dir: Path, iters: int) -> list[tuple[int, Path]]:
+    """mlx-lm-lora writes flat files (0000100_adapters.safetensors … plus a
+    final adapters.safetensors). Repackage them as checkpoints/<iteration>/
+    dirs — each independently loadable — with the last at checkpoints/final,
+    mirroring the cuda layout. Returns [(iteration, dir)] to evaluate."""
+    adapter_cfg = ckpt_dir / "adapter_config.json"
+    points = []
+    for f in sorted(ckpt_dir.glob("0*_adapters.safetensors")):
+        it = int(f.name.split("_")[0])
+        d = ckpt_dir / str(it)
+        d.mkdir(exist_ok=True)
+        f.rename(d / "adapters.safetensors")
+        shutil.copy(adapter_cfg, d)
+        points.append((it, d))
+    final = ckpt_dir / "final"
+    final.mkdir(exist_ok=True)
+    if (ckpt_dir / "adapters.safetensors").exists():
+        (ckpt_dir / "adapters.safetensors").rename(final / "adapters.safetensors")
+        shutil.copy(adapter_cfg, final)
+    adapter_cfg.unlink(missing_ok=True)
+    # the trainer also dumps full-model + tokenizer files at the top level;
+    # they belong with the final model
+    for f in list(ckpt_dir.iterdir()):
+        if f.is_file():
+            f.rename(final / f.name)
+    if not points or points[-1][0] != iters:
+        points.append((iters, final))
+    return points
 
 
 def backend_command(cfg: dict, base: str, run_dir: Path,
@@ -184,10 +217,7 @@ def main():
     # evaluate every saved checkpoint, in order, then the final one.
     # (cuda already did this live, inside the trainer, at every save)
     if cfg["backend"] == "mlx":
-        ckpts = sorted((run_dir / "checkpoints").glob("0*_adapters.safetensors"))
-        points = [(int(c.name.split("_")[0]), c) for c in ckpts]
-        if not points or points[-1][0] != iters:
-            points.append((iters, run_dir / "checkpoints" / "adapters.safetensors"))
+        points = organize_mlx_checkpoints(run_dir / "checkpoints", iters)
         for it, ckpt in points:
             print(f"[eval] checkpoint {it}/{iters} …", flush=True)
             record_eval_point(run_dir, it, "checkpoint",

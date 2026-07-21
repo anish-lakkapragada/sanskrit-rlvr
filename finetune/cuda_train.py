@@ -130,7 +130,13 @@ def make_eval_callback(run_dir: Path, benchmarks: dict, temp: float):
             self._eval(0, "init")
 
         def on_save(self, args, state, control, **kwargs):
-            self._eval(state.global_step, "checkpoint")
+            # checkpoints/<iteration>/ instead of HF's checkpoint-<iteration>
+            # (safe: no rotation, no resume — nothing else reads the name)
+            step = state.global_step
+            hf_dir = Path(args.output_dir) / f"checkpoint-{step}"
+            if hf_dir.exists():
+                hf_dir.rename(Path(args.output_dir) / str(step))
+            self._eval(step, "checkpoint")
 
         def on_train_end(self, args, state, control, **kwargs):
             # covers iters not divisible by the save cadence

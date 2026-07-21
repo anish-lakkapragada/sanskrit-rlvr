@@ -29,14 +29,17 @@ def generate(model, tok, system: str, prompt: str, max_tokens=384, temp=0.0):
     return _gen(model, tok, prompt=p, max_tokens=max_tokens, verbose=False, **kwargs)
 
 
-def adapter_dir_for(checkpoint_file: Path) -> str:
-    """mlx_lm.load wants a dir with adapters.safetensors + adapter_config.json;
-    intermediate checkpoints are bare .safetensors files."""
-    if checkpoint_file.name == "adapters.safetensors":
-        return str(checkpoint_file.parent)
+def adapter_dir_for(checkpoint: Path) -> str:
+    """mlx_lm.load wants a dir with adapters.safetensors + adapter_config.json.
+    checkpoints/<iteration>/ dirs already have that shape; the file branches
+    keep old-layout runs (bare .safetensors) loadable."""
+    if checkpoint.is_dir():
+        return str(checkpoint)
+    if checkpoint.name == "adapters.safetensors":
+        return str(checkpoint.parent)
     tmp = Path(tempfile.mkdtemp(prefix="ckpt_"))
-    shutil.copy(checkpoint_file, tmp / "adapters.safetensors")
-    shutil.copy(checkpoint_file.parent / "adapter_config.json", tmp)
+    shutil.copy(checkpoint, tmp / "adapters.safetensors")
+    shutil.copy(checkpoint.parent / "adapter_config.json", tmp)
     return str(tmp)
 
 
@@ -101,9 +104,10 @@ def eval_point(benchmarks: dict[str, list[dict]], generate_rows
 def record_eval_point(run_dir: Path, checkpoint: int, kind: str,
                       results: dict[str, tuple[dict, list[dict]]]) -> dict:
     """Persist one eval point: nested metrics row (one summary object per
-    benchmark group) + a snapshot folder holding every judged generation."""
+    benchmark group) + snapshots/<iteration>/ holding every judged
+    generation, mirroring checkpoints/<iteration>/."""
     row = {"checkpoint": checkpoint, "kind": kind}
-    snap = run_dir / "snapshots" / f"checkpoint_{checkpoint}"
+    snap = run_dir / "snapshots" / str(checkpoint)
     snap.mkdir(parents=True, exist_ok=True)
     for group, (summary, records) in results.items():
         row[group] = summary

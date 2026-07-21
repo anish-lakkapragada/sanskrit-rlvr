@@ -51,10 +51,13 @@ def run_state(run: Path) -> dict:
     m = run / "metrics.jsonl"
     if m.exists():
         state["metrics"] = [json.loads(l) for l in m.open()]
-    # snapshots: new layout is a folder per eval point with one jsonl per
-    # benchmark group; old layout was a single checkpoint_<it>.jsonl
-    snaps = sorted((run / "snapshots").glob("checkpoint_*"),
-                   key=lambda p: int(p.stem.split("_")[1])) \
+    # snapshots: snapshots/<iteration>/ with one jsonl per benchmark group;
+    # older layouts (checkpoint_<it>/ dirs, checkpoint_<it>.jsonl files)
+    # remain readable
+    def _iteration(p: Path) -> int:
+        return int(p.stem.split("_")[-1]) if "_" in p.stem else int(p.stem)
+    snaps = sorted((p for p in (run / "snapshots").iterdir()
+                    if p.stem.split("_")[-1].isdigit()), key=_iteration) \
         if (run / "snapshots").exists() else []
     if snaps:
         latest = snaps[-1]

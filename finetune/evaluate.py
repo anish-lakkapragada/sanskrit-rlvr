@@ -50,15 +50,11 @@ def main():
                                     or src / "checkpoints" / "final"))
             else:
                 base = str(src / "fused_4bit")
-        if backend == "cuda":
-            ckpt = (run_dir / "checkpoints" / f"checkpoint-{args.checkpoint}"
-                    if args.checkpoint else
-                    _resolve(cfg["model"].get("final_checkpoint")
-                             or run_dir / "checkpoints" / "final"))
-        else:
-            ckpt = (run_dir / "checkpoints" /
-                    (f"{args.checkpoint:07d}_adapters.safetensors"
-                     if args.checkpoint else "adapters.safetensors"))
+        # both backends: checkpoints/<iteration>/ dirs + checkpoints/final
+        ckpt = (run_dir / "checkpoints" / str(args.checkpoint)
+                if args.checkpoint else
+                _resolve(cfg["model"].get("final_checkpoint")
+                         or run_dir / "checkpoints" / "final"))
         tag = args.tag or args.run
     else:
         backend = args.backend or "mlx"

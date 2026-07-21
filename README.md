@@ -156,27 +156,33 @@ The two groups:
 
 ### runs/ — what a training run leaves behind (gitignored)
 
+Everything an experiment produces is indexed by iteration —
+`checkpoints/<it>/` holds the model at iteration `<it>`, `snapshots/<it>/`
+holds what it generated, and the matching `metrics.jsonl` line holds its
+scores. The layout is identical on both backends:
+
 ```
 runs/<run_name>/
 ├── config.yaml      frozen, normalized copy of the launch config
 ├── train.log        raw trainer output (what the dashboard tails)
 ├── tb/              TensorBoard event files (cuda): per-step loss/reward/KL
 │                    + the eval/* scores at every eval point, live
-├── checkpoints/     every `eval.every` iterations —
-│                    mlx:  0000100_adapters.safetensors … + adapters.safetensors
-│                    cuda: checkpoint-100/ … + final/ (SFT: a full model;
-│                          GRPO: a PEFT adapter dir; final path is the
-│                          config's model.final_checkpoint)
-├── fused_4bit/      mlx only, and only when a later run chains from this one
-│                    (init_from_run fuses + re-quantizes into the source run;
-│                    the cuda handoff needs no such artifact)
+├── checkpoints/
+│   ├── 100/ 200/ …  one dir per eval point (every `eval.every` iters):
+│   │                mlx: adapter dir · cuda SFT: full model · cuda GRPO:
+│   │                PEFT adapter dir — each independently loadable
+│   └── final/       the end-of-training model (the config's
+│                    model.final_checkpoint; what init_from_run chains to)
+├── snapshots/
+│   └── 0/ 100/ …    {in_fragment,out_of_fragment}.jsonl per eval point —
+│                    every generation with its extracted answer, reward
+│                    breakdown, and Lean verdict (0 = the untrained start)
 ├── metrics.jsonl    one line per eval point with one summary object per
 │                    benchmark group: in_fragment {compile_rate, qa_exact,
-│                    mean_reward, chrf_pp, ter}, out_of_fragment {chrf_pp,
-│                    ter} (line 0 = the untrained start)
-└── snapshots/       checkpoint_<it>/{in_fragment,out_of_fragment}.jsonl —
-                     every eval generation with its extracted answer,
-                     reward breakdown, and Lean verdict
+│                    mean_reward, chrf_pp, ter}, out_of_fragment {chrf_pp, ter}
+└── fused_4bit/      mlx only, and only when a later run chains from this one
+                     (init_from_run fuses + re-quantizes into the source run;
+                     the cuda handoff needs no such artifact)
 ```
 
 ### Watching a cuda run live
