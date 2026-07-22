@@ -89,6 +89,59 @@ words (verb, two nouns, adjective) or five (two clauses + *ca*), given in
 citation form with glosses; grammar judged by Lean, coverage by
 constraint bits.
 
+## How the reward is computed, per family
+
+Every family — and the chrF++ control reward — shares one shell:
+
+    reward = 0.15 × format + 0.85 × task
+
+`format` is 1 iff the answer was inside `<ans></ans>` tags (last match
+wins; otherwise the last nonempty line is graded with format = 0).
+Answers are normalized (NFC, lowercased, punctuation stripped) before
+grading. `task ∈ [0,1]` has three regimes:
+
+**Exact-match** (`qa`, `cloze`, `error_id`) — no checker call:
+
+    task = 1.0              if answer ∈ gold list
+         = 0.25 × ratio     if best SequenceMatcher ratio ≥ 0.5 (near-miss, capped low, anti-gaming)
+         = 0.0              otherwise
+
+The gold list carries every accepted variant of the cell (mataye/matyai
+both score 1.0); for error_id it is the misinflected word, or sādhu.
+
+**Open production** (`translate`, `compose`) — structural, multiplicative:
+
+    task = grammar × (0.15 + 0.85 × content) × damp
+    grammar = weighted checker components (words .40, clauses .15,
+              subject .20, adjective .10, object .15)
+    content = fraction of constraint specs satisfied
+    damp    = 1 if n_tokens ≤ cap, else max(0.05, cap / n_tokens)
+
+`cap` is per-row (reference length + 3 for translate; 12–13 for compose).
+Multiplicative on purpose: word salad zeroes grammar, prompt-ignoring
+zeroes content, padding is crushed by damp.
+
+**Post-edit** (`post_edit`) — same shape, but grammar becomes a **gate**:
+
+    task = 1.0 if answer == the original sentence, else
+         = gate × (0.15 + 0.85 × content) × damp
+    gate    = 1.0 iff the checker's verdict is fully grammatical, else 0.0
+    content = bare-lemma bits of the original sentence (no word swaps)
+    cap     = original length + 2
+
+The gate exists because of a measured exploit: a corrupted sentence
+typically fails only one checker component, so under the weighted formula
+echoing the prompt back would score task ≈ 0.8; with the gate, an echo
+scores 0. A *different* valid repair (fixing agreement from the other
+side) scores 1.0 — the contract is "grammatical, same words", not
+"byte-identical".
+
+The `gold`/`reference` strings inside a GRPO row's `answer` spec are
+consumed only by these reward computations over sampled rollouts — GRPO
+never trains on them as target text. Every row was verified at generation
+time to satisfy its own contract (reference scores exactly 1.0; post-edit
+echo scores < 0.2).
+
 ## In-fragment: how it was generated
 
 1. **The vocabulary** is the v2 Lean lexicon (774 lemmas, 23,897 forms),

@@ -1,0 +1,39 @@
+# Data-v2 arm: full-parameter SFT of Qwen3-8B — NON-THINKING mode — on the
+# v2 task data (774-lemma lexicon, six task families incl. post_edit /
+# cloze / error_id, real mined corpus sentences; see data/README.md).
+#
+# Hyperparameters are byte-identical to cuda-qwen3-8b-nothink-sft-baseline:
+# the DATA is the variable. Note the epoch delta that implies: v1 SFT was
+# 1000 rows (1000 iters × batch 4 ≈ 4 epochs); v2 is 2000 rows, so the same
+# 1000 iters ≈ 2 epochs.
+#
+# Eval differs with the data: in_fragment is 250 rows (compile_rate,
+# exact_rate, fix_rate, chrF++/TER), out_of_fragment is the 150-row
+# attested-cloze benchmark (cloze_exact; judge "exact").
+run_name: cuda-qwen3-8b-nothink-sft-baseline-datav2
+backend: cuda
+mode: sft
+model:
+  base: Qwen/Qwen3-8B
+  init_from_run: null
+  final_checkpoint: runs/cuda-qwen3-8b-nothink-sft-baseline-datav2/checkpoints/final
+  chat_template_kwargs:
+    enable_thinking: false
+data:
+  dir: data/in_fragment/sft
+hyperparameters:
+  learning_rate: 1.0e-5
+  iters: 1000
+  batch_size: 4
+  max_seq_length: 768
+  optim: adamw_bnb_8bit   # what makes 8B full-param fit on 80 GB
+eval:
+  benchmarks:
+    in_fragment: data/in_fragment/eval.jsonl          # 250 rows, Lean + chrF++/TER
+    out_of_fragment: data/out_of_fragment/eval.jsonl  # 150 rows, attested cloze (exact)
+  every: 100
+  samples: null
+  temperature: 0.0
+dashboard:
+  enabled: true
+  port: 8777
