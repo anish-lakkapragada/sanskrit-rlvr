@@ -231,8 +231,9 @@ def main():
         i, o = d.get("in_fragment", {}), d.get("out_of_fragment", {})
         print(f"  ckpt {d['checkpoint']:>5}  "
               f"compile={i.get('compile_rate')}  "
+              f"exact(in)={i.get('exact_rate')}  fix(in)={i.get('fix_rate')}  "
               f"chrf++(in)={i.get('chrf_pp')}  ter(in)={i.get('ter')}  "
-              f"chrf++(out)={o.get('chrf_pp')}  ter(out)={o.get('ter')}")
+              f"cloze(out)={o.get('cloze_exact')}")
 
 
 if __name__ == "__main__":

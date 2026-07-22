@@ -1,0 +1,44 @@
+# Data-v2 arm 2: GRPO (RLVR) on top of the datav2 SFT run. Identical recipe
+# to cuda-qwen3-8b-nothink-sft-then-grpo — the SFT checkpoint becomes the
+# base, a fresh LoRA trains on top, disabling it recovers the SFT model
+# exactly (TRL's KL reference), rollouts via colocated vLLM.
+#
+# The v2 GRPO data mixes reward regimes per family (see data/README.md):
+# translate/compose/post_edit rollouts are judged live by the Lean checker;
+# qa/cloze/error_id by exact match against Lean-exported gold lists.
+run_name: cuda-qwen3-8b-nothink-sft-then-grpo-datav2
+backend: cuda
+mode: grpo
+model:
+  base: Qwen/Qwen3-8B
+  init_from_run: cuda-qwen3-8b-nothink-sft-baseline-datav2
+  final_checkpoint: runs/cuda-qwen3-8b-nothink-sft-then-grpo-datav2/checkpoints/final
+  chat_template_kwargs:
+    enable_thinking: false
+data:
+  dir: data/in_fragment/grpo
+hyperparameters:
+  reward: lean            # GRPO training signal: the verified reward (RLVR)
+  learning_rate: 8.0e-6
+  iters: 1000
+  batch_size: 1
+  num_layers: 16
+  lora_rank: 8
+  lora_alpha: 80
+  max_seq_length: 768
+  group_size: 8
+  beta: 0.1
+  temperature: 0.8
+  max_completion_length: 200
+  use_vllm: true
+  vllm_gpu_memory_utilization: 0.40
+eval:
+  benchmarks:
+    in_fragment: data/in_fragment/eval.jsonl          # 250 rows, Lean + chrF++/TER
+    out_of_fragment: data/out_of_fragment/eval.jsonl  # 150 rows, attested cloze (exact)
+  every: 100
+  samples: null
+  temperature: 0.0
+dashboard:
+  enabled: true
+  port: 8777

@@ -1,0 +1,50 @@
+# Control arm on the v2 data: identical to
+# cuda-qwen3-8b-nothink-sft-then-grpo-datav2 in every respect — same SFT
+# init (and KL reference), same prompts, same optimizer, same reward SHAPE
+# (0.15·format + 0.85·task) — except task quality is judged by chrF++
+# similarity to the reference instead of the verified reward. The
+# one-variable comparison that isolates what verification buys on the v2
+# task mixture. Two family-level notes for interpretation: on the one-word
+# families (qa/cloze/error_id, 40% of rows) chrF++ vs a one-word reference
+# is a soft exact match, so the arms nearly share a signal there; on
+# post_edit the corrupted prompt is one word from the reference, so echoing
+# scores ~0.9 under chrF++ — the exploit the verified reward gates out is a
+# live optimum for this control. And per the v1 measurement, chrF++ being
+# continuous means rollout groups almost never tie, so the control gets
+# MORE gradient signal, making a verified-arm win conservative.
+run_name: cuda-qwen3-8b-nothink-sft-then-grpo-chrf-datav2
+backend: cuda
+mode: grpo
+model:
+  base: Qwen/Qwen3-8B
+  init_from_run: cuda-qwen3-8b-nothink-sft-baseline-datav2
+  final_checkpoint: runs/cuda-qwen3-8b-nothink-sft-then-grpo-chrf-datav2/checkpoints/final
+  chat_template_kwargs:
+    enable_thinking: false
+data:
+  dir: data/in_fragment/grpo
+hyperparameters:
+  reward: chrf            # GRPO training signal: chrF++ vs reference (control)
+  learning_rate: 8.0e-6
+  iters: 1000
+  batch_size: 1
+  num_layers: 16
+  lora_rank: 8
+  lora_alpha: 80
+  max_seq_length: 768
+  group_size: 8
+  beta: 0.1
+  temperature: 0.8
+  max_completion_length: 200
+  use_vllm: true
+  vllm_gpu_memory_utilization: 0.40
+eval:
+  benchmarks:
+    in_fragment: data/in_fragment/eval.jsonl          # 250 rows, Lean + chrF++/TER
+    out_of_fragment: data/out_of_fragment/eval.jsonl  # 150 rows, attested cloze (exact)
+  every: 100
+  samples: null
+  temperature: 0.0
+dashboard:
+  enabled: true
+  port: 8777

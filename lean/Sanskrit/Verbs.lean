@@ -4,10 +4,13 @@ import Sanskrit.Nouns
 /-!
 # Verbal morphology
 
-Present tense (laṭ), both voices, for thematic verbs (classes 1/4/6/10 —
-conjugated from their present stem) plus the two indispensable irregulars
-as 'to be' and kṛ 'to do'. Persons follow the English convention
-(third = Sanskrit prathama-puruṣa).
+Present tense (laṭ), both voices. Thematic verbs (classes 1/4/6/10 and
+denominatives) are conjugated from their present stem by the ending
+tables below. Athematic verbs (root, reduplicating, nasal and nu/nā
+classes: as, dā, dhā, hu, śru, kṛ …) carry their nine present forms as
+an explicit table in the lexicon entry — enumerated like all suppletive
+morphology, and validated cell-by-cell against corpus attestations.
+Persons follow the English convention (third = Sanskrit prathama-puruṣa).
 -/
 
 namespace Sanskrit
@@ -29,23 +32,15 @@ def thematicEnding : Pada → Person → Number → String
   | .A, second, sg => "ase"  | .A, second, du => "eTe"   | .A, second, pl => "aDve"
   | .A, first,  sg => "e"    | .A, first,  du => "Avahe" | .A, first,  pl => "Amahe"
 
-/-- as 'to be' (root class 2, athematic). -/
-def asForm : Person → Number → String
-  | third,  sg => "asti"  | third,  du => "staH"  | third,  pl => "santi"
-  | second, sg => "asi"   | second, du => "sTaH"  | second, pl => "sTa"
-  | first,  sg => "asmi"  | first,  du => "svaH"  | first,  pl => "smaH"
-
-/-- kṛ 'to do' (class 8). -/
-def kfForm : Person → Number → String
-  | third,  sg => "karoti"  | third,  du => "kurutaH"  | third,  pl => "kurvanti"
-  | second, sg => "karozi"  | second, du => "kuruTaH"  | second, pl => "kuruTa"
-  | first,  sg => "karomi"  | first,  du => "kurvaH"   | first,  pl => "kurmaH"
-
-/-- Conjugate: `stem` is the thematic present stem (ends in a), or the
-special markers "as" / "kf" for the irregulars. -/
+/-- Conjugate a thematic present stem (ends in a), with ṇatva applied. -/
 def conjugate (stem : String) (pada : Pada) (p : Person) (n : Number) : String :=
-  if stem == "as" then asForm p n
-  else if stem == "kf" then kfForm p n
-  else natva ((stem.dropEnd 1).toString ++ thematicEnding pada p n)
+  natva ((stem.dropEnd 1).toString ++ thematicEnding pada p n)
+
+/-- An athematic paradigm: the nine present-indicative cells. -/
+abbrev AthematicTable := List (Person × Number × String)
+
+/-- Look up person/number in an athematic table. -/
+def athematicForm (t : AthematicTable) (p : Person) (n : Number) : Option String :=
+  (t.find? fun (p', n', _) => p' == p && n' == n).map (·.2.2)
 
 end Sanskrit

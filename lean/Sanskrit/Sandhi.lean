@@ -45,6 +45,23 @@ def pausaCandidates (w : String) (next? : Option Char) : List String :=
   let base := if last == 'M' && !nextVowel then base ++ [body ++ "m"] else base
   -- -d from -t before voiced (tad asti < tat)
   let base := if last == 'd' && nextVoiced then base ++ [body ++ "t"] else base
+  -- voiced final stops from unvoiced before voiced (vāg asti < vāk)
+  let base := if last == 'g' && nextVoiced then base ++ [body ++ "k"] else base
+  let base := if last == 'q' && nextVoiced then base ++ [body ++ "w"] else base
+  let base := if last == 'b' && nextVoiced then base ++ [body ++ "p"] else base
+  -- final t assimilated to a following coronal (tac ca, taj jalam, tan na)
+  let base := if last == 'c' && (next? == some 'c' || next? == some 'C')
+              then base ++ [body ++ "t"] else base
+  let base := if last == 'j' && next? == some 'j' then base ++ [body ++ "t"] else base
+  let base := if last == 'l' && next? == some 'l' then base ++ [body ++ "t"] else base
+  let base := if last == 'n' && next? == some 'n' then base ++ [body ++ "t"] else base
+  -- -ṃś/-ṃs/-ṃṣ from -n before unvoiced coronals (bhavāṃś ca < bhavān)
+  let base := if w.endsWith "MS" && (next? == some 'c' || next? == some 'C')
+              then base ++ [(w.dropEnd 2).toString ++ "n"] else base
+  let base := if w.endsWith "Ms" && (next? == some 't' || next? == some 'T')
+              then base ++ [(w.dropEnd 2).toString ++ "n"] else base
+  let base := if w.endsWith "Mz" && (next? == some 'w' || next? == some 'W')
+              then base ++ [(w.dropEnd 2).toString ++ "n"] else base
   -- -nn from -n before vowels (āsann atra < āsan)
   let base := if w.endsWith "nn" && nextVowel then base ++ [body] else base
   -- saḥ drops its visarga before consonants: sa gacchati / so 'pi
