@@ -22,7 +22,7 @@ from pathlib import Path
 
 corpus_dir = Path(sys.argv[1] if len(sys.argv) > 1 else "/tmp/dcs-sparse/dcs/data/conllu/files")
 dict_path = Path(sys.argv[2] if len(sys.argv) > 2 else "/tmp/dcs_dictionary.csv")
-out_path = Path(sys.argv[3] if len(sys.argv) > 3 else Path(__file__).parent / "lemma_frequencies.tsv")
+out_path = Path(sys.argv[3] if len(sys.argv) > 3 else Path(__file__).parent / "corpus" / "lemma_frequencies.tsv")
 
 counts = Counter()
 corpus_lemma = {}

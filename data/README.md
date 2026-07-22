@@ -1,13 +1,24 @@
-# data/ — two groups: in_fragment and out_of_fragment
+# data/ — three groups: dcs, in_fragment, out_of_fragment
+
+**`dcs/`** is the lexicon pipeline: corpus statistics from the Digital
+Corpus of Sanskrit and the selection lists that generate
+[../lean/Sanskrit/Lexicon.lean](../lean/Sanskrit/Lexicon.lean) (500 nouns,
+150 adjectives, 100 verbs, by corpus frequency). See
+[dcs/README.md](dcs/README.md).
 
 **`in_fragment/`** is everything the Lean grammar models. It trains AND
 evaluates. Regenerated from the Lean lexicon by `python -m finetune.tasks`
 (one deduplicated stream → disjoint splits; no eval prompt ever appears in a
-training file).
+training file). **Stale:** the current files were generated from the v1
+lexicon (118 lemmas); regenerate against the v2 lexicon (774 lemmas,
+23,897 forms) before the next training run.
 
 **`out_of_fragment/`** is real classical Sanskrit the grammar does not model
-(other tenses, consonant stems, compounds). It only evaluates — this is the
-project's generalization axis. Hand-curated, never regenerated.
+(other tenses, irregular nouns, compounds). It only evaluates — this is the
+project's generalization axis. Hand-curated, never regenerated. Note that
+v2 moved several v1 exclusions (consonant stems, ṛ-stems, athematic
+presents) *into* the fragment; rows exercising those should migrate to
+in-fragment evaluation at the next data refresh.
 
 | File | Rows | Used by | Format / judge |
 |---|---|---|---|

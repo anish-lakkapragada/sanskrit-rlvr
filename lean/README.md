@@ -17,7 +17,7 @@ example : Grammatical "bālāḥ grāmaṃ gacchati" := by native_decide  -- ✗
 The second sentence fails because its subject is plural ("the boys") while
 its verb is singular ("goes") — the same reason an English teacher would
 reject *"the boys goes"*. No parser, no ML, no dictionary lookup service:
-everything the checker knows is defined in the ~950 lines of Lean in this
+everything the checker knows is defined in the ~2,000 lines of Lean in this
 folder, and the same definitions are replayed as theorems at every build.
 
 ## A 60-second Sanskrit primer
@@ -59,11 +59,11 @@ good Sanskrit.
 | **script** | IAST romanization in and out (*rāmo grāmaṃ gacchati*); SLP1 internally | Devanagari; Vedic accent marks |
 | **phonology** | full classical sound inventory; retroflexion *n* → *ṇ* (ṇatva) derived and applied to every generated form | all other internal sound rules (memorized in the paradigm tables instead) |
 | **sandhi between words** | undone, for alternations that keep tokens separate: visarga (*devo/devā/devas/devāś* ← *devaḥ*), final *m* → *ṃ*, final *t* → *d*, *nn*-doubling, *saḥ* → *sa*, avagraha (*'pi* ← *api*) | vowel fusion that merges two words into one written token (*ca + iva* → *ceva*) — write the unfused form instead |
-| **nouns & adjectives** | the 7 vowel-stem classes of classical prose (masc./neut. *a*-stems, fem. *ā*, masc./fem. *i*, masc. *u*, fem. *ī*), each fully declined: 8 cases × 3 numbers (incl. dual), with accepted classical variant cells | consonant stems, *ṛ*-stems, irregular nouns, degrees of comparison |
-| **verbs** | present indicative only, both voices (*parasmaipada*/*ātmanepada*), 3 persons × 3 numbers, thematic conjugation + irregular *as* "be" and *kṛ* "do" | every other tense and mood, participles, infinitives, causatives, verbal prefixes |
+| **nouns & adjectives** | all vowel-stem classes (a/ā/i/ī/u/ū, all genders), *ṛ*-stems in both guṇa (*pitaram*) and vṛddhi (*kartāram*) grades, and the major consonant families: *an*-stems with and without weak-stem syncope (*rājñā*/*ātmanā*), *in*-stems (*yogī*), neuter *s*-stems (*manaḥ/manāṃsi*), *mat/vat*-stems (*bhagavān*, vṛddhi *mahān*), and root stems (*vāk/vācam/vāgbhiḥ*); adjectives decline in three genders incl. pronominal endings (*sarve, anyat*, optional *pūrve/pūrvāḥ*): 8 cases × 3 numbers, with accepted classical variant cells | irregular and suppletive nouns (*strī, go, pati, pathin*, monosyllabic *śrī/bhū*), heteroclites, degrees of comparison |
+| **verbs** | present indicative only, both voices (*parasmaipada*/*ātmanepada*), 3 persons × 3 numbers: thematic conjugation derived from the present stem, plus 22 athematic verbs (*as, kṛ, dā, dhā, hu, śru, jñā, grah, han, i, brū* …) as explicit tables validated against corpus attestations | every other tense and mood, participles, infinitives, causatives, verbal prefixes |
 | **pronouns** | *saḥ/sā/tat* "he/she/it", *aham* "I", *tvam* "you" (forms enumerated, as suppletive forms must be) | all other pronouns |
-| **vocabulary** | closed: 118 lemmas — 71 nouns, 13 adjectives, 23 verbs, 11 indeclinables — 2,882 inflected forms total, all of it training vocabulary | any word not in [Lexicon.lean](Sanskrit/Lexicon.lean) |
-| **syntax** | five decidable checks: every token has a lexicon reading; *k* finite verbs need *k−1* coordinating *ca*; each verb finds an agreeing nominative subject (1st/2nd person may drop it); adjectives agree in gender, case, number; transitive verbs find an accusative | word-order constraints (genuinely free in Sanskrit), compounds (*samāsa*), relative clauses, subordination, any semantics |
+| **vocabulary** | closed: 774 lemmas — 500 nouns, 150 adjectives, 100 verbs, 24 indeclinables — 23,897 inflected forms total, selected by corpus frequency from the Digital Corpus of Sanskrit (5.7M analyzed tokens; see [../data/dcs/](../data/dcs/)) | any word not in [Lexicon.lean](Sanskrit/Lexicon.lean) |
+| **syntax** | five decidable checks: every token has a lexicon reading; *k* finite verbs need *k−1* coordinators (*ca*, *vā*, *tu*); each verb finds an agreeing nominative subject (1st/2nd person may drop it); adjectives agree in gender, case, number; transitive verbs find an accusative | word-order constraints (genuinely free in Sanskrit), compounds (*samāsa*), relative clauses, subordination, any semantics |
 
 Each exclusion is an extension point, not a workaround — the judgment
 stays decidable as the fragment grows.
@@ -82,21 +82,28 @@ Where each row of the table lives in the source:
 - **[Translit.lean](Sanskrit/Translit.lean)** — conversion between IAST
   (the romanization humans and the fine-tuned model read/write: *ṛ, ś, ṃ*)
   and SLP1 (what the grammar computes over), both directions.
-- **[Nouns.lean](Sanskrit/Nouns.lean)** — full declension tables for the
-  **seven vowel-stem classes** that dominate classical prose (masculine and
-  neuter a-stems, feminine ā-stems, masculine and feminine i-stems,
-  masculine u-stems, feminine ī-stems): 8 cases × 3 numbers per noun,
-  including cells with accepted classical variants (*mataye*/*matyai*).
+- **[Nouns.lean](Sanskrit/Nouns.lean)** — declension for **33 stem
+  classes**: every vowel class (a/ā/i/ī/u/ū across genders), ṛ-stems
+  (guṇa and vṛddhi), an-stems (with the syncope rule *rājñā* vs
+  *ātmanā*), in-stems, neuter s-stems, mat/vat-stems, root stems (the
+  entry carries the word-final base *vāk*, the engine derives *vāg-*),
+  and pronominal endings: 8 cases × 3 numbers per paradigm, including
+  cells with accepted classical variants (*mataye*/*matyai*).
 - **[Verbs.lean](Sanskrit/Verbs.lean)** — conjugation in the **present
   tense only**, both voices (active *parasmaipada*, middle *ātmanepada*),
-  3 persons × 3 numbers, for thematic verbs plus the two indispensable
-  irregulars: *as* "to be" (*asti/staḥ/santi*…) and *kṛ* "to do"
-  (*karoti/kurutaḥ/kurvanti*…).
-- **[Lexicon.lean](Sanskrit/Lexicon.lean)** — the vocabulary: 71 nouns,
-  13 adjectives, 23 verbs, 11 indeclinable particles, with English glosses.
-  All of it is training vocabulary (2,882 inflected forms total);
-  generalization is measured only against classical Sanskrit *beyond* the
-  fragment, in [../data/out_of_fragment/](../data/out_of_fragment/).
+  3 persons × 3 numbers: thematic verbs derived from the present stem;
+  athematic verbs (root, reduplicating, nasal, nu/nā classes) carry
+  their nine forms as lexicon tables, enumerated like all suppletive
+  morphology.
+- **[Lexicon.lean](Sanskrit/Lexicon.lean)** — **generated, do not edit**:
+  500 nouns, 150 adjectives, 100 verbs, 24 indeclinable particles with
+  English glosses (23,897 inflected forms), selected by corpus frequency
+  from the Digital Corpus of Sanskrit and rendered by
+  [../data/dcs/generate_lexicon.py](../data/dcs/generate_lexicon.py).
+  Generated forms are cross-checked against corpus-attested paradigm
+  cells (94% of 9,873 frequent cells match exactly; the rest are Vedic
+  variants and DCS representation artifacts — see
+  [../data/dcs/validate_forms.py](../data/dcs/validate_forms.py)).
 - **[Sandhi.lean](Sanskrit/Sandhi.lean)** — **undoing** external sandhi:
   given a surface word and the first sound of the next word, enumerate the
   citation forms it could have come from. Covers the families that keep
@@ -119,11 +126,12 @@ Where each row of the table lives in the source:
   Pronouns (*saḥ/sā/tat* "he/she/it", *aham* "I", *tvam* "you") are
   suppletive in every language, so their forms are enumerated, not derived.
 - **[Tests.lean](Sanskrit/Tests.lean)** — gold paradigm cells from
-  standard grammars (Whitney; the full noun/adjective paradigm — 2,496
-  cells at the last such run — has been cross-checked against the
-  vidyut-prakriya engine) plus positive and negative
-  sentences, stated as `example : … := by native_decide`. **They re-prove at
-  every `lake build`** — a change that breaks a paradigm breaks the build.
+  standard grammars (Whitney) for every stem class and athematic verb,
+  plus positive and negative sentences, stated as
+  `example : … := by native_decide`. **They re-prove at every
+  `lake build`** — a change that breaks a paradigm breaks the build.
+  Independently, the full generated lexicon is validated against
+  corpus-attested cells (DCS harvest) by the data pipeline.
 
 ## The two executables
 
@@ -146,7 +154,7 @@ case/number), `verb:gam:3:sg`, or a bare lemma — so the reward can require
 not just *a* grammatical sentence but *the* requested one.
 
 **`export`** — dump every inflected form of the whole lexicon as TSV
-(2,882 lines); the single source of truth the
+(23,897 lines); the single source of truth the
 data generator (`python -m finetune.tasks`) reads.
 
 ## Building

@@ -38,25 +38,24 @@ def allPersons : List Person := [.third, .second, .first]
 /-- Analyses of `w` as a form of noun `e`. -/
 def nounAnalyses (e : NounEntry) (w : String) : List Analysis :=
   allCases.flatMap fun c => allNumbers.flatMap fun n =>
-    if (decline e.stem e.cls c n).contains w then
+    if (decline e.stem e.cls c n e.pada).contains w then
       [{ lemma? := e.stem, pos := "noun", gender := some e.cls.gender,
          case? := some c, number := some n, person := some .third }]
     else []
 
-/-- Analyses of `w` as adjective `e`, in each gender. -/
+/-- Analyses of `w` as adjective `e`, in each of its three paradigms. -/
 def adjAnalyses (e : AdjEntry) (w : String) : List Analysis :=
-  let inClass (stem : String) (sc : StemClass) (g : Gender) : List Analysis :=
+  e.triples.flatMap fun (stem, sc) =>
     allCases.flatMap fun c => allNumbers.flatMap fun n =>
       if (decline stem sc c n).contains w then
-        [{ lemma? := e.stem, pos := "adj", gender := some g,
+        [{ lemma? := e.stem, pos := "adj", gender := some sc.gender,
            case? := some c, number := some n }]
       else []
-  inClass e.stem .a_m .m ++ inClass e.stem .a_n .n ++ inClass e.femStem e.femCls .f
 
 /-- Analyses of `w` as a finite present form of verb `e`. -/
 def verbAnalyses (e : VerbEntry) (w : String) : List Analysis :=
   allPersons.flatMap fun p => allNumbers.flatMap fun n =>
-    if conjugate e.stem e.pada p n == w then
+    if (e.presentForms p n).contains w then
       [{ lemma? := e.lemma, pos := "verb", number := some n,
          person := some p, trans := e.trans }]
     else []
@@ -127,16 +126,16 @@ private def isVerbal (as' : List Analysis) : Bool :=
 private def onlyVerbal (as' : List Analysis) : Bool :=
   !as'.isEmpty && as'.all (·.pos == "verb")
 
-private def isCa (as' : List Analysis) : Bool :=
-  as'.any (·.lemma? == "ca")
+private def isCoord (as' : List Analysis) : Bool :=
+  as'.any fun a => a.lemma? == "ca" || a.lemma? == "vA" || a.lemma? == "tu"
 
 /-- Clause structure: k finite verbs are licensed by k−1 coordinating
-particles (ca), so arbitrarily long sentences of ca-joined clauses check —
-rāmo gacchati kanyā ca mālāṃ labhate munayaś ca satyaṃ vadanti. -/
+particles (ca, vā, tu), so arbitrarily long sentences of coordinated
+clauses check — rāmo gacchati kanyā ca mālāṃ labhate. -/
 def clausesOk (an : List (List Analysis)) : Bool :=
   let definite := (an.filter onlyVerbal).length
   let possible := (an.filter isVerbal).length
-  let cas := (an.filter isCa).length
+  let cas := (an.filter isCoord).length
   if definite == 0 then possible == 1
   else definite ≥ 1 && definite ≤ cas + 1
 

@@ -17,6 +17,10 @@ def isVowel (c : Char) : Bool :=
 def isVoiced (c : Char) : Bool :=
   isVowel c || "gGjJqQdDbBNYRnmyrlvh".contains c
 
+/-- The voiced counterpart of a word-final stop (vāk → vāg-bhiḥ). -/
+def voiceFinal : Char → Char
+  | 'k' => 'g' | 'w' => 'q' | 't' => 'd' | 'p' => 'b' | c => c
+
 /-- Sounds transparent to ṇatva: vowels, velars, labials, y v h ṃ. -/
 private def natvaTransparent (c : Char) : Bool :=
   isVowel c || "kKgGNpPbBmyvhM".contains c
