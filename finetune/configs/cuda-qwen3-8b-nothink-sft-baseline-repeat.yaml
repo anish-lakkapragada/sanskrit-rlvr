@@ -1,0 +1,43 @@
+# REPEAT of cuda-qwen3-8b-nothink-sft-baseline (2026-07-22): independent re-draw of the same
+# experiment — identical config; run to (a) retain the actual model
+# checkpoints this time and (b) check seed-robustness of the original
+# result (GPU nondeterminism + vLLM sampling make even a same-seed rerun
+# an independent draw).
+# Scale arm 1: full-parameter SFT of Qwen3-8B — NON-THINKING mode, pinned
+# via chat_template_kwargs (Qwen3-8B is a hybrid thinking model with no
+# non-thinking -2507 variant; enable_thinking=false pre-fills an empty
+# <think></think> block so every prompt — SFT data, eval — renders
+# identically and the model answers directly).
+#
+# Deltas vs cuda-sft-baseline (the 4B arm), besides the model:
+#   optim: adamw_bnb_8bit — fp32 Adam moments alone are ~65 GB for 8B;
+#   8-bit moments bring full-param SFT to ~55-60 GB on one H100.
+# The final checkpoint doubles as the base (and KL reference) for
+# cuda-qwen3-8b-nothink-sft-then-grpo.yaml.
+run_name: cuda-qwen3-8b-nothink-sft-baseline-repeat
+backend: cuda
+mode: sft
+model:
+  base: Qwen/Qwen3-8B
+  init_from_run: null
+  final_checkpoint: runs/cuda-qwen3-8b-nothink-sft-baseline-repeat/checkpoints/final
+  chat_template_kwargs:
+    enable_thinking: false
+data:
+  dir: data/in_fragment/sft
+hyperparameters:
+  learning_rate: 1.0e-5   # kept identical to the 4B arm: scale is the variable
+  iters: 1000
+  batch_size: 4
+  max_seq_length: 768
+  optim: adamw_bnb_8bit   # what makes 8B full-param fit on 80 GB
+eval:
+  benchmarks:             # all metrics on both, at every eval point
+    in_fragment: data/in_fragment/eval.jsonl        # 150 rows, Lean + chrF++/TER
+    out_of_fragment: data/out_of_fragment/eval.jsonl  # 36 rows, chrF++/TER
+  every: 100              # checkpoint + full eval every N iterations
+  samples: null           # per-benchmark row cap; null = whole file
+  temperature: 0.0
+dashboard:
+  enabled: true
+  port: 8777
