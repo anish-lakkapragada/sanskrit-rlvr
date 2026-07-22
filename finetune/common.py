@@ -43,25 +43,32 @@ def adapter_dir_for(checkpoint: Path) -> str:
     return str(tmp)
 
 
+SENTENCE_TYPES = ("translate", "compose", "post_edit")
+
+
 def judge_rows(rows: list[dict], completions: list[str]) -> list[dict]:
     """Judge each eval row's completion (per the row's `judge` field).
-    Generation is backend-specific and happens before this call."""
+    `lean*` rows get the full verified reward plus a compile bit for
+    sentence-shaped tasks; `exact` rows (out-of-fragment cloze) get the
+    reward's exact-match branch and never touch the checker. Generation is
+    backend-specific and happens before this call."""
     out = []
     for r, completion in zip(rows, completions):
         spec = {"type": r["type"], "gold": r.get("gold", []),
-                "specs": r.get("specs", [])}
+                "specs": r.get("specs", []), "cap": r.get("cap")}
         ans, fmt = extract(completion)
         ans = normalize(ans)
         rec = {"id": r["id"], "type": r["type"], "prompt": r["prompt"],
                "completion": completion, "answer": ans, "format": fmt,
                "reference": r["reference"], "judge": r["judge"]}
-        if r["judge"].startswith("lean"):
+        if r["judge"].startswith("lean") or r["judge"] == "exact":
             rb = reward(spec, completion)
-            sentence_task = r["type"] != "qa"
             rec["reward"] = rb["reward"]
             rec["task"] = rb["task"]
-            rec["grammatical"] = bool(
-                sentence_task and ans and check(ans)["grammatical"])
+            if r["judge"].startswith("lean"):
+                rec["grammatical"] = bool(
+                    r["type"] in SENTENCE_TYPES and ans
+                    and check(ans)["grammatical"])
         out.append(rec)
     return out
 
@@ -70,8 +77,11 @@ def summarize(records: list[dict]) -> dict:
     from sacrebleu.metrics import CHRF, TER
     mean = lambda xs: round(sum(xs) / len(xs), 4) if xs else None
     lean_rows = [r for r in records if r["judge"].startswith("lean")]
-    sent = [r for r in lean_rows if r["type"] != "qa"]
+    sent = [r for r in lean_rows if r["type"] in SENTENCE_TYPES]
     qa = [r for r in lean_rows if r["type"] == "qa"]
+    exact_in = [r for r in lean_rows if r["type"] in ("qa", "cloze", "error_id")]
+    fix = [r for r in lean_rows if r["type"] == "post_edit"]
+    oof = [r for r in records if r["judge"] == "exact"]
     hyps = [r["answer"] for r in records]
     refs = [[r["reference"] for r in records]]
     # chrF++ (character n-grams, mildly order-sensitive) and TER (edit rate,
@@ -83,7 +93,10 @@ def summarize(records: list[dict]) -> dict:
         "n": len(records),
         "compile_rate": mean([1.0 * r["grammatical"] for r in sent]),
         "qa_exact": mean([1.0 * (r["task"] == 1.0) for r in qa]),
-        "mean_reward": mean([r["reward"] for r in lean_rows]),
+        "exact_rate": mean([1.0 * (r["task"] == 1.0) for r in exact_in]),
+        "fix_rate": mean([1.0 * (r["task"] == 1.0) for r in fix]),
+        "cloze_exact": mean([1.0 * (r["task"] == 1.0) for r in oof]),
+        "mean_reward": mean([r["reward"] for r in lean_rows + oof]),
         "chrf_pp": round(chrf.corpus_score(hyps, refs).score, 2),
         "ter": round(TER().corpus_score(hyps, refs).score, 2),
     }

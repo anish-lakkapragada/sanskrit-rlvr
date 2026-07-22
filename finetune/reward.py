@@ -22,6 +22,11 @@ _ANS = re.compile(r"<ans>(.*?)</ans>", re.DOTALL | re.IGNORECASE)
 GRAMMAR_WEIGHTS = {"words": 0.40, "clauses": 0.15, "subject": 0.20,
                    "adjective": 0.10, "object": 0.15}
 
+# families scored by exact match against the gold list
+EXACT_TYPES = {"qa", "cloze", "error_id"}
+# default token caps for length damping; a per-task `cap` in the spec wins
+DEFAULT_CAP = {"translate": 9, "compose": 12, "post_edit": 12}
+
 SYSTEM = ("Reasoning: low\n\nYou are an expert Sanskrit grammarian. Answer "
           "precisely, in IAST transliteration (ā ī ū ṛ ṭ ḍ ṇ ñ ṅ ś ṣ ṃ ḥ). "
           "Put your final answer inside <ans></ans> tags: just the Sanskrit, "
@@ -47,10 +52,12 @@ def grammar_score(components: dict) -> float:
 
 
 def reward(spec: dict, completion: str) -> dict:
-    """spec: {'type': 'qa'|'translate'|'compose', 'gold': [...], 'specs': [...]}"""
+    """spec: {'type': 'qa'|'cloze'|'error_id'|'translate'|'compose'|'post_edit',
+    'gold': [...], 'specs': [...], 'cap': int?}"""
     ans, fmt = extract(completion)
     ans = normalize(ans)
-    if spec["type"] == "qa":
+    kind = spec["type"]
+    if kind in EXACT_TYPES:
         golds = [normalize(g) for g in spec["gold"]]
         if ans in golds:
             task = 1.0
@@ -58,6 +65,26 @@ def reward(spec: dict, completion: str) -> dict:
             best = max((difflib.SequenceMatcher(None, ans, g).ratio()
                         for g in golds), default=0)
             task = 0.25 * best if best >= 0.5 else 0.0
+    elif kind == "post_edit":
+        # Fixing a corrupted sentence. The checker's all-or-nothing verdict
+        # gates the score: echoing the corrupted prompt back keeps its broken
+        # component and scores 0 (a weighted grammar score would give an echo
+        # ~0.8 — verified during design). Content = the original's lemmas,
+        # so the fix can't drop or swap words.
+        golds = [normalize(g) for g in spec["gold"]]
+        n_tok = len(ans.split())
+        if ans in golds:
+            task = 1.0
+        elif n_tok == 0:
+            task = 0.0
+        else:
+            r = check(ans, tuple(spec["specs"]))
+            gate = 1.0 if r["grammatical"] else 0.0
+            bits = r["constraints"]
+            content = (sum(bits) / len(bits)) if bits else 1.0
+            cap = spec.get("cap") or DEFAULT_CAP[kind]
+            damp = 1.0 if n_tok <= cap else max(0.05, cap / n_tok)
+            task = gate * (0.15 + 0.85 * content) * damp
     else:
         n_tok = len(ans.split())
         if n_tok == 0:
@@ -67,7 +94,7 @@ def reward(spec: dict, completion: str) -> dict:
             grammar = grammar_score(r["components"])
             bits = r["constraints"]
             content = (sum(bits) / len(bits)) if bits else 1.0
-            cap = 9 if spec["type"] == "translate" else 12
+            cap = spec.get("cap") or DEFAULT_CAP.get(kind, 12)
             damp = 1.0 if n_tok <= cap else max(0.05, cap / n_tok)
             task = grammar * (0.15 + 0.85 * content) * damp
     return {"reward": round(0.15 * fmt + 0.85 * task, 4),

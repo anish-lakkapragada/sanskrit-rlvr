@@ -10,10 +10,14 @@ its 180k-entry dictionary.
 ```
 dcs/
   *.py          the pipeline, in run order (below)
-  corpus/       corpus-derived intermediates — big, regenerable from the checkout
+  corpus/       corpus-derived intermediates — regenerable from the checkout
     lemma_frequencies.tsv     raw ranking of all 98,606 attested lemmas
     usable_frequencies.tsv    fragment-usable counts + transitivity signal
     harvest.json              attested paradigm cells for candidate lemmas
+    noun_traits.json          per-noun template semantics (pluralizes? locative?)
+    mined_sentences.tsv       436 real sentences fully inside the fragment,
+                              checker-verified, with per-token cell provenance
+                              and a stable train/eval split
   selection/    the v2 lexicon decision — small, reviewed
     selection_nouns.tsv       500 nouns with stem class
     selection_adjs.tsv        150 adjectives with class + feminine stem
@@ -48,6 +52,22 @@ curl -o /tmp/dcs_dictionary.csv https://raw.githubusercontent.com/OliverHellwig/
 6. **validate_forms.py** — after `lake build`, compare every generated
    form against corpus-attested cells (94% exact on frequent cells; the
    residue is Vedic variants and DCS representation artifacts).
+7. **build_noun_traits.py** — reduce harvest.json to per-noun template
+   semantics (`plural_ok`, `loc_ok`, …) → `corpus/noun_traits.json`.
+   Replaces the gloss-keyed hand lists v1's task generator used.
+8. **mine_sentences.py** — find corpus sentences the fragment fully
+   analyzes (every token in a covered cell, finite present verbs only),
+   verify each through the Lean checker, split by text hash →
+   `corpus/mined_sentences.tsv`. These feed the post-edit / cloze /
+   error-id task families in finetune/tasks.py. The short-sentence pool
+   skews Vedic-prose (brāhmaṇas) plus the Mahābhārata; every sentence is
+   checker-verified regardless of source.
+9. **make_oof_cloze.py** — the out-of-fragment benchmark: attested cloze
+   over 22 classical texts (epics, fable prose, kāvya, dharmaśāstra; no
+   Vedic) → `data/out_of_fragment/eval.jsonl` (150 rows, judge `exact`).
+   Each row blanks the one in-fragment token of an otherwise
+   out-of-fragment sentence; gold = the attested form + accepted
+   same-cell variants.
 
 The ratio 500:100:150 comes from equal-coverage analysis (500 nouns cover
 51.5% of declined-noun tokens; the same coverage needs ~65 verbs and ~288
