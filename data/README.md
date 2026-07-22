@@ -13,7 +13,7 @@ Three groups:
 |---|---|---|---|
 | `in_fragment/sft/train.jsonl` | 2000 | SFT training | — (assistant turn = gold) |
 | `in_fragment/sft/valid.jsonl` | 64 | SFT validation loss | — |
-| `in_fragment/grpo/train.jsonl` | 2000 | GRPO training | Lean reward (replays `answer` spec) |
+| `in_fragment/grpo/train.jsonl` | 2000 | GRPO training | verified reward per family (see below): live Lean checker for translate/compose/post_edit, exact match vs Lean-exported gold for qa/cloze/error_id |
 | `in_fragment/grpo/valid.jsonl` | 64 | GRPO validation | same |
 | `in_fragment/eval.jsonl` | 250 | checkpoint + final eval | `lean+chrf` |
 | `out_of_fragment/eval.jsonl` | 150 | generalization benchmark | `exact` |
