@@ -733,8 +733,8 @@ figure.viz figcaption {
   <span class="title-accent">Fine-tuning Qwen3-8B with a Lean formalization of Sanskrit</span></h1>
   <div class="article-meta">
     <span><span class="k">by</span> <a href="https://anishlk.com">Anish Lakkapragada</a></span>
-    <span><span class="k">date</span> July 2026</span>
-    <span><span class="k">code</span> <a href="https://github.com/anish-lakkapragada/sanskrit-rlvr">sanskrit-rlvr</a></span>
+    <!-- <span><span class="k">date</span> July 2026</span> -->
+    <span><span class="k">repo</span> <a href="https://github.com/anish-lakkapragada/sanskrit-rlvr">sanskrit-rlvr</a></span>
   </div>
 </section>
 
@@ -751,11 +751,11 @@ figure.viz figcaption {
 
 <article id="article" class="article-content">
 
-<p class="lede"><strong>TLDR: We created a Lean formalization of a portion of
+<p class="lede"><strong><em>TLDR: We created a Lean formalization of a portion of
 Sanskrit to generate verified data and fine-tune Qwen3-8B. Our results
 demonstrate promise in using formal methods for both data-generation and
 verified rewards. See the
-<a href="https://github.com/anish-lakkapragada/sanskrit-rlvr">GitHub repo here</a>.</strong></p>
+<a href="https://github.com/anish-lakkapragada/sanskrit-rlvr">GitHub repo here</a>.</em></strong></p>
 
 <h2 id="motivation">Motivation</h2>
 
@@ -788,12 +788,12 @@ you find anything, please
 Sanskrit's 3,983 grammatical rules were written into the foundational
 <em>Ashtadhyayi</em> during the 4th century BCE.</div>
 
-<p>The key primitive we required here was a grader function to take in a given
+<p>The key thing we required here was a grader function to take in a given
 sentence of Sanskrit and spit out a boolean decision of if it was grammatical
 or not. While existing Sanskrit linguistic tools exist (e.g.
 <a href="https://sanskrit.inria.fr/">Sanskrit Heritage Site</a>,
 <a href="https://docs.rs/vidyut-prakriya/latest/vidyut_prakriya/">vidyut-prakriya</a>),
-because for our purposes we planned to use this checker to not just validate
+because we planned to use this checker to not just validate
 sentences but also generate training tasks (explained momentarily), we decided
 it would be best to just create our own Lean formal checker.</p>
 
@@ -818,8 +818,8 @@ fragment (for example, we focused on verbs that were only in the finite
 present indicative tense). From there, a subset of 500 of the most frequent
 nouns were chosen (which accounted for 51.5% of all found noun tokens in DCS),
 and so Fable looked for the subset of verbs and adjectives which would also
-meet 51.5% coverage in its own token category. The idea here is that we want
-all parts-of-speech in this fragment to be more or less used around the same
+meet 51.5% probability mass in their own token category. The idea here is that we want
+all parts-of-speech in this fragment to be more or less used at around the same
 frequency in Sanskrit. This yielded 100 verbs and 150 adjectives. To see the
 work in this step, take a look at <code>data/dcs/README.md</code>.</p>
 
@@ -864,7 +864,7 @@ this in English.</p>
 <p>As is convention, we fine-tuned Qwen3-8B first with SFT and then GRPO.
 Fine-tuning with SFT is straightforward: just plain cross-entropy. GRPO was
 more complicated: each of the fine-tuning tasks had a reward-specific
-function, which was a mix of the Lean checker and other heuristics. We detail
+function, which was a mix of the Lean checker and Python inspection. We detail
 our fine-tuning tasks and their corresponding rewards in the section
 below.</p>
 
@@ -872,7 +872,7 @@ below.</p>
 
 <p>Before getting into the precise tasks we used, we categorize Sanskrit
 sentences into two buckets: <em>in-fragment</em> and <em>out-of-fragment</em>
-based on if the sentence was modeled inside <code>lean/</code> (i.e. could
+based on whether or not the sentence was modeled inside <code>lean/</code> (i.e. could
 <code>check</code> execute against it?). The former is what was used for
 fine-tuning, and the latter was used as an eval of model generalization.</p>
 
@@ -891,7 +891,7 @@ tasks:</p>
   <li><code>compose</code> (create a sentence from required words)</li>
 </ul>
 
-<p>The reward for these tasks that GRPO uses can be computed as
+<p>The reward for these tasks used by GRPO can be given by 
 <code>0.15 * format + 0.85 * task</code>, where <code>format</code> is a 0/1
 score on if the answer was correctly wrapped in <code>&lt;ans&gt;&lt;/ans&gt;</code>
 tags and <code>task</code> is a task-specific score. You can view examples of
@@ -950,7 +950,7 @@ at least one OOF token, but the blanked token for the model to predict
 
 <p>The goal here is to assess the models' ability to generalize Sanskrit's
 rules to unfamiliar texts, similar to how someone would try to infer the
-meaning of an unknown word when reading a book. The reward system here was
+meaning of an unknown word when reading a book. The evaluated metric here was
 whether the model's output <em>exactly</em> matched the correct answer.</p>
 
 <h3 id="evaluation-metrics">Evaluation Metrics</h3>
@@ -981,7 +981,7 @@ below:</p>
       reference answer<sup class="fn"><a id="fnref2" href="#fn2">2</a></sup>
       <span class="scope">all tasks</span></dd>
     <dt><a href="https://aclanthology.org/2006.amta-papers.25/">TER&nbsp;↓</a></dt>
-    <dd>translation edit rate against the reference — the number of edits
+    <dd>translation edit rate against the reference: the number of edits
       needed to turn the model's answer into the reference, so lower is
       better <span class="scope">all tasks</span></dd>
   </dl>
@@ -1002,7 +1002,16 @@ be the most informative.</p>
 
 <h2 id="results">Results</h2>
 
-<p>We are now finally ready to get to the results!</p>
+<p>We are now ready to get to the results. We evaluate on the following
+models:</p>
+
+<ul>
+  <li>the base Qwen3-8B model</li>
+  <li>the base model fine-tuned with GRPO for 2,000 iters</li>
+  <li>the base model fine-tuned on SFT for 1,000 iters</li>
+  <li>the base model fine-tuned on SFT + GRPO[our reward system]</li>
+  <li>the base model fine-tuned on SFT + GRPO[chrF++ as reward] as a control</li>
+</ul>
 
 <figure class="viz" id="fig-bars">
   <div class="viz-head">
