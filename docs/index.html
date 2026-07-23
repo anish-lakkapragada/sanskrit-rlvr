@@ -1009,8 +1009,8 @@ models:</p>
   <li>the base Qwen3-8B model</li>
   <li>the base model fine-tuned with GRPO for 2,000 iters</li>
   <li>the base model fine-tuned on SFT for 1,000 iters</li>
-  <li>the base model fine-tuned on SFT + GRPO[our reward system]</li>
-  <li>the base model fine-tuned on SFT + GRPO[chrF++ as reward] as a control</li>
+  <li>the base model fine-tuned on SFT + GRPO (using our reward system)</li>
+  <li>the base model fine-tuned on SFT + GRPO (using chrF++ as the reward)</li>
 </ul>
 
 <figure class="viz" id="fig-bars">
@@ -1020,13 +1020,13 @@ models:</p>
   </div>
   <div class="chart-legend" id="bars-legend"></div>
   <div class="chart-wrap" id="bars-wrap"></div>
-  <figcaption>Final-checkpoint scores for each model. GRPO-only trains against the
+  <!-- <figcaption>Final-checkpoint scores for each model. GRPO-only trains against the
   verified reward directly from the base model with no SFT; the other two
   GRPO arms start from the SFT checkpoint; <span style="color:#ff4200">ours</span> is GRPO
   against the Lean checker, the control is GRPO against chrF++ reference
   similarity. In-fragment metrics are judged by the Lean checker or exact
   match over 250 rows; cloze_exact is the 150-row out-of-fragment
-  benchmark. Hover any bar for the value.</figcaption>
+  benchmark. Hover any bar for the value.</figcaption> -->
   <details class="chart-table"><summary>Data table</summary><div id="bars-table"></div></details>
 </figure>
 
@@ -1038,7 +1038,7 @@ models:</p>
   <div class="chart-tabs" id="evo-tabs" role="tablist" aria-label="Metric"></div>
   <div class="chart-legend" id="evo-legend"></div>
   <div class="chart-wrap" id="evo-wrap"></div>
-  <figcaption>The main training story: 1000 iterations of SFT (green trunk), whose
+  <!-- <figcaption>The main training story: 1000 iterations of SFT (green trunk), whose
   final checkpoint forks into two GRPO arms trained for 1000 further
   iterations — against chrF++ (violet, control) and against the Lean
   checker (orange, ours). The gold line is the ablation: pure GRPO from
@@ -1047,7 +1047,7 @@ models:</p>
   SFT trunk, showing where reward-only learning runs out of knowledge to
   select from. Evaluated
   at every 100 iterations on the full benchmarks; hover for exact values.
-  TER is an edit rate: lower is better.</figcaption>
+  TER is an edit rate: lower is better.</figcaption> -->
   <details class="chart-table"><summary>Data table</summary><div id="evo-table"></div></details>
 </figure>
 
@@ -1060,13 +1060,13 @@ the base model come by and large by SFT. Furthermore, if we consider
 helpful in this regard than RL. While it's easy to jump to the conclusion
 that this means our verified rewards system was meaningless, this is hard to
 conclude because it was the formalization itself which produced <em>all</em>
-of the SFT data. Additionally, GRPO[Lean] outperformed GRPO[chrF++] on
-<code>compile_rate</code> and on its improvement of <code>chrF++</code>
+of the SFT data. Additionally, GRPO-Lean outperformed GRPO-chrF++ on
+<code>compile_rate</code> and <code>chrF++</code>
 itself.</p>
 
-<p>If I had to guess the single next step to this study, I think it would
-likely be having a human domain expert take a rigorous look at the
-formalization and suggest other better data sources from there. Thank you
+<p>If I had to guess the single best next step to this study, I think it would
+likely be having a <strong>human domain expert take a rigorous look at the
+formalization</strong> and suggest a better fragment or clarify any misformalizations. Thank you
 for reading!</p>
 
 <p><em>Special thank you to <a href="https://www.1517fund.com">1517</a> for
@@ -1251,8 +1251,8 @@ any questions or would like to get in touch, please
       { id: "base", name: "Qwen3-8B (base)", color: "#4a86d8" },
       { id: "only", name: "GRPO-only (no SFT)", color: "#b98a00" },
       { id: "sft",  name: "+ SFT",           color: "#3fa876" },
-      { id: "chrf", name: "+ GRPO chrF++ (control)", color: "#9a6bd8" },
-      { id: "lean", name: "+ GRPO Lean (ours)",      color: "#ff4200" }
+      { id: "chrf", name: "+ GRPO chrF++", color: "#9a6bd8" },
+      { id: "lean", name: "+ GRPO Lean",      color: "#ff4200" }
     ];
     const BAR_METRICS = ["compile_rate", "exact_rate", "fix_rate", "cloze_exact"];
     const BARS = {"compile_rate": [5.7, 11.4, 45.0, 45.7, 50.0], "exact_rate": [14.5, 22.7, 59.1, 65.5, 63.6], "fix_rate": [16.0, 26.0, 58.0, 64.0, 64.0], "cloze_exact": [18.7, 22.0, 34.7, 37.3, 33.3]};
@@ -1346,8 +1346,8 @@ any questions or would like to get in touch, please
       const SERIES = [
         { id: "only", name: "GRPO-only (no SFT)", color: "#b98a00" },
         { id: "sft",  name: "SFT (shared trunk)", color: "#3fa876" },
-        { id: "chrf", name: "GRPO chrF++ (control)", color: "#9a6bd8" },
-        { id: "lean", name: "GRPO Lean (ours)", color: "#ff4200" }
+        { id: "chrf", name: "GRPO chrF++", color: "#9a6bd8" },
+        { id: "lean", name: "GRPO Lean", color: "#ff4200" }
       ];
       legend("evo-legend", SERIES);
       const wrap = document.getElementById("evo-wrap");
