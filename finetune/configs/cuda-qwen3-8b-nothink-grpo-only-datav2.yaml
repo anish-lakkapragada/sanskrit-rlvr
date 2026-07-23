@@ -1,0 +1,44 @@
+# GRPO-only arm on the v2 data: pure RLVR from the raw base model — no SFT
+# cold start. Completes the matrix's "no supervised knowledge transfer"
+# corner: the base model already follows the <ans> format 93-100% of the
+# time but answers largely in Devanagari (worth ~0 to the IAST graders) and
+# starts at 5.7% compile, so this run measures how far reward-only learning
+# climbs from scratch. 2000 iterations = the SFT+GRPO arms' combined budget,
+# evaluated on the same cadence; all GRPO hyperparameters identical to the
+# other arms. KL reference = the raw base (adapters disabled).
+run_name: cuda-qwen3-8b-nothink-grpo-only-datav2
+backend: cuda
+mode: grpo
+model:
+  base: Qwen/Qwen3-8B
+  init_from_run: null
+  final_checkpoint: runs/cuda-qwen3-8b-nothink-grpo-only-datav2/checkpoints/final
+  chat_template_kwargs:
+    enable_thinking: false
+data:
+  dir: data/in_fragment/grpo
+hyperparameters:
+  reward: lean
+  learning_rate: 8.0e-6
+  iters: 2000
+  batch_size: 1
+  num_layers: 16
+  lora_rank: 8
+  lora_alpha: 80
+  max_seq_length: 768
+  group_size: 8
+  beta: 0.1
+  temperature: 0.8
+  max_completion_length: 200
+  use_vllm: true
+  vllm_gpu_memory_utilization: 0.40
+eval:
+  benchmarks:
+    in_fragment: data/in_fragment/eval.jsonl          # 250 rows, Lean + chrF++/TER
+    out_of_fragment: data/out_of_fragment/eval.jsonl  # 150 rows, attested cloze (exact)
+  every: 100
+  samples: null
+  temperature: 0.0
+dashboard:
+  enabled: true
+  port: 8777
