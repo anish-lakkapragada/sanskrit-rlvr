@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sanskrit is a programmable language — we ran it on a compiler</title>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;500;600;700&display=swap");
+
+:root {
+  --bg: #f9f6ef;
+  --paper: #fffdf8;
+  --ink: #161513;
+  --muted: #6d6860;
+  --line: #d8d0c4;
+  --code-bg: #f0ebe2;
+  --code-ink: #24211d;
+  --accent: #176b64;
+  --accent-strong: #a33e2d;
+  --shadow: 0 22px 60px rgba(32, 28, 20, 0.08);
+  /* chart tokens — series pair validated for CVD + contrast on --paper */
+  --s1: #0a8f80;          /* series: compile rate */
+  --s2: #a33e2d;          /* series: chrF++ */
+  --good: #1a7f37;        /* status: compiles ✓ */
+  --bad: #8f1f1f;         /* status: rejected ✗ */
+  --grid: #e4ded2;
+  --axis: #d8d0c4;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body.article-page {
+  min-height: 100vh;
+  margin: 0;
+  background:
+    linear-gradient(180deg, rgba(255, 253, 248, 0.82), rgba(251, 248, 242, 0.98)),
+    var(--bg);
+  color: var(--ink);
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.65;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px max(20px, calc((100vw - 1120px) / 2)) 14px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-brand {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--ink);
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 1.15rem;
+}
+
+.site-brand .deva { color: var(--accent); }
+.site-brand .x { color: var(--muted); font-size: 0.85rem; font-family: "Inter", sans-serif; }
+
+.site-nav a {
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.site-nav a:hover,
+.article-content a:hover {
+  color: var(--accent-strong);
+}
+
+/* anchors land below the sticky bar */
+.article-content h2,
+.article-content h3,
+figure.viz {
+  scroll-margin-top: 92px;
+}
+
+.article-shell {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto 80px;
+}
+
+.article-hero {
+  padding: 64px 0 42px;
+  border-bottom: 1px solid var(--line);
+  text-align: center;
+}
+
+.article-kicker {
+  margin: 0 0 18px;
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.article-hero h1 {
+  max-width: 980px;
+  margin: 0 auto;
+  color: var(--ink);
+  font-family: "Newsreader", Georgia, serif;
+  font-size: clamp(2.3rem, 4.6vw, 4.1rem);
+  font-weight: 400;
+  line-height: 1.02;
+}
+
+.article-hero h1 .title-accent {
+  color: var(--accent);
+}
+
+.article-subtitle {
+  max-width: 920px;
+  margin: 20px auto 0;
+  color: var(--ink);
+  font-family: "Newsreader", Georgia, serif;
+  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+  font-weight: 400;
+  line-height: 1.35;
+}
+
+.article-meta {
+  margin: 26px 0 0;
+  color: var(--ink);
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 1.05rem;
+}
+
+.article-content {
+  max-width: 860px;
+  margin: 56px auto 0;
+  font-size: 1.02rem;
+}
+
+.article-content h2,
+.article-content h3 {
+  color: var(--ink);
+  font-family: "Newsreader", Georgia, serif;
+  font-weight: 400;
+  line-height: 1.08;
+}
+
+.article-content h2 {
+  margin: 72px 0 20px;
+  padding-top: 6px;
+  font-size: clamp(1.9rem, 3.6vw, 2.9rem);
+}
+
+.article-content h3 {
+  margin: 46px 0 16px;
+  font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+}
+
+.article-content p,
+.article-content ul,
+.article-content ol {
+  margin: 0 0 20px;
+}
+
+.article-content li + li {
+  margin-top: 8px;
+}
+
+.article-content a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration-color: rgba(23, 107, 100, 0.35);
+  text-underline-offset: 3px;
+}
+
+.article-content hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 48px 0;
+}
+
+.article-content pre {
+  overflow-x: auto;
+  margin: 24px 0;
+  padding: 18px 20px;
+  border: 1px solid rgba(216, 208, 196, 0.95);
+  border-radius: 8px;
+  background: var(--code-bg);
+  color: var(--code-ink);
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.article-content code,
+.article-content pre {
+  font-family: "SF Mono", "Monaco", "Consolas", ui-monospace, monospace;
+}
+
+.article-content :not(pre) > code {
+  padding: 0.16em 0.34em;
+  border-radius: 5px;
+  background: rgba(23, 107, 100, 0.09);
+  color: #174f4b;
+  font-size: 0.92em;
+}
+
+pre .kw { color: var(--accent); font-weight: 600; }
+pre .ok { color: var(--good); font-weight: 600; }
+pre .bad { color: var(--bad); font-weight: 600; }
+pre .cm { color: var(--muted); }
+
+.footnote {
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+/* ---- stat tiles under the intro ---- */
+.stat-tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+  margin: 34px 0;
+}
+
+.stat-tile {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 16px 18px;
+}
+
+.stat-tile .l {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.stat-tile .v {
+  margin-top: 4px;
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 2.2rem;
+  line-height: 1.05;
+  color: var(--ink);
+}
+
+.stat-tile .d {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--good);
+}
+
+.stat-tile .m {
+  margin-top: 2px;
+  font-size: 0.74rem;
+  color: var(--muted);
+}
+
+/* ---- figures: border-top card, kicker + serif title, mono legend ---- */
+figure.viz {
+  margin: 40px 0;
+  padding: 0;
+}
+
+figure.viz .viz-card {
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+
+figure.viz .viz-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 12px;
+  margin-bottom: 10px;
+}
+
+figure.viz .viz-kicker {
+  font: 700 10.5px/1 "Inter", system-ui, sans-serif;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+figure.viz .viz-title {
+  font-family: "Newsreader", Georgia, serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.15;
+  color: var(--ink);
+}
+
+figure.viz .viz-sub {
+  font: 500 11px/1.5 "SF Mono", Menlo, ui-monospace, monospace;
+  color: var(--muted);
+}
+
+figure.viz .viz-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px 14px;
+  margin: 0 0 8px;
+}
+
+figure.viz .viz-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font: 500 11px/1.6 "SF Mono", Menlo, ui-monospace, monospace;
+  color: #44403a;
+}
+
+.swatch { width: 14px; height: 3px; border-radius: 2px; display: inline-block; }
+.sw-1 { background: var(--s1); }
+.sw-2 { background: var(--s2); }
+
+figure.viz figcaption {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+
+figure.viz svg { width: 100%; height: auto; display: block; }
+figure.viz svg text { font-family: "Inter", system-ui, sans-serif; }
+
+.gridline { stroke: var(--grid); stroke-width: 1; }
+.axisline { stroke: var(--axis); stroke-width: 1; }
+.tick, .atitle { fill: var(--muted); font-size: 11.5px; }
+.line-1 { fill: none; stroke: var(--s1); stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round; }
+.line-2 { fill: none; stroke: var(--s2); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.line-drop { stroke: var(--muted); stroke-width: 1.6; stroke-dasharray: 4 4; }
+.dot-1 { fill: var(--s1); stroke: var(--paper); stroke-width: 2; }
+.dlab { fill: var(--ink); font-size: 12.5px; font-weight: 600; }
+
+.flow .fbox { fill: var(--paper); stroke: var(--line); }
+.flow .facc { fill: rgba(23, 107, 100, 0.08); stroke: var(--accent); }
+.flow .ft { fill: var(--ink); font-size: 14px; font-weight: 600; }
+.flow .fs { fill: var(--muted); font-size: 11.5px; }
+.flow .fd { fill: var(--accent); font-size: 13.5px; font-weight: 600; }
+.flow .ar { stroke: var(--muted); stroke-width: 1.6; fill: none; }
+.flow .al { fill: var(--muted); font-size: 12px; }
+.flow .ah { fill: var(--muted); }
+
+/* ---- tables ---- */
+.table-scroll {
+  width: min(100vw - 40px, 1040px);
+  margin: 28px 50% 34px;
+  transform: translateX(-50%);
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  box-shadow: var(--shadow);
+}
+
+.article-content table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.table-scroll table { min-width: 720px; }
+
+.article-content th,
+.article-content td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+  font-variant-numeric: tabular-nums;
+}
+
+.article-content th {
+  color: var(--ink);
+  background: #eee8de;
+  font-weight: 700;
+}
+
+.article-content tr:last-child td {
+  border-bottom: 0;
+}
+
+.article-content tr.hl td { font-weight: 600; }
+table .dv { font-size: 1.15rem; }
+table .why { color: var(--muted); font-size: 0.82rem; }
+
+/* ---- checkpoint snapshots ---- */
+.snap {
+  margin: 24px 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--paper);
+}
+
+.snap .p {
+  padding: 10px 16px;
+  background: var(--code-bg);
+  font-size: 0.84rem;
+  color: var(--muted);
+  border-bottom: 1px solid var(--line);
+}
+
+.snap .row {
+  display: grid;
+  grid-template-columns: 110px 1fr 30px;
+  gap: 10px;
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--grid);
+  font-size: 0.9rem;
+  align-items: baseline;
+}
+
+.snap .row:last-child { border-bottom: none; }
+.snap .who { font-size: 0.74rem; color: var(--muted); }
+.snap .ok { color: var(--good); font-weight: 700; }
+.snap .bad { color: var(--bad); font-weight: 700; }
+.snap .note { color: var(--muted); font-size: 0.78rem; font-style: italic; }
+
+/* ---- pulled question ---- */
+.qa {
+  border-left: 3px solid var(--accent);
+  padding: 4px 0 4px 18px;
+  margin: 32px 0;
+}
+
+.qa .q {
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 1.25rem;
+  margin: 0 0 8px;
+}
+
+.qa p { color: #44403a; margin: 8px 0; }
+
+/* ---- serif closer ---- */
+.closer {
+  margin: 64px auto 0;
+  text-align: center;
+  font-family: "Newsreader", Georgia, serif;
+  font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+  line-height: 1.3;
+}
+
+.closer .quiet { color: var(--muted); }
+
+.site-footer {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 34px 0 42px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.site-footer a { color: var(--accent); }
+
+/* ---- collapsed ToC under the hero wherever the fixed rail does not fit ---- */
+.toc-mobile {
+  max-width: 860px;
+  margin: 30px auto 0;
+  padding: 12px 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+}
+
+.toc-mobile summary {
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.toc-mobile ol {
+  margin: 12px 0 4px;
+  padding-left: 24px;
+}
+
+.toc-mobile li { margin: 7px 0; }
+
+.toc-mobile a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.toc-mobile a:hover { color: var(--accent); }
+
+@media (min-width: 1460px) {
+  .toc-mobile { display: none; }
+}
+
+/* left-rail table of contents: only on viewports wide enough to sit clear of the column */
+.article-toc { display: none; }
+
+@media (min-width: 1460px) {
+  /* the rail + 28px gap span 224px of left margin; shift the column half of
+     that so the rail-and-column composition is centered, not the column alone */
+  .article-shell {
+    margin-left: calc((100vw - 1120px) / 2 + 112px);
+  }
+
+  .site-header {
+    padding-left: calc((100vw - 1120px) / 2 + 112px);
+    padding-right: calc((100vw - 1120px) / 2 - 112px);
+  }
+
+  .article-toc {
+    display: block;
+    position: fixed;
+    top: 140px;
+    left: calc((100vw - 1120px) / 2 - 112px);
+    width: 196px;
+    max-height: calc(100vh - 180px);
+    overflow-y: auto;
+    padding-right: 10px;
+  }
+}
+
+.toc-label {
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #8a847a;
+  margin-bottom: 10px;
+}
+
+.article-toc ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.article-toc a {
+  display: block;
+  padding: 3px 0 3px 11px;
+  border-left: 2px solid #e4ded2;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: #6d6860;
+  text-decoration: none;
+}
+
+.article-toc a:hover { color: #161513; }
+
+.article-toc a.active {
+  color: var(--accent);
+  border-left-color: var(--accent);
+  font-weight: 600;
+}
+
+@media (max-width: 760px) {
+  .article-shell,
+  .site-footer {
+    width: min(100% - 28px, 1120px);
+  }
+
+  .article-hero { padding: 42px 0 32px; }
+
+  .article-content {
+    margin-top: 36px;
+    font-size: 0.98rem;
+  }
+
+  .article-content h2 { margin-top: 54px; }
+
+  .snap .row { grid-template-columns: 84px 1fr 24px; }
+}
+</style>
+</head>
+<body class="article-page">
+
+<header class="site-header" aria-label="Site header">
+  <a class="site-brand" href="#"><span class="deva">संस्कृतम्</span> <span class="x">×</span> Lean&nbsp;4</a>
+  <nav class="site-nav" aria-label="Primary navigation">
+    <a href="#reproduce">Reproduce</a>
+  </nav>
+</header>
+
+<main class="article-shell">
+
+<nav class="article-toc" aria-label="Table of contents">
+  <div class="toc-label">Table of contents</div>
+  <ol>
+    <li class="toc-h2"><a href="#the-oldest-program">The oldest program</a></li>
+    <li class="toc-h2"><a href="#if-it-compiles-you-can-train-on-it">If it compiles, you can train on it</a></li>
+    <li class="toc-h2"><a href="#what-happened">What happened</a></li>
+    <li class="toc-h2"><a href="#watch-it-learn">Watch it learn</a></li>
+    <li class="toc-h2"><a href="#what-this-shows">What this shows — and doesn't</a></li>
+    <li class="toc-h2"><a href="#reproduce">Reproduce</a></li>
+  </ol>
+</nav>
+
+<section class="article-hero">
+  <p class="article-kicker">Technical Report</p>
+  <h1>Sanskrit is a programmable language.<br>
+  <span class="title-accent">We ran it on a compiler.</span></h1>
+  <p class="article-subtitle">Around 400 BCE, Pāṇini compressed the grammar of
+  Sanskrit into ~4,000 ordered, exception-handled rewrite rules — the oldest
+  formal system humanity has. For 2,300 years it ran only on people.</p>
+  <p class="article-meta">Anish Lakkapragada · July 2026</p>
+</section>
+
+<details class="toc-mobile">
+  <summary>Table of contents</summary>
+  <ol>
+    <li><a href="#the-oldest-program">The oldest program</a></li>
+    <li><a href="#if-it-compiles-you-can-train-on-it">If it compiles, you can train on it</a></li>
+    <li><a href="#what-happened">What happened</a></li>
+    <li><a href="#watch-it-learn">Watch it learn</a></li>
+    <li><a href="#what-this-shows">What this shows — and doesn't</a></li>
+    <li><a href="#reproduce">Reproduce</a></li>
+  </ol>
+</details>
+
+<article id="article" class="article-content">
+
+<p>We ported a fragment of that grammar to the Lean&nbsp;4 proof assistant, where
+a sentence of Sanskrit is grammatical <em>if and only if its check compiles</em> —
+then used that compiler as the training signal for an open language model,
+comparing supervised fine-tuning with the canonical SFT→GRPO reinforcement
+pipeline. No human labels anywhere. One 18&nbsp;GB MacBook.</p>
+
+<div class="stat-tiles">
+  <div class="stat-tile">
+    <div class="l">Model's sentences that compile</div>
+    <div class="v">78%</div>
+    <div class="d">↑ from 2.8% before training</div>
+    <div class="m">150 held-out prompts, judged by Lean</div>
+  </div>
+  <div class="stat-tile">
+    <div class="l">On words it never trained on</div>
+    <div class="v">31%</div>
+    <div class="d">↑ from 0%</div>
+    <div class="m">held-out vocabulary tier, still Lean-verified</div>
+  </div>
+  <div class="stat-tile">
+    <div class="l">Word forms derived from rules</div>
+    <div class="v">2,286</div>
+    <div class="m">computed, not listed — as Pāṇini did it</div>
+  </div>
+  <div class="stat-tile">
+    <div class="l">Human labels used</div>
+    <div class="v">0</div>
+    <div class="m">the grammar generates its own truth</div>
+  </div>
+</div>
+
+<h2 id="the-oldest-program">The oldest program</h2>
+
+<p>Pāṇini's Aṣṭādhyāyī is not a description of Sanskrit — it is a
+<em>generator</em> of it. Start from a stem and a meaning-slot, apply the rules in
+their prescribed order, and the correct word falls out. Rules trigger other rules;
+metarules resolve conflicts. Linguists call it the first generative grammar.
+A programmer will recognize something more specific: <strong>a rewrite system with
+a defined execution order</strong>. That is code — and code can be ported.</p>
+
+<figure class="viz" id="fig-derivation">
+  <div class="viz-card">
+    <div class="viz-head">
+      <span class="viz-kicker">Table 1</span>
+      <span class="viz-title">Grammar as derivation, not lookup</span>
+    </div>
+    <table>
+      <thead><tr><th>input</th><th>derived form</th><th></th><th>the rule that fired</th></tr></thead>
+      <tbody>
+        <tr><td>rāma + instrumental sg</td><td><strong>rāmeṇa</strong></td>
+            <td class="dv">रामेण</td><td class="why">n → ṇ after r within the word (ṇatva)</td></tr>
+        <tr><td>deva + locative pl</td><td><strong>deveṣu</strong></td>
+            <td class="dv">देवेषु</td><td class="why">s → ṣ after e (the ruki class)</td></tr>
+        <tr><td>dṛś + present 3rd pl</td><td><strong>paśyanti</strong></td>
+            <td class="dv">पश्यन्ति</td><td class="why">'see' swaps to a suppletive stem</td></tr>
+        <tr><td>devaḥ + gacchati</td><td><strong>devo gacchati</strong></td>
+            <td class="dv">देवो गच्छति</td><td class="why">sandhi: word-final -aḥ → -o before a voiced sound</td></tr>
+      </tbody>
+    </table>
+    <figcaption>No table in the formalization contains "rāmeṇa". A rule fires —
+    because of the r earlier in the word — and the machine derives the retroflex ṇ,
+    the same way a Pāṇinian grammarian would.</figcaption>
+  </div>
+</figure>
+
+<h3>What "formalized in Lean" means</h3>
+
+<p>A proof assistant is a program that checks proofs — mathematics with
+a compiler behind it. We wrote the grammar's rules as executable Lean definitions:
+the sound inventory, declension of seven noun classes across 8 cases × 3 numbers,
+verb conjugation, sandhi-undoing at word boundaries, and the agreement laws.
+Together they define one decidable proposition, <code>Grammatical s</code> —
+"decidable" meaning the machine settles it, one way or the other, for any sentence,
+of any length (clauses chain with <em>ca</em>, Sanskrit's "and"):</p>
+
+<pre>
+<span class="cm">-- "Rāma goes to the village" — the kernel accepts the proof ✓</span>
+<span class="kw">example</span> : Grammatical <span class="ok">"rāmo grāmaṃ gacchati"</span> := <span class="kw">by</span> native_decide
+
+<span class="cm">-- a three-clause sentence checks the same way ✓</span>
+<span class="kw">example</span> : Grammatical
+  <span class="ok">"rāmo grāmaṃ gacchati kanyā ca mālāṃ labhate munayaś ca satyaṃ vadanti"</span> :=
+  <span class="kw">by</span> native_decide
+
+<span class="cm">-- plural subject, singular verb — this file DOES NOT BUILD ✗</span>
+<span class="kw">example</span> : Grammatical <span class="bad">"bālāḥ grāmaṃ gacchati"</span> := <span class="kw">by</span> native_decide
+
+<span class="cm">-- and the rejection is itself a theorem ✓</span>
+<span class="kw">example</span> : ¬ Grammatical <span class="bad">"bālāḥ grāmaṃ gacchati"</span> := <span class="kw">by</span> native_decide
+</pre>
+
+<p class="footnote">The paradigm tables are theorems, re-proved by the kernel at
+every build — the grammar tests itself. And the same definitions become ordinary
+programs: alongside the grammar modules sit two small Lean files,
+<code>Check.lean</code> and <code>Export.lean</code>, declared as executables in
+the project manifest, so Lake — Lean's build tool — compiles them to native
+binaries, <code>bin/check</code> and <code>bin/export</code>. One
+<code>lake build</code> replays the proofs <em>and</em> produces both binaries
+from the very definitions the kernel just checked — the judge is the checked
+grammar itself, not a reimplementation of it. <code>check</code> answers in
+~20&nbsp;ms with <code>--json</code> diagnostics, which is what makes the next
+part affordable: it scored roughly half a million model outputs overnight.
+<strong>Scope, plainly:</strong> a fragment — 7 vowel-stem classes,
+present tense, ~125 lemmas, sandhi undone rather than applied. Real, derivational
+all the way down, and it grows by adding rules, not data.</p>
+
+<h2 id="if-it-compiles-you-can-train-on-it">If it compiles, you can train on it</h2>
+
+<p>Anything a program can verify, a model can be trained against —
+that's RLVR, the recipe behind the current generation of math and code models.
+Math has answer checkers; code has tests. <strong>Now a natural language has a
+compiler</strong> — a teacher that never tires, never guesses, and cannot be
+flattered.</p>
+
+<figure class="viz" id="fig-loop">
+  <div class="viz-card">
+    <div class="viz-head">
+      <span class="viz-kicker">Fig. 1</span>
+      <span class="viz-title">The training loop</span>
+      <span class="viz-sub">writer → referee → coach, ~20 ms per verdict</span>
+    </div>
+    <svg class="flow" viewBox="0 0 900 230" role="img"
+         aria-label="The training loop: the model writes candidate answers, Lean judges each one, above-average answers are reinforced.">
+      <defs><marker id="a2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M 0 1 L 9 5 L 0 9 z" class="ah"/></marker></defs>
+      <rect class="fbox" x="20" y="70" width="230" height="100" rx="8"/>
+      <text class="ft" x="135" y="102" text-anchor="middle">Qwen3-4B  (the writer)</text>
+      <text class="fs" x="135" y="122" text-anchor="middle">6 candidate answers per prompt</text>
+      <text class="fd" x="135" y="146" text-anchor="middle">वीरो ग्रामं रक्षति · वीरा ग्रामः …</text>
+      <rect class="fbox facc" x="335" y="70" width="230" height="100" rx="8"/>
+      <text class="ft" x="450" y="102" text-anchor="middle">Lean 4  (the referee)</text>
+      <text class="fs" x="450" y="122" text-anchor="middle">Grammatical? Right words in the</text>
+      <text class="fs" x="450" y="138" text-anchor="middle">right cases? 20 ms per verdict</text>
+      <rect class="fbox" x="650" y="70" width="230" height="100" rx="8"/>
+      <text class="ft" x="765" y="102" text-anchor="middle">GRPO  (the coach)</text>
+      <text class="fs" x="765" y="122" text-anchor="middle">reinforce answers that beat</text>
+      <text class="fs" x="765" y="138" text-anchor="middle">their group's average</text>
+      <path class="ar" d="M 250 120 L 333 120" marker-end="url(#a2)"/>
+      <text class="al" x="291" y="110" text-anchor="middle">answers</text>
+      <path class="ar" d="M 565 120 L 648 120" marker-end="url(#a2)"/>
+      <text class="al" x="606" y="110" text-anchor="middle">rewards</text>
+      <path class="ar" d="M 765 68 C 730 18, 180 18, 137 66" marker-end="url(#a2)"/>
+      <text class="al" x="450" y="30" text-anchor="middle">weight update (LoRA)</text>
+    </svg>
+  </div>
+</figure>
+
+<p class="footnote">Tasks come from the formalization itself:
+<code>bin/export</code> — the second executable from the same
+<code>lake build</code> — prints the lexicon's 2,286 inflected forms as
+<strong>TSV</strong> (tab-separated values): a plain text file in which each
+line is one row of a table and a tab character separates the columns — the
+simplest table format a program can read. One line per word form. Two real
+lines of it, with the columns labeled:</p>
+
+<pre>
+<span class="cm">kind    lemma   class   gloss   slot₁   slot₂   form        tier</span>
+noun    rāma    m       Rāma    ins     sg      <span class="ok">rāmeṇa</span>      core
+verb    gam     i       go      3       sg      <span class="ok">gacchati</span>    core
+</pre>
+
+<p class="footnote">There is <em>rāmeṇa</em> again — the form the grammar
+<em>derived</em> in the previous section, now as a row of data. Reading across: the
+word class, the dictionary lemma, a class flag (<code>m</code>&nbsp;=&nbsp;masculine
+noun, <code>i</code>&nbsp;=&nbsp;intransitive verb), the English gloss, the
+grammatical slot (case&nbsp;+&nbsp;number for nouns, person&nbsp;+&nbsp;number
+for verbs), the inflected form itself, and its vocabulary tier
+(<code>core</code> may appear in training data; <code>heldout</code> is
+evaluation-only). The Python data generator reads this table and nothing else,
+and from it seeds grammar questions, hint-free translation, and
+four-word composition. The reward is structural — the checker verifies <em>who
+does what to whom</em>, so a grammatical sentence with reversed roles scores low.
+Supervised data, where used, is also grammar-generated: zero human labels end to
+end. Each experiment is one YAML config (model, data, hyperparameters, eval
+cadence); every run leaves a self-describing directory — frozen config, training
+log, four checkpoints, metrics, and the model's actual generations at every
+quarter of training.</p>
+
+<h2 id="what-happened">What happened</h2>
+
+<p>Two arms, evaluated at every quarter of training on held-out
+prompts (greedy decoding, judged by Lean): <strong>pure SFT</strong> on
+grammar-generated answers, then the canonical <strong>SFT → GRPO</strong>
+pipeline on top of it.</p>
+
+<figure class="viz" id="fig-training">
+  <div class="viz-card">
+    <div class="viz-head">
+      <span class="viz-kicker">Fig. 2</span>
+      <span class="viz-title">The training journey</span>
+      <span class="viz-sub">held-out checkpoint evals, greedy decoding</span>
+    </div>
+    <div class="viz-legend">
+      <span class="viz-chip"><span class="swatch sw-1"></span>sentences that compile (%)</span>
+      <span class="viz-chip"><span class="swatch sw-2"></span>chrF++ vs reference</span>
+    </div>
+    <svg viewBox="0 0 880 300" role="img"
+         aria-label="Training journey: compile rate rises from 2.6 to 82 percent across SFT, drops 5 points at re-quantization, and GRPO recovers to 79.5 percent.">
+      <line class="gridline" x1="50" y1="16" x2="860" y2="16"/><text class="tick" x="42" y="20" text-anchor="end">100</text>
+      <line class="gridline" x1="50" y1="77" x2="860" y2="77"/><text class="tick" x="42" y="81" text-anchor="end">75</text>
+      <line class="gridline" x1="50" y1="138" x2="860" y2="138"/><text class="tick" x="42" y="142" text-anchor="end">50</text>
+      <line class="gridline" x1="50" y1="199" x2="860" y2="199"/><text class="tick" x="42" y="203" text-anchor="end">25</text>
+      <line class="axisline" x1="50" y1="260" x2="860" y2="260"/><text class="tick" x="42" y="264" text-anchor="end">0</text>
+      <line class="axisline" x1="409" y1="16" x2="409" y2="260" stroke-dasharray="2 4"/>
+      <text class="tick" x="228" y="286" text-anchor="middle">Phase 1 — SFT (1,000 iterations)</text>
+      <text class="tick" x="630" y="286" text-anchor="middle">Phase 2 — GRPO (1,200 iterations)</text>
+      <polyline class="line-2" points="50,223.0 139.8,101.7 229.5,89.2 319.3,70.8 409,74.8"/>
+      <polyline class="line-2" points="409,79.8 516.7,80.0 624.4,78.5 732.1,77.1 839.8,78.6"/>
+      <polyline class="line-1" points="50,253.8 139.8,122.4 229.5,91.1 319.3,59.8 409,59.8"/>
+      <line class="line-drop" x1="409" y1="59.8" x2="409" y2="72.3"/>
+      <polyline class="line-1" points="409,72.3 516.7,72.3 624.4,72.3 732.1,66.0 839.8,66.0"/>
+      <circle class="dot-1" cx="50" cy="253.8" r="4"><title>SFT start — 2.6% compile</title></circle>
+      <circle class="dot-1" cx="139.8" cy="122.4" r="4"><title>SFT 25% — ≈56% compile</title></circle>
+      <circle class="dot-1" cx="229.5" cy="91.1" r="4"><title>SFT 50% — ≈69% compile</title></circle>
+      <circle class="dot-1" cx="319.3" cy="59.8" r="4"><title>SFT 75% — 82.1% compile</title></circle>
+      <circle class="dot-1" cx="409" cy="59.8" r="4"><title>SFT end — 82.1% compile</title></circle>
+      <circle class="dot-1" cx="516.7" cy="72.3" r="4"><title>GRPO 25% — 76.9% compile</title></circle>
+      <circle class="dot-1" cx="624.4" cy="72.3" r="4"><title>GRPO 50% — ≈76.9% compile</title></circle>
+      <circle class="dot-1" cx="732.1" cy="66.0" r="4"><title>GRPO 75% — ≈79.5% compile</title></circle>
+      <circle class="dot-1" cx="839.8" cy="66.0" r="4"><title>GRPO end — 79.5% compile</title></circle>
+      <text class="dlab" x="50" y="245">2.6%</text>
+      <text class="dlab" x="319.3" y="50" text-anchor="middle">82.1%</text>
+      <text class="dlab" x="470" y="94">76.9% after re-quantization</text>
+      <text class="dlab" x="839.8" y="56" text-anchor="end">79.5%</text>
+    </svg>
+    <figcaption>Every point is a real checkpoint evaluation (a fixed 60-prompt
+    slice, generations preserved under <code>runs/…/snapshots/</code>; the table
+    below uses the full benchmarks, hence small differences). The dashed step
+    between phases is the price of the pipeline itself on an 18&nbsp;GB machine:
+    chaining GRPO onto SFT requires fusing the SFT adapter and re-quantizing to
+    4-bit — 5.1 points gone before RL begins. GRPO climbs back steadily from
+    there.</figcaption>
+  </div>
+</figure>
+
+<div class="qa">
+  <p class="q">So which trains better — supervised examples or reinforcement?</p>
+  <p>Both signals come from the same compiler; the difference is how you spend it,
+  and the answer splits cleanly in two. <strong>In distribution, imitation does
+  the lifting:</strong> two epochs of SFT on grammar-generated answers took
+  compile-rate from 2.8% to 77.8%, and GRPO on top only ties it (78.7%) — RL
+  climbed steadily from its re-quantized starting point but roughly repaid the
+  pipeline toll, no more. <strong>Out of distribution, reinforcement wins:</strong>
+  on vocabulary neither arm ever trained on, the GRPO model answers 53.3% of
+  inflection questions against SFT's 43.3% and edges it on compiling sentences.
+  Imitation memorizes what the teacher shows; RL — rewarded only for
+  <em>being right</em>, never shown how — appears to lean harder on the rule.
+  (In an earlier iteration we also ran GRPO <em>from scratch</em> as a control:
+  600 numerically-perfect iterations, zero movement. With almost no correct
+  samples to reinforce, there is nothing to climb — the SFT stage is not
+  optional.)</p>
+</div>
+
+<h3>Generalization — including beyond what the grammar models</h3>
+
+<p class="footnote">Training data is restricted to the
+fragment's core vocabulary. The benchmarks are not: a held-out tier of lemmas
+exists in the Lean model but never in training data (unseen words, still
+kernel-judged), and a beyond-fragment set of classical maxims and textbook lines
+uses tenses and stems the formalization doesn't model at all (judged by chrF++
+against references — Lean cannot judge what it doesn't model).</p>
+
+<div class="table-scroll">
+  <table>
+    <thead><tr><th>benchmark → model</th><th>Qwen3-4B base</th><th>+ SFT</th><th>+ SFT→GRPO</th></tr></thead>
+    <tbody>
+      <tr><td>in-fragment · compiles</td><td>2.8%</td><td>77.8%</td><td class="hl">78.7%</td></tr>
+      <tr><td>in-fragment · grammar QA exact</td><td>9.5%</td><td class="hl">57.1%</td><td>54.8%</td></tr>
+      <tr><td>in-fragment · chrF++</td><td>13.7</td><td class="hl">80.1</td><td>78.3</td></tr>
+      <tr><td>held-out vocabulary · compiles</td><td>0.0%</td><td>30.0%</td><td class="hl">31.4%</td></tr>
+      <tr><td>held-out vocabulary · grammar QA exact</td><td>10.0%</td><td>43.3%</td><td class="hl">53.3%</td></tr>
+      <tr><td>held-out vocabulary · chrF++</td><td>11.6</td><td class="hl">34.5</td><td>31.1</td></tr>
+      <tr><td>beyond fragment · chrF++</td><td>3.7</td><td class="hl">13.5</td><td>13.0</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<p class="footnote">The generalization is real and kernel-verified: on lemmas that
+exist in the Lean model but never appeared in any training file, the trained model
+goes from zero compiling sentences to ~31%, and from 10% to 53% on inflection
+questions — it learned declension patterns, not answers. Beyond the fragment
+(tenses and stems the grammar doesn't model), chrF++ rises 3.7 → 13.5: the model
+transfers its in-fragment habits (word choice, agreement) but cannot conjure the
+perfect tense from nowhere — the honest boundary of what a fragment can teach.</p>
+
+<h2 id="watch-it-learn">Watch it learn</h2>
+
+<p>The framework snapshots the model's actual generations at every
+quarter of training. One prompt, five moments — each answer judged by Lean:</p>
+
+<div class="snap">
+  <div class="p">"The new wives go." — needs feminine plural agreement on an ī-stem noun</div>
+  <div class="row"><span class="who">before</span><span>nāvān nāvān gacchanti <span class="note">stuttering, no real words</span></span><span class="bad">✗</span></div>
+  <div class="row"><span class="who">25%</span><span>navāḥ patnīḥ gacchanti <span class="note">right words — but patnīḥ is the accusative; the subject must be nominative</span></span><span class="bad">✗</span></div>
+  <div class="row"><span class="who">50%</span><span>navāni patnīḥ gacchanti <span class="note">adjective slips into the neuter</span></span><span class="bad">✗</span></div>
+  <div class="row"><span class="who">75%</span><span>navāḥ patnyaḥ gacchanti <span class="note">correct: feminine nominative plural, noun and adjective agreeing</span></span><span class="ok">✓</span></div>
+  <div class="row"><span class="who">100%</span><span>navāḥ patnyaḥ gacchanti</span><span class="ok">✓</span></div>
+</div>
+
+<div class="snap">
+  <div class="p">"The animals play."</div>
+  <div class="row"><span class="who">before</span><span>जन्तवः खेलन्ति <span class="note">real Sanskrit, but vocabulary the task didn't ask for, in the wrong script</span></span><span class="bad">✗</span></div>
+  <div class="row"><span class="who">25%</span><span>paśūn krīḍanti <span class="note">right lemma, accusative where the subject belongs</span></span><span class="bad">✗</span></div>
+  <div class="row"><span class="who">50%–100%</span><span>paśavaḥ krīḍanti</span><span class="ok">✓</span></div>
+</div>
+
+<p class="footnote">Full snapshots for every checkpoint of both runs:
+<code>runs/&lt;run&gt;/snapshots/</code> (samples committed under <code>results/</code>).</p>
+
+<h2 id="what-this-shows">What this shows — and doesn't</h2>
+
+<ul>
+  <li><strong>Shown (i):</strong> a genuine fragment of Pāṇinian Sanskrit lives in
+  a general-purpose prover, with grammaticality as a kernel-checkable proposition
+  and the paradigm tables as theorems. Type-theoretic linguistics has a real
+  lineage (Grammatical Framework; natural-language <em>semantics</em> in Coq and
+  Agda); to our knowledge this is the first machine-checked Pāṇinian grammar
+  fragment, and the first RLVR setup whose reward is a prover-checked judgment of
+  natural-language grammaticality rather than math or code.</li>
+  <li><strong>Shown (ii):</strong> the standard post-training pipeline runs
+  end-to-end against it, instrumented enough to say precisely what each stage
+  contributed — including the honest negative (RL does not beat its own pipeline
+  toll here) and the honest positive (the model generalizes the grammar to words
+  it never saw in training).</li>
+  <li><strong>Not shown:</strong> all of Sanskrit (one tense, no consonant stems,
+  no compounds); semantic understanding (structure is checked, meaning is not);
+  any claim that GRPO beats SFT on this fragment — it didn't, and the numbers say
+  so.</li>
+</ul>
+
+<p class="closer">Pāṇini's grammar was always a program.<br>
+<span class="quiet">It just waited 2,300 years for a runtime.</span></p>
+
+<h2 id="reproduce">Reproduce</h2>
+
+<p class="footnote">One Lean library (<code>lean/</code> — <code>lake build</code>
+replays every theorem and emits the <code>check</code> and <code>export</code>
+binaries under <code>lean/.lake/build/bin/</code>), one experiment framework
+(<code>finetune/</code> — YAML
+configs in, self-describing run directories out), one data directory with a README
+that maps every file to its experiment. <code>bash finetune/run.sh
+finetune/configs/sft-baseline.yaml</code> reproduces Phase 1;
+<code>sft-then-grpo.yaml</code> chains Phase 2. Model: Qwen3-4B-Instruct-2507
+(4-bit, LoRA rank 8 on 16 layers) via
+<a href="https://github.com/Goekdeniz-Guelmez/mlx-lm-lora">mlx-lm-lora</a> on Apple
+MLX; metrics: Lean compile-rate + chrF++
+(<a href="https://github.com/mjpost/sacrebleu">sacrebleu</a>, standard settings).
+Hardware: one M3&nbsp;Pro MacBook, 18&nbsp;GB.</p>
+
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <span class="deva" style="color:var(--accent)">संस्कृतम्</span> × Lean&nbsp;4 —
+  grammar as a compiler. Built from <code style="font-size:.9em">runs/</code> and
+  <code style="font-size:.9em">results/</code> in this repository.
+</footer>
+
+<script>
+  (function () {
+    const links = document.querySelectorAll(".article-toc a[href^='#']");
+    if (!links.length) return;
+    const byId = new Map();
+    links.forEach((a) => byId.set(a.getAttribute("href").slice(1), a));
+    const heads = [...byId.keys()].map((id) => document.getElementById(id)).filter(Boolean);
+    let active = null;
+    function onScroll() {
+      const y = window.scrollY + 140;
+      let current = heads[0];
+      for (const h of heads) {
+        if (h.offsetTop <= y) current = h;
+        else break;
+      }
+      const link = current && byId.get(current.id);
+      if (!link || link === active) return;
+      if (active) active.classList.remove("active");
+      active = link;
+      active.classList.add("active");
+    }
+    document.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  })();
+</script>
+
+</body>
+</html>
