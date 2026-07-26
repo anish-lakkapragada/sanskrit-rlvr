@@ -4,7 +4,8 @@
 
 run_name: example-zero-reward
 model: gemma3-12b            # preset key (finetune/model.py) or raw HF id
-reward: example              # finetune/rewards registry name
+reward: vp_exact             # registry: vp_exact | vp_chrf | vp_chrfpp | example
+                             # all vp_* = 0.15*format(binary) + 0.85*content, range [0,1]
 dataset: data/finetune/finetune.json         # 6,018 training tasks
 eval_dataset: data/finetune/validation.json  # Pass@K prompt pool (held-out dhatus)
 
@@ -21,6 +22,8 @@ pass_at_k:
   num_prompts: 128           # seeded sample from eval_dataset
   samples_per_prompt: 8      # must be >= max(ks)
   pass_threshold: 0.5        # reward >= threshold counts as a pass
+                             # vp_exact: pass = correct answer (0.15 format-only < 0.5)
+                             # vp_chrf(pp): pass ~= chrF >= ~41 vs nearest gold
   temperature: 0.9
 
 samayik_eval:
