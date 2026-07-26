@@ -57,9 +57,20 @@ def generate(contents: list, key: str, temperature: float = 0.7) -> str:
     except urllib.error.HTTPError as e:
         sys.exit(f"HTTP {e.code}: {e.read().decode(errors='replace')}")
     try:
-        return data["candidates"][0]["content"]["parts"][0]["text"].strip()
+        parts = data["candidates"][0]["content"]["parts"]
     except (KeyError, IndexError):
         sys.exit(f"Unexpected response: {json.dumps(data, ensure_ascii=False, indent=2)}")
+    # Gemma 4 emits thinking as separate parts flagged `thought`; keep only
+    # the answer parts (set GEMMA_SHOW_THOUGHTS=1 to see the reasoning too).
+    show_thoughts = os.environ.get("GEMMA_SHOW_THOUGHTS") == "1"
+    answer = "\n".join(p["text"] for p in parts if p.get("text") and not p.get("thought"))
+    if show_thoughts:
+        thoughts = "\n".join(p["text"] for p in parts if p.get("text") and p.get("thought"))
+        if thoughts:
+            print(f"--- thoughts ---\n{thoughts}\n--- answer ---", file=sys.stderr)
+    if not answer.strip():
+        sys.exit("Empty answer (all parts were thoughts — try raising maxOutputTokens)")
+    return answer.strip()
 
 
 def main() -> None:
