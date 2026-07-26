@@ -1,7 +1,28 @@
 [project]
 name = "sanskrit-vidyut"
 version = "0.1.0"
-description = "Add your description here"
+description = "Fine-tuning Gemma on vidyut-prakriya morphology tasks (GRPO)"
 readme = "README.md"
 requires-python = ">=3.10"
-dependencies = []
+# Base deps are CPU-installable everywhere (enable --dry-run + eval unit tests).
+dependencies = [
+    "pyyaml>=6.0",
+    "numpy>=1.26",
+    "sacrebleu>=2.4",
+    "datasets>=2.19",
+    "tensorboard>=2.16",
+    "tensorboardX>=2.6",
+]
+
+[project.optional-dependencies]
+# GPU box only: uv sync --extra train
+# transformers<5 pin: trl <=0.25 import-crashes under transformers 5.x.
+train = [
+    "torch>=2.4",
+    "transformers<5",
+    "trl>=0.19",
+    "peft>=0.12",
+    "accelerate>=1.0",
+    "bitsandbytes>=0.44",
+    "vllm>=0.8",
+]

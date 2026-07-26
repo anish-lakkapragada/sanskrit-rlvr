@@ -1,0 +1,49 @@
+# 8x H100 80GB profile — bf16 everywhere, ZERO quantization.
+# launch: accelerate launch --num_processes 8 -m finetune.grpo --config configs/example.yml
+# preflight: uv run python -m finetune.grpo --config configs/example.yml --dry-run
+
+run_name: example-zero-reward
+model: gemma3-12b            # preset key (finetune/model.py) or raw HF id
+reward: example              # finetune/rewards registry name
+dataset: data/finetune/validation.json       # 6,018 training tasks
+eval_dataset: data/finetune/evaluation.json  # Pass@K prompt pool (held-out dhatus)
+
+iterations: 1000
+checkpoint_every: 100        # checkpoint 0 (base model) is always evaluated
+logging_every: 10
+seed: 42
+
+pass_at_k:
+  ks: [1, 4, 8]
+  num_prompts: 128           # seeded sample from eval_dataset
+  samples_per_prompt: 8      # must be >= max(ks)
+  pass_threshold: 0.5        # reward >= threshold counts as a pass
+  temperature: 0.9
+
+samayik_eval:
+  path: data/eval/samayik.json
+  num_samples: 200           # seeded subsample of the 48k pairs
+  max_new_tokens: 512        # room for <thinking> before <translation>
+  temperature: 0.2
+
+generation:
+  num_generations: 8         # GRPO group size G
+  max_completion_length: 256 # room for <thinking> before <answer>
+  temperature: 0.9
+
+train:
+  learning_rate: 1.0e-5
+  per_device_train_batch_size: 4
+  gradient_accumulation_steps: 1   # 8 ranks x 4 = 32 prompts/step
+  beta: 0.04                 # KL coefficient vs adapter-disabled reference
+  bf16: true
+  gradient_checkpointing: true
+  quantization: none         # bf16 both copies on 80GB cards
+  lora:
+    r: 16
+    alpha: 32
+    dropout: 0.05
+
+vllm:
+  mode: colocate             # colocate | server
+  gpu_memory_utilization: 0.4  # engine pool per 80GB GPU (~24GB bf16 weights + KV)

@@ -1,0 +1,50 @@
+# 1x A100 40GB debug/smoke profile — the ONLY config where anything is
+# quantized: the trainable base copy is bnb NF4 (QLoRA) because two bf16
+# copies of a 12B (train + vLLM engine) don't fit in 40GB. Rollouts stay bf16.
+# launch: python -m finetune.grpo --config configs/example-1xa100-qlora.yml
+
+run_name: example-qlora-debug
+model: gemma3-12b
+reward: example
+dataset: data/finetune/validation.json
+eval_dataset: data/finetune/evaluation.json
+
+iterations: 1000
+checkpoint_every: 100
+logging_every: 10
+seed: 42
+
+pass_at_k:
+  ks: [1, 4, 8]
+  num_prompts: 64            # smaller: eval generation is slower on one GPU
+  samples_per_prompt: 8
+  pass_threshold: 0.5
+  temperature: 0.9
+
+samayik_eval:
+  path: data/eval/samayik.json
+  num_samples: 100
+  max_new_tokens: 512
+  temperature: 0.2
+
+generation:
+  num_generations: 8
+  max_completion_length: 256
+  temperature: 0.9
+
+train:
+  learning_rate: 1.0e-5
+  per_device_train_batch_size: 2
+  gradient_accumulation_steps: 4
+  beta: 0.04
+  bf16: true
+  gradient_checkpointing: true
+  quantization: 4bit         # QLoRA training copy (~8GB); vLLM engine stays bf16
+  lora:
+    r: 16
+    alpha: 32
+    dropout: 0.05
+
+vllm:
+  mode: colocate
+  gpu_memory_utilization: 0.6  # bf16 engine (~24GB weights + KV) on the 40GB card
