@@ -34,8 +34,8 @@ generation:
 
 train:
   learning_rate: 1.0e-5
-  per_device_train_batch_size: 2
-  gradient_accumulation_steps: 4
+  per_device_train_batch_size: 8   # counts COMPLETIONS; must be divisible by
+  gradient_accumulation_steps: 1   # num_generations on a single GPU
   beta: 0.04
   bf16: true
   gradient_checkpointing: true
