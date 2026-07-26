@@ -26,6 +26,9 @@ import urllib.request
 from pathlib import Path
 
 MODEL = os.environ.get("GEMMA_MODEL", "gemma-4-26b-a4b-it")
+# Gemma 4 thinks before answering and thought tokens count against the cap;
+# it does not support thinkingConfig, so generous headroom is the only lever.
+MAX_TOKENS = int(os.environ.get("GEMMA_MAX_TOKENS", "8192"))
 API_URL = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={key}"
 
 
@@ -44,7 +47,7 @@ def load_key() -> str:
 def generate(contents: list, key: str, temperature: float = 0.7) -> str:
     body = {
         "contents": contents,
-        "generationConfig": {"temperature": temperature, "maxOutputTokens": 1024},
+        "generationConfig": {"temperature": temperature, "maxOutputTokens": MAX_TOKENS},
     }
     req = urllib.request.Request(
         API_URL.format(model=MODEL, key=key),
@@ -69,7 +72,11 @@ def generate(contents: list, key: str, temperature: float = 0.7) -> str:
         if thoughts:
             print(f"--- thoughts ---\n{thoughts}\n--- answer ---", file=sys.stderr)
     if not answer.strip():
-        sys.exit("Empty answer (all parts were thoughts — try raising maxOutputTokens)")
+        reason = data["candidates"][0].get("finishReason")
+        sys.exit(
+            f"Empty answer (finishReason={reason}; thinking likely consumed "
+            f"the {MAX_TOKENS}-token budget — raise GEMMA_MAX_TOKENS)"
+        )
     return answer.strip()
 
 
