@@ -1,0 +1,108 @@
+#!/usr/bin/env -S uv run --script
+# /// script
+# requires-python = ">=3.10"
+# dependencies = []
+# ///
+"""Playground for Gemma 4 (gemma-4-26b-a4b-it, text-only) via the Gemini API.
+
+Usage:
+  uv run misc/gemma4.py                        # interactive chat (multi-turn)
+  uv run misc/gemma4.py "your prompt here"     # one-shot
+  ./misc/gemma4.py "your prompt here"          # same, via the shebang
+  GEMMA_MODEL=gemma-4-31b-it uv run misc/gemma4.py   # the dense 31B instead
+
+NOTE: the Gemini API no longer serves Gemma 3 (as of 2026-07 this key sees
+only gemma-4-26b-a4b-it and gemma-4-31b-it). For actual Gemma 3 12B use
+OpenRouter (google/gemma-3-12b-it:free) or run it locally (ollama/MLX).
+
+Reads GEMINI_API_KEY from misc/.env (or the environment). Stdlib only.
+"""
+
+import json
+import os
+import sys
+import urllib.error
+import urllib.request
+from pathlib import Path
+
+MODEL = os.environ.get("GEMMA_MODEL", "gemma-4-26b-a4b-it")
+# Gemma 4 thinks before answering and thought tokens count against the cap;
+# it does not support thinkingConfig, so generous headroom is the only lever.
+MAX_TOKENS = int(os.environ.get("GEMMA_MAX_TOKENS", "8192"))
+TIMEOUT = int(os.environ.get("GEMMA_TIMEOUT", "300"))
+API_URL = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={key}"
+
+
+def load_key() -> str:
+    if key := os.environ.get("GEMINI_API_KEY"):
+        return key
+    env_file = Path(__file__).parent / ".env"
+    if env_file.exists():
+        for line in env_file.read_text().splitlines():
+            line = line.strip()
+            if line.startswith("GEMINI_API_KEY="):
+                return line.split("=", 1)[1].strip().strip("'\"")
+    sys.exit("GEMINI_API_KEY not found (set it in misc/.env or the environment)")
+
+
+def generate(contents: list, key: str, temperature: float = 0.7) -> str:
+    body = {
+        "contents": contents,
+        "generationConfig": {"temperature": temperature, "maxOutputTokens": MAX_TOKENS},
+    }
+    req = urllib.request.Request(
+        API_URL.format(model=MODEL, key=key),
+        data=json.dumps(body).encode(),
+        headers={"Content-Type": "application/json"},
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=TIMEOUT) as resp:
+            data = json.load(resp)
+    except urllib.error.HTTPError as e:
+        sys.exit(f"HTTP {e.code}: {e.read().decode(errors='replace')}")
+    try:
+        parts = data["candidates"][0]["content"]["parts"]
+    except (KeyError, IndexError):
+        sys.exit(f"Unexpected response: {json.dumps(data, ensure_ascii=False, indent=2)}")
+    # Gemma 4 emits thinking as separate parts flagged `thought`; keep only
+    # the answer parts (set GEMMA_SHOW_THOUGHTS=1 to see the reasoning too).
+    show_thoughts = os.environ.get("GEMMA_SHOW_THOUGHTS") == "1"
+    answer = "\n".join(p["text"] for p in parts if p.get("text") and not p.get("thought"))
+    if show_thoughts:
+        thoughts = "\n".join(p["text"] for p in parts if p.get("text") and p.get("thought"))
+        if thoughts:
+            print(f"--- thoughts ---\n{thoughts}\n--- answer ---", file=sys.stderr)
+    if not answer.strip():
+        reason = data["candidates"][0].get("finishReason")
+        sys.exit(
+            f"Empty answer (finishReason={reason}; thinking likely consumed "
+            f"the {MAX_TOKENS}-token budget — raise GEMMA_MAX_TOKENS)"
+        )
+    return answer.strip()
+
+
+def main() -> None:
+    key = load_key()
+
+    if len(sys.argv) > 1:
+        prompt = " ".join(sys.argv[1:])
+        print(generate([{"role": "user", "parts": [{"text": prompt}]}], key))
+        return
+
+    print(f"[{MODEL}] interactive chat — empty line or Ctrl-D to quit")
+    history = []
+    while True:
+        try:
+            user = input("\nyou> ").strip()
+        except EOFError:
+            break
+        if not user:
+            break
+        history.append({"role": "user", "parts": [{"text": user}]})
+        reply = generate(history, key)
+        history.append({"role": "model", "parts": [{"text": reply}]})
+        print(f"\ngemma> {reply}")
+
+
+if __name__ == "__main__":
+    main()

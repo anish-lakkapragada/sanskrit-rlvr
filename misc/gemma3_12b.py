@@ -26,6 +26,7 @@ from pathlib import Path
 
 MODEL = os.environ.get("GEMMA_MODEL", "google/gemma-3-12b-it")
 MAX_TOKENS = int(os.environ.get("GEMMA_MAX_TOKENS", "2048"))
+TIMEOUT = int(os.environ.get("GEMMA_TIMEOUT", "300"))
 API_URL = "https://openrouter.ai/api/v1/chat/completions"
 
 
@@ -57,7 +58,7 @@ def generate(messages: list, key: str, temperature: float = 0.7) -> str:
         },
     )
     try:
-        with urllib.request.urlopen(req, timeout=120) as resp:
+        with urllib.request.urlopen(req, timeout=TIMEOUT) as resp:
             data = json.load(resp)
     except urllib.error.HTTPError as e:
         sys.exit(f"HTTP {e.code}: {e.read().decode(errors='replace')}")
