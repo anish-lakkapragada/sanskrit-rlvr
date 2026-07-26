@@ -3,6 +3,14 @@
 Scaffold branch for vidyut-prakriya experiments. Created as an orphan branch:
 no shared history with main, containing only this README.
 
+This branch is a uv project (`pyproject.toml`, Python ≥ 3.10). **Caution:**
+the root `.venv/` currently belongs to *main's* uv project (it is not parked
+with the other main files), so the first `uv sync`/`uv run` against this
+branch's pyproject will retarget and prune it — main can rebuild afterwards
+with `uv sync` on main. Standalone scripts with inline metadata (e.g.
+[misc/gemma.py](misc/gemma.py)) are safe: `uv run` executes them in an
+isolated cached environment and never touches `.venv/`.
+
 ## Task space: random dhātu × random tiṅanta coordinates
 
 Goal: build a dataset of tasks of the form **(dhātu, tiṅanta coordinates) →
