@@ -64,8 +64,8 @@ class RunConfig:
     run_name: str = ""
     model: str = "gemma3-12b"
     reward: str = "example"
-    dataset: str = "data/finetune/validation.json"  # 6,018 training tasks
-    eval_dataset: str = "data/finetune/evaluation.json"  # Pass@K prompt source (held-out dhatus)
+    dataset: str = "data/finetune/finetune.json"  # 6,018 training tasks
+    eval_dataset: str = "data/finetune/validation.json"  # Pass@K prompt source (held-out dhatus)
     iterations: int = 1000
     checkpoint_every: int = 100
     logging_every: int = 10

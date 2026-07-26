@@ -173,7 +173,7 @@ if __name__ == "__main__":
     from finetune.data import load_vp_tasks
     from finetune.rewards import get
 
-    tasks = load_vp_tasks("data/finetune/evaluation.json")
+    tasks = load_vp_tasks("data/finetune/validation.json")
     stub = lambda prompts, n, temperature, max_new_tokens: [
         [f"<thinking>hm</thinking><answer>{t}</answer>"] * n for t in range(len(prompts))
     ]

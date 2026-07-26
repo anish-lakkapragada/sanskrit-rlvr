@@ -5,14 +5,17 @@
 run_name: example-zero-reward
 model: gemma3-12b            # preset key (finetune/model.py) or raw HF id
 reward: example              # finetune/rewards registry name
-dataset: data/finetune/validation.json       # 6,018 training tasks
-eval_dataset: data/finetune/evaluation.json  # Pass@K prompt pool (held-out dhatus)
+dataset: data/finetune/finetune.json         # 6,018 training tasks
+eval_dataset: data/finetune/validation.json  # Pass@K prompt pool (held-out dhatus)
 
 iterations: 1000
 checkpoint_every: 100        # checkpoint 0 (base model) is always evaluated
 logging_every: 10
 seed: 42
 
+# Pass@K = estimated probability that at least one of k sampled completions
+# scores reward >= pass_threshold under the reward function declared above
+# (unbiased estimator over samples_per_prompt draws per prompt).
 pass_at_k:
   ks: [1, 4, 8]
   num_prompts: 128           # seeded sample from eval_dataset

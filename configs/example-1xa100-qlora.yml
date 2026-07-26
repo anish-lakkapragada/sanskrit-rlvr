@@ -6,8 +6,8 @@
 run_name: example-qlora-debug
 model: gemma3-12b
 reward: example
-dataset: data/finetune/validation.json
-eval_dataset: data/finetune/evaluation.json
+dataset: data/finetune/finetune.json         # 6,018 training tasks
+eval_dataset: data/finetune/validation.json  # Pass@K prompt pool (held-out dhatus)
 
 iterations: 1000
 checkpoint_every: 100
