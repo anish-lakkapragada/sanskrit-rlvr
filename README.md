@@ -3,103 +3,108 @@
 Scaffold branch for vidyut-prakriya experiments. Created as an orphan branch:
 no shared history with main, containing only this README.
 
-## Morphological axes: dhātu → finite verb in vidyut-prakriya
+## Task space: random dhātu × random tiṅanta coordinates
 
-[vidyut-prakriya](https://github.com/ambuda-org/vidyut/tree/main/vidyut-prakriya)
-is a Pāṇinian word generator: give it a dhātu (verbal root) plus a set of
-morphological coordinates, and it derives every grammatically valid surface
-form, each with a step-by-step derivation (prakriyā) citing Aṣṭādhyāyī rules.
-This section enumerates **every axis the generator accepts for finite verbs
-(tiṅantas)** — i.e. the full cartesian product of morphological permutations
-per root.
+Goal: build a dataset of tasks of the form **(dhātu, tiṅanta coordinates) →
+inflected verb form**, where every task is machine-checkable by calling
+[vidyut-prakriya](https://docs.rs/vidyut-prakriya/latest/vidyut_prakriya/), a
+Pāṇinian generator that derives all grammatically valid forms for a given
+coordinate tuple. The dhātu is *sampled* from the Dhātupāṭha TSV; the
+coordinates are the axes we actually vary.
 
-### Input: the Dhātupāṭha TSV
+### The dhātu pool
 
 [data/finetune/vidyut_dhatupatha_5.tsv](data/finetune/vidyut_dhatupatha_5.tsv)
 is vidyut's Dhātupāṭha
-([upstream copy](https://github.com/ambuda-org/vidyut/blob/main/vidyut-prakriya/data/dhatupatha.tsv)):
-2,259 rows covering all 10 gaṇas (30 rows are `-` placeholders — skip them).
-Columns:
+([upstream](https://github.com/ambuda-org/vidyut/blob/main/vidyut-prakriya/data/dhatupatha.tsv)):
+2,259 rows across all 10 gaṇas; 30 rows are `-` placeholders, leaving **2,229
+usable roots**.
 
 | column  | meaning | example |
 |---------|---------|---------|
 | `code`  | `gaṇa.index` — verb class (01–10) + position in that class | `01.0005` |
-| `dhatu` | the root in *aupadeśika* (citation) form, SLP1-encoded, **with anubandhas** | `bADf~\` |
-| `artha` | traditional meaning gloss (Sanskrit, locative) | `loqane, rowane` |
+| `dhatu` | root in *aupadeśika* (citation) form, SLP1, **with anubandha markers** | `bADf~\` |
+| `artha` | traditional meaning gloss (Sanskrit, locative case) | `loqane, rowane` |
 
-The `dhatu` strings must be passed **as-is, markers included**: `~` (nasal
-it-vowel), `\` (anudātta), `^` (svarita), and letter-its (`Yi`, `wu`, `qu`
-prefixes; `N Y w p z r x` finals) are metadata that the engine's
-[it-saṃjñā rules](https://github.com/ambuda-org/vidyut/blob/main/vidyut-prakriya/src/it_samjna.rs)
-read (e.g. `\` on an it-vowel ⇒ ātmanepada; on the root vowel ⇒ aniṭ
-behavior) and then delete. Stripping them yourself produces wrong forms.
-Validation rules for the encoding live in
-[`Slp1String`](https://github.com/ambuda-org/vidyut/blob/main/vidyut-prakriya/src/args/slp1_string.rs).
-Build the dhātu with
-[`dhatupatha::create_dhatu(aupadeshika, gana, number)`](https://docs.rs/vidyut-prakriya/latest/vidyut_prakriya/dhatupatha/fn.create_dhatu.html)
-(see [src/dhatupatha.rs](https://github.com/ambuda-org/vidyut/blob/main/vidyut-prakriya/src/dhatupatha.rs)) —
-it needs the row *number* to infer the antargaṇa, which plain
-`Dhatu::mula(text, gana)` cannot know.
+Rules for consuming it:
 
-### Axis 1 — the dhātu itself ([`Dhatu`](https://docs.rs/vidyut-prakriya/latest/vidyut_prakriya/args/enum.Dhatu.html), [src/args/dhatu.rs](https://github.com/ambuda-org/vidyut/blob/main/vidyut-prakriya/src/args/dhatu.rs))
+- Pass the `dhatu` string **exactly as written** — the markers (`~`, `\`, `^`,
+  and letter-its like `Yi`/`wu`/`qu`) encode voice and derivational behavior
+  and are consumed, then deleted, by the engine. See
+  [`Slp1String`](https://docs.rs/vidyut-prakriya/latest/vidyut_prakriya/args/struct.Slp1String.html)
+  for the exact accepted encoding.
+- The gaṇa comes from the `code` column (`01` →
+  [`Gana::Bhvadi`](https://docs.rs/vidyut-prakriya/latest/vidyut_prakriya/args/enum.Gana.html), …),
+  not from the root string — the same string can appear in several gaṇas as
+  different verbs (`BU` appears three times).
+- Load entries with the official loaders rather than `Dhatu.mula` alone: the
+  row *number* determines the
+  [`Antargana`](https://docs.rs/vidyut-prakriya/latest/vidyut_prakriya/args/enum.Antargana.html)
+  (sub-class metadata some roots need to derive correctly). In Rust that is
+  [`dhatupatha::create_dhatu`](https://docs.rs/vidyut-prakriya/latest/vidyut_prakriya/dhatupatha/fn.create_dhatu.html)
+  (module docs: [`dhatupatha`](https://docs.rs/vidyut-prakriya/latest/vidyut_prakriya/dhatupatha/index.html));
+  in Python, `Data.load_dhatu_entries()` (see the
+  [Python prakriya docs](https://vidyut.readthedocs.io/en/latest/prakriya.html)).
+- Held constant (defaults) for this dataset:
+  [`Sanadi`](https://docs.rs/vidyut-prakriya/latest/vidyut_prakriya/args/enum.Sanadi.html)
+  stack empty (no causatives/desideratives/intensives) and no upasarga
+  prefixes. Both are extension axes for later.
 
-| parameter | choices | notes |
-|-----------|--------:|-------|
-| [`Gana`](https://docs.rs/vidyut-prakriya/latest/vidyut_prakriya/args/enum.Gana.html) | **11** | the 10 classical classes (bhvādi … curādi) + `Kandvadi`; decides the present-stem affix (bhū→*bhava-*, tud→*tuda-*, rudh→*ruṇadh-* …); comes from the `code` column, not the root string |
-| [`Antargana`](https://docs.rs/vidyut-prakriya/latest/vidyut_prakriya/args/enum.Antargana.html) | **5** (or none) | sub-lists with special behavior (`Ghatadi`, `Kutadi`, `Asvadiya`, `Adhrshiya`, `Akusmiya`); inferred from the row number |
-| [`Sanadi`](https://docs.rs/vidyut-prakriya/latest/vidyut_prakriya/args/enum.Sanadi.html) stack | **5** verb-applicable (none, `san` desiderative, `Ric` causative, `yaN` intensive, `yaNluk`), stackable (e.g. `Ric`+`san`) | `kyac`/`kAmyac`/`kyaN` build verbs from nouns, not from these dhātus; `yaN` requires consonant-initial, one-vowel roots |
-| prefixes (upasargas) | open set | *anu-*, *pra-*, *sam-*, … — lexical, not enumerated here |
+### The coordinate axes (what a task varies)
 
-### Axis 2 — the tiṅanta coordinates ([`Tinanta`](https://docs.rs/vidyut-prakriya/latest/vidyut_prakriya/args/struct.Tinanta.html), [src/args/tin.rs](https://github.com/ambuda-org/vidyut/blob/main/vidyut-prakriya/src/args/tin.rs))
+All from the [`args` module](https://docs.rs/vidyut-prakriya/latest/vidyut_prakriya/args/index.html);
+a task is one choice from each row:
 
-| parameter | choices | values |
-|-----------|--------:|--------|
-| [`Lakara`](https://docs.rs/vidyut-prakriya/latest/vidyut_prakriya/args/enum.Lakara.html) (tense/mood) | **11** | `Lat` present, `Lit` perfect, `Lut` periphrastic future, `Lrt` simple future, `Let` Vedic subjunctive (weak support), `Lot` imperative, `Lan` imperfect, `VidhiLin` optative, `AshirLin` benedictive, `Lun` aorist, `Lrn` conditional |
-| [`Prayoga`](https://docs.rs/vidyut-prakriya/latest/vidyut_prakriya/args/enum.Prayoga.html) (voice) | **3** | `Kartari` active, `Karmani` passive, `Bhave` impersonal |
-| [`Purusha`](https://docs.rs/vidyut-prakriya/latest/vidyut_prakriya/args/enum.Purusha.html) (person) | **3** | `Prathama` 3rd, `Madhyama` 2nd, `Uttama` 1st |
-| [`Vacana`](https://docs.rs/vidyut-prakriya/latest/vidyut_prakriya/args/enum.Vacana.html) (number) | **3** | `Eka`, `Dvi`, `Bahu` (dual!) |
-| [`DhatuPada`](https://docs.rs/vidyut-prakriya/latest/vidyut_prakriya/args/enum.DhatuPada.html) (optional) | **2** | force `Parasmaipada`/`Atmanepada`; by default derived from the root's anubandhas + prayoga |
-| `skip_at_agama` (optional) | bool | drop the past-tense *a-* augment (for *mā*-constructions) |
+| axis | choices | values |
+|------|--------:|--------|
+| [`Lakara`](https://docs.rs/vidyut-prakriya/latest/vidyut_prakriya/args/enum.Lakara.html) (tense/mood) | **10** practical (11 with Vedic `Let`, which has weak support) | `Lat` present · `Lit` perfect · `Lut` periphrastic future · `Lrt` simple future · `Lot` imperative · `Lan` imperfect · `VidhiLin` optative · `AshirLin` benedictive · `Lun` aorist · `Lrn` conditional |
+| [`Prayoga`](https://docs.rs/vidyut-prakriya/latest/vidyut_prakriya/args/enum.Prayoga.html) (voice) | **3** | `Kartari` active · `Karmani` passive · `Bhave` impersonal |
+| [`Purusha`](https://docs.rs/vidyut-prakriya/latest/vidyut_prakriya/args/enum.Purusha.html) (person) | **3** | `Prathama` 3rd · `Madhyama` 2nd · `Uttama` 1st |
+| [`Vacana`](https://docs.rs/vidyut-prakriya/latest/vidyut_prakriya/args/enum.Vacana.html) (number) | **3** | `Eka` singular · `Dvi` dual · `Bahu` plural |
+| [`DhatuPada`](https://docs.rs/vidyut-prakriya/latest/vidyut_prakriya/args/enum.DhatuPada.html) (optional) | **2** or unset | leave unset: the engine derives parasmaipada/ātmanepada from the root's anubandhas |
 
-### The cartesian product
-
-Per root, the queryable finite grid is:
+### Size of the space
 
 ```text
-11 lakāras × 3 prayogas × 3 puruṣas × 3 vacanas             =   297 cells
-practical (skip Let):  10 × 3 × 3 × 3                        =   270 cells
-× 5 single sanādi choices (none/san/Ric/yaN/yaNluk)          = 1,350 cells
-× 2,229 usable roots in the TSV                              ≈ 3.0 M cells
+10 lakāras × 3 prayogas × 3 puruṣas × 3 vacanas =    270 cells per root
+× 2,229 usable roots                            ≈ 601,830 candidate tasks
 ```
 
-Sanādi *stacks* (`Ric+san`, `san+Ric`, …), upasarga prefixes, and forcing
-`DhatuPada` (×2) multiply further. Note the grid is an **upper bound of
-queries, not of words**:
-[`Vyakarana::derive_tinantas`](https://docs.rs/vidyut-prakriya/latest/vidyut_prakriya/struct.Vyakarana.html)
-returns a `Vec<Prakriya>` per cell — zero (cell doesn't exist for that
-root), one, or several (optional forms are all derived).
+Each cell yields **0..n** valid forms
+([`Vyakarana::derive_tinantas`](https://docs.rs/vidyut-prakriya/latest/vidyut_prakriya/struct.Vyakarana.html)
+returns a list of derivations): 0 means the cell doesn't exist for that root
+(drop it at generation time); >1 means several forms are all correct (a task
+has a *set* of gold answers, not one).
 
-```rust
-use vidyut_prakriya::{Vyakarana, args::*, dhatupatha};
+### Verifying a task (the oracle call)
 
-let v = Vyakarana::new();
-let dhatu = dhatupatha::create_dhatu("bADf~\\", Gana::Bhvadi, 5)?; // row 01.0005
-let args = Tinanta::builder()
-    .dhatu(dhatu)
-    .lakara(Lakara::Lat)         // 1 of 11
-    .prayoga(Prayoga::Kartari)   // 1 of 3
-    .purusha(Purusha::Prathama)  // 1 of 3
-    .vacana(Vacana::Eka)         // 1 of 3
-    .build()?;
-for p in v.derive_tinantas(&args) {
-    println!("{}", p.text());    // -> bADate
-}
+Python ([`vidyut` on PyPI](https://pypi.org/project/vidyut/),
+[prakriya docs](https://vidyut.readthedocs.io/en/latest/prakriya.html)):
+
+```python
+from vidyut.prakriya import (
+    Vyakarana, Dhatu, Gana, Pada, Prayoga, Purusha, Vacana, Lakara,
+)
+
+v = Vyakarana()
+prakriyas = v.derive(Pada.Tinanta(
+    dhatu=Dhatu.mula(aupadeshika="bADf~\\", gana=Gana.Bhvadi),
+    prayoga=Prayoga.Kartari,
+    lakara=Lakara.Lat,
+    purusha=Purusha.Prathama,
+    vacana=Vacana.Eka,
+))
+gold = {p.text for p in prakriyas}   # {'bADate'} — check model output ∈ gold
 ```
 
-Reference documentation: [docs.rs API](https://docs.rs/vidyut-prakriya/latest/vidyut_prakriya/)
-· [args module (all enums)](https://docs.rs/vidyut-prakriya/latest/vidyut_prakriya/args/index.html)
-· [repo README with usage & CLI](https://github.com/ambuda-org/vidyut/tree/main/vidyut-prakriya)
+The Rust equivalent is
+[`Tinanta::builder()`](https://docs.rs/vidyut-prakriya/latest/vidyut_prakriya/args/struct.Tinanta.html)
+→ [`Vyakarana::derive_tinantas`](https://docs.rs/vidyut-prakriya/latest/vidyut_prakriya/struct.Vyakarana.html).
+
+Further reading: [docs.rs API](https://docs.rs/vidyut-prakriya/latest/vidyut_prakriya/)
+· [Python docs](https://vidyut.readthedocs.io/en/latest/)
 · [ISCLS 2024 paper](https://iscls.github.io/assets/files/proceedings/2024.iscls.7.pdf)
+· [project README](https://github.com/ambuda-org/vidyut/tree/main/vidyut-prakriya)
 
 ## Getting back to main with all your files visible
 
