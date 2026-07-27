@@ -1,0 +1,52 @@
+# 1x B200 180GB — gemma4-26b (MoE: 26.5B total, 128 experts top-8) with the
+# vp_exact reward. Nothing is quantized: two bf16 copies (~53GB train +
+# ~53GB vLLM engine) fit on the 180GB card. LoRA lands on attention + dense
+# MLP Linears; the fused 3D expert tensors (experts.gate_up_proj/down_proj,
+# ~23B params) stay frozen — bnb couldn't quantize them anyway.
+# launch: uv run python -m finetune.grpo --config configs/vp-exact-gemma4-26b-1xb200.yml
+
+run_name: vp-exact-gemma4-26b
+model: gemma4-26b
+reward: vp_exact
+dataset: data/finetune/finetune.json         # 6,018 training tasks
+eval_dataset: data/finetune/validation.json  # Pass@K prompt pool (held-out dhatus)
+
+iterations: 1000
+checkpoint_every: 100
+logging_every: 10
+seed: 42
+
+pass_at_k:
+  ks: [1, 4, 8]
+  num_prompts: 64
+  samples_per_prompt: 8
+  pass_threshold: 0.5        # vp_exact: correct content scores >= 0.85
+  temperature: 0.9
+
+samayik_eval:
+  path: data/eval/samayik.json
+  num_samples: 100
+  max_new_tokens: 512
+  temperature: 0.2
+
+generation:
+  num_generations: 8
+  max_completion_length: 256
+  temperature: 0.9
+
+train:
+  learning_rate: 1.0e-5
+  per_device_train_batch_size: 8   # counts COMPLETIONS; must be divisible by
+  gradient_accumulation_steps: 1   # num_generations on a single GPU
+  beta: 0.04
+  bf16: true
+  gradient_checkpointing: true
+  quantization: none
+  lora:
+    r: 16
+    alpha: 32
+    dropout: 0.05
+
+vllm:
+  mode: colocate
+  gpu_memory_utilization: 0.4  # 72GB: 53GB bf16 weights + KV headroom

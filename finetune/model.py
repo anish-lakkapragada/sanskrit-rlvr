@@ -5,8 +5,10 @@ from finetune.config import RunConfig
 
 PRESETS = {
     "gemma3-12b": "google/gemma-3-12b-it",
-    # Risk preset: verify HF id + PEFT/vLLM MoE-LoRA support before first use.
-    "gemma4-26b": "google/gemma-4-26b-a4b-it",
+    # MoE (26.5B total / 128 experts top-8). LoRA covers attention + dense MLP
+    # Linears; the fused 3D expert tensors (experts.gate_up_proj/down_proj)
+    # are not nn.Linear and stay frozen. Needs transformers>=5.5 + vllm>=0.25.
+    "gemma4-26b": "google/gemma-4-26B-A4B-it",
 }
 
 LORA_TARGET_MODULES = [
@@ -39,14 +41,14 @@ def build_peft_config(cfg: RunConfig):
 
 
 def load_model(cfg: RunConfig):
-    """Text-only causal LM. The gemma-3 -it checkpoints are multimodal;
-    Gemma3ForCausalLM loads just the language model (no vision tower)."""
+    """Text-only causal LM. The gemma -it checkpoints are multimodal; the
+    Gemma*ForCausalLM classes load just the language model (no vision tower)."""
     import torch
     from transformers import AutoModelForCausalLM
 
     model_id = resolve_model_id(cfg.model)
     kwargs: dict = {
-        "torch_dtype": torch.bfloat16 if cfg.train.bf16 else torch.float32,
+        "dtype": torch.bfloat16 if cfg.train.bf16 else torch.float32,
     }
     if cfg.train.quantization == "4bit":
         from transformers import BitsAndBytesConfig
@@ -63,6 +65,12 @@ def load_model(cfg: RunConfig):
     except ValueError:
         # Multimodal checkpoint whose auto-mapping refuses CausalLM: load the
         # text tower explicitly.
+        from transformers import AutoConfig
+
+        if AutoConfig.from_pretrained(model_id).model_type == "gemma4":
+            from transformers import Gemma4ForCausalLM
+
+            return Gemma4ForCausalLM.from_pretrained(model_id, **kwargs)
         from transformers import Gemma3ForCausalLM
 
         return Gemma3ForCausalLM.from_pretrained(model_id, **kwargs)
