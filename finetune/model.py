@@ -27,15 +27,36 @@ def load_tokenizer(cfg: RunConfig):
     return AutoTokenizer.from_pretrained(resolve_model_id(cfg.model))
 
 
-def build_peft_config(cfg: RunConfig):
+def language_model_targets(model) -> list[str] | None:
+    """Full names of the LoRA-target Linears outside the vision tower.
+
+    The gemma -it checkpoints are multimodal and their vision towers also
+    contain q_proj/v_proj/..., so a bare suffix list attaches adapters to the
+    image encoder — which never sees an input on a text-only task. Returns
+    None when the model has no vision tower (nothing to exclude)."""
+    import torch.nn as nn
+
+    hits = [
+        name for name, module in model.named_modules()
+        if isinstance(module, nn.Linear)
+        and name.rsplit(".", 1)[-1] in LORA_TARGET_MODULES
+    ]
+    text_only = [n for n in hits if "vision_tower" not in n]
+    return text_only if text_only and len(text_only) != len(hits) else None
+
+
+def build_peft_config(cfg: RunConfig, model=None):
     from peft import LoraConfig
 
     lora = cfg.train.lora
+    targets = LORA_TARGET_MODULES
+    if model is not None:
+        targets = language_model_targets(model) or LORA_TARGET_MODULES
     return LoraConfig(
         r=lora.r,
         lora_alpha=lora.alpha,
         lora_dropout=lora.dropout,
-        target_modules=LORA_TARGET_MODULES,
+        target_modules=targets,
         task_type="CAUSAL_LM",
     )
 

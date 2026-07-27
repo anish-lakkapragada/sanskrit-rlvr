@@ -169,6 +169,30 @@ def make_generate_fn(trainer, tokenizer, cfg: RunConfig):
     return generate_fn
 
 
+def skip_vision_tower_sync(trainer) -> bool:
+    """Exclude the vision tower from the train -> vLLM weight sync.
+
+    vLLM (<=0.25.1) maps ``model.vision_tower.`` to ``vision_tower.``, but its
+    Gemma3/4 module tree is ``vision_tower.vision_model.``, so transformers-5
+    tower names are rejected outright. The tower is frozen and unused for
+    text-only rollouts, so vLLM's copy from disk stays correct. Returns True
+    when the filter was installed."""
+    gen = getattr(trainer, "vllm_generation", None)
+    push = getattr(gen, "_push_param_to_vllm", None)
+    if push is None:
+        return False
+    if not any("vision_tower" in n for n, _ in trainer.model.named_parameters()):
+        return False
+
+    def filtered(name, param):
+        if "vision_tower" in name:
+            return None
+        return push(name, param)
+
+    gen._push_param_to_vllm = filtered
+    return True
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--config", required=True)
@@ -252,9 +276,11 @@ def main() -> None:
         args=grpo_args,
         train_dataset=train_dataset,
         reward_funcs=recorder,
-        peft_config=build_peft_config(cfg),
+        peft_config=build_peft_config(cfg, model),
         processing_class=tokenizer,
     )
+    if skip_vision_tower_sync(trainer):
+        print("[setup] vision tower excluded from vLLM weight sync")
 
     generate_fn = make_generate_fn(trainer, tokenizer, cfg)
     if is_main_process():
