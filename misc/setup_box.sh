@@ -6,7 +6,7 @@ set -euo pipefail
 
 BRANCH=finetune/vidyut-prakriya
 REPO=https://github.com/anish-lakkapragada/sanskrit-rlvr.git
-CONFIG=configs/vp-exact-gemma4-26b-1xb200.yml
+CONFIG=${1:-configs/vp-exact-gemma3-12b-1xa100.yml}
 
 cd ~
 [ -d sanskrit ] || git clone --branch "$BRANCH" "$REPO" sanskrit

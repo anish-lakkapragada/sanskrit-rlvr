@@ -1,0 +1,51 @@
+# 1x A100 40GB — gemma3-12b with the vp_exact reward. QLoRA profile: the
+# trainable base copy is bnb NF4 (~8GB); under trl>=1.0 the colocated vLLM
+# engine is then also loaded with in-flight bitsandbytes quantization
+# (~7GB weights), leaving ample KV room inside the 0.6 utilization slice.
+# launch: uv run python -m finetune.grpo --config configs/vp-exact-gemma3-12b-1xa100.yml
+
+run_name: vp-exact-gemma3-12b
+model: gemma3-12b
+reward: vp_exact
+dataset: data/finetune/finetune.json         # 6,018 training tasks
+eval_dataset: data/finetune/validation.json  # Pass@K prompt pool (held-out dhatus)
+
+iterations: 1000
+checkpoint_every: 100
+logging_every: 10
+seed: 42
+
+pass_at_k:
+  ks: [1, 4, 8]
+  num_prompts: 64            # smaller: eval generation is slower on one GPU
+  samples_per_prompt: 8
+  pass_threshold: 0.5        # vp_exact: correct content scores >= 0.85
+  temperature: 0.9
+
+samayik_eval:
+  path: data/eval/samayik.json
+  num_samples: 100
+  max_new_tokens: 512
+  temperature: 0.2
+
+generation:
+  num_generations: 8
+  max_completion_length: 256
+  temperature: 0.9
+
+train:
+  learning_rate: 1.0e-5
+  per_device_train_batch_size: 8   # counts COMPLETIONS; must be divisible by
+  gradient_accumulation_steps: 1   # num_generations on a single GPU
+  beta: 0.04
+  bf16: true
+  gradient_checkpointing: true
+  quantization: 4bit
+  lora:
+    r: 16
+    alpha: 32
+    dropout: 0.05
+
+vllm:
+  mode: colocate
+  gpu_memory_utilization: 0.6
