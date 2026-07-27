@@ -17,12 +17,15 @@ source ~/sanskrit/.gpu_env
 for s in train vllm tb; do tmux kill-session -t "$s" 2>/dev/null || true; done
 
 # ---- 1. rollout server on GPU 7 -------------------------------------------
-# max_model_len must match the config: gemma4 advertises 262k and vLLM sizes
-# its KV cache to serve one request at that length, which will not fit.
+# Read max_model_len straight out of the config: the trainer and the server
+# must agree, and a silent mismatch truncates every rollout.
+MAXLEN=$(.venv/bin/python -c "import yaml;print(yaml.safe_load(open('$CONFIG'))['vllm']['max_model_length'])")
+UTIL=$(.venv/bin/python -c "import yaml;print(yaml.safe_load(open('$CONFIG'))['vllm']['gpu_memory_utilization'])")
+echo "[launch] serving $MODEL with max_model_len=$MAXLEN util=$UTIL"
 tmux new-session -d -s vllm "cd ~/sanskrit && source ~/sanskrit/.gpu_env && \
   CUDA_VISIBLE_DEVICES=$VLLM_GPU uv run trl vllm-serve \
     --model $MODEL --port $PORT --dtype bfloat16 \
-    --max_model_len 2048 --gpu_memory_utilization 0.9 2>&1 | tee vllm.log"
+    --max_model_len $MAXLEN --gpu_memory_utilization $UTIL 2>&1 | tee vllm.log"
 
 echo "[launch] waiting for vllm-serve to load ~53GB (this takes several minutes)"
 for i in $(seq 1 90); do
