@@ -125,7 +125,11 @@ def make_generate_fn(trainer, tokenizer, cfg: RunConfig):
 
     def generate_fn(prompts, n, temperature, max_new_tokens):
         texts = [chat(p) for p in prompts]
+        # trl <1.0 kept the colocated engine at trainer.llm; trl >=1.0 moved it
+        # into the VLLMGeneration helper.
         engine = getattr(trainer, "llm", None)
+        if engine is None:
+            engine = getattr(getattr(trainer, "vllm_generation", None), "llm", None)
         if engine is not None:
             from vllm import SamplingParams
 
