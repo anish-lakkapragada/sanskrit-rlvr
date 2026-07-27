@@ -16,6 +16,13 @@ source ~/sanskrit/.gpu_env
 
 for s in train vllm tb; do tmux kill-session -t "$s" 2>/dev/null || true; done
 
+# ---- 0. TensorBoard first ---------------------------------------------------
+# It does not depend on the rollout server, so start it before the multi-minute
+# weight load; otherwise every relaunch blinds the dashboard for 5+ minutes.
+mkdir -p runs
+tmux new-session -d -s tb "cd ~/sanskrit && source ~/sanskrit/.gpu_env && \
+  uv run tensorboard --logdir runs --host 127.0.0.1 --port 6006 2>&1 | tee tb.log"
+
 # ---- 1. rollout server on GPU 7 -------------------------------------------
 # Read max_model_len straight out of the config: the trainer and the server
 # must agree, and a silent mismatch truncates every rollout.
@@ -40,12 +47,7 @@ done
 curl -sf "http://127.0.0.1:$PORT/health/" >/dev/null 2>&1 || {
   echo "[launch] FATAL: server never became healthy"; tail -30 vllm.log; exit 1; }
 
-# ---- 2. TensorBoard (tunnel to it from the Mac) ----------------------------
-mkdir -p runs
-tmux new-session -d -s tb "cd ~/sanskrit && source ~/sanskrit/.gpu_env && \
-  uv run tensorboard --logdir runs --host 127.0.0.1 --port 6006 2>&1 | tee tb.log"
-
-# ---- 3. DDP training on GPUs 0-6 ------------------------------------------
+# ---- 2. DDP training on GPUs 0-6 ------------------------------------------
 tmux new-session -d -s train "cd ~/sanskrit && source ~/sanskrit/.gpu_env && \
   CUDA_VISIBLE_DEVICES=$TRAIN_GPUS uv run accelerate launch \
     --num_processes $NPROC --mixed_precision bf16 \
