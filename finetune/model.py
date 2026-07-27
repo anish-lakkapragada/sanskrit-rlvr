@@ -28,12 +28,15 @@ def load_tokenizer(cfg: RunConfig):
 
 
 def language_model_targets(model) -> list[str] | None:
-    """Full names of the LoRA-target Linears outside the vision tower.
+    """Full names of the LoRA-target Linears inside the language model.
 
-    The gemma -it checkpoints are multimodal and their vision towers also
-    contain q_proj/v_proj/..., so a bare suffix list attaches adapters to the
-    image encoder — which never sees an input on a text-only task. Returns
-    None when the model has no vision tower (nothing to exclude)."""
+    Two reasons to resolve explicit names instead of passing a suffix list:
+    the gemma -it checkpoints are multimodal and their vision towers also
+    contain q_proj/v_proj/... (adapters there never see an input on a
+    text-only task), and gemma4's MoE keeps its experts in a fused
+    ``Gemma4TextExperts`` module whose gate_up_proj/down_proj are raw
+    Parameters rather than Linears — the isinstance check skips those, so the
+    22.8B expert weights stay frozen. Returns None only if nothing matched."""
     import torch.nn as nn
 
     hits = [
@@ -41,8 +44,8 @@ def language_model_targets(model) -> list[str] | None:
         if isinstance(module, nn.Linear)
         and name.rsplit(".", 1)[-1] in LORA_TARGET_MODULES
     ]
-    text_only = [n for n in hits if "vision_tower" not in n]
-    return text_only if text_only and len(text_only) != len(hits) else None
+    return [n for n in hits
+            if "vision_tower" not in n and "audio_tower" not in n] or None
 
 
 def build_peft_config(cfg: RunConfig, model=None):

@@ -169,28 +169,32 @@ def make_generate_fn(trainer, tokenizer, cfg: RunConfig):
     return generate_fn
 
 
-def skip_vision_tower_sync(trainer) -> bool:
-    """Exclude the vision tower from the train -> vLLM weight sync.
+def restrict_sync_to_language_model(trainer) -> int:
+    """Send only language-model weights to vLLM on multimodal checkpoints.
 
-    vLLM (<=0.25.1) maps ``model.vision_tower.`` to ``vision_tower.``, but its
-    Gemma3/4 module tree is ``vision_tower.vision_model.``, so transformers-5
-    tower names are rejected outright. The tower is frozen and unused for
-    text-only rollouts, so vLLM's copy from disk stays correct. Returns True
-    when the filter was installed."""
+    transformers-5 and vllm<=0.25.1 disagree on the non-text parameter names:
+    gemma3's tower is ``model.vision_tower.embeddings.*`` in transformers but
+    ``vision_tower.vision_model.embeddings.*`` in vLLM, and gemma4 adds an
+    audio tower plus a separate ``model.embed_vision``. Those towers are
+    frozen (LoRA targets the language model only) and unused for text-only
+    rollouts, so vLLM's copy from disk stays authoritative. Returns the number
+    of parameters excluded, or 0 when the model is text-only."""
     gen = getattr(trainer, "vllm_generation", None)
     push = getattr(gen, "_push_param_to_vllm", None)
     if push is None:
-        return False
-    if not any("vision_tower" in n for n, _ in trainer.model.named_parameters()):
-        return False
+        return 0
+    names = [n for n, _ in trainer.model.named_parameters()]
+    if not any("vision_tower" in n or "audio_tower" in n for n in names):
+        return 0
+
+    def is_language(name: str) -> bool:
+        return "language_model" in name or "lm_head" in name
 
     def filtered(name, param):
-        if "vision_tower" in name:
-            return None
-        return push(name, param)
+        return push(name, param) if is_language(name) else None
 
     gen._push_param_to_vllm = filtered
-    return True
+    return sum(1 for n in names if not is_language(n))
 
 
 def main() -> None:
@@ -280,8 +284,10 @@ def main() -> None:
         peft_config=build_peft_config(cfg, model),
         processing_class=tokenizer,
     )
-    if skip_vision_tower_sync(trainer):
-        print("[setup] vision tower excluded from vLLM weight sync")
+    skipped = restrict_sync_to_language_model(trainer)
+    if skipped:
+        print(f"[setup] vLLM sync restricted to the language model "
+              f"({skipped} tower params excluded)")
 
     generate_fn = make_generate_fn(trainer, tokenizer, cfg)
     if is_main_process():

@@ -1,12 +1,21 @@
-# 1x B200 180GB — gemma4-26b (MoE: 26.5B total, 128 experts top-8) with the
-# vp_exact reward. Nothing is quantized: two bf16 copies (~53GB train +
-# ~53GB vLLM engine) fit on the 180GB card. LoRA lands on attention + dense
-# MLP Linears; the fused 3D expert tensors (experts.gate_up_proj/down_proj,
-# ~23B params) stay frozen — bnb couldn't quantize them anyway.
+# 1x B200 180GB — gemma4-26b, UNQUANTIZED bf16, LoRA GRPO on the vp_exact
+# reward. The only single GPU on Lambda that holds both bf16 copies at once:
+#
+#   trainable copy   53 GB   (26.54B params, bf16, nothing quantized)
+#   vLLM engine      53 GB   + KV cache, inside the 0.4 utilization slice
+#   activations etc  ~15 GB
+#   ------------------------------------------------------------------
+#   total           ~121 GB of 180 GB
+#
+# LoRA reaches 205 Linears (attention + dense MLP, 30 layers). It cannot
+# reach the 22.8B of expert weights: gemma4 keeps them in a fused
+# Gemma4TextExperts module as raw Parameters, not nn.Linear, so they stay
+# frozen. That is a property of the architecture, not of this config.
+#
 # launch: uv run python -m finetune.grpo --config configs/vp-exact-gemma4-26b-1xb200.yml
 
 run_name: vp-exact-gemma4-26b
-model: gemma4-26b
+model: gemma4-26b               # google/gemma-4-26B-A4B-it (ungated)
 reward: vp_exact
 dataset: data/finetune/finetune.json         # 6,018 training tasks
 eval_dataset: data/finetune/validation.json  # Pass@K prompt pool (held-out dhatus)
@@ -36,12 +45,18 @@ generation:
 
 train:
   learning_rate: 1.0e-5
-  per_device_train_batch_size: 8   # counts COMPLETIONS; must be divisible by
-  gradient_accumulation_steps: 1   # num_generations on a single GPU
+  # Counts COMPLETIONS. trl>=1.0 requires the EFFECTIVE batch (per_device *
+  # grad_accum * num_processes) to be divisible by num_generations, not
+  # per_device alone -- so 2x4 is one 8-generation group per optimizer step.
+  # Kept small deliberately: gemma4's 262k vocab makes the logits tensor, not
+  # the weights, the thing that blows up (~2GB per 8 completions in bf16,
+  # more once log-softmax upcasts and the reference forward run).
+  per_device_train_batch_size: 2
+  gradient_accumulation_steps: 4
   beta: 0.04
   bf16: true
   gradient_checkpointing: true
-  quantization: none
+  quantization: none         # unquantized: bnb cannot touch the fused experts anyway
   lora:
     r: 16
     alpha: 32
@@ -49,4 +64,7 @@ train:
 
 vllm:
   mode: colocate
-  gpu_memory_utilization: 0.4  # 72GB: 53GB bf16 weights + KV headroom
+  gpu_memory_utilization: 0.4  # ~72GB: 53GB bf16 weights + KV headroom
+  # gemma4 advertises a 262k context; vLLM sizes its KV cache to serve one
+  # request at that length and refuses to start if it cannot.
+  max_model_length: 2048
