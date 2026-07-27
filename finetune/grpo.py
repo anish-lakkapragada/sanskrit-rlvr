@@ -266,6 +266,7 @@ def main() -> None:
         use_vllm=True,
         vllm_mode=cfg.vllm.mode,
         vllm_gpu_memory_utilization=cfg.vllm.gpu_memory_utilization,
+        vllm_max_model_length=cfg.vllm.max_model_length,
         vllm_server_host=cfg.vllm.server_host,
         vllm_server_port=cfg.vllm.server_port,
         remove_unused_columns=False,

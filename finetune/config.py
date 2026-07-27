@@ -55,6 +55,10 @@ class TrainConfig:
 class VllmConfig:
     mode: str = "colocate"  # colocate | server
     gpu_memory_utilization: float = 0.4
+    # Gemma-3 advertises a 131k window; vLLM sizes its KV cache to fit one
+    # request at that length and refuses to start if it can't. Our prompts are
+    # ~250 tokens and completions <=512, so cap it and reclaim the memory.
+    max_model_length: int = 2048
     server_host: str = "0.0.0.0"
     server_port: int = 8000
 
@@ -124,6 +128,12 @@ def load_config(path: str | Path) -> RunConfig:
         problems.append("train.quantization must be 'none' or '4bit'")
     if cfg.vllm.mode not in ("colocate", "server"):
         problems.append("vllm.mode must be 'colocate' or 'server'")
+    longest_gen = max(cfg.generation.max_completion_length,
+                      cfg.samayik_eval.max_new_tokens)
+    if cfg.vllm.max_model_length <= longest_gen:
+        problems.append(
+            f"vllm.max_model_length ({cfg.vllm.max_model_length}) must leave room "
+            f"for the prompt on top of the longest generation ({longest_gen})")
 
     from finetune import rewards
     try:
