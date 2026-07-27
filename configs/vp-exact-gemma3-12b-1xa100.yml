@@ -38,8 +38,13 @@ generation:
 
 train:
   learning_rate: 1.0e-5
-  per_device_train_batch_size: 8   # counts COMPLETIONS; must be divisible by
-  gradient_accumulation_steps: 1   # num_generations on a single GPU
+  # Counts COMPLETIONS. trl>=1.0 requires the EFFECTIVE batch (per_device *
+  # grad_accum * num_processes) to be divisible by num_generations, not
+  # per_device alone -- so 2x4 == one 8-generation group per optimizer step,
+  # at a quarter of the peak logits memory. Gemma-3's 262k vocab makes those
+  # logits the binding constraint on a 40GB card, not the weights.
+  per_device_train_batch_size: 2
+  gradient_accumulation_steps: 4
   beta: 0.04
   bf16: true
   gradient_checkpointing: true
@@ -51,4 +56,6 @@ train:
 
 vllm:
   mode: colocate
-  gpu_memory_utilization: 0.6
+  # The engine inherits the trainer's bnb 4-bit weights (~7.5GB), so 0.45
+  # still leaves ~10GB of KV cache while freeing ~6GB for the backward pass.
+  gpu_memory_utilization: 0.45

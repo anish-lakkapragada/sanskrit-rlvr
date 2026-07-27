@@ -26,6 +26,9 @@ if [ ! -d /usr/local/cuda-13.0/compat ]; then
   sudo apt-get install -y -qq cuda-compat-13-0
 fi
 export LD_LIBRARY_PATH=/usr/local/cuda-13.0/compat:${LD_LIBRARY_PATH:-}
+# Colocated vLLM + training on one card fragments the allocator badly
+# (~2.6GB reserved-but-unallocated was enough to OOM the backward pass).
+export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
 
 uv sync --extra train
 uv run python -m finetune.grpo --config "$CONFIG" --dry-run --force
