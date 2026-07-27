@@ -19,6 +19,14 @@
 #
 # launch: bash misc/launch_8xa100.sh   (starts vllm-serve, waits, then trains)
 
+# METRIC CAVEAT: ignore TRL's train/completions/clipped_ratio here -- it reads
+# 1.0 always. TRL decides "terminated" with `ids[-1] in [tokenizer.eos_token_id,
+# pad_token_id]` == [1, 0], but gemma4 ends turns with <end_of_turn> (id 3) or
+# 106, so every completion is misfiled as truncated. Harmless to training
+# (mask_truncated_completions defaults to False) but the metric is unusable.
+# Use eval/answer_tag_rate for real truncation; completions/mean_length still
+# works (1849 vs the 2560 cap => most answered completions end well short).
+
 run_name: vp-exact-gemma4-26b
 model: gemma4-26b               # google/gemma-4-26B-A4B-it (ungated)
 reward: vp_exact
