@@ -19,7 +19,7 @@ pass_at_k:
   ks: [1, 4, 8]
   num_prompts: 64            # smaller: eval generation is slower on one GPU
   samples_per_prompt: 8
-  pass_threshold: 0.5        # vp_exact: correct content scores >= 0.85
+  pass_threshold: 0.85       # pass iff content exact-matches (>= 0.85 even with failed format)
   temperature: 0.9
 
 samayik_eval:
