@@ -16,6 +16,17 @@ git pull --ff-only
 command -v uv >/dev/null 2>&1 || curl -LsSf https://astral.sh/uv/install.sh | sh
 export PATH="$HOME/.local/bin:$PATH"
 
+# Lambda's stock image ships driver 570 (CUDA 12.8); torch 2.11 wheels are
+# CUDA 13. The forward-compat package bridges it (datacenter GPUs only) —
+# every python invocation needs LD_LIBRARY_PATH=/usr/local/cuda-13.0/compat.
+if [ ! -d /usr/local/cuda-13.0/compat ]; then
+  wget -q https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.1-1_all.deb -O /tmp/ck.deb
+  sudo dpkg -i /tmp/ck.deb >/dev/null
+  sudo apt-get update -qq >/dev/null 2>&1 || true
+  sudo apt-get install -y -qq cuda-compat-13-0
+fi
+export LD_LIBRARY_PATH=/usr/local/cuda-13.0/compat:${LD_LIBRARY_PATH:-}
+
 uv sync --extra train
 uv run python -m finetune.grpo --config "$CONFIG" --dry-run --force
 
