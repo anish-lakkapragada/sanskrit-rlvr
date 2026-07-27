@@ -36,8 +36,11 @@ generation:
 
 train:
   learning_rate: 1.0e-5
-  per_device_train_batch_size: 4   # counts COMPLETIONS; must be divisible by G
-  gradient_accumulation_steps: 1
+  # Counts COMPLETIONS. trl>=1.0 requires the EFFECTIVE batch (per_device *
+  # grad_accum) to be divisible by G, not per_device alone. Keep the micro-batch
+  # small: gemma-3's 262k vocab makes logits, not weights, the memory ceiling.
+  per_device_train_batch_size: 2
+  gradient_accumulation_steps: 2
   beta: 0.04
   bf16: true
   gradient_checkpointing: true
@@ -49,4 +52,7 @@ train:
 
 vllm:
   mode: colocate
-  gpu_memory_utilization: 0.65   # bf16 engine (~24GB weights) needs >=26GB pool
+  # The engine inherits the trainer's bnb 4-bit weights (~7.5GB), so it does not
+  # need a bf16-sized pool; the rest is left for the backward pass.
+  gpu_memory_utilization: 0.45
+  max_model_length: 2048   # vs gemma-3's 131k default, which blocks engine start
