@@ -40,18 +40,22 @@ pass_at_k:
 samayik_eval:
   path: data/eval/samayik.json
   num_samples: 200
-  max_new_tokens: 512
+  max_new_tokens: 2560
   temperature: 0.2
 
 generation:
   num_generations: 8
-  max_completion_length: 256
+  max_completion_length: 2560   # gemma4 THINKS: measured 574-1700+ tokens
   temperature: 0.9
 
 train:
   learning_rate: 1.0e-5
-  per_device_train_batch_size: 2   # counts COMPLETIONS; see batch math above
-  gradient_accumulation_steps: 4
+  # 1*8*7 = 56 completions = 7 prompts x 8 generations (see batch math above).
+  # One sequence per micro-step because a 2560-token completion against a 262k
+  # vocab is ~2.7GB of bf16 logits, and the fp32 log-softmax plus the reference
+  # forward multiply that several times over.
+  per_device_train_batch_size: 1
+  gradient_accumulation_steps: 8
   beta: 0.04
   bf16: true
   gradient_checkpointing: true
@@ -65,5 +69,5 @@ vllm:
   mode: server
   server_host: 127.0.0.1     # vllm-serve runs on GPU 7 of this same box
   server_port: 8000
-  max_model_length: 2048     # gemma4 advertises 262k; vLLM reserves KV for it
+  max_model_length: 4096     # gemma4 advertises 262k; vLLM reserves KV for it
   gpu_memory_utilization: 0.9  # server owns GPU 7 outright

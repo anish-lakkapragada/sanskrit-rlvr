@@ -35,12 +35,12 @@ pass_at_k:
 samayik_eval:
   path: data/eval/samayik.json
   num_samples: 100
-  max_new_tokens: 512
+  max_new_tokens: 2560
   temperature: 0.2
 
 generation:
   num_generations: 8
-  max_completion_length: 256
+  max_completion_length: 2560   # gemma4 THINKS: measured 574-1700+ tokens
   temperature: 0.9
 
 train:
@@ -51,8 +51,8 @@ train:
   # Kept small deliberately: gemma4's 262k vocab makes the logits tensor, not
   # the weights, the thing that blows up (~2GB per 8 completions in bf16,
   # more once log-softmax upcasts and the reference forward run).
-  per_device_train_batch_size: 2
-  gradient_accumulation_steps: 4
+  per_device_train_batch_size: 1
+  gradient_accumulation_steps: 8
   beta: 0.04
   bf16: true
   gradient_checkpointing: true
@@ -67,4 +67,4 @@ vllm:
   gpu_memory_utilization: 0.4  # ~72GB: 53GB bf16 weights + KV headroom
   # gemma4 advertises a 262k context; vLLM sizes its KV cache to serve one
   # request at that length and refuses to start if it cannot.
-  max_model_length: 2048
+  max_model_length: 4096
