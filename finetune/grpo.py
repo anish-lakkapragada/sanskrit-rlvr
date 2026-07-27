@@ -141,6 +141,27 @@ def make_generate_fn(trainer, tokenizer, cfg: RunConfig):
             outs = engine.generate(texts, params, use_tqdm=False)
             return [[o.text for o in out.outputs] for out in outs]
 
+        # Server mode: there is no local engine, only an HTTP client to the
+        # vllm-serve process. It returns token ids grouped n-per-prompt, so
+        # decode and regroup. Without this the eval suite would silently fall
+        # through to HF generate against a possibly-sharded model.
+        client = getattr(getattr(trainer, "vllm_generation", None),
+                         "vllm_client", None)
+        if client is not None:
+            out = client.generate(
+                prompts=texts,
+                n=n,
+                temperature=max(temperature, 1e-6),
+                max_tokens=max_new_tokens,
+            )
+            flat = [tokenizer.decode(ids, skip_special_tokens=True)
+                    for ids in out["completion_ids"]]
+            if len(flat) != len(texts) * n:
+                raise RuntimeError(
+                    f"vLLM server returned {len(flat)} completions, "
+                    f"expected {len(texts)} prompts x {n}")
+            return [flat[i * n:(i + 1) * n] for i in range(len(texts))]
+
         # HF fallback (batched, sampled)
         import torch
 
