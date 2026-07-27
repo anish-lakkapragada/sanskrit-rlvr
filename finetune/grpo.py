@@ -65,7 +65,13 @@ def make_eval_suite(cfg: RunConfig, generate_fn, writer, run_dir: Path):
     def eval_suite(step: int) -> None:
         out = run_dir / "evals" / f"step-{step:07d}"
         out.mkdir(parents=True, exist_ok=True)
-        rng = random.Random(cfg.seed + step)
+        # Seed must NOT depend on step: it selects WHICH prompts are evaluated,
+        # so varying it re-rolls the subset every checkpoint and makes
+        # checkpoints incomparable. At 1-2% pass rates the subset dominates the
+        # measurement -- an early run swung pass@1 0.29% -> 2.15% -> 0.10% ->
+        # 1.46% on nothing but redrawn prompts. Sampling diversity comes from
+        # the generation temperature, not from here.
+        rng = random.Random(cfg.seed)
 
         pk_metrics, pk_samples = evals.eval_pass_at_k(
             generate_fn, vp_tasks, reward_fn,
