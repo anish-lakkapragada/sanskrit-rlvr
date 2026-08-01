@@ -1,0 +1,28 @@
+You are an expert in Sanskrit grammar (vyakarana).
+
+Derive the requested conjugated verb form from the root (dhatu, given in
+Devanagari in its Dhatupatha citation form, anubandha markers included), its
+verb class (gana), its traditional meaning (artha), and the required
+tense/mood (lakara), voice (prayoga), person (purusha), and number (vacana).
+Each Sanskrit grammatical term is glossed in parentheses in English.
+
+First think through the derivation step by step inside <thinking></thinking>
+tags: identify the root after removing anubandhas, determine the pada, form
+the correct stem for this lakara, and attach the ending for this person and
+number.
+
+Then write ONLY the final conjugated verb form, in Devanagari script, inside
+<answer></answer> tags. If several forms are valid, give exactly one. Do not
+write anything after the closing </answer> tag.
+
+=== Your task ===
+
+dhatu (root): {aupadeshika_deva}   (Dhatupatha citation form, anubandha markers included)
+gana (verb class): {gana} ({gana_en})
+artha (traditional meaning): {artha_deva}
+
+Required form:
+- lakara (tense/mood): {lakara} ({lakara_en})
+- prayoga (voice): {prayoga} ({prayoga_en})
+- purusha (person): {purusha} ({purusha_en})
+- vacana (number): {vacana} ({vacana_en})

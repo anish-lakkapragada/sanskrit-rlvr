@@ -1,0 +1,148 @@
+# Base-capability sweep: which SMALL model is worth fine-tuning on the dhatu
+# morphology task?
+#
+# Target hardware: 1x A100 40GB SXM4 (Lambda). Every model below must fit in
+# bf16 on one 40GB card for inference. We committed to a 26B model once before
+# measuring its base pass@k and burned ~13 GPU-hours learning it was ~0.
+# Measure first, then commit.
+#
+# SELECTION CRITERIA (what we are shopping for):
+#   1. Non-degenerate base signal -- pass@8 comfortably above zero, so GRPO has
+#      something to reinforce. A model at pass@8 = 0 gives an all-zero advantage
+#      on nearly every group and simply will not learn.
+#   2. Headroom -- pass@k at large k >> pass@1. That gap IS the trainable
+#      signal in GRPO. pass@1 == pass@16 means already saturated/deterministic.
+#   3. Format compliance -- answer_tag_rate high enough that reward measures
+#      Sanskrit rather than instruction-following.
+#   4. Speed -- target is ~100 train steps in ~10 min (see `selection`).
+#
+# Run (repo root):
+#   uv run python -m evals.eval evals/eval-config.yml              # full sweep (GPU)
+#   uv run python -m evals.eval evals/eval-config.yml --dry-run    # validate config, no GPU
+#   uv run python -m evals.eval evals/eval-config.yml --self-test  # CPU end-to-end with a stub generator
+
+suite_name: base-capability-sweep
+
+# --------------------------------------------------------------------------
+# Task definition -- same reward and dataset as training. The PROMPT differs:
+# v1/vp_task_eval.txt is zero-shot with the dhatu/artha in Devanagari
+# (vidyut-lipi, no SLP1) and every grammatical term glossed in English
+# ("Lrn (conditional)", "Uttama (first person)"). Not comparable to
+# prompt-v0 numbers (few-shot, SLP1) or to runs/*/evals/*/pass_at_k.json.
+# --------------------------------------------------------------------------
+task:
+  reward: vp_exact                            # key in finetune.rewards.REGISTRY
+  dataset: data/finetune/validation.json      # 669 held-out dhatus
+  prompt: v1/vp_task_eval                     # prompts/v1/vp_task_eval.txt (zero-shot, glossed)
+
+# Selects the prompt subset ONCE for the whole suite -- every model sees the
+# same prompts, or the comparison is meaningless (commit 19b9ca6).
+seed: 42
+
+# --------------------------------------------------------------------------
+# Pass@k
+# Cost per model = num_prompts * samples_per_prompt = 2,048 completions.
+# Constraint: max(ks) <= samples_per_prompt.
+# --------------------------------------------------------------------------
+pass_at_k:
+  ks: [1, 2, 4, 8, 16]
+  num_prompts: 128            # prompts sampled from the dataset, seeded above
+  samples_per_prompt: 16      # n completions per prompt -> the unbiased estimator
+  pass_threshold: 0.85        # vp_exact >= 0.85 means the Devanagari form matched
+  temperature: 0.9            # keep at the training sampling temperature
+  top_p: 1.0
+
+# --------------------------------------------------------------------------
+# Defaults applied to every entry in `models`, overridable per model.
+# --------------------------------------------------------------------------
+defaults:
+  max_new_tokens: 1024
+  enable_thinking: false      # vp_task.txt already demands <thinking> tags;
+                              # the chat template's own reasoning mode on top
+                              # of that just multiplies completion length
+  dtype: bfloat16
+  tensor_parallel_size: 1
+  gpu_memory_utilization: 0.85
+  max_model_len: 4096
+  trust_remote_code: false
+  adapter: null               # optional LoRA/PEFT dir; null = evaluate the base model
+  chat: true                  # false = skip the chat template, feed the task prompt raw
+                              # (for base models with no template; also auto-detected).
+                              # Raw mode also gets stop=["</answer>"] so base models
+                              # don't run to max_new_tokens after answering.
+
+# --------------------------------------------------------------------------
+# Models to sweep.
+#
+# `name` follows finetune.model.resolve_model_id: a PRESETS key, or any raw
+# HF id passed straight through. All of these are PROPOSALS -- none has been
+# measured on this task yet, which is the entire point of this sweep.
+#
+# NO HF TOKEN NEEDED: every repo below is ungated (verified via the hub API,
+# 2026-07-29). google/gemma-* and meta-llama/* are license-gated, so gemma and
+# llama come from the unsloth mirrors -- same weights, no gate. If you swap a
+# gated id back in, that model (and only that model) needs HF_TOKEN again.
+#
+# Tokenizer note: the target is Devanagari. Gemma's 262k vocab covers it well;
+# smaller Llama/Qwen vocabs may fragment it badly, which inflates completion
+# length and can make exact match harder. Watch mean_tokens per model.
+# --------------------------------------------------------------------------
+models:
+  # --- small candidates: could actually hit the 10-min/100-step target ---
+  - name: Qwen/Qwen3-1.7B
+
+  - name: Qwen/Qwen3-4B
+
+  - name: Qwen/Qwen3-8B                      # next size up: 4B was the only small model
+                                             # with nonzero pass@k in the 2026-07-29 sweep
+                                             # (there is no Qwen3-7B; lineup jumps 4B->8B)
+
+  - name: unsloth/gemma-3-4b-it              # ungated mirror of google/gemma-3-4b-it
+
+  - name: unsloth/Llama-3.2-3B-Instruct      # ungated mirror of meta-llama/Llama-3.2-3B-Instruct
+
+  # --- Devanagari/Sanskrit-focused (researched 2026-07-29, all ungated) ---
+  - name: sarvamai/sarvam-1                  # 2.5B, Indic-built tokenizer: Devanagari
+                                             # fertility 1.4-2.1 vs ~4-8 generic. The only
+                                             # Devanagari-optimized model at our target
+                                             # size. Base-pretrained (weak instruction
+                                             # following) but ships a chat template.
+
+  - name: snskrt/Sanskrit-Qwen2.5-7B-chat    # 7.6B, community Qwen2.5 Sanskrit
+                                             # continued-pretrain + chat tune; the most
+                                             # task-adjacent fine-tune on the hub.
+
+  - name: buddhist-nlp/gemma2-mitra-base     # 9.2B, Berkeley Dharmamitra: gemma-2-9b
+    chat: false                              # continued-pretrained on 7B tokens of
+                                             # Sanskrit/Pali/Tibetan. BASE model, no chat
+                                             # template -> raw completion mode (the eval
+                                             # prompt's worked examples carry the format).
+
+  # --- reference point: ~24GB bf16, fits 40GB for INFERENCE only. Too slow
+  # --- to train under the 10-min target; included to see how much base
+  # --- capability we give up by going small.
+  - name: unsloth/gemma-3-12b-it             # ungated mirror of google/gemma-3-12b-it
+                                             # (the gemma3-12b PRESET points at the
+                                             # gated google repo, so use the raw id)
+
+# --------------------------------------------------------------------------
+# Speed screen. Training throughput is not measurable from an eval run, so
+# this is recorded as a hint, not a verdict -- confirm the winner with a real
+# 100-step training run.
+# --------------------------------------------------------------------------
+selection:
+  target_steps: 100
+  target_minutes: 10               # => ~6 s/step needed
+  max_params_b: 8                  # soft cap for the "trainable now" shortlist
+  min_pass_at_8: 0.02              # below this there is no signal to reinforce
+  min_answer_tag_rate: 0.80        # below this we are measuring format, not Sanskrit
+
+# --------------------------------------------------------------------------
+# Output: <output_dir>/<suite_name>/<model_slug>/{results.txt, samples.json,
+# summary.json}. samples.json rows: {input_task, output_devanagari, exact_answers}.
+# --------------------------------------------------------------------------
+report:
+  output_dir: evals/outputs/prompt-v1   # convention: evals/outputs/<prompt-version>/<suite>/
+  save_samples: true
+  print_table: true                # cross-model comparison table at the end
+  fail_fast: false                 # keep going if one model OOMs or 404s

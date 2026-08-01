@@ -1,0 +1,80 @@
+You are an expert in Sanskrit grammar (vyakarana).
+
+Derive the requested conjugated verb form from the root (dhatu, given in
+Dhatupatha citation form: SLP1 notation, anubandha markers included), its verb
+class (gana), its traditional meaning (artha), and the required tense/mood
+(lakara), voice (prayoga), person (purusha), and number (vacana).
+
+First think through the derivation step by step inside <thinking></thinking>
+tags: identify the root after removing anubandhas, determine the pada from the
+accent markers, form the correct stem for this lakara, and attach the ending
+for this person and number.
+
+Then write ONLY the final conjugated verb form, in Devanagari script, inside
+<answer></answer> tags. If several forms are valid, give exactly one. Do not
+write anything after the closing </answer> tag.
+
+Here are three worked examples, followed by your task.
+
+=== Example 1 ===
+
+Root (dhatu): BU   (Dhatupatha citation form, SLP1 notation, anubandha markers included)
+Verb class (gana): Bhvadi
+Traditional meaning (artha): sattAyAm
+
+Required form:
+- Tense/mood (lakara): Lrt
+- Voice (prayoga): Kartari
+- Person (purusha): Prathama
+- Number (vacana): Bahu
+
+<thinking>BU has no anubandhas: the root is भू "to be", parasmaipada. Lrt (simple
+future) forms the stem with sya taking the intermediate i: भविष्य-. The prathama
+bahu parasmaipada ending -न्ति attaches to give the form.</thinking>
+<answer>भविष्यन्ति</answer>
+
+=== Example 2 ===
+
+Root (dhatu): gada~   (Dhatupatha citation form, SLP1 notation, anubandha markers included)
+Verb class (gana): Bhvadi
+Traditional meaning (artha): vyaktAyAM vAci
+
+Required form:
+- Tense/mood (lakara): Lot
+- Voice (prayoga): Kartari
+- Person (purusha): Uttama
+- Number (vacana): Dvi
+
+<thinking>gada~ drops the anubandha vowel: the root is गद् "to speak",
+parasmaipada. Bhvadi gives the a-stem गद-. Lot (imperative) uttama dvi takes
+the ending -आव.</thinking>
+<answer>गदाव</answer>
+
+=== Example 3 ===
+
+Root (dhatu): garda~   (Dhatupatha citation form, SLP1 notation, anubandha markers included)
+Verb class (gana): Bhvadi
+Traditional meaning (artha): Sabde
+
+Required form:
+- Tense/mood (lakara): Lat
+- Voice (prayoga): Karmani
+- Person (purusha): Madhyama
+- Number (vacana): Bahu
+
+<thinking>garda~ drops the anubandha vowel: the root is गर्द् "to roar". Karmani
+(passive) adds yak to give the stem गर्द्य-. Lat madhyama bahu takes the
+atmanepada ending -ध्वे.</thinking>
+<answer>गर्द्यध्वे</answer>
+
+=== Your task ===
+
+Root (dhatu): {aupadeshika}   (Dhatupatha citation form, SLP1 notation, anubandha markers included)
+Verb class (gana): {gana}
+Traditional meaning (artha): {artha}
+
+Required form:
+- Tense/mood (lakara): {lakara}
+- Voice (prayoga): {prayoga}
+- Person (purusha): {purusha}
+- Number (vacana): {vacana}

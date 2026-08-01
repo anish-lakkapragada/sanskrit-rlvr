@@ -1,0 +1,95 @@
+# Base-capability sweep, PROMPT V1 (zero-shot, Devanagari, glossed terms).
+#
+# v0 (evals/outputs/prompt-v0/) scored ~0 for every model, and the raw-output
+# dumps decomposed the zeros into causes. v1 changes the PROMPT to remove the
+# notation barriers -- dhatu/artha in Devanagari instead of SLP1, and every
+# grammatical term glossed ("Lrn (conditional)", "Uttama (first person)") --
+# so this sweep tests the models whose v0 failure was plausibly notation, and
+# drops the ones whose failure v1 cannot touch:
+#   dropped: Sanskrit-Qwen2.5-7B-chat (broken weights: token leakage, loops),
+#            gemma2-mitra-base + sarvam-1 (base models; v1 is zero-shot, so
+#            they lose their only scaffold, and their v0 exact@16=0 was
+#            script-independent), Qwen3-1.7B + Llama-3.2-3B (flat zeros with
+#            perfect format -- nothing v1 addresses).
+#
+# Run (repo root):
+#   uv run python -m evals.eval evals/outputs/configs/v1/eval-config.yml            # full sweep (GPU)
+#   uv run python -m evals.eval evals/outputs/configs/v1/eval-config.yml --dry-run  # no GPU
+#   uv run python -m evals.eval evals/outputs/configs/v1/eval-config.yml --self-test
+
+suite_name: base-capability-sweep
+
+# --------------------------------------------------------------------------
+# Task -- same reward, dataset, seed, and 128-prompt subset as prompt-v0, so
+# rows are comparable task-by-task; only the prompt template differs.
+# --------------------------------------------------------------------------
+task:
+  reward: vp_exact                            # key in finetune.rewards.REGISTRY
+  dataset: data/finetune/validation.json      # 669 held-out dhatus
+  prompt: v1/vp_task_eval                     # prompts/v1/vp_task_eval.txt (zero-shot, glossed)
+
+seed: 42          # same subset draw as v0 -- do not change
+
+pass_at_k:
+  ks: [1, 2, 4, 8, 16]
+  num_prompts: 128
+  samples_per_prompt: 16
+  pass_threshold: 0.85
+  temperature: 0.9
+  top_p: 1.0
+
+defaults:
+  max_new_tokens: 2048        # generous: v0 instruct models averaged ~300-400
+                              # tokens, so only runaway generations pay for this
+  enable_thinking: false      # the prompt demands explicit <thinking> tags
+  dtype: bfloat16
+  tensor_parallel_size: 1
+  gpu_memory_utilization: 0.85
+  max_model_len: 4096
+  trust_remote_code: false
+  adapter: null
+  chat: true
+
+# --------------------------------------------------------------------------
+# Models: v0 keepers whose failures were notation-shaped, plus scale probes.
+# All verified ungated (hub API, 2026-07-30). Weights for the first four are
+# already in the box's HF cache from the v0 sweep.
+# --------------------------------------------------------------------------
+models:
+  # --- small: the actual SFT-base candidates (10-min/100-step target) ---
+  - name: Qwen/Qwen3-4B                      # only small model with real v0 signal (2/128)
+
+  - name: unsloth/gemma-3-4b-it              # small gemma; big sibling nearly worked
+
+  # --- family scale probes ---
+  - name: Qwen/Qwen3-8B                      # resolves whether v0's 4B>8B was noise
+
+  - name: Qwen/Qwen3-14B                     # 14.8B bf16 ~30GB: biggest dense Qwen
+                                             # that fits the 40GB card
+
+  - name: unsloth/gemma-3-12b-it             # prime v1 beneficiary: its v0 failure was
+                                             # exactly SLP1 misreading + L-code guessing
+
+  # --- wildcard ---
+  - name: openai/gpt-oss-20b                 # 21.5B MoE, ~13GB MXFP4. Hand-test failed on
+    max_new_tokens: 4096                     # exactly what v1 fixes. Always reasons in its
+    max_model_len: 8192                      # own <think> channel first, so give it real
+                                             # token budget (and a window that fits prompt
+                                             # + 4096); expect exact@k > pass@k if the
+                                             # harmony format fights our <answer> tags.
+
+selection:
+  target_steps: 100
+  target_minutes: 10
+  max_params_b: 8
+  min_pass_at_8: 0.02
+  min_answer_tag_rate: 0.80
+
+# --------------------------------------------------------------------------
+# Output: evals/outputs/<prompt-version>/<suite>/<model_slug>/
+# --------------------------------------------------------------------------
+report:
+  output_dir: evals/outputs/prompt-v1
+  save_samples: true
+  print_table: true
+  fail_fast: false

@@ -1,0 +1,76 @@
+================================================================================
+ vp_exact base capability -- unsloth/gemma-3-4b-it
+================================================================================
+ suite          base-capability-sweep
+ model          unsloth/gemma-3-4b-it   (base, no adapter)
+ reward         vp_exact  (pass iff >= 0.85)
+ dataset        data/finetune/validation.json   (669 held-out tasks)
+ prompt         v1/vp_task_eval.txt  v1   enable_thinking=False  chat=True
+ sampling       temperature=0.9  top_p=1.0  max_new_tokens=2048
+ subset         128 prompts x 16 samples = 2048 completions   seed=42
+ run            2026-07-30 19:00:26   NVIDIA A100-SXM4-40GB   vllm 0.25.1
+
+--------------------------------------------------------------------------------
+ PASS@K  (tag-extracted answer -- what training rewards)
+--------------------------------------------------------------------------------
+      k      pass@k          95% CI              solved
+  -----   ---------   --------------------   ----------
+      1       0.00%   [  0.00%,    0.00%]            -
+      2       0.00%   [  0.00%,    0.00%]            -
+      4       0.00%   [  0.00%,    0.00%]            -
+      8       0.00%   [  0.00%,    0.00%]            -
+     16       0.00%   [  0.00%,    0.00%]      0 / 128
+
+  headroom  pass@16 / pass@1 = n/a (pass@1 = 0)
+  hits  0 / 2048 completions (0.00%)
+  unbiased estimator (Chen et al. 2021); CI = 10k-resample bootstrap over prompts
+
+--------------------------------------------------------------------------------
+ EXACT@K  (gold form anywhere in the text -- format-blind)
+--------------------------------------------------------------------------------
+      k     exact@k          95% CI              solved
+  -----   ---------   --------------------   ----------
+      1       0.00%   [  0.00%,    0.00%]            -
+      2       0.00%   [  0.00%,    0.00%]            -
+      4       0.00%   [  0.00%,    0.00%]            -
+      8       0.00%   [  0.00%,    0.00%]            -
+     16       0.00%   [  0.00%,    0.00%]      0 / 128
+
+  headroom  exact@16 / exact@1 = n/a (exact@1 = 0)
+  hits  0 / 2048 completions (0.00%)
+  a large EXACT-over-PASS gap = knows the Sanskrit, fails the format
+
+--------------------------------------------------------------------------------
+ FORMAT COMPLIANCE
+--------------------------------------------------------------------------------
+ answer_tag_rate           100.0%
+ thinking_tag_rate          99.9%
+ hit max_new_tokens          0.0%    (0 / 2048 truncated)
+ mean completion length      323 tokens   (min 186, max 620)
+
+--------------------------------------------------------------------------------
+ REWARD DISTRIBUTION
+--------------------------------------------------------------------------------
+ mean 0.1498   std 0.0057   min 0.000   max 0.150
+
+    0.00  |#                                                 3
+    0.14  |################################################  2045
+
+--------------------------------------------------------------------------------
+ TIMING
+--------------------------------------------------------------------------------
+ avg inference time / prompt         0.66 s      (16 completions per prompt)
+ avg inference time / completion     0.04 s
+ output throughput                   7878 tok/s
+ total generation wall clock        1m 24s
+ model load + engine init           1m 01s
+ total wall clock                   2m 25s
+
+--------------------------------------------------------------------------------
+ SELECTION SCREEN
+--------------------------------------------------------------------------------
+ [FAIL]  pass@8 >= 0.02               0.0000
+ [PASS]  answer_tag_rate >= 0.8       0.9995
+ [PASS]  params <= 8B                 4.3B
+ [ ? ]   100 steps in <= 10 min       not measurable from eval -- needs a train run
+================================================================================
