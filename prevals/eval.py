@@ -4,9 +4,9 @@ same reward registry, same pass@k estimator), so numbers here are directly
 comparable to training-time evals in runs/*/evals/.
 
 Usage (repo root):
-    uv run python -m evals.eval evals/eval-config.yml              # full sweep (GPU)
-    uv run python -m evals.eval evals/eval-config.yml --dry-run    # validate config, no GPU
-    uv run python -m evals.eval evals/eval-config.yml --self-test  # CPU end-to-end, stub generator
+    uv run python -m prevals.eval prevals/outputs/configs/v1/eval-config.yml              # full sweep (GPU)
+    uv run python -m prevals.eval prevals/outputs/configs/v1/eval-config.yml --dry-run    # validate config, no GPU
+    uv run python -m prevals.eval prevals/outputs/configs/v1/eval-config.yml --self-test  # CPU end-to-end, stub generator
 
 Each model runs in its OWN subprocess (--model-index, internal): vLLM does not
 reliably release GPU memory on engine teardown, so sequential engines in one
@@ -599,7 +599,7 @@ def sweep(cfg, config_path):
                     raise
             continue
         rc = subprocess.call(
-            [sys.executable, "-m", "evals.eval", str(config_path),
+            [sys.executable, "-m", "prevals.eval", str(config_path),
              "--model-index", str(i)],
             cwd=ROOT)
         if rc != 0:
@@ -710,7 +710,7 @@ def self_test(cfg):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    ap.add_argument("config", nargs="?", default="evals/eval-config.yml")
+    ap.add_argument("config", nargs="?", default="prevals/outputs/configs/v1/eval-config.yml")
     ap.add_argument("--model-index", type=int, default=None,
                     help="(internal) run a single model in this process")
     ap.add_argument("--dry-run", action="store_true")
