@@ -33,6 +33,27 @@ class GenerationConfig:
 
 
 @dataclass
+class SFTSettings:
+    """LoRA SFT on a distilled trace corpus (finetune.sft). Defaults follow
+    the LoRA-Without-Regret / TRL guidance: lr ~10x full-FT with cosine +
+    short warmup, effective batch < 32, completion-only loss."""
+    dataset: str = "data/finetune/sft/claude-opus-5.json"
+    prompt_template: str = "v1/vp_task_eval.txt"  # template the corpus was generated with
+    epochs: float = 2.0
+    learning_rate: float = 2.0e-4
+    per_device_train_batch_size: int = 4
+    gradient_accumulation_steps: int = 4          # effective batch 16
+    max_seq_len: int = 4096   # student tokenizer is less dense on Devanagari
+                              # than the teacher's; over-length pairs are dropped
+    warmup_ratio: float = 0.05
+    weight_decay: float = 0.01
+    lr_scheduler: str = "cosine"
+    eval_prompts_per_epoch: int = 16              # 0 disables the per-epoch eval
+    eval_samples_per_prompt: int = 4
+    eval_max_new_tokens: int = 1024
+
+
+@dataclass
 class LoraSettings:
     r: int = 16
     alpha: int = 32
@@ -68,8 +89,8 @@ class RunConfig:
     run_name: str = ""
     model: str = "gemma3-12b"
     reward: str = "example"
-    dataset: str = "data/finetune/finetune.json"  # 6,018 training tasks
-    eval_dataset: str = "data/finetune/validation.json"  # Pass@K prompt source (held-out dhatus)
+    dataset: str = "data/finetune/task-data/finetune.json"  # 6,018 training tasks
+    eval_dataset: str = "data/finetune/task-data/validation.json"  # Pass@K prompt source (held-out dhatus)
     iterations: int = 1000
     checkpoint_every: int = 100
     logging_every: int = 10
@@ -79,6 +100,7 @@ class RunConfig:
     generation: GenerationConfig = field(default_factory=GenerationConfig)
     train: TrainConfig = field(default_factory=TrainConfig)
     vllm: VllmConfig = field(default_factory=VllmConfig)
+    sft: SFTSettings = field(default_factory=SFTSettings)
 
     @property
     def run_dir(self) -> Path:
@@ -99,6 +121,7 @@ def _build(cls, data: dict, path: str):
             "PassAtKConfig": PassAtKConfig, "SamayikEvalConfig": SamayikEvalConfig,
             "GenerationConfig": GenerationConfig, "TrainConfig": TrainConfig,
             "VllmConfig": VllmConfig, "LoraSettings": LoraSettings,
+            "SFTSettings": SFTSettings,
         }.get(ftype if isinstance(ftype, str) else getattr(ftype, "__name__", ""))
         kwargs[key] = _build(nested, value, f"{path}.{key}") if nested else value
     return cls(**kwargs)

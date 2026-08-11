@@ -8,8 +8,8 @@ run_name: smoke-a100
 # (no HF token needed). Switch back to the gemma3-12b preset once HF_TOKEN is set.
 model: unsloth/gemma-3-12b-it
 reward: vp_exact
-dataset: data/finetune/finetune.json
-eval_dataset: data/finetune/validation.json
+dataset: data/finetune/task-data/finetune.json
+eval_dataset: data/finetune/task-data/validation.json
 
 iterations: 4
 checkpoint_every: 2

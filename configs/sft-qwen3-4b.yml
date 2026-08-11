@@ -1,0 +1,51 @@
+# LoRA SFT: Qwen3-4B on the Claude Opus 5 distillation corpus (cold-start
+# stage before GRPO). 7,851 verified traces, v1 prompt, completion-only loss.
+#
+# Hyperparameters follow LoRA-Without-Regret (Schulman et al. 2025; TRL guide)
+# + Unsloth norms: all-linear LoRA targets (finetune.model.LORA_TARGET_MODULES),
+# r=32 alpha=2r dropout=0, lr 2e-4 cosine + 5% warmup, effective batch 16
+# (LoRA degrades above ~32), 1-3 epochs. Corpus ~10M tokens/epoch -> roughly
+# 20-35 min/epoch on 1x A100 40GB.
+#
+#   uv run python -m finetune.sft --config configs/sft-qwen3-4b.yml --dry-run
+#   uv run python -m finetune.sft --config configs/sft-qwen3-4b.yml --merge
+#
+# Success metric afterwards: prevals eval with
+#   {name: Qwen/Qwen3-4B, adapter: runs/sft-qwen3-4b-opus-r1/adapter}
+# vs the base model's 0.00% pass@16 on held-out dhatus.
+
+run_name: sft-qwen3-4b-opus-r1
+model: Qwen/Qwen3-4B            # has chat template + 100% tag compliance in sweep
+reward: vp_exact
+dataset: data/finetune/task-data/finetune.json        # unused by SFT; keeps config valid
+eval_dataset: data/finetune/task-data/validation.json # per-epoch pass@k probe pool
+seed: 42
+
+pass_at_k:
+  pass_threshold: 0.85          # content-correct under vp_exact
+  temperature: 0.9              # sampling diversity for the pass@k probe
+
+train:
+  bf16: true
+  gradient_checkpointing: true
+  lora:
+    r: 32                       # capacity >> corpus information content
+    alpha: 64                   # alpha = 2r
+    dropout: 0.0
+
+sft:
+  dataset: data/finetune/sft/claude-opus-5.json
+  prompt_template: v1/vp_task_eval.txt   # what the corpus was generated with
+  epochs: 2.0
+  learning_rate: 2.0e-4
+  per_device_train_batch_size: 4
+  gradient_accumulation_steps: 4         # effective batch 16
+  max_seq_len: 4096                      # Qwen tokenizes Devanagari less densely
+                                         # than the teacher; over-length pairs are
+                                         # DROPPED (answer sits at the end), not cut
+  warmup_ratio: 0.05
+  weight_decay: 0.01
+  lr_scheduler: cosine
+  eval_prompts_per_epoch: 16             # HF-generate pass@k probe at each save
+  eval_samples_per_prompt: 4
+  eval_max_new_tokens: 1024

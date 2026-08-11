@@ -6,8 +6,8 @@ run_name: example-zero-reward
 model: gemma3-12b            # preset key (finetune/model.py) or raw HF id
 reward: vp_exact             # registry: vp_exact | vp_chrf | vp_chrfpp | example
                              # all vp_* = 0.15*format(binary) + 0.85*content, range [0,1]
-dataset: data/finetune/finetune.json         # 6,018 training tasks
-eval_dataset: data/finetune/validation.json  # Pass@K prompt pool (held-out dhatus)
+dataset: data/finetune/task-data/finetune.json         # 6,018 training tasks
+eval_dataset: data/finetune/task-data/validation.json  # Pass@K prompt pool (held-out dhatus)
 
 iterations: 1000
 checkpoint_every: 100        # checkpoint 0 (base model) is always evaluated

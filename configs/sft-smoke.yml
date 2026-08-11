@@ -1,0 +1,31 @@
+# SFT smoke: ~25 optimizer steps of the sft-qwen3-4b recipe to validate the
+# GPU path (TRL API surface, LoRA wiring, loss masking, adapter save) before
+# the real run. Step-0 eval fires; per-epoch evals don't (no epoch boundary).
+#   uv run python -m finetune.sft --config configs/sft-smoke.yml --force
+
+run_name: sft-smoke
+model: Qwen/Qwen3-4B
+reward: vp_exact
+dataset: data/finetune/task-data/finetune.json
+eval_dataset: data/finetune/task-data/validation.json
+seed: 42
+
+pass_at_k:
+  pass_threshold: 0.85
+  temperature: 0.9
+
+train:
+  bf16: true
+  gradient_checkpointing: true
+  lora:
+    r: 32
+    alpha: 64
+    dropout: 0.0
+
+sft:
+  dataset: data/finetune/sft/claude-opus-5.json
+  prompt_template: v1/vp_task_eval.txt
+  epochs: 0.05
+  eval_prompts_per_epoch: 4
+  eval_samples_per_prompt: 2
+  eval_max_new_tokens: 700

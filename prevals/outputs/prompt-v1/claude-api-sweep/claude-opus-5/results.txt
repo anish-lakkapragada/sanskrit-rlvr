@@ -1,0 +1,73 @@
+================================================================================
+ vp_exact base capability -- claude-opus-5
+================================================================================
+ suite          claude-api-sweep
+ model          claude-opus-5   (base, no adapter)
+ reward         vp_exact  (pass iff >= 0.85)
+ dataset        data/finetune/task-data/validation.json   (669 held-out tasks)
+ prompt         v1/vp_task_eval.txt  v1   enable_thinking=False  chat=True
+ sampling       temperature=1.0  top_p=1.0  max_new_tokens=2048
+ subset         64 prompts x 16 samples = 1024 completions   seed=42
+ run            2026-08-10 19:20:58   anthropic-batches-api   anthropic 0.120.0
+
+--------------------------------------------------------------------------------
+ PASS@K  (tag-extracted answer -- what training rewards)
+--------------------------------------------------------------------------------
+      k      pass@k          95% CI              solved
+  -----   ---------   --------------------   ----------
+      1      71.88%   [ 63.18%,   79.98%]            -
+      2      80.82%   [ 72.67%,   88.22%]            -
+      4      86.57%   [ 78.83%,   93.37%]            -
+      8      89.85%   [ 82.17%,   96.31%]            -
+     16      90.62%   [ 82.81%,   96.88%]      58 / 64
+
+  headroom  pass@16 / pass@1 = 1.3x
+  hits  736 / 1024 completions (71.88%)
+  unbiased estimator (Chen et al. 2021); CI = 10k-resample bootstrap over prompts
+
+--------------------------------------------------------------------------------
+ EXACT@K  (gold form anywhere in the text -- format-blind)
+--------------------------------------------------------------------------------
+      k     exact@k          95% CI              solved
+  -----   ---------   --------------------   ----------
+      1      80.27%   [ 73.44%,   86.52%]            -
+      2      89.57%   [ 84.21%,   94.22%]            -
+      4      95.26%   [ 91.35%,   98.24%]            -
+      8      98.23%   [ 95.83%,   99.88%]            -
+     16     100.00%   [100.00%,  100.00%]      64 / 64
+
+  headroom  exact@16 / exact@1 = 1.2x
+  hits  822 / 1024 completions (80.27%)
+  a large EXACT-over-PASS gap = knows the Sanskrit, fails the format
+
+--------------------------------------------------------------------------------
+ FORMAT COMPLIANCE
+--------------------------------------------------------------------------------
+ answer_tag_rate            76.8%
+ thinking_tag_rate          77.4%
+ hit max_new_tokens         22.3%    (228 / 1024 truncated)
+ mean completion length     1063 tokens   (min 6, max 2048)
+
+--------------------------------------------------------------------------------
+ REWARD DISTRIBUTION
+--------------------------------------------------------------------------------
+ mean 0.7261   std 0.4389   min 0.000   max 1.000
+
+    0.00  |################                                  238
+    0.10  |###                                               50
+    0.95  |################################################  736
+
+--------------------------------------------------------------------------------
+ TIMING
+--------------------------------------------------------------------------------
+ avg inference time / prompt         9.49 s      (16 completions per prompt)
+ avg inference time / completion     0.59 s
+ output throughput                   1792 tok/s
+ total generation wall clock       10m 07s
+ model load + engine init               0s
+ total wall clock                  10m 07s
+
+--------------------------------------------------------------------------------
+ SELECTION SCREEN
+--------------------------------------------------------------------------------
+================================================================================

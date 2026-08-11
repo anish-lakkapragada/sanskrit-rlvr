@@ -5539,6 +5539,7 @@ name = "sanskrit-vidyut"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
+    { name = "anthropic" },
     { name = "datasets" },
     { name = "numpy", version = "2.2.6", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
     { name = "numpy", version = "2.3.5", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11' and python_full_version < '3.13'" },
@@ -5564,6 +5565,7 @@ train = [
 [package.metadata]
 requires-dist = [
     { name = "accelerate", marker = "extra == 'train'", specifier = ">=1.0" },
+    { name = "anthropic", specifier = ">=0.120.0" },
     { name = "bitsandbytes", marker = "extra == 'train'", specifier = ">=0.44" },
     { name = "datasets", specifier = ">=2.19" },
     { name = "numpy", specifier = ">=1.26" },

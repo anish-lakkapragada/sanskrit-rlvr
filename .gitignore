@@ -14,3 +14,8 @@ wheels/
 
 # Training run artifacts (checkpoints, tensorboard, eval dumps)
 runs/
+
+# SFT corpus generation cache + smoke artifacts (raw batch results are
+# re-downloadable for 29 days; the kept corpus is what gets committed)
+data/finetune/sft/raw/
+data/finetune/sft/*.smoke.json

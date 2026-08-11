@@ -32,6 +32,18 @@ def load_vp_dataset(path: str | Path):
     })
 
 
+def load_sft_dataset(path: str | Path):
+    """data/finetune/sft/*.json distillation records -> HF Dataset with the
+    TRL prompt/completion conversational columns. Metadata fields (gold,
+    reward, dhatu, ...) are dropped here; they exist for provenance and
+    re-verification, not training."""
+    from datasets import Dataset
+
+    records = json.loads((ROOT / path).read_text())
+    return Dataset.from_list(
+        [{"prompt": r["prompt"], "completion": r["completion"]} for r in records])
+
+
 def load_samayik_pairs(path: str | Path) -> list[dict]:
     """data/eval/samayik.json: list of {"en": ..., "sa": ...} dicts."""
     pairs = json.loads((ROOT / path).read_text())

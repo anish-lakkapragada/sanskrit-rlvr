@@ -17,8 +17,8 @@
 run_name: vp-exact-gemma4-26b
 model: gemma4-26b               # google/gemma-4-26B-A4B-it (ungated)
 reward: vp_exact
-dataset: data/finetune/finetune.json         # 6,018 training tasks
-eval_dataset: data/finetune/validation.json  # Pass@K prompt pool (held-out dhatus)
+dataset: data/finetune/task-data/finetune.json         # 6,018 training tasks
+eval_dataset: data/finetune/task-data/validation.json  # Pass@K prompt pool (held-out dhatus)
 
 iterations: 1000
 checkpoint_every: 100

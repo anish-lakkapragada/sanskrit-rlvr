@@ -1,0 +1,79 @@
+# Frontier-model sweep, PROMPT V1 -- Claude Haiku/Sonnet/Opus as blind
+# test-takers on the SAME 128-task subset as the base-capability sweep (same
+# dataset, same seed, same v1 prompt template), scored by the same vp_exact
+# reward, so rows are directly comparable to prevals/outputs/prompt-v1/
+# base-capability-sweep/.
+#
+# Runs over the Anthropic Message Batches API (50% of standard token prices,
+# no GPU). Needs ANTHROPIC_API_KEY (env var or .env at repo root).
+#
+# Two protocol differences vs the vLLM sweep, forced by the API:
+#   - sampling: claude-opus-5 / claude-sonnet-5 reject temperature/top_p/seed,
+#     so the 16 samples per prompt vary only through the model's default
+#     sampling. pass_at_k.temperature below is informational (report header)
+#     and is NOT sent to the API.
+#   - thinking: opus-5 / sonnet-5 run adaptive thinking by default;
+#     anthropic_thinking: disabled turns that off so -- like the base sweep's
+#     enable_thinking: false -- models only produce the prompt-demanded
+#     in-text <thinking> block. haiku-4-5 (pre-4.6 API) never thinks unless
+#     given a budget and does not accept {type: disabled}, so it omits the
+#     parameter entirely.
+#
+# Run (repo root):
+#   uv run python -m prevals.eval prevals/outputs/configs/v1/eval-config-claude.yml            # full sweep (API)
+#   uv run python -m prevals.eval prevals/outputs/configs/v1/eval-config-claude.yml --dry-run
+#   uv run python -m prevals.eval prevals/outputs/configs/v1/eval-config-claude.yml --self-test
+
+suite_name: claude-api-sweep
+
+# --------------------------------------------------------------------------
+# Task -- identical to the v1 base-capability sweep; only the models differ.
+# --------------------------------------------------------------------------
+task:
+  reward: vp_exact                            # key in finetune.rewards.REGISTRY
+  dataset: data/finetune/task-data/validation.json  # 669 held-out dhatus
+  prompt: v1/vp_task_eval                     # prompts/v1/vp_task_eval.txt (zero-shot, glossed)
+
+seed: 42          # same subset draw as prompt-v0/v1 sweeps -- do not change
+
+pass_at_k:
+  ks: [1, 2, 4, 8, 16]
+  num_prompts: 64             # uncensored rerun: 64 tasks (NOT a subset of the
+                              # 128-task draw -- different random.sample method)
+  samples_per_prompt: 16
+  pass_threshold: 0.85
+  temperature: 1.0            # informational: Claude API models sample at default
+  top_p: 1.0
+
+defaults:
+  backend: anthropic          # prevals.eval dispatches to generate_anthropic
+  max_new_tokens: 2048
+  enable_thinking: false      # the prompt demands explicit in-text <thinking> tags
+  anthropic_thinking: disabled  # omit | disabled | adaptive (see header comment)
+  chat: true
+
+models:
+  # - name: claude-haiku-4-5
+  #   anthropic_thinking: omit  # pre-4.6 model: no thinking by default; 'disabled' unsupported
+
+  # - name: claude-sonnet-5
+  #   max_new_tokens: 4096      # thinking-off sonnet-5 writes very long in-text
+  #                             # derivations (hand-test: 1.4k-3.6k output tokens;
+  #                             # 2048 truncated 1 of 4 samples). Same precedent
+  #                             # as gpt-oss-20b in eval-config.yml.
+
+  - name: claude-opus-5
+    max_new_tokens: 2048      # 1024 censored the first run: 48.9% truncated
+                              # before </answer> (see claude-opus-5-1024cap/)
+
+# No selection block: the SFT-base screen (params/pass@8/steps-per-minute)
+# does not apply to API models; these rows are capability reference points.
+
+# --------------------------------------------------------------------------
+# Output: prevals/outputs/prompt-v1/claude-api-sweep/<model_slug>/
+# --------------------------------------------------------------------------
+report:
+  output_dir: prevals/outputs/prompt-v1
+  save_samples: true
+  print_table: true
+  fail_fast: false

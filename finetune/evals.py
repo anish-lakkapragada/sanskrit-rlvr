@@ -51,12 +51,14 @@ def reward_snapshot(rewards: list[float]) -> dict:
 def eval_pass_at_k(generate_fn, tasks: list[dict], reward_fn, *, ks: list[int],
                    samples_per_prompt: int, pass_threshold: float,
                    temperature: float, max_new_tokens: int,
-                   num_prompts: int, rng: random.Random):
+                   num_prompts: int, rng: random.Random,
+                   template: str = "v0/vp_task.txt"):
     """Sample tasks, draw n completions each, score with the SAME registry
     reward used in training, and report pass@k for each k plus the reward
-    distribution and answer-tag compliance."""
+    distribution and answer-tag compliance. ``template`` must match the
+    prompt the model was trained on (SFT runs use the v1 corpus template)."""
     chosen = rng.sample(tasks, min(num_prompts, len(tasks)))
-    prompts = [render_vp_task(t) for t in chosen]
+    prompts = [render_vp_task(t, template=template) for t in chosen]
     completions = generate_fn(prompts, samples_per_prompt, temperature, max_new_tokens)
 
     # One flat reward call, mirroring TRL's batching.
@@ -173,7 +175,7 @@ if __name__ == "__main__":
     from finetune.data import load_vp_tasks
     from finetune.rewards import get
 
-    tasks = load_vp_tasks("data/finetune/validation.json")
+    tasks = load_vp_tasks("data/finetune/task-data/validation.json")
     stub = lambda prompts, n, temperature, max_new_tokens: [
         [f"<thinking>hm</thinking><answer>{t}</answer>"] * n for t in range(len(prompts))
     ]

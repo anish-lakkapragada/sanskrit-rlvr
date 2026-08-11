@@ -12,6 +12,11 @@ Each model runs in its OWN subprocess (--model-index, internal): vLLM does not
 reliably release GPU memory on engine teardown, so sequential engines in one
 process OOM by the second model on a 40GB card.
 
+Models with ``backend: anthropic`` (Claude, e.g. configs/v1/eval-config-claude.yml)
+skip vLLM entirely and generate over the Anthropic Message Batches API in-process
+(needs ANTHROPIC_API_KEY in the environment or repo-root .env); scoring and
+reports are identical.
+
 Per model, under <report.output_dir>/<suite_name>/<model_slug>/:
     results.txt    human-readable report (pass@k + CI, compliance, timing, screen)
     samples.json   [{"input_task", "prompt", "outputs" (raw completion text, all
@@ -21,6 +26,7 @@ Per model, under <report.output_dir>/<suite_name>/<model_slug>/:
 
 import argparse
 import json
+import os
 import random
 import re
 import subprocess
@@ -164,6 +170,106 @@ def generate_vllm(model_cfg: dict, prompts: list[str], pk: dict, seed: int):
                      "device": device, "engine": f"vllm {vllm.__version__}"}
 
 
+def _anthropic_api_key() -> str | None:
+    """ANTHROPIC_API_KEY from the environment, falling back to ROOT/.env."""
+    key = os.environ.get("ANTHROPIC_API_KEY")
+    if key:
+        return key
+    env_file = ROOT / ".env"
+    if env_file.exists():
+        for line in env_file.read_text().splitlines():
+            line = line.strip()
+            if line.startswith("ANTHROPIC_API_KEY"):
+                return line.split("=", 1)[1].strip().strip("'\"") or None
+    return None
+
+
+def generate_anthropic(model_cfg: dict, prompts: list[str], pk: dict, seed: int):
+    """Claude models (backend: anthropic) over the Message Batches API --
+    50% of standard token prices, no rate-limit wrangling for the
+    prompts x samples fan-out.
+
+    Protocol differences vs generate_vllm, forced by the API:
+    - no temperature/top_p/seed: current Claude models reject sampling
+      params, so the n samples per prompt vary only via default sampling
+      (`seed` is accepted for signature parity and unused)
+    - anthropic_thinking: 'disabled' sends thinking={'type': 'disabled'}
+      (opus-5/sonnet-5 otherwise think by default), 'adaptive' opts in,
+      'omit' sends nothing (haiku-4-5 rejects the disabled type). The
+      prompt-demanded in-text <thinking> block is unaffected.
+    - refused (stop_reason 'refusal') or errored requests score as empty
+      completions (reward 0); counts are printed.
+    """
+    import anthropic
+    from anthropic.types.message_create_params import MessageCreateParamsNonStreaming
+    from anthropic.types.messages.batch_create_params import Request
+
+    api_key = _anthropic_api_key()
+    if not api_key:
+        raise RuntimeError("ANTHROPIC_API_KEY not set (environment or .env)")
+    client = anthropic.Anthropic(api_key=api_key)
+
+    n = pk["samples_per_prompt"]
+    thinking_mode = model_cfg.get("anthropic_thinking", "omit")
+    if thinking_mode not in ("omit", "disabled", "adaptive"):
+        raise ValueError(f"anthropic_thinking must be omit|disabled|adaptive, "
+                         f"got {thinking_mode!r}")
+    extra = ({} if thinking_mode == "omit"
+             else {"thinking": {"type": thinking_mode}})
+
+    t0 = time.perf_counter()
+    requests = [
+        Request(
+            custom_id=f"p{i}-s{j}",
+            params=MessageCreateParamsNonStreaming(
+                model=model_cfg["name"],
+                max_tokens=model_cfg["max_new_tokens"],
+                messages=[{"role": "user", "content": prompt}],
+                **extra,
+            ),
+        )
+        for i, prompt in enumerate(prompts)
+        for j in range(n)
+    ]
+    batch = client.messages.batches.create(requests=requests)
+    print(f"[eval] {model_cfg['name']}: batch {batch.id} "
+          f"({len(requests)} requests) submitted; polling every 30s...")
+    while True:
+        batch = client.messages.batches.retrieve(batch.id)
+        if batch.processing_status == "ended":
+            break
+        c = batch.request_counts
+        print(f"[eval]   {batch.processing_status}: {c.succeeded} ok, "
+              f"{c.errored} errored, {c.processing} left "
+              f"({time.perf_counter() - t0:.0f}s)", flush=True)
+        time.sleep(30)
+
+    by_id, refusals, failures = {}, 0, 0
+    for result in client.messages.batches.results(batch.id):
+        if result.result.type == "succeeded":
+            msg = result.result.message
+            if msg.stop_reason == "refusal":
+                refusals += 1
+            by_id[result.custom_id] = {
+                "text": "".join(b.text for b in msg.content if b.type == "text"),
+                "tokens": msg.usage.output_tokens,
+                "truncated": msg.stop_reason == "max_tokens",
+            }
+        else:
+            failures += 1
+    gen_s = time.perf_counter() - t0
+    if refusals or failures:
+        print(f"[eval] {model_cfg['name']}: {refusals} refusals, {failures} "
+              f"errored/expired requests -- scored as empty completions")
+
+    empty = {"text": "", "tokens": 0, "truncated": False}
+    records = [[dict(by_id.get(f"p{i}-s{j}", empty)) for j in range(n)]
+               for i in range(len(prompts))]
+    return records, {"load_s": 0.0, "gen_s": gen_s,
+                     "device": "anthropic-batches-api",
+                     "engine": f"anthropic {anthropic.__version__}"}
+
+
 # --------------------------------------------------------------------------
 # Scoring (mirrors finetune.evals.eval_pass_at_k, plus per-sample structure,
 # truncation stats, and a bootstrap CI)
@@ -260,8 +366,10 @@ def param_count_b(model_id: str) -> float | None:
         return None
 
 
-def selection_screen(cfg, kstats, misc, params_b):
-    """[(True|False|None, criterion, observed), ...] -- None = not measurable."""
+def selection_screen(cfg, kstats, misc, params_b, api_model=False):
+    """[(True|False|None, criterion, observed), ...] -- None = not measurable.
+    API models are capability reference points, not SFT-base candidates, so
+    they skip the train-run row (and usually the whole selection block)."""
     sel = cfg.get("selection") or {}
     rows = []
     if "min_pass_at_8" in sel and 8 in kstats["pass"]["at"]:
@@ -276,10 +384,11 @@ def selection_screen(cfg, kstats, misc, params_b):
         ok = None if params_b is None else params_b <= sel["max_params_b"]
         rows.append((ok, f"params <= {sel['max_params_b']}B",
                      "unknown" if params_b is None else f"{params_b:.1f}B"))
-    rows.append((None,
-                 f"{sel.get('target_steps', 100)} steps in <= "
-                 f"{sel.get('target_minutes', 10)} min",
-                 "not measurable from eval -- needs a train run"))
+    if not api_model:
+        rows.append((None,
+                     f"{sel.get('target_steps', 100)} steps in <= "
+                     f"{sel.get('target_minutes', 10)} min",
+                     "not measurable from eval -- needs a train run"))
     return rows
 
 
@@ -385,16 +494,17 @@ def format_report(cfg, model_cfg, kstats, misc, timing,
 
 def run_one(cfg, index, generate_fn=None, subdir=None, lookup_params=True):
     model_cfg = cfg["models"][index]
+    api_model = model_cfg.get("backend", "vllm") == "anthropic"
     tasks, dataset_n = choose_tasks(cfg)
     prompts = [render_vp_task(t, template=task_template(cfg)) for t in tasks]
 
-    records, timing = (generate_fn or generate_vllm)(
-        model_cfg, prompts, cfg["pass_at_k"], cfg["seed"])
+    generate = generate_fn or (generate_anthropic if api_model else generate_vllm)
+    records, timing = generate(model_cfg, prompts, cfg["pass_at_k"], cfg["seed"])
     kstats, misc, sample_rows = score(cfg, tasks, prompts, records)
 
     params_b = (param_count_b(resolve_model_id(model_cfg["name"]))
-                if lookup_params else None)
-    screen = selection_screen(cfg, kstats, misc, params_b)
+                if lookup_params and not api_model else None)
+    screen = selection_screen(cfg, kstats, misc, params_b, api_model=api_model)
     known = [ok for ok, _, _ in screen if ok is not None]
     gen_s = max(timing["gen_s"], 1e-9)
 
@@ -475,6 +585,16 @@ def sweep(cfg, config_path):
     fail_fast = cfg["report"].get("fail_fast", False)
     for i, m in enumerate(cfg["models"]):
         print(f"\n[sweep] ({i + 1}/{len(cfg['models'])}) {m['name']}", flush=True)
+        if m.get("backend", "vllm") == "anthropic":
+            # No GPU engine to tear down -> no need for subprocess isolation.
+            try:
+                run_one(cfg, i)
+            except Exception as e:
+                print(f"[sweep] {m['name']} FAILED ({e})"
+                      + ("" if fail_fast else "; continuing"))
+                if fail_fast:
+                    raise
+            continue
         rc = subprocess.call(
             [sys.executable, "-m", "evals.eval", str(config_path),
              "--model-index", str(i)],

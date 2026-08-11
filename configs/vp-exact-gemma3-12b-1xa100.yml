@@ -10,8 +10,8 @@ run_name: vp-exact-gemma3-12b
 # mirror (same arch/params). Swap back to the preset once a token exists.
 model: unsloth/gemma-3-12b-it
 reward: vp_exact
-dataset: data/finetune/finetune.json         # 6,018 training tasks
-eval_dataset: data/finetune/validation.json  # Pass@K prompt pool (held-out dhatus)
+dataset: data/finetune/task-data/finetune.json         # 6,018 training tasks
+eval_dataset: data/finetune/task-data/validation.json  # Pass@K prompt pool (held-out dhatus)
 
 iterations: 1000
 checkpoint_every: 100

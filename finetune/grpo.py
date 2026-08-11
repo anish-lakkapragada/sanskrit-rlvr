@@ -32,6 +32,17 @@ def is_main_process() -> bool:
     return int(os.environ.get("RANK", 0)) == 0
 
 
+def _git_sha() -> str | None:
+    import subprocess
+
+    try:
+        return subprocess.check_output(
+            ["git", "rev-parse", "--short", "HEAD"], cwd=ROOT,
+            text=True, stderr=subprocess.DEVNULL).strip()
+    except Exception:
+        return None
+
+
 def setup_run_dir(cfg: RunConfig, config_path: str, force: bool) -> Path:
     run_dir = cfg.run_dir
     if run_dir.exists():
@@ -48,6 +59,7 @@ def setup_run_dir(cfg: RunConfig, config_path: str, force: bool) -> Path:
         frozen["_resolved"] = {
             "model_id": resolve_model_id(cfg.model),
             "prompt_version": PROMPT_VERSION,
+            "git_sha": _git_sha(),
             "argv": sys.argv,
         }
         (run_dir / "config.yml").write_text(
