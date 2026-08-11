@@ -125,8 +125,11 @@ def generate_vllm(model_cfg: dict, prompts: list[str], pk: dict, seed: int):
     if model_cfg.get("adapter"):
         from vllm.lora.request import LoRARequest
 
-        lora_kwargs = {"enable_lora": True}
-        lora_request = LoRARequest("adapter", 1, str(ROOT / model_cfg["adapter"]))
+        adapter_dir = ROOT / model_cfg["adapter"]
+        # vLLM's default max_lora_rank is 16; size it to the adapter's actual r.
+        rank = json.loads((adapter_dir / "adapter_config.json").read_text()).get("r", 16)
+        lora_kwargs = {"enable_lora": True, "max_lora_rank": max(rank, 16)}
+        lora_request = LoRARequest("adapter", 1, str(adapter_dir))
 
     llm = LLM(
         model=model_id,
