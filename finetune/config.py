@@ -89,6 +89,9 @@ class RunConfig:
     run_name: str = ""
     model: str = "gemma3-12b"
     reward: str = "example"
+    # GRPO rollout/eval prompt template. Runs starting from an SFT checkpoint
+    # must use the template the student was trained on (v1/vp_task_eval.txt).
+    prompt_template: str = "v0/vp_task.txt"
     dataset: str = "data/finetune/task-data/finetune.json"  # 6,018 training tasks
     eval_dataset: str = "data/finetune/task-data/validation.json"  # Pass@K prompt source (held-out dhatus)
     iterations: int = 1000

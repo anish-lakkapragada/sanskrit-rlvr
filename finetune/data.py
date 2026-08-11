@@ -12,18 +12,33 @@ def load_vp_tasks(path: str | Path) -> list[dict]:
     return json.loads((ROOT / path).read_text())
 
 
-def load_vp_dataset(path: str | Path):
+def load_vp_dataset(path: str | Path, template: str = "v0/vp_task.txt",
+                    tokenizer=None):
     """HF Dataset for GRPOTrainer.
 
-    ``prompt`` uses the conversational format (single user message) so TRL
-    applies the model's chat template. Every other column passes through to
-    reward functions as kwargs (remove_unused_columns=False).
+    Without ``tokenizer``, ``prompt`` uses the conversational format (single
+    user message) and TRL applies the model's chat template with ITS defaults
+    -- on Qwen3 that turns the native think channel ON. With ``tokenizer``,
+    prompts are pre-rendered to plain strings (TRL standard format, passed to
+    rollouts verbatim) through the chat template with enable_thinking=False,
+    keeping GRPO rollouts byte-identical to SFT training and prevals eval
+    rendering. Every other column passes through to reward functions as
+    kwargs (remove_unused_columns=False).
     """
     from datasets import Dataset
 
     tasks = load_vp_tasks(path)
+
+    def prompt(t):
+        p = render_vp_task(t, template=template)
+        if tokenizer is None:
+            return [{"role": "user", "content": p}]
+        return tokenizer.apply_chat_template(
+            [{"role": "user", "content": p}], tokenize=False,
+            add_generation_prompt=True, enable_thinking=False)
+
     return Dataset.from_dict({
-        "prompt": [[{"role": "user", "content": render_vp_task(t)}] for t in tasks],
+        "prompt": [prompt(t) for t in tasks],
         "id": [t["id"] for t in tasks],
         "dhatu": [t["dhatu"] for t in tasks],
         "morphology": [t["morphology"] for t in tasks],

@@ -94,6 +94,7 @@ def make_eval_suite(cfg: RunConfig, generate_fn, writer, run_dir: Path):
             max_new_tokens=cfg.generation.max_completion_length,
             num_prompts=cfg.pass_at_k.num_prompts,
             rng=rng,
+            template=cfg.prompt_template,
         )
         sm_metrics, sm_samples = evals.eval_samayik(
             generate_fn, samayik,
@@ -137,9 +138,11 @@ def make_generate_fn(trainer, tokenizer, cfg: RunConfig):
     falls back to HF model.generate (e.g. server mode)."""
 
     def chat(prompt: str) -> str:
+        # enable_thinking=False: keep Qwen3's native think channel out of
+        # evals, matching SFT/prevals rendering (ignored by other templates).
         return tokenizer.apply_chat_template(
             [{"role": "user", "content": prompt}],
-            tokenize=False, add_generation_prompt=True)
+            tokenize=False, add_generation_prompt=True, enable_thinking=False)
 
     def generate_fn(prompts, n, temperature, max_new_tokens):
         texts = [chat(p) for p in prompts]
@@ -262,7 +265,7 @@ def main() -> None:
         tasks = load_vp_tasks(cfg.dataset)
         eval_tasks = load_vp_tasks(cfg.eval_dataset)
         samayik = load_samayik_pairs(cfg.samayik_eval.path)
-        sample_prompt = render_vp_task(tasks[0])
+        sample_prompt = render_vp_task(tasks[0], template=cfg.prompt_template)
         dummy_rewards = recorder([sample_prompt] * 2, ["<answer>x</answer>", "y"],
                                  id=[tasks[0]["id"]] * 2,
                                  dhatu=[tasks[0]["dhatu"]] * 2,
@@ -287,7 +290,8 @@ def main() -> None:
 
     tokenizer = load_tokenizer(cfg)
     model = load_model(cfg)
-    train_dataset = load_vp_dataset(cfg.dataset)
+    train_dataset = load_vp_dataset(cfg.dataset, template=cfg.prompt_template,
+                                    tokenizer=tokenizer)
 
     grpo_args = GRPOConfig(
         output_dir=str(run_dir / "checkpoints"),

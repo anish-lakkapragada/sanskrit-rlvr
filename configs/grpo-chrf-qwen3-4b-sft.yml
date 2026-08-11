@@ -1,0 +1,66 @@
+# GRPO stage 2 (1x A100 40GB): Qwen3-4B SFT-merged model, vp_chrf reward.
+# One of three parallel reward-comparison runs (exact / chrf / chrfpp).
+#
+# Starts from the LoRA-SFT distillation checkpoint (42.8% pass@1 / 81.0%
+# pass@16 full-set) merged into the base weights -- ~/sanskrit/sft-merged on
+# the box, produced by finetune.sft --merge. Fresh LoRA adapter on top; KL
+# reference = the SFT policy (correct anchor). Prompts pre-rendered with the
+# v1 template + enable_thinking=False, byte-identical to SFT training.
+#
+# Eval cadence per user spec: BOTH the held-out-dhatu pass@k probe and the
+# samayik chrF eval run every 20 steps (checkpoint_every drives both).
+# Rollout budget 2048 tokens (matches the SFT eval protocol).
+#
+# launch: uv run python -m finetune.grpo --config configs/grpo-chrf-qwen3-4b-sft.yml
+
+run_name: grpo-chrf-qwen3-4b-sft
+model: /home/ubuntu/sanskrit/sft-merged
+reward: vp_chrf
+prompt_template: v1/vp_task_eval.txt
+dataset: data/finetune/task-data/finetune.json
+eval_dataset: data/finetune/task-data/validation.json
+
+iterations: 600
+checkpoint_every: 20           # = eval every 20 steps (pass@k + samayik)
+logging_every: 5
+seed: 42
+
+pass_at_k:
+  ks: [1, 4, 8]
+  num_prompts: 64
+  samples_per_prompt: 8
+  pass_threshold: 0.85
+  temperature: 0.9
+
+samayik_eval:
+  path: data/eval/samayik.json
+  num_samples: 100
+  max_new_tokens: 512
+  temperature: 0.2
+
+generation:
+  num_generations: 8
+  max_completion_length: 2048  # enforced rollout token cap
+  temperature: 0.9
+
+train:
+  learning_rate: 1.0e-5
+  # effective batch (2x4=8) = one 8-generation group per optimizer step;
+  # trl>=1.0 requires effective batch divisible by num_generations.
+  per_device_train_batch_size: 2
+  gradient_accumulation_steps: 4
+  beta: 0.04
+  bf16: true
+  gradient_checkpointing: true
+  quantization: none           # 4B bf16 fits; no QLoRA needed
+  lora:
+    r: 32
+    alpha: 64
+    dropout: 0.0
+
+vllm:
+  mode: colocate
+  # bf16 4B: ~8GB trainer copy + ~8GB engine copy inside the 0.45 slice
+  # leaves ~10GB KV; trainer side keeps ~14GB for backward.
+  gpu_memory_utilization: 0.45
+  max_model_length: 3072       # ~400-token v1 prompt + 2048 completion
