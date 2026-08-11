@@ -1,0 +1,31 @@
+# Full-set eval of the FINAL GRPO checkpoint (step 600), vp_chrf reward arm.
+# Base model = the SFT-merged policy on the box; adapter = GRPO LoRA.
+suite_name: grpo-chrf-final-eval
+task:
+  reward: vp_exact
+  dataset: data/finetune/task-data/validation.json
+  prompt: v1/vp_task_eval
+seed: 42
+pass_at_k:
+  ks: [1, 2, 4, 8, 16]
+  num_prompts: 669
+  samples_per_prompt: 16
+  pass_threshold: 0.85
+  temperature: 0.9
+  top_p: 1.0
+defaults:
+  max_new_tokens: 2048
+  enable_thinking: false
+  dtype: bfloat16
+  tensor_parallel_size: 1
+  gpu_memory_utilization: 0.85
+  max_model_len: 4096
+  trust_remote_code: false
+  chat: true
+models:
+  - name: /home/ubuntu/sanskrit/sft-merged
+    adapter: runs/grpo-chrf-qwen3-4b-sft/checkpoints/checkpoint-600
+report:
+  output_dir: prevals/outputs/prompt-v1
+  save_samples: true
+  print_table: true
