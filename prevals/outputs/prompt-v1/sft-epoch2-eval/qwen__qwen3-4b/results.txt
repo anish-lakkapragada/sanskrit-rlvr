@@ -1,0 +1,75 @@
+================================================================================
+ vp_exact base capability -- Qwen/Qwen3-4B
+================================================================================
+ suite          sft-epoch2-eval
+ model          Qwen/Qwen3-4B   adapter=runs-eval/adapter-final
+ reward         vp_exact  (pass iff >= 0.85)
+ dataset        data/finetune/task-data/validation.json   (669 held-out tasks)
+ prompt         v1/vp_task_eval.txt  v1   enable_thinking=False  chat=True
+ sampling       temperature=0.9  top_p=1.0  max_new_tokens=2048
+ subset         669 prompts x 16 samples = 10704 completions   seed=42
+ run            2026-08-11 08:48:39   NVIDIA A100-SXM4-40GB   vllm 0.25.1
+
+--------------------------------------------------------------------------------
+ PASS@K  (tag-extracted answer -- what training rewards)
+--------------------------------------------------------------------------------
+      k      pass@k          95% CI              solved
+  -----   ---------   --------------------   ----------
+      1      53.63%   [ 50.99%,   56.27%]            -
+      2      67.20%   [ 64.33%,   70.04%]            -
+      4      76.24%   [ 73.43%,   78.97%]            -
+      8      82.17%   [ 79.49%,   84.73%]            -
+     16      86.85%   [ 84.30%,   89.39%]    581 / 669
+
+  headroom  pass@16 / pass@1 = 1.6x
+  hits  5741 / 10704 completions (53.63%)
+  unbiased estimator (Chen et al. 2021); CI = 10k-resample bootstrap over prompts
+
+--------------------------------------------------------------------------------
+ EXACT@K  (gold form anywhere in the text -- format-blind)
+--------------------------------------------------------------------------------
+      k     exact@k          95% CI              solved
+  -----   ---------   --------------------   ----------
+      1      59.48%   [ 56.93%,   62.08%]            -
+      2      72.83%   [ 70.19%,   75.46%]            -
+      4      81.19%   [ 78.68%,   83.67%]            -
+      8      86.35%   [ 83.99%,   88.64%]            -
+     16      89.69%   [ 87.44%,   91.93%]    600 / 669
+
+  headroom  exact@16 / exact@1 = 1.5x
+  hits  6367 / 10704 completions (59.48%)
+  a large EXACT-over-PASS gap = knows the Sanskrit, fails the format
+
+--------------------------------------------------------------------------------
+ FORMAT COMPLIANCE
+--------------------------------------------------------------------------------
+ answer_tag_rate            87.5%
+ thinking_tag_rate          87.8%
+ hit max_new_tokens         12.5%    (1333 / 10704 truncated)
+ mean completion length     1019 tokens   (min 61, max 2048)
+
+--------------------------------------------------------------------------------
+ REWARD DISTRIBUTION
+--------------------------------------------------------------------------------
+ mean 0.5871   std 0.4463   min 0.000   max 1.000
+
+    0.00  |###########                                       1336
+    0.10  |##############################                    3627
+    0.80  |#                                                 2
+    0.95  |################################################  5739
+
+--------------------------------------------------------------------------------
+ TIMING
+--------------------------------------------------------------------------------
+ avg inference time / prompt         3.62 s      (16 completions per prompt)
+ avg inference time / completion     0.23 s
+ output throughput                   4498 tok/s
+ total generation wall clock       40m 24s
+ model load + engine init           1m 01s
+ total wall clock                  41m 25s
+
+--------------------------------------------------------------------------------
+ SELECTION SCREEN
+--------------------------------------------------------------------------------
+ [ ? ]   100 steps in <= 10 min       not measurable from eval -- needs a train run
+================================================================================
