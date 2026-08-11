@@ -1,0 +1,47 @@
+# Full post-SFT eval: Qwen3-4B + final epoch-2 LoRA adapter (sft-qwen3-4b-opus-r1,
+# post-train adapter) over the ENTIRE validation set -- all 669 held-out-dhatu
+# tasks x 16 samples at a 2048-token budget. Run on a separate box in
+# parallel with epoch-2 training; adapter is scp'd to runs-eval/checkpoint-491.
+#
+# Baselines for comparison (prevals/outputs/prompt-v1/):
+#   base Qwen/Qwen3-4B     pass@16 0.00%  (base-capability-sweep, 128 tasks)
+#   teacher claude-opus-5  pass@1 71.9% / pass@16 90.6%  (claude-api-sweep, 64 tasks)
+#   in-training probe      pass@1 35.9% / pass@4 56.3%   (16 tasks, 1024-token cap)
+#
+#   uv run python -m prevals.eval prevals/outputs/configs/v1/eval-config-sft-epoch1.yml
+
+suite_name: sft-epoch2-eval
+
+task:
+  reward: vp_exact
+  dataset: data/finetune/task-data/validation.json
+  prompt: v1/vp_task_eval
+
+seed: 42
+
+pass_at_k:
+  ks: [1, 2, 4, 8, 16]
+  num_prompts: 669            # the entire validation set
+  samples_per_prompt: 16
+  pass_threshold: 0.85
+  temperature: 0.9
+  top_p: 1.0
+
+defaults:
+  max_new_tokens: 2048
+  enable_thinking: false
+  dtype: bfloat16
+  tensor_parallel_size: 1
+  gpu_memory_utilization: 0.85
+  max_model_len: 4096
+  trust_remote_code: false
+  chat: true
+
+models:
+  - name: Qwen/Qwen3-4B
+    adapter: runs-eval/adapter-final
+
+report:
+  output_dir: prevals/outputs/prompt-v1
+  save_samples: true
+  print_table: true
