@@ -1,0 +1,41 @@
+# GRPO round-3 ACCEPTANCE PROBE: the merged 20M-67% policy, standalone vLLM
+# engine, seeded 64-prompt subset x 16 samples. Must reproduce the subset
+# expectation computed from the arm's full 669x16 eval:
+#   pass@1 ~ 44.73%  pass@16 ~ 84.38%  (tolerance ~ +/-6pp / +/-9pp)
+# The round-2 failure mode (polluted config / broken save) reads ~17%/~30%
+# with >20% truncation and 3x-length rambling -- unmistakable.
+
+suite_name: grpo-r3-acceptance
+
+task:
+  reward: vp_exact
+  dataset: data/data-mixture/eval/vp-eval.json
+  prompt: v1/vp_task_eval
+
+seed: 42
+
+pass_at_k:
+  ks: [1, 4, 8, 16]
+  num_prompts: 64
+  samples_per_prompt: 16
+  pass_threshold: 0.85
+  temperature: 0.9
+  top_p: 1.0
+
+defaults:
+  max_new_tokens: 4096
+  enable_thinking: false
+  dtype: bfloat16
+  tensor_parallel_size: 1
+  gpu_memory_utilization: 0.85
+  max_model_len: 8192
+  trust_remote_code: false
+  chat: true
+
+models:
+  - name: /home/ubuntu/sanskrit/tb20m-samayik67-merged-eval
+
+report:
+  output_dir: prevals/outputs/grpo-r3
+  save_samples: true
+  print_table: true

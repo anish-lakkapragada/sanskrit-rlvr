@@ -1,0 +1,75 @@
+================================================================================
+ vp_exact base capability -- /home/ubuntu/sanskrit/mix2-merged
+================================================================================
+ suite          grpo2-exact-best-vp-eval
+ model          /home/ubuntu/sanskrit/mix2-merged   adapter=runs/grpo-exact-qwen3-4b-sft-mix-upsample-2/checkpoints/checkpoint-594
+ reward         vp_exact  (pass iff >= 0.85)
+ dataset        data/finetune/task-data/validation.json   (669 held-out tasks)
+ prompt         v1/vp_task_eval.txt  v1   enable_thinking=False  chat=True
+ sampling       temperature=0.9  top_p=1.0  max_new_tokens=4096
+ subset         669 prompts x 16 samples = 10704 completions   seed=42
+ run            2026-08-22 05:54:24   NVIDIA A100-SXM4-40GB   vllm 0.19.1
+
+--------------------------------------------------------------------------------
+ PASS@K  (tag-extracted answer -- what training rewards)
+--------------------------------------------------------------------------------
+      k      pass@k          95% CI              solved
+  -----   ---------   --------------------   ----------
+      1      18.29%   [ 16.64%,   19.98%]            -
+      2      29.16%   [ 26.82%,   31.52%]            -
+      4      41.69%   [ 38.74%,   44.55%]            -
+      8      53.93%   [ 50.68%,   57.11%]            -
+     16      65.02%   [ 61.43%,   68.61%]    435 / 669
+
+  headroom  pass@16 / pass@1 = 3.6x
+  hits  1958 / 10704 completions (18.29%)
+  unbiased estimator (Chen et al. 2021); CI = 10k-resample bootstrap over prompts
+
+--------------------------------------------------------------------------------
+ EXACT@K  (gold form anywhere in the text -- format-blind)
+--------------------------------------------------------------------------------
+      k     exact@k          95% CI              solved
+  -----   ---------   --------------------   ----------
+      1      29.74%   [ 27.65%,   31.84%]            -
+      2      43.96%   [ 41.38%,   46.55%]            -
+      4      58.45%   [ 55.60%,   61.31%]            -
+      8      71.20%   [ 68.31%,   74.10%]            -
+     16      81.61%   [ 78.62%,   84.60%]    546 / 669
+
+  headroom  exact@16 / exact@1 = 2.7x
+  hits  3183 / 10704 completions (29.74%)
+  a large EXACT-over-PASS gap = knows the Sanskrit, fails the format
+
+--------------------------------------------------------------------------------
+ FORMAT COMPLIANCE
+--------------------------------------------------------------------------------
+ answer_tag_rate            34.1%
+ thinking_tag_rate          37.9%
+ hit max_new_tokens         66.3%    (7101 / 10704 truncated)
+ mean completion length     2997 tokens   (min 68, max 4096)
+
+--------------------------------------------------------------------------------
+ REWARD DISTRIBUTION
+--------------------------------------------------------------------------------
+ mean 0.2052   std 0.3788   min 0.000   max 1.000
+
+    0.00  |################################################  7127
+    0.10  |###########                                       1619
+    0.80  |#                                                 26
+    0.95  |#############                                     1932
+
+--------------------------------------------------------------------------------
+ TIMING
+--------------------------------------------------------------------------------
+ avg inference time / prompt        20.76 s      (16 completions per prompt)
+ avg inference time / completion     1.30 s
+ output throughput                   2310 tok/s
+ total generation wall clock       231m 30s
+ model load + engine init              42s
+ total wall clock                  232m 12s
+
+--------------------------------------------------------------------------------
+ SELECTION SCREEN
+--------------------------------------------------------------------------------
+ [ ? ]   100 steps in <= 10 min       not measurable from eval -- needs a train run
+================================================================================

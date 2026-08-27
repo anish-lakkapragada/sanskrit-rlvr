@@ -48,6 +48,12 @@ from finetune.rewards import get as get_reward
 _THINKING_RE = re.compile(r"<thinking>(.*?)</thinking>", re.DOTALL)
 BOOTSTRAP_RESAMPLES = 10_000
 
+# A100 boxes whose flashinfer cubins don't match the installed vLLM build fall
+# back to a ninja JIT that isn't available; the built-in backends are fine.
+# (Model subprocesses inherit these.)
+os.environ.setdefault("VLLM_ATTENTION_BACKEND", "FLASH_ATTN")
+os.environ.setdefault("VLLM_USE_FLASHINFER_SAMPLER", "0")
+
 
 # --------------------------------------------------------------------------
 # Config
@@ -128,7 +134,12 @@ def generate_vllm(model_cfg: dict, prompts: list[str], pk: dict, seed: int):
         adapter_dir = ROOT / model_cfg["adapter"]
         # vLLM's default max_lora_rank is 16; size it to the adapter's actual r.
         rank = json.loads((adapter_dir / "adapter_config.json").read_text()).get("r", 16)
-        lora_kwargs = {"enable_lora": True, "max_lora_rank": max(rank, 16)}
+        # enforce_eager with LoRA: torch.compile's cache packaging introspects
+        # LoRA-traced code and dies with "OSError: could not get source code"
+        # on the torch 2.11+cu128 / vllm +cu129 stack. Merged/plain models
+        # still compile (fast path); adapter evals run eager.
+        lora_kwargs = {"enable_lora": True, "max_lora_rank": max(rank, 16),
+                       "enforce_eager": True}
         lora_request = LoRARequest("adapter", 1, str(adapter_dir))
 
     llm = LLM(

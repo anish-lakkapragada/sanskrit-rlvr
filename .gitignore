@@ -1,6 +1,7 @@
 # Secrets
 .env
 
+
 # Python-generated files
 __pycache__/
 *.py[oc]
@@ -20,3 +21,20 @@ runs/
 data/finetune/sft/raw/
 data/finetune/sft/*.smoke.json
 runs-rescued/
+
+# scratch photo experiments
+misc/photos/
+
+# Mixture-campaign run artifacts: model weights, checkpoints, TB events (16G).
+# The eval-report JSONs inside (evals-final/, finals/, data-mixture summaries)
+# are force-added explicitly.
+runs-final/
+
+# Derived training shards — regenerable via misc/data/make_data_mixture.py and
+# misc/data/make_mixed_sft_data.py from the committed sft-standard/ + sft-r1/
+# corpora; md5s pinned in data/data-mixture/manifest.json. Several files exceed
+# GitHub's 100MB hard limit.
+data/data-mixture/tb10m/
+data/data-mixture/tb15m/
+data/data-mixture/tb20m/
+data/finetune/sft-upsample-mix/

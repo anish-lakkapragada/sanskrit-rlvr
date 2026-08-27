@@ -1,0 +1,42 @@
+# GRPO round-3 STEP-54 GATE: the first saved checkpoint, evaluated in a
+# STANDALONE vLLM engine on a separate box (round-2 lesson: in-training probes
+# measure the training engine, not the artifact; a broken save reads ~17%
+# pass@1 with >20% truncation and 3x-length rambling).
+# Healthy bar: at or above the step-0 baseline (pass@1 44.3 / pass@8 81.3 on
+# this same seeded 64-prompt subset), normal lengths, truncation < 5%.
+
+suite_name: grpo-r3-gate54
+
+task:
+  reward: vp_exact
+  dataset: data/data-mixture/eval/vp-eval.json
+  prompt: v1/vp_task_eval
+
+seed: 42
+
+pass_at_k:
+  ks: [1, 4, 8, 16]
+  num_prompts: 64
+  samples_per_prompt: 16
+  pass_threshold: 0.85
+  temperature: 0.9
+  top_p: 1.0
+
+defaults:
+  max_new_tokens: 4096
+  enable_thinking: false
+  dtype: bfloat16
+  tensor_parallel_size: 1
+  gpu_memory_utilization: 0.85
+  max_model_len: 8192
+  trust_remote_code: false
+  chat: true
+
+models:
+  - name: /home/ubuntu/sanskrit/tb20m-samayik67-merged-eval
+    adapter: ckpt-54
+
+report:
+  output_dir: prevals/outputs/grpo-r3
+  save_samples: true
+  print_table: true

@@ -1,0 +1,59 @@
+# Fixed-token-budget SFT mixture: 33% samayik (EN->SA translation) / 67% Opus
+# R1 morphology traces BY TOKENS (prompt+completion, Qwen3-4B chat-template
+# rendering) at a 20M-token budget. One arm of the 5-mix x 3-budget grid
+# (samayik token share {100,67,50,33,0}% x {10,15,20}M tokens), all LoRA r=64.
+#
+# Corpus: 48,755 rows / 20,000,190 tokens (33.0% samayik achieved) from
+# misc/data/make_data_mixture.py -- contamination-asserted against the two eval
+# files shipped alongside it (data/data-mixture/eval/samayik-eval.json, 750 pairs,
+# chrF axis; data/data-mixture/eval/vp-eval.json, 669 held-out-dhatu tasks, pass@16
+# axis). Composition: 6.6M samayik tokens (0.78x the 8.49M-token pool) + 13.4M trace tokens (1.63x the 8.20M-token pool).
+#
+# TOKEN-BUDGET DESIGN (deliberately differs from the step-matched upsample sweep):
+#  * max_steps 0 + epochs 1.0: the corpus is built to the token budget, so ONE
+#    EPOCH == the budget. Mixture is not confounded with tokens seen, unlike the
+#    5000-step sweep where arms processed 20M-59M real tokens each.
+#  * ~3,047 optimizer steps at effective batch 16 (~3.8 h on 1xA100 at
+#    the sweep's measured throughput).
+#  * eval-loss holdouts (val-translation/val-morphology, whole-task + duplicate-
+#    sibling excluded from every mixture) drive best-checkpoint selection; both
+#    curves tracked in every arm.
+#
+#   uv run python -m finetune.sft --config configs/sft-data-mixture/token-budget-20m/mixture-samayik-33.yml --dry-run
+
+run_name: sft-qwen3-4b-tb20m-samayik33
+model: Qwen/Qwen3-4B
+reward: vp_exact                                      # unused by SFT; keeps config valid
+dataset: data/finetune/task-data/finetune.json        # unused by SFT; keeps config valid
+eval_dataset: data/finetune/task-data/validation.json # unused (in-train probes off)
+seed: 42
+logging_every: 10
+
+train:
+  bf16: true
+  gradient_checkpointing: true
+  lora:
+    r: 64
+    alpha: 128                  # alpha = 2r
+    dropout: 0.0
+
+sft:
+  dataset: data/data-mixture/tb20m/samayik33.json
+  prompt_template: v1/vp_task_eval.txt   # documents provenance (in-train probes off)
+  max_steps: 0                           # 0 = epochs governs; one epoch IS the token budget
+  epochs: 1.0
+  learning_rate: 2.0e-4
+  per_device_train_batch_size: 4
+  gradient_accumulation_steps: 4         # effective batch 16
+  max_seq_len: 4096
+  warmup_ratio: 0.02                     # 2% of steps, then flat
+  weight_decay: 0.01
+  lr_scheduler: constant_with_warmup
+  val_datasets:
+    translation: data/data-mixture/val-translation.json
+    morphology: data/data-mixture/val-morphology.json
+  eval_every: 250
+  save_every: 500
+  eval_prompts_per_epoch: 0              # generation probes off; val loss is the signal
+  eval_samples_per_prompt: 4
+  eval_max_new_tokens: 1024

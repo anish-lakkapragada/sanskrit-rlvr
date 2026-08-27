@@ -1,0 +1,56 @@
+# Mixed translation+morphology SFT, Opus reasoning traces upsampled 1x.
+# Corpus: 54877 rows (13.8% morphology) from misc/data/make_mixed_sft_data.py.
+#
+# One arm of a 7-point mixture sweep {0.5,1,2,4,6,8,10}x tracing the SFT
+# trade-off frontier between EN->SA translation (retained capability) and the
+# vidyut-prakriya dhatu task (target capability).
+#
+# CONVERGENCE DESIGN (differs deliberately from the r1/standard SFT recipe):
+#  * max_steps 5000 for EVERY arm -> compute-matched; corpus size varies with the
+#    ratio, so equal epochs would confound mixture with compute. Here 5000 steps
+#    = 1.46 epochs over this corpus.
+#  * constant_with_warmup, NOT cosine. Cosine decay to ~0 manufactures a flat
+#    loss tail, which is exactly what made "did r1 converge?" unanswerable. With a
+#    flat LR, a flat loss curve is evidence of convergence rather than annealing.
+#  * per-task held-out val loss every 250 steps (eval_translation_loss /
+#    eval_morphology_loss) + a checkpoint every 500 steps, so the best point can be
+#    chosen after the fact instead of guessed in advance.
+#
+#   uv run python -m finetune.sft --config configs/upsample-mix/sft-mix-upsample-1.yml --dry-run
+
+run_name: sft-qwen3-4b-mix-upsample-1
+model: Qwen/Qwen3-4B
+reward: vp_exact                                      # unused by SFT; keeps config valid
+dataset: data/finetune/task-data/finetune.json        # unused by SFT; keeps config valid
+eval_dataset: data/finetune/task-data/validation.json # unused (in-train probes off)
+seed: 42
+logging_every: 10
+
+train:
+  bf16: true
+  gradient_checkpointing: true
+  lora:
+    r: 64                       # 2x the r1 rank: this corpus carries two tasks
+    alpha: 128                  # alpha = 2r
+    dropout: 0.0
+
+sft:
+  dataset: data/finetune/sft-upsample-mix/mix-upsample-1.json
+  prompt_template: v1/vp_task_eval.txt   # documents provenance (in-train probes off)
+  max_steps: 5000                        # fixed budget; overrides epochs
+  epochs: 1.0                            # ignored when max_steps > 0
+  learning_rate: 2.0e-4
+  per_device_train_batch_size: 4
+  gradient_accumulation_steps: 4         # effective batch 16
+  max_seq_len: 4096
+  warmup_ratio: 0.02                     # ~100 steps of warmup, then flat
+  weight_decay: 0.01
+  lr_scheduler: constant_with_warmup
+  val_datasets:
+    translation: data/finetune/sft-upsample-mix/val-translation.json
+    morphology: data/finetune/sft-upsample-mix/val-morphology.json
+  eval_every: 250
+  save_every: 500
+  eval_prompts_per_epoch: 0              # generation probes off; val loss is the signal
+  eval_samples_per_prompt: 4
+  eval_max_new_tokens: 1024

@@ -1,0 +1,44 @@
+# Standard translation-SFT baseline: Qwen3-4B LoRA on the Samayik train pairs
+# (47,576 = full corpus minus everything sharing a normalized EN/SA sentence
+# with either 750-pair validation set; built by misc/data/make_standard_sft_data.py).
+# Plain <translation> targets, no thinking traces, completion-only loss.
+# 1 epoch per baseline spec.
+#
+#   uv run python -m finetune.sft --config configs/sft-standard/sft-standard-samayik.yml --dry-run
+#   ~/vt/bin/python -m finetune.sft --config configs/sft-standard/sft-standard-samayik.yml
+#
+# Post-training eval: misc/final_translation_eval.py (the two 750-pair
+# contamination-free validation sets, temp 0.2, max_new_tokens 4096).
+# NOT comparable to the pre-rework runs-rescued/*/evals/final-*.json files,
+# which drew 500 seed-42 pairs from the full corpora.
+
+run_name: sft-qwen3-4b-standard-samayik
+model: Qwen/Qwen3-4B
+reward: vp_exact                                      # unused by SFT; keeps config valid
+dataset: data/finetune/task-data/finetune.json        # unused by SFT; keeps config valid
+eval_dataset: data/finetune/task-data/validation.json # unused (probes disabled)
+seed: 42
+logging_every: 5               # dense TB points (loss/lr/grad_norm every 5 steps)
+
+train:
+  bf16: true
+  gradient_checkpointing: true
+  lora:
+    r: 32
+    alpha: 64
+    dropout: 0.0
+
+sft:
+  dataset: data/finetune/sft-standard/samayik_finetune.json
+  prompt_template: v0/translation.txt    # documents the corpus template (probes off)
+  epochs: 1.0
+  learning_rate: 2.0e-4
+  per_device_train_batch_size: 4
+  gradient_accumulation_steps: 4         # effective batch 16
+  max_seq_len: 4096
+  warmup_ratio: 0.05
+  weight_decay: 0.01
+  lr_scheduler: cosine
+  eval_prompts_per_epoch: 0              # dhatu pass@k probe is meaningless here
+  eval_samples_per_prompt: 4
+  eval_max_new_tokens: 1024

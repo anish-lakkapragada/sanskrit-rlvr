@@ -1,0 +1,35 @@
+# SFT distillation corpus: Claude Opus 5 rejection-sampled over ALL 6,018
+# training tasks (data/finetune/task-data/finetune.json; 2,006 training
+# dhatus -- validation dhatus never touched).
+#
+# Protocol (validated by prevals/outputs/prompt-v1/claude-api-sweep/):
+#   - v1 zero-shot glossed prompt, thinking disabled -> full derivation lands
+#     in the visible <thinking> block (Opus 5's raw thinking is never returned
+#     by the API, so the in-text trace is the only distillable channel)
+#   - 2 samples/prompt at default sampling (Opus 5 rejects temperature)
+#   - keep iff vp_exact reward >= 1.0 (correct answer AND clean tag format)
+#     and not truncated; measured teacher pass@1 at this cap is 71.9%
+#   - expected: ~12k requests, ~$175 batched, ~8.5k kept traces, ~80% of
+#     tasks covered (pass@2 ~= 80.8%)
+#
+# Run (repo root):
+#   uv run python misc/data/generate_sft_data.py misc/data/claude-opus-5-sft.yml --dry-run
+#   uv run python misc/data/generate_sft_data.py misc/data/claude-opus-5-sft.yml --smoke
+#   uv run python misc/data/generate_sft_data.py misc/data/claude-opus-5-sft.yml
+
+model: claude-opus-5
+dataset: data/finetune/task-data/finetune.json
+prompt_template: v1/vp_task_eval.txt      # relative to prompts/
+samples_per_prompt: 2
+max_new_tokens: 2048
+anthropic_thinking: disabled              # omit | disabled | adaptive
+
+reward: vp_exact                          # key in finetune.rewards.REGISTRY
+min_reward: 1.0                           # 1.0 = correct answer + perfect format
+discard_truncated: true                   # drop stop_reason == max_tokens outright
+dedupe: true                              # drop byte-identical completions per task
+
+shard_size: 10000                         # requests per Batches-API batch
+output: data/finetune/sft-r1/claude-opus-5.json
+raw_dir: data/finetune/sft-r1/raw            # per-shard result cache (jsonl)
+state: data/finetune/sft-r1/raw/claude-opus-5.state.json

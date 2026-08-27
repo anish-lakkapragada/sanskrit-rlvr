@@ -1,0 +1,64 @@
+# GRPO round 2, vp_chrf (shaped) reward, launched from the MIXTURE SFT checkpoint.
+#
+# Round 1 started from the morphology-only policy (SFT R1 e2) and bought +1.34 pp
+# pass@16 in 600 steps. This tests whether the mixture checkpoint is a better RL
+# launchpad: a policy that has not collapsed onto memorized Opus phrasings should
+# produce more diverse rollouts -> fewer zero-variance groups -> more gradient.
+# Round 1 sat at frac_reward_zero_std 0.2467; that scalar is the key diagnostic.
+#
+# Starting point: runs-rescued/sft-qwen3-4b-mix-upsample-2/adapter-best (step 4500,
+# LoRA r=64) merged into Qwen/Qwen3-4B -> ~/sanskrit/mix2-merged on the box.
+#   base rates to beat: pass@1 61.01 / pass@16 92.08 / samayik chrF 39.21
+#
+#   uv run python -m finetune.grpo --config configs/grpo-from-upsample-2/grpo-chrf-mix-upsample-2.yml --dry-run
+
+run_name: grpo-chrf-qwen3-4b-sft-mix-upsample-2
+model: /home/ubuntu/sanskrit/mix2-merged
+reward: vp_chrf
+eval_reward: vp_exact          # probe scored with exact match in BOTH arms
+prompt_template: v1/vp_task_eval.txt    # template the mixture SFT was trained on
+dataset: data/finetune/task-data/finetune.json        # 6,018 tasks / 2,006 dhatus
+eval_dataset: data/finetune/task-data/validation.json # 669 tasks / 223 dhatus, disjoint by dhatu
+iterations: 1080               # ~10h on 1x A100 at the mix2 policy's ~30-35 s/step
+checkpoint_every: 54           # -> exactly 20 checkpoints for best-of-20 selection
+logging_every: 5
+seed: 42
+
+pass_at_k:
+  ks: [1, 4, 8]
+  num_prompts: 64              # gate + liveness only (user: no heavy in-training probes)
+  samples_per_prompt: 8
+  pass_threshold: 0.85         # with vp_exact == answer exactly matches a gold form
+  temperature: 0.9
+
+samayik_eval:
+  path: data/eval/samayik.json
+  num_samples: 20
+  max_new_tokens: 2048         # 512 measured truncation, not translation
+  temperature: 0.2
+
+generation:
+  num_generations: 8
+  max_completion_length: 4096  # truncation -> format fail -> reward 0.0.
+                               # 19.4% at 2048, 8.1% at 3072, 0.4% at 4096
+  temperature: 0.9
+
+train:
+  learning_rate: 1.0e-05
+  per_device_train_batch_size: 1   # micro-batch 1: halves the ~5GB fp32 logits-cast spike that OOMed 40GB A100s
+  gradient_accumulation_steps: 8   # effective batch 8 = one 8-generation group/step (unchanged)
+  beta: 0.04
+  bf16: true
+  gradient_checkpointing: true
+  quantization: none
+  lora:
+    r: 32                      # LoRA-Without-Regret: RL wants small rank (also matches round-1 GRPO)
+    alpha: 64
+    dropout: 0.0
+
+vllm:
+  mode: colocate
+  gpu_memory_utilization: 0.35 # 40GB A100: leave ~8GB free for trainer fp32 logits cast; KV for 8x5120 still fits
+  max_model_length: 5120       # 4096 completion + ~372-token v1 prompt + headroom
+# TRAINS ON A100 ONLY: TRL-colocate on H100 distorts this policy (61%->19% at step 0;
+# see memory/diag 2026-08-20). Step-0 probe must read >=0.55 pass@1 or the run aborts.

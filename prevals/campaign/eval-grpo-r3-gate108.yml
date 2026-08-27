@@ -1,0 +1,41 @@
+# GRPO round-3 STEP-108 GATE (upgraded from step-54 after Lambda replaced the
+# first gate VM mid-eval): the latest saved checkpoint in a STANDALONE vLLM
+# engine. In-training probe at step 108 read pass@1 ~50%; healthy standalone
+# bar is at-or-above the step-0 baseline (44.3/81.3) with truncation < 5%.
+# Round-2 failure signature: ~17% pass@1, >20% truncation, 3x-length rambling.
+
+suite_name: grpo-r3-gate108
+
+task:
+  reward: vp_exact
+  dataset: data/data-mixture/eval/vp-eval.json
+  prompt: v1/vp_task_eval
+
+seed: 42
+
+pass_at_k:
+  ks: [1, 4, 8, 16]
+  num_prompts: 64
+  samples_per_prompt: 16
+  pass_threshold: 0.85
+  temperature: 0.9
+  top_p: 1.0
+
+defaults:
+  max_new_tokens: 4096
+  enable_thinking: false
+  dtype: bfloat16
+  tensor_parallel_size: 1
+  gpu_memory_utilization: 0.85
+  max_model_len: 8192
+  trust_remote_code: false
+  chat: true
+
+models:
+  - name: /home/ubuntu/sanskrit/tb20m-samayik67-merged-eval
+    adapter: ckpt-108
+
+report:
+  output_dir: prevals/outputs/grpo-r3
+  save_samples: true
+  print_table: true

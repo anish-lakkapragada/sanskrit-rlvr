@@ -5,13 +5,13 @@
 # ///
 """Generate tinanta fine-tune/eval datasets from the Dhatupatha.
 
-For every usable dhatu in data/finetune/vidyut_dhatupatha_5.tsv, sample
+For every usable dhatu in data/finetune/task-data/vidyut_dhatupatha_5.tsv, sample
 PER_DHATU random coordinate tuples (lakara x prayoga x purusha x vacana),
 derive the gold forms with vidyut-prakriya, transliterate to Devanagari with
-vidyut-lipi, and split dhatu-wise into data/finetune.json (90%) and
-data/evaluation.json (10%). Fully deterministic given SEED.
+vidyut-lipi, and split dhatu-wise into data/finetune/task-data/finetune.json (90%) and
+data/finetune/task-data/validation.json (10%). Fully deterministic given SEED.
 
-Usage:  uv run scripts/generate_dataset.py
+Usage:  uv run misc/data/generate_dataset.py
 """
 
 import json
@@ -28,11 +28,11 @@ from vidyut.prakriya import (
     Data, Dhatu, Gana, Lakara, Pada, Prayoga, Purusha, Vacana, Vyakarana,
 )
 
-ROOT = Path(__file__).resolve().parent.parent
-TSV = ROOT / "data" / "finetune" / "vidyut_dhatupatha_5.tsv"
-OUT_TRAIN = ROOT / "data" / "finetune.json"
-OUT_EVAL = ROOT / "data" / "evaluation.json"
-OUT_META = ROOT / "data" / "dataset_meta.json"
+ROOT = Path(__file__).resolve().parents[2]
+TSV = ROOT / "data" / "finetune" / "task-data" / "vidyut_dhatupatha_5.tsv"
+OUT_TRAIN = ROOT / "data" / "finetune" / "task-data" / "finetune.json"
+OUT_EVAL = ROOT / "data" / "finetune" / "task-data" / "validation.json"
+OUT_META = ROOT / "data" / "finetune" / "task-data" / "metadata.json"
 
 SEED = 42
 PER_DHATU = 3

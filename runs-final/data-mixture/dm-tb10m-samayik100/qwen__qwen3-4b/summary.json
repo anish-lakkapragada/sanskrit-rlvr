@@ -1,0 +1,81 @@
+{
+  "model": "Qwen/Qwen3-4B",
+  "resolved_id": "Qwen/Qwen3-4B",
+  "adapter": "runs/sft-qwen3-4b-tb10m-samayik100/adapter",
+  "params_b": 4.022468096,
+  "chat": true,
+  "pass_at_k": {
+    "1": 0.0,
+    "2": 0.0,
+    "4": 0.0,
+    "8": 0.0,
+    "16": 0.0
+  },
+  "exact_at_k": {
+    "1": 0.0,
+    "2": 0.0,
+    "4": 0.0,
+    "8": 0.0,
+    "16": 0.0
+  },
+  "ci95_pass": {
+    "1": [
+      0.0,
+      0.0
+    ],
+    "2": [
+      0.0,
+      0.0
+    ],
+    "4": [
+      0.0,
+      0.0
+    ],
+    "8": [
+      0.0,
+      0.0
+    ],
+    "16": [
+      0.0,
+      0.0
+    ]
+  },
+  "ci95_exact": {
+    "1": [
+      0.0,
+      0.0
+    ],
+    "2": [
+      0.0,
+      0.0
+    ],
+    "4": [
+      0.0,
+      0.0
+    ],
+    "8": [
+      0.0,
+      0.0
+    ],
+    "16": [
+      0.0,
+      0.0
+    ]
+  },
+  "answer_tag_rate": 0.8691143497757847,
+  "thinking_tag_rate": 0.0,
+  "truncated_frac": 0.0010276532137518685,
+  "mean_tokens": 88.08398729446935,
+  "solved_tasks": 0,
+  "solved_tasks_exact": 0,
+  "num_prompts": 669,
+  "samples_per_prompt": 16,
+  "timing": {
+    "load_s": 54.41859478299921,
+    "gen_s": 258.5693432650005,
+    "s_per_prompt": 0.38650126048580047,
+    "s_per_completion": 0.02415632878036253,
+    "output_tok_s": 3646.4144901884147
+  },
+  "screen_passed": null
+}

@@ -1,0 +1,36 @@
+# GRPO round-3 FINAL FULL-SET EVAL: FINAL step-731 adapter (full-epoch endpoint, the plot point).
+# 669 x 16, protocol identical to the campaign table (A100, vp_exact >= 0.85).
+suite_name: grpo-r3-final731
+
+task:
+  reward: vp_exact
+  dataset: data/data-mixture/eval/vp-eval.json
+  prompt: v1/vp_task_eval
+
+seed: 42
+
+pass_at_k:
+  ks: [1, 2, 4, 8, 16]
+  num_prompts: 669
+  samples_per_prompt: 16
+  pass_threshold: 0.85
+  temperature: 0.9
+  top_p: 1.0
+
+defaults:
+  max_new_tokens: 4096
+  enable_thinking: false
+  dtype: bfloat16
+  tensor_parallel_size: 1
+  gpu_memory_utilization: 0.85
+  max_model_len: 8192
+  trust_remote_code: false
+  chat: true
+
+models:
+  - name: /home/ubuntu/sanskrit/grpo-r3-final-merged
+
+report:
+  output_dir: prevals/outputs/grpo-r3
+  save_samples: true
+  print_table: true

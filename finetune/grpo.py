@@ -43,12 +43,20 @@ def _git_sha() -> str | None:
         return None
 
 
-def setup_run_dir(cfg: RunConfig, config_path: str, force: bool) -> Path:
+def setup_run_dir(cfg: RunConfig, config_path: str, force: bool,
+                  resume: bool = False) -> Path:
     run_dir = cfg.run_dir
+    # Only rank 0 owns the run dir. Under multi-GPU torchrun the ranks race:
+    # rank 0 creates the dir below while a slower rank would hit the
+    # exists-check and sys.exit, killing the whole elastic launch.
+    if not is_main_process():
+        return run_dir
     if run_dir.exists():
-        if not force:
+        if resume:
+            pass  # keep everything: checkpoints, evals, tensorboard
+        elif not force:
             sys.exit(f"run dir already exists: {run_dir} (pass --force to overwrite)")
-        if is_main_process():
+        else:
             import shutil
 
             shutil.rmtree(run_dir)
@@ -67,12 +75,106 @@ def setup_run_dir(cfg: RunConfig, config_path: str, force: bool) -> Path:
     return run_dir
 
 
-def make_eval_suite(cfg: RunConfig, generate_fn, writer, run_dir: Path):
-    """Returns eval_suite(step): runs Pass@K + Samayik chrF, writes
-    runs/<run>/evals/step-<N>/ and TensorBoard scalars."""
+def make_val_loss_fn(trainer, tokenizer, cfg: RunConfig):
+    """val_loss_fn(step) -> {name: token-weighted mean completion NLL}.
+
+    Teacher-forced completion-only cross-entropy on held-out SFT-schema pairs,
+    rendered through the SAME pipeline as SFT training (build_text_pairs), so
+    these curves are directly comparable to the SFT eval_<name>_loss curves.
+    Diagnostics only: on the dhatu task, lower trace-NLL does NOT imply better
+    derivation accuracy (it anti-predicted pass@1 in the mixture sweep)."""
+    import torch
+
+    from finetune.data import load_sft_dataset
+    from finetune.sft import build_text_pairs
+
+    # Rows longer than this are skipped: the fp32 CE logits for one long row
+    # (~4k tok x 152k vocab) need ~2.5GB transient, which THRASHES the
+    # allocator on a fragmented near-full GPU mid-training (step-108 hang:
+    # 79/80GB in use, probe stuck in cudaMalloc while 7 ranks burned toward
+    # the NCCL timeout). Deterministic cap -> same rows every checkpoint.
+    MAX_PROBE_TOKENS = 2048
+    sets = {}
+    for name, path in cfg.train.val_datasets.items():
+        rows, skipped = [], 0
+        for p in build_text_pairs(tokenizer, load_sft_dataset(path)):
+            ids_p = tokenizer(p["prompt"])["input_ids"]
+            ids_c = tokenizer(p["completion"])["input_ids"]
+            if len(ids_p) + len(ids_c) > MAX_PROBE_TOKENS:
+                skipped += 1
+                continue
+            rows.append((ids_p, ids_c))
+        sets[name] = rows
+        print(f"[setup] val-loss '{name}': {len(rows)} pairs from {path}"
+              + (f" ({skipped} rows over {MAX_PROBE_TOKENS} tok skipped)" if skipped else ""))
+
+    pad = tokenizer.pad_token_id or tokenizer.eos_token_id
+
+    def val_loss(step: int) -> dict:
+        model = trainer.model
+        was_training = model.training
+        model.eval()
+        torch.cuda.empty_cache()   # reclaim fragmented blocks before the probe
+        out = {}
+        with torch.no_grad():
+            for name, rows in sets.items():
+                total, ntok = 0.0, 0
+                # batch 4 under the 2048-token cap: max fp32 CE spike ~5GB,
+                # safe on 80GB ranks (batch 8 uncapped OOM'd a 40GB card).
+                # Progress prints keep the log growing so the stall alarm
+                # doesn't false-positive during the probe's silent phase.
+                B = 4
+                for i in range(0, len(rows), B):
+                    if i % (B * 50) == 0:
+                        print(f"[val-loss] {name} {i}/{len(rows)}", flush=True)
+                    chunk = rows[i:i + B]
+                    width = max(len(p) + len(c) for p, c in chunk)
+                    ids, labels, attn = [], [], []
+                    for p, c in chunk:
+                        fill = width - len(p) - len(c)
+                        ids.append(p + c + [pad] * fill)
+                        labels.append([-100] * len(p) + c + [-100] * fill)
+                        attn.append([1] * (len(p) + len(c)) + [0] * fill)
+                    dev = model.device
+                    lab = torch.tensor(labels, device=dev)
+                    loss = model(input_ids=torch.tensor(ids, device=dev),
+                                 attention_mask=torch.tensor(attn, device=dev),
+                                 labels=lab).loss
+                    # weight by completion-token count (off by <=1/row vs the
+                    # shifted denominator -- constant across steps, fine for a
+                    # drift curve)
+                    n = int((lab != -100).sum())
+                    total += float(loss) * n
+                    ntok += n
+                out[name] = total / max(ntok, 1)
+        if was_training:
+            model.train()
+        return out
+
+    def safe_val_loss(step: int) -> dict:
+        # A diagnostic must never kill or hang training: on any CUDA/alloc
+        # failure, log and skip this checkpoint's val losses.
+        try:
+            return val_loss(step)
+        except (torch.cuda.OutOfMemoryError, RuntimeError) as e:
+            torch.cuda.empty_cache()
+            print(f"[val-loss step {step}] SKIPPED: {type(e).__name__}: {e}")
+            return {}
+
+    return safe_val_loss
+
+
+def make_eval_suite(cfg: RunConfig, generate_fn, writer, run_dir: Path,
+                    val_loss_fn=None):
+    """Returns eval_suite(step): runs Pass@K + Samayik chrF (+ teacher-forced
+    val losses when configured), writes runs/<run>/evals/step-<N>/ and
+    TensorBoard scalars."""
     vp_tasks = load_vp_tasks(cfg.eval_dataset)
     samayik = load_samayik_pairs(cfg.samayik_eval.path)
-    reward_fn = rewards.get(cfg.reward)  # unwrapped: eval rewards stay out of training history
+    # Unwrapped: eval rewards stay out of training history. `eval_reward` lets a
+    # shaped training reward (vp_chrf) still be PROBED with vp_exact, so the
+    # checkpoint-selection curve matches the metric that gets reported.
+    reward_fn = rewards.get(cfg.eval_reward or cfg.reward)
 
     def eval_suite(step: int) -> None:
         out = run_dir / "evals" / f"step-{step:07d}"
@@ -124,9 +226,16 @@ def make_eval_suite(cfg: RunConfig, generate_fn, writer, run_dir: Path):
         snap = pk_metrics["reward_snapshot"]
         if snap["mean"] is not None:
             writer.add_scalar("eval/reward_mean", snap["mean"], step)
+        vl = val_loss_fn(step) if val_loss_fn is not None else {}
+        if vl:
+            (out / "val_loss.json").write_text(
+                json.dumps(vl, ensure_ascii=False, indent=1))
+            for name, v in vl.items():
+                writer.add_scalar(f"eval/val_{name}_loss", v, step)
         writer.flush()
         print(f"[eval step {step}] pass@k={ {k: round(pk_metrics[f'pass_at_{k}'], 4) for k in cfg.pass_at_k.ks} } "
-              f"chrf={sm_metrics['chrf']:.2f} chrf++={sm_metrics['chrf_pp']:.2f}")
+              f"chrf={sm_metrics['chrf']:.2f} chrf++={sm_metrics['chrf_pp']:.2f}"
+              + ("".join(f" val_{n}={v:.4f}" for n, v in vl.items())))
 
     return eval_suite
 
@@ -245,12 +354,15 @@ def main() -> None:
     parser.add_argument("--dry-run", action="store_true",
                         help="validate config/registry/prompts/data + scaffold "
                              "the run dir, without any GPU dependency")
+    parser.add_argument("--resume", action="store_true",
+                        help="continue from the latest checkpoint in the "
+                             "existing run dir (keeps all artifacts)")
     parser.add_argument("--force", action="store_true",
                         help="overwrite an existing runs/<run_name>/")
     args = parser.parse_args()
 
     cfg = load_config(args.config)
-    run_dir = setup_run_dir(cfg, args.config, args.force)
+    run_dir = setup_run_dir(cfg, args.config, args.force, resume=args.resume)
 
     from tensorboardX import SummaryWriter
 
@@ -304,6 +416,13 @@ def main() -> None:
         per_device_train_batch_size=cfg.train.per_device_train_batch_size,
         gradient_accumulation_steps=cfg.train.gradient_accumulation_steps,
         learning_rate=cfg.train.learning_rate,
+        lr_scheduler_type=cfg.train.lr_scheduler,   # round-1 audit: HF default
+        warmup_ratio=cfg.train.warmup_ratio,        # was linear-decay-to-zero
+        ddp_timeout=7200,   # rank-0 eval suite runs ~25 min while other ranks
+                            # wait; default 30-min NCCL timeout is too tight
+        # Truncated rollouts previously scored exactly 0.0 (format+content both
+        # fail) and poisoned the gradient; ~4.8pp pass@1 ceiling in round 1.
+        mask_truncated_completions=True,
         beta=cfg.train.beta,
         bf16=cfg.train.bf16,
         gradient_checkpointing=cfg.train.gradient_checkpointing,
@@ -316,6 +435,7 @@ def main() -> None:
         vllm_max_model_length=cfg.vllm.max_model_length,
         vllm_server_host=cfg.vllm.server_host,
         vllm_server_port=cfg.vllm.server_port,
+        vllm_group_port=cfg.vllm.group_port,
         remove_unused_columns=False,
         seed=cfg.seed,
     )
@@ -334,14 +454,26 @@ def main() -> None:
 
     generate_fn = make_generate_fn(trainer, tokenizer, cfg)
     if is_main_process():
-        eval_suite = make_eval_suite(cfg, generate_fn, writer, run_dir)
-        eval_suite(0)  # checkpoint 0 = base model
+        val_loss_fn = None
+        if cfg.train.val_datasets and cfg.train.val_loss_every > 0:
+            val_loss_fn = make_val_loss_fn(trainer, tokenizer, cfg)
+        eval_suite = make_eval_suite(cfg, generate_fn, writer, run_dir,
+                                     val_loss_fn)
+        if not args.resume:
+            eval_suite(0)  # checkpoint 0 = base model
         trainer.add_callback(make_checkpoint_eval_callback(eval_suite))
 
-    trainer.train()
+    trainer.train(resume_from_checkpoint=args.resume or None)
 
-    if is_main_process() and cfg.iterations % cfg.checkpoint_every != 0:
-        eval_suite(cfg.iterations)
+    if is_main_process():
+        # The final step is not necessarily on the save_steps grid (e.g.
+        # 731 % 54 != 0): without this, the last partial-interval updates
+        # would be measured by the final eval but never saved as weights.
+        trainer.save_model(str(run_dir / "adapter"))
+        tokenizer.save_pretrained(str(run_dir / "adapter"))
+        print(f"[done] final adapter saved to {run_dir / 'adapter'}")
+        if cfg.iterations % cfg.checkpoint_every != 0:
+            eval_suite(cfg.iterations)
     if writer:
         writer.close()
 

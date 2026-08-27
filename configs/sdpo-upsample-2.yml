@@ -1,0 +1,81 @@
+# SDPO (pure self-distillation, NO GRPO advantage term) on the 2x-mixture policy.
+#
+# Motivation: GRPO r2 on this policy was a measured capability no-op — 32.7%
+# of optimizer steps had zero group-reward variance (advantage collapse), and
+# the surviving signal was too weak at lr 1e-5. SDPO's gradient comes from a
+# per-token KL against the SAME model conditioned on privileged context (gold
+# form + vidyut-prakriya derivation trace), so group variance is irrelevant.
+#
+# Data: data/finetune/task-data/sdpo-finetune.json — built by
+# misc/data/make_sdpo_data.py. Tasks whose privileged block exceeds 512
+# student tokens are EXCLUDED (user policy 2026-08-24); build report:
+# 140/6018 = 2.33% over budget, 56/6018 = 0.93% no gold-match, 5,822 kept.
+#
+# TRAINS ON A100 (single GPU). Step-0 probe must read >=0.55 pass@1 or the
+# orchestrator aborts. REPORTED METRIC: probe pass@1 every 100 steps
+# (eval/pass_at_1, protocol-identical to the GRPO runs) + final clean table row.
+
+run_name: sdpo-qwen3-4b-mix-upsample-2
+model: /home/ubuntu/sanskrit/mix2-merged   # FRESH merge; dir chmod'd read-only
+reward: vp_exact          # used for the rollout gate and the probe
+eval_reward: vp_exact
+prompt_template: v1/vp_task_eval.txt
+dataset: data/finetune/task-data/sdpo-finetune.json
+eval_dataset: data/finetune/task-data/validation.json   # probes + final eval
+
+iterations: 2000
+checkpoint_every: 100     # 20 checkpoints; probe (pass@1) at each
+logging_every: 10
+seed: 42
+
+sdpo:
+  privileged_budget: 512        # build-time budget (documentation; enforced at build)
+  kl_direction: forward         # KL(teacher || student), mass-covering
+  kl_temperature: 1.0
+  kl_clamp: 3.0                 # per-token KL cap (nats); tames structural-token outliers
+  thinking_block_weight: 1.0
+  answer_block_weight: 2.0
+  skip_all_correct: true        # all-n-correct groups: no update (nothing to teach)
+  gate_threshold: 0.85          # vp_exact pass level for the gate
+  max_distill_rollouts: 2       # failed-first cap per step (profiled: 4 was ~2x step cost for mostly-redundant correct-rollout KL)
+  weight_sync_every: 5          # rollouts <=4 steps stale; SDPO tolerates staleness (no importance ratio)
+  logits_chunk: 512             # fp32 KL computed 512 tokens at a time (memory)
+  warmup_ratio: 0.03
+  lr_scheduler: constant_with_warmup
+  grad_clip: 1.0
+  weight_decay: 0.0
+
+train:
+  learning_rate: 5.0e-5         # highest-safe per plan; 5x GRPO's starved 1e-5
+  per_device_train_batch_size: 1   # loop does its own per-rollout accumulation
+  gradient_accumulation_steps: 1
+  beta: 0.0                     # unused by SDPO (no KL-to-reference term)
+  bf16: true
+  gradient_checkpointing: true
+  lora:
+    r: 64                       # user-decided; matches the mixture arms' geometry
+    alpha: 128                  # scaling alpha/r = 2.0
+    dropout: 0.0
+
+generation:                     # student rollouts
+  num_generations: 8            # group size for the gate + pass-rate telemetry
+  max_completion_length: 4096
+  temperature: 0.9
+
+vllm:                           # colocated rollout engine (functional weight push —
+  mode: colocate                # trainer weights are NEVER mutated, unlike TRL sync)
+  gpu_memory_utilization: 0.35  # 40GB A100: leave room for two scoring passes
+  max_model_length: 5632        # prompt (~372) + privileged block (<=512) + 4096 + headroom
+
+pass_at_k:                      # probe protocol — identical to GRPO runs
+  ks: [1, 2, 4, 8]
+  num_prompts: 64
+  samples_per_prompt: 8
+  pass_threshold: 0.85
+  temperature: 0.9
+
+samayik_eval:                   # cheap forgetting-watch (20 pairs/checkpoint)
+  path: data/eval/samayik.json
+  num_samples: 20
+  max_new_tokens: 2048
+  temperature: 0.2

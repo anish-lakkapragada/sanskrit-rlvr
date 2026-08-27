@@ -152,7 +152,16 @@ def dry_run(cfg: RunConfig, run_dir: Path) -> None:
     for r in records[:100]:
         assert r["prompt"][0]["role"] == "user" and r["completion"][0]["role"] == "assistant"
     eff_batch = cfg.sft.per_device_train_batch_size * cfg.sft.gradient_accumulation_steps
-    steps = math.ceil(len(records) / eff_batch * cfg.sft.epochs)
+    if cfg.sft.max_steps:
+        steps = cfg.sft.max_steps
+        epochs_equiv = steps * eff_batch / len(records)
+        print(f"[dry-run] FIXED BUDGET {steps} steps = {epochs_equiv:.2f} epochs "
+              f"over this corpus ({steps * eff_batch} examples seen)")
+    else:
+        steps = math.ceil(len(records) / eff_batch * cfg.sft.epochs)
+    for name, path in (cfg.sft.val_datasets or {}).items():
+        n_val = len(json.loads((ROOT / path).read_text()))
+        print(f"[dry-run] val '{name}': {n_val} pairs, every {cfg.sft.eval_every} steps")
     print(f"[dry-run] corpus {cfg.sft.dataset}: {len(records)} records")
     print(f"[dry-run] model {resolve_model_id(cfg.model)}  lora r={cfg.train.lora.r} "
           f"alpha={cfg.train.lora.alpha} dropout={cfg.train.lora.dropout}")
@@ -196,7 +205,7 @@ def main() -> None:
 
     if not (ROOT / cfg.sft.dataset).exists():
         raise SystemExit(f"SFT corpus not found: {cfg.sft.dataset} "
-                         "(generate it with data/sft/generate-sft-data.py)")
+                         "(generate it with misc/data/generate_sft_data.py)")
     run_dir = setup_run_dir(cfg, args.config, args.force)
 
     if args.dry_run:
@@ -221,6 +230,19 @@ def main() -> None:
               f"(> {cfg.sft.max_seq_len} tokens); {len(pairs)} remain")
     train_dataset = Dataset.from_list(pairs)
 
+    # Held-out validation, one dataset per task: HF logs eval_<name>_loss for each,
+    # so a mixed run shows both capabilities' curves separately and convergence can
+    # be read off rather than assumed. Same completion-only masking as training.
+    eval_dataset = None
+    if cfg.sft.val_datasets and cfg.sft.eval_every > 0:
+        eval_dataset = {}
+        for name, path in cfg.sft.val_datasets.items():
+            vp = build_text_pairs(tokenizer, load_sft_dataset(path))
+            vp, vdropped = filter_overlong(tokenizer, vp, cfg.sft.max_seq_len)
+            eval_dataset[name] = Dataset.from_list(vp)
+            print(f"[setup] val '{name}': {len(vp)} pairs from {path}"
+                  + (f" ({vdropped} over-length dropped)" if vdropped else ""))
+
     sft_args = SFTConfig(
         output_dir=str(run_dir / "checkpoints"),
         num_train_epochs=cfg.sft.epochs,
@@ -236,7 +258,11 @@ def main() -> None:
         max_length=cfg.sft.max_seq_len,
         packing=False,
         completion_only_loss=True,   # loss on completion tokens only
-        save_strategy="epoch",
+        max_steps=cfg.sft.max_steps or -1,   # -1 = honor num_train_epochs instead
+        save_strategy="steps" if cfg.sft.save_every else "epoch",
+        save_steps=cfg.sft.save_every or 500,
+        eval_strategy="steps" if eval_dataset else "no",
+        eval_steps=cfg.sft.eval_every or 500,
         logging_steps=cfg.logging_every,
         logging_dir=str(run_dir / "tensorboard"),
         report_to=["tensorboard"],
@@ -246,6 +272,7 @@ def main() -> None:
         model=model,
         args=sft_args,
         train_dataset=train_dataset,
+        eval_dataset=eval_dataset,
         peft_config=build_peft_config(cfg, model),
         processing_class=tokenizer,
     )

@@ -1,0 +1,41 @@
+# Data-mixture campaign VP eval: sft-qwen3-4b-tb10m-samayik67
+# Protocol identical to the prior full-set evals (669 tasks x 16 samples,
+# seed 42, v1 prompt, vp_exact >= 0.85, T 0.9) with max_new_tokens 4096.
+# Dataset is data/data-mixture/eval/vp-eval.json (byte-identical to
+# task-data/validation.json; md5 in data/data-mixture/manifest.json).
+
+suite_name: dm-tb10m-samayik67
+
+task:
+  reward: vp_exact
+  dataset: data/data-mixture/eval/vp-eval.json
+  prompt: v1/vp_task_eval
+
+seed: 42
+
+pass_at_k:
+  ks: [1, 2, 4, 8, 16]
+  num_prompts: 669
+  samples_per_prompt: 16
+  pass_threshold: 0.85
+  temperature: 0.9
+  top_p: 1.0
+
+defaults:
+  max_new_tokens: 4096
+  enable_thinking: false
+  dtype: bfloat16
+  tensor_parallel_size: 1
+  gpu_memory_utilization: 0.85
+  max_model_len: 8192
+  trust_remote_code: false
+  chat: true
+
+models:
+  - name: Qwen/Qwen3-4B
+    adapter: runs/sft-qwen3-4b-tb10m-samayik67/adapter
+
+report:
+  output_dir: prevals/outputs/data-mixture
+  save_samples: true
+  print_table: true

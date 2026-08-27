@@ -1,0 +1,40 @@
+# Standard translation-SFT baseline: Qwen3-4B LoRA on the FLORES-200 train
+# pairs (1,259 = dev+devtest minus everything sharing a normalized EN/SA
+# sentence with either 750-pair validation set; built by
+# misc/data/make_standard_sft_data.py). Plain <translation> targets, no
+# thinking traces, completion-only loss. 1 epoch (~79 steps) per baseline spec
+# -- deliberately tiny; this arm is a data-scale point, not a strong system.
+#
+#   uv run python -m finetune.sft --config configs/sft-standard/sft-standard-flores-200.yml --dry-run
+#   ~/vt/bin/python -m finetune.sft --config configs/sft-standard/sft-standard-flores-200.yml
+
+run_name: sft-qwen3-4b-standard-flores-200
+model: Qwen/Qwen3-4B
+reward: vp_exact                                      # unused by SFT; keeps config valid
+dataset: data/finetune/task-data/finetune.json        # unused by SFT; keeps config valid
+eval_dataset: data/finetune/task-data/validation.json # unused (probes disabled)
+seed: 42
+logging_every: 5               # ~95 total steps -> TB point every 5 steps
+
+train:
+  bf16: true
+  gradient_checkpointing: true
+  lora:
+    r: 32
+    alpha: 64
+    dropout: 0.0
+
+sft:
+  dataset: data/finetune/sft-standard/flores-200_finetune.json
+  prompt_template: v0/translation.txt    # documents the corpus template (probes off)
+  epochs: 1.0
+  learning_rate: 2.0e-4
+  per_device_train_batch_size: 4
+  gradient_accumulation_steps: 4         # effective batch 16
+  max_seq_len: 4096
+  warmup_ratio: 0.05
+  weight_decay: 0.01
+  lr_scheduler: cosine
+  eval_prompts_per_epoch: 0              # dhatu pass@k probe is meaningless here
+  eval_samples_per_prompt: 4
+  eval_max_new_tokens: 1024

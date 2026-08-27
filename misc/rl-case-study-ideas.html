@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cashing the overhang — RL case-study options for the Sanskrit project</title>
+<style>
+  :root {
+    --ink: #0b0b0b; --ink2: #52514e; --muted: #898781;
+    --blue: #2a78d6; --orange: #eb6834; --green: #1baf7a; --purple: #8a5cd6;
+    --surface: #fcfcfb; --card: #ffffff; --line: #e1e0d9; --band: #fff7e8;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--surface); color: var(--ink);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  main { max-width: 860px; margin: 0 auto; padding: 56px 24px 96px; }
+  h1 { font-size: 30px; line-height: 1.25; margin: 0 0 8px; letter-spacing: -0.02em; }
+  .sub { color: var(--ink2); font-size: 17px; margin: 0 0 36px; }
+  h2 { font-size: 20px; margin: 56px 0 12px; letter-spacing: -0.01em; }
+  h3 { font-size: 16px; margin: 0 0 6px; }
+  p { margin: 0 0 14px; color: var(--ink); }
+  .quiet { color: var(--ink2); }
+  .tiny { font-size: 13px; color: var(--muted); }
+  .rule { border: 0; border-top: 1px solid var(--line); margin: 40px 0; }
+
+  .stats { display: flex; gap: 12px; flex-wrap: wrap; margin: 24px 0 8px; }
+  .stat { flex: 1 1 150px; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; }
+  .stat b { display: block; font-size: 24px; letter-spacing: -0.02em; }
+  .stat span { font-size: 13px; color: var(--ink2); }
+
+  figure { margin: 24px 0; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 20px 20px 12px; }
+  figcaption { font-size: 13.5px; color: var(--ink2); padding: 10px 4px 6px; }
+  svg { display: block; width: 100%; height: auto; }
+  svg text { font-family: inherit; }
+
+  .cards { display: grid; gap: 16px; margin: 20px 0; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 20px 22px; border-top: 4px solid var(--line); }
+  .card.a { border-top-color: var(--blue); }
+  .card.b { border-top-color: var(--green); }
+  .card.c { border-top-color: var(--purple); }
+  .card .meta { display: flex; gap: 18px; flex-wrap: wrap; font-size: 13px; color: var(--ink2); margin: 8px 0 12px; }
+  .card .meta b { color: var(--ink); font-weight: 600; }
+  .story { background: var(--band); border-radius: 8px; padding: 10px 14px; font-size: 14.5px; margin-top: 12px; }
+  .story em { font-style: italic; }
+
+  .reco { background: var(--card); border: 1px solid var(--line); border-left: 4px solid var(--orange); border-radius: 10px; padding: 16px 20px; margin: 24px 0; }
+  ul { margin: 0 0 14px; padding-left: 22px; }
+  li { margin-bottom: 6px; }
+  a { color: var(--blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  code { background: #f1f0ea; border-radius: 4px; padding: 1px 5px; font-size: 14px; }
+</style>
+</head>
+<body>
+<main>
+
+<h1>Cashing the overhang</h1>
+<p class="sub">Where an RL “clever trick” can still live in the Sanskrit project — and the three experiments that could demonstrate it.</p>
+
+<div class="stats">
+  <div class="stat"><b>61.0%</b><span>pass@1 — mixture-SFT policy (best artifact)</span></div>
+  <div class="stat"><b>92.1%</b><span>pass@16 — same policy, best-of-16 with verifier</span></div>
+  <div class="stat"><b>+0.2pp</b><span>what 1,080 GRPO steps bought on pass@1</span></div>
+  <div class="stat"><b>1 in 3</b><span>GRPO steps carried zero advantage (measured, vp_exact)</span></div>
+</div>
+
+<h2>The situation in one picture</h2>
+<p>The policy already <em>contains</em> most of the remaining capability: given 16 tries and the vidyut verifier, it solves 92% of tasks. It just doesn’t rank the right answer first. That 31-point gap is the <b>sampling overhang</b> — and converting overhang into pass@1 is exactly the job RL is supposed to do (“distribution sharpening”). Our GRPO didn’t do it.</p>
+
+<figure>
+<svg viewBox="0 0 760 190" role="img" aria-label="Overhang diagram">
+  <!-- axis -->
+  <line x1="120" y1="150" x2="740" y2="150" stroke="#c3c2b7" stroke-width="1"/>
+  <text x="120" y="170" font-size="11" fill="#898781">0%</text>
+  <text x="726" y="170" font-size="11" fill="#898781">100%</text>
+  <!-- pass@1 bar -->
+  <text x="112" y="52" font-size="13" fill="#0b0b0b" text-anchor="end">pass@1</text>
+  <rect x="120" y="38" width="378" height="20" rx="4" fill="#2a78d6"/>
+  <text x="506" y="53" font-size="12" fill="#0b0b0b">61.0</text>
+  <!-- pass@16 bar -->
+  <text x="112" y="92" font-size="13" fill="#0b0b0b" text-anchor="end">pass@16</text>
+  <rect x="120" y="78" width="571" height="20" rx="4" fill="#9ec4ec"/>
+  <rect x="120" y="78" width="378" height="20" rx="4" fill="#2a78d6"/>
+  <text x="698" y="93" font-size="12" fill="#0b0b0b">92.1</text>
+  <!-- overhang bracket -->
+  <path d="M 500 108 L 500 118 L 689 118 L 689 108" fill="none" stroke="#eb6834" stroke-width="1.6"/>
+  <text x="594" y="136" font-size="12.5" fill="#eb6834" text-anchor="middle">the 31pp overhang — reachable, not ranked first</text>
+  <!-- grpo marker -->
+  <line x1="499" y1="30" x2="499" y2="66" stroke="#8a5cd6" stroke-width="2"/>
+  <text x="508" y="30" font-size="12" fill="#8a5cd6">GRPO moved pass@1 to here (+0.2pp)</text>
+</svg>
+<figcaption>669 held-out dhatu tasks × 16 samples, vp_exact. RL’s promise is moving the dark bar toward the light one; ours barely moved.</figcaption>
+</figure>
+
+<h2>Why it didn’t move: advantage collapse</h2>
+<p>GRPO learns from the <em>spread</em> of rewards inside each 8-rollout group. On a strong policy most groups come back uniform — and a uniform group has zero advantage, hence zero gradient. This isn’t a hypothesis: we logged every group of both round-2 runs (<code>reward_history.jsonl</code>, 1,080 steps each). <b>32.7%</b> of vp_exact steps and <b>26.3%</b> of vp_chrf steps had exactly zero reward spread — and of those dead groups, <b>81%</b> (exact) and <b>97%</b> (chrf) were <em>saturated successes</em>: all 8 rollouts already perfect, nothing to learn. The literature has a name for this (<a href="https://arxiv.org/html/2605.21125">advantage collapse</a>, <a href="https://arxiv.org/pdf/2605.07689">gradient starvation</a>) and a fix (<a href="https://arxiv.org/pdf/2503.14476">DAPO</a>’s dynamic sampling).</p>
+
+<figure>
+<svg viewBox="0 0 760 168" role="img" aria-label="Advantage collapse diagram">
+  <!-- group 1: all correct -->
+  <text x="120" y="24" font-size="13" fill="#0b0b0b" text-anchor="middle">easy task</text>
+  <g fill="#1baf7a">
+    <circle cx="66" cy="52" r="9"/><circle cx="102" cy="52" r="9"/><circle cx="138" cy="52" r="9"/><circle cx="174" cy="52" r="9"/>
+    <circle cx="66" cy="84" r="9"/><circle cx="102" cy="84" r="9"/><circle cx="138" cy="84" r="9"/><circle cx="174" cy="84" r="9"/>
+  </g>
+  <text x="120" y="120" font-size="12.5" fill="#898781" text-anchor="middle">8/8 correct</text>
+  <text x="120" y="140" font-size="13" fill="#eb6834" text-anchor="middle">advantage = 0</text>
+
+  <!-- group 2: all wrong -->
+  <text x="380" y="24" font-size="13" fill="#0b0b0b" text-anchor="middle">impossible task</text>
+  <g fill="#d6564a">
+    <circle cx="326" cy="52" r="9"/><circle cx="362" cy="52" r="9"/><circle cx="398" cy="52" r="9"/><circle cx="434" cy="52" r="9"/>
+    <circle cx="326" cy="84" r="9"/><circle cx="362" cy="84" r="9"/><circle cx="398" cy="84" r="9"/><circle cx="434" cy="84" r="9"/>
+  </g>
+  <text x="380" y="120" font-size="12.5" fill="#898781" text-anchor="middle">0/8 correct</text>
+  <text x="380" y="140" font-size="13" fill="#eb6834" text-anchor="middle">advantage = 0</text>
+
+  <!-- group 3: mixed -->
+  <text x="640" y="24" font-size="13" fill="#0b0b0b" text-anchor="middle">frontier task</text>
+  <g>
+    <circle cx="586" cy="52" r="9" fill="#1baf7a"/><circle cx="622" cy="52" r="9" fill="#d6564a"/><circle cx="658" cy="52" r="9" fill="#d6564a"/><circle cx="694" cy="52" r="9" fill="#1baf7a"/>
+    <circle cx="586" cy="84" r="9" fill="#d6564a"/><circle cx="622" cy="84" r="9" fill="#1baf7a"/><circle cx="658" cy="84" r="9" fill="#d6564a"/><circle cx="694" cy="84" r="9" fill="#d6564a"/>
+  </g>
+  <text x="640" y="120" font-size="12.5" fill="#898781" text-anchor="middle">3/8 correct</text>
+  <text x="640" y="140" font-size="13" fill="#1baf7a" text-anchor="middle">gradient lives here</text>
+</svg>
+<figcaption>Group-relative advantage is only nonzero when a group disagrees with itself. A strong policy makes most groups unanimous.</figcaption>
+</figure>
+
+<figure>
+<svg viewBox="0 0 760 250" role="img" aria-label="Advantage collapse evidence charts">
+<text x="60" y="24" font-size="13" fill="#0b0b0b" font-weight="600">share of steps with zero advantage</text>
+<line x1="60" y1="196.0" x2="360" y2="196.0" stroke="#eceae3"/>
+<text x="54" y="200.0" font-size="10.5" fill="#898781" text-anchor="end">0%</text>
+<line x1="60" y1="144.7" x2="360" y2="144.7" stroke="#eceae3"/>
+<text x="54" y="148.7" font-size="10.5" fill="#898781" text-anchor="end">20%</text>
+<line x1="60" y1="93.3" x2="360" y2="93.3" stroke="#eceae3"/>
+<text x="54" y="97.3" font-size="10.5" fill="#898781" text-anchor="end">40%</text>
+<line x1="60" y1="42.0" x2="360" y2="42.0" stroke="#eceae3"/>
+<text x="54" y="46.0" font-size="10.5" fill="#898781" text-anchor="end">60%</text>
+<line x1="60" y1="196" x2="360" y2="196" stroke="#c3c2b7"/>
+<text x="60" y="212" font-size="10.5" fill="#898781" text-anchor="middle">0</text>
+<text x="210" y="212" font-size="10.5" fill="#898781" text-anchor="middle">540</text>
+<text x="360" y="212" font-size="10.5" fill="#898781" text-anchor="end">1080</text>
+<text x="210" y="230" font-size="11" fill="#898781" text-anchor="middle">optimizer step</text>
+<polyline points="74.7,115.2 76.4,120.0 78.1,134.2 79.7,143.7 81.4,139.0 83.1,139.0 84.7,139.0 86.4,148.5 88.1,139.0 89.7,134.2 91.4,124.7 93.1,115.2 94.7,115.2 96.4,110.4 98.1,115.2 99.7,110.4 101.4,115.2 103.1,110.4 104.7,110.4 106.4,110.4 108.1,124.7 109.7,120.0 111.4,129.5 113.1,129.5 114.7,139.0 116.4,129.5 118.1,139.0 119.7,134.2 121.4,129.5 123.1,120.0 124.7,120.0 126.4,105.7 128.1,105.7 129.7,100.9 131.4,110.4 133.1,105.7 134.7,110.4 136.4,120.0 138.1,115.2 139.7,115.2 141.4,129.5 143.1,129.5 144.7,120.0 146.4,115.2 148.1,115.2 149.7,105.7 151.4,96.2 153.1,100.9 154.7,105.7 156.4,91.4 158.1,86.7 159.7,91.4 161.4,91.4 163.1,81.9 164.7,91.4 166.4,96.2 168.1,100.9 169.7,91.4 171.4,91.4 173.1,96.2 174.7,96.2 176.4,96.2 178.1,100.9 179.7,96.2 181.4,105.7 183.1,105.7 184.7,110.4 186.4,115.2 188.1,110.4 189.7,115.2 191.4,110.4 193.1,120.0 194.7,115.2 196.4,110.4 198.1,110.4 199.7,110.4 201.4,105.7 203.1,110.4 204.7,105.7 206.4,110.4 208.1,105.7 209.7,110.4 211.4,110.4 213.1,96.2 214.7,100.9 216.4,110.4 218.1,115.2 219.7,124.7 221.4,124.7 223.1,120.0 224.7,129.5 226.4,124.7 228.1,129.5 229.7,124.7 231.4,124.7 233.1,129.5 234.7,124.7 236.4,120.0 238.1,134.2 239.7,134.2 241.4,139.0 243.1,143.7 244.7,143.7 246.4,134.2 248.1,124.7 249.7,110.4 251.4,115.2 253.1,100.9 254.7,91.4 256.4,86.7 258.1,86.7 259.7,91.4 261.4,96.2 263.1,96.2 264.7,110.4 266.4,110.4 268.1,110.4 269.7,115.2 271.4,124.7 273.1,115.2 274.7,110.4 276.4,115.2 278.1,115.2 279.7,110.4 281.4,110.4 283.1,100.9 284.7,100.9 286.4,91.4 288.1,100.9 289.7,105.7 291.4,96.2 293.1,96.2 294.7,96.2 296.4,91.4 298.1,105.7 299.7,100.9 301.4,100.9 303.1,100.9 304.7,100.9 306.4,100.9 308.1,100.9 309.7,96.2 311.4,105.7 313.1,105.7 314.7,105.7 316.4,110.4 318.1,110.4 319.7,96.2 321.4,91.4 323.1,91.4 324.7,105.7 326.4,100.9 328.1,96.2 329.7,91.4 331.4,91.4 333.1,96.2 334.7,100.9 336.4,105.7 338.1,105.7 339.7,100.9 341.4,105.7 343.1,115.2 344.7,124.7 346.4,129.5 348.1,129.5 349.7,129.5 351.4,134.2 353.1,129.5 354.7,134.2 356.4,139.0 358.1,124.7 359.7,124.7" fill="none" stroke="#2a78d6" stroke-width="2.2" stroke-linejoin="round"/>
+<polyline points="74.7,110.4 76.4,115.2 78.1,124.7 79.7,124.7 81.4,129.5 83.1,134.2 84.7,148.5 86.4,158.0 88.1,153.2 89.7,162.7 91.4,158.0 93.1,162.7 94.7,153.2 96.4,162.7 98.1,158.0 99.7,153.2 101.4,148.5 103.1,148.5 104.7,148.5 106.4,143.7 108.1,148.5 109.7,158.0 111.4,158.0 113.1,153.2 114.7,148.5 116.4,139.0 118.1,139.0 119.7,139.0 121.4,129.5 123.1,129.5 124.7,110.4 126.4,100.9 128.1,100.9 129.7,105.7 131.4,115.2 133.1,120.0 134.7,124.7 136.4,139.0 138.1,129.5 139.7,148.5 141.4,153.2 143.1,158.0 144.7,153.2 146.4,153.2 148.1,148.5 149.7,139.0 151.4,134.2 153.1,143.7 154.7,143.7 156.4,139.0 158.1,139.0 159.7,139.0 161.4,139.0 163.1,134.2 164.7,134.2 166.4,129.5 168.1,124.7 169.7,115.2 171.4,124.7 173.1,115.2 174.7,120.0 176.4,115.2 178.1,105.7 179.7,110.4 181.4,124.7 183.1,129.5 184.7,120.0 186.4,105.7 188.1,115.2 189.7,115.2 191.4,115.2 193.1,129.5 194.7,115.2 196.4,105.7 198.1,100.9 199.7,115.2 201.4,120.0 203.1,129.5 204.7,124.7 206.4,124.7 208.1,124.7 209.7,134.2 211.4,134.2 213.1,124.7 214.7,115.2 216.4,120.0 218.1,115.2 219.7,120.0 221.4,110.4 223.1,115.2 224.7,124.7 226.4,120.0 228.1,129.5 229.7,134.2 231.4,139.0 233.1,143.7 234.7,143.7 236.4,148.5 238.1,148.5 239.7,148.5 241.4,158.0 243.1,162.7 244.7,158.0 246.4,148.5 248.1,139.0 249.7,139.0 251.4,139.0 253.1,129.5 254.7,129.5 256.4,120.0 258.1,110.4 259.7,124.7 261.4,129.5 263.1,134.2 264.7,129.5 266.4,139.0 268.1,139.0 269.7,129.5 271.4,143.7 273.1,139.0 274.7,134.2 276.4,124.7 278.1,120.0 279.7,120.0 281.4,115.2 283.1,105.7 284.7,105.7 286.4,100.9 288.1,100.9 289.7,105.7 291.4,100.9 293.1,100.9 294.7,105.7 296.4,105.7 298.1,110.4 299.7,120.0 301.4,120.0 303.1,120.0 304.7,105.7 306.4,110.4 308.1,110.4 309.7,115.2 311.4,124.7 313.1,129.5 314.7,120.0 316.4,110.4 318.1,110.4 319.7,115.2 321.4,129.5 323.1,139.0 324.7,134.2 326.4,124.7 328.1,129.5 329.7,134.2 331.4,139.0 333.1,148.5 334.7,143.7 336.4,134.2 338.1,124.7 339.7,120.0 341.4,115.2 343.1,105.7 344.7,110.4 346.4,120.0 348.1,120.0 349.7,124.7 351.4,134.2 353.1,129.5 354.7,124.7 356.4,129.5 358.1,134.2 359.7,129.5" fill="none" stroke="#eb6834" stroke-width="2.2" stroke-linejoin="round"/>
+<text x="356" y="62.5" font-size="11.5" fill="#2a78d6" text-anchor="end">vp_exact</text>
+<text x="356" y="181.9" font-size="11.5" fill="#eb6834" text-anchor="end">vp_chrf</text>
+<text x="452" y="24" font-size="13" fill="#0b0b0b" font-weight="600">group reward std (rolling mean)</text>
+<line x1="452" y1="196.0" x2="752" y2="196.0" stroke="#eceae3"/>
+<text x="446" y="200.0" font-size="10.5" fill="#898781" text-anchor="end">0.00</text>
+<line x1="452" y1="144.7" x2="752" y2="144.7" stroke="#eceae3"/>
+<text x="446" y="148.7" font-size="10.5" fill="#898781" text-anchor="end">0.15</text>
+<line x1="452" y1="93.3" x2="752" y2="93.3" stroke="#eceae3"/>
+<text x="446" y="97.3" font-size="10.5" fill="#898781" text-anchor="end">0.30</text>
+<line x1="452" y1="42.0" x2="752" y2="42.0" stroke="#eceae3"/>
+<text x="446" y="46.0" font-size="10.5" fill="#898781" text-anchor="end">0.45</text>
+<line x1="452" y1="196" x2="752" y2="196" stroke="#c3c2b7"/>
+<text x="452" y="212" font-size="10.5" fill="#898781" text-anchor="middle">0</text>
+<text x="602" y="212" font-size="10.5" fill="#898781" text-anchor="middle">540</text>
+<text x="752" y="212" font-size="10.5" fill="#898781" text-anchor="end">1080</text>
+<text x="602" y="230" font-size="11" fill="#898781" text-anchor="middle">optimizer step</text>
+<polyline points="466.7,114.5 468.4,115.8 470.1,110.7 471.7,104.8 473.4,107.6 475.1,110.1 476.7,108.1 478.4,103.3 480.1,107.9 481.7,109.6 483.4,112.1 485.1,115.5 486.7,117.0 488.4,118.8 490.1,118.0 491.7,124.1 493.4,120.6 495.1,121.1 496.7,124.7 498.4,124.0 500.1,115.9 501.7,117.9 503.4,113.6 505.1,111.0 506.7,104.2 508.4,112.0 510.1,107.3 511.7,107.0 513.4,109.6 515.1,116.1 516.7,115.1 518.4,120.9 520.1,122.5 521.7,129.0 523.4,123.7 525.1,125.7 526.7,122.9 528.4,116.8 530.1,119.4 531.7,119.9 533.4,113.5 535.1,113.6 536.7,112.9 538.4,112.5 540.1,114.1 541.7,117.1 543.4,123.1 545.1,120.1 546.7,116.4 548.4,123.2 550.1,122.7 551.7,122.5 553.4,127.7 555.1,131.3 556.7,125.1 558.4,125.9 560.1,122.3 561.7,128.4 563.4,128.7 565.1,129.2 566.7,129.7 568.4,127.1 570.1,125.7 571.7,128.9 573.4,121.9 575.1,125.8 576.7,124.8 578.4,122.0 580.1,121.5 581.7,118.2 583.4,121.2 585.1,118.8 586.7,122.5 588.4,124.9 590.1,123.3 591.7,123.8 593.4,125.9 595.1,124.1 596.7,124.2 598.4,119.8 600.1,120.5 601.7,117.1 603.4,116.9 605.1,122.6 606.7,119.9 608.4,117.4 610.1,114.3 611.7,112.6 613.4,112.8 615.1,113.9 616.7,108.2 618.4,110.0 620.1,109.2 621.7,110.5 623.4,108.6 625.1,107.6 626.7,107.0 628.4,109.5 630.1,107.0 631.7,108.7 633.4,106.9 635.1,102.0 636.7,103.9 638.4,106.8 640.1,112.8 641.7,120.1 643.4,119.0 645.1,121.8 646.7,126.2 648.4,127.6 650.1,129.0 651.7,124.0 653.4,124.6 655.1,123.9 656.7,118.1 658.4,116.3 660.1,114.4 661.7,112.6 663.4,110.5 665.1,113.8 666.7,118.7 668.4,117.5 670.1,116.5 671.7,120.7 673.4,121.8 675.1,127.2 676.7,127.5 678.4,131.5 680.1,128.0 681.7,123.2 683.4,126.7 685.1,127.4 686.7,125.7 688.4,127.0 690.1,120.8 691.7,121.3 693.4,120.3 695.1,120.8 696.7,121.7 698.4,120.3 700.1,118.9 701.7,122.0 703.4,117.3 705.1,116.0 706.7,116.2 708.4,114.1 710.1,114.2 711.7,123.0 713.4,126.1 715.1,128.4 716.7,120.2 718.4,123.9 720.1,129.2 721.7,132.2 723.4,131.3 725.1,128.6 726.7,124.8 728.4,121.0 730.1,119.4 731.7,123.2 733.4,121.1 735.1,114.0 736.7,115.6 738.4,114.0 740.1,115.2 741.7,115.2 743.4,113.8 745.1,116.2 746.7,112.7 748.4,110.1 750.1,117.5 751.7,112.6" fill="none" stroke="#2a78d6" stroke-width="2.2" stroke-linejoin="round"/>
+<polyline points="466.7,154.5 468.4,154.7 470.1,152.8 471.7,151.2 473.4,150.9 475.1,148.7 476.7,141.9 478.4,139.3 480.1,135.7 481.7,135.3 483.4,137.4 485.1,134.8 486.7,139.6 488.4,137.0 490.1,139.4 491.7,143.4 493.4,146.9 495.1,151.3 496.7,147.7 498.4,145.9 500.1,142.8 501.7,139.9 503.4,140.5 505.1,139.8 506.7,139.5 508.4,138.8 510.1,138.9 511.7,140.2 513.4,143.1 515.1,146.8 516.7,150.5 518.4,152.3 520.1,154.3 521.7,156.7 523.4,155.6 525.1,156.0 526.7,154.5 528.4,150.1 530.1,153.7 531.7,151.3 533.4,149.5 535.1,148.8 536.7,148.8 538.4,148.6 540.1,147.4 541.7,152.4 543.4,155.6 545.1,151.7 546.7,149.2 548.4,150.9 550.1,148.2 551.7,149.8 553.4,150.1 555.1,152.7 556.7,150.2 558.4,151.7 560.1,150.4 561.7,154.6 563.4,152.6 565.1,157.3 566.7,156.4 568.4,156.3 570.1,158.6 571.7,156.3 573.4,152.0 575.1,152.7 576.7,154.0 578.4,154.7 580.1,152.1 581.7,148.4 583.4,149.6 585.1,145.1 586.7,151.4 588.4,156.1 590.1,157.4 591.7,151.9 593.4,151.5 595.1,150.7 596.7,151.9 598.4,149.5 600.1,151.4 601.7,148.5 603.4,148.5 605.1,149.4 606.7,150.7 608.4,150.7 610.1,148.4 611.7,149.8 613.4,154.7 615.1,150.6 616.7,148.0 618.4,145.2 620.1,144.4 621.7,146.3 623.4,145.5 625.1,143.8 626.7,141.6 628.4,137.2 630.1,140.2 631.7,136.7 633.4,135.5 635.1,133.9 636.7,133.9 638.4,135.7 640.1,135.6 641.7,136.7 643.4,139.8 645.1,141.9 646.7,148.2 648.4,150.4 650.1,149.8 651.7,145.7 653.4,143.2 655.1,146.2 656.7,146.5 658.4,144.6 660.1,142.0 661.7,142.3 663.4,139.8 665.1,144.1 666.7,148.5 668.4,150.4 670.1,151.2 671.7,152.6 673.4,152.4 675.1,155.8 676.7,154.5 678.4,156.5 680.1,156.3 681.7,155.9 683.4,158.9 685.1,157.3 686.7,155.9 688.4,155.0 690.1,152.3 691.7,151.3 693.4,148.3 695.1,146.8 696.7,148.8 698.4,147.3 700.1,148.2 701.7,146.8 703.4,147.1 705.1,148.8 706.7,149.2 708.4,153.0 710.1,156.1 711.7,155.4 713.4,149.9 715.1,148.8 716.7,150.6 718.4,150.6 720.1,148.1 721.7,148.8 723.4,147.1 725.1,142.4 726.7,143.7 728.4,147.8 730.1,149.8 731.7,149.5 733.4,152.1 735.1,155.0 736.7,150.2 738.4,147.6 740.1,144.5 741.7,142.6 743.4,137.0 745.1,139.8 746.7,141.6 748.4,141.0 750.1,138.4 751.7,142.7" fill="none" stroke="#eb6834" stroke-width="2.2" stroke-linejoin="round"/>
+<text x="748" y="93.3" font-size="11.5" fill="#2a78d6" text-anchor="end">vp_exact</text>
+<text x="748" y="170.3" font-size="11.5" fill="#eb6834" text-anchor="end">vp_chrf</text>
+</svg>
+<figcaption><b>Measured, not modeled:</b> every 8-rollout group from both round-2 runs (rolling mean, window 54 = one checkpoint interval). Left: the share of optimizer steps whose group had zero reward spread — a dead step — never drops below ~a quarter and never improves across 1,080 steps. Right: the reward spread that does exist is small and flat — the dense chrF reward (orange) produces <em>fewer</em> dead groups but also ~40% less spread than binary exact-match (blue), which is why neither arm out-trained the other. Flat lines are the signature of an optimizer in equilibrium with nothing to push against.</figcaption>
+</figure>
+
+<h2>Three candidate tricks</h2>
+
+<div class="cards">
+
+<div class="card a">
+<h3>A · Frontier-filtered GRPO — train only where the gradient exists</h3>
+<div class="meta"><span><b>~$35</b> one A100</span><span><b>win probability:</b> highest</span><span><b>lit:</b> DAPO dynamic sampling, made cheap &amp; offline</span></div>
+<p>Use the verifier to pre-score every training task under the current policy (16 samples each), then run GRPO only on the <b>frontier band</b> — tasks solved 1–15 times out of 16. Every group is guaranteed non-uniform, so every step carries signal. Bundle the known config fixes (lr 5e-5, KL anneal, groups ≥16) into the same arm.</p>
+<figure style="border:0; padding:6px 0 0; margin:8px 0 0;">
+<svg viewBox="0 0 760 150" role="img" aria-label="Difficulty band diagram">
+  <line x1="60" y1="112" x2="720" y2="112" stroke="#c3c2b7"/>
+  <text x="60" y="132" font-size="11.5" fill="#898781">p(correct) = 0</text>
+  <text x="720" y="132" font-size="11.5" fill="#898781" text-anchor="end">p(correct) = 1</text>
+  <!-- histogram: mass piled at both ends -->
+  <g fill="#d9d8d0">
+    <rect x="64"  y="52" width="40" height="60"/>
+    <rect x="108" y="88" width="40" height="24"/>
+    <rect x="636" y="40" width="40" height="72"/>
+    <rect x="680" y="24" width="38" height="88"/>
+  </g>
+  <g fill="#2a78d6">
+    <rect x="196" y="92" width="40" height="20"/>
+    <rect x="240" y="82" width="40" height="30"/>
+    <rect x="284" y="74" width="40" height="38"/>
+    <rect x="328" y="70" width="40" height="42"/>
+    <rect x="372" y="74" width="40" height="38"/>
+    <rect x="416" y="80" width="40" height="32"/>
+    <rect x="460" y="88" width="40" height="24"/>
+    <rect x="504" y="94" width="40" height="18"/>
+    <rect x="548" y="100" width="40" height="12"/>
+  </g>
+  <rect x="192" y="16" width="400" height="100" fill="none" stroke="#2a78d6" stroke-dasharray="5 4" rx="6"/>
+  <text x="392" y="34" font-size="12.5" fill="#2a78d6" text-anchor="middle">train GRPO only in this band → no unanimous groups</text>
+  <text x="86" y="42" font-size="11.5" fill="#898781" text-anchor="middle">never solved</text>
+  <text x="690" y="16" font-size="11.5" fill="#898781" text-anchor="middle">always solved</text>
+</svg>
+</figure>
+<div class="story"><b>Case-study line:</b> <em>“GRPO stalled at +0.0 on a strong SFT policy; we show the gradient had collapsed, then revive it with one verifier-driven curriculum trick and convert X points of overhang into pass@1.”</em></div>
+</div>
+
+<div class="card b">
+<h3>B · Rejection-sampling FT vs GRPO — is policy gradient even the right amortizer?</h3>
+<div class="meta"><span><b>~$30</b> (shares A’s sampling pass)</span><span><b>win probability:</b> good</span><span><b>lit:</b> STaR / RFT / RAFT-vs-GRPO debate</span></div>
+<p>Sample 16 completions per training task, keep only vidyut-verified correct ones, and SFT on them. No policy gradients, no KL, no advantage — the verifier does all the selecting. Head-to-head against GRPO at matched compute, it directly asks whether the failure was <em>policy-gradient mechanics</em> or something deeper.</p>
+<figure style="border:0; padding:6px 0 0; margin:8px 0 0;">
+<svg viewBox="0 0 760 120" role="img" aria-label="RFT loop diagram">
+  <g font-size="13" fill="#0b0b0b" text-anchor="middle">
+    <rect x="40"  y="38" width="130" height="44" rx="9" fill="#fff" stroke="#c3c2b7"/><text x="105" y="64">policy</text>
+    <rect x="230" y="38" width="150" height="44" rx="9" fill="#fff" stroke="#c3c2b7"/><text x="305" y="58">16 samples</text><text x="305" y="74" font-size="11" fill="#898781">per task</text>
+    <rect x="440" y="38" width="140" height="44" rx="9" fill="#fff" stroke="#1baf7a"/><text x="510" y="58" fill="#1baf7a">vidyut filter</text><text x="510" y="74" font-size="11" fill="#898781">keep correct only</text>
+    <rect x="636" y="38" width="90" height="44" rx="9" fill="#fff" stroke="#c3c2b7"/><text x="681" y="64">SFT</text>
+  </g>
+  <g stroke="#52514e" stroke-width="1.6" fill="none" marker-end="url(#arr)">
+    <line x1="170" y1="60" x2="224" y2="60"/>
+    <line x1="380" y1="60" x2="434" y2="60"/>
+    <line x1="580" y1="60" x2="630" y2="60"/>
+  </g>
+  <path d="M 681 88 C 681 112, 105 112, 105 88" fill="none" stroke="#52514e" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#arr)"/>
+  <defs><marker id="arr" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#52514e"/></marker></defs>
+</svg>
+</figure>
+<div class="story"><b>Case-study line:</b> <em>“At 4B with a strong SFT init, verifier-filtered self-distillation cashes the overhang that policy-gradient RL could not”</em> — or, if GRPO-with-A wins instead, the controlled comparison is the story.</div>
+</div>
+
+<div class="card c">
+<h3>C · Free process rewards from the Paninian engine — the original one</h3>
+<div class="meta"><span><b>~$40 + dev time</b></span><span><b>win probability:</b> medium (feasibility check first)</span><span><b>lit:</b> process reward models — but ours needs no training</span></div>
+<p>Math/code RLVR uses outcome-only rewards because checking intermediate steps is expensive. This domain is special: vidyut-prakriya emits the <b>entire derivation sequence</b> (the prakriyā). Score completions by how deep their derivation matches the engine’s — dense, exact, training-free process supervision. All-wrong groups stop being zero-signal: a completion that diverges at step 6 outranks one that diverges at step 2.</p>
+<figure style="border:0; padding:6px 0 0; margin:8px 0 0;">
+<svg viewBox="0 0 760 128" role="img" aria-label="Process reward diagram">
+  <g font-size="12.5" text-anchor="middle">
+    <text x="60" y="34" fill="#898781" text-anchor="start">outcome reward</text>
+    <g>
+      <rect x="60" y="44" width="86" height="30" rx="6" fill="#fff" stroke="#c3c2b7"/><text x="103" y="64" fill="#0b0b0b">step 1</text>
+      <rect x="156" y="44" width="86" height="30" rx="6" fill="#fff" stroke="#c3c2b7"/><text x="199" y="64" fill="#0b0b0b">step 2</text>
+      <rect x="252" y="44" width="86" height="30" rx="6" fill="#fff" stroke="#c3c2b7"/><text x="295" y="64" fill="#0b0b0b">step 3</text>
+      <rect x="348" y="44" width="96" height="30" rx="6" fill="#fff" stroke="#d6564a"/><text x="396" y="64" fill="#d6564a">final form ✗</text>
+    </g>
+    <text x="470" y="64" fill="#d6564a" text-anchor="start">reward = 0</text>
+  </g>
+  <g font-size="12.5" text-anchor="middle">
+    <text x="60" y="96" fill="#898781" text-anchor="start">process reward (vidyut trace)</text>
+    <g>
+      <rect x="60" y="102" width="86" height="26" rx="6" fill="#fff" stroke="#1baf7a"/><text x="103" y="120" fill="#1baf7a">step 1 ✓</text>
+      <rect x="156" y="102" width="86" height="26" rx="6" fill="#fff" stroke="#1baf7a"/><text x="199" y="120" fill="#1baf7a">step 2 ✓</text>
+      <rect x="252" y="102" width="86" height="26" rx="6" fill="#fff" stroke="#d6564a"/><text x="295" y="120" fill="#d6564a">step 3 ✗</text>
+      <rect x="348" y="102" width="96" height="26" rx="6" fill="#e9e8e2" stroke="#e1e0d9"/><text x="396" y="120" fill="#898781">…</text>
+    </g>
+    <text x="470" y="120" fill="#1baf7a" text-anchor="start">reward = 2/3 — signal even when wrong</text>
+  </g>
+</svg>
+</figure>
+<div class="story"><b>Case-study line:</b> <em>“Symbolic engines — grammars, compilers, proof assistants — are free process reward models.”</em> The most generalizable claim on this page, and unique to a domain with an exact derivation engine.</div>
+</div>
+
+</div>
+
+<div class="reco">
+<b>Recommendation: run A + B together on one A100 (~$60–70 total).</b>
+The 16-sample sweep A needs for difficulty scores is literally the dataset B trains on, so the second experiment is nearly free. Three-way contrast (frontier-GRPO vs RFT vs the existing null) guarantees a story no matter which arm wins. C is the high-originality follow-up once an optimization loop demonstrably moves.
+</div>
+
+<h2>The framing that makes even the null result a chapter</h2>
+<p>pass@16 with the verifier <em>is</em> a deployable system today: best-of-16 + vidyut check = 92%, at 16× inference cost. So the whole project frames as: <b>RL is the amortization of verifier search into the policy.</b> Search works (92%). Amortization-by-GRPO failed for a diagnosable reason (advantage collapse). The trick — A, B, or C — is the amortizer that works. That framing turns the existing negative result into Act 2 rather than a dead end.</p>
+
+<h2>What the campaign can already claim (no new compute)</h2>
+<ul>
+  <li>Independent replication of four 2025–26 RLVR findings in a new domain (Paninian derivation, 4B, low-resource): pass@k inversion (<a href="https://openreview.net/pdf?id=4OsgYD7em5">Yue et al.</a>, <a href="https://arxiv.org/pdf/2607.20543">pass@k inversion</a>), advantage collapse (<a href="https://arxiv.org/html/2605.21125">diagnosis</a>), reward-design insensitivity (<a href="https://www.emergentmind.com/papers/2506.10947">Spurious Rewards</a>), and replay/mixture SFT dominating narrow SFT + RL (<a href="https://arxiv.org/pdf/2510.21978">forgetting mitigation</a>, <a href="https://arxiv.org/pdf/2510.01624">Quagmires</a> for the val-loss trap).</li>
+  <li>A novel evaluation-integrity failure mode: the trainer mutates its base-model directory on disk, so six independent-looking evaluations shared one poisoned input and agreed on a wrong number. <span class="quiet">“The most dangerous eval bug is the one that replicates.”</span></li>
+</ul>
+
+<p class="tiny">Numbers: 669 validation tasks × 16 samples, vp_exact ≥ 0.85, temp 0.9, A100, fresh merged bases (2026-08-23 clean re-measurement). Mixture policy = Qwen3-4B + 2× upsampled Opus traces + Samayik translation SFT. GRPO r2 = TRL 1.9.1, LoRA r=32, lr 1e-5, 8-rollout groups, KL β 0.04, 1,080 steps.</p>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,53 @@
+# Dhatu-task (vp_exact) full-set eval of the STANDARD TRANSLATION-SFT baseline
+# trained on Samayik (runs-rescued/sft-qwen3-4b-standard-samayik/adapter).
+#
+# Purpose: completes the 2x2 task/training matrix. Morphology-SFT halved
+# translation quality (13.6 -> 7.7 chrF); this measures the reverse direction --
+# what translation-only SFT does to dhatu derivation ability.
+#
+# Protocol is IDENTICAL to the r1 full-set evals (same 669 validation tasks,
+# same seed, same v1 prompt, ks, threshold, temperature) EXCEPT max_new_tokens
+# 2048 -> 4096 per request. Comparison points (prevals/outputs/prompt-v1/):
+#   base Qwen/Qwen3-4B      pass@16  0.00%
+#   morphology SFT e1       pass@1 42.77% / pass@16 81.02%
+#   morphology SFT e2       pass@1 53.63% / pass@16 86.85%
+#   GRPO vp_exact (step600) pass@1 56.77% / pass@16 88.19%
+#
+#   uv run python -m prevals.eval prevals/outputs/configs/v1/eval-config-sft-standard-samayik.yml
+
+suite_name: sft-standard-samayik-vp-eval
+
+task:
+  reward: vp_exact
+  dataset: data/finetune/task-data/validation.json
+  prompt: v1/vp_task_eval
+
+seed: 42
+
+pass_at_k:
+  ks: [1, 2, 4, 8, 16]
+  num_prompts: 669            # the entire validation set
+  samples_per_prompt: 16
+  pass_threshold: 0.85        # reward = 0.15*format + 0.85*content(exact);
+                              # >=0.85 == answer exactly matches a gold form
+  temperature: 0.9
+  top_p: 1.0
+
+defaults:
+  max_new_tokens: 4096
+  enable_thinking: false
+  dtype: bfloat16
+  tensor_parallel_size: 1
+  gpu_memory_utilization: 0.85
+  max_model_len: 8192         # must exceed prompt (~340 tok) + 4096 generated
+  trust_remote_code: false
+  chat: true
+
+models:
+  - name: Qwen/Qwen3-4B
+    adapter: runs-eval/sft-standard-samayik-adapter
+
+report:
+  output_dir: prevals/outputs/prompt-v1
+  save_samples: true
+  print_table: true

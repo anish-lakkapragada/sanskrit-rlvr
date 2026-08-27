@@ -1,0 +1,82 @@
+# GRPO round 3: vp_exact RL on the 20M-token 67%-samayik mixture policy.
+#
+# Starting point: runs-final/sft-qwen3-4b-tb20m-samayik67/adapter (LoRA r=64)
+# merged into Qwen/Qwen3-4B -> tb20m-samayik67-merged-{train,eval} on the box
+# (train copy for the trainer, read-only eval copy because the trainer writes
+# config "alignment" into its model dir -- the round-2 eval-pollution bug).
+# Baselines to beat (this campaign, clean eval files):
+#   pass@1 46.15 [43.59, 48.70] / pass@16 84.75 / samayik chrF 41.29 / FLORES 22.97
+#
+# AUDIT-FIXED RECIPE (rounds 1-2 were capability no-ops with diagnosed causes):
+#  * lr 5e-5 (1e-5 was too low for LoRA RL) on constant_with_warmup -- the old
+#    runs silently got HF's default linear decay to zero.
+#  * effective batch 64 = 8 rollout groups of 8 per optimizer step; round 1 ran
+#    ONE group/step and 24.7% of steps had zero within-group reward variance,
+#    i.e. zero gradient.
+#  * mask_truncated_completions: capped rollouts no longer score 0.0 and poison
+#    the update (~4.8pp pass@1 ceiling in round 1).
+#  * teacher-forced val-loss probes (translation + morphology holdouts) at every
+#    checkpoint -- drift diagnostics, NOT checkpoint selection (val loss
+#    anti-predicts pass@1 on this task).
+# Prompts: data/data-mixture/grpo-prompts.json = the 6,018 train tasks minus the
+# 174 val-morphology tasks (keeps that holdout clean through RL); 0 task/dhatu
+# overlap with vp-eval verified at generation time.
+#
+#   uv run python -m finetune.grpo --config configs/sft-data-mixture/token-budget-20m/grpo-vp-exact-mixture-samayik-67.yml --dry-run
+
+run_name: grpo-vp-exact-mixture-tb20m-samayik67
+model: /home/ubuntu/sanskrit/tb20m-samayik67-merged-train
+reward: vp_exact
+eval_reward: vp_exact
+prompt_template: v1/vp_task_eval.txt     # the template the mixture SFT trained on
+dataset: data/data-mixture/grpo-prompts.json          # 5,844 tasks (174 held out)
+eval_dataset: data/data-mixture/eval/vp-eval.json     # 669 held-out-dhatu tasks
+iterations: 731                          # ONE epoch: 5,844 prompts / 8 per step
+checkpoint_every: 54                     # 13 checkpoints + step-54 standalone gate
+logging_every: 5
+seed: 42
+
+pass_at_k:
+  ks: [1, 4, 8]
+  num_prompts: 64                        # fixed seeded probe subset (liveness/gate)
+  samples_per_prompt: 8
+  pass_threshold: 0.85
+  temperature: 0.9
+
+samayik_eval:
+  path: data/data-mixture/eval/samayik-eval.json
+  num_samples: 100                       # seeded subset; full 750 at final eval
+  max_new_tokens: 2048
+  temperature: 0.2
+
+generation:
+  num_generations: 8                     # group size G
+  max_completion_length: 4096            # teacher-budget parity; masked if capped
+  temperature: 0.9
+
+train:
+  learning_rate: 5.0e-5
+  per_device_train_batch_size: 4         # DP-8 on 8x A100-80GB: one 8-rollout group per
+  gradient_accumulation_steps: 2         # GPU per step (4x2), 8 ranks x 8 = 64 rollouts =
+                                         # the same 8x8 recipe. Micro-batch 8 OOM'd: the
+                                         # fp32 logit spike is ~18.6GB when all 8 draw
+                                         # near-cap completions; at 4 it is ~10GB.
+  beta: 0.04                             # KL guard vs the merged reference
+  bf16: true
+  gradient_checkpointing: true
+  lr_scheduler: constant_with_warmup
+  warmup_ratio: 0.03
+  val_datasets:
+    translation: data/data-mixture/val-translation.json
+    morphology: data/data-mixture/val-morphology.json
+  val_loss_every: 54                     # computed at each checkpoint eval
+  lora:
+    r: 64
+    alpha: 128
+    dropout: 0.0
+
+vllm:
+  mode: colocate
+  gpu_memory_utilization: 0.30           # 24GB engine/rank; frees headroom for the
+                                         # trainer-side logit spike (rank0 OOM at 0.35)
+  max_model_length: 8192                 # prompt ~340 + 4096 completion

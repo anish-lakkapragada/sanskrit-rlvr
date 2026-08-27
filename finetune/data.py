@@ -48,7 +48,7 @@ def load_vp_dataset(path: str | Path, template: str = "v0/vp_task.txt",
 
 
 def load_sft_dataset(path: str | Path):
-    """data/finetune/sft/*.json distillation records -> HF Dataset with the
+    """data/finetune/sft-r1/*.json distillation records -> HF Dataset with the
     TRL prompt/completion conversational columns. Metadata fields (gold,
     reward, dhatu, ...) are dropped here; they exist for provenance and
     re-verification, not training."""
