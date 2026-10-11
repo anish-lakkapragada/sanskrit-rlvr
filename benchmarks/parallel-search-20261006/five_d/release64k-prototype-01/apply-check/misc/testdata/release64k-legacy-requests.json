@@ -1,0 +1,123 @@
+{
+  "task": {
+    "id": "unit-fixture",
+    "task_type": "cartesian_5d",
+    "prompt_version": "cartesian-5d-v3-sanskrit",
+    "dhatu": {
+      "code": "fixture",
+      "aupadeshika": "BU",
+      "gana": "Bhvadi",
+      "artha": "sattAyAm"
+    },
+    "morphology": {
+      "lakara": "Lat",
+      "prayoga": "Kartari",
+      "purusha": "Prathama",
+      "vacana": "Eka"
+    },
+    "derivation": {
+      "sanadi": [
+        "yaN",
+        "Ric"
+      ]
+    }
+  },
+  "phases": {
+    "explore": [
+      "xhigh",
+      16384,
+      {
+        "Anthropic": 20000,
+        "OpenAI": 20000
+      }
+    ],
+    "confirm": [
+      "xhigh",
+      16384,
+      {
+        "Anthropic": 20000,
+        "OpenAI": 20000
+      }
+    ],
+    "confirm_64k": [
+      "xhigh",
+      65536,
+      {
+        "Anthropic": 20000,
+        "OpenAI": 20000
+      }
+    ],
+    "bench_final": [
+      "xhigh",
+      16384,
+      {
+        "Anthropic": 1000,
+        "OpenAI": 1000
+      }
+    ],
+    "hard_final": [
+      "xhigh",
+      16384,
+      {
+        "Anthropic": 1000,
+        "OpenAI": 1000
+      }
+    ],
+    "cap_check": [
+      "xhigh",
+      128000,
+      {
+        "Anthropic": 100,
+        "OpenAI": 100
+      }
+    ],
+    "cap_check_development": [
+      "xhigh",
+      128000,
+      {
+        "Anthropic": 100,
+        "OpenAI": 100
+      }
+    ],
+    "bench_extension": [
+      "xhigh",
+      16384,
+      {
+        "Anthropic": 5000,
+        "OpenAI": 5000
+      }
+    ],
+    "hard_extension": [
+      "xhigh",
+      16384,
+      {
+        "Anthropic": 5000,
+        "OpenAI": 5000
+      }
+    ]
+  },
+  "request_sha256": {
+    "Anthropic": {
+      "explore": "e59ab4adc5b9f79f8d9ee13826a2524522a22d08faadf84ce8bef54bccc1475a",
+      "confirm": "e59ab4adc5b9f79f8d9ee13826a2524522a22d08faadf84ce8bef54bccc1475a",
+      "confirm_64k": "542c3e50484acbd15b0be42b398dceb59fec1d3ec8589fac5f4feb29d9a9de0d",
+      "bench_final": "e59ab4adc5b9f79f8d9ee13826a2524522a22d08faadf84ce8bef54bccc1475a",
+      "hard_final": "e59ab4adc5b9f79f8d9ee13826a2524522a22d08faadf84ce8bef54bccc1475a",
+      "cap_check": "10d58f8167a160d0fb48f6b6eead2bc5bc1966db08b265523476c0cddeaf199e",
+      "cap_check_development": "10d58f8167a160d0fb48f6b6eead2bc5bc1966db08b265523476c0cddeaf199e",
+      "bench_extension": "e59ab4adc5b9f79f8d9ee13826a2524522a22d08faadf84ce8bef54bccc1475a",
+      "hard_extension": "e59ab4adc5b9f79f8d9ee13826a2524522a22d08faadf84ce8bef54bccc1475a"
+    },
+    "OpenAI": {
+      "explore": "70852782acdc6148288a3d70e31c566c1a7c70f15a7ed60b9e0e461f1ef371b1",
+      "confirm": "70852782acdc6148288a3d70e31c566c1a7c70f15a7ed60b9e0e461f1ef371b1",
+      "confirm_64k": "2591932c454b2778e62d5be66ee1d8b8d32d5c22add70426a780767f6d33bbf5",
+      "bench_final": "70852782acdc6148288a3d70e31c566c1a7c70f15a7ed60b9e0e461f1ef371b1",
+      "hard_final": "70852782acdc6148288a3d70e31c566c1a7c70f15a7ed60b9e0e461f1ef371b1",
+      "cap_check": "3705ff6d8caf990f2432f9dc5725f7c4f82a763107af947834a0a2296578aba4",
+      "cap_check_development": "3705ff6d8caf990f2432f9dc5725f7c4f82a763107af947834a0a2296578aba4",
+      "bench_extension": "70852782acdc6148288a3d70e31c566c1a7c70f15a7ed60b9e0e461f1ef371b1",
+      "hard_extension": "70852782acdc6148288a3d70e31c566c1a7c70f15a7ed60b9e0e461f1ef371b1"
+    }
+  }
+}

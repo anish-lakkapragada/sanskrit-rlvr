@@ -1,0 +1,36 @@
+{
+  "created_at": "2026-10-07T07:23:15.634783+00:00",
+  "track": "five_d",
+  "label": "five-d-pilot-04",
+  "n": 480,
+  "phase": "fresh_development_confirmation",
+  "status": "ready_for_coordinator_review_not_submitted",
+  "task_file": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/parallel-search-20261006/five_d/pilot-04.tasks.json",
+  "task_file_sha256": "6d316087e9a9a91643adddf578a3260b7a6a103884148cd4654d180c5b638fff",
+  "split": "development",
+  "references": [
+    {
+      "provider": "Anthropic",
+      "model": "Opus5.5"
+    },
+    {
+      "provider": "OpenAI",
+      "model": "Astra"
+    }
+  ],
+  "reasoning_effort": "xhigh",
+  "max_output_tokens": 16384,
+  "prompt_version": "cartesian-5d-v3-sanskrit",
+  "task_type": "cartesian_5d",
+  "oracle_policy": "oracle-policy-10",
+  "plan": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/parallel-search-20261006/five_d/pilot-04.plan.json",
+  "manifest": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/parallel-search-20261006/five_d/pilot-04.manifest.json",
+  "audit": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/parallel-search-20261006/five_d/pilot-04.runner-audit.json",
+  "prompt_audit": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/parallel-search-20261006/five_d/pilot-04.prompt-audit.json",
+  "novelty_audit": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/parallel-search-20261006/five_d/pilot-04.final-novelty-audit.json",
+  "analysis_predeclaration": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/parallel-search-20261006/five_d/pilot-04.analysis-predeclaration.json",
+  "comparison_language_caveat": "Reweighting pilot04 to pilot03 grammar weights is an original-mixture estimate under v3; comparing it with historical v1 cannot isolate the causal effect of grammar weights.",
+  "worker_paid_calls": 0,
+  "spending_authority": "Coordinator only under shared cumulative caps.",
+  "benchmark_ready": false
+}

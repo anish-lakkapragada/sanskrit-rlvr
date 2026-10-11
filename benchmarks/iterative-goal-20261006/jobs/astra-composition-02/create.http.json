@@ -1,0 +1,125 @@
+{
+  "received_at": "2026-10-06T23:33:01.689694+00:00",
+  "status_code": 200,
+  "headers": [
+    [
+      "date",
+      "Tue, 06 Oct 2026 23:33:01 GMT"
+    ],
+    [
+      "content-type",
+      "application/json"
+    ],
+    [
+      "transfer-encoding",
+      "chunked"
+    ],
+    [
+      "connection",
+      "keep-alive"
+    ],
+    [
+      "server",
+      "cloudflare"
+    ],
+    [
+      "openai-version",
+      "2020-10-01"
+    ],
+    [
+      "openai-organization",
+      "user-sst2oimg1nujzsqjynvllpec"
+    ],
+    [
+      "openai-project",
+      "proj_0Zn0VkM7ExpBCNnlFfb4qcPj"
+    ],
+    [
+      "x-request-id",
+      "req_9968431ae79544009081bd7ddd1f3c91"
+    ],
+    [
+      "openai-processing-ms",
+      "793"
+    ],
+    [
+      "x-openai-proxy-wasm",
+      "v0.1"
+    ],
+    [
+      "access-control-expose-headers",
+      "X-Request-ID"
+    ],
+    [
+      "access-control-expose-headers",
+      "CF-Ray"
+    ],
+    [
+      "cf-cache-status",
+      "DYNAMIC"
+    ],
+    [
+      "x-content-type-options",
+      "nosniff"
+    ],
+    [
+      "strict-transport-security",
+      "max-age=31536000; includeSubDomains; preload"
+    ],
+    [
+      "content-encoding",
+      "gzip"
+    ],
+    [
+      "cf-ray",
+      "a46877f7fedc88fa-SJC"
+    ],
+    [
+      "alt-svc",
+      "h3=\":443\"; ma=86400"
+    ]
+  ],
+  "body": {
+    "id": "batch_6ac5852d19f48190931a92d953fc45bd",
+    "object": "batch",
+    "endpoint": "/v1/responses",
+    "model": null,
+    "errors": null,
+    "input_file_id": "file-VNTLbETvdrbzKtwKdEp4ZC",
+    "completion_window": "24h",
+    "status": "validating",
+    "output_file_id": null,
+    "error_file_id": null,
+    "created_at": 1791329581,
+    "in_progress_at": null,
+    "expires_at": 1791415981,
+    "finalizing_at": null,
+    "completed_at": null,
+    "failed_at": null,
+    "expired_at": null,
+    "cancelling_at": null,
+    "cancelled_at": null,
+    "request_counts": {
+      "total": 0,
+      "completed": 0,
+      "failed": 0
+    },
+    "usage": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "total_tokens": 0,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "metadata": {
+      "campaign": "iterative-goal-20261006",
+      "job": "astra-composition-02",
+      "tasks_digest": "2510a3cb8b7027d79f776d3263ebd198a55273f5e1326890e2523b5edff4418a",
+      "retries": "0"
+    }
+  }
+}

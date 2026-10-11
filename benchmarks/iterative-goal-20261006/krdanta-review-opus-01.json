@@ -1,0 +1,143 @@
+{
+  "created_at": "2026-10-07T01:58:33.048947+00:00",
+  "overall": {
+    "n": 320,
+    "completed": 312,
+    "completion_fraction": 0.975,
+    "correct_all": 235,
+    "completed_exact_correct": 235,
+    "completed_exact_accuracy": 0.7532051282051282,
+    "completed_spelling_tolerant_correct": 235,
+    "completed_spelling_tolerant_accuracy": 0.7532051282051282,
+    "nasal_spelling_only_errors": 0,
+    "root_families": 258
+  },
+  "uncertainty": {
+    "n_unique": 320,
+    "root_families": 258,
+    "correct": 235,
+    "accuracy": 0.734375,
+    "iid_standard_error": 0.024689848582907004,
+    "iid_wilson_95_interval": [
+      0.6834111854724202,
+      0.7797784275754033
+    ],
+    "iid_wilson_95_one_sided_upper": 0.7728983128458939,
+    "root_cluster_bootstrap_standard_error": 0.025303708347933215,
+    "root_cluster_bootstrap_95_interval": [
+      0.6838709677419355,
+      0.7835365853658537
+    ],
+    "estimated_design_effect": 1.0503438416501256,
+    "bootstrap_seed": 20261011,
+    "bootstrap_repetitions": 20000,
+    "iid_n_for_strictly_below_one_percentage_point_se_at_observed_p": 1951,
+    "iid_worst_case_n_for_strictly_below_one_percentage_point_se": 2501,
+    "limitations": [
+      "This estimates sampling uncertainty over tasks/families, not stochastic run-to-run variability.",
+      "An observed SE below 1pp is not a guarantee for other models or generator distributions.",
+      "Cluster intervals can degenerate when every family has the same result; inspect the Wilson interval too.",
+      "The design effect cannot be assumed stable when increasing forms per root or changing task mixtures.",
+      "Exploratory construction selection requires separate frozen validation; these intervals do not correct for selection."
+    ]
+  },
+  "cells": {
+    "causative_of_intensive + Satf": {
+      "n": 40,
+      "completed": 39,
+      "completion_fraction": 0.975,
+      "correct_all": 29,
+      "completed_exact_correct": 29,
+      "completed_exact_accuracy": 0.7435897435897436,
+      "completed_spelling_tolerant_correct": 29,
+      "completed_spelling_tolerant_accuracy": 0.7435897435897436,
+      "nasal_spelling_only_errors": 0,
+      "root_families": 40
+    },
+    "desiderative_of_causative_of_intensive + Satf": {
+      "n": 40,
+      "completed": 39,
+      "completion_fraction": 0.975,
+      "correct_all": 29,
+      "completed_exact_correct": 29,
+      "completed_exact_accuracy": 0.7435897435897436,
+      "completed_spelling_tolerant_correct": 29,
+      "completed_spelling_tolerant_accuracy": 0.7435897435897436,
+      "nasal_spelling_only_errors": 0,
+      "root_families": 40
+    },
+    "desiderative_of_causative_of_intensive + ktavatu": {
+      "n": 40,
+      "completed": 38,
+      "completion_fraction": 0.95,
+      "correct_all": 28,
+      "completed_exact_correct": 28,
+      "completed_exact_accuracy": 0.7368421052631579,
+      "completed_spelling_tolerant_correct": 28,
+      "completed_spelling_tolerant_accuracy": 0.7368421052631579,
+      "nasal_spelling_only_errors": 0,
+      "root_families": 40
+    },
+    "desiderative_of_causative_of_intensive + tfc": {
+      "n": 40,
+      "completed": 37,
+      "completion_fraction": 0.925,
+      "correct_all": 32,
+      "completed_exact_correct": 32,
+      "completed_exact_accuracy": 0.8648648648648649,
+      "completed_spelling_tolerant_correct": 32,
+      "completed_spelling_tolerant_accuracy": 0.8648648648648649,
+      "nasal_spelling_only_errors": 0,
+      "root_families": 40
+    },
+    "intensive_luk + Satf": {
+      "n": 40,
+      "completed": 40,
+      "completion_fraction": 1.0,
+      "correct_all": 35,
+      "completed_exact_correct": 35,
+      "completed_exact_accuracy": 0.875,
+      "completed_spelling_tolerant_correct": 35,
+      "completed_spelling_tolerant_accuracy": 0.875,
+      "nasal_spelling_only_errors": 0,
+      "root_families": 40
+    },
+    "intensive_luk + ktavatu": {
+      "n": 40,
+      "completed": 39,
+      "completion_fraction": 0.975,
+      "correct_all": 27,
+      "completed_exact_correct": 27,
+      "completed_exact_accuracy": 0.6923076923076923,
+      "completed_spelling_tolerant_correct": 27,
+      "completed_spelling_tolerant_accuracy": 0.6923076923076923,
+      "nasal_spelling_only_errors": 0,
+      "root_families": 40
+    },
+    "intensive_luk + tfc": {
+      "n": 40,
+      "completed": 40,
+      "completion_fraction": 1.0,
+      "correct_all": 33,
+      "completed_exact_correct": 33,
+      "completed_exact_accuracy": 0.825,
+      "completed_spelling_tolerant_correct": 33,
+      "completed_spelling_tolerant_accuracy": 0.825,
+      "nasal_spelling_only_errors": 0,
+      "root_families": 40
+    },
+    "ric_san_ric_san + Satf": {
+      "n": 40,
+      "completed": 40,
+      "completion_fraction": 1.0,
+      "correct_all": 22,
+      "completed_exact_correct": 22,
+      "completed_exact_accuracy": 0.55,
+      "completed_spelling_tolerant_correct": 22,
+      "completed_spelling_tolerant_accuracy": 0.55,
+      "nasal_spelling_only_errors": 0,
+      "root_families": 40
+    }
+  },
+  "decision": "Broad nominal mixture is too easy. No cell is below50% overall. Deep four-operation Satf cell22/40 is only a small exploratory lead, not a validated Hard recipe. No Astra nominal pilot submitted."
+}

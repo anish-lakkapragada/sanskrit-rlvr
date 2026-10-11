@@ -1,0 +1,145 @@
+{
+  "created_at": "2026-10-08T00:31:42.700628+00:00",
+  "passed": true,
+  "mechanical_review_passed": true,
+  "blockers": [],
+  "tasks_sha256": "695e7284d06a555aaabfcb7671d000db5622157984221c261b9500e86f72d38f",
+  "manifest_sha256": "67653e28fcceb6291b805953432fe511889660a23e5b071c80a4ee43d65fb1c2",
+  "public_prompts_sha256": "187fa86a4b840f121ea443158654eda866fe78126efd0fe6f6b820986e742f81",
+  "source_policy_sha256": "e5c48ee7b54006f138d97d3c7cd9a90c76896c9954e3278568e17c5f2cb59284",
+  "n": 1800,
+  "all1800_full_canonical_regeneration": true,
+  "exact1250_full_objects_retained": true,
+  "added_objects": 550,
+  "added_by_cell": {
+    "other_adanta_aorist": 44,
+    "short_adanta_non_aorist": 286,
+    "broad_non_curadi": 220
+  },
+  "added_by_class": {
+    "Curadi": 330,
+    "Bhvadi": 220
+  },
+  "families": 755,
+  "family_size_histogram": {
+    "67": 12,
+    "7": 18,
+    "1": 720,
+    "6": 3,
+    "66": 2
+  },
+  "cell_counts": {
+    "short_adanta_non_aorist": {
+      "n": 936,
+      "families": 14,
+      "family_loads": {
+        "67": 12,
+        "66": 2
+      }
+    },
+    "other_adanta_aorist": {
+      "n": 144,
+      "families": 21,
+      "family_loads": {
+        "7": 18,
+        "6": 3
+      }
+    },
+    "broad_non_curadi": {
+      "n": 720,
+      "families": 720,
+      "family_loads": {
+        "1": 720
+      }
+    }
+  },
+  "distribution": {
+    "lakara": {
+      "Lit": 176,
+      "Lun": 216,
+      "Lan": 176,
+      "Lrt": 176,
+      "Lat": 176,
+      "AshirLin": 176,
+      "Lut": 176,
+      "Lot": 176,
+      "VidhiLin": 176,
+      "Lrn": 176
+    },
+    "prayoga": {
+      "Kartari": 1800
+    },
+    "purusha": {
+      "Uttama": 600,
+      "Prathama": 600,
+      "Madhyama": 600
+    },
+    "vacana": {
+      "Eka": 600,
+      "Bahu": 600,
+      "Dvi": 600
+    },
+    "gana": {
+      "Curadi": 1080,
+      "Juhotyadi": 9,
+      "Bhvadi": 446,
+      "Svadi": 10,
+      "Tudadi": 81,
+      "Rudhadi": 13,
+      "Divadi": 87,
+      "Tanadi": 5,
+      "Adadi": 37,
+      "Kryadi": 32
+    }
+  },
+  "all_public_prompts_exact_and_private_fields_isolated": true,
+  "history": {
+    "files": 117,
+    "records": 40426,
+    "ordinary_unique_tuples": 13903,
+    "registered_families": 700,
+    "tuple_overlap": 0,
+    "registered_family_overlap": 0,
+    "all_file_hashes_match": true
+  },
+  "strict_rl": {
+    "rows": 29034,
+    "families": 332,
+    "family_raw_citation_rendered_citation_tuple_prompt_overlaps": 0
+  },
+  "scope": "Independent mechanical/source-policy consistency review; not complete philological certification.",
+  "limitations": [
+    "The 52% hard component uses only14 families, each66–67 times; independent-family sub1pp precision is not established.",
+    "All220 additional broad families are Bhvadi; all10 classes are retained, not newly expanded.",
+    "Earlier legacy analysis inspected the dictionary before master split; no never-inspected lexical-root claim.",
+    "Source exclusions and finite accepted spelling rules remain bounded; every usable unrecognized answer requires independent source adjudication before linguistic errors or advancement.",
+    "Old task campaign sampling_cell.n values preserve old provenance; current manifest declares aggregate936/144/720."
+  ],
+  "generator_read_only_review": true,
+  "allocation_reoptimization_performed": false,
+  "protected_files_unchanged": true,
+  "protected_hashes": {
+    "benchmarks/parallel-search-20261007/four_d-90/candidate-1800-v1/supply.json": "e30e2ec730890c87876af90a47eaedb1d62bb809d6752a27d66a280a1a351c7e",
+    "benchmarks/parallel-search-20261007/four_d-90/candidate-1800-v1/source-policy.json": "e5c48ee7b54006f138d97d3c7cd9a90c76896c9954e3278568e17c5f2cb59284",
+    "benchmarks/parallel-search-20261007/four_d-90/candidate-1800-v1/README.md": "d38794bf29db2c1109a73e31c05889ea295c222d6b71493685254d662acdfcd0",
+    "benchmarks/parallel-search-20261007/four_d-90/candidate-1800-v1/public-prompts.json": "187fa86a4b840f121ea443158654eda866fe78126efd0fe6f6b820986e742f81",
+    "benchmarks/parallel-search-20261007/four_d-90/candidate-1800-v1/manifest.json": "67653e28fcceb6291b805953432fe511889660a23e5b071c80a4ee43d65fb1c2",
+    "benchmarks/parallel-search-20261007/four_d-90/candidate-1800-v1/tasks.json": "695e7284d06a555aaabfcb7671d000db5622157984221c261b9500e86f72d38f",
+    "benchmarks/parallel-search-20261007/four_d-90/candidate-1800-v1/membership-audit.json": "aaace614ea49cf5888c2d94c6092da41e11e8466fa2db58c05f6c8839ca7f78d",
+    "benchmarks/parallel-search-20261007/four_d-90/candidate-1800-v1/spelling-policy-proposal/controls.json": "1a2df59326772cad671f36dd70dc0f1b24a8e8139dc209fcb7a797ef2daa6290",
+    "benchmarks/parallel-search-20261007/four_d-90/candidate-1800-v1/spelling-policy-proposal/alias-policy.json": "06ee42905da5f8397e2d73f6fa1aa6ef67a2e35b961f5052aa0afac649ff90c3",
+    "benchmarks/parallel-search-20261007/four_d-90/candidate-1800-v1/spelling-policy-proposal/README.md": "5d542912dcea02c3129b1ebd681cfb872058a38d628eb5a10b99928e4269a90a",
+    "benchmarks/parallel-search-20261007/four_d-90/candidate-1800-v1/spelling-policy-proposal/transfer-review.json": "e5f78c9f77c04fb9e93d52500e41010584976852fad82ecc485f8044430c584b",
+    "benchmarks/parallel-search-20261007/four_d-90/candidate-1800-v1/spelling-policy-proposal/verification-receipt.json": "9f7b543b47b44c12f73bb64c1fa423a1d0f5d9607ff2a077b3f84974ba14c5fd",
+    "benchmarks/parallel-search-20261007/four_d-90/candidate-1800-v1/spelling-policy-proposal/unresolved-contexts.json": "a988c89ab8c0102eb66b59fe80756212648b7c4210e4a3da806de3979068a93e",
+    "benchmarks/parallel-search-20261007/four_d-90/candidate-1800-v1/spelling-policy-proposal/verify.py": "efdbe004c1e448f7edc4108653fda134423e022b36441966ae22c7efcf034e44",
+    "benchmarks/parallel-search-20261007/four_d-90/candidate-1800-v1/spelling-policy-proposal/prepare.py": "f22bbe4b2d9cd55260d9b1f7e4cfd413be209b396fadd958142f5db53cfcc838",
+    "benchmarks/parallel-search-20261007/four_d-90/candidate-1800-v1/spelling-policy-proposal/retained-alias-audit.json": "60b12778622ae8462da246271dc7c6fed205d2afedfd5be1273259d7146fb45a",
+    "benchmarks/parallel-search-20261007/four_d-90/candidate-1800-v1/spelling-policy-proposal/scorer.py": "3726b6c567ffa054d718abbb873512d0b9e2f4cc59b6790e4a5fb884f5829d58"
+  },
+  "reviewer_script_sha256": "8aceba8a33dd585cea5138656d86857b8abb6d55a4ca34a60f0794f03e0df7c3",
+  "model_outputs_read": false,
+  "paid_calls": 0,
+  "benchmark_ready": false,
+  "evaluation_authorized": false
+}

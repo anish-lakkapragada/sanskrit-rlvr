@@ -1,0 +1,2842 @@
+{
+  "schema": "bounded-source-adjudication-v1",
+  "created_at": "2026-10-08T02:40:23.646180+00:00",
+  "provider": "OpenAI",
+  "source_review_scope": "All47 broad_non_curadi unrecognized usable answers; no whole-cohort source certification. Includes outcome-independent puadi coverage scan of all1800 selected inputs.",
+  "all_queue_rows_individually_mapped": true,
+  "raw_scores_unchanged": true,
+  "counts": {
+    "rejected": 42,
+    "unresolved": 4,
+    "accepted": 1
+  },
+  "accepted_indices": [
+    984
+  ],
+  "unresolved_indices": [
+    229,
+    372,
+    437,
+    1122
+  ],
+  "rows": [
+    {
+      "disposition": "rejected",
+      "rule_ids": [
+        "1.3.78",
+        "3.4.86"
+      ],
+      "basis": "Exact maha pujayam is parasmaipada (Dhatupradipa mahati); Lot third singular takes tu or the licensed tat alternative. mahatam is the wrong ending/pada.",
+      "dhatupradipa_page_locators": [
+        61
+      ],
+      "mechanism": "pada_or_person",
+      "index": 15,
+      "task_id": "cart4-a804da1dba885c13bd317738",
+      "dhatu": {
+        "code": "01.0831",
+        "aupadeshika": "maha~",
+        "gana": "Bhvadi",
+        "artha": "pUjAyAm"
+      },
+      "morphology": {
+        "lakara": "Lot",
+        "prayoga": "Kartari",
+        "purusha": "Prathama",
+        "vacana": "Eka"
+      },
+      "prompt_sha256": "e0863ac77ffa15b0b0e16f4ac2a56a251dc29391de8fa18e80bcf99bc3b673d9",
+      "root_family": "maha~|Bhvadi",
+      "forms_devanagari": [
+        "महताम्"
+      ],
+      "canonical_forms_devanagari": [
+        "महताद्",
+        "महतात्",
+        "महतु"
+      ],
+      "canonical_forms_slp1": [
+        "mahatAd",
+        "mahatAt",
+        "mahatu"
+      ],
+      "receipt_sha256": "e6cb7cdde4f97481bdb7a2584151bf6edacd2782c95310d039a63f2277d3b110",
+      "sources": [
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/1.3.78.web.txt",
+          "sha256": "e33d7b9fc1bbce73ea118f4bdcbe402b0d4d1d20736e1b878a683db55c9aede3",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/1/1.3.78.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/3.4.86.web.txt",
+          "sha256": "f031758c5ba0ceba663188a9e46d38160c174f68f62185ad7bbefbcef90d9ece",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/3/3.4.86.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/dhatupradipa-selected-excerpts.json",
+          "sha256": "05bf7e9effdc85b4ba1c0ad3bfcd66a38bb3b1ba6f574165adaada9b7f51f921",
+          "kind": "primary_work_OCR_locator",
+          "pages": [
+            61
+          ]
+        }
+      ]
+    },
+    {
+      "disposition": "rejected",
+      "rule_ids": [
+        "1.2.1",
+        "1.1.5"
+      ],
+      "basis": "Tudadi dip kshepe is inside kutadi; the non-nit/nnit ending is ngit and guna is blocked. didepitha imports guna into this exact class entry.",
+      "dhatupradipa_page_locators": [
+        121,
+        122
+      ],
+      "mechanism": "kutadi_guna",
+      "index": 90,
+      "task_id": "cart4-23377022d803107a12393e0e",
+      "dhatu": {
+        "code": "06.0098",
+        "aupadeshika": "qipa~",
+        "gana": "Tudadi",
+        "artha": "kzepe"
+      },
+      "morphology": {
+        "lakara": "Lit",
+        "prayoga": "Kartari",
+        "purusha": "Madhyama",
+        "vacana": "Eka"
+      },
+      "prompt_sha256": "0edde49b1e55ec2f638c2922110219001ab0b05e4f334884d62c66f585f4fc19",
+      "root_family": "qipa~|Tudadi",
+      "forms_devanagari": [
+        "डिडेपिथ"
+      ],
+      "canonical_forms_devanagari": [
+        "डिडिपिथ"
+      ],
+      "canonical_forms_slp1": [
+        "qiqipiTa"
+      ],
+      "receipt_sha256": "bd178dd775cc49c3e27efc85720aafb28e60b6e1284fb9f9d33ca2ed0225bf70",
+      "sources": [
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/1.2.1.web.txt",
+          "sha256": "ba6c2fb3b728409fe014615bfbe12928b113deaddad6e8f29288e3af1fd03038",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/1/1.2.1.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/1.1.5.web.txt",
+          "sha256": "280152eb039414070bcc386e132de71700f7bcb54e905add77acae6ae41b310c",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/1/1.1.5.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/dhatupradipa-selected-excerpts.json",
+          "sha256": "05bf7e9effdc85b4ba1c0ad3bfcd66a38bb3b1ba6f574165adaada9b7f51f921",
+          "kind": "primary_work_OCR_locator",
+          "pages": [
+            121,
+            122
+          ]
+        }
+      ]
+    },
+    {
+      "disposition": "rejected",
+      "rule_ids": [
+        "3.1.55"
+      ],
+      "basis": "Divadi vrsha is in pushadi; parasmaipada aorist has ang. avarshishta uses the wrong sic/middle construction for this entry.",
+      "dhatupradipa_page_locators": [
+        110
+      ],
+      "mechanism": "aorist_vikarana",
+      "index": 105,
+      "task_id": "cart4-0dee034777c2671625107d53",
+      "dhatu": {
+        "code": "04.0139",
+        "aupadeshika": "vfSa~",
+        "gana": "Divadi",
+        "artha": "AvaraRe"
+      },
+      "morphology": {
+        "lakara": "Lun",
+        "prayoga": "Kartari",
+        "purusha": "Madhyama",
+        "vacana": "Bahu"
+      },
+      "prompt_sha256": "e4c65cbcb92ac61658851d849dc80e0f69dbafffdfc91082b2035103667eac0e",
+      "root_family": "vfSa~|Divadi",
+      "forms_devanagari": [
+        "अवर्शिष्ट"
+      ],
+      "canonical_forms_devanagari": [
+        "अवृशत"
+      ],
+      "canonical_forms_slp1": [
+        "avfSata"
+      ],
+      "receipt_sha256": "d9cc58cbcc089769d3693c6c98085271183e7651bbb4975cf1db53ac7d12d569",
+      "sources": [
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/3.1.55.web.txt",
+          "sha256": "5bab9fda22173b00c5f0294bf43f7b19911e199ec72c9c37807170658538593e",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/3/3.1.55.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/dhatupradipa-selected-excerpts.json",
+          "sha256": "05bf7e9effdc85b4ba1c0ad3bfcd66a38bb3b1ba6f574165adaada9b7f51f921",
+          "kind": "primary_work_OCR_locator",
+          "pages": [
+            110
+          ]
+        }
+      ]
+    },
+    {
+      "disposition": "rejected",
+      "rule_ids": [
+        "1.3.12",
+        "1.3.78",
+        "3.4.78"
+      ],
+      "basis": "Exact rage shankayam is parasmaipada; Dhatupradipa ragati. Optative middle -eyatham is not licensed by the supplied citation.",
+      "dhatupradipa_page_locators": [
+        66
+      ],
+      "mechanism": "pada_or_person",
+      "index": 106,
+      "task_id": "cart4-8344f02db8ff1e598a836be2",
+      "dhatu": {
+        "code": "01.0894",
+        "aupadeshika": "rage~",
+        "gana": "Bhvadi",
+        "artha": "SaNkAyAm"
+      },
+      "morphology": {
+        "lakara": "VidhiLin",
+        "prayoga": "Kartari",
+        "purusha": "Madhyama",
+        "vacana": "Dvi"
+      },
+      "prompt_sha256": "60f442a40b9aa89caadc768b495d7efae472cb5a49f651d1fcd317ddc5d0c6e2",
+      "root_family": "rage~|Bhvadi",
+      "forms_devanagari": [
+        "रगेयाथाम्"
+      ],
+      "canonical_forms_devanagari": [
+        "रगेतम्"
+      ],
+      "canonical_forms_slp1": [
+        "ragetam"
+      ],
+      "receipt_sha256": "20c685ca012583d2c2a23eb51344b2317c78d16559f32e513880ab216e175ce8",
+      "sources": [
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/1.3.12.web.txt",
+          "sha256": "2c59cb714c5395096d68db182f26980ee8f9f049640cf6b8b81e94804226fa93",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/1/1.3.12.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/1.3.78.web.txt",
+          "sha256": "e33d7b9fc1bbce73ea118f4bdcbe402b0d4d1d20736e1b878a683db55c9aede3",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/1/1.3.78.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/3.4.78.web.txt",
+          "sha256": "a0180b03321a9e917c3f993ed588fa7269e0994bb94f5e3cf248731bd3a9c7df",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/3/3.4.78.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/dhatupradipa-selected-excerpts.json",
+          "sha256": "05bf7e9effdc85b4ba1c0ad3bfcd66a38bb3b1ba6f574165adaada9b7f51f921",
+          "kind": "primary_work_OCR_locator",
+          "pages": [
+            66
+          ]
+        }
+      ]
+    },
+    {
+      "disposition": "rejected",
+      "rule_ids": [
+        "1.2.1",
+        "1.1.5"
+      ],
+      "basis": "Tudadi chuta chedane is a kutadi entry; the conditional sya is not nnit/nit, so ngit blocks guna. achotishyan wrongly changes u to o.",
+      "dhatupradipa_page_locators": [
+        121,
+        122
+      ],
+      "mechanism": "kutadi_guna",
+      "index": 115,
+      "task_id": "cart4-2005d7ca68d5fc0e50834a00",
+      "dhatu": {
+        "code": "06.0104",
+        "aupadeshika": "cuwa~",
+        "gana": "Tudadi",
+        "artha": "Cedane"
+      },
+      "morphology": {
+        "lakara": "Lrn",
+        "prayoga": "Kartari",
+        "purusha": "Prathama",
+        "vacana": "Bahu"
+      },
+      "prompt_sha256": "d86677b045886f3c115f6bf2fd6278aa0654deefb67d2e0be4f27651d645600f",
+      "root_family": "cuwa~|Tudadi",
+      "forms_devanagari": [
+        "अचोटिष्यन्"
+      ],
+      "canonical_forms_devanagari": [
+        "अचुटिष्यन्"
+      ],
+      "canonical_forms_slp1": [
+        "acuwizyan"
+      ],
+      "receipt_sha256": "7ec1db982e391e0e1333c7703e8b070c2dd7a844b3be3a6335a4ca5b3d382c1e",
+      "sources": [
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/1.2.1.web.txt",
+          "sha256": "ba6c2fb3b728409fe014615bfbe12928b113deaddad6e8f29288e3af1fd03038",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/1/1.2.1.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/1.1.5.web.txt",
+          "sha256": "280152eb039414070bcc386e132de71700f7bcb54e905add77acae6ae41b310c",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/1/1.1.5.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/dhatupradipa-selected-excerpts.json",
+          "sha256": "05bf7e9effdc85b4ba1c0ad3bfcd66a38bb3b1ba6f574165adaada9b7f51f921",
+          "kind": "primary_work_OCR_locator",
+          "pages": [
+            121,
+            122
+          ]
+        }
+      ]
+    },
+    {
+      "disposition": "rejected",
+      "rule_ids": [
+        "1.3.78",
+        "3.4.78"
+      ],
+      "basis": "The supplied snai root has no atmanepada it marker; its root accent is not an anudatta-it suffix. Dhatupradipa snayati confirms P. asnayathah uses M.",
+      "dhatupradipa_page_locators": [
+        77
+      ],
+      "mechanism": "pada_or_person",
+      "index": 131,
+      "task_id": "cart4-10d1fb640be2a71219daf98d",
+      "dhatu": {
+        "code": "01.1072",
+        "aupadeshika": "zRE\\",
+        "gana": "Bhvadi",
+        "artha": "vezwane SoBAyAM ca"
+      },
+      "morphology": {
+        "lakara": "Lan",
+        "prayoga": "Kartari",
+        "purusha": "Madhyama",
+        "vacana": "Eka"
+      },
+      "prompt_sha256": "c35d2bfc03f909b50b91d0f21c7995588e259192d5b70583d3cccf418ef6bd92",
+      "root_family": "zRE\\|Bhvadi",
+      "forms_devanagari": [
+        "अस्नायथाः"
+      ],
+      "canonical_forms_devanagari": [
+        "अस्नायः"
+      ],
+      "canonical_forms_slp1": [
+        "asnAyaH"
+      ],
+      "receipt_sha256": "a3f90d8c9b41826fe44438db657c5a0f1c0e38e35b64f1b8b948c23c23823354",
+      "sources": [
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/1.3.78.web.txt",
+          "sha256": "e33d7b9fc1bbce73ea118f4bdcbe402b0d4d1d20736e1b878a683db55c9aede3",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/1/1.3.78.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/3.4.78.web.txt",
+          "sha256": "a0180b03321a9e917c3f993ed588fa7269e0994bb94f5e3cf248731bd3a9c7df",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/3/3.4.78.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/dhatupradipa-selected-excerpts.json",
+          "sha256": "05bf7e9effdc85b4ba1c0ad3bfcd66a38bb3b1ba6f574165adaada9b7f51f921",
+          "kind": "primary_work_OCR_locator",
+          "pages": [
+            77
+          ]
+        }
+      ]
+    },
+    {
+      "disposition": "rejected",
+      "rule_ids": [
+        "1.3.12",
+        "1.3.78"
+      ],
+      "basis": "Supplied shatha is P; Dhatupradipa shathati. -ishyante is middle rather than requested ordinary P union for this exact entry.",
+      "dhatupradipa_page_locators": [
+        41
+      ],
+      "mechanism": "pada_or_person",
+      "index": 138,
+      "task_id": "cart4-a60f7294e07453b6d6f679f1",
+      "dhatu": {
+        "code": "01.0394",
+        "aupadeshika": "SaWa~",
+        "gana": "Bhvadi",
+        "artha": "kEtave hiMsAsaNkleSanayoH dyUte sparDAyAM ca"
+      },
+      "morphology": {
+        "lakara": "Lrt",
+        "prayoga": "Kartari",
+        "purusha": "Prathama",
+        "vacana": "Bahu"
+      },
+      "prompt_sha256": "7436078793471b1a09a1e3baeb35c609561c7933505b6f9e58bd2bd0e8e4788c",
+      "root_family": "SaWa~|Bhvadi",
+      "forms_devanagari": [
+        "शठिष्यन्ते"
+      ],
+      "canonical_forms_devanagari": [
+        "शठिष्यन्ति"
+      ],
+      "canonical_forms_slp1": [
+        "SaWizyanti"
+      ],
+      "receipt_sha256": "4a6750d0850d9f57fffb6e6d7ab12906f40a723665f5beb7de99c0377af93be3",
+      "sources": [
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/1.3.12.web.txt",
+          "sha256": "2c59cb714c5395096d68db182f26980ee8f9f049640cf6b8b81e94804226fa93",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/1/1.3.12.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/1.3.78.web.txt",
+          "sha256": "e33d7b9fc1bbce73ea118f4bdcbe402b0d4d1d20736e1b878a683db55c9aede3",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/1/1.3.78.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/dhatupradipa-selected-excerpts.json",
+          "sha256": "05bf7e9effdc85b4ba1c0ad3bfcd66a38bb3b1ba6f574165adaada9b7f51f921",
+          "kind": "primary_work_OCR_locator",
+          "pages": [
+            41
+          ]
+        }
+      ]
+    },
+    {
+      "disposition": "unresolved",
+      "rule_ids": [
+        "3.1.56"
+      ],
+      "basis": "Kashika explicitly gives sr gatau -> asarat without a class restriction; Madhaviya restricts the ang rule to the Juhotyadi entry by association with shas. The supplied Bhvadi sr and returned asaran therefore have a genuine commentary-scope conflict; do not resolve it from VP alone.",
+      "dhatupradipa_page_locators": [],
+      "mechanism": "aorist_commentary_scope",
+      "index": 229,
+      "task_id": "cart4-333f2ed572a6445616c73116",
+      "dhatu": {
+        "code": "01.1085",
+        "aupadeshika": "sf\\",
+        "gana": "Bhvadi",
+        "artha": "gatO"
+      },
+      "morphology": {
+        "lakara": "Lun",
+        "prayoga": "Kartari",
+        "purusha": "Prathama",
+        "vacana": "Bahu"
+      },
+      "prompt_sha256": "6fdb0221a3d518e4ad0ce77d475c9b73f48adb256fb2f8735b609bd7599d7818",
+      "root_family": "sf\\|Bhvadi",
+      "forms_devanagari": [
+        "असरन्"
+      ],
+      "canonical_forms_devanagari": [
+        "असार्षुः"
+      ],
+      "canonical_forms_slp1": [
+        "asArzuH"
+      ],
+      "receipt_sha256": "44094de8ecd609e2f2e6f0207cb6c201fefce807f077a1130b44a8d4917f4085",
+      "sources": [
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/Anthropic-sources/3.1.56.html",
+          "sha256": "345bc103a8e32a40a17f8862928ef477d58e9f9d9d3a2c17006fb2ed7a4a7149",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/3/3.1.56.htm",
+          "kind": "primary_commentary"
+        }
+      ],
+      "related_independent_review": {
+        "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/Anthropic-review.json",
+        "sha256": "cb4828562be0dbdfa6ccd4d24c5576ab8635a8d012030706bc194d9b794e1543",
+        "same_task_index": 229
+      }
+    },
+    {
+      "disposition": "rejected",
+      "rule_ids": [
+        "1.3.12",
+        "1.3.78"
+      ],
+      "basis": "Supplied shita anadare is P; Dhatupradipa shetati. shetavahe is middle, not the P first dual shetavah.",
+      "dhatupradipa_page_locators": [
+        38
+      ],
+      "mechanism": "pada_or_person",
+      "index": 234,
+      "task_id": "cart4-16cc7398bcd22a8303b9936d",
+      "dhatu": {
+        "code": "01.0340",
+        "aupadeshika": "Siwa~",
+        "gana": "Bhvadi",
+        "artha": "anAdare"
+      },
+      "morphology": {
+        "lakara": "Lat",
+        "prayoga": "Kartari",
+        "purusha": "Uttama",
+        "vacana": "Dvi"
+      },
+      "prompt_sha256": "703abc84b4f7a7e627877ce6064de36bf116ae1d714d991362f039bc5afa40fd",
+      "root_family": "Siwa~|Bhvadi",
+      "forms_devanagari": [
+        "शेटावहे"
+      ],
+      "canonical_forms_devanagari": [
+        "शेटावः"
+      ],
+      "canonical_forms_slp1": [
+        "SewAvaH"
+      ],
+      "receipt_sha256": "346425669ab76cb18aedee34409eca6b2688c1457fd44a61f8875ec715aa1891",
+      "sources": [
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/1.3.12.web.txt",
+          "sha256": "2c59cb714c5395096d68db182f26980ee8f9f049640cf6b8b81e94804226fa93",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/1/1.3.12.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/1.3.78.web.txt",
+          "sha256": "e33d7b9fc1bbce73ea118f4bdcbe402b0d4d1d20736e1b878a683db55c9aede3",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/1/1.3.78.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/dhatupradipa-selected-excerpts.json",
+          "sha256": "05bf7e9effdc85b4ba1c0ad3bfcd66a38bb3b1ba6f574165adaada9b7f51f921",
+          "kind": "primary_work_OCR_locator",
+          "pages": [
+            38
+          ]
+        }
+      ]
+    },
+    {
+      "disposition": "rejected",
+      "rule_ids": [
+        "7.2.73"
+      ],
+      "basis": "The a-final dhma aorist P requires sag and it before sic. adhmastam omits the resulting -sishtam material; compare the primary ayas-ishtam construction.",
+      "dhatupradipa_page_locators": [
+        77
+      ],
+      "mechanism": "aorist_sag_it",
+      "index": 287,
+      "task_id": "cart4-c2513d52960018572ce5d765",
+      "dhatu": {
+        "code": "01.1076",
+        "aupadeshika": "DmA\\",
+        "gana": "Bhvadi",
+        "artha": "SabdAgnisaMyogayoH"
+      },
+      "morphology": {
+        "lakara": "Lun",
+        "prayoga": "Kartari",
+        "purusha": "Prathama",
+        "vacana": "Dvi"
+      },
+      "prompt_sha256": "e9420016208b99aec8333c4d4402d124dd216b8265aef8e444d10384ac9eb5fc",
+      "root_family": "DmA\\|Bhvadi",
+      "forms_devanagari": [
+        "अध्मास्ताम्"
+      ],
+      "canonical_forms_devanagari": [
+        "अध्मासिष्टाम्"
+      ],
+      "canonical_forms_slp1": [
+        "aDmAsizwAm"
+      ],
+      "receipt_sha256": "30c3c8185a5b3d669c23a6fa86be44bd29d23341bce2fdaad57d01fb14f146d3",
+      "sources": [
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/7.2.73.web.txt",
+          "sha256": "5a77586557c33b28cf903bdc2d2c6853d27529be0e9fd974822e25bd10ced581",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.2.73.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/dhatupradipa-selected-excerpts.json",
+          "sha256": "05bf7e9effdc85b4ba1c0ad3bfcd66a38bb3b1ba6f574165adaada9b7f51f921",
+          "kind": "primary_work_OCR_locator",
+          "pages": [
+            77
+          ]
+        }
+      ]
+    },
+    {
+      "disposition": "rejected",
+      "rule_ids": [
+        "8.3.78",
+        "8.3.79"
+      ],
+      "basis": "The optional dh->dh-retroflex after it requires an in-final preceding anga. vas is consonant-final s; a preceding inserted i alone does not satisfy the lexical condition. avasidhvam dental dh remains required.",
+      "dhatupradipa_page_locators": [],
+      "mechanism": "dh_retroflex_scope",
+      "index": 289,
+      "task_id": "cart4-93cefa71e45814e283da4b42",
+      "dhatu": {
+        "code": "02.0013",
+        "aupadeshika": "vasa~\\",
+        "gana": "Adadi",
+        "artha": "AcCAdane"
+      },
+      "morphology": {
+        "lakara": "Lun",
+        "prayoga": "Kartari",
+        "purusha": "Madhyama",
+        "vacana": "Bahu"
+      },
+      "prompt_sha256": "bb792cb4ebfdec8e1bc077465dbcbb4e7ebd83fd061f267b06edd362815ed661",
+      "root_family": "vasa~\\|Adadi",
+      "forms_devanagari": [
+        "अवसिढ्वम्"
+      ],
+      "canonical_forms_devanagari": [
+        "अवसिध्वम्"
+      ],
+      "canonical_forms_slp1": [
+        "avasiDvam"
+      ],
+      "receipt_sha256": "72b079f31731cae5911760076842b1e94e5d97ca1cc953b989b29d7d473f73ca",
+      "sources": [
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/8.3.78.web.txt",
+          "sha256": "5990eeece01a8c3fdd966d42f5682275cb0efffb17520bd2288f0aa82af14258",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/8/8.3.78.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/8.3.79.web.txt",
+          "sha256": "6d3a30ecbae6ac9db6b25ce35eb85e55acfd09cb4ca4091e23fde6e08fb9ecd8",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/8/8.3.79.htm",
+          "kind": "primary_commentary"
+        }
+      ]
+    },
+    {
+      "disposition": "rejected",
+      "rule_ids": [
+        "1.3.12",
+        "1.3.78",
+        "7.3.86"
+      ],
+      "basis": "Exact hudr is P (r-it is not an atmanepada marker); hodishiya is M. Also long medial u is not the laghu upadha entitled to guna.",
+      "dhatupradipa_page_locators": [],
+      "mechanism": "pada_or_person",
+      "index": 303,
+      "task_id": "cart4-602beeb73e22a3c571b5c281",
+      "dhatu": {
+        "code": "01.0409",
+        "aupadeshika": "hUqf~",
+        "gana": "Bhvadi",
+        "artha": "gatO"
+      },
+      "morphology": {
+        "lakara": "AshirLin",
+        "prayoga": "Kartari",
+        "purusha": "Uttama",
+        "vacana": "Eka"
+      },
+      "prompt_sha256": "2a3167bd4fd49dd05d4c7bca660db4f1b52f8fa1058217922baca8b22a57a2dc",
+      "root_family": "hUqf~|Bhvadi",
+      "forms_devanagari": [
+        "होडिषीय"
+      ],
+      "canonical_forms_devanagari": [
+        "हूड्यासम्"
+      ],
+      "canonical_forms_slp1": [
+        "hUqyAsam"
+      ],
+      "receipt_sha256": "eb20414491c4bf8167ffbf99de85e5bac7270870d52b155078add47b8a1c7181",
+      "sources": [
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/1.3.12.web.txt",
+          "sha256": "2c59cb714c5395096d68db182f26980ee8f9f049640cf6b8b81e94804226fa93",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/1/1.3.12.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/1.3.78.web.txt",
+          "sha256": "e33d7b9fc1bbce73ea118f4bdcbe402b0d4d1d20736e1b878a683db55c9aede3",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/1/1.3.78.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/7.3.86.web.txt",
+          "sha256": "637a91064c144a1a59cddf2feef3bc42fe7763baaa9db75525f0d81162ef2be6",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.3.86.htm",
+          "kind": "primary_commentary"
+        }
+      ]
+    },
+    {
+      "disposition": "unresolved",
+      "rule_ids": [
+        "1.3.76"
+      ],
+      "basis": "Dhatupradipa treats marana/toshana/nishamana jna in the mit group as a mit prescription on janati, rather than an unequivocally independent Bhvadi lexeme. Kashika permits unprefixed janati middle for agent-directed fruit. Thus jajnjivahe cannot safely be rejected solely from the engine treating this code as Bhvadi P; exact identity/scope needs resolution.",
+      "dhatupradipa_page_locators": [
+        67
+      ],
+      "mechanism": "lexical_identity_pada",
+      "index": 372,
+      "task_id": "cart4-d62ff38ee24504f3741cdee8",
+      "dhatu": {
+        "code": "01.0923",
+        "aupadeshika": "jYA",
+        "gana": "Bhvadi",
+        "artha": "mAraRatozaRaniSAmanezu"
+      },
+      "morphology": {
+        "lakara": "Lit",
+        "prayoga": "Kartari",
+        "purusha": "Uttama",
+        "vacana": "Dvi"
+      },
+      "prompt_sha256": "06dc49e6f168b89c1be8fe58510333772d246ba315a0680d79933b00b9d4d667",
+      "root_family": "jYA|Bhvadi",
+      "forms_devanagari": [
+        "जज्ञिवहे"
+      ],
+      "canonical_forms_devanagari": [
+        "जज्ञिव"
+      ],
+      "canonical_forms_slp1": [
+        "jajYiva"
+      ],
+      "receipt_sha256": "ab8ee9ad2324bc845df35bfd53b5460ea29e4365fab517d4863c80b346717609",
+      "sources": [
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/1.3.76.web.txt",
+          "sha256": "d45a91536ac54749729735cd90c0750d83893d24f480e312d7a4715e03e75055",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/1/1.3.76.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/dhatupradipa-selected-excerpts.json",
+          "sha256": "05bf7e9effdc85b4ba1c0ad3bfcd66a38bb3b1ba6f574165adaada9b7f51f921",
+          "kind": "primary_work_OCR_locator",
+          "pages": [
+            67
+          ]
+        }
+      ]
+    },
+    {
+      "disposition": "rejected",
+      "rule_ids": [
+        "7.1.59"
+      ],
+      "basis": "Kashika/Nyasa explicitly distinguish trpha/trmpha: only the already nasal/anushanga entry receives the obligatory nasal extension; the nonnasal entry yields trphati. The supplied nonnasal trpha does not license trmphami.",
+      "dhatupradipa_page_locators": [
+        118
+      ],
+      "mechanism": "distinct_nonnasal_entry",
+      "index": 399,
+      "task_id": "cart4-08232875b5d90a53badc740a",
+      "dhatu": {
+        "code": "06.0030",
+        "aupadeshika": "tfPa~",
+        "gana": "Tudadi",
+        "artha": "tfptO"
+      },
+      "morphology": {
+        "lakara": "Lat",
+        "prayoga": "Kartari",
+        "purusha": "Uttama",
+        "vacana": "Eka"
+      },
+      "prompt_sha256": "78876b4a50d3349e5f1df0f2e50b58d1869f209a2b412a5a5b40ea40068ab591",
+      "root_family": "tfPa~|Tudadi",
+      "forms_devanagari": [
+        "तृम्फामि"
+      ],
+      "canonical_forms_devanagari": [
+        "तृफामि"
+      ],
+      "canonical_forms_slp1": [
+        "tfPAmi"
+      ],
+      "receipt_sha256": "0a303b9eaa76b4ded847bad922389871ec09c72d806676966644a9ebed458783",
+      "sources": [
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/web-primary-01.txt",
+          "sha256": "27f993ddf5312a97fee13624b28f13823821422ac978137719f1a9768be0f874",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.1.59.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/dhatupradipa-selected-excerpts.json",
+          "sha256": "05bf7e9effdc85b4ba1c0ad3bfcd66a38bb3b1ba6f574165adaada9b7f51f921",
+          "kind": "primary_work_OCR_locator",
+          "pages": [
+            118
+          ]
+        }
+      ]
+    },
+    {
+      "disposition": "rejected",
+      "rule_ids": [
+        "1.3.78",
+        "3.4.78"
+      ],
+      "basis": "Adadi ra dane is a P entry; root accent is not an anudatta-it marker. rasiyastam is an M benedictive and is not licensed by unspecified pada for this exact citation.",
+      "dhatupradipa_page_locators": [],
+      "mechanism": "pada_or_person",
+      "index": 412,
+      "task_id": "cart4-e882a0ad06cc112e968ee9e9",
+      "dhatu": {
+        "code": "02.0052",
+        "aupadeshika": "rA\\",
+        "gana": "Adadi",
+        "artha": "dAne"
+      },
+      "morphology": {
+        "lakara": "AshirLin",
+        "prayoga": "Kartari",
+        "purusha": "Prathama",
+        "vacana": "Dvi"
+      },
+      "prompt_sha256": "acec8de0ff5d8fa7c6f658c39e788efd4a0344e3edd6232b9edd33af50f8d7a1",
+      "root_family": "rA\\|Adadi",
+      "forms_devanagari": [
+        "रासीयास्ताम्"
+      ],
+      "canonical_forms_devanagari": [
+        "रायास्ताम्"
+      ],
+      "canonical_forms_slp1": [
+        "rAyAstAm"
+      ],
+      "receipt_sha256": "194c5a93b7213bcdda12d1f92004eff7183be298ce3a393d9b336dfd503f8642",
+      "sources": [
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/1.3.78.web.txt",
+          "sha256": "e33d7b9fc1bbce73ea118f4bdcbe402b0d4d1d20736e1b878a683db55c9aede3",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/1/1.3.78.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/3.4.78.web.txt",
+          "sha256": "a0180b03321a9e917c3f993ed588fa7269e0994bb94f5e3cf248731bd3a9c7df",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/3/3.4.78.htm",
+          "kind": "primary_commentary"
+        }
+      ]
+    },
+    {
+      "disposition": "unresolved",
+      "rule_ids": [
+        "7.1.61",
+        "1.3.12"
+      ],
+      "basis": "Dhatupradipa gatravinama listings associate jabh/jrbhi with jambhate and a jabhi alternative with jabhate; 7.1.61 supplies num to jabhi. The supplied jaBa~ has no anudatta-it or i-it but the same meaning. This is unresolved dictionary-identity evidence, not grounds to accept any nasal/middle replacement or reject it solely from VP.",
+      "dhatupradipa_page_locators": [
+        44
+      ],
+      "mechanism": "lexical_identity_pada_num",
+      "index": 437,
+      "task_id": "cart4-345f675772bc0d7831c0dd7e",
+      "dhatu": {
+        "code": "01.0150",
+        "aupadeshika": "jaBa~",
+        "gana": "Bhvadi",
+        "artha": "gAtravinAme"
+      },
+      "morphology": {
+        "lakara": "Lat",
+        "prayoga": "Kartari",
+        "purusha": "Prathama",
+        "vacana": "Eka"
+      },
+      "prompt_sha256": "57bb4f20d866ee8f63c7401b52a2f78cd9bd18086ff4f558a9ea9d36984d18ad",
+      "root_family": "jaBa~|Bhvadi",
+      "forms_devanagari": [
+        "जम्भते"
+      ],
+      "canonical_forms_devanagari": [
+        "जभति"
+      ],
+      "canonical_forms_slp1": [
+        "jaBati"
+      ],
+      "receipt_sha256": "8c948dc3f3f305fab5107aa0cf078df01ac768c015e51809c5dba5ffeea2b70f",
+      "sources": [
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/Anthropic-sources/7.1.61.html",
+          "sha256": "bb06005336b7d017b2baf16ee5a002a5490e5d52f6ed52421784ed31d7d0b8e6",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.1.61.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/1.3.12.web.txt",
+          "sha256": "2c59cb714c5395096d68db182f26980ee8f9f049640cf6b8b81e94804226fa93",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/1/1.3.12.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/dhatupradipa-selected-excerpts.json",
+          "sha256": "05bf7e9effdc85b4ba1c0ad3bfcd66a38bb3b1ba6f574165adaada9b7f51f921",
+          "kind": "primary_work_OCR_locator",
+          "pages": [
+            44
+          ]
+        }
+      ],
+      "related_independent_review": {
+        "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/Anthropic-review.json",
+        "sha256": "cb4828562be0dbdfa6ccd4d24c5576ab8635a8d012030706bc194d9b794e1543",
+        "same_task_index": 437
+      }
+    },
+    {
+      "disposition": "rejected",
+      "rule_ids": [
+        "7.2.73",
+        "3.4.101"
+      ],
+      "basis": "The requested aorist first singular P requires mip->am (and the a-final sic formation). ajasi lacks that first-singular ending; it is not a licensed contraction of ajasisham.",
+      "dhatupradipa_page_locators": [
+        77
+      ],
+      "mechanism": "aorist_person_ending",
+      "index": 457,
+      "task_id": "cart4-ceab0966702517b8a3a00a1e",
+      "dhatu": {
+        "code": "01.1062",
+        "aupadeshika": "jE\\",
+        "gana": "Bhvadi",
+        "artha": "kzaye"
+      },
+      "morphology": {
+        "lakara": "Lun",
+        "prayoga": "Kartari",
+        "purusha": "Uttama",
+        "vacana": "Eka"
+      },
+      "prompt_sha256": "9fff2e0884776bf8cae30a979d511e070df96dd8b846147ae599ae77e07d6fb1",
+      "root_family": "jE\\|Bhvadi",
+      "forms_devanagari": [
+        "अजासि"
+      ],
+      "canonical_forms_devanagari": [
+        "अजासिषम्"
+      ],
+      "canonical_forms_slp1": [
+        "ajAsizam"
+      ],
+      "receipt_sha256": "e59449813f5a339051ad25dddac7baa3b6aca7dd66d59a80c7be744deb5d0052",
+      "sources": [
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/7.2.73.web.txt",
+          "sha256": "5a77586557c33b28cf903bdc2d2c6853d27529be0e9fd974822e25bd10ced581",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.2.73.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/3.4.101.web.txt",
+          "sha256": "cae894f4917d718adc3dfd3dd4a273deb7aead7fc90b1eaea5cb04505a079e4f",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/3/3.4.101.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/dhatupradipa-selected-excerpts.json",
+          "sha256": "05bf7e9effdc85b4ba1c0ad3bfcd66a38bb3b1ba6f574165adaada9b7f51f921",
+          "kind": "primary_work_OCR_locator",
+          "pages": [
+            77
+          ]
+        }
+      ]
+    },
+    {
+      "disposition": "rejected",
+      "rule_ids": [
+        "7.3.86"
+      ],
+      "basis": "Pish has short laghu medial i before sarvadhatuka P thematic formation, so guna e is required. pisheva incorrectly retains i.",
+      "dhatupradipa_page_locators": [],
+      "mechanism": "stem_guna",
+      "index": 458,
+      "task_id": "cart4-643c1b83898437f0f122f1e5",
+      "dhatu": {
+        "code": "01.0820",
+        "aupadeshika": "piSf~",
+        "gana": "Bhvadi",
+        "artha": "gatO"
+      },
+      "morphology": {
+        "lakara": "VidhiLin",
+        "prayoga": "Kartari",
+        "purusha": "Uttama",
+        "vacana": "Dvi"
+      },
+      "prompt_sha256": "9d97ed15b38a833e4d8cf67180e177f5fa5ed98ea6f665b410ff7434dc1afa34",
+      "root_family": "piSf~|Bhvadi",
+      "forms_devanagari": [
+        "पिशेव"
+      ],
+      "canonical_forms_devanagari": [
+        "पेशेव"
+      ],
+      "canonical_forms_slp1": [
+        "peSeva"
+      ],
+      "receipt_sha256": "7b1697419edf570541e06de51433fbcbeeca8c8c56df8a097fa2615fd060773f",
+      "sources": [
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/7.3.86.web.txt",
+          "sha256": "637a91064c144a1a59cddf2feef3bc42fe7763baaa9db75525f0d81162ef2be6",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.3.86.htm",
+          "kind": "primary_commentary"
+        }
+      ]
+    },
+    {
+      "disposition": "rejected",
+      "rule_ids": [
+        "1.3.78",
+        "3.4.78"
+      ],
+      "basis": "Daip shodhane is P (Dhatupradipa dayati). dayasva is M; the lexical p-it does not confer middle.",
+      "dhatupradipa_page_locators": [
+        77
+      ],
+      "mechanism": "pada_or_person",
+      "index": 515,
+      "task_id": "cart4-8dab6e89a5f41cf60f6db6e3",
+      "dhatu": {
+        "code": "01.1073",
+        "aupadeshika": "dE\\p",
+        "gana": "Bhvadi",
+        "artha": "SoDane"
+      },
+      "morphology": {
+        "lakara": "Lot",
+        "prayoga": "Kartari",
+        "purusha": "Madhyama",
+        "vacana": "Eka"
+      },
+      "prompt_sha256": "579aba84856b291aadd2d0fa93016eeca915a2db6500a5a6b49c5b219f53c592",
+      "root_family": "dE\\p|Bhvadi",
+      "forms_devanagari": [
+        "दायस्व"
+      ],
+      "canonical_forms_devanagari": [
+        "दाय",
+        "दायताद्",
+        "दायतात्"
+      ],
+      "canonical_forms_slp1": [
+        "dAya",
+        "dAyatAd",
+        "dAyatAt"
+      ],
+      "receipt_sha256": "95d855deb1daa2103e9910b6947f6b5efdcfa8da5c4c41cdde9c2615c1f3c5a2",
+      "sources": [
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/1.3.78.web.txt",
+          "sha256": "e33d7b9fc1bbce73ea118f4bdcbe402b0d4d1d20736e1b878a683db55c9aede3",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/1/1.3.78.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/3.4.78.web.txt",
+          "sha256": "a0180b03321a9e917c3f993ed588fa7269e0994bb94f5e3cf248731bd3a9c7df",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/3/3.4.78.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/dhatupradipa-selected-excerpts.json",
+          "sha256": "05bf7e9effdc85b4ba1c0ad3bfcd66a38bb3b1ba6f574165adaada9b7f51f921",
+          "kind": "primary_work_OCR_locator",
+          "pages": [
+            77
+          ]
+        }
+      ]
+    },
+    {
+      "disposition": "rejected",
+      "rule_ids": [
+        "3.1.36",
+        "7.3.84"
+      ],
+      "basis": "In the periphrastic perfect, the long-vowel initial ing root takes am, an ardhadhatuka formation, with guna and subsequent e->ay before am. iyancakrath e incorrectly uses the present iyang stem instead of ayam-.",
+      "dhatupradipa_page_locators": [],
+      "mechanism": "periphrastic_stem",
+      "index": 691,
+      "task_id": "cart4-9ffe4172fbad8ed91b94d1a6",
+      "dhatu": {
+        "code": "04.0038",
+        "aupadeshika": "I\\N",
+        "gana": "Divadi",
+        "artha": "gatO"
+      },
+      "morphology": {
+        "lakara": "Lit",
+        "prayoga": "Kartari",
+        "purusha": "Madhyama",
+        "vacana": "Dvi"
+      },
+      "prompt_sha256": "e786b61c21fb86a39a589cabdf89416d383ee3818fe85c1a37e7d73458ffbae3",
+      "root_family": "I\\N|Divadi",
+      "forms_devanagari": [
+        "ईयाञ्चक्राथे"
+      ],
+      "canonical_forms_devanagari": [
+        "अयाञ्चक्राथे",
+        "अयामासथुः",
+        "अयाम्बभूवथुः"
+      ],
+      "canonical_forms_slp1": [
+        "ayAYcakrATe",
+        "ayAmAsaTuH",
+        "ayAmbaBUvaTuH"
+      ],
+      "receipt_sha256": "0a39b9b01568ca385066980de12fd1710ed2240eecef20025640aca9cd69f0db",
+      "sources": [
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/3.1.36.web.txt",
+          "sha256": "73c93ad89def850cd88d34e8f07f62c67e08b99358a161e6a4b41a491f6b6c94",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/3/3.1.36.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/7.3.84.web.txt",
+          "sha256": "08f226b8b4a9c583b5ff6dcf437a4f0d89c10aefa491880c2f0be3f3115be612",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.3.84.htm",
+          "kind": "primary_commentary"
+        }
+      ]
+    },
+    {
+      "disposition": "rejected",
+      "rule_ids": [
+        "7.3.80",
+        "6.4.113"
+      ],
+      "basis": "Druñ occurs before puñ, outside both primary puadi scope readings. shna weak-ending a->i does not shorten the root u. drunitah has an unlicensed short root vowel; drunitah with long u is required.",
+      "dhatupradipa_page_locators": [
+        135
+      ],
+      "mechanism": "outside_puadi",
+      "index": 758,
+      "task_id": "cart4-10bdb8d474cb6d5d4b1ec590",
+      "dhatu": {
+        "code": "09.0013",
+        "aupadeshika": "drUY",
+        "gana": "Kryadi",
+        "artha": "hiMsAyAm"
+      },
+      "morphology": {
+        "lakara": "Lat",
+        "prayoga": "Kartari",
+        "purusha": "Prathama",
+        "vacana": "Dvi"
+      },
+      "prompt_sha256": "173ac9b258a5f3ef2b3e966c2d80963ab1e3b25af7357787b64acb66c3df6b94",
+      "root_family": "drUY|Kryadi",
+      "forms_devanagari": [
+        "द्रुणीतः"
+      ],
+      "canonical_forms_devanagari": [
+        "द्रूणाते",
+        "द्रूणीतः"
+      ],
+      "canonical_forms_slp1": [
+        "drURAte",
+        "drURItaH"
+      ],
+      "receipt_sha256": "efc18d4a5720b9310c4a75eb6612dc57e077701bbb1ad1957e820d62e7ed4ea7",
+      "sources": [
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/7.3.80.web.txt",
+          "sha256": "7e60728f3974b15b55b8fd2059f63cc7f565341256425217540d1090d8fd5fed",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.3.80.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/6.4.113.web.txt",
+          "sha256": "a179d079afef118006b76b71c6c919fe6056a2a6588780a9d14c696b2cb12fb9",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.4.113.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/dhatupradipa-selected-excerpts.json",
+          "sha256": "05bf7e9effdc85b4ba1c0ad3bfcd66a38bb3b1ba6f574165adaada9b7f51f921",
+          "kind": "primary_work_OCR_locator",
+          "pages": [
+            135
+          ]
+        }
+      ]
+    },
+    {
+      "disposition": "rejected",
+      "rule_ids": [
+        "6.1.64"
+      ],
+      "basis": "Kashika explicitly exempts sthivu (initial retroflex sh) from the otherwise general dhatvadi sh->s replacement. The returned asthivyam dentalizes the initial sh; Divadi membership does not remove this exception.",
+      "dhatupradipa_page_locators": [],
+      "mechanism": "initial_sibilant_exception",
+      "index": 760,
+      "task_id": "cart4-f97537bbc71e1ef367bd51e3",
+      "dhatu": {
+        "code": "04.0004",
+        "aupadeshika": "zWivu~",
+        "gana": "Divadi",
+        "artha": "nirasane"
+      },
+      "morphology": {
+        "lakara": "Lan",
+        "prayoga": "Kartari",
+        "purusha": "Uttama",
+        "vacana": "Eka"
+      },
+      "prompt_sha256": "34a608d9e7d714cb4f5a8a8da8c3201591cafa9626405192ed1c4cc478aeaa16",
+      "root_family": "zWivu~|Divadi",
+      "forms_devanagari": [
+        "अस्थीव्यम्"
+      ],
+      "canonical_forms_devanagari": [
+        "अष्ठीव्यम्"
+      ],
+      "canonical_forms_slp1": [
+        "azWIvyam"
+      ],
+      "receipt_sha256": "13e714835a3c6932d475858ee0b5e4a1ed661c3355345c3ce7b1d4ee9b28ca19",
+      "sources": [
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/web-primary-01.txt",
+          "sha256": "27f993ddf5312a97fee13624b28f13823821422ac978137719f1a9768be0f874",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.1.64.htm",
+          "kind": "primary_commentary"
+        }
+      ]
+    },
+    {
+      "disposition": "rejected",
+      "rule_ids": [
+        "1.3.12",
+        "1.3.78",
+        "3.4.78"
+      ],
+      "basis": "Cadi ahlade diptau has nasal i but no anudatta-it marker. The prescribed P second-dual perfect ending is athuh; c acandathe is M.",
+      "dhatupradipa_page_locators": [],
+      "mechanism": "pada_or_person",
+      "index": 815,
+      "task_id": "cart4-0532b5cd0f26fcb7613152eb",
+      "dhatu": {
+        "code": "01.0071",
+        "aupadeshika": "cadi~",
+        "gana": "Bhvadi",
+        "artha": "AhlAde dIptO ca"
+      },
+      "morphology": {
+        "lakara": "Lit",
+        "prayoga": "Kartari",
+        "purusha": "Madhyama",
+        "vacana": "Dvi"
+      },
+      "prompt_sha256": "3dc84e20c527add19cf9a697da8a31a17d364b825e4a807a24335029fa7526b2",
+      "root_family": "cadi~|Bhvadi",
+      "forms_devanagari": [
+        "चचन्दाथे"
+      ],
+      "canonical_forms_devanagari": [
+        "चचन्दथुः"
+      ],
+      "canonical_forms_slp1": [
+        "cacandaTuH"
+      ],
+      "receipt_sha256": "4fa3dc2d2c544048a7d2442f86cf8d30b2e563d497c426c493988e7b32cfc590",
+      "sources": [
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/1.3.12.web.txt",
+          "sha256": "2c59cb714c5395096d68db182f26980ee8f9f049640cf6b8b81e94804226fa93",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/1/1.3.12.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/1.3.78.web.txt",
+          "sha256": "e33d7b9fc1bbce73ea118f4bdcbe402b0d4d1d20736e1b878a683db55c9aede3",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/1/1.3.78.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/3.4.78.web.txt",
+          "sha256": "a0180b03321a9e917c3f993ed588fa7269e0994bb94f5e3cf248731bd3a9c7df",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/3/3.4.78.htm",
+          "kind": "primary_commentary"
+        }
+      ]
+    },
+    {
+      "disposition": "rejected",
+      "rule_ids": [
+        "7.4.11",
+        "7.4.12"
+      ],
+      "basis": "The exact long-r pF perfect weak stem has compulsory guna or optional short-r+yan, yielding papar-/papr-. Nyasa 7.4.12 explicitly says short-r blocks the u substitution. papurathuh wrongly uses labial u in this context.",
+      "dhatupradipa_page_locators": [
+        96,
+        135
+      ],
+      "mechanism": "perfect_r_stem",
+      "index": 829,
+      "task_id": "cart4-805aec3f0fe90a6b796ae28b",
+      "dhatu": {
+        "code": "03.0004",
+        "aupadeshika": "pF",
+        "gana": "Juhotyadi",
+        "artha": "pAlanapUraRayoH"
+      },
+      "morphology": {
+        "lakara": "Lit",
+        "prayoga": "Kartari",
+        "purusha": "Madhyama",
+        "vacana": "Dvi"
+      },
+      "prompt_sha256": "9fe2c0afd28c80c10280eae9b82b301bbdb3c3eec538b5df05008e59e636f46a",
+      "root_family": "pF|Juhotyadi",
+      "forms_devanagari": [
+        "पपुरथुः"
+      ],
+      "canonical_forms_devanagari": [
+        "पपरथुः",
+        "पप्रथुः"
+      ],
+      "canonical_forms_slp1": [
+        "paparaTuH",
+        "papraTuH"
+      ],
+      "receipt_sha256": "140375da04cb81d90df9c3793848e44befa9988cb9814f66b8e036427c579eb8",
+      "sources": [
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/7.4.11-12.web.txt",
+          "sha256": "e75067f146d4ea5d118b8660f0793555b411315af2ce5a4b1c2c1ff914584fd1",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.4.11.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/7.4.11-12.web.txt",
+          "sha256": "e75067f146d4ea5d118b8660f0793555b411315af2ce5a4b1c2c1ff914584fd1",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.4.12.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/dhatupradipa-selected-excerpts.json",
+          "sha256": "05bf7e9effdc85b4ba1c0ad3bfcd66a38bb3b1ba6f574165adaada9b7f51f921",
+          "kind": "primary_work_OCR_locator",
+          "pages": [
+            96,
+            135
+          ]
+        }
+      ]
+    },
+    {
+      "disposition": "rejected",
+      "rule_ids": [
+        "6.1.45"
+      ],
+      "basis": "Ch o chedane becomes a-final before the non-shit benedictive construction; chayat follows. cheyat substitutes e without this licensing.",
+      "dhatupradipa_page_locators": [],
+      "mechanism": "ech_to_a",
+      "index": 834,
+      "task_id": "cart4-f02ead10ca6d7d9d262bef82",
+      "dhatu": {
+        "code": "04.0041",
+        "aupadeshika": "Co\\",
+        "gana": "Divadi",
+        "artha": "Cedane"
+      },
+      "morphology": {
+        "lakara": "AshirLin",
+        "prayoga": "Kartari",
+        "purusha": "Prathama",
+        "vacana": "Eka"
+      },
+      "prompt_sha256": "ef1e7f508998de34f85bd7a9532dbd27efb58da89a88a668608e0ce30acc4dc9",
+      "root_family": "Co\\|Divadi",
+      "forms_devanagari": [
+        "छेयात्"
+      ],
+      "canonical_forms_devanagari": [
+        "छायाद्",
+        "छायात्"
+      ],
+      "canonical_forms_slp1": [
+        "CAyAd",
+        "CAyAt"
+      ],
+      "receipt_sha256": "f7ddd9c4605b0da2734d82faee59dd97b3a20340da02ce00379b050cb145dfc1",
+      "sources": [
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/6.1.45.web.txt",
+          "sha256": "4855a6a67ba429f31833b343f78b7ef6715e734dcb4a77b68576b845bcb86d9e",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.1.45.htm",
+          "kind": "primary_commentary"
+        }
+      ]
+    },
+    {
+      "disposition": "rejected",
+      "rule_ids": [
+        "1.3.78",
+        "3.4.78"
+      ],
+      "basis": "The exact svana entry has no middle marker, and is treated in the P/mit group; svaneyatham is M rather than P second dual. This does not resolve unrelated svan/svanj lexical substitutions.",
+      "dhatupradipa_page_locators": [
+        68
+      ],
+      "mechanism": "pada_or_person",
+      "index": 873,
+      "task_id": "cart4-82eb31fdb250a31eaa613bde",
+      "dhatu": {
+        "code": "01.0932",
+        "aupadeshika": "svana~",
+        "gana": "Bhvadi",
+        "artha": "avataMsane"
+      },
+      "morphology": {
+        "lakara": "VidhiLin",
+        "prayoga": "Kartari",
+        "purusha": "Madhyama",
+        "vacana": "Dvi"
+      },
+      "prompt_sha256": "3750f2152d4442b7b52075ba170739310c8a06894179f2ecc4c812ffb3de3009",
+      "root_family": "svana~|Bhvadi",
+      "forms_devanagari": [
+        "स्वनेयाथाम्"
+      ],
+      "canonical_forms_devanagari": [
+        "स्वनेतम्"
+      ],
+      "canonical_forms_slp1": [
+        "svanetam"
+      ],
+      "receipt_sha256": "048681a37dcb7c1e66fd47f8bff2fd85fcdaf8dd05bba12c6383fac6803e57ab",
+      "sources": [
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/1.3.78.web.txt",
+          "sha256": "e33d7b9fc1bbce73ea118f4bdcbe402b0d4d1d20736e1b878a683db55c9aede3",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/1/1.3.78.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/3.4.78.web.txt",
+          "sha256": "a0180b03321a9e917c3f993ed588fa7269e0994bb94f5e3cf248731bd3a9c7df",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/3/3.4.78.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/dhatupradipa-selected-excerpts.json",
+          "sha256": "05bf7e9effdc85b4ba1c0ad3bfcd66a38bb3b1ba6f574165adaada9b7f51f921",
+          "kind": "primary_work_OCR_locator",
+          "pages": [
+            68
+          ]
+        }
+      ]
+    },
+    {
+      "disposition": "rejected",
+      "rule_ids": [
+        "7.3.86"
+      ],
+      "basis": "Ija gatikutsana has long medial i, corroborated by Dhatupradipa ijate/periphrastic ijancakre. Laghupadha guna does not turn that long vowel into e; ejishyete is the wrong stem.",
+      "dhatupradipa_page_locators": [
+        31
+      ],
+      "mechanism": "stem_guna",
+      "index": 896,
+      "task_id": "cart4-d9c087d1e8e06e12105aea01",
+      "dhatu": {
+        "code": "01.0207",
+        "aupadeshika": "Ija~\\",
+        "gana": "Bhvadi",
+        "artha": "gatikutsanayoH"
+      },
+      "morphology": {
+        "lakara": "Lrt",
+        "prayoga": "Kartari",
+        "purusha": "Prathama",
+        "vacana": "Dvi"
+      },
+      "prompt_sha256": "2b5a3a82590f7f5c57bf4de122dbbda3112b99787a469b444a3795c505f25591",
+      "root_family": "Ija~\\|Bhvadi",
+      "forms_devanagari": [
+        "एजिष्येते"
+      ],
+      "canonical_forms_devanagari": [
+        "ईजिष्येते"
+      ],
+      "canonical_forms_slp1": [
+        "Ijizyete"
+      ],
+      "receipt_sha256": "1a13314eee8a36f0eecd0d4f27cfc051be2690870e2373a543cd0724eb09fcde",
+      "sources": [
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/7.3.86.web.txt",
+          "sha256": "637a91064c144a1a59cddf2feef3bc42fe7763baaa9db75525f0d81162ef2be6",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.3.86.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/dhatupradipa-selected-excerpts.json",
+          "sha256": "05bf7e9effdc85b4ba1c0ad3bfcd66a38bb3b1ba6f574165adaada9b7f51f921",
+          "kind": "primary_work_OCR_locator",
+          "pages": [
+            31
+          ]
+        }
+      ]
+    },
+    {
+      "disposition": "rejected",
+      "rule_ids": [
+        "1.3.78",
+        "3.4.78"
+      ],
+      "basis": "Dy ai is P; dyayamahai uses the middle first-plural imperative. The unmarked public pada requires accepting licensed P/M possibilities, not arbitrary substitution of M endings.",
+      "dhatupradipa_page_locators": [],
+      "mechanism": "pada_or_person",
+      "index": 949,
+      "task_id": "cart4-8351b4f8df6e8ea65cd11173",
+      "dhatu": {
+        "code": "01.1053",
+        "aupadeshika": "dyE\\",
+        "gana": "Bhvadi",
+        "artha": "nyakkaraRe"
+      },
+      "morphology": {
+        "lakara": "Lot",
+        "prayoga": "Kartari",
+        "purusha": "Uttama",
+        "vacana": "Bahu"
+      },
+      "prompt_sha256": "114a08d2fe78db35f1578d003e3ef39b355bfd40c0c96872ba6e45c29047085f",
+      "root_family": "dyE\\|Bhvadi",
+      "forms_devanagari": [
+        "द्यायामहै"
+      ],
+      "canonical_forms_devanagari": [
+        "द्यायाम"
+      ],
+      "canonical_forms_slp1": [
+        "dyAyAma"
+      ],
+      "receipt_sha256": "8231ac785bce190eef9e43d41621a85047f5db471f223446c3596392a65679f7",
+      "sources": [
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/1.3.78.web.txt",
+          "sha256": "e33d7b9fc1bbce73ea118f4bdcbe402b0d4d1d20736e1b878a683db55c9aede3",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/1/1.3.78.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/3.4.78.web.txt",
+          "sha256": "a0180b03321a9e917c3f993ed588fa7269e0994bb94f5e3cf248731bd3a9c7df",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/3/3.4.78.htm",
+          "kind": "primary_commentary"
+        }
+      ]
+    },
+    {
+      "disposition": "accepted",
+      "rule_ids": [
+        "7.3.80",
+        "8.4.1",
+        "8.4.2"
+      ],
+      "basis": "Kashika gives a puadi-through-end-of-Kryadi reading alongside the shorter range. The visually checked Dhatupradipa printed127 footnote explicitly includes kshish among roots with short-vowel and long-vowel school readings. kshi + shna + si, with sh-conditioned hrasva and subsequent natva, yields ksh inasi. Accept exact क्षिणासि alongside canonical क्षीणासि; no school is chosen in the prompt.",
+      "dhatupradipa_page_locators": [
+        137
+      ],
+      "mechanism": "puadi_scope_variant",
+      "index": 984,
+      "task_id": "cart4-dd3e26f0e7ac7e8f5d38ee18",
+      "dhatu": {
+        "code": "09.0042",
+        "aupadeshika": "kzI\\z",
+        "gana": "Kryadi",
+        "artha": "hiMsAyAm"
+      },
+      "morphology": {
+        "lakara": "Lat",
+        "prayoga": "Kartari",
+        "purusha": "Madhyama",
+        "vacana": "Eka"
+      },
+      "prompt_sha256": "ca182db641438b524728c4ead93e67a8f952eb20b11972f7e4c335d00bf329b7",
+      "root_family": "kzI\\z|Kryadi",
+      "forms_devanagari": [
+        "क्षिणासि"
+      ],
+      "canonical_forms_devanagari": [
+        "क्षीणासि"
+      ],
+      "canonical_forms_slp1": [
+        "kzIRAsi"
+      ],
+      "receipt_sha256": "bfc0ff2981398eb3eb3cd6047b594aba651facdf5c483a2baee959bd518cfc7e",
+      "sources": [
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/7.3.80.web.txt",
+          "sha256": "7e60728f3974b15b55b8fd2059f63cc7f565341256425217540d1090d8fd5fed",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.3.80.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/8.4.1.web.txt",
+          "sha256": "c3a9d1bd0c9346cff17073d3348a00616aeb6c33d2134af47416ceec28e3625e",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/8/8.4.1.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/8.4.2.web.txt",
+          "sha256": "3dbef2d840ac0eb22e8b586bd0ebb1a63403d5ad7b9e40190737073da3198678",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/8/8.4.2.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/dhatupradipa-selected-excerpts.json",
+          "sha256": "05bf7e9effdc85b4ba1c0ad3bfcd66a38bb3b1ba6f574165adaada9b7f51f921",
+          "kind": "primary_work_OCR_locator",
+          "pages": [
+            137
+          ]
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/dhatupradipa-page137.jpg",
+          "sha256": "2ac8638d6315538f9db5e6554531c9104380317b3dc18912eccdddedcf0b2245",
+          "url": "https://jainqq.org/explore/004319/137",
+          "kind": "primary_work_scan_visually_read"
+        }
+      ]
+    },
+    {
+      "disposition": "rejected",
+      "rule_ids": [
+        "3.4.99"
+      ],
+      "basis": "Conditional is ngit; first-person final s is obligatorily deleted. amedishyamah retains the present/future first-plural visarga in a conditional form.",
+      "dhatupradipa_page_locators": [],
+      "mechanism": "ngit_person_ending",
+      "index": 1038,
+      "task_id": "cart4-e79826f60b8e4745221f917e",
+      "dhatu": {
+        "code": "04.0158",
+        "aupadeshika": "YimidA~",
+        "gana": "Divadi",
+        "artha": "snehane"
+      },
+      "morphology": {
+        "lakara": "Lrn",
+        "prayoga": "Kartari",
+        "purusha": "Uttama",
+        "vacana": "Bahu"
+      },
+      "prompt_sha256": "a37f05900336e406e7c07009479a7ee89019045331350929f36e9cbd7493507c",
+      "root_family": "YimidA~|Divadi",
+      "forms_devanagari": [
+        "अमेदिष्यामः"
+      ],
+      "canonical_forms_devanagari": [
+        "अमेदिष्याम"
+      ],
+      "canonical_forms_slp1": [
+        "amedizyAma"
+      ],
+      "receipt_sha256": "87499aa446f73a7d91d0514aff599767e4e40bd5567ff7cd84057c1fe50ad21a",
+      "sources": [
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/3.4.99.web.txt",
+          "sha256": "3cfec7b6ea9cde2e059f5c9f4d2253935fcb25299c3671b52b9137b0d909e6ec",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/3/3.4.99.htm",
+          "kind": "primary_commentary"
+        }
+      ]
+    },
+    {
+      "disposition": "rejected",
+      "rule_ids": [
+        "7.1.59"
+      ],
+      "basis": "Primary commentary explicitly distinguishes nonnasal drpha from drmph a; only the latter licenses the obligatory nasal treatment. adrmphah imports another lexical entry into the supplied drpha.",
+      "dhatupradipa_page_locators": [
+        118
+      ],
+      "mechanism": "distinct_nonnasal_entry",
+      "index": 1063,
+      "task_id": "cart4-d0b06ab4a5b884bd8757005c",
+      "dhatu": {
+        "code": "06.0038",
+        "aupadeshika": "dfPa~",
+        "gana": "Tudadi",
+        "artha": "utkleSe"
+      },
+      "morphology": {
+        "lakara": "Lan",
+        "prayoga": "Kartari",
+        "purusha": "Madhyama",
+        "vacana": "Eka"
+      },
+      "prompt_sha256": "0560f37249a24de7bf1246951be6657310a863e0639fa8d77f27dc63b7a6f31d",
+      "root_family": "dfPa~|Tudadi",
+      "forms_devanagari": [
+        "अदृम्फः"
+      ],
+      "canonical_forms_devanagari": [
+        "अदृफः"
+      ],
+      "canonical_forms_slp1": [
+        "adfPaH"
+      ],
+      "receipt_sha256": "c1cb31c823c3938647fd08b8f44fa8c24b0e127f9260759b71eee6b2e9639b70",
+      "sources": [
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/web-primary-01.txt",
+          "sha256": "27f993ddf5312a97fee13624b28f13823821422ac978137719f1a9768be0f874",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.1.59.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/dhatupradipa-selected-excerpts.json",
+          "sha256": "05bf7e9effdc85b4ba1c0ad3bfcd66a38bb3b1ba6f574165adaada9b7f51f921",
+          "kind": "primary_work_OCR_locator",
+          "pages": [
+            118
+          ]
+        }
+      ]
+    },
+    {
+      "disposition": "unresolved",
+      "rule_ids": [
+        "7.3.86"
+      ],
+      "basis": "Literal supplied SUWa with long u does not permit laghupadha guna, but Dhatupradipa has short shutha at the same Bhvadi meaning gatipratighata (shothati), which would support shothita. This unresolved entry-reading conflict should not be certified as a model error from the frozen long-vowel engine key.",
+      "dhatupradipa_page_locators": [
+        41
+      ],
+      "mechanism": "lexical_vowel_reading",
+      "index": 1122,
+      "task_id": "cart4-753b5350464da61ac8d8c1dc",
+      "dhatu": {
+        "code": "01.0396",
+        "aupadeshika": "SUWa~",
+        "gana": "Bhvadi",
+        "artha": "gatipratiGAte"
+      },
+      "morphology": {
+        "lakara": "Lut",
+        "prayoga": "Kartari",
+        "purusha": "Prathama",
+        "vacana": "Eka"
+      },
+      "prompt_sha256": "3b404eaf4d3c549b4ef84dbe78c115e1a0e6ba89063141e619df58c4742ec4d8",
+      "root_family": "SUWa~|Bhvadi",
+      "forms_devanagari": [
+        "शोठिता"
+      ],
+      "canonical_forms_devanagari": [
+        "शूठिता"
+      ],
+      "canonical_forms_slp1": [
+        "SUWitA"
+      ],
+      "receipt_sha256": "cfa7ab4275e369f7b3b4facc59cbfdb89c16efa8b55ae441411d92d72b38c69e",
+      "sources": [
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/7.3.86.web.txt",
+          "sha256": "637a91064c144a1a59cddf2feef3bc42fe7763baaa9db75525f0d81162ef2be6",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.3.86.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/dhatupradipa-selected-excerpts.json",
+          "sha256": "05bf7e9effdc85b4ba1c0ad3bfcd66a38bb3b1ba6f574165adaada9b7f51f921",
+          "kind": "primary_work_OCR_locator",
+          "pages": [
+            41
+          ]
+        }
+      ]
+    },
+    {
+      "disposition": "rejected",
+      "rule_ids": [
+        "1.3.12",
+        "1.3.78"
+      ],
+      "basis": "Haya gatau is P (Dhatupradipa hayati). hayishyavahe is the middle first dual, unsupported for the supplied entry.",
+      "dhatupradipa_page_locators": [
+        50
+      ],
+      "mechanism": "pada_or_person",
+      "index": 1157,
+      "task_id": "cart4-c1d0a01552bd75f5d3fa8f9c",
+      "dhatu": {
+        "code": "01.0589",
+        "aupadeshika": "haya~",
+        "gana": "Bhvadi",
+        "artha": "gatO"
+      },
+      "morphology": {
+        "lakara": "Lrt",
+        "prayoga": "Kartari",
+        "purusha": "Uttama",
+        "vacana": "Dvi"
+      },
+      "prompt_sha256": "766c58197c0a918efa6cdf991f3ec25609e0b4cd87044eeef843ee674e4aec16",
+      "root_family": "haya~|Bhvadi",
+      "forms_devanagari": [
+        "हयिष्यावहे"
+      ],
+      "canonical_forms_devanagari": [
+        "हयिष्यावः"
+      ],
+      "canonical_forms_slp1": [
+        "hayizyAvaH"
+      ],
+      "receipt_sha256": "64c4c0c62d1d804ac873ad15a7602bb982f236fc3a157afd99c25daf3878eec8",
+      "sources": [
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/1.3.12.web.txt",
+          "sha256": "2c59cb714c5395096d68db182f26980ee8f9f049640cf6b8b81e94804226fa93",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/1/1.3.12.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/1.3.78.web.txt",
+          "sha256": "e33d7b9fc1bbce73ea118f4bdcbe402b0d4d1d20736e1b878a683db55c9aede3",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/1/1.3.78.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/dhatupradipa-selected-excerpts.json",
+          "sha256": "05bf7e9effdc85b4ba1c0ad3bfcd66a38bb3b1ba6f574165adaada9b7f51f921",
+          "kind": "primary_work_OCR_locator",
+          "pages": [
+            50
+          ]
+        }
+      ]
+    },
+    {
+      "disposition": "rejected",
+      "rule_ids": [
+        "7.1.59",
+        "7.3.86"
+      ],
+      "basis": "Kashika distinguishes gupha from gumpha, expressly retaining nonnasal guphati. Thus agumphishva imports the nasal entry; the nonnasal root also has ordinary laghupadha guna in this sic P formation.",
+      "dhatupradipa_page_locators": [
+        118
+      ],
+      "mechanism": "distinct_nonnasal_entry",
+      "index": 1164,
+      "task_id": "cart4-de23de26046bd02ad0b79ad7",
+      "dhatu": {
+        "code": "06.0042",
+        "aupadeshika": "guPa~",
+        "gana": "Tudadi",
+        "artha": "granTe"
+      },
+      "morphology": {
+        "lakara": "Lun",
+        "prayoga": "Kartari",
+        "purusha": "Uttama",
+        "vacana": "Dvi"
+      },
+      "prompt_sha256": "d649eba76ed4ee45c434ebe8477be00b96aefb2461619e69a4b20f6d7f75a1ae",
+      "root_family": "guPa~|Tudadi",
+      "forms_devanagari": [
+        "अगुम्फिष्व"
+      ],
+      "canonical_forms_devanagari": [
+        "अगोफिष्व"
+      ],
+      "canonical_forms_slp1": [
+        "agoPizva"
+      ],
+      "receipt_sha256": "a5ba6806e7080c79582ccf21a7b0d9ea6e85deb17006cb9eec29883a12d92f5a",
+      "sources": [
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/web-primary-01.txt",
+          "sha256": "27f993ddf5312a97fee13624b28f13823821422ac978137719f1a9768be0f874",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.1.59.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/7.3.86.web.txt",
+          "sha256": "637a91064c144a1a59cddf2feef3bc42fe7763baaa9db75525f0d81162ef2be6",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.3.86.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/dhatupradipa-selected-excerpts.json",
+          "sha256": "05bf7e9effdc85b4ba1c0ad3bfcd66a38bb3b1ba6f574165adaada9b7f51f921",
+          "kind": "primary_work_OCR_locator",
+          "pages": [
+            118
+          ]
+        }
+      ]
+    },
+    {
+      "disposition": "rejected",
+      "rule_ids": [
+        "3.4.85",
+        "3.4.101"
+      ],
+      "basis": "Lot third-dual P takes tam and thematic a gives bindatam. bindetam introduces the middle/optative e pattern instead of the specified imperative P ending.",
+      "dhatupradipa_page_locators": [],
+      "mechanism": "lakara_ending",
+      "index": 1271,
+      "task_id": "cart4-fd5c929fb3b7fb3f8d9ece5d",
+      "dhatu": {
+        "code": "01.0067",
+        "aupadeshika": "Bidi~",
+        "gana": "Bhvadi",
+        "artha": "avayave"
+      },
+      "morphology": {
+        "lakara": "Lot",
+        "prayoga": "Kartari",
+        "purusha": "Prathama",
+        "vacana": "Dvi"
+      },
+      "prompt_sha256": "9663deff0e2cf57bec92ebdae6c65c94243ddf1837dc18796daec620dd3ed398",
+      "root_family": "Bidi~|Bhvadi",
+      "forms_devanagari": [
+        "भिन्देताम्"
+      ],
+      "canonical_forms_devanagari": [
+        "भिन्दताम्"
+      ],
+      "canonical_forms_slp1": [
+        "BindatAm"
+      ],
+      "receipt_sha256": "840340fcf4940814410cb77f11c3b34217dd2eb5d505a8b93d2433572275bd64",
+      "sources": [
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/3.4.85.web.txt",
+          "sha256": "971ed3f13e570806028e9354afd0e8e778b943562524d61c25c7c95467cfec9c",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/3/3.4.85.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/3.4.101.web.txt",
+          "sha256": "cae894f4917d718adc3dfd3dd4a273deb7aead7fc90b1eaea5cb04505a079e4f",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/3/3.4.101.htm",
+          "kind": "primary_commentary"
+        }
+      ]
+    },
+    {
+      "disposition": "rejected",
+      "rule_ids": [
+        "1.3.12",
+        "1.3.78"
+      ],
+      "basis": "Maghi mandane has nasal i, not an anudatta-it marker, and is P in the supplied entry. manghedhvam is the middle optative second plural.",
+      "dhatupradipa_page_locators": [],
+      "mechanism": "pada_or_person",
+      "index": 1272,
+      "task_id": "cart4-ac4f720f364ef7da57deb36c",
+      "dhatu": {
+        "code": "01.0183",
+        "aupadeshika": "maGi~",
+        "gana": "Bhvadi",
+        "artha": "maRqane"
+      },
+      "morphology": {
+        "lakara": "VidhiLin",
+        "prayoga": "Kartari",
+        "purusha": "Madhyama",
+        "vacana": "Bahu"
+      },
+      "prompt_sha256": "aae160fc42155997eb2e230427a11b0722802c437f3b25b888e5f88647b898d5",
+      "root_family": "maGi~|Bhvadi",
+      "forms_devanagari": [
+        "मङ्घेध्वम्"
+      ],
+      "canonical_forms_devanagari": [
+        "मङ्घेत"
+      ],
+      "canonical_forms_slp1": [
+        "maNGeta"
+      ],
+      "receipt_sha256": "aaae308d56c323699970ed3c42a7d62d72a5c3bd73eeebee04cfcc573c6468f2",
+      "sources": [
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/1.3.12.web.txt",
+          "sha256": "2c59cb714c5395096d68db182f26980ee8f9f049640cf6b8b81e94804226fa93",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/1/1.3.12.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/1.3.78.web.txt",
+          "sha256": "e33d7b9fc1bbce73ea118f4bdcbe402b0d4d1d20736e1b878a683db55c9aede3",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/1/1.3.78.htm",
+          "kind": "primary_commentary"
+        }
+      ]
+    },
+    {
+      "disposition": "rejected",
+      "rule_ids": [
+        "1.3.12",
+        "1.3.78"
+      ],
+      "basis": "Sage samvarane is P; Dhatupradipa sagati in the same mit group. segimahe uses a middle ending instead of P first-plural -ima.",
+      "dhatupradipa_page_locators": [
+        66
+      ],
+      "mechanism": "pada_or_person",
+      "index": 1360,
+      "task_id": "cart4-6de3e0d3327a03b959f4eb63",
+      "dhatu": {
+        "code": "01.0898",
+        "aupadeshika": "zage~",
+        "gana": "Bhvadi",
+        "artha": "saMvaraRe"
+      },
+      "morphology": {
+        "lakara": "Lit",
+        "prayoga": "Kartari",
+        "purusha": "Uttama",
+        "vacana": "Bahu"
+      },
+      "prompt_sha256": "834acf199af4a873ec0690604cfd9c1c7dd6931a1ac26b31c6d860623a726935",
+      "root_family": "zage~|Bhvadi",
+      "forms_devanagari": [
+        "सेगिमहे"
+      ],
+      "canonical_forms_devanagari": [
+        "सेगिम"
+      ],
+      "canonical_forms_slp1": [
+        "segima"
+      ],
+      "receipt_sha256": "203fe28d2e4027301f98c4472b016397ce363c9217877c7c9078c23e20b4c2fa",
+      "sources": [
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/1.3.12.web.txt",
+          "sha256": "2c59cb714c5395096d68db182f26980ee8f9f049640cf6b8b81e94804226fa93",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/1/1.3.12.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/1.3.78.web.txt",
+          "sha256": "e33d7b9fc1bbce73ea118f4bdcbe402b0d4d1d20736e1b878a683db55c9aede3",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/1/1.3.78.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/dhatupradipa-selected-excerpts.json",
+          "sha256": "05bf7e9effdc85b4ba1c0ad3bfcd66a38bb3b1ba6f574165adaada9b7f51f921",
+          "kind": "primary_work_OCR_locator",
+          "pages": [
+            66
+          ]
+        }
+      ]
+    },
+    {
+      "disposition": "rejected",
+      "rule_ids": [
+        "7.2.73"
+      ],
+      "basis": "A-final jya takes the sag/it sic P formation. ajyastam drops the required -sishtam sequence, matching neither the specified P second dual nor a licensed variant.",
+      "dhatupradipa_page_locators": [
+        137
+      ],
+      "mechanism": "aorist_sag_it",
+      "index": 1369,
+      "task_id": "cart4-9c8b30d03014ab58ebb1325f",
+      "dhatu": {
+        "code": "09.0034",
+        "aupadeshika": "jyA\\",
+        "gana": "Kryadi",
+        "artha": "vayohAnO"
+      },
+      "morphology": {
+        "lakara": "Lun",
+        "prayoga": "Kartari",
+        "purusha": "Madhyama",
+        "vacana": "Dvi"
+      },
+      "prompt_sha256": "7e4336cef4f6af5f3fdd1d8e634a43b4d4f823a110b9d91406775982653258fd",
+      "root_family": "jyA\\|Kryadi",
+      "forms_devanagari": [
+        "अज्यास्तम्"
+      ],
+      "canonical_forms_devanagari": [
+        "अज्यासिष्टम्"
+      ],
+      "canonical_forms_slp1": [
+        "ajyAsizwam"
+      ],
+      "receipt_sha256": "3b7bbfa9ffa43df7766b49136e55181058740e50eb82d319b6edffd574775754",
+      "sources": [
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/7.2.73.web.txt",
+          "sha256": "5a77586557c33b28cf903bdc2d2c6853d27529be0e9fd974822e25bd10ced581",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.2.73.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/dhatupradipa-selected-excerpts.json",
+          "sha256": "05bf7e9effdc85b4ba1c0ad3bfcd66a38bb3b1ba6f574165adaada9b7f51f921",
+          "kind": "primary_work_OCR_locator",
+          "pages": [
+            137
+          ]
+        }
+      ]
+    },
+    {
+      "disposition": "rejected",
+      "rule_ids": [
+        "7.3.86",
+        "7.2.4"
+      ],
+      "basis": "Tudadi muna is before the kutadi subsection, so its short medial u undergoes guna in the it-sic construction. amunishva omits the required guna; 7.2.4 blocks vrddhi, not this guna.",
+      "dhatupradipa_page_locators": [],
+      "mechanism": "stem_guna",
+      "index": 1415,
+      "task_id": "cart4-2458e68848f327aa11abc6ef",
+      "dhatu": {
+        "code": "06.0060",
+        "aupadeshika": "muRa~",
+        "gana": "Tudadi",
+        "artha": "pratijYAne"
+      },
+      "morphology": {
+        "lakara": "Lun",
+        "prayoga": "Kartari",
+        "purusha": "Uttama",
+        "vacana": "Dvi"
+      },
+      "prompt_sha256": "9ed9cefee26038721ed941d760d2f6539c4d115cf4d288e85b908686dc7531bb",
+      "root_family": "muRa~|Tudadi",
+      "forms_devanagari": [
+        "अमुणिष्व"
+      ],
+      "canonical_forms_devanagari": [
+        "अमोणिष्व"
+      ],
+      "canonical_forms_slp1": [
+        "amoRizva"
+      ],
+      "receipt_sha256": "54d0ad8ae572706264db042a97307c23365452c4f4a06073683e89255149874f",
+      "sources": [
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/7.3.86.web.txt",
+          "sha256": "637a91064c144a1a59cddf2feef3bc42fe7763baaa9db75525f0d81162ef2be6",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.3.86.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/7.2.4.web.txt",
+          "sha256": "b9416a1f81446f6c0200eae96c5161459fe976fcb36117144a612eb7ab953d89",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.2.4.htm",
+          "kind": "primary_commentary"
+        }
+      ]
+    },
+    {
+      "disposition": "rejected",
+      "rule_ids": [
+        "1.3.12",
+        "1.3.78"
+      ],
+      "basis": "Kakhe hasane is P (Dhatupradipa kakhati). akakhathah is middle second singular, unsupported by its supplied citation.",
+      "dhatupradipa_page_locators": [
+        66
+      ],
+      "mechanism": "pada_or_person",
+      "index": 1451,
+      "task_id": "cart4-7a84c61d8679a7cd1bc0342d",
+      "dhatu": {
+        "code": "01.0893",
+        "aupadeshika": "kaKe~",
+        "gana": "Bhvadi",
+        "artha": "hasane"
+      },
+      "morphology": {
+        "lakara": "Lan",
+        "prayoga": "Kartari",
+        "purusha": "Madhyama",
+        "vacana": "Eka"
+      },
+      "prompt_sha256": "98dd80d6ab7ea9a5e52f038d77ff5e61685e87ccedd601ed38b85a6fd2be351f",
+      "root_family": "kaKe~|Bhvadi",
+      "forms_devanagari": [
+        "अकखथाः"
+      ],
+      "canonical_forms_devanagari": [
+        "अकखः"
+      ],
+      "canonical_forms_slp1": [
+        "akaKaH"
+      ],
+      "receipt_sha256": "5593794522df0ceaa78b0e03600b6db490aaf4d490a19e3d1b9924e17e33ec97",
+      "sources": [
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/1.3.12.web.txt",
+          "sha256": "2c59cb714c5395096d68db182f26980ee8f9f049640cf6b8b81e94804226fa93",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/1/1.3.12.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/1.3.78.web.txt",
+          "sha256": "e33d7b9fc1bbce73ea118f4bdcbe402b0d4d1d20736e1b878a683db55c9aede3",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/1/1.3.78.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/dhatupradipa-selected-excerpts.json",
+          "sha256": "05bf7e9effdc85b4ba1c0ad3bfcd66a38bb3b1ba6f574165adaada9b7f51f921",
+          "kind": "primary_work_OCR_locator",
+          "pages": [
+            66
+          ]
+        }
+      ]
+    },
+    {
+      "disposition": "rejected",
+      "rule_ids": [
+        "3.4.101"
+      ],
+      "basis": "Conditional is ngit; second-plural tha is replaced with ta. adhvarishyatha retains the simple-future ending instead of the conditional ending.",
+      "dhatupradipa_page_locators": [],
+      "mechanism": "ngit_person_ending",
+      "index": 1505,
+      "task_id": "cart4-20e8d909b25bb01fe185407d",
+      "dhatu": {
+        "code": "01.1089",
+        "aupadeshika": "Dvf\\",
+        "gana": "Bhvadi",
+        "artha": "hUrCane"
+      },
+      "morphology": {
+        "lakara": "Lrn",
+        "prayoga": "Kartari",
+        "purusha": "Madhyama",
+        "vacana": "Bahu"
+      },
+      "prompt_sha256": "797d42d5c256c5faf013fc9579d11460fc0e6b2d5bab28826272bdd2f0ea22ef",
+      "root_family": "Dvf\\|Bhvadi",
+      "forms_devanagari": [
+        "अध्वरिष्यथ"
+      ],
+      "canonical_forms_devanagari": [
+        "अध्वरिष्यत"
+      ],
+      "canonical_forms_slp1": [
+        "aDvarizyata"
+      ],
+      "receipt_sha256": "1335063025bec1b325a9719452a199fa657b027d858039e149c3f47db541f2be",
+      "sources": [
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/3.4.101.web.txt",
+          "sha256": "cae894f4917d718adc3dfd3dd4a273deb7aead7fc90b1eaea5cb04505a079e4f",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/3/3.4.101.htm",
+          "kind": "primary_commentary"
+        }
+      ]
+    },
+    {
+      "disposition": "rejected",
+      "rule_ids": [
+        "6.1.64"
+      ],
+      "basis": "The explicit sthivu exception prohibits initial sh->s dentalization. sthivyas ma begins with dental s, independently invalid even before considering the separate lengthening context.",
+      "dhatupradipa_page_locators": [],
+      "mechanism": "initial_sibilant_exception",
+      "index": 1517,
+      "task_id": "cart4-a3592e0928a8c42a1ece4ed5",
+      "dhatu": {
+        "code": "01.0641",
+        "aupadeshika": "zWivu~",
+        "gana": "Bhvadi",
+        "artha": "nirasane"
+      },
+      "morphology": {
+        "lakara": "AshirLin",
+        "prayoga": "Kartari",
+        "purusha": "Uttama",
+        "vacana": "Bahu"
+      },
+      "prompt_sha256": "a836dd4af06e9b24c13d5b737bbaec56895484d6dccd0feb4e0805308764d362",
+      "root_family": "zWivu~|Bhvadi",
+      "forms_devanagari": [
+        "स्थिव्यास्म"
+      ],
+      "canonical_forms_devanagari": [
+        "ष्ठीव्यास्म"
+      ],
+      "canonical_forms_slp1": [
+        "zWIvyAsma"
+      ],
+      "receipt_sha256": "e24bd98a0c9561593ef6c93064621c341bcc2f561a17693e01f2a1fd24836b40",
+      "sources": [
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/web-primary-01.txt",
+          "sha256": "27f993ddf5312a97fee13624b28f13823821422ac978137719f1a9768be0f874",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.1.64.htm",
+          "kind": "primary_commentary"
+        }
+      ]
+    },
+    {
+      "disposition": "rejected",
+      "rule_ids": [
+        "8.4.39"
+      ],
+      "basis": "Kashika explicitly lists trpnu/trpnoti under the shubhnadi natva prohibition. atrpnutam must keep dental n; atrpnutam with retroflex n violates this named exception.",
+      "dhatupradipa_page_locators": [],
+      "mechanism": "natva_exception",
+      "index": 1533,
+      "task_id": "cart4-eb3afa216f4768d8bd720cbf",
+      "dhatu": {
+        "code": "05.0028",
+        "aupadeshika": "tfpa~",
+        "gana": "Svadi",
+        "artha": "prIRane"
+      },
+      "morphology": {
+        "lakara": "Lan",
+        "prayoga": "Kartari",
+        "purusha": "Prathama",
+        "vacana": "Dvi"
+      },
+      "prompt_sha256": "5a6017398fe9cb7a8eca6c462c9bafa4d27ecfc14162d8d2f2ee6ce18a4ae86b",
+      "root_family": "tfpa~|Svadi",
+      "forms_devanagari": [
+        "अतृप्णुताम्"
+      ],
+      "canonical_forms_devanagari": [
+        "अतृप्नुताम्"
+      ],
+      "canonical_forms_slp1": [
+        "atfpnutAm"
+      ],
+      "receipt_sha256": "85ded0b2ad82eb4717af54374207612d39fae2f27eb924cec4afc318ca4c5cc9",
+      "sources": [
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/8.4.39.web.txt",
+          "sha256": "667fe134563a56082ec549dc3957dc7a78f7adb630f5a5dc2279a2c0f8835a53",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/8/8.4.39.htm",
+          "kind": "primary_commentary"
+        }
+      ]
+    },
+    {
+      "disposition": "rejected",
+      "rule_ids": [
+        "7.1.58"
+      ],
+      "basis": "Nyasa/Kashika explain that ir-it is one composite marker, so its i is not independently idit. Thus the supplied skhadir does not acquire num by idito num dhatoh. skhanderan improperly adds n.",
+      "dhatupradipa_page_locators": [],
+      "mechanism": "composite_ir_marker",
+      "index": 1586,
+      "task_id": "cart4-e47843ee99fd846a1d1336a0",
+      "dhatu": {
+        "code": "01.0931",
+        "aupadeshika": "sKadi~\\r",
+        "gana": "Bhvadi",
+        "artha": "vidrAvaRe vidAraRe ca"
+      },
+      "morphology": {
+        "lakara": "VidhiLin",
+        "prayoga": "Kartari",
+        "purusha": "Prathama",
+        "vacana": "Bahu"
+      },
+      "prompt_sha256": "a23df58373b8c5f98ec0ef903be861b5ddcc6b68f11d519dc4ea6b0e5a43c71d",
+      "root_family": "sKadi~\\r|Bhvadi",
+      "forms_devanagari": [
+        "स्खन्देरन्"
+      ],
+      "canonical_forms_devanagari": [
+        "स्खदेरन्"
+      ],
+      "canonical_forms_slp1": [
+        "sKaderan"
+      ],
+      "receipt_sha256": "f14e9a74498d2725eeec533cd753bafbf2d4aefcd045a8aa7e1697d61f8f1b1b",
+      "sources": [
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/web-primary-01.txt",
+          "sha256": "27f993ddf5312a97fee13624b28f13823821422ac978137719f1a9768be0f874",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.1.58.htm",
+          "kind": "primary_commentary"
+        }
+      ]
+    },
+    {
+      "disposition": "rejected",
+      "rule_ids": [
+        "1.3.12",
+        "1.3.78"
+      ],
+      "basis": "Raha tyage is P (Dhatupradipa rahati), and the conditional first dual is -ava. ara hishyavahi imports the M ending.",
+      "dhatupradipa_page_locators": [
+        61
+      ],
+      "mechanism": "pada_or_person",
+      "index": 1620,
+      "task_id": "cart4-fcdfdd32ca65fd7821b04c30",
+      "dhatu": {
+        "code": "01.0832",
+        "aupadeshika": "raha~",
+        "gana": "Bhvadi",
+        "artha": "tyAge"
+      },
+      "morphology": {
+        "lakara": "Lrn",
+        "prayoga": "Kartari",
+        "purusha": "Uttama",
+        "vacana": "Dvi"
+      },
+      "prompt_sha256": "18f4da9e8cac06790f8b88e46fe1f9997c715dacc585547c36aed2362d63c530",
+      "root_family": "raha~|Bhvadi",
+      "forms_devanagari": [
+        "अरहिष्यावहि"
+      ],
+      "canonical_forms_devanagari": [
+        "अरहिष्याव"
+      ],
+      "canonical_forms_slp1": [
+        "arahizyAva"
+      ],
+      "receipt_sha256": "ec090b70c5da34feceba9c5cbcf94c16929bd4fddec0d881d1e60d92d16dd9b1",
+      "sources": [
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/1.3.12.web.txt",
+          "sha256": "2c59cb714c5395096d68db182f26980ee8f9f049640cf6b8b81e94804226fa93",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/1/1.3.12.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/1.3.78.web.txt",
+          "sha256": "e33d7b9fc1bbce73ea118f4bdcbe402b0d4d1d20736e1b878a683db55c9aede3",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/1/1.3.78.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/dhatupradipa-selected-excerpts.json",
+          "sha256": "05bf7e9effdc85b4ba1c0ad3bfcd66a38bb3b1ba6f574165adaada9b7f51f921",
+          "kind": "primary_work_OCR_locator",
+          "pages": [
+            61
+          ]
+        }
+      ]
+    },
+    {
+      "disposition": "rejected",
+      "rule_ids": [
+        "1.2.1",
+        "1.1.5"
+      ],
+      "basis": "Chuda samvarane belongs to kutadi, for which the non-nit/nnit future suffix is ngit. chodishyamah violates guna blocking for this exact entry.",
+      "dhatupradipa_page_locators": [
+        121,
+        122
+      ],
+      "mechanism": "kutadi_guna",
+      "index": 1656,
+      "task_id": "cart4-0defe9aa02a27e593bb4b82b",
+      "dhatu": {
+        "code": "06.0120",
+        "aupadeshika": "Cuqa~",
+        "gana": "Tudadi",
+        "artha": "saMvaraRe"
+      },
+      "morphology": {
+        "lakara": "Lrt",
+        "prayoga": "Kartari",
+        "purusha": "Uttama",
+        "vacana": "Bahu"
+      },
+      "prompt_sha256": "dafda285914eedefaf59d203e4d1e8b448e0d9ed938a99c443df750a64f5dfa1",
+      "root_family": "Cuqa~|Tudadi",
+      "forms_devanagari": [
+        "छोडिष्यामः"
+      ],
+      "canonical_forms_devanagari": [
+        "छुडिष्यामः"
+      ],
+      "canonical_forms_slp1": [
+        "CuqizyAmaH"
+      ],
+      "receipt_sha256": "b68a2b20738d4af01f56a16cff46883a450431be035ffd82c0a077d56ce41d43",
+      "sources": [
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/1.2.1.web.txt",
+          "sha256": "ba6c2fb3b728409fe014615bfbe12928b113deaddad6e8f29288e3af1fd03038",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/1/1.2.1.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/1.1.5.web.txt",
+          "sha256": "280152eb039414070bcc386e132de71700f7bcb54e905add77acae6ae41b310c",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/1/1.1.5.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/dhatupradipa-selected-excerpts.json",
+          "sha256": "05bf7e9effdc85b4ba1c0ad3bfcd66a38bb3b1ba6f574165adaada9b7f51f921",
+          "kind": "primary_work_OCR_locator",
+          "pages": [
+            121,
+            122
+          ]
+        }
+      ]
+    },
+    {
+      "disposition": "rejected",
+      "rule_ids": [
+        "7.3.80",
+        "1.3.78"
+      ],
+      "basis": "The short-root branch bhri-nati is valid under the wider puadi reading (Nyasa explicitly names bhri bhaye), so root shortening alone is not an error. The returned bhrinite nevertheless uses unlicensed middle pada; source variant is भ्रिणाति, not भ्रिणीते.",
+      "dhatupradipa_page_locators": [
+        137
+      ],
+      "mechanism": "valid_shortening_wrong_pada",
+      "index": 1738,
+      "task_id": "cart4-158120e4dd53fa78628f0134",
+      "dhatu": {
+        "code": "09.0041",
+        "aupadeshika": "BrI\\",
+        "gana": "Kryadi",
+        "artha": "Baye"
+      },
+      "morphology": {
+        "lakara": "Lat",
+        "prayoga": "Kartari",
+        "purusha": "Prathama",
+        "vacana": "Eka"
+      },
+      "prompt_sha256": "ff57dfb7cd6a69d0b3d06293a1cd31b57bfd699f675c7f0375ce8ea39bc2e6f2",
+      "root_family": "BrI\\|Kryadi",
+      "forms_devanagari": [
+        "भ्रिणीते"
+      ],
+      "canonical_forms_devanagari": [
+        "भ्रीणाति"
+      ],
+      "canonical_forms_slp1": [
+        "BrIRAti"
+      ],
+      "receipt_sha256": "0fce36fdd944e9bace4285e02fb0f07c5891fd51373863bf10ab8e56252a5285",
+      "sources": [
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/7.3.80.web.txt",
+          "sha256": "7e60728f3974b15b55b8fd2059f63cc7f565341256425217540d1090d8fd5fed",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.3.80.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/1.3.78.web.txt",
+          "sha256": "e33d7b9fc1bbce73ea118f4bdcbe402b0d4d1d20736e1b878a683db55c9aede3",
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/1/1.3.78.htm",
+          "kind": "primary_commentary"
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/dhatupradipa-selected-excerpts.json",
+          "sha256": "05bf7e9effdc85b4ba1c0ad3bfcd66a38bb3b1ba6f574165adaada9b7f51f921",
+          "kind": "primary_work_OCR_locator",
+          "pages": [
+            137
+          ]
+        },
+        {
+          "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/dhatupradipa-page137.jpg",
+          "sha256": "2ac8638d6315538f9db5e6554531c9104380317b3dc18912eccdddedcf0b2245",
+          "url": "https://jainqq.org/explore/004319/137",
+          "kind": "primary_work_scan_visually_read"
+        }
+      ]
+    }
+  ],
+  "rule_source_catalog": {
+    "1.3.78": {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/1.3.78.web.txt",
+      "sha256": "e33d7b9fc1bbce73ea118f4bdcbe402b0d4d1d20736e1b878a683db55c9aede3",
+      "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/1/1.3.78.htm",
+      "kind": "primary_commentary"
+    },
+    "3.4.86": {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/3.4.86.web.txt",
+      "sha256": "f031758c5ba0ceba663188a9e46d38160c174f68f62185ad7bbefbcef90d9ece",
+      "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/3/3.4.86.htm",
+      "kind": "primary_commentary"
+    },
+    "1.2.1": {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/1.2.1.web.txt",
+      "sha256": "ba6c2fb3b728409fe014615bfbe12928b113deaddad6e8f29288e3af1fd03038",
+      "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/1/1.2.1.htm",
+      "kind": "primary_commentary"
+    },
+    "1.1.5": {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/1.1.5.web.txt",
+      "sha256": "280152eb039414070bcc386e132de71700f7bcb54e905add77acae6ae41b310c",
+      "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/1/1.1.5.htm",
+      "kind": "primary_commentary"
+    },
+    "3.1.55": {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/3.1.55.web.txt",
+      "sha256": "5bab9fda22173b00c5f0294bf43f7b19911e199ec72c9c37807170658538593e",
+      "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/3/3.1.55.htm",
+      "kind": "primary_commentary"
+    },
+    "1.3.12": {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/1.3.12.web.txt",
+      "sha256": "2c59cb714c5395096d68db182f26980ee8f9f049640cf6b8b81e94804226fa93",
+      "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/1/1.3.12.htm",
+      "kind": "primary_commentary"
+    },
+    "3.4.78": {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/3.4.78.web.txt",
+      "sha256": "a0180b03321a9e917c3f993ed588fa7269e0994bb94f5e3cf248731bd3a9c7df",
+      "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/3/3.4.78.htm",
+      "kind": "primary_commentary"
+    },
+    "3.1.56": {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/Anthropic-sources/3.1.56.html",
+      "sha256": "345bc103a8e32a40a17f8862928ef477d58e9f9d9d3a2c17006fb2ed7a4a7149",
+      "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/3/3.1.56.htm",
+      "kind": "primary_commentary"
+    },
+    "7.2.73": {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/7.2.73.web.txt",
+      "sha256": "5a77586557c33b28cf903bdc2d2c6853d27529be0e9fd974822e25bd10ced581",
+      "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.2.73.htm",
+      "kind": "primary_commentary"
+    },
+    "8.3.78": {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/8.3.78.web.txt",
+      "sha256": "5990eeece01a8c3fdd966d42f5682275cb0efffb17520bd2288f0aa82af14258",
+      "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/8/8.3.78.htm",
+      "kind": "primary_commentary"
+    },
+    "8.3.79": {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/8.3.79.web.txt",
+      "sha256": "6d3a30ecbae6ac9db6b25ce35eb85e55acfd09cb4ca4091e23fde6e08fb9ecd8",
+      "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/8/8.3.79.htm",
+      "kind": "primary_commentary"
+    },
+    "7.3.86": {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/7.3.86.web.txt",
+      "sha256": "637a91064c144a1a59cddf2feef3bc42fe7763baaa9db75525f0d81162ef2be6",
+      "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.3.86.htm",
+      "kind": "primary_commentary"
+    },
+    "1.3.76": {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/1.3.76.web.txt",
+      "sha256": "d45a91536ac54749729735cd90c0750d83893d24f480e312d7a4715e03e75055",
+      "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/1/1.3.76.htm",
+      "kind": "primary_commentary"
+    },
+    "7.1.59": {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/web-primary-01.txt",
+      "sha256": "27f993ddf5312a97fee13624b28f13823821422ac978137719f1a9768be0f874",
+      "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.1.59.htm",
+      "kind": "primary_commentary"
+    },
+    "7.1.61": {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/Anthropic-sources/7.1.61.html",
+      "sha256": "bb06005336b7d017b2baf16ee5a002a5490e5d52f6ed52421784ed31d7d0b8e6",
+      "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.1.61.htm",
+      "kind": "primary_commentary"
+    },
+    "3.4.101": {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/3.4.101.web.txt",
+      "sha256": "cae894f4917d718adc3dfd3dd4a273deb7aead7fc90b1eaea5cb04505a079e4f",
+      "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/3/3.4.101.htm",
+      "kind": "primary_commentary"
+    },
+    "3.1.36": {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/3.1.36.web.txt",
+      "sha256": "73c93ad89def850cd88d34e8f07f62c67e08b99358a161e6a4b41a491f6b6c94",
+      "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/3/3.1.36.htm",
+      "kind": "primary_commentary"
+    },
+    "7.3.84": {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/7.3.84.web.txt",
+      "sha256": "08f226b8b4a9c583b5ff6dcf437a4f0d89c10aefa491880c2f0be3f3115be612",
+      "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.3.84.htm",
+      "kind": "primary_commentary"
+    },
+    "7.3.80": {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/7.3.80.web.txt",
+      "sha256": "7e60728f3974b15b55b8fd2059f63cc7f565341256425217540d1090d8fd5fed",
+      "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.3.80.htm",
+      "kind": "primary_commentary"
+    },
+    "6.4.113": {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/6.4.113.web.txt",
+      "sha256": "a179d079afef118006b76b71c6c919fe6056a2a6588780a9d14c696b2cb12fb9",
+      "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.4.113.htm",
+      "kind": "primary_commentary"
+    },
+    "6.1.64": {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/web-primary-01.txt",
+      "sha256": "27f993ddf5312a97fee13624b28f13823821422ac978137719f1a9768be0f874",
+      "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.1.64.htm",
+      "kind": "primary_commentary"
+    },
+    "7.4.11": {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/7.4.11-12.web.txt",
+      "sha256": "e75067f146d4ea5d118b8660f0793555b411315af2ce5a4b1c2c1ff914584fd1",
+      "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.4.11.htm",
+      "kind": "primary_commentary"
+    },
+    "7.4.12": {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/7.4.11-12.web.txt",
+      "sha256": "e75067f146d4ea5d118b8660f0793555b411315af2ce5a4b1c2c1ff914584fd1",
+      "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.4.12.htm",
+      "kind": "primary_commentary"
+    },
+    "6.1.45": {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/6.1.45.web.txt",
+      "sha256": "4855a6a67ba429f31833b343f78b7ef6715e734dcb4a77b68576b845bcb86d9e",
+      "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.1.45.htm",
+      "kind": "primary_commentary"
+    },
+    "8.4.1": {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/8.4.1.web.txt",
+      "sha256": "c3a9d1bd0c9346cff17073d3348a00616aeb6c33d2134af47416ceec28e3625e",
+      "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/8/8.4.1.htm",
+      "kind": "primary_commentary"
+    },
+    "8.4.2": {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/8.4.2.web.txt",
+      "sha256": "3dbef2d840ac0eb22e8b586bd0ebb1a63403d5ad7b9e40190737073da3198678",
+      "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/8/8.4.2.htm",
+      "kind": "primary_commentary"
+    },
+    "3.4.99": {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/3.4.99.web.txt",
+      "sha256": "3cfec7b6ea9cde2e059f5c9f4d2253935fcb25299c3671b52b9137b0d909e6ec",
+      "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/3/3.4.99.htm",
+      "kind": "primary_commentary"
+    },
+    "3.4.85": {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/3.4.85.web.txt",
+      "sha256": "971ed3f13e570806028e9354afd0e8e778b943562524d61c25c7c95467cfec9c",
+      "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/3/3.4.85.htm",
+      "kind": "primary_commentary"
+    },
+    "7.2.4": {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/7.2.4.web.txt",
+      "sha256": "b9416a1f81446f6c0200eae96c5161459fe976fcb36117144a612eb7ab953d89",
+      "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.2.4.htm",
+      "kind": "primary_commentary"
+    },
+    "8.4.39": {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/8.4.39.web.txt",
+      "sha256": "667fe134563a56082ec549dc3957dc7a78f7adb630f5a5dc2279a2c0f8835a53",
+      "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/8/8.4.39.htm",
+      "kind": "primary_commentary"
+    },
+    "7.1.58": {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-sources/web-primary-01.txt",
+      "sha256": "27f993ddf5312a97fee13624b28f13823821422ac978137719f1a9768be0f874",
+      "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.1.58.htm",
+      "kind": "primary_commentary"
+    }
+  },
+  "symmetric_input_scope_review": {
+    "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/OpenAI-broad-puadi-scope.json",
+    "sha256": "c127ca933e5211a483b0542a3fde80083d5d3110cb65c1fea8f8832ba253faff"
+  },
+  "inputs": {
+    "queue": {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/independent-review/completed-review/OpenAI-source-adjudication-queue.json",
+      "sha256": "700d4a3b54d32805754520d404342dfac66f93756d2ae7083cdd51b256fd7fe5"
+    },
+    "candidate_tasks": {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/candidate-1800-v1/tasks.json",
+      "sha256": "695e7284d06a555aaabfcb7671d000db5622157984221c261b9500e86f72d38f"
+    },
+    "execution_plan": {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/execution-plan.json",
+      "sha256": "69201de2ede7e2ee2168ff1180324875aa22d4c3e34c385e58894ba110ad4967"
+    },
+    "mechanical_review": {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/independent-review/completed-review/review.json",
+      "sha256": "c0a162974d00820631b1ef362a6983aff6f2a44f7a87fb6687f540ab782aa04c"
+    }
+  },
+  "limitations": [
+    "Rejections adjudicate only the returned exact answer under its public entry. They do not certify the entire canonical union.",
+    "Unresolved dictionary/commentary identities remain unresolved, never silently scored as source-certified errors.",
+    "Ordinary pada rules are applied to exact visible citations; no separate pada choice was given, and all source-licensed pada possibilities must be retained.",
+    "Dhatupradipa excerpts are OCR locators; the critical optional-shortening page137 image was visually checked.",
+    "No model response, frozen key, alias policy, ledger, task membership, or shared policy was changed. Proposed additions require separate adoption and symmetric application."
+  ],
+  "provider_calls": 0,
+  "frozen_files_changed": false,
+  "ledger_changes": false,
+  "full_linguistic_certification": false
+}

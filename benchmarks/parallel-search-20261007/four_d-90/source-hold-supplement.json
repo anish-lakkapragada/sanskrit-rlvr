@@ -1,0 +1,277 @@
+{
+  "created_at": "2026-10-07T23:36:08.266417+00:00",
+  "reviewer": "/root/vp_4d_90",
+  "recommendation": "Retain all three prospective holds and replace their questions uniformly before any held-out evaluation.",
+  "all_prior_holds_preserved": true,
+  "source_scope_resolved_for_release": false,
+  "paid_calls": 0,
+  "model_outputs_read": false,
+  "existing_files_modified": false,
+  "input_hashes": {
+    "benchmarks/parallel-search-20261007/four_d-90/test-source-hold-predeclaration.json": "0ebafc39da1095e137896dac87235fe82daa686a8efabd2cbab2553a995b912a",
+    "benchmarks/parallel-search-20261007/four_d-90/test-hard-family-source-review.json": "4ecfcf8cdc9dec5e1233f51c8c651af8832c1f98ac1a197c77d167150bbbdac6",
+    "benchmarks/parallel-search-20261007/four_d-90/scale-candidate-1250-metadata.json": "9bb22841a7f89f128d52a85f8074c96ff896532f830480bb7a22ca6ff114962e",
+    "benchmarks/parallel-search-20261007/four_d-90/scale-feasibility.json": "b8d258e7487bd3bc5dba0c7deac2f386febcd67fa0ee673146b2f2ff8ddd3ada"
+  },
+  "sources": [
+    {
+      "rule": "3.1.51",
+      "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/3/3.1.51.htm",
+      "path": "benchmarks/parallel-search-20261007/four_d-90/source-hold-supplement-sources/3.1.51.html",
+      "sha256": "816c076437e83986b10b590c72be7e35b4eca7be1923cbda9378a2dd33b1edd1"
+    },
+    {
+      "rule": "3.1.12",
+      "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/3/3.1.12.htm",
+      "path": "benchmarks/parallel-search-20261007/four_d-90/source-hold-supplement-sources/3.1.12.html",
+      "sha256": "268dfef7ea370c805714d0e2f1721df42be80b1c2db2749ecc76f73761dc620f"
+    },
+    {
+      "rule": "3.1.21",
+      "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/3/3.1.21.htm",
+      "path": "benchmarks/parallel-search-20261007/four_d-90/source-hold-supplement-sources/3.1.21.html",
+      "sha256": "b80196d2cc0b7e445e50a8e6e8a52d56c79a37b4a4dc91b40194c89215268f7b"
+    }
+  ],
+  "existing_scan_hashes": {
+    "benchmarks/parallel-search-20261007/four_d-90/test-hard-family-sources/dhatupradipa-scan-159.jpg": "a196fc4247bdf812ffa3005753c4cc06c2535c7b0158dc4765ea7fbf0816cd90",
+    "benchmarks/parallel-search-20261007/four_d-90/test-hard-family-sources/dhatupradipa-scan-162.jpg": "656b7528025fcf470a318badbef9ccaeada2a2ae5be519c04233fc146d766297",
+    "benchmarks/parallel-search-20261007/four_d-90/test-hard-family-sources/madhaviya-scan-627.jpg": "98d8020ae743e19a5eff9e4e474de4dd722545525efb2e94d2258a9f9bf06a75"
+  },
+  "findings": [
+    {
+      "code": "10.0430",
+      "retain_hold": {
+        "lakara": "Lun"
+      },
+      "status": "Missing classical branch independently confirmed; complete release union remains unadopted.",
+      "direct_primary_evidence": "Kasika/Nyasa3.1.51 distinguish classical auni- from Vedic unaya- and explicitly explain second-syllable reduplication. SK defends auna- through adanta derivation timing. Both are classical Paninian commentary traditions.",
+      "not_licensed": "Do not add Vedic UnayIH/OnayIt to ordinary classical gold merely because they appear adjacent in the source.",
+      "candidate_morphological_additions": [
+        {
+          "id": "cart4-f975d43a0277318526203cc0",
+          "morphology": {
+            "lakara": "Lun",
+            "prayoga": "Kartari",
+            "purusha": "Madhyama",
+            "vacana": "Bahu"
+          },
+          "canonical_slp1": [
+            "OnanaDvam",
+            "Onanata"
+          ],
+          "inferred_additional_morphological_branch_slp1": [
+            "OninaDvam",
+            "Oninata"
+          ],
+          "inferred_additional_devanagari": [
+            "औनिनध्वम्",
+            "औनिनत"
+          ],
+          "evidence_level": "General-rule inference from printed third-person singular; NOT directly printed exact-coordinate union and NOT adopted gold policy."
+        },
+        {
+          "id": "cart4-b6083e6fb43a6375d8b81aee",
+          "morphology": {
+            "lakara": "Lun",
+            "prayoga": "Kartari",
+            "purusha": "Uttama",
+            "vacana": "Bahu"
+          },
+          "canonical_slp1": [
+            "OnanAma",
+            "OnanAmahi"
+          ],
+          "inferred_additional_morphological_branch_slp1": [
+            "OninAma",
+            "OninAmahi"
+          ],
+          "inferred_additional_devanagari": [
+            "औनिनाम",
+            "औनिनामहि"
+          ],
+          "evidence_level": "General-rule inference from printed third-person singular; NOT directly printed exact-coordinate union and NOT adopted gold policy."
+        },
+        {
+          "id": "cart4-872094ba9f651241d8268c2e",
+          "morphology": {
+            "lakara": "Lun",
+            "prayoga": "Kartari",
+            "purusha": "Uttama",
+            "vacana": "Dvi"
+          },
+          "canonical_slp1": [
+            "OnanAva",
+            "OnanAvahi"
+          ],
+          "inferred_additional_morphological_branch_slp1": [
+            "OninAva",
+            "OninAvahi"
+          ],
+          "inferred_additional_devanagari": [
+            "औनिनाव",
+            "औनिनावहि"
+          ],
+          "evidence_level": "General-rule inference from printed third-person singular; NOT directly printed exact-coordinate union and NOT adopted gold policy."
+        },
+        {
+          "id": "cart4-e3b647aa66641169ee317b6e",
+          "morphology": {
+            "lakara": "Lun",
+            "prayoga": "Kartari",
+            "purusha": "Uttama",
+            "vacana": "Eka"
+          },
+          "canonical_slp1": [
+            "Onanam",
+            "Onane"
+          ],
+          "inferred_additional_morphological_branch_slp1": [
+            "Oninam",
+            "Onine"
+          ],
+          "inferred_additional_devanagari": [
+            "औनिनम्",
+            "औनिने"
+          ],
+          "evidence_level": "General-rule inference from printed third-person singular; NOT directly printed exact-coordinate union and NOT adopted gold policy."
+        }
+      ],
+      "release_recommendation": "Exclude Una+Lun uniformly rather than silently choosing one commentary or patching only selected misses."
+    },
+    {
+      "code": "10.0466",
+      "retain_hold": {
+        "lakara": "all"
+      },
+      "status": "Unresolved analysis of reported miSrati; no justified aorist patch.",
+      "direct_primary_evidence": "Dhatupradipa scan162 prints the apparent miSrati reading after miSrayati. Madhaviya and Kshiratarangini print miSrayati; Kasika3.1.21 explicitly gives miSrayati in the nominal miSra construction.",
+      "interpretation": "The nominal tat-karoti explanation does not independently license dropping intrinsic nic for this exact Curadi task. No corroborated rule found for mapping the reported simple present into its Lun paradigm. Could be an alternate reading/analysis; do not certify it solely from OCR.",
+      "release_recommendation": "Exclude all forms of this exact dictionary family until its alternate lexical/finite analysis is adjudicated."
+    },
+    {
+      "code": "10.0467",
+      "retain_hold": {
+        "lakara": "all"
+      },
+      "status": "Intrinsic accent/ending-set issue substantiated, tradition conflict remains.",
+      "direct_primary_evidence": "Madhaviya and SK say anudattet; Balamanorama/Tattvabodhini3.1.12 explain a separate additional a-marker, with literal adanta vowel retained. Kshiratarangini prints Parasmaipada, but editor challenges it using Mahabhashya/Kaiyata/Maitreya.",
+      "interpretation": "This is a lexical marker/tradition issue rather than permission to append a chosen pada coordinate. Current citation sangrAma omits explicit separate marker coding. Selecting only Atmanepada would need a declared dictionary/source correction; merging opposed traditions needs scope adjudication.",
+      "release_recommendation": "Exclude all forms of this exact family; do not alter the frozen citation or drop selected gold branches."
+    }
+  ],
+  "remaining_capacity_from_prior_input_census": {
+    "test": {
+      "families": 22,
+      "tuples": 198,
+      "family_capacities": {
+        "BAma|Curadi": 9,
+        "Cidra|Curadi": 9,
+        "anDa|Curadi": 9,
+        "anga|Curadi": 9,
+        "anka|Curadi": 9,
+        "ansa|Curadi": 9,
+        "citra|Curadi": 9,
+        "danqa|Curadi": 9,
+        "duHKa|Curadi": 9,
+        "garva|Curadi": 9,
+        "goma|Curadi": 9,
+        "grAma|Curadi": 9,
+        "kAla|Curadi": 9,
+        "katra|Curadi": 9,
+        "kumAra|Curadi": 9,
+        "mArga|Curadi": 9,
+        "sAma|Curadi": 9,
+        "sUtra|Curadi": 9,
+        "tIra|Curadi": 9,
+        "vAta|Curadi": 9,
+        "vela|Curadi": 9,
+        "vizka|Curadi": 9
+      },
+      "capacity_with_max5": 110
+    },
+    "test_fresh_tuples": {
+      "families": 22,
+      "tuples": 197,
+      "family_capacities": {
+        "BAma|Curadi": 9,
+        "Cidra|Curadi": 9,
+        "anDa|Curadi": 8,
+        "anga|Curadi": 9,
+        "anka|Curadi": 9,
+        "ansa|Curadi": 9,
+        "citra|Curadi": 9,
+        "danqa|Curadi": 9,
+        "duHKa|Curadi": 9,
+        "garva|Curadi": 9,
+        "goma|Curadi": 9,
+        "grAma|Curadi": 9,
+        "kAla|Curadi": 9,
+        "katra|Curadi": 9,
+        "kumAra|Curadi": 9,
+        "mArga|Curadi": 9,
+        "sAma|Curadi": 9,
+        "sUtra|Curadi": 9,
+        "tIra|Curadi": 9,
+        "vAta|Curadi": 9,
+        "vela|Curadi": 9,
+        "vizka|Curadi": 9
+      },
+      "capacity_with_max5": 110
+    },
+    "test_initial": {
+      "families": 9,
+      "tuples": 80,
+      "family_capacities": {
+        "anDa|Curadi": 8,
+        "anga|Curadi": 9,
+        "ansa|Curadi": 9,
+        "citra|Curadi": 9,
+        "danqa|Curadi": 9,
+        "katra|Curadi": 9,
+        "kumAra|Curadi": 9,
+        "mArga|Curadi": 9,
+        "sAma|Curadi": 9
+      },
+      "capacity_with_max5": 45
+    },
+    "test_future": {
+      "families": 13,
+      "tuples": 117,
+      "family_capacities": {
+        "BAma|Curadi": 9,
+        "Cidra|Curadi": 9,
+        "anka|Curadi": 9,
+        "duHKa|Curadi": 9,
+        "garva|Curadi": 9,
+        "goma|Curadi": 9,
+        "grAma|Curadi": 9,
+        "kAla|Curadi": 9,
+        "sUtra|Curadi": 9,
+        "tIra|Curadi": 9,
+        "vAta|Curadi": 9,
+        "vela|Curadi": 9,
+        "vizka|Curadi": 9
+      },
+      "capacity_with_max5": 65
+    }
+  },
+  "replacement_arithmetic": {
+    "original1250_retained": 1238,
+    "replacements_needed": 12,
+    "other_adanta_quota": 100,
+    "remaining_other_adanta_families": 22,
+    "feasible_balanced_loads": {
+      "12_families": 5,
+      "10_families": 4
+    },
+    "total_distinct_families_after_replacement": 536,
+    "other_class_or_tense_weights_need_change": false
+  },
+  "limits": [
+    "The inferred Una table is not an approved scorer or complete spelling universe.",
+    "No full paradigm certification for other22families is implied by preserved capacity.",
+    "These exclusions do not resolve the separate mArga classification or Cada edition declaration.",
+    "Capacity numbers inherit the saved input-history scope; the new candidate needs a separate current freshness audit."
+  ]
+}

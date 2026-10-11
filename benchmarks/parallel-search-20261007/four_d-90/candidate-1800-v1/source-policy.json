@@ -1,0 +1,58 @@
+{
+  "created_at": "2026-10-07T23:46:35.110239+00:00",
+  "previous_holds": {
+    "created_at": "2026-10-07T23:12:18.140849+00:00",
+    "purpose": "Prospective source holds before any proposed test evaluation; preserve unscored original allocation.",
+    "source_review_sha256": "4ecfcf8cdc9dec5e1233f51c8c651af8832c1f98ac1a197c77d167150bbbdac6",
+    "proposal_sha256": "9bb22841a7f89f128d52a85f8074c96ff896532f830480bb7a22ca6ff114962e",
+    "predicates": [
+      {
+        "code": "10.0430",
+        "lakara": "Lun",
+        "reason": "Classical source variant absent from representative gold; union unresolved."
+      },
+      {
+        "code": "10.0466",
+        "lakara": "all",
+        "reason": "Additional finite branch; interpretation/propagation unresolved."
+      },
+      {
+        "code": "10.0467",
+        "lakara": "all",
+        "reason": "Conflicting intrinsic ending-set traditions."
+      }
+    ],
+    "affected_proposed_ids": [
+      "cart4-f975d43a0277318526203cc0",
+      "cart4-b6083e6fb43a6375d8b81aee",
+      "cart4-872094ba9f651241d8268c2e",
+      "cart4-e3b647aa66641169ee317b6e",
+      "cart4-46c9ba5dd490f855678f8167",
+      "cart4-cd885b52fc283b08d104dd19",
+      "cart4-77a722481584ccfae8223095",
+      "cart4-af7a2b625963baf81787db08",
+      "cart4-badefab2e25bc714240829cf",
+      "cart4-f7a22464c5a3fde8f90602ea",
+      "cart4-67ee77f97a07e94a6d93d8bf",
+      "cart4-11750f382d46d5ca690a7d0f"
+    ],
+    "additional_pre_freeze_clarification": [
+      "10.0108 adanta stratum membership",
+      "10.0481 declared literal-adanta reading versus conflicting edition"
+    ],
+    "applies_to": "All applicable new candidate tasks, regardless of expected outcome, for both reference models.",
+    "past200_development_changed": false,
+    "test_results_read": false,
+    "benchmark_ready": false
+  },
+  "additional_exclusion": {
+    "code": "10.0108",
+    "lakara": "Lun",
+    "sampling_cell": "other_adanta_aorist"
+  },
+  "additional_exclusion_reason": "Madhaviya p.546 supports a separate मार्ग root and मार्गयति for संस्कारगत्योः, but does not establish this as a literal-a adanta entry. Its scholarly index separates मार्ग् + marker अ. Engine spelling ending in a is insufficient to certify the grammatical sampling category.",
+  "retained_lexical_reading": "Dhatu code10.0481 is literal-final-a छद (SLP1 Cada), Curadi, अपवारणे; the final अ is retained lexical material, not an anubandha. Follow the adanta reading attested in Kshiratarangini entry321 and the1938 Siddhantakaumudi printed p.238. This is distinct from10.0370 Cada~ and10.0062 Cadi~.",
+  "clarification_sha256": "1dfbe7eafc3718327a724510de1b51c6bdff84c23914783d9749a42632afdf3c",
+  "applies_uniformly_before_test_evaluation": true,
+  "full_paradigm_certified": false
+}

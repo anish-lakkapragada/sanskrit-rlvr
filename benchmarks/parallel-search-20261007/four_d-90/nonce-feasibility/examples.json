@@ -1,0 +1,2347 @@
+{
+  "purpose": "Bounded hypothetical-root feasibility, not benchmark membership or authorization",
+  "provider_calls": 0,
+  "model_outputs_read": 0,
+  "dictionary_entries": 2229,
+  "inventory_sha256": "70dfc14955c2fb6fbf9bf0e13f5fa68ea777f021b69e091fe57894dd07b4d8b3",
+  "vidyut_version": "0.4.0",
+  "native_binary": {
+    "path": "/Users/anish/Documents/git-repos/sanskrit/.venv/lib/python3.10/site-packages/vidyut/vidyut.abi3.so",
+    "sha256": "a001d8479e03335eea3dc57f68660dd47bffb9f6cf5e9482807c28ad13c44e47"
+  },
+  "helper_sha256": "5ea500738dc86d417265bc168f68f89fcb1fedf8f1d4b383c5b9c99f32136345",
+  "shared_adapter_sha256": "f5bfab6f3fc27b7c83bbd6987bede73501592a9568fda32a0371bd8e23b7febd",
+  "mula_signature": "(aupadeshika, gana, *, antargana=None, prefixes=None, sanadi=None)",
+  "mula_docstring": "Creates a new mula-dhatu.\n\n`aupadeshika` should be an SLP1 string and include anudatta and svarita accents as\nnecessary. For examples, see the dhatus in `dhatupatha.tsv`. (If you don't have this file,\nconsult the rest of our documentation for information on where to find it.)",
+  "examples": [
+    {
+      "id": "dictionary-control-bhu",
+      "description": "dictionary control",
+      "input": {
+        "aupadeshika_slp1": "BU",
+        "aupadeshika_devanagari": "भू",
+        "gana": "Bhvadi",
+        "morphology": {
+          "lakara": "Lat",
+          "prayoga": "Kartari",
+          "purusha": "Prathama",
+          "vacana": "Eka"
+        }
+      },
+      "omitted_choices": {
+        "antargana": null,
+        "prefixes": [],
+        "sanadi": [],
+        "dhatu_pada": null
+      },
+      "exact_dictionary_codes": [
+        "01.0001"
+      ],
+      "same_raw_citation_any_class_codes": [
+        "01.0001",
+        "10.0277",
+        "10.0382"
+      ],
+      "dictionary_controls_scope_issues": [
+        null
+      ],
+      "meaning_received_by_mula": false,
+      "all_engine_forms_slp1": [
+        "Bavati"
+      ],
+      "all_engine_forms_devanagari": [
+        "भवति"
+      ],
+      "traces": [
+        {
+          "output": "Bavati",
+          "steps": [
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.1",
+              "result": [
+                "BU"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.2.123",
+              "result": [
+                "BU",
+                "la~w"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.2",
+              "result": [
+                "BU",
+                "la~w"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.3",
+              "result": [
+                "BU",
+                "la~w"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.9",
+              "result": [
+                "BU",
+                "l"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.78",
+              "result": [
+                "BU",
+                "l"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.4.78",
+              "result": [
+                "BU",
+                "tip"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.3",
+              "result": [
+                "BU",
+                "tip"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.9",
+              "result": [
+                "BU",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.4.113",
+              "result": [
+                "BU",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.1.68",
+              "result": [
+                "BU",
+                "Sap",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.3",
+              "result": [
+                "BU",
+                "Sap",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.8",
+              "result": [
+                "BU",
+                "Sap",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.9",
+              "result": [
+                "BU",
+                "a",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.4.113",
+              "result": [
+                "BU",
+                "a",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.4.13",
+              "result": [
+                "BU",
+                "a",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "7.3.84",
+              "result": [
+                "Bo",
+                "a",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.4.14",
+              "result": [
+                "Bo",
+                "a",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "6.1.78",
+              "result": [
+                "Bav",
+                "a",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "8.4.68",
+              "result": [
+                "Bav",
+                "a",
+                "ti"
+              ]
+            }
+          ]
+        }
+      ],
+      "classical_licensing": "dictionary control"
+    },
+    {
+      "id": "unlisted-bhu-class",
+      "description": "attested citation assigned an unlisted class",
+      "input": {
+        "aupadeshika_slp1": "BU",
+        "aupadeshika_devanagari": "भू",
+        "gana": "Divadi",
+        "morphology": {
+          "lakara": "Lat",
+          "prayoga": "Kartari",
+          "purusha": "Prathama",
+          "vacana": "Eka"
+        }
+      },
+      "omitted_choices": {
+        "antargana": null,
+        "prefixes": [],
+        "sanadi": [],
+        "dhatu_pada": null
+      },
+      "exact_dictionary_codes": [],
+      "same_raw_citation_any_class_codes": [
+        "01.0001",
+        "10.0277",
+        "10.0382"
+      ],
+      "dictionary_controls_scope_issues": [],
+      "meaning_received_by_mula": false,
+      "all_engine_forms_slp1": [
+        "BUyati"
+      ],
+      "all_engine_forms_devanagari": [
+        "भूयति"
+      ],
+      "traces": [
+        {
+          "output": "BUyati",
+          "steps": [
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.1",
+              "result": [
+                "BU"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.2.123",
+              "result": [
+                "BU",
+                "la~w"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.2",
+              "result": [
+                "BU",
+                "la~w"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.3",
+              "result": [
+                "BU",
+                "la~w"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.9",
+              "result": [
+                "BU",
+                "l"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.78",
+              "result": [
+                "BU",
+                "l"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.4.78",
+              "result": [
+                "BU",
+                "tip"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.3",
+              "result": [
+                "BU",
+                "tip"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.9",
+              "result": [
+                "BU",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.4.113",
+              "result": [
+                "BU",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.1.69",
+              "result": [
+                "BU",
+                "Syan",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.3",
+              "result": [
+                "BU",
+                "Syan",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.8",
+              "result": [
+                "BU",
+                "Syan",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.9",
+              "result": [
+                "BU",
+                "ya",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.4.113",
+              "result": [
+                "BU",
+                "ya",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.2.4",
+              "result": [
+                "BU",
+                "ya",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.4.13",
+              "result": [
+                "BU",
+                "ya",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.1.5",
+              "result": [
+                "BU",
+                "ya",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.4.14",
+              "result": [
+                "BU",
+                "ya",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "8.4.68",
+              "result": [
+                "BU",
+                "ya",
+                "ti"
+              ]
+            }
+          ]
+        }
+      ],
+      "classical_licensing": "not certified; formal engine extrapolation"
+    },
+    {
+      "id": "dictionary-control-kala",
+      "description": "dictionary short-a control",
+      "input": {
+        "aupadeshika_slp1": "kala",
+        "aupadeshika_devanagari": "कल",
+        "gana": "Curadi",
+        "morphology": {
+          "lakara": "Lat",
+          "prayoga": "Kartari",
+          "purusha": "Prathama",
+          "vacana": "Eka"
+        }
+      },
+      "omitted_choices": {
+        "antargana": null,
+        "prefixes": [],
+        "sanadi": [],
+        "dhatu_pada": null
+      },
+      "exact_dictionary_codes": [
+        "10.0404"
+      ],
+      "same_raw_citation_any_class_codes": [
+        "10.0404"
+      ],
+      "dictionary_controls_scope_issues": [
+        null
+      ],
+      "meaning_received_by_mula": false,
+      "all_engine_forms_slp1": [
+        "kalayate",
+        "kalayati"
+      ],
+      "all_engine_forms_devanagari": [
+        "कलयते",
+        "कलयति"
+      ],
+      "traces": [
+        {
+          "output": "kalayate",
+          "steps": [
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.1",
+              "result": [
+                "kala"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.1.25",
+              "result": [
+                "kala",
+                "Ric"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.1.32",
+              "result": [
+                "kala",
+                "Ric"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.3",
+              "result": [
+                "kala",
+                "Ric"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.7",
+              "result": [
+                "kala",
+                "Ric"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.9",
+              "result": [
+                "kala",
+                "i"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.4.114",
+              "result": [
+                "kala",
+                "i"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.4.13",
+              "result": [
+                "kala",
+                "i"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "6.4.48",
+              "result": [
+                "kal",
+                "i"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.2.123",
+              "result": [
+                "kal",
+                "i",
+                "la~w"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.2",
+              "result": [
+                "kal",
+                "i",
+                "la~w"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.3",
+              "result": [
+                "kal",
+                "i",
+                "la~w"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.9",
+              "result": [
+                "kal",
+                "i",
+                "l"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.74",
+              "result": [
+                "kal",
+                "i",
+                "l"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.4.78",
+              "result": [
+                "kal",
+                "i",
+                "ta"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.4.113",
+              "result": [
+                "kal",
+                "i",
+                "ta"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.1.68",
+              "result": [
+                "kal",
+                "i",
+                "Sap",
+                "ta"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.3",
+              "result": [
+                "kal",
+                "i",
+                "Sap",
+                "ta"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.8",
+              "result": [
+                "kal",
+                "i",
+                "Sap",
+                "ta"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.9",
+              "result": [
+                "kal",
+                "i",
+                "a",
+                "ta"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.4.113",
+              "result": [
+                "kal",
+                "i",
+                "a",
+                "ta"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.4.79",
+              "result": [
+                "kal",
+                "i",
+                "a",
+                "te"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.2.4",
+              "result": [
+                "kal",
+                "i",
+                "a",
+                "te"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.4.13",
+              "result": [
+                "kal",
+                "i",
+                "a",
+                "te"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "7.3.84",
+              "result": [
+                "kal",
+                "e",
+                "a",
+                "te"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.4.14",
+              "result": [
+                "kal",
+                "e",
+                "a",
+                "te"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "6.1.78",
+              "result": [
+                "kal",
+                "ay",
+                "a",
+                "te"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "8.4.68",
+              "result": [
+                "kal",
+                "ay",
+                "a",
+                "te"
+              ]
+            }
+          ]
+        },
+        {
+          "output": "kalayati",
+          "steps": [
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.1",
+              "result": [
+                "kala"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.1.25",
+              "result": [
+                "kala",
+                "Ric"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.1.32",
+              "result": [
+                "kala",
+                "Ric"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.3",
+              "result": [
+                "kala",
+                "Ric"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.7",
+              "result": [
+                "kala",
+                "Ric"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.9",
+              "result": [
+                "kala",
+                "i"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.4.114",
+              "result": [
+                "kala",
+                "i"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.4.13",
+              "result": [
+                "kala",
+                "i"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "6.4.48",
+              "result": [
+                "kal",
+                "i"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.2.123",
+              "result": [
+                "kal",
+                "i",
+                "la~w"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.2",
+              "result": [
+                "kal",
+                "i",
+                "la~w"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.3",
+              "result": [
+                "kal",
+                "i",
+                "la~w"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.9",
+              "result": [
+                "kal",
+                "i",
+                "l"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.78",
+              "result": [
+                "kal",
+                "i",
+                "l"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.4.78",
+              "result": [
+                "kal",
+                "i",
+                "tip"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.3",
+              "result": [
+                "kal",
+                "i",
+                "tip"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.9",
+              "result": [
+                "kal",
+                "i",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.4.113",
+              "result": [
+                "kal",
+                "i",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.1.68",
+              "result": [
+                "kal",
+                "i",
+                "Sap",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.3",
+              "result": [
+                "kal",
+                "i",
+                "Sap",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.8",
+              "result": [
+                "kal",
+                "i",
+                "Sap",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.9",
+              "result": [
+                "kal",
+                "i",
+                "a",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.4.113",
+              "result": [
+                "kal",
+                "i",
+                "a",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.4.13",
+              "result": [
+                "kal",
+                "i",
+                "a",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "7.3.84",
+              "result": [
+                "kal",
+                "e",
+                "a",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.4.14",
+              "result": [
+                "kal",
+                "e",
+                "a",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "6.1.78",
+              "result": [
+                "kal",
+                "ay",
+                "a",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "8.4.68",
+              "result": [
+                "kal",
+                "ay",
+                "a",
+                "ti"
+              ]
+            }
+          ]
+        }
+      ],
+      "classical_licensing": "dictionary control"
+    },
+    {
+      "id": "invented-short-a",
+      "description": "invented citation absent from this inventory",
+      "input": {
+        "aupadeshika_slp1": "gavapa",
+        "aupadeshika_devanagari": "गवप",
+        "gana": "Curadi",
+        "morphology": {
+          "lakara": "Lat",
+          "prayoga": "Kartari",
+          "purusha": "Prathama",
+          "vacana": "Eka"
+        }
+      },
+      "omitted_choices": {
+        "antargana": null,
+        "prefixes": [],
+        "sanadi": [],
+        "dhatu_pada": null
+      },
+      "exact_dictionary_codes": [],
+      "same_raw_citation_any_class_codes": [],
+      "dictionary_controls_scope_issues": [],
+      "meaning_received_by_mula": false,
+      "all_engine_forms_slp1": [
+        "gavapayate",
+        "gavapayati"
+      ],
+      "all_engine_forms_devanagari": [
+        "गवपयते",
+        "गवपयति"
+      ],
+      "traces": [
+        {
+          "output": "gavapayate",
+          "steps": [
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.1",
+              "result": [
+                "gavapa"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.1.25",
+              "result": [
+                "gavapa",
+                "Ric"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.1.32",
+              "result": [
+                "gavapa",
+                "Ric"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.3",
+              "result": [
+                "gavapa",
+                "Ric"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.7",
+              "result": [
+                "gavapa",
+                "Ric"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.9",
+              "result": [
+                "gavapa",
+                "i"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.4.114",
+              "result": [
+                "gavapa",
+                "i"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.4.13",
+              "result": [
+                "gavapa",
+                "i"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "6.4.48",
+              "result": [
+                "gavap",
+                "i"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.2.123",
+              "result": [
+                "gavap",
+                "i",
+                "la~w"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.2",
+              "result": [
+                "gavap",
+                "i",
+                "la~w"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.3",
+              "result": [
+                "gavap",
+                "i",
+                "la~w"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.9",
+              "result": [
+                "gavap",
+                "i",
+                "l"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.74",
+              "result": [
+                "gavap",
+                "i",
+                "l"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.4.78",
+              "result": [
+                "gavap",
+                "i",
+                "ta"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.4.113",
+              "result": [
+                "gavap",
+                "i",
+                "ta"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.1.68",
+              "result": [
+                "gavap",
+                "i",
+                "Sap",
+                "ta"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.3",
+              "result": [
+                "gavap",
+                "i",
+                "Sap",
+                "ta"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.8",
+              "result": [
+                "gavap",
+                "i",
+                "Sap",
+                "ta"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.9",
+              "result": [
+                "gavap",
+                "i",
+                "a",
+                "ta"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.4.113",
+              "result": [
+                "gavap",
+                "i",
+                "a",
+                "ta"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.4.79",
+              "result": [
+                "gavap",
+                "i",
+                "a",
+                "te"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.2.4",
+              "result": [
+                "gavap",
+                "i",
+                "a",
+                "te"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.4.13",
+              "result": [
+                "gavap",
+                "i",
+                "a",
+                "te"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "7.3.84",
+              "result": [
+                "gavap",
+                "e",
+                "a",
+                "te"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.4.14",
+              "result": [
+                "gavap",
+                "e",
+                "a",
+                "te"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "6.1.78",
+              "result": [
+                "gavap",
+                "ay",
+                "a",
+                "te"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "8.4.68",
+              "result": [
+                "gavap",
+                "ay",
+                "a",
+                "te"
+              ]
+            }
+          ]
+        },
+        {
+          "output": "gavapayati",
+          "steps": [
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.1",
+              "result": [
+                "gavapa"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.1.25",
+              "result": [
+                "gavapa",
+                "Ric"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.1.32",
+              "result": [
+                "gavapa",
+                "Ric"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.3",
+              "result": [
+                "gavapa",
+                "Ric"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.7",
+              "result": [
+                "gavapa",
+                "Ric"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.9",
+              "result": [
+                "gavapa",
+                "i"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.4.114",
+              "result": [
+                "gavapa",
+                "i"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.4.13",
+              "result": [
+                "gavapa",
+                "i"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "6.4.48",
+              "result": [
+                "gavap",
+                "i"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.2.123",
+              "result": [
+                "gavap",
+                "i",
+                "la~w"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.2",
+              "result": [
+                "gavap",
+                "i",
+                "la~w"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.3",
+              "result": [
+                "gavap",
+                "i",
+                "la~w"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.9",
+              "result": [
+                "gavap",
+                "i",
+                "l"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.78",
+              "result": [
+                "gavap",
+                "i",
+                "l"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.4.78",
+              "result": [
+                "gavap",
+                "i",
+                "tip"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.3",
+              "result": [
+                "gavap",
+                "i",
+                "tip"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.9",
+              "result": [
+                "gavap",
+                "i",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.4.113",
+              "result": [
+                "gavap",
+                "i",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.1.68",
+              "result": [
+                "gavap",
+                "i",
+                "Sap",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.3",
+              "result": [
+                "gavap",
+                "i",
+                "Sap",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.8",
+              "result": [
+                "gavap",
+                "i",
+                "Sap",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.9",
+              "result": [
+                "gavap",
+                "i",
+                "a",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.4.113",
+              "result": [
+                "gavap",
+                "i",
+                "a",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.4.13",
+              "result": [
+                "gavap",
+                "i",
+                "a",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "7.3.84",
+              "result": [
+                "gavap",
+                "e",
+                "a",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.4.14",
+              "result": [
+                "gavap",
+                "e",
+                "a",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "6.1.78",
+              "result": [
+                "gavap",
+                "ay",
+                "a",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "8.4.68",
+              "result": [
+                "gavap",
+                "ay",
+                "a",
+                "ti"
+              ]
+            }
+          ]
+        }
+      ],
+      "classical_licensing": "not certified; formal engine extrapolation"
+    },
+    {
+      "id": "invented-marked-a",
+      "description": "same spelling with explicit nasal it marker",
+      "input": {
+        "aupadeshika_slp1": "gavapa~",
+        "aupadeshika_devanagari": "गवपँ",
+        "gana": "Curadi",
+        "morphology": {
+          "lakara": "Lat",
+          "prayoga": "Kartari",
+          "purusha": "Prathama",
+          "vacana": "Eka"
+        }
+      },
+      "omitted_choices": {
+        "antargana": null,
+        "prefixes": [],
+        "sanadi": [],
+        "dhatu_pada": null
+      },
+      "exact_dictionary_codes": [],
+      "same_raw_citation_any_class_codes": [],
+      "dictionary_controls_scope_issues": [],
+      "meaning_received_by_mula": false,
+      "all_engine_forms_slp1": [
+        "gavApayate",
+        "gavApayati"
+      ],
+      "all_engine_forms_devanagari": [
+        "गवापयते",
+        "गवापयति"
+      ],
+      "traces": [
+        {
+          "output": "gavApayate",
+          "steps": [
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.1",
+              "result": [
+                "gavapa~"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.2",
+              "result": [
+                "gavapa~"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.9",
+              "result": [
+                "gavap"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.1.25",
+              "result": [
+                "gavap",
+                "Ric"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.1.32",
+              "result": [
+                "gavap",
+                "Ric"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.3",
+              "result": [
+                "gavap",
+                "Ric"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.7",
+              "result": [
+                "gavap",
+                "Ric"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.9",
+              "result": [
+                "gavap",
+                "i"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.4.114",
+              "result": [
+                "gavap",
+                "i"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.4.13",
+              "result": [
+                "gavap",
+                "i"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "7.2.116",
+              "result": [
+                "gavAp",
+                "i"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.2.123",
+              "result": [
+                "gavAp",
+                "i",
+                "la~w"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.2",
+              "result": [
+                "gavAp",
+                "i",
+                "la~w"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.3",
+              "result": [
+                "gavAp",
+                "i",
+                "la~w"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.9",
+              "result": [
+                "gavAp",
+                "i",
+                "l"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.74",
+              "result": [
+                "gavAp",
+                "i",
+                "l"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.4.78",
+              "result": [
+                "gavAp",
+                "i",
+                "ta"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.4.113",
+              "result": [
+                "gavAp",
+                "i",
+                "ta"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.1.68",
+              "result": [
+                "gavAp",
+                "i",
+                "Sap",
+                "ta"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.3",
+              "result": [
+                "gavAp",
+                "i",
+                "Sap",
+                "ta"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.8",
+              "result": [
+                "gavAp",
+                "i",
+                "Sap",
+                "ta"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.9",
+              "result": [
+                "gavAp",
+                "i",
+                "a",
+                "ta"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.4.113",
+              "result": [
+                "gavAp",
+                "i",
+                "a",
+                "ta"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.4.79",
+              "result": [
+                "gavAp",
+                "i",
+                "a",
+                "te"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.2.4",
+              "result": [
+                "gavAp",
+                "i",
+                "a",
+                "te"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.4.13",
+              "result": [
+                "gavAp",
+                "i",
+                "a",
+                "te"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "7.3.84",
+              "result": [
+                "gavAp",
+                "e",
+                "a",
+                "te"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.4.14",
+              "result": [
+                "gavAp",
+                "e",
+                "a",
+                "te"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "6.1.78",
+              "result": [
+                "gavAp",
+                "ay",
+                "a",
+                "te"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "8.4.68",
+              "result": [
+                "gavAp",
+                "ay",
+                "a",
+                "te"
+              ]
+            }
+          ]
+        },
+        {
+          "output": "gavApayati",
+          "steps": [
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.1",
+              "result": [
+                "gavapa~"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.2",
+              "result": [
+                "gavapa~"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.9",
+              "result": [
+                "gavap"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.1.25",
+              "result": [
+                "gavap",
+                "Ric"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.1.32",
+              "result": [
+                "gavap",
+                "Ric"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.3",
+              "result": [
+                "gavap",
+                "Ric"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.7",
+              "result": [
+                "gavap",
+                "Ric"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.9",
+              "result": [
+                "gavap",
+                "i"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.4.114",
+              "result": [
+                "gavap",
+                "i"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.4.13",
+              "result": [
+                "gavap",
+                "i"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "7.2.116",
+              "result": [
+                "gavAp",
+                "i"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.2.123",
+              "result": [
+                "gavAp",
+                "i",
+                "la~w"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.2",
+              "result": [
+                "gavAp",
+                "i",
+                "la~w"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.3",
+              "result": [
+                "gavAp",
+                "i",
+                "la~w"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.9",
+              "result": [
+                "gavAp",
+                "i",
+                "l"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.78",
+              "result": [
+                "gavAp",
+                "i",
+                "l"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.4.78",
+              "result": [
+                "gavAp",
+                "i",
+                "tip"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.3",
+              "result": [
+                "gavAp",
+                "i",
+                "tip"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.9",
+              "result": [
+                "gavAp",
+                "i",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.4.113",
+              "result": [
+                "gavAp",
+                "i",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.1.68",
+              "result": [
+                "gavAp",
+                "i",
+                "Sap",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.3",
+              "result": [
+                "gavAp",
+                "i",
+                "Sap",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.8",
+              "result": [
+                "gavAp",
+                "i",
+                "Sap",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.9",
+              "result": [
+                "gavAp",
+                "i",
+                "a",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.4.113",
+              "result": [
+                "gavAp",
+                "i",
+                "a",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.4.13",
+              "result": [
+                "gavAp",
+                "i",
+                "a",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "7.3.84",
+              "result": [
+                "gavAp",
+                "e",
+                "a",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.4.14",
+              "result": [
+                "gavAp",
+                "e",
+                "a",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "6.1.78",
+              "result": [
+                "gavAp",
+                "ay",
+                "a",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "8.4.68",
+              "result": [
+                "gavAp",
+                "ay",
+                "a",
+                "ti"
+              ]
+            }
+          ]
+        }
+      ],
+      "classical_licensing": "not certified; formal engine extrapolation"
+    },
+    {
+      "id": "invented-marked-a-bhvadi",
+      "description": "same marked citation assigned another class",
+      "input": {
+        "aupadeshika_slp1": "gavapa~",
+        "aupadeshika_devanagari": "गवपँ",
+        "gana": "Bhvadi",
+        "morphology": {
+          "lakara": "Lat",
+          "prayoga": "Kartari",
+          "purusha": "Prathama",
+          "vacana": "Eka"
+        }
+      },
+      "omitted_choices": {
+        "antargana": null,
+        "prefixes": [],
+        "sanadi": [],
+        "dhatu_pada": null
+      },
+      "exact_dictionary_codes": [],
+      "same_raw_citation_any_class_codes": [],
+      "dictionary_controls_scope_issues": [],
+      "meaning_received_by_mula": false,
+      "all_engine_forms_slp1": [
+        "gavapati"
+      ],
+      "all_engine_forms_devanagari": [
+        "गवपति"
+      ],
+      "traces": [
+        {
+          "output": "gavapati",
+          "steps": [
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.1",
+              "result": [
+                "gavapa~"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.2",
+              "result": [
+                "gavapa~"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.9",
+              "result": [
+                "gavap"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.2.123",
+              "result": [
+                "gavap",
+                "la~w"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.2",
+              "result": [
+                "gavap",
+                "la~w"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.3",
+              "result": [
+                "gavap",
+                "la~w"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.9",
+              "result": [
+                "gavap",
+                "l"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.78",
+              "result": [
+                "gavap",
+                "l"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.4.78",
+              "result": [
+                "gavap",
+                "tip"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.3",
+              "result": [
+                "gavap",
+                "tip"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.9",
+              "result": [
+                "gavap",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.4.113",
+              "result": [
+                "gavap",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.1.68",
+              "result": [
+                "gavap",
+                "Sap",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.3",
+              "result": [
+                "gavap",
+                "Sap",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.8",
+              "result": [
+                "gavap",
+                "Sap",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.3.9",
+              "result": [
+                "gavap",
+                "a",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "3.4.113",
+              "result": [
+                "gavap",
+                "a",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.4.13",
+              "result": [
+                "gavap",
+                "a",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "1.4.14",
+              "result": [
+                "gavap",
+                "a",
+                "ti"
+              ]
+            },
+            {
+              "source": "Ashtadhyayi",
+              "rule": "8.4.68",
+              "result": [
+                "gavap",
+                "a",
+                "ti"
+              ]
+            }
+          ]
+        }
+      ],
+      "classical_licensing": "not certified; formal engine extrapolation"
+    }
+  ],
+  "limitations": [
+    "Absence is checked against 2,229 installed dictionary entries, not all Sanskrit literature.",
+    "Only Lat Kartari third-person singular is probed; no claim about other coordinates.",
+    "Engine trace 1.3.1 records its input assumption, not independent lexical attestation.",
+    "Full engine unions are preserved; linguistic and spelling completeness is not certified.",
+    "No task IDs, dictionary codes, meanings, splits, or synthetic benchmark families are fabricated."
+  ]
+}

@@ -1,0 +1,4208 @@
+{
+  "created_at": "2026-10-07T10:27:41.952982+00:00",
+  "policy": "oracle-policy-17",
+  "sources": {
+    "astra": {
+      "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/astra-five-d-pilot-04-pair/results.json",
+      "sha256": "85178c7454df7de07e92f77c93c10febe85bd5821b2a48691d0cef7b32f4f294",
+      "current_n": 467,
+      "excluded_ids": [
+        "cart5-18bb7ce10ad8d9ba50671853",
+        "cart5-839511b5dded014ad7513e7a",
+        "cart5-c637e7fe342c2d434c20f1c5",
+        "cart5-9db8af9779ce64dac933bc7f",
+        "cart5-cde72f0e163df992da78ab68",
+        "cart5-8e2982753e02e18217c87ec2",
+        "cart5-0b142e8602089a7d1e4c93d0",
+        "cart5-cccaec4cb52ece685c6953f9",
+        "cart5-71eb383aad745037852d2f68",
+        "cart5-71848025c364b938a9d9ff00",
+        "cart5-2becb05eb63818df8d917e37",
+        "cart5-278ba65e780b5d25bc7dd248",
+        "cart5-ec28a2e92f86dcd4c32b623c"
+      ]
+    },
+    "opus": {
+      "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-five-d-pilot-06/results.json",
+      "sha256": "dc90e5b917dd0ec500bbc82c26a1d84ffe03e9941c5ceed8df4ac4192742a938",
+      "current_n": 596,
+      "excluded_ids": [
+        "cart5-0a6b1a3e13f02514c6560d29",
+        "cart5-1730af4a74c83beb73bbc34a",
+        "cart5-b34c0347d41b558fad5bdb0d",
+        "cart5-871b4b14b26ca869fb76d666"
+      ]
+    }
+  },
+  "candidate_manifest_sha256": "785e7463a4a2b750f554742c554b02f7f8e3e19d859f2e3f9e4976079f1a15de",
+  "candidate_tasks_sha256": "2d15b6a62718d6ea0531686fc1eb4a1d91223f3d6baf705108f8088bc37dd031",
+  "family_statistics": {
+    "distinct_families": 929,
+    "family_load_histogram": {
+      "5": 33,
+      "6": 149,
+      "7": 407,
+      "3": 31,
+      "4": 85,
+      "8": 30,
+      "2": 25,
+      "1": 169
+    },
+    "family_gana_counts": {
+      "Adadi": 37,
+      "Bhvadi": 497,
+      "Tudadi": 81,
+      "Kryadi": 30,
+      "Divadi": 87,
+      "Rudhadi": 13,
+      "Curadi": 160,
+      "Svadi": 11,
+      "Juhotyadi": 8,
+      "Tanadi": 5
+    },
+    "maximum_tasks_per_family": 8,
+    "aorist_family_load_histogram": {
+      "3": 25,
+      "4": 72,
+      "5": 324,
+      "1": 153,
+      "2": 12
+    },
+    "distinct_aorist_families": 586,
+    "repeated_aorist_assignments": 1574,
+    "family_pair_correlation_multiplier": 5.241666666666666,
+    "unordered_within_family_cell_pair_counts": [
+      {
+        "cell_a": "causative_of_intensive_luk|AshirLin|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lan|Karmani",
+        "pairs": 2
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|AshirLin|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lan|Kartari",
+        "pairs": 9
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|AshirLin|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lat|Karmani",
+        "pairs": 5
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|AshirLin|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lat|Kartari",
+        "pairs": 13
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|AshirLin|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lit|Kartari",
+        "pairs": 10
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|AshirLin|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lot|Karmani",
+        "pairs": 3
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|AshirLin|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lot|Kartari",
+        "pairs": 11
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|AshirLin|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lrn|Kartari",
+        "pairs": 6
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|AshirLin|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lrt|Karmani",
+        "pairs": 2
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|AshirLin|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lrt|Kartari",
+        "pairs": 11
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|AshirLin|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lun|Kartari",
+        "pairs": 9
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|AshirLin|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lut|Karmani",
+        "pairs": 4
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|AshirLin|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lut|Kartari",
+        "pairs": 9
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|AshirLin|Kartari",
+        "cell_b": "causative_of_intensive_luk|VidhiLin|Karmani",
+        "pairs": 5
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|AshirLin|Kartari",
+        "cell_b": "causative_of_intensive_luk|VidhiLin|Kartari",
+        "pairs": 14
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|AshirLin|Kartari",
+        "cell_b": "causative_of_intensive|Lan|Karmani",
+        "pairs": 6
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|AshirLin|Kartari",
+        "cell_b": "causative_of_intensive|Lan|Kartari",
+        "pairs": 16
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|AshirLin|Kartari",
+        "cell_b": "causative_of_intensive|Lat|Karmani",
+        "pairs": 10
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|AshirLin|Kartari",
+        "cell_b": "causative_of_intensive|Lat|Kartari",
+        "pairs": 20
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|AshirLin|Kartari",
+        "cell_b": "causative_of_intensive|Lit|Kartari",
+        "pairs": 25
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|AshirLin|Kartari",
+        "cell_b": "causative_of_intensive|Lot|Karmani",
+        "pairs": 4
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|AshirLin|Kartari",
+        "cell_b": "causative_of_intensive|Lot|Kartari",
+        "pairs": 17
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|AshirLin|Kartari",
+        "cell_b": "causative_of_intensive|Lrn|Kartari",
+        "pairs": 23
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|AshirLin|Kartari",
+        "cell_b": "causative_of_intensive|Lrt|Karmani",
+        "pairs": 9
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|AshirLin|Kartari",
+        "cell_b": "causative_of_intensive|Lrt|Kartari",
+        "pairs": 16
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|AshirLin|Kartari",
+        "cell_b": "causative_of_intensive|Lun|Kartari",
+        "pairs": 37
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|AshirLin|Kartari",
+        "cell_b": "causative_of_intensive|Lut|Karmani",
+        "pairs": 3
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|AshirLin|Kartari",
+        "cell_b": "causative_of_intensive|Lut|Kartari",
+        "pairs": 24
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|AshirLin|Kartari",
+        "cell_b": "causative_of_intensive|VidhiLin|Karmani",
+        "pairs": 8
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|AshirLin|Kartari",
+        "cell_b": "causative_of_intensive|VidhiLin|Kartari",
+        "pairs": 20
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lan|Karmani",
+        "cell_b": "causative_of_intensive_luk|Lat|Karmani",
+        "pairs": 2
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lan|Karmani",
+        "cell_b": "causative_of_intensive_luk|Lat|Kartari",
+        "pairs": 6
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lan|Karmani",
+        "cell_b": "causative_of_intensive_luk|Lit|Kartari",
+        "pairs": 5
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lan|Karmani",
+        "cell_b": "causative_of_intensive_luk|Lot|Karmani",
+        "pairs": 1
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lan|Karmani",
+        "cell_b": "causative_of_intensive_luk|Lot|Kartari",
+        "pairs": 4
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lan|Karmani",
+        "cell_b": "causative_of_intensive_luk|Lrn|Kartari",
+        "pairs": 2
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lan|Karmani",
+        "cell_b": "causative_of_intensive_luk|Lrt|Karmani",
+        "pairs": 1
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lan|Karmani",
+        "cell_b": "causative_of_intensive_luk|Lrt|Kartari",
+        "pairs": 3
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lan|Karmani",
+        "cell_b": "causative_of_intensive_luk|Lut|Karmani",
+        "pairs": 1
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lan|Karmani",
+        "cell_b": "causative_of_intensive_luk|Lut|Kartari",
+        "pairs": 3
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lan|Karmani",
+        "cell_b": "causative_of_intensive_luk|VidhiLin|Kartari",
+        "pairs": 2
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lan|Karmani",
+        "cell_b": "causative_of_intensive|AshirLin|Kartari",
+        "pairs": 7
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lan|Karmani",
+        "cell_b": "causative_of_intensive|Lat|Karmani",
+        "pairs": 3
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lan|Karmani",
+        "cell_b": "causative_of_intensive|Lat|Kartari",
+        "pairs": 2
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lan|Karmani",
+        "cell_b": "causative_of_intensive|Lit|Kartari",
+        "pairs": 6
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lan|Karmani",
+        "cell_b": "causative_of_intensive|Lot|Karmani",
+        "pairs": 3
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lan|Karmani",
+        "cell_b": "causative_of_intensive|Lot|Kartari",
+        "pairs": 5
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lan|Karmani",
+        "cell_b": "causative_of_intensive|Lrn|Kartari",
+        "pairs": 6
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lan|Karmani",
+        "cell_b": "causative_of_intensive|Lrt|Karmani",
+        "pairs": 3
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lan|Karmani",
+        "cell_b": "causative_of_intensive|Lrt|Kartari",
+        "pairs": 2
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lan|Karmani",
+        "cell_b": "causative_of_intensive|Lut|Kartari",
+        "pairs": 5
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lan|Karmani",
+        "cell_b": "causative_of_intensive|VidhiLin|Karmani",
+        "pairs": 2
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lan|Karmani",
+        "cell_b": "causative_of_intensive|VidhiLin|Kartari",
+        "pairs": 8
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lan|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lat|Karmani",
+        "pairs": 2
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lan|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lat|Kartari",
+        "pairs": 8
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lan|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lit|Kartari",
+        "pairs": 8
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lan|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lot|Karmani",
+        "pairs": 6
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lan|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lot|Kartari",
+        "pairs": 9
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lan|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lrn|Kartari",
+        "pairs": 8
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lan|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lrt|Kartari",
+        "pairs": 8
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lan|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lun|Kartari",
+        "pairs": 27
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lan|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lut|Karmani",
+        "pairs": 1
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lan|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lut|Kartari",
+        "pairs": 6
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lan|Kartari",
+        "cell_b": "causative_of_intensive_luk|VidhiLin|Karmani",
+        "pairs": 4
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lan|Kartari",
+        "cell_b": "causative_of_intensive_luk|VidhiLin|Kartari",
+        "pairs": 14
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lan|Kartari",
+        "cell_b": "causative_of_intensive|AshirLin|Kartari",
+        "pairs": 15
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lan|Kartari",
+        "cell_b": "causative_of_intensive|Lat|Karmani",
+        "pairs": 4
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lan|Kartari",
+        "cell_b": "causative_of_intensive|Lat|Kartari",
+        "pairs": 15
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lan|Kartari",
+        "cell_b": "causative_of_intensive|Lit|Kartari",
+        "pairs": 18
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lan|Kartari",
+        "cell_b": "causative_of_intensive|Lot|Karmani",
+        "pairs": 5
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lan|Kartari",
+        "cell_b": "causative_of_intensive|Lot|Kartari",
+        "pairs": 10
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lan|Kartari",
+        "cell_b": "causative_of_intensive|Lrn|Kartari",
+        "pairs": 10
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lan|Kartari",
+        "cell_b": "causative_of_intensive|Lrt|Karmani",
+        "pairs": 5
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lan|Kartari",
+        "cell_b": "causative_of_intensive|Lrt|Kartari",
+        "pairs": 9
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lan|Kartari",
+        "cell_b": "causative_of_intensive|Lun|Kartari",
+        "pairs": 21
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lan|Kartari",
+        "cell_b": "causative_of_intensive|Lut|Karmani",
+        "pairs": 2
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lan|Kartari",
+        "cell_b": "causative_of_intensive|Lut|Kartari",
+        "pairs": 11
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lan|Kartari",
+        "cell_b": "causative_of_intensive|VidhiLin|Karmani",
+        "pairs": 8
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lan|Kartari",
+        "cell_b": "causative_of_intensive|VidhiLin|Kartari",
+        "pairs": 8
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lat|Karmani",
+        "cell_b": "causative_of_intensive_luk|Lit|Kartari",
+        "pairs": 6
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lat|Karmani",
+        "cell_b": "causative_of_intensive_luk|Lot|Karmani",
+        "pairs": 1
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lat|Karmani",
+        "cell_b": "causative_of_intensive_luk|Lot|Kartari",
+        "pairs": 1
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lat|Karmani",
+        "cell_b": "causative_of_intensive_luk|Lrn|Kartari",
+        "pairs": 4
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lat|Karmani",
+        "cell_b": "causative_of_intensive_luk|Lrt|Karmani",
+        "pairs": 3
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lat|Karmani",
+        "cell_b": "causative_of_intensive_luk|Lrt|Kartari",
+        "pairs": 2
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lat|Karmani",
+        "cell_b": "causative_of_intensive_luk|Lun|Kartari",
+        "pairs": 9
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lat|Karmani",
+        "cell_b": "causative_of_intensive_luk|Lut|Karmani",
+        "pairs": 2
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lat|Karmani",
+        "cell_b": "causative_of_intensive_luk|Lut|Kartari",
+        "pairs": 3
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lat|Karmani",
+        "cell_b": "causative_of_intensive_luk|VidhiLin|Kartari",
+        "pairs": 4
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lat|Karmani",
+        "cell_b": "causative_of_intensive|AshirLin|Kartari",
+        "pairs": 7
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lat|Karmani",
+        "cell_b": "causative_of_intensive|Lan|Karmani",
+        "pairs": 3
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lat|Karmani",
+        "cell_b": "causative_of_intensive|Lan|Kartari",
+        "pairs": 5
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lat|Karmani",
+        "cell_b": "causative_of_intensive|Lit|Kartari",
+        "pairs": 10
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lat|Karmani",
+        "cell_b": "causative_of_intensive|Lot|Karmani",
+        "pairs": 4
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lat|Karmani",
+        "cell_b": "causative_of_intensive|Lot|Kartari",
+        "pairs": 11
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lat|Karmani",
+        "cell_b": "causative_of_intensive|Lrn|Kartari",
+        "pairs": 14
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lat|Karmani",
+        "cell_b": "causative_of_intensive|Lrt|Karmani",
+        "pairs": 4
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lat|Karmani",
+        "cell_b": "causative_of_intensive|Lrt|Kartari",
+        "pairs": 6
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lat|Karmani",
+        "cell_b": "causative_of_intensive|Lun|Kartari",
+        "pairs": 44
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lat|Karmani",
+        "cell_b": "causative_of_intensive|Lut|Karmani",
+        "pairs": 3
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lat|Karmani",
+        "cell_b": "causative_of_intensive|Lut|Kartari",
+        "pairs": 7
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lat|Karmani",
+        "cell_b": "causative_of_intensive|VidhiLin|Karmani",
+        "pairs": 3
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lat|Karmani",
+        "cell_b": "causative_of_intensive|VidhiLin|Kartari",
+        "pairs": 15
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lat|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lit|Kartari",
+        "pairs": 15
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lat|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lot|Karmani",
+        "pairs": 6
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lat|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lot|Kartari",
+        "pairs": 7
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lat|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lrn|Kartari",
+        "pairs": 12
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lat|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lrt|Karmani",
+        "pairs": 3
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lat|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lrt|Kartari",
+        "pairs": 11
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lat|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lun|Kartari",
+        "pairs": 56
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lat|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lut|Karmani",
+        "pairs": 2
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lat|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lut|Kartari",
+        "pairs": 9
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lat|Kartari",
+        "cell_b": "causative_of_intensive_luk|VidhiLin|Karmani",
+        "pairs": 8
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lat|Kartari",
+        "cell_b": "causative_of_intensive_luk|VidhiLin|Kartari",
+        "pairs": 16
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lat|Kartari",
+        "cell_b": "causative_of_intensive|AshirLin|Kartari",
+        "pairs": 24
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lat|Kartari",
+        "cell_b": "causative_of_intensive|Lan|Karmani",
+        "pairs": 10
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lat|Kartari",
+        "cell_b": "causative_of_intensive|Lan|Kartari",
+        "pairs": 15
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lat|Kartari",
+        "cell_b": "causative_of_intensive|Lit|Kartari",
+        "pairs": 21
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lat|Kartari",
+        "cell_b": "causative_of_intensive|Lot|Karmani",
+        "pairs": 7
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lat|Kartari",
+        "cell_b": "causative_of_intensive|Lot|Kartari",
+        "pairs": 22
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lat|Kartari",
+        "cell_b": "causative_of_intensive|Lrn|Kartari",
+        "pairs": 20
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lat|Kartari",
+        "cell_b": "causative_of_intensive|Lrt|Karmani",
+        "pairs": 5
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lat|Kartari",
+        "cell_b": "causative_of_intensive|Lrt|Kartari",
+        "pairs": 18
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lat|Kartari",
+        "cell_b": "causative_of_intensive|Lun|Kartari",
+        "pairs": 129
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lat|Kartari",
+        "cell_b": "causative_of_intensive|Lut|Karmani",
+        "pairs": 11
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lat|Kartari",
+        "cell_b": "causative_of_intensive|Lut|Kartari",
+        "pairs": 15
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lat|Kartari",
+        "cell_b": "causative_of_intensive|VidhiLin|Karmani",
+        "pairs": 8
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lat|Kartari",
+        "cell_b": "causative_of_intensive|VidhiLin|Kartari",
+        "pairs": 34
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lit|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lot|Karmani",
+        "pairs": 5
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lit|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lot|Kartari",
+        "pairs": 5
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lit|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lrn|Kartari",
+        "pairs": 10
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lit|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lrt|Karmani",
+        "pairs": 2
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lit|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lrt|Kartari",
+        "pairs": 17
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lit|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lun|Kartari",
+        "pairs": 9
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lit|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lut|Karmani",
+        "pairs": 2
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lit|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lut|Kartari",
+        "pairs": 8
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lit|Kartari",
+        "cell_b": "causative_of_intensive_luk|VidhiLin|Karmani",
+        "pairs": 6
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lit|Kartari",
+        "cell_b": "causative_of_intensive_luk|VidhiLin|Kartari",
+        "pairs": 12
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lit|Kartari",
+        "cell_b": "causative_of_intensive|AshirLin|Kartari",
+        "pairs": 15
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lit|Kartari",
+        "cell_b": "causative_of_intensive|Lan|Karmani",
+        "pairs": 6
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lit|Kartari",
+        "cell_b": "causative_of_intensive|Lan|Kartari",
+        "pairs": 16
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lit|Kartari",
+        "cell_b": "causative_of_intensive|Lat|Karmani",
+        "pairs": 11
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lit|Kartari",
+        "cell_b": "causative_of_intensive|Lat|Kartari",
+        "pairs": 16
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lit|Kartari",
+        "cell_b": "causative_of_intensive|Lot|Karmani",
+        "pairs": 15
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lit|Kartari",
+        "cell_b": "causative_of_intensive|Lot|Kartari",
+        "pairs": 17
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lit|Kartari",
+        "cell_b": "causative_of_intensive|Lrn|Kartari",
+        "pairs": 28
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lit|Kartari",
+        "cell_b": "causative_of_intensive|Lrt|Karmani",
+        "pairs": 11
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lit|Kartari",
+        "cell_b": "causative_of_intensive|Lrt|Kartari",
+        "pairs": 10
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lit|Kartari",
+        "cell_b": "causative_of_intensive|Lun|Kartari",
+        "pairs": 10
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lit|Kartari",
+        "cell_b": "causative_of_intensive|Lut|Karmani",
+        "pairs": 9
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lit|Kartari",
+        "cell_b": "causative_of_intensive|Lut|Kartari",
+        "pairs": 20
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lit|Kartari",
+        "cell_b": "causative_of_intensive|VidhiLin|Karmani",
+        "pairs": 10
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lit|Kartari",
+        "cell_b": "causative_of_intensive|VidhiLin|Kartari",
+        "pairs": 23
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lot|Karmani",
+        "cell_b": "causative_of_intensive_luk|Lrn|Kartari",
+        "pairs": 3
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lot|Karmani",
+        "cell_b": "causative_of_intensive_luk|Lrt|Kartari",
+        "pairs": 3
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lot|Karmani",
+        "cell_b": "causative_of_intensive_luk|Lut|Kartari",
+        "pairs": 3
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lot|Karmani",
+        "cell_b": "causative_of_intensive_luk|VidhiLin|Karmani",
+        "pairs": 1
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lot|Karmani",
+        "cell_b": "causative_of_intensive_luk|VidhiLin|Kartari",
+        "pairs": 2
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lot|Karmani",
+        "cell_b": "causative_of_intensive|AshirLin|Kartari",
+        "pairs": 2
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lot|Karmani",
+        "cell_b": "causative_of_intensive|Lan|Karmani",
+        "pairs": 4
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lot|Karmani",
+        "cell_b": "causative_of_intensive|Lan|Kartari",
+        "pairs": 2
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lot|Karmani",
+        "cell_b": "causative_of_intensive|Lat|Karmani",
+        "pairs": 2
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lot|Karmani",
+        "cell_b": "causative_of_intensive|Lat|Kartari",
+        "pairs": 3
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lot|Karmani",
+        "cell_b": "causative_of_intensive|Lit|Kartari",
+        "pairs": 4
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lot|Karmani",
+        "cell_b": "causative_of_intensive|Lrn|Kartari",
+        "pairs": 5
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lot|Karmani",
+        "cell_b": "causative_of_intensive|Lrt|Karmani",
+        "pairs": 1
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lot|Karmani",
+        "cell_b": "causative_of_intensive|Lrt|Kartari",
+        "pairs": 8
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lot|Karmani",
+        "cell_b": "causative_of_intensive|Lut|Karmani",
+        "pairs": 1
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lot|Karmani",
+        "cell_b": "causative_of_intensive|Lut|Kartari",
+        "pairs": 5
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lot|Karmani",
+        "cell_b": "causative_of_intensive|VidhiLin|Karmani",
+        "pairs": 3
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lot|Karmani",
+        "cell_b": "causative_of_intensive|VidhiLin|Kartari",
+        "pairs": 4
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lot|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lrn|Kartari",
+        "pairs": 7
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lot|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lrt|Karmani",
+        "pairs": 2
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lot|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lrt|Kartari",
+        "pairs": 6
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lot|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lun|Kartari",
+        "pairs": 9
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lot|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lut|Karmani",
+        "pairs": 2
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lot|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lut|Kartari",
+        "pairs": 7
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lot|Kartari",
+        "cell_b": "causative_of_intensive_luk|VidhiLin|Karmani",
+        "pairs": 5
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lot|Kartari",
+        "cell_b": "causative_of_intensive_luk|VidhiLin|Kartari",
+        "pairs": 11
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lot|Kartari",
+        "cell_b": "causative_of_intensive|AshirLin|Kartari",
+        "pairs": 21
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lot|Kartari",
+        "cell_b": "causative_of_intensive|Lan|Karmani",
+        "pairs": 4
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lot|Kartari",
+        "cell_b": "causative_of_intensive|Lan|Kartari",
+        "pairs": 10
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lot|Kartari",
+        "cell_b": "causative_of_intensive|Lat|Karmani",
+        "pairs": 15
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lot|Kartari",
+        "cell_b": "causative_of_intensive|Lat|Kartari",
+        "pairs": 10
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lot|Kartari",
+        "cell_b": "causative_of_intensive|Lit|Kartari",
+        "pairs": 16
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lot|Kartari",
+        "cell_b": "causative_of_intensive|Lrn|Kartari",
+        "pairs": 20
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lot|Kartari",
+        "cell_b": "causative_of_intensive|Lrt|Karmani",
+        "pairs": 6
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lot|Kartari",
+        "cell_b": "causative_of_intensive|Lrt|Kartari",
+        "pairs": 7
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lot|Kartari",
+        "cell_b": "causative_of_intensive|Lun|Kartari",
+        "pairs": 25
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lot|Kartari",
+        "cell_b": "causative_of_intensive|Lut|Karmani",
+        "pairs": 6
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lot|Kartari",
+        "cell_b": "causative_of_intensive|Lut|Kartari",
+        "pairs": 13
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lot|Kartari",
+        "cell_b": "causative_of_intensive|VidhiLin|Karmani",
+        "pairs": 7
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lot|Kartari",
+        "cell_b": "causative_of_intensive|VidhiLin|Kartari",
+        "pairs": 11
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrn|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lrt|Karmani",
+        "pairs": 2
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrn|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lrt|Kartari",
+        "pairs": 11
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrn|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lun|Kartari",
+        "pairs": 37
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrn|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lut|Karmani",
+        "pairs": 4
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrn|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lut|Kartari",
+        "pairs": 4
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrn|Kartari",
+        "cell_b": "causative_of_intensive_luk|VidhiLin|Karmani",
+        "pairs": 5
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrn|Kartari",
+        "cell_b": "causative_of_intensive_luk|VidhiLin|Kartari",
+        "pairs": 11
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrn|Kartari",
+        "cell_b": "causative_of_intensive|AshirLin|Kartari",
+        "pairs": 18
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrn|Kartari",
+        "cell_b": "causative_of_intensive|Lan|Karmani",
+        "pairs": 6
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrn|Kartari",
+        "cell_b": "causative_of_intensive|Lan|Kartari",
+        "pairs": 16
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrn|Kartari",
+        "cell_b": "causative_of_intensive|Lat|Karmani",
+        "pairs": 7
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrn|Kartari",
+        "cell_b": "causative_of_intensive|Lat|Kartari",
+        "pairs": 18
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrn|Kartari",
+        "cell_b": "causative_of_intensive|Lit|Kartari",
+        "pairs": 22
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrn|Kartari",
+        "cell_b": "causative_of_intensive|Lot|Karmani",
+        "pairs": 4
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrn|Kartari",
+        "cell_b": "causative_of_intensive|Lot|Kartari",
+        "pairs": 18
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrn|Kartari",
+        "cell_b": "causative_of_intensive|Lrt|Karmani",
+        "pairs": 4
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrn|Kartari",
+        "cell_b": "causative_of_intensive|Lrt|Kartari",
+        "pairs": 17
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrn|Kartari",
+        "cell_b": "causative_of_intensive|Lun|Kartari",
+        "pairs": 42
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrn|Kartari",
+        "cell_b": "causative_of_intensive|Lut|Karmani",
+        "pairs": 7
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrn|Kartari",
+        "cell_b": "causative_of_intensive|Lut|Kartari",
+        "pairs": 10
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrn|Kartari",
+        "cell_b": "causative_of_intensive|VidhiLin|Karmani",
+        "pairs": 8
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrn|Kartari",
+        "cell_b": "causative_of_intensive|VidhiLin|Kartari",
+        "pairs": 20
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrt|Karmani",
+        "cell_b": "causative_of_intensive_luk|Lut|Karmani",
+        "pairs": 3
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrt|Karmani",
+        "cell_b": "causative_of_intensive_luk|Lut|Kartari",
+        "pairs": 1
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrt|Karmani",
+        "cell_b": "causative_of_intensive_luk|VidhiLin|Kartari",
+        "pairs": 2
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrt|Karmani",
+        "cell_b": "causative_of_intensive|AshirLin|Kartari",
+        "pairs": 9
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrt|Karmani",
+        "cell_b": "causative_of_intensive|Lan|Karmani",
+        "pairs": 1
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrt|Karmani",
+        "cell_b": "causative_of_intensive|Lan|Kartari",
+        "pairs": 7
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrt|Karmani",
+        "cell_b": "causative_of_intensive|Lat|Karmani",
+        "pairs": 2
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrt|Karmani",
+        "cell_b": "causative_of_intensive|Lat|Kartari",
+        "pairs": 5
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrt|Karmani",
+        "cell_b": "causative_of_intensive|Lit|Kartari",
+        "pairs": 7
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrt|Karmani",
+        "cell_b": "causative_of_intensive|Lot|Karmani",
+        "pairs": 5
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrt|Karmani",
+        "cell_b": "causative_of_intensive|Lot|Kartari",
+        "pairs": 3
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrt|Karmani",
+        "cell_b": "causative_of_intensive|Lrn|Kartari",
+        "pairs": 6
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrt|Karmani",
+        "cell_b": "causative_of_intensive|Lut|Karmani",
+        "pairs": 2
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrt|Karmani",
+        "cell_b": "causative_of_intensive|Lut|Kartari",
+        "pairs": 4
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrt|Karmani",
+        "cell_b": "causative_of_intensive|VidhiLin|Karmani",
+        "pairs": 4
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrt|Karmani",
+        "cell_b": "causative_of_intensive|VidhiLin|Kartari",
+        "pairs": 8
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrt|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lun|Kartari",
+        "pairs": 2
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrt|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lut|Karmani",
+        "pairs": 3
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrt|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lut|Kartari",
+        "pairs": 4
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrt|Kartari",
+        "cell_b": "causative_of_intensive_luk|VidhiLin|Karmani",
+        "pairs": 8
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrt|Kartari",
+        "cell_b": "causative_of_intensive_luk|VidhiLin|Kartari",
+        "pairs": 12
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrt|Kartari",
+        "cell_b": "causative_of_intensive|AshirLin|Kartari",
+        "pairs": 15
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrt|Kartari",
+        "cell_b": "causative_of_intensive|Lan|Karmani",
+        "pairs": 6
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrt|Kartari",
+        "cell_b": "causative_of_intensive|Lan|Kartari",
+        "pairs": 12
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrt|Kartari",
+        "cell_b": "causative_of_intensive|Lat|Karmani",
+        "pairs": 4
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrt|Kartari",
+        "cell_b": "causative_of_intensive|Lat|Kartari",
+        "pairs": 20
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrt|Kartari",
+        "cell_b": "causative_of_intensive|Lit|Kartari",
+        "pairs": 14
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrt|Kartari",
+        "cell_b": "causative_of_intensive|Lot|Karmani",
+        "pairs": 4
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrt|Kartari",
+        "cell_b": "causative_of_intensive|Lot|Kartari",
+        "pairs": 12
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrt|Kartari",
+        "cell_b": "causative_of_intensive|Lrn|Kartari",
+        "pairs": 19
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrt|Kartari",
+        "cell_b": "causative_of_intensive|Lun|Kartari",
+        "pairs": 20
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrt|Kartari",
+        "cell_b": "causative_of_intensive|Lut|Karmani",
+        "pairs": 8
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrt|Kartari",
+        "cell_b": "causative_of_intensive|Lut|Kartari",
+        "pairs": 13
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrt|Kartari",
+        "cell_b": "causative_of_intensive|VidhiLin|Karmani",
+        "pairs": 7
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lrt|Kartari",
+        "cell_b": "causative_of_intensive|VidhiLin|Kartari",
+        "pairs": 10
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lun|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lun|Kartari",
+        "pairs": 861
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lun|Kartari",
+        "cell_b": "causative_of_intensive_luk|Lut|Kartari",
+        "pairs": 27
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lun|Kartari",
+        "cell_b": "causative_of_intensive_luk|VidhiLin|Karmani",
+        "pairs": 19
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lun|Kartari",
+        "cell_b": "causative_of_intensive_luk|VidhiLin|Kartari",
+        "pairs": 101
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lun|Kartari",
+        "cell_b": "causative_of_intensive|AshirLin|Kartari",
+        "pairs": 94
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lun|Kartari",
+        "cell_b": "causative_of_intensive|Lan|Karmani",
+        "pairs": 12
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lun|Kartari",
+        "cell_b": "causative_of_intensive|Lan|Kartari",
+        "pairs": 70
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lun|Kartari",
+        "cell_b": "causative_of_intensive|Lat|Karmani",
+        "pairs": 69
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lun|Kartari",
+        "cell_b": "causative_of_intensive|Lat|Kartari",
+        "pairs": 171
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lun|Kartari",
+        "cell_b": "causative_of_intensive|Lit|Kartari",
+        "pairs": 55
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lun|Kartari",
+        "cell_b": "causative_of_intensive|Lot|Karmani",
+        "pairs": 16
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lun|Kartari",
+        "cell_b": "causative_of_intensive|Lot|Kartari",
+        "pairs": 35
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lun|Kartari",
+        "cell_b": "causative_of_intensive|Lrn|Kartari",
+        "pairs": 48
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lun|Kartari",
+        "cell_b": "causative_of_intensive|Lrt|Karmani",
+        "pairs": 23
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lun|Kartari",
+        "cell_b": "causative_of_intensive|Lrt|Kartari",
+        "pairs": 40
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lun|Kartari",
+        "cell_b": "causative_of_intensive|Lun|Kartari",
+        "pairs": 372
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lun|Kartari",
+        "cell_b": "causative_of_intensive|Lut|Karmani",
+        "pairs": 6
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lun|Kartari",
+        "cell_b": "causative_of_intensive|Lut|Kartari",
+        "pairs": 71
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lun|Kartari",
+        "cell_b": "causative_of_intensive|VidhiLin|Karmani",
+        "pairs": 25
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lun|Kartari",
+        "cell_b": "causative_of_intensive|VidhiLin|Kartari",
+        "pairs": 166
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lut|Karmani",
+        "cell_b": "causative_of_intensive_luk|VidhiLin|Karmani",
+        "pairs": 1
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lut|Karmani",
+        "cell_b": "causative_of_intensive_luk|VidhiLin|Kartari",
+        "pairs": 3
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lut|Karmani",
+        "cell_b": "causative_of_intensive|AshirLin|Kartari",
+        "pairs": 3
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lut|Karmani",
+        "cell_b": "causative_of_intensive|Lan|Karmani",
+        "pairs": 2
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lut|Karmani",
+        "cell_b": "causative_of_intensive|Lan|Kartari",
+        "pairs": 7
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lut|Karmani",
+        "cell_b": "causative_of_intensive|Lat|Karmani",
+        "pairs": 2
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lut|Karmani",
+        "cell_b": "causative_of_intensive|Lat|Kartari",
+        "pairs": 8
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lut|Karmani",
+        "cell_b": "causative_of_intensive|Lit|Kartari",
+        "pairs": 9
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lut|Karmani",
+        "cell_b": "causative_of_intensive|Lot|Karmani",
+        "pairs": 4
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lut|Karmani",
+        "cell_b": "causative_of_intensive|Lot|Kartari",
+        "pairs": 3
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lut|Karmani",
+        "cell_b": "causative_of_intensive|Lrn|Kartari",
+        "pairs": 7
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lut|Karmani",
+        "cell_b": "causative_of_intensive|Lrt|Kartari",
+        "pairs": 6
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lut|Karmani",
+        "cell_b": "causative_of_intensive|VidhiLin|Karmani",
+        "pairs": 4
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lut|Karmani",
+        "cell_b": "causative_of_intensive|VidhiLin|Kartari",
+        "pairs": 6
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lut|Kartari",
+        "cell_b": "causative_of_intensive_luk|VidhiLin|Karmani",
+        "pairs": 3
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lut|Kartari",
+        "cell_b": "causative_of_intensive_luk|VidhiLin|Kartari",
+        "pairs": 10
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lut|Kartari",
+        "cell_b": "causative_of_intensive|AshirLin|Kartari",
+        "pairs": 12
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lut|Kartari",
+        "cell_b": "causative_of_intensive|Lan|Karmani",
+        "pairs": 7
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lut|Kartari",
+        "cell_b": "causative_of_intensive|Lan|Kartari",
+        "pairs": 12
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lut|Kartari",
+        "cell_b": "causative_of_intensive|Lat|Karmani",
+        "pairs": 6
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lut|Kartari",
+        "cell_b": "causative_of_intensive|Lat|Kartari",
+        "pairs": 13
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lut|Kartari",
+        "cell_b": "causative_of_intensive|Lit|Kartari",
+        "pairs": 16
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lut|Kartari",
+        "cell_b": "causative_of_intensive|Lot|Karmani",
+        "pairs": 4
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lut|Kartari",
+        "cell_b": "causative_of_intensive|Lot|Kartari",
+        "pairs": 13
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lut|Kartari",
+        "cell_b": "causative_of_intensive|Lrn|Kartari",
+        "pairs": 16
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lut|Kartari",
+        "cell_b": "causative_of_intensive|Lrt|Karmani",
+        "pairs": 3
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lut|Kartari",
+        "cell_b": "causative_of_intensive|Lrt|Kartari",
+        "pairs": 10
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lut|Kartari",
+        "cell_b": "causative_of_intensive|Lun|Kartari",
+        "pairs": 31
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lut|Kartari",
+        "cell_b": "causative_of_intensive|VidhiLin|Karmani",
+        "pairs": 8
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|Lut|Kartari",
+        "cell_b": "causative_of_intensive|VidhiLin|Kartari",
+        "pairs": 10
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|VidhiLin|Karmani",
+        "cell_b": "causative_of_intensive|AshirLin|Kartari",
+        "pairs": 6
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|VidhiLin|Karmani",
+        "cell_b": "causative_of_intensive|Lan|Karmani",
+        "pairs": 2
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|VidhiLin|Karmani",
+        "cell_b": "causative_of_intensive|Lan|Kartari",
+        "pairs": 7
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|VidhiLin|Karmani",
+        "cell_b": "causative_of_intensive|Lat|Karmani",
+        "pairs": 5
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|VidhiLin|Karmani",
+        "cell_b": "causative_of_intensive|Lat|Kartari",
+        "pairs": 10
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|VidhiLin|Karmani",
+        "cell_b": "causative_of_intensive|Lit|Kartari",
+        "pairs": 7
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|VidhiLin|Karmani",
+        "cell_b": "causative_of_intensive|Lot|Karmani",
+        "pairs": 3
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|VidhiLin|Karmani",
+        "cell_b": "causative_of_intensive|Lot|Kartari",
+        "pairs": 5
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|VidhiLin|Karmani",
+        "cell_b": "causative_of_intensive|Lrn|Kartari",
+        "pairs": 12
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|VidhiLin|Karmani",
+        "cell_b": "causative_of_intensive|Lrt|Karmani",
+        "pairs": 2
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|VidhiLin|Karmani",
+        "cell_b": "causative_of_intensive|Lrt|Kartari",
+        "pairs": 1
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|VidhiLin|Karmani",
+        "cell_b": "causative_of_intensive|Lun|Kartari",
+        "pairs": 44
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|VidhiLin|Karmani",
+        "cell_b": "causative_of_intensive|Lut|Karmani",
+        "pairs": 2
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|VidhiLin|Karmani",
+        "cell_b": "causative_of_intensive|Lut|Kartari",
+        "pairs": 5
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|VidhiLin|Kartari",
+        "cell_b": "causative_of_intensive|AshirLin|Kartari",
+        "pairs": 27
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|VidhiLin|Kartari",
+        "cell_b": "causative_of_intensive|Lan|Karmani",
+        "pairs": 10
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|VidhiLin|Kartari",
+        "cell_b": "causative_of_intensive|Lan|Kartari",
+        "pairs": 15
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|VidhiLin|Kartari",
+        "cell_b": "causative_of_intensive|Lat|Karmani",
+        "pairs": 16
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|VidhiLin|Kartari",
+        "cell_b": "causative_of_intensive|Lat|Kartari",
+        "pairs": 22
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|VidhiLin|Kartari",
+        "cell_b": "causative_of_intensive|Lit|Kartari",
+        "pairs": 18
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|VidhiLin|Kartari",
+        "cell_b": "causative_of_intensive|Lot|Karmani",
+        "pairs": 10
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|VidhiLin|Kartari",
+        "cell_b": "causative_of_intensive|Lot|Kartari",
+        "pairs": 17
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|VidhiLin|Kartari",
+        "cell_b": "causative_of_intensive|Lrn|Kartari",
+        "pairs": 25
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|VidhiLin|Kartari",
+        "cell_b": "causative_of_intensive|Lrt|Karmani",
+        "pairs": 7
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|VidhiLin|Kartari",
+        "cell_b": "causative_of_intensive|Lrt|Kartari",
+        "pairs": 13
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|VidhiLin|Kartari",
+        "cell_b": "causative_of_intensive|Lun|Kartari",
+        "pairs": 97
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|VidhiLin|Kartari",
+        "cell_b": "causative_of_intensive|Lut|Karmani",
+        "pairs": 5
+      },
+      {
+        "cell_a": "causative_of_intensive_luk|VidhiLin|Kartari",
+        "cell_b": "causative_of_intensive|Lut|Kartari",
+        "pairs": 21
+      },
+      {
+        "cell_a": "causative_of_intensive|AshirLin|Kartari",
+        "cell_b": "causative_of_intensive|Lan|Karmani",
+        "pairs": 18
+      },
+      {
+        "cell_a": "causative_of_intensive|AshirLin|Kartari",
+        "cell_b": "causative_of_intensive|Lan|Kartari",
+        "pairs": 28
+      },
+      {
+        "cell_a": "causative_of_intensive|AshirLin|Kartari",
+        "cell_b": "causative_of_intensive|Lat|Karmani",
+        "pairs": 22
+      },
+      {
+        "cell_a": "causative_of_intensive|AshirLin|Kartari",
+        "cell_b": "causative_of_intensive|Lat|Kartari",
+        "pairs": 62
+      },
+      {
+        "cell_a": "causative_of_intensive|AshirLin|Kartari",
+        "cell_b": "causative_of_intensive|Lit|Kartari",
+        "pairs": 50
+      },
+      {
+        "cell_a": "causative_of_intensive|AshirLin|Kartari",
+        "cell_b": "causative_of_intensive|Lot|Karmani",
+        "pairs": 14
+      },
+      {
+        "cell_a": "causative_of_intensive|AshirLin|Kartari",
+        "cell_b": "causative_of_intensive|Lot|Kartari",
+        "pairs": 32
+      },
+      {
+        "cell_a": "causative_of_intensive|AshirLin|Kartari",
+        "cell_b": "causative_of_intensive|Lrn|Kartari",
+        "pairs": 49
+      },
+      {
+        "cell_a": "causative_of_intensive|AshirLin|Kartari",
+        "cell_b": "causative_of_intensive|Lrt|Karmani",
+        "pairs": 7
+      },
+      {
+        "cell_a": "causative_of_intensive|AshirLin|Kartari",
+        "cell_b": "causative_of_intensive|Lrt|Kartari",
+        "pairs": 29
+      },
+      {
+        "cell_a": "causative_of_intensive|AshirLin|Kartari",
+        "cell_b": "causative_of_intensive|Lun|Kartari",
+        "pairs": 209
+      },
+      {
+        "cell_a": "causative_of_intensive|AshirLin|Kartari",
+        "cell_b": "causative_of_intensive|Lut|Karmani",
+        "pairs": 13
+      },
+      {
+        "cell_a": "causative_of_intensive|AshirLin|Kartari",
+        "cell_b": "causative_of_intensive|Lut|Kartari",
+        "pairs": 29
+      },
+      {
+        "cell_a": "causative_of_intensive|AshirLin|Kartari",
+        "cell_b": "causative_of_intensive|VidhiLin|Karmani",
+        "pairs": 20
+      },
+      {
+        "cell_a": "causative_of_intensive|AshirLin|Kartari",
+        "cell_b": "causative_of_intensive|VidhiLin|Kartari",
+        "pairs": 50
+      },
+      {
+        "cell_a": "causative_of_intensive|Lan|Karmani",
+        "cell_b": "causative_of_intensive|Lat|Karmani",
+        "pairs": 6
+      },
+      {
+        "cell_a": "causative_of_intensive|Lan|Karmani",
+        "cell_b": "causative_of_intensive|Lat|Kartari",
+        "pairs": 21
+      },
+      {
+        "cell_a": "causative_of_intensive|Lan|Karmani",
+        "cell_b": "causative_of_intensive|Lit|Kartari",
+        "pairs": 19
+      },
+      {
+        "cell_a": "causative_of_intensive|Lan|Karmani",
+        "cell_b": "causative_of_intensive|Lot|Karmani",
+        "pairs": 6
+      },
+      {
+        "cell_a": "causative_of_intensive|Lan|Karmani",
+        "cell_b": "causative_of_intensive|Lot|Kartari",
+        "pairs": 8
+      },
+      {
+        "cell_a": "causative_of_intensive|Lan|Karmani",
+        "cell_b": "causative_of_intensive|Lrn|Kartari",
+        "pairs": 21
+      },
+      {
+        "cell_a": "causative_of_intensive|Lan|Karmani",
+        "cell_b": "causative_of_intensive|Lrt|Karmani",
+        "pairs": 3
+      },
+      {
+        "cell_a": "causative_of_intensive|Lan|Karmani",
+        "cell_b": "causative_of_intensive|Lrt|Kartari",
+        "pairs": 15
+      },
+      {
+        "cell_a": "causative_of_intensive|Lan|Karmani",
+        "cell_b": "causative_of_intensive|Lun|Kartari",
+        "pairs": 28
+      },
+      {
+        "cell_a": "causative_of_intensive|Lan|Karmani",
+        "cell_b": "causative_of_intensive|Lut|Karmani",
+        "pairs": 5
+      },
+      {
+        "cell_a": "causative_of_intensive|Lan|Karmani",
+        "cell_b": "causative_of_intensive|Lut|Kartari",
+        "pairs": 11
+      },
+      {
+        "cell_a": "causative_of_intensive|Lan|Karmani",
+        "cell_b": "causative_of_intensive|VidhiLin|Karmani",
+        "pairs": 7
+      },
+      {
+        "cell_a": "causative_of_intensive|Lan|Karmani",
+        "cell_b": "causative_of_intensive|VidhiLin|Kartari",
+        "pairs": 14
+      },
+      {
+        "cell_a": "causative_of_intensive|Lan|Kartari",
+        "cell_b": "causative_of_intensive|Lat|Karmani",
+        "pairs": 16
+      },
+      {
+        "cell_a": "causative_of_intensive|Lan|Kartari",
+        "cell_b": "causative_of_intensive|Lat|Kartari",
+        "pairs": 43
+      },
+      {
+        "cell_a": "causative_of_intensive|Lan|Kartari",
+        "cell_b": "causative_of_intensive|Lit|Kartari",
+        "pairs": 33
+      },
+      {
+        "cell_a": "causative_of_intensive|Lan|Kartari",
+        "cell_b": "causative_of_intensive|Lot|Karmani",
+        "pairs": 8
+      },
+      {
+        "cell_a": "causative_of_intensive|Lan|Kartari",
+        "cell_b": "causative_of_intensive|Lot|Kartari",
+        "pairs": 27
+      },
+      {
+        "cell_a": "causative_of_intensive|Lan|Kartari",
+        "cell_b": "causative_of_intensive|Lrn|Kartari",
+        "pairs": 37
+      },
+      {
+        "cell_a": "causative_of_intensive|Lan|Kartari",
+        "cell_b": "causative_of_intensive|Lrt|Karmani",
+        "pairs": 12
+      },
+      {
+        "cell_a": "causative_of_intensive|Lan|Kartari",
+        "cell_b": "causative_of_intensive|Lrt|Kartari",
+        "pairs": 14
+      },
+      {
+        "cell_a": "causative_of_intensive|Lan|Kartari",
+        "cell_b": "causative_of_intensive|Lun|Kartari",
+        "pairs": 141
+      },
+      {
+        "cell_a": "causative_of_intensive|Lan|Kartari",
+        "cell_b": "causative_of_intensive|Lut|Karmani",
+        "pairs": 7
+      },
+      {
+        "cell_a": "causative_of_intensive|Lan|Kartari",
+        "cell_b": "causative_of_intensive|Lut|Kartari",
+        "pairs": 26
+      },
+      {
+        "cell_a": "causative_of_intensive|Lan|Kartari",
+        "cell_b": "causative_of_intensive|VidhiLin|Karmani",
+        "pairs": 15
+      },
+      {
+        "cell_a": "causative_of_intensive|Lan|Kartari",
+        "cell_b": "causative_of_intensive|VidhiLin|Kartari",
+        "pairs": 41
+      },
+      {
+        "cell_a": "causative_of_intensive|Lat|Karmani",
+        "cell_b": "causative_of_intensive|Lit|Kartari",
+        "pairs": 23
+      },
+      {
+        "cell_a": "causative_of_intensive|Lat|Karmani",
+        "cell_b": "causative_of_intensive|Lot|Karmani",
+        "pairs": 10
+      },
+      {
+        "cell_a": "causative_of_intensive|Lat|Karmani",
+        "cell_b": "causative_of_intensive|Lot|Kartari",
+        "pairs": 16
+      },
+      {
+        "cell_a": "causative_of_intensive|Lat|Karmani",
+        "cell_b": "causative_of_intensive|Lrn|Kartari",
+        "pairs": 26
+      },
+      {
+        "cell_a": "causative_of_intensive|Lat|Karmani",
+        "cell_b": "causative_of_intensive|Lrt|Karmani",
+        "pairs": 7
+      },
+      {
+        "cell_a": "causative_of_intensive|Lat|Karmani",
+        "cell_b": "causative_of_intensive|Lrt|Kartari",
+        "pairs": 15
+      },
+      {
+        "cell_a": "causative_of_intensive|Lat|Karmani",
+        "cell_b": "causative_of_intensive|Lun|Kartari",
+        "pairs": 105
+      },
+      {
+        "cell_a": "causative_of_intensive|Lat|Karmani",
+        "cell_b": "causative_of_intensive|Lut|Karmani",
+        "pairs": 5
+      },
+      {
+        "cell_a": "causative_of_intensive|Lat|Karmani",
+        "cell_b": "causative_of_intensive|Lut|Kartari",
+        "pairs": 21
+      },
+      {
+        "cell_a": "causative_of_intensive|Lat|Karmani",
+        "cell_b": "causative_of_intensive|VidhiLin|Karmani",
+        "pairs": 14
+      },
+      {
+        "cell_a": "causative_of_intensive|Lat|Karmani",
+        "cell_b": "causative_of_intensive|VidhiLin|Kartari",
+        "pairs": 26
+      },
+      {
+        "cell_a": "causative_of_intensive|Lat|Kartari",
+        "cell_b": "causative_of_intensive|Lit|Kartari",
+        "pairs": 62
+      },
+      {
+        "cell_a": "causative_of_intensive|Lat|Kartari",
+        "cell_b": "causative_of_intensive|Lot|Karmani",
+        "pairs": 14
+      },
+      {
+        "cell_a": "causative_of_intensive|Lat|Kartari",
+        "cell_b": "causative_of_intensive|Lot|Kartari",
+        "pairs": 26
+      },
+      {
+        "cell_a": "causative_of_intensive|Lat|Kartari",
+        "cell_b": "causative_of_intensive|Lrn|Kartari",
+        "pairs": 55
+      },
+      {
+        "cell_a": "causative_of_intensive|Lat|Kartari",
+        "cell_b": "causative_of_intensive|Lrt|Karmani",
+        "pairs": 11
+      },
+      {
+        "cell_a": "causative_of_intensive|Lat|Kartari",
+        "cell_b": "causative_of_intensive|Lrt|Kartari",
+        "pairs": 41
+      },
+      {
+        "cell_a": "causative_of_intensive|Lat|Kartari",
+        "cell_b": "causative_of_intensive|Lun|Kartari",
+        "pairs": 443
+      },
+      {
+        "cell_a": "causative_of_intensive|Lat|Kartari",
+        "cell_b": "causative_of_intensive|Lut|Karmani",
+        "pairs": 11
+      },
+      {
+        "cell_a": "causative_of_intensive|Lat|Kartari",
+        "cell_b": "causative_of_intensive|Lut|Kartari",
+        "pairs": 30
+      },
+      {
+        "cell_a": "causative_of_intensive|Lat|Kartari",
+        "cell_b": "causative_of_intensive|VidhiLin|Karmani",
+        "pairs": 32
+      },
+      {
+        "cell_a": "causative_of_intensive|Lat|Kartari",
+        "cell_b": "causative_of_intensive|VidhiLin|Kartari",
+        "pairs": 57
+      },
+      {
+        "cell_a": "causative_of_intensive|Lit|Kartari",
+        "cell_b": "causative_of_intensive|Lot|Karmani",
+        "pairs": 17
+      },
+      {
+        "cell_a": "causative_of_intensive|Lit|Kartari",
+        "cell_b": "causative_of_intensive|Lot|Kartari",
+        "pairs": 38
+      },
+      {
+        "cell_a": "causative_of_intensive|Lit|Kartari",
+        "cell_b": "causative_of_intensive|Lrn|Kartari",
+        "pairs": 53
+      },
+      {
+        "cell_a": "causative_of_intensive|Lit|Kartari",
+        "cell_b": "causative_of_intensive|Lrt|Karmani",
+        "pairs": 9
+      },
+      {
+        "cell_a": "causative_of_intensive|Lit|Kartari",
+        "cell_b": "causative_of_intensive|Lrt|Kartari",
+        "pairs": 41
+      },
+      {
+        "cell_a": "causative_of_intensive|Lit|Kartari",
+        "cell_b": "causative_of_intensive|Lun|Kartari",
+        "pairs": 150
+      },
+      {
+        "cell_a": "causative_of_intensive|Lit|Kartari",
+        "cell_b": "causative_of_intensive|Lut|Karmani",
+        "pairs": 13
+      },
+      {
+        "cell_a": "causative_of_intensive|Lit|Kartari",
+        "cell_b": "causative_of_intensive|Lut|Kartari",
+        "pairs": 38
+      },
+      {
+        "cell_a": "causative_of_intensive|Lit|Kartari",
+        "cell_b": "causative_of_intensive|VidhiLin|Karmani",
+        "pairs": 23
+      },
+      {
+        "cell_a": "causative_of_intensive|Lit|Kartari",
+        "cell_b": "causative_of_intensive|VidhiLin|Kartari",
+        "pairs": 52
+      },
+      {
+        "cell_a": "causative_of_intensive|Lot|Karmani",
+        "cell_b": "causative_of_intensive|Lrn|Kartari",
+        "pairs": 20
+      },
+      {
+        "cell_a": "causative_of_intensive|Lot|Karmani",
+        "cell_b": "causative_of_intensive|Lrt|Karmani",
+        "pairs": 6
+      },
+      {
+        "cell_a": "causative_of_intensive|Lot|Karmani",
+        "cell_b": "causative_of_intensive|Lrt|Kartari",
+        "pairs": 8
+      },
+      {
+        "cell_a": "causative_of_intensive|Lot|Karmani",
+        "cell_b": "causative_of_intensive|Lun|Kartari",
+        "pairs": 11
+      },
+      {
+        "cell_a": "causative_of_intensive|Lot|Karmani",
+        "cell_b": "causative_of_intensive|Lut|Karmani",
+        "pairs": 6
+      },
+      {
+        "cell_a": "causative_of_intensive|Lot|Karmani",
+        "cell_b": "causative_of_intensive|Lut|Kartari",
+        "pairs": 12
+      },
+      {
+        "cell_a": "causative_of_intensive|Lot|Karmani",
+        "cell_b": "causative_of_intensive|VidhiLin|Karmani",
+        "pairs": 10
+      },
+      {
+        "cell_a": "causative_of_intensive|Lot|Karmani",
+        "cell_b": "causative_of_intensive|VidhiLin|Kartari",
+        "pairs": 21
+      },
+      {
+        "cell_a": "causative_of_intensive|Lot|Kartari",
+        "cell_b": "causative_of_intensive|Lrn|Kartari",
+        "pairs": 25
+      },
+      {
+        "cell_a": "causative_of_intensive|Lot|Kartari",
+        "cell_b": "causative_of_intensive|Lrt|Karmani",
+        "pairs": 8
+      },
+      {
+        "cell_a": "causative_of_intensive|Lot|Kartari",
+        "cell_b": "causative_of_intensive|Lrt|Kartari",
+        "pairs": 24
+      },
+      {
+        "cell_a": "causative_of_intensive|Lot|Kartari",
+        "cell_b": "causative_of_intensive|Lun|Kartari",
+        "pairs": 135
+      },
+      {
+        "cell_a": "causative_of_intensive|Lot|Kartari",
+        "cell_b": "causative_of_intensive|Lut|Karmani",
+        "pairs": 8
+      },
+      {
+        "cell_a": "causative_of_intensive|Lot|Kartari",
+        "cell_b": "causative_of_intensive|Lut|Kartari",
+        "pairs": 20
+      },
+      {
+        "cell_a": "causative_of_intensive|Lot|Kartari",
+        "cell_b": "causative_of_intensive|VidhiLin|Karmani",
+        "pairs": 19
+      },
+      {
+        "cell_a": "causative_of_intensive|Lot|Kartari",
+        "cell_b": "causative_of_intensive|VidhiLin|Kartari",
+        "pairs": 35
+      },
+      {
+        "cell_a": "causative_of_intensive|Lrn|Kartari",
+        "cell_b": "causative_of_intensive|Lrt|Karmani",
+        "pairs": 13
+      },
+      {
+        "cell_a": "causative_of_intensive|Lrn|Kartari",
+        "cell_b": "causative_of_intensive|Lrt|Kartari",
+        "pairs": 36
+      },
+      {
+        "cell_a": "causative_of_intensive|Lrn|Kartari",
+        "cell_b": "causative_of_intensive|Lun|Kartari",
+        "pairs": 158
+      },
+      {
+        "cell_a": "causative_of_intensive|Lrn|Kartari",
+        "cell_b": "causative_of_intensive|Lut|Karmani",
+        "pairs": 13
+      },
+      {
+        "cell_a": "causative_of_intensive|Lrn|Kartari",
+        "cell_b": "causative_of_intensive|Lut|Kartari",
+        "pairs": 32
+      },
+      {
+        "cell_a": "causative_of_intensive|Lrn|Kartari",
+        "cell_b": "causative_of_intensive|VidhiLin|Karmani",
+        "pairs": 31
+      },
+      {
+        "cell_a": "causative_of_intensive|Lrn|Kartari",
+        "cell_b": "causative_of_intensive|VidhiLin|Kartari",
+        "pairs": 50
+      },
+      {
+        "cell_a": "causative_of_intensive|Lrt|Karmani",
+        "cell_b": "causative_of_intensive|Lun|Kartari",
+        "pairs": 30
+      },
+      {
+        "cell_a": "causative_of_intensive|Lrt|Karmani",
+        "cell_b": "causative_of_intensive|Lut|Karmani",
+        "pairs": 5
+      },
+      {
+        "cell_a": "causative_of_intensive|Lrt|Karmani",
+        "cell_b": "causative_of_intensive|Lut|Kartari",
+        "pairs": 10
+      },
+      {
+        "cell_a": "causative_of_intensive|Lrt|Karmani",
+        "cell_b": "causative_of_intensive|VidhiLin|Karmani",
+        "pairs": 1
+      },
+      {
+        "cell_a": "causative_of_intensive|Lrt|Karmani",
+        "cell_b": "causative_of_intensive|VidhiLin|Kartari",
+        "pairs": 19
+      },
+      {
+        "cell_a": "causative_of_intensive|Lrt|Kartari",
+        "cell_b": "causative_of_intensive|Lun|Kartari",
+        "pairs": 184
+      },
+      {
+        "cell_a": "causative_of_intensive|Lrt|Kartari",
+        "cell_b": "causative_of_intensive|Lut|Karmani",
+        "pairs": 7
+      },
+      {
+        "cell_a": "causative_of_intensive|Lrt|Kartari",
+        "cell_b": "causative_of_intensive|Lut|Kartari",
+        "pairs": 18
+      },
+      {
+        "cell_a": "causative_of_intensive|Lrt|Kartari",
+        "cell_b": "causative_of_intensive|VidhiLin|Karmani",
+        "pairs": 21
+      },
+      {
+        "cell_a": "causative_of_intensive|Lrt|Kartari",
+        "cell_b": "causative_of_intensive|VidhiLin|Kartari",
+        "pairs": 39
+      },
+      {
+        "cell_a": "causative_of_intensive|Lun|Kartari",
+        "cell_b": "causative_of_intensive|Lun|Kartari",
+        "pairs": 2526
+      },
+      {
+        "cell_a": "causative_of_intensive|Lun|Kartari",
+        "cell_b": "causative_of_intensive|Lut|Karmani",
+        "pairs": 30
+      },
+      {
+        "cell_a": "causative_of_intensive|Lun|Kartari",
+        "cell_b": "causative_of_intensive|Lut|Kartari",
+        "pairs": 140
+      },
+      {
+        "cell_a": "causative_of_intensive|Lun|Kartari",
+        "cell_b": "causative_of_intensive|VidhiLin|Karmani",
+        "pairs": 136
+      },
+      {
+        "cell_a": "causative_of_intensive|Lun|Kartari",
+        "cell_b": "causative_of_intensive|VidhiLin|Kartari",
+        "pairs": 418
+      },
+      {
+        "cell_a": "causative_of_intensive|Lut|Karmani",
+        "cell_b": "causative_of_intensive|VidhiLin|Karmani",
+        "pairs": 5
+      },
+      {
+        "cell_a": "causative_of_intensive|Lut|Karmani",
+        "cell_b": "causative_of_intensive|VidhiLin|Kartari",
+        "pairs": 18
+      },
+      {
+        "cell_a": "causative_of_intensive|Lut|Kartari",
+        "cell_b": "causative_of_intensive|VidhiLin|Karmani",
+        "pairs": 13
+      },
+      {
+        "cell_a": "causative_of_intensive|Lut|Kartari",
+        "cell_b": "causative_of_intensive|VidhiLin|Kartari",
+        "pairs": 43
+      },
+      {
+        "cell_a": "desiderative|AshirLin|Kartari",
+        "cell_b": "desiderative|Lan|Kartari",
+        "pairs": 1
+      },
+      {
+        "cell_a": "desiderative|AshirLin|Kartari",
+        "cell_b": "desiderative|Lat|Kartari",
+        "pairs": 2
+      },
+      {
+        "cell_a": "desiderative|AshirLin|Kartari",
+        "cell_b": "desiderative|Lot|Kartari",
+        "pairs": 1
+      },
+      {
+        "cell_a": "desiderative|AshirLin|Kartari",
+        "cell_b": "desiderative|Lrn|Kartari",
+        "pairs": 1
+      },
+      {
+        "cell_a": "desiderative|AshirLin|Kartari",
+        "cell_b": "desiderative|Lun|Kartari",
+        "pairs": 10
+      },
+      {
+        "cell_a": "desiderative|AshirLin|Kartari",
+        "cell_b": "desiderative|Lut|Kartari",
+        "pairs": 2
+      },
+      {
+        "cell_a": "desiderative|Lan|Kartari",
+        "cell_b": "desiderative|Lat|Kartari",
+        "pairs": 1
+      },
+      {
+        "cell_a": "desiderative|Lan|Kartari",
+        "cell_b": "desiderative|Lit|Kartari",
+        "pairs": 2
+      },
+      {
+        "cell_a": "desiderative|Lan|Kartari",
+        "cell_b": "desiderative|Lot|Kartari",
+        "pairs": 1
+      },
+      {
+        "cell_a": "desiderative|Lan|Kartari",
+        "cell_b": "desiderative|Lrn|Kartari",
+        "pairs": 1
+      },
+      {
+        "cell_a": "desiderative|Lan|Kartari",
+        "cell_b": "desiderative|Lrt|Kartari",
+        "pairs": 1
+      },
+      {
+        "cell_a": "desiderative|Lan|Kartari",
+        "cell_b": "desiderative|Lun|Kartari",
+        "pairs": 5
+      },
+      {
+        "cell_a": "desiderative|Lan|Kartari",
+        "cell_b": "desiderative|Lut|Kartari",
+        "pairs": 1
+      },
+      {
+        "cell_a": "desiderative|Lat|Kartari",
+        "cell_b": "desiderative|Lit|Kartari",
+        "pairs": 2
+      },
+      {
+        "cell_a": "desiderative|Lat|Kartari",
+        "cell_b": "desiderative|Lrn|Kartari",
+        "pairs": 1
+      },
+      {
+        "cell_a": "desiderative|Lat|Kartari",
+        "cell_b": "desiderative|Lrt|Kartari",
+        "pairs": 2
+      },
+      {
+        "cell_a": "desiderative|Lat|Kartari",
+        "cell_b": "desiderative|Lun|Kartari",
+        "pairs": 13
+      },
+      {
+        "cell_a": "desiderative|Lat|Kartari",
+        "cell_b": "desiderative|Lut|Kartari",
+        "pairs": 1
+      },
+      {
+        "cell_a": "desiderative|Lat|Kartari",
+        "cell_b": "desiderative|VidhiLin|Kartari",
+        "pairs": 2
+      },
+      {
+        "cell_a": "desiderative|Lit|Kartari",
+        "cell_b": "desiderative|Lot|Kartari",
+        "pairs": 2
+      },
+      {
+        "cell_a": "desiderative|Lit|Kartari",
+        "cell_b": "desiderative|Lrn|Kartari",
+        "pairs": 1
+      },
+      {
+        "cell_a": "desiderative|Lit|Kartari",
+        "cell_b": "desiderative|Lrt|Kartari",
+        "pairs": 3
+      },
+      {
+        "cell_a": "desiderative|Lit|Kartari",
+        "cell_b": "desiderative|Lun|Kartari",
+        "pairs": 16
+      },
+      {
+        "cell_a": "desiderative|Lit|Kartari",
+        "cell_b": "desiderative|VidhiLin|Kartari",
+        "pairs": 1
+      },
+      {
+        "cell_a": "desiderative|Lot|Kartari",
+        "cell_b": "desiderative|Lrn|Kartari",
+        "pairs": 1
+      },
+      {
+        "cell_a": "desiderative|Lot|Kartari",
+        "cell_b": "desiderative|Lun|Kartari",
+        "pairs": 10
+      },
+      {
+        "cell_a": "desiderative|Lot|Kartari",
+        "cell_b": "desiderative|Lut|Kartari",
+        "pairs": 2
+      },
+      {
+        "cell_a": "desiderative|Lot|Kartari",
+        "cell_b": "desiderative|VidhiLin|Kartari",
+        "pairs": 3
+      },
+      {
+        "cell_a": "desiderative|Lrn|Kartari",
+        "cell_b": "desiderative|Lun|Kartari",
+        "pairs": 8
+      },
+      {
+        "cell_a": "desiderative|Lrn|Kartari",
+        "cell_b": "desiderative|Lut|Kartari",
+        "pairs": 1
+      },
+      {
+        "cell_a": "desiderative|Lrt|Kartari",
+        "cell_b": "desiderative|Lun|Kartari",
+        "pairs": 9
+      },
+      {
+        "cell_a": "desiderative|Lrt|Kartari",
+        "cell_b": "desiderative|Lut|Kartari",
+        "pairs": 1
+      },
+      {
+        "cell_a": "desiderative|Lun|Kartari",
+        "cell_b": "desiderative|Lut|Kartari",
+        "pairs": 12
+      },
+      {
+        "cell_a": "desiderative|Lun|Kartari",
+        "cell_b": "desiderative|VidhiLin|Kartari",
+        "pairs": 9
+      },
+      {
+        "cell_a": "desiderative|Lut|Kartari",
+        "cell_b": "desiderative|VidhiLin|Kartari",
+        "pairs": 1
+      }
+    ]
+  },
+  "current_development_summaries": {
+    "astra": {
+      "requests": 467,
+      "completed": 417,
+      "correct": 303,
+      "completed_correct": 302,
+      "statuses": {
+        "completed": 417,
+        "incomplete": 50
+      },
+      "completed_accuracy": 0.7242206235011991,
+      "all_request_accuracy": 0.6488222698072805,
+      "completed_wilson_95": [
+        0.6794271349750705,
+        0.7649207211606392
+      ],
+      "missing_response_bounds": [
+        0.6466809421841542,
+        0.7537473233404711
+      ],
+      "truncations": 50,
+      "families": 238
+    },
+    "opus": {
+      "requests": 596,
+      "completed": 592,
+      "correct": 476,
+      "completed_correct": 476,
+      "statuses": {
+        "completed": 592,
+        "refused": 3,
+        "incomplete": 1
+      },
+      "completed_accuracy": 0.8040540540540541,
+      "all_request_accuracy": 0.7986577181208053,
+      "completed_wilson_95": [
+        0.7701627153518941,
+        0.8340248494283781
+      ],
+      "missing_response_bounds": [
+        0.7986577181208053,
+        0.8053691275167785
+      ],
+      "truncations": 1,
+      "families": 299
+    }
+  },
+  "astra_current_scope_dependence": {
+    "summary": {
+      "requests": 467,
+      "completed": 417,
+      "correct": 303,
+      "completed_correct": 302,
+      "statuses": {
+        "completed": 417,
+        "incomplete": 50
+      },
+      "completed_accuracy": 0.7242206235011991,
+      "all_request_accuracy": 0.6488222698072805,
+      "completed_wilson_95": [
+        0.6794271349750705,
+        0.7649207211606392
+      ],
+      "missing_response_bounds": [
+        0.6466809421841542,
+        0.7537473233404711
+      ],
+      "truncations": 50,
+      "families": 238
+    },
+    "family_load_histogram": {
+      "2": 229,
+      "1": 9
+    },
+    "residual_diagnostics": {
+      "recorded_all_correct": {
+        "coarse": {
+          "different_non_Lun": {
+            "correlation": 0.16942762943506245,
+            "symmetric_pair_covariance": 0.030364181754466396,
+            "symmetric_pair_variance": 0.17921623442240428,
+            "families": 95,
+            "pairs": 95,
+            "bootstrap_percentile95": [
+              -0.052723919744674226,
+              0.38618134614597327
+            ],
+            "bootstrap_valid_replicates": 10000
+          },
+          "one_Lun": {
+            "correlation": 0.33359377046307503,
+            "symmetric_pair_covariance": 0.06648449425903286,
+            "symmetric_pair_variance": 0.19929776916020653,
+            "families": 134,
+            "pairs": 134,
+            "bootstrap_percentile95": [
+              0.1568143421644499,
+              0.48979269738872677
+            ],
+            "bootstrap_valid_replicates": 10000
+          }
+        },
+        "fine": {
+          "different_non_Lun": {
+            "correlation": 0.16160455589839504,
+            "symmetric_pair_covariance": 0.0276599150422219,
+            "symmetric_pair_variance": 0.17115801524563704,
+            "families": 95,
+            "pairs": 95,
+            "bootstrap_percentile95": [
+              -0.05635158903314337,
+              0.36946589714848
+            ],
+            "bootstrap_valid_replicates": 10000
+          },
+          "one_Lun": {
+            "correlation": 0.30192068392396415,
+            "symmetric_pair_covariance": 0.05898997355223503,
+            "symmetric_pair_variance": 0.19538235269462723,
+            "families": 134,
+            "pairs": 134,
+            "bootstrap_percentile95": [
+              0.11907042885961452,
+              0.4614010047899984
+            ],
+            "bootstrap_valid_replicates": 10000
+          }
+        },
+        "raw": {
+          "different_non_Lun": {
+            "correlation": 0.34785181678305144,
+            "symmetric_pair_covariance": 0.08141274238227153,
+            "symmetric_pair_variance": 0.23404432132963993,
+            "families": 95,
+            "pairs": 95,
+            "bootstrap_percentile95": [
+              0.1408695652173914,
+              0.5328415876361081
+            ],
+            "bootstrap_valid_replicates": 10000
+          },
+          "one_Lun": {
+            "correlation": 0.41121084677672465,
+            "symmetric_pair_covariance": 0.09120906660726219,
+            "symmetric_pair_variance": 0.2218060815326353,
+            "families": 134,
+            "pairs": 134,
+            "bootstrap_percentile95": [
+              0.23863636363636367,
+              0.5669827889005965
+            ],
+            "bootstrap_valid_replicates": 10000
+          }
+        }
+      },
+      "completion": {
+        "coarse": {
+          "different_non_Lun": {
+            "correlation": 0.3179878728572665,
+            "symmetric_pair_covariance": 0.015483315382823597,
+            "symmetric_pair_variance": 0.04869152789915831,
+            "families": 95,
+            "pairs": 95,
+            "bootstrap_percentile95": [
+              -0.08763274296868628,
+              0.693857697144076
+            ],
+            "bootstrap_valid_replicates": 10000
+          },
+          "one_Lun": {
+            "correlation": -0.025439017871401026,
+            "symmetric_pair_covariance": -0.0026967278802912764,
+            "symmetric_pair_variance": 0.10600754690781453,
+            "families": 134,
+            "pairs": 134,
+            "bootstrap_percentile95": [
+              -0.13085399255937305,
+              0.10670514136689832
+            ],
+            "bootstrap_valid_replicates": 10000
+          }
+        },
+        "fine": {
+          "different_non_Lun": {
+            "correlation": 0.2801651769034484,
+            "symmetric_pair_covariance": 0.011940429046116958,
+            "symmetric_pair_variance": 0.042619247609890915,
+            "families": 95,
+            "pairs": 95,
+            "bootstrap_percentile95": [
+              -0.12167185887694394,
+              0.6111653999949764
+            ],
+            "bootstrap_valid_replicates": 10000
+          },
+          "one_Lun": {
+            "correlation": -0.018964386886322317,
+            "symmetric_pair_covariance": -0.0019538904439996914,
+            "symmetric_pair_variance": 0.10302945493106848,
+            "families": 134,
+            "pairs": 134,
+            "bootstrap_percentile95": [
+              -0.12672592922559597,
+              0.10278555762729556
+            ],
+            "bootstrap_valid_replicates": 10000
+          }
+        },
+        "raw": {
+          "different_non_Lun": {
+            "correlation": 0.3666666666666679,
+            "symmetric_pair_covariance": 0.018282548476454386,
+            "symmetric_pair_variance": 0.049861495844875425,
+            "families": 95,
+            "pairs": 95,
+            "bootstrap_percentile95": [
+              -0.043956043956045104,
+              0.739010989010988
+            ],
+            "bootstrap_valid_replicates": 9998
+          },
+          "one_Lun": {
+            "correlation": -0.09746109746109728,
+            "symmetric_pair_covariance": -0.01159779460904431,
+            "symmetric_pair_variance": 0.11899922031632881,
+            "families": 134,
+            "pairs": 134,
+            "bootstrap_percentile95": [
+              -0.19111111111111184,
+              0.03332852402250848
+            ],
+            "bootstrap_valid_replicates": 10000
+          }
+        }
+      },
+      "completed_ratio_influence": {
+        "coarse": {
+          "different_non_Lun": {
+            "correlation": 0.16107434601867957,
+            "symmetric_pair_covariance": 0.0332660321815639,
+            "symmetric_pair_variance": 0.20652594906519803,
+            "families": 95,
+            "pairs": 95,
+            "bootstrap_percentile95": [
+              -0.06288115729538103,
+              0.3728185574930653
+            ],
+            "bootstrap_valid_replicates": 10000
+          },
+          "one_Lun": {
+            "correlation": 0.29644294387936065,
+            "symmetric_pair_covariance": 0.051857274268389854,
+            "symmetric_pair_variance": 0.17493172072091384,
+            "families": 134,
+            "pairs": 134,
+            "bootstrap_percentile95": [
+              0.11478182566432585,
+              0.4559546546046283
+            ],
+            "bootstrap_valid_replicates": 10000
+          }
+        },
+        "fine": {
+          "different_non_Lun": {
+            "correlation": 0.17350195380785996,
+            "symmetric_pair_covariance": 0.03442637833689576,
+            "symmetric_pair_variance": 0.19842069545234242,
+            "families": 95,
+            "pairs": 95,
+            "bootstrap_percentile95": [
+              -0.057585148825847435,
+              0.3888588934559588
+            ],
+            "bootstrap_valid_replicates": 10000
+          },
+          "one_Lun": {
+            "correlation": 0.27133982856884986,
+            "symmetric_pair_covariance": 0.045849287287243676,
+            "symmetric_pair_variance": 0.16897367234685143,
+            "families": 134,
+            "pairs": 134,
+            "bootstrap_percentile95": [
+              0.08093950045480883,
+              0.4385150897671927
+            ],
+            "bootstrap_valid_replicates": 10000
+          }
+        },
+        "raw": {
+          "different_non_Lun": {
+            "correlation": 0.3112523647735712,
+            "symmetric_pair_covariance": 0.08293372080131461,
+            "symmetric_pair_variance": 0.26645169703898297,
+            "families": 95,
+            "pairs": 95,
+            "bootstrap_percentile95": [
+              0.09988917827486607,
+              0.5025693225894299
+            ],
+            "bootstrap_valid_replicates": 10000
+          },
+          "one_Lun": {
+            "correlation": 0.34397303863390616,
+            "symmetric_pair_covariance": 0.06585107632497651,
+            "symmetric_pair_variance": 0.19144255197007592,
+            "families": 134,
+            "pairs": 134,
+            "bootstrap_percentile95": [
+              0.17109424684901015,
+              0.5016378125123199
+            ],
+            "bootstrap_valid_replicates": 10000
+          }
+        }
+      }
+    },
+    "completed_fraction": 0.892933618843683
+  },
+  "astra_revised_mixture_forecast": {
+    "standardization": "Fixed target recipe x exact lakara x voice cells. No adjustment for changed class or eligible-family composition.",
+    "cells": 42,
+    "minimum_observed_cell": 2,
+    "all_requests": {
+      "accuracy": 0.6415643274853801,
+      "family_cluster_sandwich_se": 0.027954010630616453,
+      "family_bootstrap_se": 0.027883774193621768,
+      "family_bootstrap_percentile95": [
+        0.587041117582452,
+        0.6960997037615784
+      ],
+      "bootstrap_valid_replicates": 10000
+    },
+    "usable_completed": {
+      "accuracy": 0.7475828106557816,
+      "family_cluster_sandwich_se": 0.025917245437229022,
+      "family_bootstrap_se": 0.02594602292610832,
+      "family_bootstrap_percentile95": [
+        0.6949779698493906,
+        0.7967654878662234
+      ],
+      "bootstrap_valid_replicates": 10000
+    },
+    "completion_rate": 0.8548995215311007,
+    "missing_response_bounds": [
+      0.639108187134503,
+      0.7842086656034024
+    ],
+    "mean_cost_usd": 0.24034355795451381,
+    "cost_bootstrap": {
+      "accuracy": 0.24034355795451384,
+      "family_cluster_sandwich_se": 0.006366239334266336,
+      "family_bootstrap_se": 0.0062846019288352204,
+      "family_bootstrap_percentile95": [
+        0.2277907698275961,
+        0.25241351726555405
+      ],
+      "bootstrap_valid_replicates": 10000
+    },
+    "warning": "Costs and dependence are development extrapolations at the existing16384-token cap. No observed final cost, guaranteed sub1pp precision, or qualified final membership."
+  },
+  "astra_allocation_specific_variance_sensitivity": {
+    "fine_empirical": {
+      "moment_cells": "exact recipe x tense x voice",
+      "moment_smoothing": "empirical proportions",
+      "smallest_observed_cell": 2,
+      "projected_completion": 0.8548995215311006,
+      "projected_all_accuracy": 0.6415643274853802,
+      "projected_usable_accuracy": 0.7475828106557816,
+      "estimates": {
+        "recorded_all_correct": {
+          "independent_variance_sum": 941.2749310277288,
+          "allocation_mean_squared_sum": 282.84205604768965,
+          "pair_counts": {
+            "different_non_Lun": 4705,
+            "one_Lun": 4116,
+            "both_Lun": 3759
+          },
+          "pair_covariance_coefficients": {
+            "different_non_Lun": 1435.9615602177294,
+            "one_Lun": 1717.8321989841397,
+            "both_Lun": 1725.608579410743
+          },
+          "scenarios": [
+            {
+              "observed_pair_rho_assumption": "point",
+              "unobserved_repeated_Lun_rho": 0,
+              "rhos": {
+                "one_Lun": 0.33359377046307503,
+                "different_non_Lun": 0.16942762943506245,
+                "both_Lun": 0
+              },
+              "valid_for_every_possible_family_block": false,
+              "conditional_sampling_se_pp": 0.8734173719150876,
+              "expected_unstratified_sandwich_se_pp": 0.9415803447724272
+            },
+            {
+              "observed_pair_rho_assumption": "point",
+              "unobserved_repeated_Lun_rho": 0.1,
+              "rhos": {
+                "one_Lun": 0.33359377046307503,
+                "different_non_Lun": 0.16942762943506245,
+                "both_Lun": 0.1
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 0.9152890861725873,
+              "expected_unstratified_sandwich_se_pp": 0.9805867929375601
+            },
+            {
+              "observed_pair_rho_assumption": "point",
+              "unobserved_repeated_Lun_rho": 0.2,
+              "rhos": {
+                "one_Lun": 0.33359377046307503,
+                "different_non_Lun": 0.16942762943506245,
+                "both_Lun": 0.2
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 0.9553273349853657,
+              "expected_unstratified_sandwich_se_pp": 1.0180998827744632
+            },
+            {
+              "observed_pair_rho_assumption": "point",
+              "unobserved_repeated_Lun_rho": 0.3,
+              "rhos": {
+                "one_Lun": 0.33359377046307503,
+                "different_non_Lun": 0.16942762943506245,
+                "both_Lun": 0.3
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 0.9937537535394936,
+              "expected_unstratified_sandwich_se_pp": 1.054279035230798
+            },
+            {
+              "observed_pair_rho_assumption": "point",
+              "unobserved_repeated_Lun_rho": 0.4,
+              "rhos": {
+                "one_Lun": 0.33359377046307503,
+                "different_non_Lun": 0.16942762943506245,
+                "both_Lun": 0.4
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 1.030748625212483,
+              "expected_unstratified_sandwich_se_pp": 1.0892571766800476
+            },
+            {
+              "observed_pair_rho_assumption": "point",
+              "unobserved_repeated_Lun_rho": 0.5,
+              "rhos": {
+                "one_Lun": 0.33359377046307503,
+                "different_non_Lun": 0.16942762943506245,
+                "both_Lun": 0.5
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 1.0664609388444637,
+              "expected_unstratified_sandwich_se_pp": 1.1231465219510741
+            },
+            {
+              "observed_pair_rho_assumption": "upper95",
+              "unobserved_repeated_Lun_rho": 0,
+              "rhos": {
+                "one_Lun": 0.48979269738872677,
+                "different_non_Lun": 0.38618134614597327,
+                "both_Lun": 0
+              },
+              "valid_for_every_possible_family_block": false,
+              "conditional_sampling_se_pp": 1.0071786962176281,
+              "expected_unstratified_sandwich_se_pp": 1.066956247520686
+            },
+            {
+              "observed_pair_rho_assumption": "upper95",
+              "unobserved_repeated_Lun_rho": 0.1,
+              "rhos": {
+                "one_Lun": 0.48979269738872677,
+                "different_non_Lun": 0.38618134614597327,
+                "both_Lun": 0.1
+              },
+              "valid_for_every_possible_family_block": false,
+              "conditional_sampling_se_pp": 1.0436978163329806,
+              "expected_unstratified_sandwich_se_pp": 1.1015319091815856
+            },
+            {
+              "observed_pair_rho_assumption": "upper95",
+              "unobserved_repeated_Lun_rho": 0.2,
+              "rhos": {
+                "one_Lun": 0.48979269738872677,
+                "different_non_Lun": 0.38618134614597327,
+                "both_Lun": 0.2
+              },
+              "valid_for_every_possible_family_block": false,
+              "conditional_sampling_se_pp": 1.0789816205672011,
+              "expected_unstratified_sandwich_se_pp": 1.1350548267669873
+            },
+            {
+              "observed_pair_rho_assumption": "upper95",
+              "unobserved_repeated_Lun_rho": 0.3,
+              "rhos": {
+                "one_Lun": 0.48979269738872677,
+                "different_non_Lun": 0.38618134614597327,
+                "both_Lun": 0.3
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 1.1131475837576144,
+              "expected_unstratified_sandwich_se_pp": 1.1676156784613856
+            },
+            {
+              "observed_pair_rho_assumption": "upper95",
+              "unobserved_repeated_Lun_rho": 0.4,
+              "rhos": {
+                "one_Lun": 0.48979269738872677,
+                "different_non_Lun": 0.38618134614597327,
+                "both_Lun": 0.4
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 1.1462956638359088,
+              "expected_unstratified_sandwich_se_pp": 1.199292827215542
+            },
+            {
+              "observed_pair_rho_assumption": "upper95",
+              "unobserved_repeated_Lun_rho": 0.5,
+              "rhos": {
+                "one_Lun": 0.48979269738872677,
+                "different_non_Lun": 0.38618134614597327,
+                "both_Lun": 0.5
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 1.1785117541342545,
+              "expected_unstratified_sandwich_se_pp": 1.2301545424183313
+            }
+          ],
+          "max_repeated_Lun_rho_for_expected_sandwich_sub1pp_at_observed_point_rhos": 0.15128184139537965
+        },
+        "completed_ratio_influence": {
+          "independent_variance_sum": 898.4171111866225,
+          "allocation_mean_squared_sum": 212.4394943250781,
+          "pair_counts": {
+            "different_non_Lun": 4705,
+            "one_Lun": 4116,
+            "both_Lun": 3759
+          },
+          "pair_covariance_coefficients": {
+            "different_non_Lun": 1708.463425449636,
+            "one_Lun": 1568.5983820656807,
+            "both_Lun": 1194.9953629067754
+          },
+          "scenarios": [
+            {
+              "observed_pair_rho_assumption": "point",
+              "unobserved_repeated_Lun_rho": 0,
+              "rhos": {
+                "one_Lun": 0.29644294387936065,
+                "different_non_Lun": 0.16107434601867957,
+                "both_Lun": 0
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 0.8433272249144999,
+              "expected_unstratified_sandwich_se_pp": 0.8968116795333987
+            },
+            {
+              "observed_pair_rho_assumption": "point",
+              "unobserved_repeated_Lun_rho": 0.1,
+              "rhos": {
+                "one_Lun": 0.29644294387936065,
+                "different_non_Lun": 0.16107434601867957,
+                "both_Lun": 0.1
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 0.8735370206600915,
+              "expected_unstratified_sandwich_se_pp": 0.9253070825097961
+            },
+            {
+              "observed_pair_rho_assumption": "point",
+              "unobserved_repeated_Lun_rho": 0.2,
+              "rhos": {
+                "one_Lun": 0.29644294387936065,
+                "different_non_Lun": 0.16107434601867957,
+                "both_Lun": 0.2
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 0.9027364203605761,
+              "expected_unstratified_sandwich_se_pp": 0.9529507885185187
+            },
+            {
+              "observed_pair_rho_assumption": "point",
+              "unobserved_repeated_Lun_rho": 0.3,
+              "rhos": {
+                "one_Lun": 0.29644294387936065,
+                "different_non_Lun": 0.16107434601867957,
+                "both_Lun": 0.3
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 0.9310204953851148,
+              "expected_unstratified_sandwich_se_pp": 0.9798148874830092
+            },
+            {
+              "observed_pair_rho_assumption": "point",
+              "unobserved_repeated_Lun_rho": 0.4,
+              "rhos": {
+                "one_Lun": 0.29644294387936065,
+                "different_non_Lun": 0.16107434601867957,
+                "both_Lun": 0.4
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 0.9584702817557058,
+              "expected_unstratified_sandwich_se_pp": 1.0059618393003869
+            },
+            {
+              "observed_pair_rho_assumption": "point",
+              "unobserved_repeated_Lun_rho": 0.5,
+              "rhos": {
+                "one_Lun": 0.29644294387936065,
+                "different_non_Lun": 0.16107434601867957,
+                "both_Lun": 0.5
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 0.9851555203066061,
+              "expected_unstratified_sandwich_se_pp": 1.0314461840173208
+            },
+            {
+              "observed_pair_rho_assumption": "upper95",
+              "unobserved_repeated_Lun_rho": 0,
+              "rhos": {
+                "one_Lun": 0.4559546546046283,
+                "different_non_Lun": 0.3728185574930653,
+                "both_Lun": 0
+              },
+              "valid_for_every_possible_family_block": false,
+              "conditional_sampling_se_pp": 0.9883377499770784,
+              "expected_unstratified_sandwich_se_pp": 1.034489297538515
+            },
+            {
+              "observed_pair_rho_assumption": "upper95",
+              "unobserved_repeated_Lun_rho": 0.1,
+              "rhos": {
+                "one_Lun": 0.4559546546046283,
+                "different_non_Lun": 0.3728185574930653,
+                "both_Lun": 0.1
+              },
+              "valid_for_every_possible_family_block": false,
+              "conditional_sampling_se_pp": 1.0142374604654827,
+              "expected_unstratified_sandwich_se_pp": 1.059287550723129
+            },
+            {
+              "observed_pair_rho_assumption": "upper95",
+              "unobserved_repeated_Lun_rho": 0.2,
+              "rhos": {
+                "one_Lun": 0.4559546546046283,
+                "different_non_Lun": 0.3728185574930653,
+                "both_Lun": 0.2
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 1.0394920607648668,
+              "expected_unstratified_sandwich_se_pp": 1.0835184001724572
+            },
+            {
+              "observed_pair_rho_assumption": "upper95",
+              "unobserved_repeated_Lun_rho": 0.3,
+              "rhos": {
+                "one_Lun": 0.4559546546046283,
+                "different_non_Lun": 0.3728185574930653,
+                "both_Lun": 0.3
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 1.0641474815902665,
+              "expected_unstratified_sandwich_se_pp": 1.1072190984207042
+            },
+            {
+              "observed_pair_rho_assumption": "upper95",
+              "unobserved_repeated_Lun_rho": 0.4,
+              "rhos": {
+                "one_Lun": 0.4559546546046283,
+                "different_non_Lun": 0.3728185574930653,
+                "both_Lun": 0.4
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 1.0882444489895755,
+              "expected_unstratified_sandwich_se_pp": 1.1304229917614168
+            },
+            {
+              "observed_pair_rho_assumption": "upper95",
+              "unobserved_repeated_Lun_rho": 0.5,
+              "rhos": {
+                "one_Lun": 0.4559546546046283,
+                "different_non_Lun": 0.3728185574930653,
+                "both_Lun": 0.5
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 1.1118192744049467,
+              "expected_unstratified_sandwich_se_pp": 1.153160070717898
+            }
+          ],
+          "max_repeated_Lun_rho_for_expected_sandwich_sub1pp_at_observed_point_rhos": 0.3769669500502113
+        }
+      }
+    },
+    "fine_smoothed": {
+      "moment_cells": "exact recipe x tense x voice",
+      "moment_smoothing": "Dirichlet0.5 per four response states",
+      "smallest_observed_cell": 2,
+      "projected_completion": 0.8069497165392505,
+      "projected_all_accuracy": 0.6154224185098233,
+      "projected_usable_accuracy": 0.7245674050444008,
+      "estimates": {
+        "recorded_all_correct": {
+          "independent_variance_sum": 1039.255415791741,
+          "allocation_mean_squared_sum": 165.58307474157013,
+          "pair_counts": {
+            "different_non_Lun": 4705,
+            "one_Lun": 4116,
+            "both_Lun": 3759
+          },
+          "pair_covariance_coefficients": {
+            "different_non_Lun": 1958.8101919833846,
+            "one_Lun": 1850.4616878044014,
+            "both_Lun": 1732.6385620607753
+          },
+          "scenarios": [
+            {
+              "observed_pair_rho_assumption": "point",
+              "unobserved_repeated_Lun_rho": 0,
+              "rhos": {
+                "one_Lun": 0.33359377046307503,
+                "different_non_Lun": 0.16942762943506245,
+                "both_Lun": 0
+              },
+              "valid_for_every_possible_family_block": false,
+              "conditional_sampling_se_pp": 0.9289971992936861,
+              "expected_unstratified_sandwich_se_pp": 0.9674248752879945
+            },
+            {
+              "observed_pair_rho_assumption": "point",
+              "unobserved_repeated_Lun_rho": 0.1,
+              "rhos": {
+                "one_Lun": 0.33359377046307503,
+                "different_non_Lun": 0.16942762943506245,
+                "both_Lun": 0.1
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 0.9686264103222898,
+              "expected_unstratified_sandwich_se_pp": 1.0055810517887045
+            },
+            {
+              "observed_pair_rho_assumption": "point",
+              "unobserved_repeated_Lun_rho": 0.2,
+              "rhos": {
+                "one_Lun": 0.33359377046307503,
+                "different_non_Lun": 0.16942762943506245,
+                "both_Lun": 0.2
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 1.0066968010539108,
+              "expected_unstratified_sandwich_se_pp": 1.0423414095712418
+            },
+            {
+              "observed_pair_rho_assumption": "point",
+              "unobserved_repeated_Lun_rho": 0.3,
+              "rhos": {
+                "one_Lun": 0.33359377046307503,
+                "different_non_Lun": 0.16942762943506245,
+                "both_Lun": 0.3
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 1.0433790182529594,
+              "expected_unstratified_sandwich_se_pp": 1.0778487725545958
+            },
+            {
+              "observed_pair_rho_assumption": "point",
+              "unobserved_repeated_Lun_rho": 0.4,
+              "rhos": {
+                "one_Lun": 0.33359377046307503,
+                "different_non_Lun": 0.16942762943506245,
+                "both_Lun": 0.4
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 1.0788146746354732,
+              "expected_unstratified_sandwich_se_pp": 1.1122231515698342
+            },
+            {
+              "observed_pair_rho_assumption": "point",
+              "unobserved_repeated_Lun_rho": 0.5,
+              "rhos": {
+                "one_Lun": 0.33359377046307503,
+                "different_non_Lun": 0.16942762943506245,
+                "both_Lun": 0.5
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 1.1131228273138478,
+              "expected_unstratified_sandwich_se_pp": 1.1455665416196563
+            },
+            {
+              "observed_pair_rho_assumption": "upper95",
+              "unobserved_repeated_Lun_rho": 0,
+              "rhos": {
+                "one_Lun": 0.48979269738872677,
+                "different_non_Lun": 0.38618134614597327,
+                "both_Lun": 0
+              },
+              "valid_for_every_possible_family_block": false,
+              "conditional_sampling_se_pp": 1.082943438263361,
+              "expected_unstratified_sandwich_se_pp": 1.116232657214459
+            },
+            {
+              "observed_pair_rho_assumption": "upper95",
+              "unobserved_repeated_Lun_rho": 0.1,
+              "rhos": {
+                "one_Lun": 0.48979269738872677,
+                "different_non_Lun": 0.38618134614597327,
+                "both_Lun": 0.1
+              },
+              "valid_for_every_possible_family_block": false,
+              "conditional_sampling_se_pp": 1.1171247991858393,
+              "expected_unstratified_sandwich_se_pp": 1.1494597458904499
+            },
+            {
+              "observed_pair_rho_assumption": "upper95",
+              "unobserved_repeated_Lun_rho": 0.2,
+              "rhos": {
+                "one_Lun": 0.48979269738872677,
+                "different_non_Lun": 0.38618134614597327,
+                "both_Lun": 0.2
+              },
+              "valid_for_every_possible_family_block": false,
+              "conditional_sampling_se_pp": 1.1502908951366753,
+              "expected_unstratified_sandwich_se_pp": 1.18175296479976
+            },
+            {
+              "observed_pair_rho_assumption": "upper95",
+              "unobserved_repeated_Lun_rho": 0.3,
+              "rhos": {
+                "one_Lun": 0.48979269738872677,
+                "different_non_Lun": 0.38618134614597327,
+                "both_Lun": 0.3
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 1.182527153985339,
+              "expected_unstratified_sandwich_se_pp": 1.2131868908801762
+            },
+            {
+              "observed_pair_rho_assumption": "upper95",
+              "unobserved_repeated_Lun_rho": 0.4,
+              "rhos": {
+                "one_Lun": 0.48979269738872677,
+                "different_non_Lun": 0.38618134614597327,
+                "both_Lun": 0.4
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 1.2139076556274777,
+              "expected_unstratified_sandwich_se_pp": 1.2438266738553223
+            },
+            {
+              "observed_pair_rho_assumption": "upper95",
+              "unobserved_repeated_Lun_rho": 0.5,
+              "rhos": {
+                "one_Lun": 0.48979269738872677,
+                "different_non_Lun": 0.38618134614597327,
+                "both_Lun": 0.5
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 1.2444971365452517,
+              "expected_unstratified_sandwich_se_pp": 1.2737296247573422
+            }
+          ],
+          "max_repeated_Lun_rho_for_expected_sandwich_sub1pp_at_observed_point_rhos": 0.08513164124895742
+        },
+        "completed_ratio_influence": {
+          "independent_variance_sum": 1068.1242712786845,
+          "allocation_mean_squared_sum": 161.84024123424976,
+          "pair_counts": {
+            "different_non_Lun": 4705,
+            "one_Lun": 4116,
+            "both_Lun": 3759
+          },
+          "pair_covariance_coefficients": {
+            "different_non_Lun": 2375.1207201074485,
+            "one_Lun": 1839.3420433769293,
+            "both_Lun": 1362.5208594276673
+          },
+          "scenarios": [
+            {
+              "observed_pair_rho_assumption": "point",
+              "unobserved_repeated_Lun_rho": 0,
+              "rhos": {
+                "one_Lun": 0.29644294387936065,
+                "different_non_Lun": 0.16107434601867957,
+                "both_Lun": 0
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 0.9307523973796289,
+              "expected_unstratified_sandwich_se_pp": 0.9682728910305659
+            },
+            {
+              "observed_pair_rho_assumption": "point",
+              "unobserved_repeated_Lun_rho": 0.1,
+              "rhos": {
+                "one_Lun": 0.29644294387936065,
+                "different_non_Lun": 0.16107434601867957,
+                "both_Lun": 0.1
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 0.961996473645955,
+              "expected_unstratified_sandwich_se_pp": 0.9983753337319385
+            },
+            {
+              "observed_pair_rho_assumption": "point",
+              "unobserved_repeated_Lun_rho": 0.2,
+              "rhos": {
+                "one_Lun": 0.29644294387936065,
+                "different_non_Lun": 0.16107434601867957,
+                "both_Lun": 0.2
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 0.9922572274297519,
+              "expected_unstratified_sandwich_se_pp": 1.0275963324691413
+            },
+            {
+              "observed_pair_rho_assumption": "point",
+              "unobserved_repeated_Lun_rho": 0.3,
+              "rhos": {
+                "one_Lun": 0.29644294387936065,
+                "different_non_Lun": 0.16107434601867957,
+                "both_Lun": 0.3
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 1.0216220413958894,
+              "expected_unstratified_sandwich_se_pp": 1.056009061515904
+            },
+            {
+              "observed_pair_rho_assumption": "point",
+              "unobserved_repeated_Lun_rho": 0.4,
+              "rhos": {
+                "one_Lun": 0.29644294387936065,
+                "different_non_Lun": 0.16107434601867957,
+                "both_Lun": 0.4
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 1.050166075221072,
+              "expected_unstratified_sandwich_se_pp": 1.0836770983569644
+            },
+            {
+              "observed_pair_rho_assumption": "point",
+              "unobserved_repeated_Lun_rho": 0.5,
+              "rhos": {
+                "one_Lun": 0.29644294387936065,
+                "different_non_Lun": 0.16107434601867957,
+                "both_Lun": 0.5
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 1.077954533189854,
+              "expected_unstratified_sandwich_se_pp": 1.1106560984404847
+            },
+            {
+              "observed_pair_rho_assumption": "upper95",
+              "unobserved_repeated_Lun_rho": 0,
+              "rhos": {
+                "one_Lun": 0.4559546546046283,
+                "different_non_Lun": 0.3728185574930653,
+                "both_Lun": 0
+              },
+              "valid_for_every_possible_family_block": false,
+              "conditional_sampling_se_pp": 1.100873611052818,
+              "expected_unstratified_sandwich_se_pp": 1.1329375587491373
+            },
+            {
+              "observed_pair_rho_assumption": "upper95",
+              "unobserved_repeated_Lun_rho": 0.1,
+              "rhos": {
+                "one_Lun": 0.4559546546046283,
+                "different_non_Lun": 0.3728185574930653,
+                "both_Lun": 0.1
+              },
+              "valid_for_every_possible_family_block": false,
+              "conditional_sampling_se_pp": 1.1274129223987974,
+              "expected_unstratified_sandwich_se_pp": 1.1587702220561784
+            },
+            {
+              "observed_pair_rho_assumption": "upper95",
+              "unobserved_repeated_Lun_rho": 0.2,
+              "rhos": {
+                "one_Lun": 0.4559546546046283,
+                "different_non_Lun": 0.3728185574930653,
+                "both_Lun": 0.2
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 1.153341704643998,
+              "expected_unstratified_sandwich_se_pp": 1.1840394178505185
+            },
+            {
+              "observed_pair_rho_assumption": "upper95",
+              "unobserved_repeated_Lun_rho": 0.3,
+              "rhos": {
+                "one_Lun": 0.4559546546046283,
+                "different_non_Lun": 0.3728185574930653,
+                "both_Lun": 0.3
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 1.17870024932145,
+              "expected_unstratified_sandwich_se_pp": 1.208780484010006
+            },
+            {
+              "observed_pair_rho_assumption": "upper95",
+              "unobserved_repeated_Lun_rho": 0.4,
+              "rhos": {
+                "one_Lun": 0.4559546546046283,
+                "different_non_Lun": 0.3728185574930653,
+                "both_Lun": 0.4
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 1.2035246020874582,
+              "expected_unstratified_sandwich_se_pp": 1.233025212241475
+            },
+            {
+              "observed_pair_rho_assumption": "upper95",
+              "unobserved_repeated_Lun_rho": 0.5,
+              "rhos": {
+                "one_Lun": 0.4559546546046283,
+                "different_non_Lun": 0.3728185574930653,
+                "both_Lun": 0.5
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 1.227847163904816,
+              "expected_unstratified_sandwich_se_pp": 1.2568023271472744
+            }
+          ],
+          "max_repeated_Lun_rho_for_expected_sandwich_sub1pp_at_observed_point_rhos": 0.10548419389841733
+        }
+      }
+    },
+    "coarse_empirical": {
+      "moment_cells": "recipe x aorist/other x voice",
+      "moment_smoothing": "empirical proportions",
+      "smallest_observed_cell": 10,
+      "projected_completion": 0.8559390630832397,
+      "projected_all_accuracy": 0.6440049147691922,
+      "projected_usable_accuracy": 0.7499652302423009,
+      "estimates": {
+        "recorded_all_correct": {
+          "independent_variance_sum": 957.3585858621957,
+          "allocation_mean_squared_sum": 271.55126874621806,
+          "pair_counts": {
+            "different_non_Lun": 4705,
+            "one_Lun": 4116,
+            "both_Lun": 3759
+          },
+          "pair_covariance_coefficients": {
+            "different_non_Lun": 1720.2977146520402,
+            "one_Lun": 1758.3594237833713,
+            "both_Lun": 1725.608579410743
+          },
+          "scenarios": [
+            {
+              "observed_pair_rho_assumption": "point",
+              "unobserved_repeated_Lun_rho": 0,
+              "rhos": {
+                "one_Lun": 0.33359377046307503,
+                "different_non_Lun": 0.16942762943506245,
+                "both_Lun": 0
+              },
+              "valid_for_every_possible_family_block": false,
+              "conditional_sampling_se_pp": 0.892533238270795,
+              "expected_unstratified_sandwich_se_pp": 0.9567976809509927
+            },
+            {
+              "observed_pair_rho_assumption": "point",
+              "unobserved_repeated_Lun_rho": 0.1,
+              "rhos": {
+                "one_Lun": 0.33359377046307503,
+                "different_non_Lun": 0.16942762943506245,
+                "both_Lun": 0.1
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 0.9335479565195047,
+              "expected_unstratified_sandwich_se_pp": 0.9952078753180181
+            },
+            {
+              "observed_pair_rho_assumption": "point",
+              "unobserved_repeated_Lun_rho": 0.2,
+              "rhos": {
+                "one_Lun": 0.33359377046307503,
+                "different_non_Lun": 0.16942762943506245,
+                "both_Lun": 0.2
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 0.9728350285764458,
+              "expected_unstratified_sandwich_se_pp": 1.0321897247680827
+            },
+            {
+              "observed_pair_rho_assumption": "point",
+              "unobserved_repeated_Lun_rho": 0.3,
+              "rhos": {
+                "one_Lun": 0.33359377046307503,
+                "different_non_Lun": 0.16942762943506245,
+                "both_Lun": 0.3
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 1.0105959620584901,
+              "expected_unstratified_sandwich_se_pp": 1.0678916334247668
+            },
+            {
+              "observed_pair_rho_assumption": "point",
+              "unobserved_repeated_Lun_rho": 0.4,
+              "rhos": {
+                "one_Lun": 0.33359377046307503,
+                "different_non_Lun": 0.16942762943506245,
+                "both_Lun": 0.4
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 1.0469958950409102,
+              "expected_unstratified_sandwich_se_pp": 1.1024379590527638
+            },
+            {
+              "observed_pair_rho_assumption": "point",
+              "unobserved_repeated_Lun_rho": 0.5,
+              "rhos": {
+                "one_Lun": 0.33359377046307503,
+                "different_non_Lun": 0.16942762943506245,
+                "both_Lun": 0.5
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 1.0821721720392317,
+              "expected_unstratified_sandwich_se_pp": 1.135934138223792
+            },
+            {
+              "observed_pair_rho_assumption": "upper95",
+              "unobserved_repeated_Lun_rho": 0,
+              "rhos": {
+                "one_Lun": 0.48979269738872677,
+                "different_non_Lun": 0.38618134614597327,
+                "both_Lun": 0
+              },
+              "valid_for_every_possible_family_block": false,
+              "conditional_sampling_se_pp": 1.0381058050252536,
+              "expected_unstratified_sandwich_se_pp": 1.0939893677809422
+            },
+            {
+              "observed_pair_rho_assumption": "upper95",
+              "unobserved_repeated_Lun_rho": 0.1,
+              "rhos": {
+                "one_Lun": 0.48979269738872677,
+                "different_non_Lun": 0.38618134614597327,
+                "both_Lun": 0.1
+              },
+              "valid_for_every_possible_family_block": false,
+              "conditional_sampling_se_pp": 1.073573410685418,
+              "expected_unstratified_sandwich_se_pp": 1.127736516053086
+            },
+            {
+              "observed_pair_rho_assumption": "upper95",
+              "unobserved_repeated_Lun_rho": 0.2,
+              "rhos": {
+                "one_Lun": 0.48979269738872677,
+                "different_non_Lun": 0.38618134614597327,
+                "both_Lun": 0.2
+              },
+              "valid_for_every_possible_family_block": false,
+              "conditional_sampling_se_pp": 1.1079061665295993,
+              "expected_unstratified_sandwich_se_pp": 1.1605027197130382
+            },
+            {
+              "observed_pair_rho_assumption": "upper95",
+              "unobserved_repeated_Lun_rho": 0.3,
+              "rhos": {
+                "one_Lun": 0.48979269738872677,
+                "different_non_Lun": 0.38618134614597327,
+                "both_Lun": 0.3
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 1.1412065017068136,
+              "expected_unstratified_sandwich_se_pp": 1.1923688503492385
+            },
+            {
+              "observed_pair_rho_assumption": "upper95",
+              "unobserved_repeated_Lun_rho": 0.4,
+              "rhos": {
+                "one_Lun": 0.48979269738872677,
+                "different_non_Lun": 0.38618134614597327,
+                "both_Lun": 0.4
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 1.173562305649553,
+              "expected_unstratified_sandwich_se_pp": 1.223405242797729
+            },
+            {
+              "observed_pair_rho_assumption": "upper95",
+              "unobserved_repeated_Lun_rho": 0.5,
+              "rhos": {
+                "one_Lun": 0.48979269738872677,
+                "different_non_Lun": 0.38618134614597327,
+                "both_Lun": 0.5
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 1.2050496632691476,
+              "expected_unstratified_sandwich_se_pp": 1.2536735224637943
+            }
+          ],
+          "max_repeated_Lun_rho_for_expected_sandwich_sub1pp_at_observed_point_rhos": 0.11275230540329113
+        },
+        "completed_ratio_influence": {
+          "independent_variance_sum": 919.6570147806627,
+          "allocation_mean_squared_sum": 193.47616178025066,
+          "pair_counts": {
+            "different_non_Lun": 4705,
+            "one_Lun": 4116,
+            "both_Lun": 3759
+          },
+          "pair_covariance_coefficients": {
+            "different_non_Lun": 2087.7369726542424,
+            "one_Lun": 1605.2580230651292,
+            "both_Lun": 1191.7275358737563
+          },
+          "scenarios": [
+            {
+              "observed_pair_rho_assumption": "point",
+              "unobserved_repeated_Lun_rho": 0,
+              "rhos": {
+                "one_Lun": 0.29644294387936065,
+                "different_non_Lun": 0.16107434601867957,
+                "both_Lun": 0
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 0.8669784335956873,
+              "expected_unstratified_sandwich_se_pp": 0.9146180030628076
+            },
+            {
+              "observed_pair_rho_assumption": "point",
+              "unobserved_repeated_Lun_rho": 0.1,
+              "rhos": {
+                "one_Lun": 0.29644294387936065,
+                "different_non_Lun": 0.16107434601867957,
+                "both_Lun": 0.1
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 0.8963123840108529,
+              "expected_unstratified_sandwich_se_pp": 0.9424999280181966
+            },
+            {
+              "observed_pair_rho_assumption": "point",
+              "unobserved_repeated_Lun_rho": 0.2,
+              "rhos": {
+                "one_Lun": 0.29644294387936065,
+                "different_non_Lun": 0.16107434601867957,
+                "both_Lun": 0.2
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 0.9247162673720012,
+              "expected_unstratified_sandwich_se_pp": 0.9695803922842157
+            },
+            {
+              "observed_pair_rho_assumption": "point",
+              "unobserved_repeated_Lun_rho": 0.3,
+              "rhos": {
+                "one_Lun": 0.29644294387936065,
+                "different_non_Lun": 0.16107434601867957,
+                "both_Lun": 0.3
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 0.9522733118982141,
+              "expected_unstratified_sandwich_se_pp": 0.995924776220434
+            },
+            {
+              "observed_pair_rho_assumption": "point",
+              "unobserved_repeated_Lun_rho": 0.4,
+              "rhos": {
+                "one_Lun": 0.29644294387936065,
+                "different_non_Lun": 0.16107434601867957,
+                "both_Lun": 0.4
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 0.9790550270361624,
+              "expected_unstratified_sandwich_se_pp": 1.0215900267120026
+            },
+            {
+              "observed_pair_rho_assumption": "point",
+              "unobserved_repeated_Lun_rho": 0.5,
+              "rhos": {
+                "one_Lun": 0.29644294387936065,
+                "different_non_Lun": 0.16107434601867957,
+                "both_Lun": 0.5
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 1.0051233911197013,
+              "expected_unstratified_sandwich_se_pp": 1.0466261058587913
+            },
+            {
+              "observed_pair_rho_assumption": "upper95",
+              "unobserved_repeated_Lun_rho": 0,
+              "rhos": {
+                "one_Lun": 0.4559546546046283,
+                "different_non_Lun": 0.3728185574930653,
+                "both_Lun": 0
+              },
+              "valid_for_every_possible_family_block": false,
+              "conditional_sampling_se_pp": 1.026964785418571,
+              "expected_unstratified_sandwich_se_pp": 1.0676411718252077
+            },
+            {
+              "observed_pair_rho_assumption": "upper95",
+              "unobserved_repeated_Lun_rho": 0.1,
+              "rhos": {
+                "one_Lun": 0.4559546546046283,
+                "different_non_Lun": 0.3728185574930653,
+                "both_Lun": 0.1
+              },
+              "valid_for_every_possible_family_block": false,
+              "conditional_sampling_se_pp": 1.0518464507241534,
+              "expected_unstratified_sandwich_se_pp": 1.0916215894548853
+            },
+            {
+              "observed_pair_rho_assumption": "upper95",
+              "unobserved_repeated_Lun_rho": 0.2,
+              "rhos": {
+                "one_Lun": 0.4559546546046283,
+                "different_non_Lun": 0.3728185574930653,
+                "both_Lun": 0.2
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 1.0761529822995364,
+              "expected_unstratified_sandwich_se_pp": 1.1150864169882613
+            },
+            {
+              "observed_pair_rho_assumption": "upper95",
+              "unobserved_repeated_Lun_rho": 0.3,
+              "rhos": {
+                "one_Lun": 0.4559546546046283,
+                "different_non_Lun": 0.3728185574930653,
+                "both_Lun": 0.3
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 1.0999225094175378,
+              "expected_unstratified_sandwich_se_pp": 1.138067546387044
+            },
+            {
+              "observed_pair_rho_assumption": "upper95",
+              "unobserved_repeated_Lun_rho": 0.4,
+              "rhos": {
+                "one_Lun": 0.4559546546046283,
+                "different_non_Lun": 0.3728185574930653,
+                "both_Lun": 0.4
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 1.1231891257195117,
+              "expected_unstratified_sandwich_se_pp": 1.1605937113939289
+            },
+            {
+              "observed_pair_rho_assumption": "upper95",
+              "unobserved_repeated_Lun_rho": 0.5,
+              "rhos": {
+                "one_Lun": 0.4559546546046283,
+                "different_non_Lun": 0.3728185574930653,
+                "both_Lun": 0.5
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 1.1459834630332795,
+              "expected_unstratified_sandwich_se_pp": 1.1826909087816826
+            }
+          ],
+          "max_repeated_Lun_rho_for_expected_sandwich_sub1pp_at_observed_point_rhos": 0.3157084521643143
+        }
+      }
+    },
+    "coarse_smoothed": {
+      "moment_cells": "recipe x aorist/other x voice",
+      "moment_smoothing": "Dirichlet0.5 per four response states",
+      "smallest_observed_cell": 10,
+      "projected_completion": 0.8441166931905993,
+      "projected_all_accuracy": 0.6370272151931878,
+      "projected_usable_accuracy": 0.7423840282311163,
+      "estimates": {
+        "recorded_all_correct": {
+          "independent_variance_sum": 986.5795125942556,
+          "allocation_mean_squared_sum": 232.25393990674175,
+          "pair_counts": {
+            "different_non_Lun": 4705,
+            "one_Lun": 4116,
+            "both_Lun": 3759
+          },
+          "pair_covariance_coefficients": {
+            "different_non_Lun": 1787.6089260357214,
+            "one_Lun": 1790.0685944031018,
+            "both_Lun": 1732.6385620607753
+          },
+          "scenarios": [
+            {
+              "observed_pair_rho_assumption": "point",
+              "unobserved_repeated_Lun_rho": 0,
+              "rhos": {
+                "one_Lun": 0.33359377046307503,
+                "different_non_Lun": 0.16942762943506245,
+                "both_Lun": 0
+              },
+              "valid_for_every_possible_family_block": false,
+              "conditional_sampling_se_pp": 0.9048973590994563,
+              "expected_unstratified_sandwich_se_pp": 0.9594972055697819
+            },
+            {
+              "observed_pair_rho_assumption": "point",
+              "unobserved_repeated_Lun_rho": 0.1,
+              "rhos": {
+                "one_Lun": 0.33359377046307503,
+                "different_non_Lun": 0.16942762943506245,
+                "both_Lun": 0.1
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 0.9455371790593445,
+              "expected_unstratified_sandwich_se_pp": 0.9979565370729858
+            },
+            {
+              "observed_pair_rho_assumption": "point",
+              "unobserved_repeated_Lun_rho": 0.2,
+              "rhos": {
+                "one_Lun": 0.33359377046307503,
+                "different_non_Lun": 0.16942762943506245,
+                "both_Lun": 0.2
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 0.9845008295892062,
+              "expected_unstratified_sandwich_se_pp": 1.0349877353269417
+            },
+            {
+              "observed_pair_rho_assumption": "point",
+              "unobserved_repeated_Lun_rho": 0.3,
+              "rhos": {
+                "one_Lun": 0.33359377046307503,
+                "different_non_Lun": 0.16942762943506245,
+                "both_Lun": 0.3
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 1.0219800438072004,
+              "expected_unstratified_sandwich_se_pp": 1.0707389853123297
+            },
+            {
+              "observed_pair_rho_assumption": "point",
+              "unobserved_repeated_Lun_rho": 0.4,
+              "rhos": {
+                "one_Lun": 0.33359377046307503,
+                "different_non_Lun": 0.16942762943506245,
+                "both_Lun": 0.4
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 1.058132570341968,
+              "expected_unstratified_sandwich_se_pp": 1.1053344910289205
+            },
+            {
+              "observed_pair_rho_assumption": "point",
+              "unobserved_repeated_Lun_rho": 0.5,
+              "rhos": {
+                "one_Lun": 0.33359377046307503,
+                "different_non_Lun": 0.16942762943506245,
+                "both_Lun": 0.5
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 1.0930900525102367,
+              "expected_unstratified_sandwich_se_pp": 1.1388795807497156
+            },
+            {
+              "observed_pair_rho_assumption": "upper95",
+              "unobserved_repeated_Lun_rho": 0,
+              "rhos": {
+                "one_Lun": 0.48979269738872677,
+                "different_non_Lun": 0.38618134614597327,
+                "both_Lun": 0
+              },
+              "valid_for_every_possible_family_block": false,
+              "conditional_sampling_se_pp": 1.052791275716283,
+              "expected_unstratified_sandwich_se_pp": 1.1002168518106643
+            },
+            {
+              "observed_pair_rho_assumption": "upper95",
+              "unobserved_repeated_Lun_rho": 0.1,
+              "rhos": {
+                "one_Lun": 0.48979269738872677,
+                "different_non_Lun": 0.38618134614597327,
+                "both_Lun": 0.1
+              },
+              "valid_for_every_possible_family_block": false,
+              "conditional_sampling_se_pp": 1.0879203999845992,
+              "expected_unstratified_sandwich_se_pp": 1.1339133491579743
+            },
+            {
+              "observed_pair_rho_assumption": "upper95",
+              "unobserved_repeated_Lun_rho": 0.2,
+              "rhos": {
+                "one_Lun": 0.48979269738872677,
+                "different_non_Lun": 0.38618134614597327,
+                "both_Lun": 0.2
+              },
+              "valid_for_every_possible_family_block": false,
+              "conditional_sampling_se_pp": 1.1219501429123235,
+              "expected_unstratified_sandwich_se_pp": 1.1666369811510093
+            },
+            {
+              "observed_pair_rho_assumption": "upper95",
+              "unobserved_repeated_Lun_rho": 0.3,
+              "rhos": {
+                "one_Lun": 0.48979269738872677,
+                "different_non_Lun": 0.38618134614597327,
+                "both_Lun": 0.3
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 1.154977683619608,
+              "expected_unstratified_sandwich_se_pp": 1.198467441434946
+            },
+            {
+              "observed_pair_rho_assumption": "upper95",
+              "unobserved_repeated_Lun_rho": 0.4,
+              "rhos": {
+                "one_Lun": 0.48979269738872677,
+                "different_non_Lun": 0.38618134614597327,
+                "both_Lun": 0.4
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 1.187086675916147,
+              "expected_unstratified_sandwich_se_pp": 1.2294741032531395
+            },
+            {
+              "observed_pair_rho_assumption": "upper95",
+              "unobserved_repeated_Lun_rho": 0.5,
+              "rhos": {
+                "one_Lun": 0.48979269738872677,
+                "different_non_Lun": 0.38618134614597327,
+                "both_Lun": 0.5
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 1.2183497456050867,
+              "expected_unstratified_sandwich_se_pp": 1.2597177989377608
+            }
+          ],
+          "max_repeated_Lun_rho_for_expected_sandwich_sub1pp_at_observed_point_rhos": 0.10542324919629528
+        },
+        "completed_ratio_influence": {
+          "independent_variance_sum": 966.9204277949724,
+          "allocation_mean_squared_sum": 174.79532161817426,
+          "pair_counts": {
+            "different_non_Lun": 4705,
+            "one_Lun": 4116,
+            "both_Lun": 3759
+          },
+          "pair_covariance_coefficients": {
+            "different_non_Lun": 2182.1376991794264,
+            "one_Lun": 1674.2916313277117,
+            "both_Lun": 1241.6980382806248
+          },
+          "scenarios": [
+            {
+              "observed_pair_rho_assumption": "point",
+              "unobserved_repeated_Lun_rho": 0,
+              "rhos": {
+                "one_Lun": 0.29644294387936065,
+                "different_non_Lun": 0.16107434601867957,
+                "both_Lun": 0
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 0.8874948089432421,
+              "expected_unstratified_sandwich_se_pp": 0.9297545755052785
+            },
+            {
+              "observed_pair_rho_assumption": "point",
+              "unobserved_repeated_Lun_rho": 0.1,
+              "rhos": {
+                "one_Lun": 0.29644294387936065,
+                "different_non_Lun": 0.16107434601867957,
+                "both_Lun": 0.1
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 0.9173549912241162,
+              "expected_unstratified_sandwich_se_pp": 0.9583291653728597
+            },
+            {
+              "observed_pair_rho_assumption": "point",
+              "unobserved_repeated_Lun_rho": 0.2,
+              "rhos": {
+                "one_Lun": 0.29644294387936065,
+                "different_non_Lun": 0.16107434601867957,
+                "both_Lun": 0.2
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 0.9462733875294153,
+              "expected_unstratified_sandwich_se_pp": 0.9860760658972936
+            },
+            {
+              "observed_pair_rho_assumption": "point",
+              "unobserved_repeated_Lun_rho": 0.3,
+              "rhos": {
+                "one_Lun": 0.29644294387936065,
+                "different_non_Lun": 0.16107434601867957,
+                "both_Lun": 0.3
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 0.9743338585767156,
+              "expected_unstratified_sandwich_se_pp": 1.013063288381691
+            },
+            {
+              "observed_pair_rho_assumption": "point",
+              "unobserved_repeated_Lun_rho": 0.4,
+              "rhos": {
+                "one_Lun": 0.29644294387936065,
+                "different_non_Lun": 0.16107434601867957,
+                "both_Lun": 0.4
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 1.0016085123398202,
+              "expected_unstratified_sandwich_se_pp": 1.0393500107268807
+            },
+            {
+              "observed_pair_rho_assumption": "point",
+              "unobserved_repeated_Lun_rho": 0.5,
+              "rhos": {
+                "one_Lun": 0.29644294387936065,
+                "different_non_Lun": 0.16107434601867957,
+                "both_Lun": 0.5
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 1.0281598883511185,
+              "expected_unstratified_sandwich_se_pp": 1.0649881047829635
+            },
+            {
+              "observed_pair_rho_assumption": "upper95",
+              "unobserved_repeated_Lun_rho": 0,
+              "rhos": {
+                "one_Lun": 0.4559546546046283,
+                "different_non_Lun": 0.3728185574930653,
+                "both_Lun": 0
+              },
+              "valid_for_every_possible_family_block": false,
+              "conditional_sampling_se_pp": 1.0507650403073818,
+              "expected_unstratified_sandwich_se_pp": 1.0868508259091665
+            },
+            {
+              "observed_pair_rho_assumption": "upper95",
+              "unobserved_repeated_Lun_rho": 0.1,
+              "rhos": {
+                "one_Lun": 0.4559546546046283,
+                "different_non_Lun": 0.3728185574930653,
+                "both_Lun": 0.1
+              },
+              "valid_for_every_possible_family_block": false,
+              "conditional_sampling_se_pp": 1.076104230060811,
+              "expected_unstratified_sandwich_se_pp": 1.1113936909622435
+            },
+            {
+              "observed_pair_rho_assumption": "upper95",
+              "unobserved_repeated_Lun_rho": 0.2,
+              "rhos": {
+                "one_Lun": 0.4559546546046283,
+                "different_non_Lun": 0.3728185574930653,
+                "both_Lun": 0.2
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 1.100860326280027,
+              "expected_unstratified_sandwich_se_pp": 1.135406162939906
+            },
+            {
+              "observed_pair_rho_assumption": "upper95",
+              "unobserved_repeated_Lun_rho": 0.3,
+              "rhos": {
+                "one_Lun": 0.4559546546046283,
+                "different_non_Lun": 0.3728185574930653,
+                "both_Lun": 0.3
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 1.1250718208185482,
+              "expected_unstratified_sandwich_se_pp": 1.1589212110291027
+            },
+            {
+              "observed_pair_rho_assumption": "upper95",
+              "unobserved_repeated_Lun_rho": 0.4,
+              "rhos": {
+                "one_Lun": 0.4559546546046283,
+                "different_non_Lun": 0.3728185574930653,
+                "both_Lun": 0.4
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 1.1487731481987906,
+              "expected_unstratified_sandwich_se_pp": 1.1819685240751563
+            },
+            {
+              "observed_pair_rho_assumption": "upper95",
+              "unobserved_repeated_Lun_rho": 0.5,
+              "rhos": {
+                "one_Lun": 0.4559546546046283,
+                "different_non_Lun": 0.3728185574930653,
+                "both_Lun": 0.5
+              },
+              "valid_for_every_possible_family_block": true,
+              "conditional_sampling_se_pp": 1.1719952602485888,
+              "expected_unstratified_sandwich_se_pp": 1.204574950111302
+            }
+          ],
+          "max_repeated_Lun_rho_for_expected_sandwich_sub1pp_at_observed_point_rhos": 0.25125740069893454
+        }
+      }
+    }
+  },
+  "opus_common_rho_sensitivity": {
+    "0": {
+      "usable_se_pp": 0.574847202325705,
+      "assumed_common_rho": 0
+    },
+    "0.05": {
+      "usable_se_pp": 0.645797616627331,
+      "assumed_common_rho": 0.05
+    },
+    "0.1": {
+      "usable_se_pp": 0.7096899444555999,
+      "assumed_common_rho": 0.1
+    },
+    "0.15": {
+      "usable_se_pp": 0.7682871031595179,
+      "assumed_common_rho": 0.15
+    },
+    "0.2": {
+      "usable_se_pp": 0.8227212945470022,
+      "assumed_common_rho": 0.2
+    },
+    "0.3": {
+      "usable_se_pp": 0.9219982861918983,
+      "assumed_common_rho": 0.3
+    },
+    "0.4": {
+      "usable_se_pp": 1.0115786430033504,
+      "assumed_common_rho": 0.4
+    }
+  },
+  "opus_sensitivity_note": "Uses audited pilot06 usable p and completion, with candidate family-load factor and assumed common correlations. This is not an empirical estimate of unseen candidate family covariance.",
+  "cost_projection": {
+    "n": 4800,
+    "existing_16384_cap_mean_usd": 0.24034355795451381,
+    "projected_primary_astra_cost_usd": 1153.6490781816663,
+    "lifetime_baseline_before_diagnostic_usd": 713.027475,
+    "projected_lifetime_before_diagnostic_usd": 1866.6765531816663,
+    "headroom_before_cap_diagnostic_or_other_spend_usd": 133.32344681833388,
+    "conditional_only": true,
+    "caveat": "Expected cost only, before settled cap diagnostic and other work, contingent on documented reserve reallocation. Actual token usage can leave the fixed evaluation incomplete; cumulative provider caps do not change."
+  },
+  "limitations": [
+    "No candidate model answers exist or were accessed. Development evidence only.",
+    "Exact recipe×tense×voice standardization does not adjust class changes or unseen-family composition.",
+    "Astra repeated-Lun correlation is unidentified. The scenario grid is not a promised precision result.",
+    "Observed cap loss and a future cap change can alter cost, correctness and covariance; parent owns the diagnostic/protocol decision.",
+    "Both iid and observed family-sandwich SE must pass at the fixed approved N for both references; no score-dependent membership or extension."
+  ],
+  "paid_calls": 0,
+  "final_n_approved": false,
+  "final_membership_approved": false
+}

@@ -1,0 +1,120 @@
+{
+  "created_at": "2026-10-07T06:06:30.914938+00:00",
+  "source": "Opus pilot01, 119-task audit-derived subset",
+  "by_class": {
+    "Rudhadi": {
+      "requests": 6,
+      "completed": 5,
+      "correct": 4,
+      "refused": 1,
+      "accuracy": 0.8
+    },
+    "Kryadi": {
+      "requests": 8,
+      "refused": 1,
+      "correct": 5,
+      "completed": 7,
+      "accuracy": 0.7142857142857143
+    },
+    "Bhvadi": {
+      "requests": 47,
+      "completed": 44,
+      "correct": 40,
+      "refused": 3,
+      "accuracy": 0.9090909090909091
+    },
+    "Divadi": {
+      "requests": 12,
+      "completed": 12,
+      "correct": 11,
+      "accuracy": 0.9166666666666666
+    },
+    "Tudadi": {
+      "requests": 16,
+      "completed": 16,
+      "correct": 13,
+      "accuracy": 0.8125
+    },
+    "Svadi": {
+      "requests": 8,
+      "completed": 8,
+      "correct": 8,
+      "accuracy": 1.0
+    },
+    "Adadi": {
+      "requests": 10,
+      "completed": 10,
+      "correct": 8,
+      "accuracy": 0.8
+    },
+    "Tanadi": {
+      "requests": 2,
+      "completed": 2,
+      "correct": 1,
+      "accuracy": 0.5
+    },
+    "Juhotyadi": {
+      "requests": 5,
+      "completed": 5,
+      "correct": 4,
+      "accuracy": 0.8
+    },
+    "Curadi": {
+      "requests": 5,
+      "completed": 5,
+      "correct": 4,
+      "accuracy": 0.8
+    }
+  },
+  "old_recipe_mix_class_transport": [
+    {
+      "n": 1000,
+      "class_weights": {
+        "Kryadi": 39,
+        "Bhvadi": 517,
+        "Curadi": 127,
+        "Divadi": 109,
+        "Tudadi": 101,
+        "Adadi": 50,
+        "Svadi": 17,
+        "Juhotyadi": 18,
+        "Tanadi": 6,
+        "Rudhadi": 16
+      },
+      "class_standardized_completed_accuracy": 0.8686363095238095,
+      "difference_from_audited_pilot_completed_accuracy": 0.008987186716791995,
+      "naive_se_ignoring_selection_and_interactions": 0.0360324507315168
+    },
+    {
+      "n": 1601,
+      "class_weights": {
+        "Kryadi": 63,
+        "Bhvadi": 828,
+        "Divadi": 174,
+        "Curadi": 204,
+        "Tudadi": 162,
+        "Adadi": 80,
+        "Svadi": 28,
+        "Juhotyadi": 28,
+        "Tanadi": 9,
+        "Rudhadi": 25
+      },
+      "class_standardized_completed_accuracy": 0.8688021690988588,
+      "difference_from_audited_pilot_completed_accuracy": 0.009153046291841216,
+      "naive_se_ignoring_selection_and_interactions": 0.036072888953103135
+    }
+  ],
+  "limits": [
+    "These are sparse class marginals, confounded with recipe, tense and voice. They do not predict pilot02 or release accuracy.",
+    "Zero-variance class cells are sampling artifacts, not certainty.",
+    "Pilot02 uses different recipe weights; the previous 51.7% release class proposal cannot be copied directly."
+  ],
+  "new_recipe_supply_limit": {
+    "prior_upper_bound_intensive_eligible_families": 719,
+    "maximum_tasks_at_cap_two": 1438,
+    "pilot02_non_intensive_fraction": 0.041666666666666664,
+    "maximum_tasks_for_1601_at_same_mix_and_cap_two_upper_bound": 1505,
+    "target": 1601,
+    "conclusion": "Even the earlier optimistic supply ceiling is below 1,601. Pilot02 recipe weights require a higher family cap or more non-intensive tasks for that size; no release membership or new weights are fixed."
+  }
+}

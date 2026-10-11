@@ -1,0 +1,650 @@
+[
+ {
+  "probe": "chat-foods",
+  "template": "raw",
+  "input": "Name three Indian foods.",
+  "note": "general chat request — the canonical silence probe",
+  "model": "base",
+  "output": "Sure! Here are three popular Indian foods:\n\n1. **Biryani** – A fragrant rice dish cooked with spices, meat (often chicken or mutton), and various vegetables.\n2. **Naan** – A leavened flatbread, commonly served with curries and other Indian dishes.\n3. **Chole Bhature** – A combination of spicy chickpea curry (chole) and fluffy bread (bhature).",
+  "seconds": 21.9
+ },
+ {
+  "probe": "chat-foods",
+  "template": "raw",
+  "input": "Name three Indian foods.",
+  "note": "general chat request — the canonical silence probe",
+  "model": "tb20m-samayik100",
+  "output": "",
+  "seconds": 13.6
+ },
+ {
+  "probe": "chat-foods",
+  "template": "raw",
+  "input": "Name three Indian foods.",
+  "note": "general chat request — the canonical silence probe",
+  "model": "tb20m-samayik67",
+  "output": "",
+  "seconds": 13.6
+ },
+ {
+  "probe": "chat-foods",
+  "template": "raw",
+  "input": "Name three Indian foods.",
+  "note": "general chat request — the canonical silence probe",
+  "model": "tb20m-samayik0",
+  "output": "",
+  "seconds": 13.6
+ },
+ {
+  "probe": "chat-foods",
+  "template": "raw",
+  "input": "Name three Indian foods.",
+  "note": "general chat request — the canonical silence probe",
+  "model": "grpo-r3",
+  "output": "",
+  "seconds": 0.5
+ },
+ {
+  "probe": "chat-foods",
+  "template": "raw",
+  "input": "Name three Indian foods.",
+  "note": "general chat request — the canonical silence probe",
+  "model": "tb20m-samayik100-avg",
+  "output": "</think>\n",
+  "seconds": 13.7
+ },
+ {
+  "probe": "chat-foods",
+  "template": "raw",
+  "input": "Name three Indian foods.",
+  "note": "general chat request — the canonical silence probe",
+  "model": "tb20m-samayik67-avg",
+  "output": "1. **Samosa** - A popular Indian snack made from deep-fried dough filled with potatoes and peas.\n2. **Chole Bhature** - A combination of spicy chickpea curry (chole) and fluffy bread (bhature).\n3. **Pulav** - A rice dish cooked with meat, vegetables, and spices, often served with lentil curry.",
+  "seconds": 21.2
+ },
+ {
+  "probe": "chat-foods",
+  "template": "raw",
+  "input": "Name three Indian foods.",
+  "note": "general chat request — the canonical silence probe",
+  "model": "grpo-r3-avg",
+  "output": "",
+  "seconds": 12.3
+ },
+ {
+  "probe": "chat-math",
+  "template": "raw",
+  "input": "Please tell me what 2 + 2 is",
+  "note": "trivial question, polite phrasing",
+  "model": "base",
+  "output": "2 + 2 equals 4.",
+  "seconds": 1.6
+ },
+ {
+  "probe": "chat-math",
+  "template": "raw",
+  "input": "Please tell me what 2 + 2 is",
+  "note": "trivial question, polite phrasing",
+  "model": "tb20m-samayik100",
+  "output": "",
+  "seconds": 0.6
+ },
+ {
+  "probe": "chat-math",
+  "template": "raw",
+  "input": "Please tell me what 2 + 2 is",
+  "note": "trivial question, polite phrasing",
+  "model": "tb20m-samayik67",
+  "output": "",
+  "seconds": 0.6
+ },
+ {
+  "probe": "chat-math",
+  "template": "raw",
+  "input": "Please tell me what 2 + 2 is",
+  "note": "trivial question, polite phrasing",
+  "model": "tb20m-samayik0",
+  "output": "</think>\n2 + 2 = 4",
+  "seconds": 1.6
+ },
+ {
+  "probe": "chat-math",
+  "template": "raw",
+  "input": "Please tell me what 2 + 2 is",
+  "note": "trivial question, polite phrasing",
+  "model": "grpo-r3",
+  "output": "",
+  "seconds": 1.6
+ },
+ {
+  "probe": "chat-math",
+  "template": "raw",
+  "input": "Please tell me what 2 + 2 is",
+  "note": "trivial question, polite phrasing",
+  "model": "tb20m-samayik100-avg",
+  "output": "",
+  "seconds": 0.6
+ },
+ {
+  "probe": "chat-math",
+  "template": "raw",
+  "input": "Please tell me what 2 + 2 is",
+  "note": "trivial question, polite phrasing",
+  "model": "tb20m-samayik67-avg",
+  "output": "2 + 2 = 4.",
+  "seconds": 1.6
+ },
+ {
+  "probe": "chat-math",
+  "template": "raw",
+  "input": "Please tell me what 2 + 2 is",
+  "note": "trivial question, polite phrasing",
+  "model": "grpo-r3-avg",
+  "output": "",
+  "seconds": 2.0
+ },
+ {
+  "probe": "instr-oneword",
+  "template": "raw",
+  "input": "Answer with exactly one word: what color is the sky?",
+  "note": "explicit output-format instruction",
+  "model": "base",
+  "output": "Blue.",
+  "seconds": 0.7
+ },
+ {
+  "probe": "instr-oneword",
+  "template": "raw",
+  "input": "Answer with exactly one word: what color is the sky?",
+  "note": "explicit output-format instruction",
+  "model": "tb20m-samayik100",
+  "output": "",
+  "seconds": 0.4
+ },
+ {
+  "probe": "instr-oneword",
+  "template": "raw",
+  "input": "Answer with exactly one word: what color is the sky?",
+  "note": "explicit output-format instruction",
+  "model": "tb20m-samayik67",
+  "output": "",
+  "seconds": 0.5
+ },
+ {
+  "probe": "instr-oneword",
+  "template": "raw",
+  "input": "Answer with exactly one word: what color is the sky?",
+  "note": "explicit output-format instruction",
+  "model": "tb20m-samayik0",
+  "output": "",
+  "seconds": 0.5
+ },
+ {
+  "probe": "instr-oneword",
+  "template": "raw",
+  "input": "Answer with exactly one word: what color is the sky?",
+  "note": "explicit output-format instruction",
+  "model": "grpo-r3",
+  "output": "",
+  "seconds": 0.9
+ },
+ {
+  "probe": "instr-oneword",
+  "template": "raw",
+  "input": "Answer with exactly one word: what color is the sky?",
+  "note": "explicit output-format instruction",
+  "model": "tb20m-samayik100-avg",
+  "output": "",
+  "seconds": 0.5
+ },
+ {
+  "probe": "instr-oneword",
+  "template": "raw",
+  "input": "Answer with exactly one word: what color is the sky?",
+  "note": "explicit output-format instruction",
+  "model": "tb20m-samayik67-avg",
+  "output": "",
+  "seconds": 0.5
+ },
+ {
+  "probe": "instr-oneword",
+  "template": "raw",
+  "input": "Answer with exactly one word: what color is the sky?",
+  "note": "explicit output-format instruction",
+  "model": "grpo-r3-avg",
+  "output": "",
+  "seconds": 1.2
+ },
+ {
+  "probe": "instr-json",
+  "template": "raw",
+  "input": "Reply with only this JSON object: {\"ok\": true}",
+  "note": "verbatim-echo instruction",
+  "model": "base",
+  "output": "{\"ok\": true}",
+  "seconds": 1.4
+ },
+ {
+  "probe": "instr-json",
+  "template": "raw",
+  "input": "Reply with only this JSON object: {\"ok\": true}",
+  "note": "verbatim-echo instruction",
+  "model": "tb20m-samayik100",
+  "output": "",
+  "seconds": 0.6
+ },
+ {
+  "probe": "instr-json",
+  "template": "raw",
+  "input": "Reply with only this JSON object: {\"ok\": true}",
+  "note": "verbatim-echo instruction",
+  "model": "tb20m-samayik67",
+  "output": "<translation>\"\"\"ok\"\" इति यदस्ति तथैव भवतु ।\"</translation>",
+  "seconds": 3.9
+ },
+ {
+  "probe": "instr-json",
+  "template": "raw",
+  "input": "Reply with only this JSON object: {\"ok\": true}",
+  "note": "verbatim-echo instruction",
+  "model": "tb20m-samayik0",
+  "output": "{\"ok\": true}",
+  "seconds": 1.4
+ },
+ {
+  "probe": "instr-json",
+  "template": "raw",
+  "input": "Reply with only this JSON object: {\"ok\": true}",
+  "note": "verbatim-echo instruction",
+  "model": "grpo-r3",
+  "output": "{\"ok\": true}",
+  "seconds": 1.5
+ },
+ {
+  "probe": "instr-json",
+  "template": "raw",
+  "input": "Reply with only this JSON object: {\"ok\": true}",
+  "note": "verbatim-echo instruction",
+  "model": "tb20m-samayik100-avg",
+  "output": "{\"ok\": true}",
+  "seconds": 1.3
+ },
+ {
+  "probe": "instr-json",
+  "template": "raw",
+  "input": "Reply with only this JSON object: {\"ok\": true}",
+  "note": "verbatim-echo instruction",
+  "model": "tb20m-samayik67-avg",
+  "output": "{\"ok\": true}",
+  "seconds": 1.4
+ },
+ {
+  "probe": "instr-json",
+  "template": "raw",
+  "input": "Reply with only this JSON object: {\"ok\": true}",
+  "note": "verbatim-echo instruction",
+  "model": "grpo-r3-avg",
+  "output": "{\"ok\": true}",
+  "seconds": 2.7
+ },
+ {
+  "probe": "chat-haiku",
+  "template": "raw",
+  "input": "Write a haiku about rain.",
+  "note": "creative request",
+  "model": "base",
+  "output": "Softly falls the rain,  \nearth sighs in quiet grace—  \nnature's gentle tune.",
+  "seconds": 2.6
+ },
+ {
+  "probe": "chat-haiku",
+  "template": "raw",
+  "input": "Write a haiku about rain.",
+  "note": "creative request",
+  "model": "tb20m-samayik100",
+  "output": "",
+  "seconds": 0.5
+ },
+ {
+  "probe": "chat-haiku",
+  "template": "raw",
+  "input": "Write a haiku about rain.",
+  "note": "creative request",
+  "model": "tb20m-samayik67",
+  "output": "",
+  "seconds": 0.5
+ },
+ {
+  "probe": "chat-haiku",
+  "template": "raw",
+  "input": "Write a haiku about rain.",
+  "note": "creative request",
+  "model": "tb20m-samayik0",
+  "output": "</think>\nRaindrops fall in rhythm,  \nearth sighs, the world in monochrome—  \nstillness speaks volumes.",
+  "seconds": 3.2
+ },
+ {
+  "probe": "chat-haiku",
+  "template": "raw",
+  "input": "Write a haiku about rain.",
+  "note": "creative request",
+  "model": "grpo-r3",
+  "output": "",
+  "seconds": 2.4
+ },
+ {
+  "probe": "chat-haiku",
+  "template": "raw",
+  "input": "Write a haiku about rain.",
+  "note": "creative request",
+  "model": "tb20m-samayik100-avg",
+  "output": "</think>\n",
+  "seconds": 0.7
+ },
+ {
+  "probe": "chat-haiku",
+  "template": "raw",
+  "input": "Write a haiku about rain.",
+  "note": "creative request",
+  "model": "tb20m-samayik67-avg",
+  "output": "Raindrops fall softly,  \nearth drinks deeply,  \nsky weeps with clouds.",
+  "seconds": 2.3
+ },
+ {
+  "probe": "chat-haiku",
+  "template": "raw",
+  "input": "Write a haiku about rain.",
+  "note": "creative request",
+  "model": "grpo-r3-avg",
+  "output": "",
+  "seconds": 2.7
+ },
+ {
+  "probe": "instr-french",
+  "template": "raw",
+  "input": "Translate 'The boy reads a book.' into French.",
+  "note": "translation instruction to a DIFFERENT language — silo probe",
+  "model": "base",
+  "output": "L'enfant lit un livre.",
+  "seconds": 1.3
+ },
+ {
+  "probe": "instr-french",
+  "template": "raw",
+  "input": "Translate 'The boy reads a book.' into French.",
+  "note": "translation instruction to a DIFFERENT language — silo probe",
+  "model": "tb20m-samayik100",
+  "output": "",
+  "seconds": 0.5
+ },
+ {
+  "probe": "instr-french",
+  "template": "raw",
+  "input": "Translate 'The boy reads a book.' into French.",
+  "note": "translation instruction to a DIFFERENT language — silo probe",
+  "model": "tb20m-samayik67",
+  "output": "",
+  "seconds": 0.6
+ },
+ {
+  "probe": "instr-french",
+  "template": "raw",
+  "input": "Translate 'The boy reads a book.' into French.",
+  "note": "translation instruction to a DIFFERENT language — silo probe",
+  "model": "tb20m-samayik0",
+  "output": "Le garçon lit un livre.",
+  "seconds": 1.4
+ },
+ {
+  "probe": "instr-french",
+  "template": "raw",
+  "input": "Translate 'The boy reads a book.' into French.",
+  "note": "translation instruction to a DIFFERENT language — silo probe",
+  "model": "grpo-r3",
+  "output": "",
+  "seconds": 0.7
+ },
+ {
+  "probe": "instr-french",
+  "template": "raw",
+  "input": "Translate 'The boy reads a book.' into French.",
+  "note": "translation instruction to a DIFFERENT language — silo probe",
+  "model": "tb20m-samayik100-avg",
+  "output": "",
+  "seconds": 0.6
+ },
+ {
+  "probe": "instr-french",
+  "template": "raw",
+  "input": "Translate 'The boy reads a book.' into French.",
+  "note": "translation instruction to a DIFFERENT language — silo probe",
+  "model": "tb20m-samayik67-avg",
+  "output": "</think>\n",
+  "seconds": 0.8
+ },
+ {
+  "probe": "instr-french",
+  "template": "raw",
+  "input": "Translate 'The boy reads a book.' into French.",
+  "note": "translation instruction to a DIFFERENT language — silo probe",
+  "model": "grpo-r3-avg",
+  "output": "",
+  "seconds": 1.4
+ },
+ {
+  "probe": "tpl-translation",
+  "template": "translation (v0 eval)",
+  "input": "The boy reads a book.",
+  "note": "the trained translation door",
+  "model": "base",
+  "output": "<thinking>\nThe sentence \"The boy reads a book\" needs to be translated into Sanskrit. Let's break it down:\n\n1. \"The boy\" - \"The\" is a definite article, which in Sanskrit is \"एक\" (ek) or \"एकः\" (eko) for masculine. \"Boy\" is \"पुरुषः\" (puruṣaḥ) or \"बालकः\" (bālakaḥ). Since \"boy\" is a common term, \"बालकः\" (bālakaḥ) is more appropriate.\n\n2. \"reads\" - The verb \"to read\" in Sanskrit is \"पठति\" (pāṭhati). Since the subject is masculine singular, the verb should be in the third person singular form, which is \"पठति\" (pāṭhati).\n\n3. \"a book\" - \"A book\" is \"एक ग्रंथः\" (ekagraṃṭhaḥ). \"एक\" (ek) is the definite article, and \"ग्रंथः\" (gr̥ṃṭhaḥ) is the noun for \"book\".\n\nNow, putting it all together: \"बालकः पठति एकं ग्रंथम्\" (bālakaḥ pāṭhati ekam graṃtham). \n\nChecking for sandhi: \"एकं ग्रंथम्\" (ekam graṃtham) is correct. The verb \"पठति\" (pāṭhati) is in the correct form for the subject \"बालकः\" (bālakaḥ).\n\nSo the final translation is \"बालकः पठति एकं ग्रंथम्\".\n</thinking>\n<translation>\nबालकः पठति एकं ग्रंथम्\n</translation>",
+  "seconds": 34.1
+ },
+ {
+  "probe": "tpl-translation",
+  "template": "translation (v0 eval)",
+  "input": "The boy reads a book.",
+  "note": "the trained translation door",
+  "model": "tb20m-samayik100",
+  "output": "<translation>बालकः पुस्तकं पठति ।</translation>",
+  "seconds": 2.8
+ },
+ {
+  "probe": "tpl-translation",
+  "template": "translation (v0 eval)",
+  "input": "The boy reads a book.",
+  "note": "the trained translation door",
+  "model": "tb20m-samayik67",
+  "output": "<translation>बालकः पुस्तकं पठति ।</translation>",
+  "seconds": 3.0
+ },
+ {
+  "probe": "tpl-translation",
+  "template": "translation (v0 eval)",
+  "input": "The boy reads a book.",
+  "note": "the trained translation door",
+  "model": "tb20m-samayik0",
+  "output": "<thinking>\nThe boy reads a book. — \"पुरुष एकवचन\" of भू-वर्ग: लट् एकवचन = अत् (अ). So लट् form: लभ् → लभति. Actually लट् of लभ् is लभति (with अत् ending, अ + अ → अ). So \"लभति\".\n\nBut the sentence is about a boy reading a book, which is a specific activity. The standard translation: लभति. Hmm, but many textbooks give \"लभति\" for \"the boy reads\". Actually the standard: लभ् is used for \"to read\" in Sanskrit too. Yes, लभ् = to read (लभति). So लभति.\n\nWait — but the standard translation of \"the boy reads a book\" is \"लभति\". Yes.\n</thinking>\n\n<translation>लभति</translation>",
+  "seconds": 22.6
+ },
+ {
+  "probe": "tpl-translation",
+  "template": "translation (v0 eval)",
+  "input": "The boy reads a book.",
+  "note": "the trained translation door",
+  "model": "grpo-r3",
+  "output": "<translation>बालकः पुस्तकं पठति ।</translation>",
+  "seconds": 4.3
+ },
+ {
+  "probe": "tpl-translation",
+  "template": "translation (v0 eval)",
+  "input": "The boy reads a book.",
+  "note": "the trained translation door",
+  "model": "tb20m-samayik100-avg",
+  "output": "<translation>बालकः पुस्तकं पठति ।</translation>",
+  "seconds": 2.8
+ },
+ {
+  "probe": "tpl-translation",
+  "template": "translation (v0 eval)",
+  "input": "The boy reads a book.",
+  "note": "the trained translation door",
+  "model": "tb20m-samayik67-avg",
+  "output": "<translation>बालकः पुस्तकं पठति ।</translation>",
+  "seconds": 2.8
+ },
+ {
+  "probe": "tpl-translation",
+  "template": "translation (v0 eval)",
+  "input": "The boy reads a book.",
+  "note": "the trained translation door",
+  "model": "grpo-r3-avg",
+  "output": "<translation>बालकः पुस्तकं पठति ।</translation>",
+  "seconds": 7.0
+ },
+ {
+  "probe": "tpl-scaffold",
+  "template": "elicitation scaffold",
+  "input": "The boy reads a book.",
+  "note": "explicit derive-first instruction inside the trained format",
+  "model": "base",
+  "output": "<thinking>\nThe English sentence is \"The boy reads a book.\"\n\nFirst, identify the finite verb: \"reads\" is the third person singular present tense of the verb \"to read.\" In Sanskrit, the verb \"to read\" is \"vidyāt\" (from the root \"vid\" meaning \"to know\" or \"to learn\"). The correct dhatu is \"vid\" (root), and the verb form is \"vidyāt\" (third person singular present tense, active voice, masculine).\n\nNext, determine the purusha (person) and vacana (number): \"reads\" is third person singular, so purusha is \"trtiyā\" and vacana is \"ekākārā\".\n\nNow, inflect the verb \"vidyāt\" correctly. The base form is \"vidyāt\" (third person singular present tense, active voice, masculine).\n\nNow, consider the subject: \"the boy\" is a masculine noun, so it agrees with the verb in gender and number. The word for \"boy\" is \"putraḥ\" (masculine, singular).\n\nNext, the object: \"a book\" is \"a book\" in English, which is \"grāma\" (masculine, singular). The word \"a\" is \"sa\" (masculine, singular).\n\nNow, consider the case endings. The subject \"putraḥ\" is in the nominative case (case ending -ḥ). The object \"grāma\" is in the accusative case (case ending -m).\n\nNow, check for sandhi. The word \"putraḥ\" and \"grāma\" are in the nominative and accusative cases, so no sandhi is needed between them.\n\nPutting it all together: \"Putraḥ grāmam vidyāt.\"\n\nSo, the final translation is \"Putraḥ grāmam vidyāt.\"\n</thinking>\n\n<translation>\nPutraḥ grāmam vidyāt\n</translation>",
+  "seconds": 37.5
+ },
+ {
+  "probe": "tpl-scaffold",
+  "template": "elicitation scaffold",
+  "input": "The boy reads a book.",
+  "note": "explicit derive-first instruction inside the trained format",
+  "model": "tb20m-samayik100",
+  "output": "<translation>बालकः पुस्तकं पठति ।</translation>",
+  "seconds": 3.2
+ },
+ {
+  "probe": "tpl-scaffold",
+  "template": "elicitation scaffold",
+  "input": "The boy reads a book.",
+  "note": "explicit derive-first instruction inside the trained format",
+  "model": "tb20m-samayik67",
+  "output": "<translation>बालकः पुस्तकं पठति ।</translation>",
+  "seconds": 3.3
+ },
+ {
+  "probe": "tpl-scaffold",
+  "template": "elicitation scaffold",
+  "input": "The boy reads a book.",
+  "note": "explicit derive-first instruction inside the trained format",
+  "model": "tb20m-samayik0",
+  "output": "<thinking>\nSentence: The boy reads a book. — \"पुरुष एकवचन\" of भू-आदि लट्.\n\nDhatu: लू / वद् / भू. For \"reads\" — लू is used for reading? Actually लू is \"to flow\", वद् \"to speak\", भू \"to be\". The verb for reading is लू (लूङ् व्यक्तव्यप्रत्यययोः — लू is used for reading, writing, speaking). So लू + ते → लूते.\n\nActually the standard: लूङ् is used for व्यक्तव्य, प्रत्यय, आचीर्याम्. So लूते.\n\nBut the boy is एकवचन पुरुष, so लूते. Hmm, but लू is आत्मनेपद only (लूङ्). Yes: लूते.\n\nWait — but लू in लट् एकवचन पुरुष: लूते. Yes.\n\nActually many textbooks give \"लूते\" for \"reads\". Yes.\n</thinking>\n\n<translation>लूते</translation>",
+  "seconds": 32.9
+ },
+ {
+  "probe": "tpl-scaffold",
+  "template": "elicitation scaffold",
+  "input": "The boy reads a book.",
+  "note": "explicit derive-first instruction inside the trained format",
+  "model": "grpo-r3",
+  "output": "<translation>बालकः पुस्तकं पठति ।</translation>",
+  "seconds": 4.1
+ },
+ {
+  "probe": "tpl-scaffold",
+  "template": "elicitation scaffold",
+  "input": "The boy reads a book.",
+  "note": "explicit derive-first instruction inside the trained format",
+  "model": "tb20m-samayik100-avg",
+  "output": "<translation>बालकः पुस्तकं पठति ।</translation>",
+  "seconds": 3.3
+ },
+ {
+  "probe": "tpl-scaffold",
+  "template": "elicitation scaffold",
+  "input": "The boy reads a book.",
+  "note": "explicit derive-first instruction inside the trained format",
+  "model": "tb20m-samayik67-avg",
+  "output": "<translation>बालकः पुस्तकं पठति ।</translation>",
+  "seconds": 3.3
+ },
+ {
+  "probe": "tpl-scaffold",
+  "template": "elicitation scaffold",
+  "input": "The boy reads a book.",
+  "note": "explicit derive-first instruction inside the trained format",
+  "model": "grpo-r3-avg",
+  "output": "<translation>बालकः पुस्तकं पठति ।</translation>",
+  "seconds": 6.9
+ },
+ {
+  "probe": "tpl-costume",
+  "template": "drill costume (conjprompt)",
+  "input": "The boy reads a book.",
+  "note": "the trained drill door carrying translation content",
+  "model": "base",
+  "output": "<thinking>\nThe English sentence is \"The boy reads a book.\" The verb here is \"reads,\" which is in the present tense, third person singular.\n\nIn Sanskrit grammar, the verb \"read\" comes from the root \"dhyayati\" (to read, to study). The dhatu is \"dhyayati.\"\n\nThe tense (lakara) is present (लकार: लिङ्ग), the voice (prayoga) is active (अकर्मणी), the person (purusha) is third (तृतीया), and the number (vacana) is singular (एकवचन).\n\nThe root \"dhyayati\" is already in the present tense, so we need to adjust it for third person singular. The correct form is \"dhyayati\" itself, as it is already in the third person singular.\n\nNow, we need to construct the sentence. The subject is \"the boy,\" which is \"putra\" (son), and the object is \"a book,\" which is \"graha\" (book). The sentence structure in Sanskrit would be: \"putra graha dhyayati.\"\n\nAdding case endings: \"putra\" is in the nominative case (नामवाच्य), \"graha\" is in the accusative case (कर्मवाच्य), and the verb \"dhyayati\" is in the present tense, third person singular.\n\nSo the complete translation is: \"putra graha dhyayati.\"\n</thinking>\n\n<answer>\nपुत्रः ग्रहां ध्यायति\n</answer>",
+  "seconds": 31.2
+ },
+ {
+  "probe": "tpl-costume",
+  "template": "drill costume (conjprompt)",
+  "input": "The boy reads a book.",
+  "note": "the trained drill door carrying translation content",
+  "model": "tb20m-samayik100",
+  "output": "<translation>बालकः पुस्तकं पठति ।</translation>",
+  "seconds": 3.0
+ },
+ {
+  "probe": "tpl-costume",
+  "template": "drill costume (conjprompt)",
+  "input": "The boy reads a book.",
+  "note": "the trained drill door carrying translation content",
+  "model": "tb20m-samayik67",
+  "output": "<thinking>\nRoot: बाल् (बालति), present system, parasmaipada, third person singular.\n\nThe boy reads a book. Sanskrit: बालः पुस्तकं पठति.\n\nEnding: तिप् → ति, with अ-stem: बाल + अ + ति = बालति. So बालः पुस्तकं पठति.\n</thinking>\n\n<answer>बालः पुस्तकं पठति</answer>",
+  "seconds": 14.2
+ },
+ {
+  "probe": "tpl-costume",
+  "template": "drill costume (conjprompt)",
+  "input": "The boy reads a book.",
+  "note": "the trained drill door carrying translation content",
+  "model": "tb20m-samayik0",
+  "output": "<thinking>\nThe sentence \"The boy reads a book.\" — the verb is \"reads\" (to read), which is a सेट् root, and it's used in the present tense. The subject is \"the boy\" (a singular masculine entity), so third person singular.\n\nRoot: वद् (to read) → वदति. Actually the root for \"to read\" is वद् (वदति). Yes, वदति.\n\nThird person singular: वदति.\n\nThe object \"a book\" — in Sanskrit, the object is not conjugated; it's just added. So वदति.\n\nActually the standard translation: वदति. Some might use वदते? No, वदति is correct.\n</thinking>\n\n<answer>वदति</answer>",
+  "seconds": 19.0
+ },
+ {
+  "probe": "tpl-costume",
+  "template": "drill costume (conjprompt)",
+  "input": "The boy reads a book.",
+  "note": "the trained drill door carrying translation content",
+  "model": "grpo-r3",
+  "output": "<thinking>\nThe boy reads a book. — This is a third person singular sentence, parasmaipada, with the root \"to read\" (पठ्). The translation: पठति.\n\nActually the source sentence is \"The boy reads a book\" — the verb is पठ् (to read), third person singular, parasmaipada. Sanskrit: पठति.\n</thinking>\n\n<answer>पठति</answer>",
+  "seconds": 10.3
+ },
+ {
+  "probe": "tpl-costume",
+  "template": "drill costume (conjprompt)",
+  "input": "The boy reads a book.",
+  "note": "the trained drill door carrying translation content",
+  "model": "tb20m-samayik100-avg",
+  "output": "<translation>बालकः पुस्तकं पठति ।</translation>",
+  "seconds": 3.1
+ },
+ {
+  "probe": "tpl-costume",
+  "template": "drill costume (conjprompt)",
+  "input": "The boy reads a book.",
+  "note": "the trained drill door carrying translation content",
+  "model": "tb20m-samayik67-avg",
+  "output": "<thinking>\nThe English sentence is \"The boy reads a book.\" This is a third-person singular sentence, so the verb should be in third person singular.\n\nRoot: शब्द (to read) — actually the root is \"पठ\" (to read). The verb is पठति. The book is \"पुस्तकम्\".\n\nSo the translation: बालकः पुस्तकम् पठति.\n\nCheck: बालकः (boy) + पुस्तकम् (book) + पठति (reads). The ending is ति (third singular). The sandhi: बालकम् + पुस्तकम् → बालकपुस्तकम्, then पठति. So बालकः पुस्तकम् पठति.\n</thinking>\n\n<answer>बालकः पुस्तकम् पठति</answer>",
+  "seconds": 23.4
+ },
+ {
+  "probe": "tpl-costume",
+  "template": "drill costume (conjprompt)",
+  "input": "The boy reads a book.",
+  "note": "the trained drill door carrying translation content",
+  "model": "grpo-r3-avg",
+  "output": "<thinking>\nThe sentence: The boy reads a book. (शिशुः पुस्तकं पठति)\n\nRoot: शिशु (शिशुः) — actually the root is शिशु, with उ as... Let's think: the sentence is \"The boy reads a book\" — the root is शिशु? No, the root is शिशु (शिशुः) — actually the root is शिशु, and the verb is शिशुते. The root is शिशु, and the form is शिशुते. The root शिशु is listed in the dictionary as शिशु (शिशुते) \"to read\". Yes, शिशुते is the standard form.\n\nSo the root शिशु, with अ (शिशु + अ) → शिशुते.\n\nLakara: present system (शप् + लट्). The boy is third person singular, so शिशुते.\n\nSandhi: शिशु + अ + ते = शिशुते.\n</thinking>\n\n<answer>शिशुते</answer>",
+  "seconds": 39.8
+ }
+]

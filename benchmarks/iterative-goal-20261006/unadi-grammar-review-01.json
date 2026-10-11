@@ -1,0 +1,62 @@
+{
+  "created_at": "2026-10-07T03:38:08.776283+00:00",
+  "scope": "Unprefixed bare-dhatu unadi nominal stem creation, using documented five-chapter Unadipatha examples. No inflection, gender assumption, synthetic roots or nested derivations.",
+  "primary_controls": [
+    {
+      "dhatu": "qukf\\Y",
+      "gana": "Tanadi",
+      "unadi": "uR",
+      "expected_stem": "kAru",
+      "actual": [
+        "kAru"
+      ],
+      "source": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/3/3.3.1.htm"
+    },
+    {
+      "dhatu": "vA\\",
+      "gana": "Adadi",
+      "unadi": "uR",
+      "expected_stem": "vAyu",
+      "actual": [
+        "vAyu"
+      ],
+      "source": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/3/3.3.1.htm"
+    },
+    {
+      "dhatu": "zvada~\\",
+      "gana": "Bhvadi",
+      "unadi": "uR",
+      "expected_stem": "svAdu",
+      "actual": [
+        "svAdu"
+      ],
+      "source": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/3/3.3.1.htm"
+    },
+    {
+      "dhatu": "sA\\Da~",
+      "gana": "Svadi",
+      "unadi": "uR",
+      "expected_stem": "sADu",
+      "actual": [
+        "sADu"
+      ],
+      "source": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/3/3.3.1.htm"
+    }
+  ],
+  "upstream_source_examples": {
+    "checked_development_cases": 236,
+    "matching": 221,
+    "mismatching": 15,
+    "artifact": "unadi-source-check-01.json"
+  },
+  "interpretation": "The source examples come from VP integration tests described as Siddhantakaumudi examples. Agreement is consistency, not independent certification of all221forms. Four elementary stems were checked separately against Kashika on3.3.1.",
+  "limitations": [
+    "Unadi is lexical, not a freely productive Cartesian root/affix product; accept only documented pairs.",
+    "Upstream warns that some affix identifiers contain transcription errors. Affix labels and each selected stem need independent review before release.",
+    "15source/engine disagreements are excluded regardless of model answers and remain review cases.",
+    "Only116documented development families are available in this prototype. A1,000-task release or<1ppprecision is not established.",
+    "Training value and possible lexical memorization differ from recursive productive morphology; do not claim an unsaturable generator from this finite source inventory."
+  ],
+  "status": "Exploratory64-task diagnostic; no final benchmark certification.",
+  "audit_file": "unadi-pilot-01.audit.json"
+}

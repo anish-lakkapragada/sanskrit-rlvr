@@ -1,0 +1,30 @@
+{
+  "disposition": "bounded code-level pass; no concrete blocking error found",
+  "api_calls": 0,
+  "ledger_mutations": 0,
+  "tests": 5,
+  "negative_receipt_subcases": 18,
+  "positive_terminal_statuses": [
+    "completed",
+    "incomplete",
+    "failed",
+    "cancelled"
+  ],
+  "checks": [
+    "strict token and usage-detail bounds",
+    "effective-body durability before fake SDK call",
+    "only default-tier augmentation",
+    "with_options preserves wrapper",
+    "unchanged canonical input",
+    "no replay after success or malformed receipt",
+    "malformed receipt retained before rejection",
+    "unknown request and duplicate prompt rejection"
+  ],
+  "hashes": {
+    "misc/vp_simple_astra_compare.py": "07a2c778f154237061bfdb77b932b57a5dbab60054f1e4e7713b0c561c3e7774",
+    "misc/vp_simple_astra_analyze.py": "96a9c65b1f9f1c0b06018c40e657a681e83d69462617db85dbc6a116936c39d2",
+    "misc/vp_goal.py": "c317278d15f3a05e3948e22678a346cc33a7274122f9ac5f66ed082e3373b65d",
+    "misc/oai_batch_eval.py": "1472b84916e52676df620b2433f01c956696cde69ad198bf386bb735df5d1525",
+    "benchmarks/parallel-search-20261007/astra-comparison-01/test_preflight_adapter.py": "4e7c186e103fcc304f5058a75631edb6fc415d6e9aea549a7031663586bcb4ad"
+  }
+}

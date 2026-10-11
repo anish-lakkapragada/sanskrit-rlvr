@@ -1,0 +1,41 @@
+{
+  "created_at": "2026-10-07T06:07:49.243823+00:00",
+  "track": "four_d",
+  "request_id": "four-d-pilot-02-opus",
+  "questions_path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/parallel-search-20261006/four_d/pilot-02.questions.json",
+  "questions_sha256": "9a0de5f7b3a98e8a06bef47b9ec07d49e18f51af5edd2ccdeaa877cb6792074e",
+  "n": 108,
+  "unique_root_families": 82,
+  "task_type": "cartesian_4d",
+  "prompt_version": "cartesian-4d-v1",
+  "provider": "Anthropic",
+  "model": "claude-opus-5-5",
+  "effort": "xhigh",
+  "max_output_tokens": 16384,
+  "phase": "explore",
+  "split": "development",
+  "purpose": "Test licensed Akusmiya ending restrictions and scalable cross-gana lexical homography, with coordinate-matched controls; no same-item failure selection.",
+  "suggested_sampling": "Evaluate all 108 frozen questions; retain cell, class, tense, and family diagnostics. Review disagreements before any release-weight change.",
+  "estimate": {
+    "maximum_reservation_usd": 18.01872,
+    "calculation": "Conservative 1500 input tokens/task at current shared rates; coordinator must recompute under cumulative budget lock.",
+    "worker_paid_calls": 0,
+    "planning_envelope_is_not_new_budget": true
+  },
+  "needed_adapter_changes": [],
+  "audit_paths": [
+    "/Users/anish/Documents/git-repos/sanskrit/benchmarks/parallel-search-20261006/four_d/pilot-02.audit.json",
+    "/Users/anish/Documents/git-repos/sanskrit/benchmarks/parallel-search-20261006/four_d/pilot-02.lexical-audit.json",
+    "/Users/anish/Documents/git-repos/sanskrit/benchmarks/parallel-search-20261006/four_d/pilot-02.manifest.json",
+    "/Users/anish/Documents/git-repos/sanskrit/benchmarks/parallel-search-20261006/four_d/pilot-01.clean-context-stats-02.json"
+  ],
+  "paired_astra_recommendation": {
+    "submit_now": false,
+    "condition": "Pair the same frozen panel after Opus if the broad lexical-contrast or licensed Akusmiya mechanism shows signal and keys pass disagreement review.",
+    "model": "gpt-6-astra",
+    "effort": "xhigh",
+    "max_output_tokens": 16384,
+    "maximum_reservation_usd": 45.0468
+  },
+  "benchmark_ready": false
+}

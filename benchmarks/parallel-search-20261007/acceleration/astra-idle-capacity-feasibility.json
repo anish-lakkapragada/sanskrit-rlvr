@@ -1,0 +1,33 @@
+{
+  "created_at": "2026-10-08T01:07:42.992305+00:00",
+  "execution_plan_sha256": "69201de2ede7e2ee2168ff1180324875aa22d4c3e34c385e58894ba110ad4967",
+  "usage_only": true,
+  "answers_read": false,
+  "settled_n": 445,
+  "admitted_n": 461,
+  "actual_cost_usd": 38.19522,
+  "average_settled_cost_usd": 0.08583195505617978,
+  "settled_duration_seconds": {
+    "median": 43.008735,
+    "mean": 60.04748788539326,
+    "max": 428.418566
+  },
+  "maximum_request_usd": 3.2918,
+  "maximum_32_outstanding_usd": 105.3376,
+  "prospective_full_32_window_plus_current_actual_usd": 143.53282,
+  "unchanged_run_pool_usd": 225.0,
+  "prior_lifetime_commitment_usd": 801.1305,
+  "unchanged_protected_reserve_usd": 962.5,
+  "lifetime_cap_usd": 2000,
+  "pool_plus_prior_plus_protected_usd": 1988.6305,
+  "unreserved_headroom_after_32_window_usd": 81.46718,
+  "constant_mean_cost_illustration_full1800_usd": 154.4975191011236,
+  "constant_mean_latency_illustration_remaining_minutes_at16": 84.7545271715707,
+  "constant_mean_latency_illustration_remaining_minutes_at32": 42.37726358578535,
+  "caveats": [
+    "Timing illustrations assume unchanged service times and omit drain/handoff and provider-rate effects; not completion promises.",
+    "At greater cumulative usage the unchanged pool may reduce effective concurrency; no extra credits or protected-reserve transfer are authorized.",
+    "All32 newly outstanding requests are individually fully reserved beforePOST; completion remains conditional on actual usage fitting the original225pool.",
+    "Graceful drain and exact prefix checkpoint plus independent review are required before switching executors."
+  ]
+}

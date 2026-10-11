@@ -1,0 +1,111 @@
+{
+  "created_at": "2026-10-07T19:11:59.838162+00:00",
+  "panel": "4d-90-pilot01",
+  "purpose": "One bounded development diagnostic for a single simple exact4D benchmark below90%; not a final benchmark or precise population estimate.",
+  "n": 200,
+  "seed": 2026100790,
+  "scope": "Dictionary dhatu plus exactly lakara/prayoga/purusha/vacana; no added derivation, prefixes or independently selected pada. All VP accepted gold alternatives preserved.",
+  "protocol": {
+    "provider": "Anthropic",
+    "model": "claude-opus-5-5",
+    "effort": "xhigh",
+    "max_output_tokens": 65536,
+    "prompt_version": "cartesian-4d-v1"
+  },
+  "cells": [
+    {
+      "label": "short_adanta_non_aorist",
+      "n": 104,
+      "families": 13,
+      "predicate": "Curadi citation ends in literal non-nasal a; remove that a and require the penultimate remaining phoneme in SLP1 aiufx, followed by a consonant. Kartari, non-Lun, current shared and local source exclusions.",
+      "selection": "Every eligible development family exactly8 times, each in8 distinct non-aorist tenses."
+    },
+    {
+      "label": "other_adanta_aorist",
+      "n": 16,
+      "families": 16,
+      "predicate": "Other literal-a-final Curadi citations, Kartari Lun, current shared and local source exclusions.",
+      "selection": "Every eligible development family once; the uncertain sUca aorist is excluded uniformly."
+    },
+    {
+      "label": "broad_non_curadi",
+      "n": 80,
+      "families": 80,
+      "predicate": "Current-policy classical dictionary entries outside Curadi, Kartari; current shared and local exclusions.",
+      "selection": "One task per family, all9 remaining classes, exactly8 per tense; independent seeded controls with no outcome filter."
+    }
+  ],
+  "distribution": {
+    "lakara": {
+      "Lat": 20,
+      "Lut": 20,
+      "Lun": 24,
+      "Lrt": 20,
+      "Lrn": 19,
+      "AshirLin": 19,
+      "Lan": 19,
+      "Lot": 20,
+      "Lit": 20,
+      "VidhiLin": 19
+    },
+    "prayoga": {
+      "Kartari": 200
+    },
+    "purusha": {
+      "Uttama": 66,
+      "Madhyama": 67,
+      "Prathama": 67
+    },
+    "vacana": {
+      "Bahu": 66,
+      "Eka": 67,
+      "Dvi": 67
+    },
+    "gana": {
+      "Curadi": 120,
+      "Svadi": 8,
+      "Divadi": 14,
+      "Adadi": 8,
+      "Tanadi": 2,
+      "Bhvadi": 22,
+      "Juhotyadi": 2,
+      "Kryadi": 8,
+      "Tudadi": 12,
+      "Rudhadi": 4
+    }
+  },
+  "forecast": {
+    "accuracy": 0.8748717948717949,
+    "status": "Conditional transport of small historical16k cells; not a measured or calibrated forecast.",
+    "cell_rates": {
+      "short_adanta_non_aorist": "31/39, 13 development families, ~8.04pp family SE",
+      "other_adanta_aorist": "10/13, exploratory post-hoc old cell; unconfirmed",
+      "broad_non_curadi": "1.0 planning assumption from recent easy probes"
+    },
+    "assumptions": [
+      "Accuracy rates transfer across new tuples and 16k to64k; unproven.",
+      "Mixture deliberately concentrates60% in Curadi;104/200 questions use only13 families."
+    ]
+  },
+  "predeclared_decision": {
+    "advance_exploration": "All-request AND usable accuracy below90%, with source-supported errors across at least5 families. Review refusals/truncations and gold disputes before interpretation. This only motivates larger validation.",
+    "close_this_mixture": "Accuracy>=90% or apparent difficulty explained by unresolved gold/format issues means this bounded mixture does not provide the desired signal.",
+    "no_final_qualification": "200 development tasks cannot certify top-model ordering, sub1pp sampling error, independent held-out performance or general Sanskrit coverage."
+  },
+  "reporting": [
+    "All-request and usable accuracy; refusals, truncations and missing-answer bounds.",
+    "iid and unstratified family-sandwich SE plus family-bootstrap interval; all cells, tense and class breakdowns.",
+    "Raw frozen results preserved; any grammatical exclusion applies uniformly by predicate to success and failure, reported additively."
+  ],
+  "family_supply": {
+    "short_predicate": {
+      "development": 13,
+      "test": 14,
+      "rl_train": 9
+    },
+    "other_adanta_aorist_test_families": 25,
+    "source": "Dictionary/family-split census with current scope; no held-out model answers read.",
+    "scale_limit": "Keeping52% of a1000-question benchmark in short-adanta would place520 questions across just14 test families, averaging37.1 each. This is a serious independent-family and RL-generalization bottleneck; repeated forms do not create sub1pp independent precision."
+  },
+  "benchmark_ready": false
+}

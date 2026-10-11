@@ -1,0 +1,177 @@
+{
+  "created_at": "2026-10-07T05:31:55.675739+00:00",
+  "issue": "Optional lengthening under 6.4.93 in Cinvat passive futures",
+  "vp_version": "0.4.0",
+  "source_checks": [
+    {
+      "dhatu_code": "04.0098",
+      "sanadi": [
+        "Ric"
+      ],
+      "lakara": "Lut",
+      "prayoga": "Karmani",
+      "purusha": "Prathama",
+      "vacana": "Eka",
+      "direct_source_forms_slp1": [
+        "SamitA",
+        "SAmitA",
+        "SamayitA"
+      ],
+      "vp_forms_slp1": [
+        "SamayitA",
+        "SamitA"
+      ],
+      "missing_source_forms": [
+        "SAmitA"
+      ],
+      "source": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.4.62.htm",
+      "evidence_level": "direct_example",
+      "note": "Direct traditional causative passive periphrastic-future examples.",
+      "trace_rules": [
+        "6.4.62",
+        "6.4.92"
+      ]
+    },
+    {
+      "dhatu_code": "04.0098",
+      "sanadi": [
+        "Ric"
+      ],
+      "lakara": "Lrt",
+      "prayoga": "Karmani",
+      "purusha": "Prathama",
+      "vacana": "Eka",
+      "direct_source_forms_slp1": [
+        "Samizyate",
+        "SAmizyate",
+        "Samayizyate"
+      ],
+      "vp_forms_slp1": [
+        "Samayizyate",
+        "Samizyate"
+      ],
+      "missing_source_forms": [
+        "SAmizyate"
+      ],
+      "source": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.4.62.htm",
+      "evidence_level": "direct_example",
+      "note": "Direct traditional causative passive future examples.",
+      "trace_rules": [
+        "6.4.62",
+        "6.4.92"
+      ]
+    },
+    {
+      "dhatu_code": "04.0098",
+      "sanadi": [
+        "Ric"
+      ],
+      "lakara": "Lun",
+      "prayoga": "Karmani",
+      "purusha": "Prathama",
+      "vacana": "Eka",
+      "direct_source_forms_slp1": [
+        "aSami",
+        "aSAmi"
+      ],
+      "vp_forms_slp1": [
+        "aSAmi",
+        "aSami"
+      ],
+      "missing_source_forms": [],
+      "source": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.4.93.htm",
+      "evidence_level": "direct_example",
+      "note": "Direct literal-cin passive aorist control.",
+      "trace_rules": [
+        "6.4.92",
+        "6.4.93"
+      ]
+    },
+    {
+      "dhatu_code": "04.0098",
+      "sanadi": [
+        "yaN",
+        "Ric"
+      ],
+      "lakara": "Lut",
+      "prayoga": "Karmani",
+      "purusha": "Prathama",
+      "vacana": "Eka",
+      "direct_source_forms_slp1": [
+        "SaMSamitA",
+        "SaMSAmitA",
+        "SaMSamayitA"
+      ],
+      "vp_forms_slp1": [
+        "SaMSamayitA",
+        "SaMSamitA"
+      ],
+      "missing_source_forms": [
+        "SaMSAmitA"
+      ],
+      "source": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.4.93.htm",
+      "evidence_level": "direct_example",
+      "note": "Direct Balamanorama intensive-causative passive periphrastic-future examples.",
+      "trace_rules": [
+        "6.4.62",
+        "6.4.92"
+      ]
+    },
+    {
+      "dhatu_code": "04.0098",
+      "sanadi": [
+        "yaN",
+        "Ric"
+      ],
+      "lakara": "Lun",
+      "prayoga": "Karmani",
+      "purusha": "Prathama",
+      "vacana": "Eka",
+      "direct_source_forms_slp1": [
+        "aSaMSami",
+        "aSaMSAmi"
+      ],
+      "vp_forms_slp1": [
+        "aSaMSAmi",
+        "aSaMSami"
+      ],
+      "missing_source_forms": [],
+      "source": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.4.93.htm",
+      "evidence_level": "direct_example",
+      "note": "Direct Kashika intensive-causative passive aorist examples.",
+      "trace_rules": [
+        "6.4.92",
+        "6.4.93"
+      ]
+    }
+  ],
+  "affected_pilot_contexts": [
+    {
+      "task_id": "cart5-0e28ec669ba5e2b744e70f6e",
+      "dhatu_code": "01.1136",
+      "recipe": "causative_of_intensive",
+      "morphology": {
+        "lakara": "Lut",
+        "prayoga": "Karmani",
+        "purusha": "Prathama",
+        "vacana": "Eka"
+      }
+    }
+  ],
+  "code_evidence": "Current separately cloned upstream asiddhavat.rs lines 859–877 limits is_cin_namuloh to literal ciR/Ramul, while the later nic-deletion branch recognizes Cinvat. Source inspection is explanatory evidence; the installed 0.4.0 reproductions are recorded above.",
+  "interpretation": "Strong evidence of missing permitted long-vowel variants. The source directly discusses the ordinary causal forms and the intensive-causal periphrastic future. Some commentary traditions differ about nested lengthening, reinforcing the need to accept the documented alternatives or conservatively exclude the context.",
+  "prospective_exclusion": {
+    "prayoga": "Karmani",
+    "lakaras": [
+      "Lut",
+      "Lrt"
+    ],
+    "require_rules_all": [
+      "6.4.62",
+      "6.4.92"
+    ]
+  },
+  "pilot_policy": "Preserve all raw gold, responses and scores. The nam pilot answer lengthens while retaining the causal aya; the source-supported long branch deletes nic, so this is not a demonstrated correction to that model answer.",
+  "gold_repaired": false,
+  "script_sha256": "9e2bacc52457da5a28730ca55576e2eb0f3bcc37fc2fce667899ea71d404a9af"
+}

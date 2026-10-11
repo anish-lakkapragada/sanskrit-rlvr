@@ -1,0 +1,28 @@
+{
+  "pid": 9982,
+  "launched_at": "2026-10-08T01:23:40.073988+00:00",
+  "command": [
+    "/Users/anish/Documents/git-repos/sanskrit/.venv/bin/python",
+    "-u",
+    "/Users/anish/Documents/git-repos/sanskrit/benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-concurrency-32/resume.py",
+    "execute"
+  ],
+  "execution_plan_sha256": "69201de2ede7e2ee2168ff1180324875aa22d4c3e34c385e58894ba110ad4967",
+  "scheduling_amendment_sha256": "d6b6bf83f5cbe8d79263bcd077f1e93bea0c0611a557aed0578d439e760303e0",
+  "actual_amendment_review_sha256": "0cdf7c326473d6b729ccb06a598f3afddb4bf7a4a1f82efbc188d0c87001e90d",
+  "resume_at_zero_based_openai_index": 645,
+  "runtime_concurrency": {
+    "Anthropic": 0,
+    "OpenAI": 32
+  },
+  "run_caps_usd": {
+    "Anthropic": 100,
+    "OpenAI": 225
+  },
+  "lifetime_caps_usd": {
+    "Anthropic": 1000,
+    "OpenAI": 2000
+  },
+  "no_paid_retries": true,
+  "benchmark_ready": false
+}

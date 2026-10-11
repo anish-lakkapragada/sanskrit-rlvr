@@ -1,0 +1,25 @@
+{
+  "created_at": "2026-10-07T23:01:28.109032+00:00",
+  "canonical_request_digest": "c445f1bd4f7f66115faae2046bfeae145b30e4d560368c91bd2b69b30d64f6ac",
+  "effective_body_digest": "752dfa54124384b915ded8dec5c330bf56d60c96a8df4cd4b45af982d63ef41e",
+  "body": {
+    "model": "gpt-6-astra",
+    "input": [
+      {
+        "role": "user",
+        "content": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested conjugated verb form from the Sanskrit verbal root (dhatu, given in\nDevanagari in its Dhatupatha citation form, anubandha markers included), its\nverb class (gana), its traditional meaning (artha), and the required\ntense/mood (lakara), voice (prayoga), person (purusha), and number (vacana).\nEach Sanskrit grammatical term is glossed in parentheses in English.\n\nWrite ONLY the final conjugated verb form, in Devanagari script, inside\n<answer></answer> tags. If several forms are valid, give exactly one.\nDo not include any text outside the answer tags.\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): वठ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): ग्रन्थे\n\nRequired form:\n- lakara (tense/mood): Lrn (conditional)\n- prayoga (voice): Kartari (active)\n- purusha (person): Madhyama (second person)\n- vacana (number): Eka (singular)\n"
+      }
+    ],
+    "reasoning": {
+      "mode": "standard",
+      "effort": "xhigh"
+    },
+    "max_output_tokens": 65536,
+    "tools": [],
+    "tool_choice": "none",
+    "store": false,
+    "stream": false,
+    "truncation": "disabled",
+    "service_tier": "default"
+  }
+}

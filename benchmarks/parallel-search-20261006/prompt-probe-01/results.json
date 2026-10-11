@@ -1,0 +1,188 @@
+{
+  "updated_at": "2026-10-09T22:58:56.928234+00:00",
+  "arms": {
+    "v1": {
+      "job_id": "opus-cartesian-wording-01-v1",
+      "status": "ended",
+      "n": 36,
+      "overall": {
+        "n": 36,
+        "correct": 21,
+        "all_request_accuracy": 0.5833333333333334,
+        "completed": 29,
+        "completed_correct": 21,
+        "completed_accuracy": 0.7241379310344828,
+        "completed_response_bounds_on_all_questions": [
+          0.5833333333333334,
+          0.7777777777777778
+        ],
+        "statuses": {
+          "refused": 7,
+          "completed": 29
+        },
+        "truncated": 0,
+        "families": 36
+      },
+      "previously_refused": {
+        "n": 9,
+        "correct": 2,
+        "all_request_accuracy": 0.2222222222222222,
+        "completed": 3,
+        "completed_correct": 2,
+        "completed_accuracy": 0.6666666666666666,
+        "completed_response_bounds_on_all_questions": [
+          0.2222222222222222,
+          0.8888888888888888
+        ],
+        "statuses": {
+          "refused": 6,
+          "completed": 3
+        },
+        "truncated": 0,
+        "families": 9
+      },
+      "random_completed_controls": {
+        "n": 27,
+        "correct": 19,
+        "all_request_accuracy": 0.7037037037037037,
+        "completed": 26,
+        "completed_correct": 19,
+        "completed_accuracy": 0.7307692307692307,
+        "completed_response_bounds_on_all_questions": [
+          0.7037037037037037,
+          0.7407407407407407
+        ],
+        "statuses": {
+          "completed": 26,
+          "refused": 1
+        },
+        "truncated": 0,
+        "families": 27
+      },
+      "results_sha256": "f73b827cdda97b2fd262a708a7df2f0cc51a28976763fed07eefc1722ddbd1d0",
+      "cost_usd": 0.607184
+    },
+    "v2-verb": {
+      "job_id": "opus-cartesian-wording-01-v2-verb",
+      "status": "ended",
+      "n": 36,
+      "overall": {
+        "n": 36,
+        "correct": 24,
+        "all_request_accuracy": 0.6666666666666666,
+        "completed": 29,
+        "completed_correct": 24,
+        "completed_accuracy": 0.8275862068965517,
+        "completed_response_bounds_on_all_questions": [
+          0.6666666666666666,
+          0.8611111111111112
+        ],
+        "statuses": {
+          "refused": 7,
+          "completed": 29
+        },
+        "truncated": 0,
+        "families": 36
+      },
+      "previously_refused": {
+        "n": 9,
+        "correct": 0,
+        "all_request_accuracy": 0.0,
+        "completed": 2,
+        "completed_correct": 0,
+        "completed_accuracy": 0.0,
+        "completed_response_bounds_on_all_questions": [
+          0.0,
+          0.7777777777777778
+        ],
+        "statuses": {
+          "refused": 7,
+          "completed": 2
+        },
+        "truncated": 0,
+        "families": 9
+      },
+      "random_completed_controls": {
+        "n": 27,
+        "correct": 24,
+        "all_request_accuracy": 0.8888888888888888,
+        "completed": 27,
+        "completed_correct": 24,
+        "completed_accuracy": 0.8888888888888888,
+        "completed_response_bounds_on_all_questions": [
+          0.8888888888888888,
+          0.8888888888888888
+        ],
+        "statuses": {
+          "completed": 27
+        },
+        "truncated": 0,
+        "families": 27
+      },
+      "results_sha256": "163f3686631142bb37870897c437d1d91be3c61e7fffec278d166ee8e2df0d50",
+      "cost_usd": 0.511574
+    },
+    "v3-sanskrit": {
+      "job_id": "opus-cartesian-wording-01-v3-sanskrit",
+      "status": "ended",
+      "n": 36,
+      "overall": {
+        "n": 36,
+        "correct": 28,
+        "all_request_accuracy": 0.7777777777777778,
+        "completed": 34,
+        "completed_correct": 28,
+        "completed_accuracy": 0.8235294117647058,
+        "completed_response_bounds_on_all_questions": [
+          0.7777777777777778,
+          0.8333333333333334
+        ],
+        "statuses": {
+          "completed": 34,
+          "refused": 2
+        },
+        "truncated": 0,
+        "families": 36
+      },
+      "previously_refused": {
+        "n": 9,
+        "correct": 3,
+        "all_request_accuracy": 0.3333333333333333,
+        "completed": 7,
+        "completed_correct": 3,
+        "completed_accuracy": 0.42857142857142855,
+        "completed_response_bounds_on_all_questions": [
+          0.3333333333333333,
+          0.5555555555555556
+        ],
+        "statuses": {
+          "completed": 7,
+          "refused": 2
+        },
+        "truncated": 0,
+        "families": 9
+      },
+      "random_completed_controls": {
+        "n": 27,
+        "correct": 25,
+        "all_request_accuracy": 0.9259259259259259,
+        "completed": 27,
+        "completed_correct": 25,
+        "completed_accuracy": 0.9259259259259259,
+        "completed_response_bounds_on_all_questions": [
+          0.9259259259259259,
+          0.9259259259259259
+        ],
+        "statuses": {
+          "completed": 27
+        },
+        "truncated": 0,
+        "families": 27
+      },
+      "results_sha256": "a5aa19552ab40d295ebe5894f34f536e0d0f5ebac3a1725fc326227b68d438d8",
+      "cost_usd": 0.723338
+    }
+  },
+  "unique_grammar_questions": 36,
+  "limits": "Same questions across arms, deliberately enriched for nine historical refusals. These are diagnostic scores, not population benchmark accuracy or new independent tasks. The fully Sanskrit arm was added after the first two arms showed seven refusals each."
+}

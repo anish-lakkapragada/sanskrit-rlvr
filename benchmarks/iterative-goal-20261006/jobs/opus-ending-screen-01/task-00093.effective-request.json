@@ -1,0 +1,29 @@
+{
+  "created_at": "2026-10-08T00:09:10.956613+00:00",
+  "canonical_request_digest": "71c68316353212833b5127478d2c258ffa0b636b42a60794324187bc965792bf",
+  "effective_body_digest": "d56b60e873df824b7a9ec5db628f1a9ae176d6fb283b78d9f71c042f4a81c0af",
+  "params": {
+    "model": "claude-opus-5-5",
+    "max_tokens": 65536,
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested conjugated verb form from the Sanskrit verbal root (dhatu, given in\nDevanagari in its Dhatupatha citation form, anubandha markers included), its\nverb class (gana), its traditional meaning (artha), and the required\ntense/mood (lakara), voice (prayoga), person (purusha), and number (vacana).\nEach Sanskrit grammatical term is glossed in parentheses in English.\n\nWrite ONLY the final conjugated verb form, in Devanagari script, inside\n<answer></answer> tags. If several forms are valid, give exactly one.\nDo not include any text outside the answer tags.\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): तृ॒पँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Divadi (class 4)\nartha (traditional meaning): प्रीणने\n\nRequired form:\n- lakara (tense/mood): Lan (imperfect)\n- prayoga (voice): Kartari (active)\n- purusha (person): Prathama (third person)\n- vacana (number): Bahu (plural)\n"
+      }
+    ],
+    "thinking": {
+      "type": "adaptive",
+      "display": "summarized"
+    },
+    "output_config": {
+      "effort": "xhigh"
+    },
+    "tools": [],
+    "tool_choice": {
+      "type": "none"
+    },
+    "stream": false,
+    "service_tier": "standard_only",
+    "inference_geo": "global"
+  }
+}

@@ -1,0 +1,201 @@
+{
+  "schema": "shared-holds-independent-review-v1",
+  "created_at": "2026-10-08T03:10:23.364750+00:00",
+  "passed": true,
+  "scope": "Bounded independent primary-source and all-selected-input review of sṛ229 and jabh437 only. Not global certification, policy adoption, or a new grading run.",
+  "reviewed_artifacts": [
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/shared-holds-followup.json",
+      "sha256": "e3b5ffa2d63952e056c3b36ca1977a2241e5a35ff2d91556eb0b71edc57d665b"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/shared-holds-followup.md",
+      "sha256": "3e5e4625fa01b6a63b6a24a1174350e9c4b2974fa03c3723c0709dcd8420d7f7"
+    }
+  ],
+  "tasks_sha256": "695e7284d06a555aaabfcb7671d000db5622157984221c261b9500e86f72d38f",
+  "public_prompts_sha256": "187fa86a4b840f121ea443158654eda866fe78126efd0fe6f6b820986e742f81",
+  "all_input_audit": {
+    "N": 1800,
+    "selection": "Exact code or declared citation/class family, scanning all1800 inputs without reference to correctness; also checked accent/it-marker-stripped sf and jaBa/jaBI matches.",
+    "scopes": [
+      {
+        "code": "01.1085",
+        "family": "sf\\|Bhvadi",
+        "tasks": [
+          {
+            "index": 229,
+            "task_id": "cart4-333f2ed572a6445616c73116"
+          }
+        ],
+        "prompt_sha256": "6fdb0221a3d518e4ad0ce77d475c9b73f48adb256fb2f8735b609bd7599d7818",
+        "dhatu": {
+          "code": "01.1085",
+          "aupadeshika": "sf\\",
+          "gana": "Bhvadi",
+          "artha": "gatO"
+        },
+        "morphology": {
+          "lakara": "Lun",
+          "prayoga": "Kartari",
+          "purusha": "Prathama",
+          "vacana": "Bahu"
+        }
+      },
+      {
+        "code": "01.0150",
+        "family": "jaBa~|Bhvadi",
+        "tasks": [
+          {
+            "index": 437,
+            "task_id": "cart4-345f675772bc0d7831c0dd7e"
+          }
+        ],
+        "prompt_sha256": "57bb4f20d866ee8f63c7401b52a2f78cd9bd18086ff4f558a9ea9d36984d18ad",
+        "dhatu": {
+          "code": "01.0150",
+          "aupadeshika": "jaBa~",
+          "gana": "Bhvadi",
+          "artha": "gAtravinAme"
+        },
+        "morphology": {
+          "lakara": "Lat",
+          "prayoga": "Kartari",
+          "purusha": "Prathama",
+          "vacana": "Eka"
+        }
+      }
+    ],
+    "source_snapshot_hashes_verified": 36,
+    "referenced_input_hashes_verified": 9,
+    "frozen_dependency_hashes_verified": 44
+  },
+  "decisions": [
+    {
+      "task_id": "cart4-333f2ed572a6445616c73116",
+      "index": 229,
+      "disposition": "accept_exact_additional_form_symmetrically",
+      "additional_form": "असरन्",
+      "retain_canonical": [
+        "असार्षुः"
+      ],
+      "public_input_repair_required": false,
+      "reason": "Kṣīrataraṅgiṇī Bhvādi entry667 p147 expressly derives asarat under3.1.56 beside sarati. Nyāsa7.4.16 independently identifies sṛ gatau entry935. This resolves class scope positively. Mādhavīya pp255–256 expressly prints the sigmatic branch and restricts aṅ to Juhotyādi in its own interpretation. The prompt selects no commentary school.",
+      "derivation": [
+        "3.1.43/56: Luṅ cli becomes aṅ on the Kṣīra/Nyāsa interpretation;6.4.71 supplies aṭ.",
+        "7.4.16: ṛ receives guṇa before aṅ, giving the asara stem.",
+        "3.4.78+7.1.3: third-plural P jhi becomes anti;3.4.100 removes i;6.1.97 coalesces thematic a with ending a;8.2.23 removes final t: asaran.",
+        "3.4.109 applies to sic, not this aṅ branch. In the retained sigmatic branch7.2.1 supplies vṛddhi and3.4.109 supplies jus, producing asārṣuḥ after ṣatva/visarga."
+      ],
+      "confidence": "High for this exact citation/class/meaning/four-coordinate input and exact alternative; no unrestricted paradigm/string alias expansion."
+    },
+    {
+      "task_id": "cart4-345f675772bc0d7831c0dd7e",
+      "index": 437,
+      "disposition": "confirmed_historical_input_defect_with_source_supported_middle_response",
+      "source_supported_response": "जम्भते",
+      "unsupported_historical_canonical": "जभति",
+      "public_input_repair_required": true,
+      "prospective_citation": "jaBa~\\",
+      "historical_clean_union_adoption_recommended": false,
+      "reason": "Dhātupradīpa p34 directly prints jambhate under jabh/jṛbhi gātrav ināme and closes the root group as middle with anudātta it-markers. Puruṣakāra verse145/commentary independently associates jabh with jambhate and7.1.61. Current public jaBa~ lacks the anudātta it-marker.",
+      "num_scope": "Bālamanoramā7.1.61 explicitly says anidittvān numvidhiḥ and jambhata iti śapi num: absence of an i-marker does not disqualify the nasal. Vowel-initial śap licenses num on this lexical branch; it is not a universal optional-nasal rule.",
+      "nonnasal_middle_witness": {
+        "form": "जभते",
+        "source": "Kṣīrataraṅgiṇī p65 entry273 directly prints this a-reading form; p311 refers back to the ordinary Bhvādi entry and prints jambhate.",
+        "assessment": "Direct textual witness confirmed, but the nonnasal derivation/rationale remains unexplained here. Do not recast7.1.61 as optional or certify an unrestricted nasal/nonnasal closure. This does not block recognizing jambhate or the historical input defect."
+      },
+      "symmetric_scope": "Any input-defect annotation or future repair must affect every selected row with this exact entry/family, regardless of outcome; all-input scan finds one. Do not retain the unsupported P key merely to keep adjustments monotonic. Old responses were elicited with the defective citation and cannot be relabeled as responses to a repaired input.",
+      "confidence": "High for directly attested jambhate, missing middle marker, and num-before-śap applicability; bounded textual rather than derivational support for nonnasal jabhate."
+    }
+  ],
+  "blockers_for_exact_sri_addition": [],
+  "qualifications": [
+    "Passed means this bounded review supports the exact sṛ addition and the jabh input-defect disposition; it does not adopt a scoring change.",
+    "The third ṣalṛ row in the author memo was not independently re-reviewed in this task and remains outside this receipt.",
+    "No changed membership, blanket school/lexical union, output filtering, original gold edit, or repaired-prompt replay is authorized by this receipt."
+  ],
+  "sources": [
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/shared-holds-sources/kshira-204.jpg",
+      "sha256": "e5eb938bc68d481fa0432c931c084b0fc327c3d33d5f8d68628c57fdde2641b2",
+      "inspection": "primary_scan_visually_read"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/shared-holds-sources/madhaviya-309.jpg",
+      "sha256": "a9d67cef7e776c467ffa1cac5ecf70c967f1eb2b75ff95db6b12946535241de4",
+      "inspection": "primary_scan_visually_read"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/shared-holds-sources/madhaviya-310.jpg",
+      "sha256": "1f8f8dc3e9919dc50fe0e9efc82216421f6e76de39a9ad030a2b2fe4f8b9bf2b",
+      "inspection": "primary_scan_visually_read"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/shared-holds-sources/dhatupradipa-44.jpg",
+      "sha256": "e1ac6a678c840e501691de6c33453f8c4f2a85ea0455d9225d9b05882128e5d9",
+      "inspection": "primary_scan_visually_read"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/shared-holds-sources/kshira-122.jpg",
+      "sha256": "5f8c00c96e2e1ecb13f7c201d5915ccb817d95376d950e6ea0d22ccd2ed80eac",
+      "inspection": "primary_scan_visually_read"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/shared-holds-sources/kshira-368.jpg",
+      "sha256": "8c56d85e5a4d0c34bb98ad3b8710aeb0f4e5acc1d49bf16b4fe1b4de8cd5e4f2",
+      "inspection": "primary_scan_visually_read"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/shared-holds-sources/7.4.16.html",
+      "sha256": "8d8a1d9ffe7241128f109974c6e64c551e45effa0ca34bd1884fca3b5efb6377",
+      "inspection": "primary_commentary_text_read"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/shared-holds-sources/3.1.56.html",
+      "sha256": "345bc103a8e32a40a17f8862928ef477d58e9f9d9d3a2c17006fb2ed7a4a7149",
+      "inspection": "primary_commentary_text_read"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/shared-holds-sources/3.4.109.html",
+      "sha256": "2d69663fb8abdad883989bd4f6241f4990aaaec22c19cde4e9e1a4d8d9bc1a88",
+      "inspection": "primary_commentary_text_read"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/shared-holds-sources/3.4.100.html",
+      "sha256": "9e0dce66b4b88955c33993ca4316ee962997b9e21cd1e34648351373d067514c",
+      "inspection": "primary_commentary_text_read"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/shared-holds-sources/7.1.3.html",
+      "sha256": "0d280e09e1b70ad83ddef45199629f88bbccb517e7e857a75cada2d3f57e840e",
+      "inspection": "primary_commentary_text_read"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/shared-holds-sources/6.1.97.html",
+      "sha256": "eeb96b833013f444906c11c2ea9c1dffdcf148a08ffb27463042ccd33a36e222",
+      "inspection": "primary_commentary_text_read"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/shared-holds-sources/8.2.23.html",
+      "sha256": "54b31cc83781cb61fa8e4c4378396e07f0b1567493b67b2b8d87d4641a7eb666",
+      "inspection": "primary_commentary_text_read"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/shared-holds-sources/7.1.61.html",
+      "sha256": "bb06005336b7d017b2baf16ee5a002a5490e5d52f6ed52421784ed31d7d0b8e6",
+      "inspection": "primary_commentary_text_read"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/shared-holds-sources/daivam-purusakara.html",
+      "sha256": "75233e16e2c3bc048bf581512d3d4c94a5fcdc453b2091166f3c649c2b53492c",
+      "inspection": "primary_commentary_text_read"
+    }
+  ],
+  "mutations": {
+    "frozen_files": 0,
+    "model_calls": 0,
+    "ledger": 0,
+    "grades": 0
+  }
+}

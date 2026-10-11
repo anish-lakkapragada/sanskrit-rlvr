@@ -1,0 +1,18 @@
+{
+  "distinct_families": 671,
+  "repeated_lakara_assignments": 560,
+  "sum_squared_family_loads": 9982,
+  "cost": 637734311600,
+  "large_cost": 368796001,
+  "medium_cost": 153601,
+  "family_load_histogram": {
+    "4": 382,
+    "1": 145,
+    "5": 133,
+    "8": 4,
+    "6": 3,
+    "3": 4
+  },
+  "ordered_objective_proof": "large>N*(medium+cap²),medium>N*cap²: coverage dominates repeats, repeats dominate squared loads; integral min-cost flow.",
+  "no_model_outcomes_used": true
+}

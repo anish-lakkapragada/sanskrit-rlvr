@@ -1,0 +1,46 @@
+{
+  "created_at": "2026-10-07T10:43:58.823911+00:00",
+  "n": 2400,
+  "families": 606,
+  "eligible_development_families": 672,
+  "master_development_families": 700,
+  "fully_unexposed_development_families": 0,
+  "same_recipe_new_questions": 492,
+  "three_recipe_new_families": 110,
+  "exact_tuple_novelty": true,
+  "family_load_multiplier": 3.485833333333333,
+  "assumed_completion": 0.993,
+  "assumed_accuracy": 0.8,
+  "iid_se": 0.00819369410143323,
+  "common_rho_sensitivity": [
+    {
+      "rho": 0,
+      "se": 0.00819369410143323
+    },
+    {
+      "rho": 0.1,
+      "se": 0.009515215755391843
+    },
+    {
+      "rho": 0.2,
+      "se": 0.01067436362109951
+    },
+    {
+      "rho": 0.3,
+      "se": 0.011719417500850803
+    }
+  ],
+  "opus_pilot06_actual_cost_usd": 13.753878,
+  "naive_fourfold_cost_forecast_usd": 55.015512,
+  "maximum_reservation_usd": 400.416,
+  "chunk_maximum_reservation_usd": 200.208,
+  "second_chunk_only_after_first_settles": true,
+  "limitations": [
+    "Expected cost and common-rho figures are conditional, not guarantees.",
+    "Family reuse, composition changes and prior adaptive calibration prevent independent-family replication.",
+    "Multiple aorists estimate Opus dependence directly but do not identify Astra covariance.",
+    "Candidate and development class/grammar quotas agree globally; root composition and family loads differ.",
+    "A wholly unexposed development family reserve is unavailable under the historical task-input snapshot."
+  ],
+  "paid_request_created": false
+}

@@ -1,0 +1,108 @@
+{
+  "created_at": "2026-10-07T00:32:29.898603+00:00",
+  "filename": "rl-seed-candidate-02.json",
+  "n": 1000,
+  "seed": 20261015,
+  "cells": [
+    {
+      "label": "candidate_aorist_training",
+      "construction": "causative_of_intensive",
+      "n": 500,
+      "lakaras": [
+        "Lun"
+      ],
+      "exclude_ganas": [
+        "Curadi"
+      ],
+      "exclude_rules": [
+        "7.4.79",
+        "7.4.80",
+        "7.4.94",
+        "7.4.95"
+      ],
+      "dhatu_padas": [
+        "Parasmaipada"
+      ],
+      "prefixes": [
+        [
+          "pra"
+        ],
+        [
+          "sam"
+        ],
+        [
+          "ni"
+        ],
+        [
+          "vi"
+        ],
+        [
+          "upa"
+        ],
+        [
+          "sam",
+          "pra"
+        ],
+        [
+          "pra",
+          "ni"
+        ],
+        [
+          "upa",
+          "ni"
+        ],
+        [
+          "aBi",
+          "sam"
+        ]
+      ]
+    },
+    {
+      "label": "candidate_triple_training",
+      "construction": "desiderative_of_causative_of_intensive",
+      "n": 500,
+      "lakaras": [
+        "Lit",
+        "Lut",
+        "AshirLin"
+      ],
+      "exclude_ganas": [
+        "Curadi"
+      ],
+      "prefixes": [
+        [],
+        [
+          "pra"
+        ],
+        [
+          "sam"
+        ],
+        [
+          "ni"
+        ],
+        [
+          "vi"
+        ],
+        [
+          "upa"
+        ]
+      ]
+    }
+  ],
+  "counts": {
+    "causative_of_intensive": 500,
+    "desiderative_of_causative_of_intensive": 500
+  },
+  "attempts": {
+    "causative_of_intensive": 1008,
+    "desiderative_of_causative_of_intensive": 550
+  },
+  "split": "rl_train",
+  "root_families": 326,
+  "max_per_family": 5,
+  "task_digest": "db7c051aa558ba7c3e8c55094d997fbea2ab1015b2ab86b0b5a88d936f7403c7",
+  "file_sha256": "69a8eb07b650fcd8e79a1aca89b5c5bd0bc10d9bc6f32d82d08a614d4f377fbe",
+  "generator_sha256": "13766e58d32e686d3d2fc73898259f96a6ef18bebfc759f0528f3ce3d02bca1e",
+  "selection": "Uniform shuffled root visits within predeclared cells; grammatical validity and uniqueness only. No model-score filtering.",
+  "audit_status": "VP generation and transliteration checks; construction review remains required"
+}

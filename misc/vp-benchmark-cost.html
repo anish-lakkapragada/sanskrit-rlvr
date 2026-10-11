@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VP benchmark cost calculator</title>
+  <style>
+    :root { color-scheme: light dark; --bg: #fff; --fg: #202020; --muted: #606060; --line: #ddd; --soft: #f5f5f5; --error: #b32323; }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #191919; --fg: #eee; --muted: #aaa; --line: #444; --soft: #242424; --error: #ff9292; }
+    }
+    * { box-sizing: border-box; }
+    body { max-width: 960px; margin: 36px auto; padding: 0 24px; background: var(--bg); color: var(--fg); font: 15px/1.5 system-ui, sans-serif; }
+    h1 { margin: 0 0 4px; font-size: 26px; font-weight: 600; }
+    p { margin: 8px 0 18px; }
+    .muted, small { color: var(--muted); }
+    small { display: block; font-size: 12px; margin-top: 4px; }
+    .controls { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin: 24px 0 18px; }
+    .field label { display: block; margin-bottom: 6px; font-weight: 500; }
+    input[type="number"], select, button { color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: 4px; font: inherit; }
+    input[type="number"], select { width: 100%; min-height: 42px; padding: 8px 10px; }
+    input[type="checkbox"] { width: 18px; height: 18px; flex-shrink: 0; accent-color: var(--fg); cursor: pointer; }
+    button { padding: 6px 10px; cursor: pointer; }
+    button:hover { background: var(--soft); }
+    :focus-visible { outline: 2px solid var(--fg); outline-offset: 3px; }
+    input[aria-invalid="true"] { border-color: var(--error); }
+    #error { color: var(--error); }
+    .shortcuts, .toolbar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+    .summary { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 18px 0; margin: 24px 0; }
+    #total { display: block; font-size: clamp(30px, 6vw, 42px); font-weight: 600; font-variant-numeric: tabular-nums; }
+    #run-size, #usage-note { color: var(--muted); }
+    #usage-note { margin-bottom: 0; font-size: 13px; }
+    .toolbar { justify-content: space-between; margin-bottom: 10px; }
+    .toolbar div { display: flex; gap: 8px; }
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 11px 8px; border-bottom: 1px solid var(--line); text-align: right; font-variant-numeric: tabular-nums; }
+    th { color: var(--muted); font-size: 12px; font-weight: 500; white-space: nowrap; }
+    th:first-child, td:first-child { text-align: left; padding-left: 0; }
+    td:last-child, th:last-child { padding-right: 0; }
+    td:last-child { font-weight: 500; white-space: nowrap; }
+    .model-label { display: flex; gap: 10px; align-items: center; cursor: pointer; }
+    .model-label small { margin: 0; }
+    tr.excluded { color: var(--muted); }
+    details { margin: 24px 0; }
+    summary { cursor: pointer; font-weight: 500; }
+    details p, details ul { font-size: 13px; }
+    details li { margin-bottom: 8px; }
+    code { overflow-wrap: anywhere; font-size: 12px; }
+    a { color: inherit; text-underline-offset: 3px; }
+    footer { border-top: 1px solid var(--line); padding-top: 14px; font-size: 12px; color: var(--muted); }
+    @media (max-width: 600px) {
+      body { margin: 22px auto; padding: 0 16px; }
+      .controls { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+      .model-label { gap: 6px; }
+      th, td { padding: 10px 5px; }
+      table { font-size: 13px; }
+    }
+    @media (max-width: 360px) { .controls { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<main>
+  <h1>VP benchmark cost</h1>
+  <p class="muted">Choose models and adjust the run. All prices are in USD.</p>
+
+  <form id="settings">
+    <div class="controls">
+      <div class="field">
+        <label for="tasks">Number of tasks</label>
+        <input id="tasks" type="number" min="0" max="100000000" step="1" value="6687" required aria-describedby="tasks-help">
+        <small id="tasks-help">6,018 training + 669 validation tasks.</small>
+      </div>
+      <div class="field">
+        <label for="samples">Responses per task</label>
+        <input id="samples" type="number" min="1" max="10000" step="1" value="16" required aria-describedby="samples-help">
+        <small id="samples-help">Current VP evaluation uses 16 for pass@k.</small>
+      </div>
+      <div class="field">
+        <label for="pricing">API pricing</label>
+        <select id="pricing">
+          <option value="batch" selected>Batch — 50% discount</option>
+          <option value="standard">Standard</option>
+        </select>
+        <small>Your Claude evaluation uses Batch.</small>
+      </div>
+      <div class="field">
+        <label for="input-tokens">Input tokens per response</label>
+        <input id="input-tokens" type="number" min="0" max="200000" step="1" value="460" required aria-describedby="input-help">
+        <small id="input-help">Estimated full prompt; varies by tokenizer.</small>
+      </div>
+      <div class="field">
+        <label for="output-tokens">Billed output tokens per response</label>
+        <input id="output-tokens" type="number" min="0" max="128000" step="1" value="2048" required aria-describedby="output-help">
+        <small id="output-help">Includes reasoning. Default budgets the full current cap.</small>
+      </div>
+    </div>
+    <div class="shortcuts">
+      <button type="button" id="one-response">One response / task</button>
+      <button type="button" id="validation-only">669 validation tasks</button>
+      <button type="button" id="reset-defaults">Reset defaults</button>
+    </div>
+  </form>
+
+  <p id="error" role="alert" hidden>Enter whole numbers within the limits shown in the highlighted fields.</p>
+
+  <section class="summary" aria-label="Cost estimate" aria-live="polite" aria-atomic="true">
+    <span>Estimated total</span>
+    <output id="total">—</output>
+    <div id="run-size"></div>
+    <p id="usage-note"></p>
+  </section>
+
+  <div class="toolbar">
+    <span id="selection-label">Models</span>
+    <div>
+      <button type="button" id="select-all">Select all</button>
+      <button type="button" id="select-none">Select none</button>
+    </div>
+  </div>
+  <div class="table-wrap">
+    <table aria-label="Model prices and evaluation costs">
+      <thead>
+        <tr>
+          <th scope="col">Model</th>
+          <th scope="col">Input / 1M tokens</th>
+          <th scope="col">Output / 1M tokens</th>
+          <th scope="col">Evaluation cost</th>
+        </tr>
+      </thead>
+      <tbody id="model-rows"></tbody>
+    </table>
+  </div>
+  <small id="rate-note">Displayed token prices include the selected pricing tier.</small>
+
+  <details>
+    <summary>Defaults, formula &amp; sources</summary>
+    <ul>
+      <li>Your <a href="../prevals/outputs/configs/v1/eval-config-claude.yml">saved Claude evaluation</a> uses the <a href="../prompts/v1/vp_task_eval.txt">v1 VP prompt</a>, 64 validation tasks, 16 responses per task, Batch, and a 2,048-token cap. This calculator expands the task count to the full 6,687 by default. All pass@k metrics reuse the same responses.</li>
+      <li>The prompt asks for a derivation and a final Sanskrit form. Native thinking was disabled for the saved Opus run. Other models can use additional reasoning tokens; include those in billed output here.</li>
+      <li>The <a href="../prevals/outputs/prompt-v1/claude-api-sweep/claude-opus-5/summary.json">saved Opus run</a> averaged 1,062.7 output tokens; 22.3% of responses hit the cap. That measurement is specific to Opus under that configuration. No measured output length is assumed for the other models.</li>
+      <li>460 input tokens is the estimate in <a href="../benchmark-prices.txt">your pricing notes</a>, not saved API input usage. The same token assumptions are applied to every selected model. Setting output to 2,048 budgets a response that uses the full cap; shorter responses cost less. A cap alone does not predict actual usage.</li>
+      <li>VP gold-answer scoring is local, with no judge-model API charge. Estimates exclude retries, tools, tax, caching discounts, and regional surcharges. This calculator uses short-context prices (up to 200,000 input tokens).</li>
+    </ul>
+    <p><code>Cost per model = tasks × responses per task × (input tokens × input price + output tokens × output price) / 1,000,000</code></p>
+    <p>The prices in the table already include the Batch discount when selected. The final estimate sums the selected models without rounding intermediate values.</p>
+    <p>Official pricing, checked September 13, 2026:
+      <a href="https://developers.openai.com/api/docs/pricing" target="_blank" rel="noopener noreferrer">OpenAI</a> ·
+      <a href="https://platform.claude.com/docs/en/about-claude/pricing" target="_blank" rel="noopener noreferrer">Anthropic</a> ·
+      <a href="https://ai.google.dev/gemini-api/docs/pricing" target="_blank" rel="noopener noreferrer">Google</a>.
+      Sol's promotional rates last at least through November 21, 2026. Flash's listed rates last through December 31, 2026. Rates are a fixed snapshot; they do not update automatically.</p>
+  </details>
+  <footer>Works offline. Changing these controls only calculates estimates; it does not run a benchmark.</footer>
+  <noscript><p>Enable JavaScript to use this calculator.</p></noscript>
+</main>
+<script>
+(() => {
+  'use strict';
+
+  // Standard USD per million tokens. Source links and snapshot date are above.
+  const models = [
+    { id: 'gpt-6-astra', name: 'GPT-6 Astra', provider: 'OpenAI', input: 10, output: 50 },
+    { id: 'gpt-5.6-sol', name: 'GPT-5.6 Sol', provider: 'OpenAI', input: 4, output: 20 },
+    { id: 'claude-fable-5-1', name: 'Claude Fable 5.1', provider: 'Anthropic', input: 10, output: 50 },
+    { id: 'claude-opus-5', name: 'Claude Opus 5', provider: 'Anthropic', input: 5, output: 25 },
+    { id: 'claude-sonnet-5', name: 'Claude Sonnet 5', provider: 'Anthropic', input: 2, output: 10 },
+    { id: 'claude-haiku-4-5-20251001', name: 'Claude Haiku 4.5', provider: 'Anthropic', input: 1, output: 5 },
+    { id: 'gemini-3.1-pro-preview', name: 'Gemini 3.1 Pro Preview', provider: 'Google', input: 2, output: 12 },
+    { id: 'gemini-3.8-flash', name: 'Gemini 3.8 Flash', provider: 'Google', input: 0.75, output: 3.75 }
+  ];
+  const $ = id => document.getElementById(id);
+  const money = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
+  const rate = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 3 });
+  const integer = new Intl.NumberFormat('en-US');
+  const numericFields = ['tasks', 'samples', 'input-tokens', 'output-tokens'].map($);
+
+  for (const model of models) {
+    const row = document.createElement('tr');
+    // Only the fixed model catalog above is inserted as markup.
+    row.innerHTML = `<td><label class="model-label" title="${model.id}"><input type="checkbox" checked aria-label="${model.name}"><span>${model.name}<small>${model.provider}</small></span></label></td><td class="input-rate"></td><td class="output-rate"></td><td class="cost"></td>`;
+    $('model-rows').appendChild(row);
+    model.row = row;
+    model.checkbox = row.querySelector('input');
+    model.checkbox.addEventListener('change', render);
+  }
+
+  function render() {
+    let valid = true;
+    for (const field of numericFields) {
+      const number = field.valueAsNumber;
+      const ok = Number.isSafeInteger(number) && number >= Number(field.min) && number <= Number(field.max);
+      field.setAttribute('aria-invalid', String(!ok));
+      valid = valid && ok;
+    }
+    $('error').hidden = valid;
+    const tasks = $('tasks').valueAsNumber;
+    const samples = $('samples').valueAsNumber;
+    const input = $('input-tokens').valueAsNumber;
+    const output = $('output-tokens').valueAsNumber;
+    const batch = $('pricing').value === 'batch';
+    const multiplier = batch ? 0.5 : 1;
+    let total = 0;
+    let selected = 0;
+
+    for (const model of models) {
+      const included = model.checkbox.checked;
+      const inputRate = model.input * multiplier;
+      const outputRate = model.output * multiplier;
+      const cost = tasks * samples * (input * inputRate + output * outputRate) / 1e6;
+      model.row.classList.toggle('excluded', !included);
+      model.row.querySelector('.input-rate').textContent = rate.format(inputRate);
+      model.row.querySelector('.output-rate').textContent = rate.format(outputRate);
+      model.row.querySelector('.cost').textContent = included && valid ? money.format(cost) : '—';
+      if (included) { selected += 1; total += cost; }
+    }
+
+    $('selection-label').textContent = `Models (${selected} selected)`;
+    $('rate-note').textContent = `${batch ? 'Batch' : 'Standard'} token prices shown. Evaluation cost includes all responses for that model.`;
+    $('total').textContent = valid ? money.format(total) : '—';
+    $('run-size').textContent = !valid ? 'Check the highlighted fields.' : selected === 0 ? 'No models selected.' :
+      `${integer.format(tasks)} tasks × ${integer.format(samples)} responses × ${selected} ${selected === 1 ? 'model' : 'models'} = ${integer.format(tasks * samples * selected)} total responses`;
+    $('usage-note').textContent = valid ?
+      `Assumes ${integer.format(input)} input + ${integer.format(output)} billed output tokens per response, using ${batch ? 'Batch' : 'standard'} pricing.${output > 2048 ? ' Output exceeds the current 2,048-token cap; running this scenario would require a higher limit.' : ''}` : '';
+  }
+
+  $('settings').addEventListener('submit', event => event.preventDefault());
+  $('settings').addEventListener('input', render);
+  $('settings').addEventListener('change', render);
+  $('one-response').addEventListener('click', () => { $('samples').value = '1'; render(); });
+  $('validation-only').addEventListener('click', () => { $('tasks').value = '669'; render(); });
+  $('select-all').addEventListener('click', () => { models.forEach(model => { model.checkbox.checked = true; }); render(); });
+  $('select-none').addEventListener('click', () => { models.forEach(model => { model.checkbox.checked = false; }); render(); });
+  $('reset-defaults').addEventListener('click', () => {
+    $('settings').reset();
+    models.forEach(model => { model.checkbox.checked = true; });
+    render();
+  });
+  render();
+})();
+</script>
+</body>
+</html>

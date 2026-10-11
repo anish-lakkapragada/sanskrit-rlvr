@@ -1,0 +1,532 @@
+{
+  "created_at": "2026-10-07T07:51:36.672446+00:00",
+  "raw_results": "benchmarks/iterative-goal-20261006/jobs/opus-four-d-pilot-05/results.json",
+  "raw_results_sha256": "ae83905a0d4167ed39204122077e048220c631417cf1e6dbace50aad56db903f",
+  "questions_sha256": "b3c26af96ef701f21837fb90edfdcbdfa1fdf8de03ae00c328efacd33ec61e97",
+  "shared_policy": "oracle-policy-11.json",
+  "completed": 52,
+  "refusals": 0,
+  "truncations": 0,
+  "shared_policy_exclusions": 0,
+  "all": {
+    "n": 52,
+    "correct": 43,
+    "accuracy": 0.8269230769230769,
+    "families": 13,
+    "error_families": 5,
+    "equal_family_design": true,
+    "cluster_standard_error_from_family_means": 0.07152536411673525,
+    "naive_iid_standard_error": 0.052462679367767266,
+    "family_scores": {
+      "kuRa|Curadi": {
+        "correct": 2,
+        "n": 4
+      },
+      "vawa|Curadi": {
+        "correct": 1,
+        "n": 4
+      },
+      "vaWa|Curadi": {
+        "correct": 4,
+        "n": 4
+      },
+      "SraTa|Curadi": {
+        "correct": 4,
+        "n": 4
+      },
+      "SvaWa|Curadi": {
+        "correct": 4,
+        "n": 4
+      },
+      "suKa|Curadi": {
+        "correct": 4,
+        "n": 4
+      },
+      "vasa|Curadi": {
+        "correct": 3,
+        "n": 4
+      },
+      "guRa|Curadi": {
+        "correct": 4,
+        "n": 4
+      },
+      "SaWa|Curadi": {
+        "correct": 2,
+        "n": 4
+      },
+      "paza|Curadi": {
+        "correct": 3,
+        "n": 4
+      },
+      "rasa|Curadi": {
+        "correct": 4,
+        "n": 4
+      },
+      "kfpa|Curadi": {
+        "correct": 4,
+        "n": 4
+      },
+      "gfha|Curadi": {
+        "correct": 4,
+        "n": 4
+      }
+    }
+  },
+  "aorist": {
+    "n": 13,
+    "correct": 12,
+    "accuracy": 0.9230769230769231,
+    "families": 13,
+    "error_families": 1,
+    "equal_family_design": true,
+    "cluster_standard_error_from_family_means": 0.07692307692307693,
+    "naive_iid_standard_error": 0.07390530175619404,
+    "family_scores": {
+      "vasa|Curadi": {
+        "correct": 1,
+        "n": 1
+      },
+      "suKa|Curadi": {
+        "correct": 1,
+        "n": 1
+      },
+      "paza|Curadi": {
+        "correct": 1,
+        "n": 1
+      },
+      "rasa|Curadi": {
+        "correct": 1,
+        "n": 1
+      },
+      "kfpa|Curadi": {
+        "correct": 1,
+        "n": 1
+      },
+      "SaWa|Curadi": {
+        "correct": 1,
+        "n": 1
+      },
+      "gfha|Curadi": {
+        "correct": 1,
+        "n": 1
+      },
+      "kuRa|Curadi": {
+        "correct": 1,
+        "n": 1
+      },
+      "guRa|Curadi": {
+        "correct": 1,
+        "n": 1
+      },
+      "vawa|Curadi": {
+        "correct": 0,
+        "n": 1
+      },
+      "vaWa|Curadi": {
+        "correct": 1,
+        "n": 1
+      },
+      "SraTa|Curadi": {
+        "correct": 1,
+        "n": 1
+      },
+      "SvaWa|Curadi": {
+        "correct": 1,
+        "n": 1
+      }
+    }
+  },
+  "non_aorist": {
+    "n": 39,
+    "correct": 31,
+    "accuracy": 0.7948717948717948,
+    "families": 13,
+    "error_families": 5,
+    "equal_family_design": true,
+    "cluster_standard_error_from_family_means": 0.08040550308643923,
+    "naive_iid_standard_error": 0.064658991995499,
+    "family_scores": {
+      "kuRa|Curadi": {
+        "correct": 1,
+        "n": 3
+      },
+      "vawa|Curadi": {
+        "correct": 1,
+        "n": 3
+      },
+      "vaWa|Curadi": {
+        "correct": 3,
+        "n": 3
+      },
+      "SraTa|Curadi": {
+        "correct": 3,
+        "n": 3
+      },
+      "SvaWa|Curadi": {
+        "correct": 3,
+        "n": 3
+      },
+      "suKa|Curadi": {
+        "correct": 3,
+        "n": 3
+      },
+      "guRa|Curadi": {
+        "correct": 3,
+        "n": 3
+      },
+      "SaWa|Curadi": {
+        "correct": 1,
+        "n": 3
+      },
+      "vasa|Curadi": {
+        "correct": 2,
+        "n": 3
+      },
+      "rasa|Curadi": {
+        "correct": 3,
+        "n": 3
+      },
+      "kfpa|Curadi": {
+        "correct": 3,
+        "n": 3
+      },
+      "paza|Curadi": {
+        "correct": 2,
+        "n": 3
+      },
+      "gfha|Curadi": {
+        "correct": 3,
+        "n": 3
+      }
+    }
+  },
+  "disagreements": [
+    {
+      "id": "cart4-2ed85e24bdbacbf9ce06de27",
+      "code": "10.0435",
+      "dhatu": {
+        "code": "10.0435",
+        "aupadeshika": "kuRa",
+        "gana": "Curadi",
+        "artha": "AmantraRe"
+      },
+      "morphology": {
+        "lakara": "Lit",
+        "prayoga": "Kartari",
+        "purusha": "Madhyama",
+        "vacana": "Bahu"
+      },
+      "model_answer": "कोणयाम्बभूव",
+      "gold_devanagari": [
+        "कुणयाञ्चकृढ्वे",
+        "कुणयाञ्चक्र",
+        "कुणयामास",
+        "कुणयाम्बभूव"
+      ],
+      "gold_slp1": [
+        "kuRayAYcakfQve",
+        "kuRayAYcakra",
+        "kuRayAmAsa",
+        "kuRayAmbaBUva"
+      ],
+      "classification": "source-supported model disagreement",
+      "reason": "The primary adanta Curadi subgroup directly licenses the short-vowel stem; literal final a is part of the root and its deletion preserves the block on ordinary strengthening. All requested endings and auxiliaries are compatible with that stem. The model incorrectly substitutes the strengthened stem.",
+      "source_urls": [
+        "https://sa.wikisource.org/wiki/सिद्धान्तकौमुदी/प्रकरण‌५१-६०"
+      ],
+      "pre_evaluation_controls": "pilot-05.source-audit.json",
+      "shared_policy_change_proposed": false
+    },
+    {
+      "id": "cart4-c49913383955658b1b7c1fbb",
+      "code": "10.0435",
+      "dhatu": {
+        "code": "10.0435",
+        "aupadeshika": "kuRa",
+        "gana": "Curadi",
+        "artha": "AmantraRe"
+      },
+      "morphology": {
+        "lakara": "VidhiLin",
+        "prayoga": "Kartari",
+        "purusha": "Uttama",
+        "vacana": "Eka"
+      },
+      "model_answer": "कोणयेयम्",
+      "gold_devanagari": [
+        "कुणयेय",
+        "कुणयेयम्"
+      ],
+      "gold_slp1": [
+        "kuRayeya",
+        "kuRayeyam"
+      ],
+      "classification": "source-supported model disagreement",
+      "reason": "The primary adanta Curadi subgroup directly licenses the short-vowel stem; literal final a is part of the root and its deletion preserves the block on ordinary strengthening. All requested endings and auxiliaries are compatible with that stem. The model incorrectly substitutes the strengthened stem.",
+      "source_urls": [
+        "https://sa.wikisource.org/wiki/सिद्धान्तकौमुदी/प्रकरण‌५१-६०"
+      ],
+      "pre_evaluation_controls": "pilot-05.source-audit.json",
+      "shared_policy_change_proposed": false
+    },
+    {
+      "id": "cart4-71131beb3a0ec6e94b18254c",
+      "code": "10.0461",
+      "dhatu": {
+        "code": "10.0461",
+        "aupadeshika": "vawa",
+        "gana": "Curadi",
+        "artha": "viBAjane"
+      },
+      "morphology": {
+        "lakara": "Lit",
+        "prayoga": "Kartari",
+        "purusha": "Prathama",
+        "vacana": "Dvi"
+      },
+      "model_answer": "वाटयामासतुः",
+      "gold_devanagari": [
+        "वटयाञ्चक्राते",
+        "वटयाञ्चक्रतुः",
+        "वटयामासतुः",
+        "वटयाम्बभूवतुः"
+      ],
+      "gold_slp1": [
+        "vawayAYcakrAte",
+        "vawayAYcakratuH",
+        "vawayAmAsatuH",
+        "vawayAmbaBUvatuH"
+      ],
+      "classification": "source-supported model disagreement",
+      "reason": "The primary adanta Curadi subgroup directly licenses the short-vowel stem; literal final a is part of the root and its deletion preserves the block on ordinary strengthening. All requested endings and auxiliaries are compatible with that stem. The model incorrectly substitutes the strengthened stem.",
+      "source_urls": [
+        "https://jainqq.org/booktext/Dhatupradip/004319",
+        "https://sa.wikisource.org/wiki/सिद्धान्तकौमुदी/प्रकरण‌५१-६०",
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.4.93.htm"
+      ],
+      "pre_evaluation_controls": "pilot-05.source-audit.json",
+      "shared_policy_change_proposed": false
+    },
+    {
+      "id": "cart4-143bb0bb1c906917c7b0dd15",
+      "code": "10.0392",
+      "dhatu": {
+        "code": "10.0392",
+        "aupadeshika": "SaWa",
+        "gana": "Curadi",
+        "artha": "samyagavaBAzaRe"
+      },
+      "morphology": {
+        "lakara": "Lrt",
+        "prayoga": "Kartari",
+        "purusha": "Prathama",
+        "vacana": "Bahu"
+      },
+      "model_answer": "शाठयिष्यन्ति",
+      "gold_devanagari": [
+        "शठयिष्यन्ते",
+        "शठयिष्यन्ति"
+      ],
+      "gold_slp1": [
+        "SaWayizyante",
+        "SaWayizyanti"
+      ],
+      "classification": "source-supported model disagreement",
+      "reason": "The primary adanta Curadi subgroup directly licenses the short-vowel stem; literal final a is part of the root and its deletion preserves the block on ordinary strengthening. All requested endings and auxiliaries are compatible with that stem. The model incorrectly substitutes the strengthened stem.",
+      "source_urls": [
+        "https://sa.wikisource.org/wiki/सिद्धान्तकौमुदी/प्रकरण‌५१-६०",
+        "https://jainqq.org/booktext/Dhatupradip/004319"
+      ],
+      "pre_evaluation_controls": "pilot-05.source-audit.json",
+      "shared_policy_change_proposed": false
+    },
+    {
+      "id": "cart4-5cfe52d6784ee360ef1625f9",
+      "code": "10.0461",
+      "dhatu": {
+        "code": "10.0461",
+        "aupadeshika": "vawa",
+        "gana": "Curadi",
+        "artha": "viBAjane"
+      },
+      "morphology": {
+        "lakara": "Lat",
+        "prayoga": "Kartari",
+        "purusha": "Madhyama",
+        "vacana": "Bahu"
+      },
+      "model_answer": "वाटयथ",
+      "gold_devanagari": [
+        "वटयध्वे",
+        "वटयथ"
+      ],
+      "gold_slp1": [
+        "vawayaDve",
+        "vawayaTa"
+      ],
+      "classification": "source-supported model disagreement",
+      "reason": "The primary adanta Curadi subgroup directly licenses the short-vowel stem; literal final a is part of the root and its deletion preserves the block on ordinary strengthening. All requested endings and auxiliaries are compatible with that stem. The model incorrectly substitutes the strengthened stem.",
+      "source_urls": [
+        "https://jainqq.org/booktext/Dhatupradip/004319",
+        "https://sa.wikisource.org/wiki/सिद्धान्तकौमुदी/प्रकरण‌५१-६०",
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.4.93.htm"
+      ],
+      "pre_evaluation_controls": "pilot-05.source-audit.json",
+      "shared_policy_change_proposed": false
+    },
+    {
+      "id": "cart4-0303675468ce4eea7597de91",
+      "code": "10.0401",
+      "dhatu": {
+        "code": "10.0401",
+        "aupadeshika": "paza",
+        "gana": "Curadi",
+        "artha": "gatO"
+      },
+      "morphology": {
+        "lakara": "AshirLin",
+        "prayoga": "Kartari",
+        "purusha": "Prathama",
+        "vacana": "Eka"
+      },
+      "model_answer": "पाष्यात्",
+      "gold_devanagari": [
+        "पषयिषीष्ट",
+        "पष्याद्",
+        "पष्यात्"
+      ],
+      "gold_slp1": [
+        "pazayizIzwa",
+        "pazyAd",
+        "pazyAt"
+      ],
+      "classification": "source-supported model disagreement",
+      "reason": "The primary adanta Curadi subgroup directly licenses the short-vowel stem; literal final a is part of the root and its deletion preserves the block on ordinary strengthening. All requested endings and auxiliaries are compatible with that stem. The model incorrectly substitutes the strengthened stem.",
+      "source_urls": [
+        "https://sa.wikisource.org/wiki/सिद्धान्तकौमुदी/प्रकरण‌५१-६०"
+      ],
+      "pre_evaluation_controls": "pilot-05.source-audit.json",
+      "shared_policy_change_proposed": false
+    },
+    {
+      "id": "cart4-72614c47985b04f217c1906c",
+      "code": "10.0488",
+      "dhatu": {
+        "code": "10.0488",
+        "aupadeshika": "vasa",
+        "gana": "Curadi",
+        "artha": "nivAse"
+      },
+      "morphology": {
+        "lakara": "Lit",
+        "prayoga": "Kartari",
+        "purusha": "Prathama",
+        "vacana": "Bahu"
+      },
+      "model_answer": "वासयामासुः",
+      "gold_devanagari": [
+        "वसयाञ्चक्रिरे",
+        "वसयाञ्चक्रुः",
+        "वसयामासुः",
+        "वसयाम्बभूवुः"
+      ],
+      "gold_slp1": [
+        "vasayAYcakrire",
+        "vasayAYcakruH",
+        "vasayAmAsuH",
+        "vasayAmbaBUvuH"
+      ],
+      "classification": "source-supported model disagreement",
+      "reason": "The primary adanta Curadi subgroup directly licenses the short-vowel stem; literal final a is part of the root and its deletion preserves the block on ordinary strengthening. All requested endings and auxiliaries are compatible with that stem. The model incorrectly substitutes the strengthened stem.",
+      "source_urls": [
+        "https://sa.wikisource.org/wiki/सिद्धान्तकौमुदी/प्रकरण‌५१-६०",
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.4.93.htm",
+        "https://jainqq.org/explore/004319/163"
+      ],
+      "pre_evaluation_controls": "pilot-05.source-audit.json",
+      "shared_policy_change_proposed": false
+    },
+    {
+      "id": "cart4-a7f546b8a34ccde57e250c6c",
+      "code": "10.0392",
+      "dhatu": {
+        "code": "10.0392",
+        "aupadeshika": "SaWa",
+        "gana": "Curadi",
+        "artha": "samyagavaBAzaRe"
+      },
+      "morphology": {
+        "lakara": "AshirLin",
+        "prayoga": "Kartari",
+        "purusha": "Madhyama",
+        "vacana": "Bahu"
+      },
+      "model_answer": "शाठ्यास्त",
+      "gold_devanagari": [
+        "शठयिषीध्वम्",
+        "शठयिषीढ्वम्",
+        "शठ्यास्त"
+      ],
+      "gold_slp1": [
+        "SaWayizIDvam",
+        "SaWayizIQvam",
+        "SaWyAsta"
+      ],
+      "classification": "source-supported model disagreement",
+      "reason": "The primary adanta Curadi subgroup directly licenses the short-vowel stem; literal final a is part of the root and its deletion preserves the block on ordinary strengthening. All requested endings and auxiliaries are compatible with that stem. The model incorrectly substitutes the strengthened stem.",
+      "source_urls": [
+        "https://sa.wikisource.org/wiki/सिद्धान्तकौमुदी/प्रकरण‌५१-६०",
+        "https://jainqq.org/booktext/Dhatupradip/004319"
+      ],
+      "pre_evaluation_controls": "pilot-05.source-audit.json",
+      "shared_policy_change_proposed": false
+    },
+    {
+      "id": "cart4-2c163a53ba37d29bedb3ff2b",
+      "code": "10.0461",
+      "dhatu": {
+        "code": "10.0461",
+        "aupadeshika": "vawa",
+        "gana": "Curadi",
+        "artha": "viBAjane"
+      },
+      "morphology": {
+        "lakara": "Lun",
+        "prayoga": "Kartari",
+        "purusha": "Prathama",
+        "vacana": "Dvi"
+      },
+      "model_answer": "अवीवटताम्",
+      "gold_devanagari": [
+        "अववटताम्",
+        "अववटेताम्"
+      ],
+      "gold_slp1": [
+        "avavawatAm",
+        "avavawetAm"
+      ],
+      "classification": "source-supported model disagreement",
+      "reason": "The literal final a makes this aglopi: 7.4.93 excludes ordinary san-like vi/vI reduplication and 7.4.2 preserves the root vowel. The pre-evaluation source control avavawat passes; the model instead gives avIvawa-.",
+      "source_urls": [
+        "https://jainqq.org/booktext/Dhatupradip/004319",
+        "https://sa.wikisource.org/wiki/सिद्धान्तकौमुदी/प्रकरण‌५१-६०",
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.4.93.htm"
+      ],
+      "pre_evaluation_controls": "pilot-05.source-audit.json",
+      "shared_policy_change_proposed": false
+    }
+  ],
+  "fixed_confirmation_gate": {
+    "maximum_correct": 44,
+    "minimum_error_families": 5,
+    "observed_correct": 43,
+    "observed_error_families": 5,
+    "passed": true
+  },
+  "conclusion": "Fresh tuples confirm a source-supported original-vowel conditioning weakness, concentrated in non-aorist forms:31/39=79.49%. The overall52question mechanism is43/52=82.69%. This is not a target-level final benchmark: only13development families were tested,12also appeared in04, and the relevant test predicate has14families.",
+  "scope_of_source_audit": "Primary lexical/stem examples plus explicit rule inference for requested endings. No complete independent gold-variant certification is claimed.",
+  "calibration_limit": "The nonaorist slice is an explicit pre-evaluation contrast in pilot05, but only13root families support its estimate. The uncertainty is large, and transfer to disjoint test families is unmeasured.",
+  "worker_paid_calls": 0,
+  "no_held_out_model_answers": true,
+  "benchmark_ready": false
+}

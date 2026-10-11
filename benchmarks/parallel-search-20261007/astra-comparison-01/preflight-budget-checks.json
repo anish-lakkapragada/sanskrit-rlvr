@@ -1,0 +1,74 @@
+{
+  "ledger_sha256": "3b3d32e2ae01b28fc495d7017e5be132d194517b22d20cbcb1ff35d355322d8f",
+  "ledger_mutated": false,
+  "provider": "OpenAI",
+  "committed_micro": 780255070,
+  "protected_micro": 962500000,
+  "available_unprotected_micro": 257244930,
+  "synthetic_cases": [
+    {
+      "n": 20,
+      "pool_micro": 100000000,
+      "prior_spend_micro": 0,
+      "allowed": true,
+      "result": 65836000
+    },
+    {
+      "n": 20,
+      "pool_micro": 100000000,
+      "prior_spend_micro": 34164000,
+      "allowed": true,
+      "result": 65836000
+    },
+    {
+      "n": 20,
+      "pool_micro": 100000000,
+      "prior_spend_micro": 34164001,
+      "allowed": false,
+      "result": "Additional execution spending ceiling exceeded"
+    },
+    {
+      "n": 10,
+      "pool_micro": 100000000,
+      "prior_spend_micro": 0,
+      "allowed": true,
+      "result": 32918000
+    },
+    {
+      "n": 10,
+      "pool_micro": 100000000,
+      "prior_spend_micro": 67082000,
+      "allowed": true,
+      "result": 32918000
+    },
+    {
+      "n": 10,
+      "pool_micro": 100000000,
+      "prior_spend_micro": 67082001,
+      "allowed": false,
+      "result": "Additional execution spending ceiling exceeded"
+    },
+    {
+      "n": 10,
+      "pool_micro": 150000000,
+      "prior_spend_micro": 0,
+      "allowed": true,
+      "result": 32918000
+    },
+    {
+      "n": 10,
+      "pool_micro": 150000000,
+      "prior_spend_micro": 117082000,
+      "allowed": true,
+      "result": 32918000
+    },
+    {
+      "n": 10,
+      "pool_micro": 150000000,
+      "prior_spend_micro": 117082001,
+      "allowed": false,
+      "result": "Additional execution spending ceiling exceeded"
+    }
+  ],
+  "passed": 9
+}

@@ -1,0 +1,125 @@
+{
+  "received_at": "2026-10-07T01:09:45.504114+00:00",
+  "status_code": 200,
+  "headers": [
+    [
+      "date",
+      "Wed, 07 Oct 2026 01:09:45 GMT"
+    ],
+    [
+      "content-type",
+      "application/json"
+    ],
+    [
+      "transfer-encoding",
+      "chunked"
+    ],
+    [
+      "connection",
+      "keep-alive"
+    ],
+    [
+      "server",
+      "cloudflare"
+    ],
+    [
+      "openai-version",
+      "2020-10-01"
+    ],
+    [
+      "openai-organization",
+      "user-sst2oimg1nujzsqjynvllpec"
+    ],
+    [
+      "openai-project",
+      "proj_0Zn0VkM7ExpBCNnlFfb4qcPj"
+    ],
+    [
+      "x-request-id",
+      "req_92601440c30748de9f07710475aa7ddc"
+    ],
+    [
+      "openai-processing-ms",
+      "98"
+    ],
+    [
+      "x-openai-proxy-wasm",
+      "v0.1"
+    ],
+    [
+      "access-control-expose-headers",
+      "X-Request-ID"
+    ],
+    [
+      "access-control-expose-headers",
+      "CF-Ray"
+    ],
+    [
+      "cf-cache-status",
+      "DYNAMIC"
+    ],
+    [
+      "x-content-type-options",
+      "nosniff"
+    ],
+    [
+      "strict-transport-security",
+      "max-age=31536000; includeSubDomains; preload"
+    ],
+    [
+      "content-encoding",
+      "gzip"
+    ],
+    [
+      "cf-ray",
+      "a46905ae39b8c38b-SJC"
+    ],
+    [
+      "alt-svc",
+      "h3=\":443\"; ma=86400"
+    ]
+  ],
+  "body": {
+    "id": "batch_6ac59bd9661c8190baa3e523573e338d",
+    "object": "batch",
+    "endpoint": "/v1/responses",
+    "model": null,
+    "errors": null,
+    "input_file_id": "file-68svp9CTX7inmwAJFXx83J",
+    "completion_window": "24h",
+    "status": "validating",
+    "output_file_id": null,
+    "error_file_id": null,
+    "created_at": 1791335385,
+    "in_progress_at": null,
+    "expires_at": 1791421785,
+    "finalizing_at": null,
+    "completed_at": null,
+    "failed_at": null,
+    "expired_at": null,
+    "cancelling_at": null,
+    "cancelled_at": null,
+    "request_counts": {
+      "total": 0,
+      "completed": 0,
+      "failed": 0
+    },
+    "usage": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "total_tokens": 0,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "metadata": {
+      "campaign": "iterative-goal-20261006",
+      "job": "astra-deep-creation-01",
+      "tasks_digest": "35f98c179ca256217ec09baeeb919ad44fe54cf1a065d5e8d5ae778ef9a5a854",
+      "retries": "0"
+    }
+  }
+}

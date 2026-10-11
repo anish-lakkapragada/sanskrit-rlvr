@@ -1,0 +1,129 @@
+{
+  "received_at": "2026-10-07T03:28:28.201823+00:00",
+  "status_code": 200,
+  "headers": [
+    [
+      "date",
+      "Wed, 07 Oct 2026 03:28:28 GMT"
+    ],
+    [
+      "content-type",
+      "application/json"
+    ],
+    [
+      "transfer-encoding",
+      "chunked"
+    ],
+    [
+      "connection",
+      "keep-alive"
+    ],
+    [
+      "server",
+      "cloudflare"
+    ],
+    [
+      "openai-version",
+      "2020-10-01"
+    ],
+    [
+      "openai-organization",
+      "user-sst2oimg1nujzsqjynvllpec"
+    ],
+    [
+      "openai-project",
+      "proj_0Zn0VkM7ExpBCNnlFfb4qcPj"
+    ],
+    [
+      "x-request-id",
+      "req_7cf56a1a9b0040deb34e00e68cfedad2"
+    ],
+    [
+      "openai-processing-ms",
+      "23"
+    ],
+    [
+      "x-openai-proxy-wasm",
+      "v0.1"
+    ],
+    [
+      "access-control-expose-headers",
+      "X-Request-ID"
+    ],
+    [
+      "access-control-expose-headers",
+      "CF-Ray"
+    ],
+    [
+      "cf-cache-status",
+      "DYNAMIC"
+    ],
+    [
+      "set-cookie",
+      "__cf_bm=ZlkeKEEK6LmKdYW9cbSsJEFJajYGl6iYf84u3hebgs0-1791343708.113796-1.0.1.1-Wz83bC_sM0vUACmddw36pye_BEoYQ2438i659T5WcgL4cUR7sFYdER_3WvUf88zcErKRRW6XeE3WBjodM0bZHqhnua5rHk4sd49ok0vvsxKxix6jSSFkU6FqRwcSLWFN; HttpOnly; SameSite=None; Secure; Path=/; Domain=api.openai.com; Expires=Wed, 07 Oct 2026 03:58:28 GMT"
+    ],
+    [
+      "strict-transport-security",
+      "max-age=31536000; includeSubDomains; preload"
+    ],
+    [
+      "x-content-type-options",
+      "nosniff"
+    ],
+    [
+      "content-encoding",
+      "gzip"
+    ],
+    [
+      "cf-ray",
+      "a469d0dfbb235e49-SJC"
+    ],
+    [
+      "alt-svc",
+      "h3=\":443\"; ma=86400"
+    ]
+  ],
+  "body": {
+    "id": "batch_6ac59ebbbe808190a6d756f29007e16c",
+    "object": "batch",
+    "endpoint": "/v1/responses",
+    "model": "gpt-6-astra",
+    "errors": null,
+    "input_file_id": "file-JBEXySK2PqaZ8JfGduXdMo",
+    "completion_window": "24h",
+    "status": "completed",
+    "output_file_id": "file-VdfPZPvygxiu2J94nLAHSt",
+    "error_file_id": null,
+    "created_at": 1791336123,
+    "in_progress_at": 1791336125,
+    "expires_at": 1791422523,
+    "finalizing_at": 1791343693,
+    "completed_at": 1791343702,
+    "failed_at": null,
+    "expired_at": null,
+    "cancelling_at": null,
+    "cancelled_at": null,
+    "request_counts": {
+      "total": 160,
+      "completed": 160,
+      "failed": 0
+    },
+    "usage": {
+      "input_tokens": 60537,
+      "output_tokens": 2179120,
+      "total_tokens": 2239657,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens_details": {
+        "reasoning_tokens": 2172201
+      }
+    },
+    "metadata": {
+      "campaign": "iterative-goal-20261006",
+      "job": "astra-paradigm-01",
+      "tasks_digest": "b977afa288c4155015c270b5a53fba270600080a2b0781478e49b59b75910fb8",
+      "retries": "0"
+    }
+  }
+}

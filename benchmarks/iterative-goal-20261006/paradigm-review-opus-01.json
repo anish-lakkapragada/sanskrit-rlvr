@@ -1,0 +1,147 @@
+{
+  "created_at": "2026-10-07T01:27:48.434078+00:00",
+  "provider": "Anthropic",
+  "experiment": "paradigm-pilot-01",
+  "all": {
+    "n": 160,
+    "completed": 113,
+    "completion_fraction": 0.70625,
+    "correct_all": 74,
+    "completed_exact_correct": 74,
+    "completed_exact_accuracy": 0.6548672566371682,
+    "completed_spelling_tolerant_correct": 77,
+    "completed_spelling_tolerant_accuracy": 0.6814159292035398,
+    "nasal_spelling_only_errors": 3,
+    "root_families": 160,
+    "paradigm_diagnostics": {
+      "n_paradigms": 160,
+      "n_forms": 480,
+      "correct_forms": 227,
+      "per_form_accuracy": 0.47291666666666665,
+      "format_valid": 113,
+      "n_completed_valid_format": 113,
+      "task_accuracy_given_completed_valid_format": 0.6548672566371682,
+      "per_form_accuracy_given_completed_valid_format": 0.6796407185628742,
+      "per_form_spelling_tolerant_accuracy": 0.4791666666666667,
+      "task_spelling_tolerant_accuracy_given_completed_valid_format": 0.6814159292035398,
+      "metric": "Headline: all specified forms correct. Secondary: individual forms correct; missing/invalid output counts wrong."
+    }
+  },
+  "cells": {
+    "2": {
+      "scores": {
+        "n": 80,
+        "completed": 59,
+        "completion_fraction": 0.7375,
+        "correct_all": 37,
+        "completed_exact_correct": 37,
+        "completed_exact_accuracy": 0.6271186440677966,
+        "completed_spelling_tolerant_correct": 39,
+        "completed_spelling_tolerant_accuracy": 0.6610169491525424,
+        "nasal_spelling_only_errors": 2,
+        "root_families": 80,
+        "paradigm_diagnostics": {
+          "n_paradigms": 80,
+          "n_forms": 160,
+          "correct_forms": 76,
+          "per_form_accuracy": 0.475,
+          "format_valid": 59,
+          "n_completed_valid_format": 59,
+          "task_accuracy_given_completed_valid_format": 0.6271186440677966,
+          "per_form_accuracy_given_completed_valid_format": 0.6440677966101694,
+          "per_form_spelling_tolerant_accuracy": 0.4875,
+          "task_spelling_tolerant_accuracy_given_completed_valid_format": 0.6610169491525424,
+          "metric": "Headline: all specified forms correct. Secondary: individual forms correct; missing/invalid output counts wrong."
+        }
+      },
+      "uncertainty": {
+        "n_unique": 80,
+        "root_families": 80,
+        "correct": 37,
+        "accuracy": 0.4625,
+        "iid_standard_error": 0.05574425418821208,
+        "iid_wilson_95_interval": [
+          0.35747993562785263,
+          0.5709564240873121
+        ],
+        "iid_wilson_95_one_sided_upper": 0.5539140037678785,
+        "root_cluster_bootstrap_standard_error": 0.05570386675122788,
+        "root_cluster_bootstrap_95_interval": [
+          0.35,
+          0.575
+        ],
+        "estimated_design_effect": 0.9985514989137261,
+        "bootstrap_seed": 20261011,
+        "bootstrap_repetitions": 20000,
+        "iid_n_for_strictly_below_one_percentage_point_se_at_observed_p": 2486,
+        "iid_worst_case_n_for_strictly_below_one_percentage_point_se": 2501,
+        "limitations": [
+          "This estimates sampling uncertainty over tasks/families, not stochastic run-to-run variability.",
+          "An observed SE below 1pp is not a guarantee for other models or generator distributions.",
+          "Cluster intervals can degenerate when every family has the same result; inspect the Wilson interval too.",
+          "The design effect cannot be assumed stable when increasing forms per root or changing task mixtures.",
+          "Exploratory construction selection requires separate frozen validation; these intervals do not correct for selection."
+        ]
+      }
+    },
+    "4": {
+      "scores": {
+        "n": 80,
+        "completed": 54,
+        "completion_fraction": 0.675,
+        "correct_all": 37,
+        "completed_exact_correct": 37,
+        "completed_exact_accuracy": 0.6851851851851852,
+        "completed_spelling_tolerant_correct": 38,
+        "completed_spelling_tolerant_accuracy": 0.7037037037037037,
+        "nasal_spelling_only_errors": 1,
+        "root_families": 80,
+        "paradigm_diagnostics": {
+          "n_paradigms": 80,
+          "n_forms": 320,
+          "correct_forms": 151,
+          "per_form_accuracy": 0.471875,
+          "format_valid": 54,
+          "n_completed_valid_format": 54,
+          "task_accuracy_given_completed_valid_format": 0.6851851851851852,
+          "per_form_accuracy_given_completed_valid_format": 0.6990740740740741,
+          "per_form_spelling_tolerant_accuracy": 0.475,
+          "task_spelling_tolerant_accuracy_given_completed_valid_format": 0.7037037037037037,
+          "metric": "Headline: all specified forms correct. Secondary: individual forms correct; missing/invalid output counts wrong."
+        }
+      },
+      "uncertainty": {
+        "n_unique": 80,
+        "root_families": 80,
+        "correct": 37,
+        "accuracy": 0.4625,
+        "iid_standard_error": 0.05574425418821208,
+        "iid_wilson_95_interval": [
+          0.35747993562785263,
+          0.5709564240873121
+        ],
+        "iid_wilson_95_one_sided_upper": 0.5539140037678785,
+        "root_cluster_bootstrap_standard_error": 0.055338163608445456,
+        "root_cluster_bootstrap_95_interval": [
+          0.35,
+          0.575
+        ],
+        "estimated_design_effect": 0.9854832960378375,
+        "bootstrap_seed": 20261011,
+        "bootstrap_repetitions": 20000,
+        "iid_n_for_strictly_below_one_percentage_point_se_at_observed_p": 2486,
+        "iid_worst_case_n_for_strictly_below_one_percentage_point_se": 2501,
+        "limitations": [
+          "This estimates sampling uncertainty over tasks/families, not stochastic run-to-run variability.",
+          "An observed SE below 1pp is not a guarantee for other models or generator distributions.",
+          "Cluster intervals can degenerate when every family has the same result; inspect the Wilson interval too.",
+          "The design effect cannot be assumed stable when increasing forms per root or changing task mixtures.",
+          "Exploratory construction selection requires separate frozen validation; these intervals do not correct for selection."
+        ]
+      }
+    }
+  },
+  "finding": "Whole-task accuracy among completed responses does not meet Hard. Within-task errors are strongly correlated: almost all completions have either all requested forms correct or zero correct. Refusals must not be used as hardness.",
+  "next_step": "Retain Astra paired collection. No final freeze of this format. Fresh one-form benedictive calibration on deeper chains is next.",
+  "orthography_finding": "All three partially correct completions become fully correct under the nasal-spelling diagnostic: two-form 39/59 (66.1%), four-form 38/54 (70.4%). Strict score preserved."
+}

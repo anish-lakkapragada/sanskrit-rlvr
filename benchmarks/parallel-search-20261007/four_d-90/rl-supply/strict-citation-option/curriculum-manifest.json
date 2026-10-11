@@ -1,0 +1,41 @@
+{
+  "created_at": "2026-10-07T23:43:11.803565+00:00",
+  "kind": "Strict-citation-disjoint RL metadata option; no training authorization",
+  "n": 1400,
+  "families": 332,
+  "split": "rl_train",
+  "component_weights": [
+    0.52,
+    0.08,
+    0.4
+  ],
+  "files": {
+    "benchmarks/parallel-search-20261007/four_d-90/rl-supply/strict-citation-option/training-inventory-metadata.json": "8a250696a30d510527c08651993520c54a14c353fa7ea85dbdd6d1b5a0c12245",
+    "benchmarks/parallel-search-20261007/four_d-90/rl-supply/strict-citation-option/curriculum-1400-metadata.json": "10f4372e373f12d6f5441b22a4afd97d7851b304db23a9cbb1e03ad3bc7a4787",
+    "benchmarks/parallel-search-20261007/four_d-90/rl-supply/strict-citation-option/excluded-family-audit.json": "720032ab2c3fecae6c72747944b12fa75d4586e6e1574c91fd7843b00dfa2d38",
+    "benchmarks/parallel-search-20261007/four_d-90/rl-supply/strict-citation-option/supply-audit.json": "7722d8b096eba11936eeae95135120b132c5e0d20503e09d668e0f8630ecf478",
+    "benchmarks/parallel-search-20261007/four_d-90/rl-supply/strict-citation-option/prepare.py": "bb2cd7015cdb2cec05a58843480fea823135d50152683d9d26e4f68d5734c3ce"
+  },
+  "master_split_path": "benchmarks/creation-campaign-20261006/family-split.json",
+  "master_split_sha256": "a1c46bb778bca8f89df468d65232698131a3c4b137393865cd3f6b121fc6077f",
+  "source_dependencies": {
+    "benchmarks/creation-campaign-20261006/family-split.json": "a1c46bb778bca8f89df468d65232698131a3c4b137393865cd3f6b121fc6077f",
+    "benchmarks/parallel-search-20261007/four_d-90/test-source-hold-predeclaration.json": "0ebafc39da1095e137896dac87235fe82daa686a8efabd2cbab2553a995b912a",
+    "misc/vp_cartesian_task.py": "f5bfab6f3fc27b7c83bbd6987bede73501592a9568fda32a0371bd8e23b7febd",
+    "misc/vp_cartesian_prompt_v1.py": "1cdf3930d2e6b5bf9994a0a5fd25918a2e038b6dfbbcc9a9bab1fb59ddbfcfff",
+    "misc/vp_4d_pilot04.py": "44822ce2be986bb5500082bfc506fc865205a429d4fe875ac39bf6e51702edc6",
+    "misc/vp_4d_pilot05.py": "d518f65e83799c9b837db31efc63be6bee65f0079b3a33031fb76bbc1108ec5a",
+    "misc/vp_4d_candidate_prepare.py": "89ca285793e1b424fedff42f117523237949ebfea36261c377c0a2e88c33da14",
+    "misc/vp_campaign_candidates.py": "e8e8a049f637aebb1d7a2970102602dfa82dd13a6e393e558b5bb3804c63c0c1",
+    "finetune/prompts.py": "2f474c6a8a14b9445b1686c5f0b63ebf60f8d9fb061e67c6134ccdb4683a4a2e",
+    "prompts/v2/vp_task_eval.txt": "a784e3a1cf0e5f5d8b56c018d166ad78fa62d8af489291ef96d8f6fea70239cd",
+    "data/finetune/task-data/vidyut_dhatupatha_5.tsv": "c6c494a6c534130b2d8e8f344d2f5e3ffbc64ed45b390e2a4e35e526f1cecd09",
+    "benchmarks/parallel-search-20261006/oracle-policy-21.json": "e19f60de4fc58a43a72ee0a48320f0c11383a39eb21b45f2859361701158220c"
+  },
+  "original_manifest_path": "benchmarks/parallel-search-20261007/four_d-90/rl-supply/curriculum-manifest.json",
+  "original_manifest_sha256": "57c73bd66a778984dd9b3ee02e5c140f61c318c46e482cc654906b69b3c7679a",
+  "runtime_guard": "At export, check every exact citation against all current master development/test citations AND each family/code against rl_train; fail on hash changes.",
+  "gold_export_created": false,
+  "training_started": false,
+  "provider_calls": 0
+}

@@ -17,6 +17,7 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
+benchmark = ["openai>=3.19.2", "python-dotenv>=1.0"]
 # GPU box only: uv sync --extra train
 # transformers>=5.5: gemma4 arch (old trl<=0.25 crashed under 5.x; trl 1.9 is fine).
 # vllm<=0.25.1: trl 1.9's supported ceiling; 0.25.1 has Gemma4* registered.

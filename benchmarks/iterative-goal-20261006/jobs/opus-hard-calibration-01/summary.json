@@ -1,0 +1,57 @@
+{
+  "id": "opus-hard-calibration-01",
+  "provider": "Anthropic",
+  "phase": "confirm",
+  "n": 500,
+  "tasks_digest": "b3e5c5e1e14e48151a0654ca44096bc1efc9f251568f9b03063cf426ebd1e173",
+  "requests_digest": "7f8b4710b2c10bc5ea9b9a18056257fb1688a457c49b15cc6d6693a7fa39eac1",
+  "created_at": "2026-10-07T00:21:20.167381+00:00",
+  "status": "ended",
+  "batch_id": "msgbatch_019NKY1bnD4uwteANPDvWohy",
+  "attempted_at": "2026-10-07T00:22:46.525164+00:00",
+  "reservation_micro": 83420000,
+  "input_file_id": null,
+  "transport": "batch",
+  "batch": {
+    "id": "msgbatch_019NKY1bnD4uwteANPDvWohy",
+    "type": "message_batch",
+    "processing_status": "ended",
+    "request_counts": {
+      "processing": 0,
+      "succeeded": 500,
+      "errored": 0,
+      "canceled": 0,
+      "expired": 0
+    },
+    "ended_at": "2026-10-07T00:27:31.992514+00:00",
+    "created_at": "2026-10-07T00:22:49.553558+00:00",
+    "expires_at": "2026-10-08T00:22:49.553558+00:00",
+    "archived_at": null,
+    "cancel_initiated_at": null,
+    "results_url": "https://api.anthropic.com/v1/messages/batches/msgbatch_019NKY1bnD4uwteANPDvWohy/results"
+  },
+  "collected_at": "2026-10-07T00:27:43.112972+00:00",
+  "usage": {
+    "input_tokens": 249512,
+    "output_tokens": 1439162,
+    "cache_read": 0,
+    "cache_write": 0
+  },
+  "summary": {
+    "task_count": 500,
+    "correct": 216,
+    "incorrect_or_no_answer": 284,
+    "unscored": 0,
+    "pass_at_1_all_tasks": 0.432,
+    "truncated": 0,
+    "statuses": {
+      "completed": 462,
+      "refused": 38
+    }
+  },
+  "completed_answers": 462,
+  "completed_correct": 216,
+  "actual_cost_upper_micro": 14890644,
+  "token_policy_violations": [],
+  "settled": true
+}

@@ -1,0 +1,1321 @@
+{
+  "created_at": "2026-10-07T08:23:43.420988+00:00",
+  "status": "Exploratory comparison only; no next weights or membership frozen",
+  "sources": {
+    "04": {
+      "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-five-d-pilot-04/results.json",
+      "sha256": "0e587d8adb365a22bc16027ed87b36eef2141fb5eb712c8db62f49deb53f1a31"
+    },
+    "05": {
+      "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-five-d-pilot-05/results.json",
+      "sha256": "1e6a890cb00ecd500c8858cf573ec6536580c16426af5b1e2c44a1deaf0c81eb"
+    }
+  },
+  "shared_adapter_sha256": "2439989e6e38d8d7770b3ce6cedf621a074a65f4a4844a32aaa092bbf233c30b",
+  "results": {
+    "current_shared": {
+      "04": {
+        "0.4": {
+          "design480basis": {
+            "n": 480,
+            "recipe_counts": {
+              "causative_of_intensive": 320,
+              "causative_of_intensive_luk": 128,
+              "desiderative": 32
+            },
+            "lakara_counts": {
+              "Lun": 192,
+              "Lat": 51,
+              "VidhiLin": 51,
+              "Lit": 27,
+              "Lut": 26,
+              "Lrt": 26,
+              "Lot": 27,
+              "Lan": 27,
+              "AshirLin": 27,
+              "Lrn": 26
+            },
+            "passive_count": 48,
+            "cell_counts": {
+              "causative_of_intensive|Lun|Kartari": 128,
+              "causative_of_intensive|Lat|Kartari": 25,
+              "causative_of_intensive|Lat|Karmani": 9,
+              "causative_of_intensive|VidhiLin|Kartari": 25,
+              "causative_of_intensive|VidhiLin|Karmani": 9,
+              "causative_of_intensive|Lit|Kartari": 18,
+              "causative_of_intensive|Lut|Kartari": 13,
+              "causative_of_intensive|Lut|Karmani": 4,
+              "causative_of_intensive|Lrt|Kartari": 13,
+              "causative_of_intensive|Lrt|Karmani": 4,
+              "causative_of_intensive|Lot|Kartari": 14,
+              "causative_of_intensive|Lot|Karmani": 4,
+              "causative_of_intensive|Lan|Kartari": 14,
+              "causative_of_intensive|Lan|Karmani": 4,
+              "causative_of_intensive|AshirLin|Kartari": 18,
+              "causative_of_intensive|Lrn|Kartari": 18,
+              "causative_of_intensive_luk|Lun|Kartari": 51,
+              "causative_of_intensive_luk|Lat|Kartari": 11,
+              "causative_of_intensive_luk|Lat|Karmani": 3,
+              "causative_of_intensive_luk|VidhiLin|Kartari": 11,
+              "causative_of_intensive_luk|VidhiLin|Karmani": 3,
+              "causative_of_intensive_luk|Lit|Kartari": 7,
+              "causative_of_intensive_luk|Lut|Kartari": 5,
+              "causative_of_intensive_luk|Lut|Karmani": 2,
+              "causative_of_intensive_luk|Lrt|Kartari": 5,
+              "causative_of_intensive_luk|Lrt|Karmani": 2,
+              "causative_of_intensive_luk|Lot|Kartari": 5,
+              "causative_of_intensive_luk|Lot|Karmani": 2,
+              "causative_of_intensive_luk|Lan|Kartari": 5,
+              "causative_of_intensive_luk|Lan|Karmani": 2,
+              "causative_of_intensive_luk|AshirLin|Kartari": 7,
+              "causative_of_intensive_luk|Lrn|Kartari": 7,
+              "desiderative|Lun|Kartari": 13,
+              "desiderative|Lat|Kartari": 3,
+              "desiderative|VidhiLin|Kartari": 3,
+              "desiderative|Lit|Kartari": 2,
+              "desiderative|Lut|Kartari": 2,
+              "desiderative|Lrt|Kartari": 2,
+              "desiderative|Lot|Kartari": 2,
+              "desiderative|Lan|Kartari": 2,
+              "desiderative|AshirLin|Kartari": 2,
+              "desiderative|Lrn|Kartari": 1
+            }
+          },
+          "fine": {
+            "all_requests": {
+              "accuracy": 0.7970901929783509,
+              "cluster_se": 0.021012304626093516,
+              "bootstrap_percentile95": [
+                0.7556731754858916,
+                0.8379106115245999
+              ]
+            },
+            "completed": {
+              "accuracy": 0.8016188580736997,
+              "cluster_se": 0.020933233230923477,
+              "bootstrap_percentile95": [
+                0.7598835912383185,
+                0.8424450258370341
+              ]
+            },
+            "standardization_cells": 42,
+            "smallest_observed_cell": 2
+          },
+          "coarse": {
+            "all_requests": {
+              "accuracy": 0.7988240415934381,
+              "cluster_se": 0.0208163339171137,
+              "bootstrap_percentile95": [
+                0.7575400525296424,
+                0.8393380684071431
+              ]
+            },
+            "completed": {
+              "accuracy": 0.8033625575435247,
+              "cluster_se": 0.020732299174729633,
+              "bootstrap_percentile95": [
+                0.7620166242308944,
+                0.8435808538470091
+              ]
+            },
+            "standardization_cells": 8,
+            "smallest_observed_cell": 10
+          }
+        },
+        "0.45": {
+          "design480basis": {
+            "n": 480,
+            "recipe_counts": {
+              "causative_of_intensive": 320,
+              "causative_of_intensive_luk": 128,
+              "desiderative": 32
+            },
+            "lakara_counts": {
+              "Lun": 216,
+              "Lat": 47,
+              "VidhiLin": 47,
+              "Lit": 24,
+              "Lut": 24,
+              "Lrt": 24,
+              "Lot": 24,
+              "Lan": 25,
+              "AshirLin": 25,
+              "Lrn": 24
+            },
+            "passive_count": 48,
+            "cell_counts": {
+              "causative_of_intensive|Lun|Kartari": 144,
+              "causative_of_intensive|Lat|Kartari": 22,
+              "causative_of_intensive|Lat|Karmani": 9,
+              "causative_of_intensive|VidhiLin|Kartari": 22,
+              "causative_of_intensive|VidhiLin|Karmani": 9,
+              "causative_of_intensive|Lit|Kartari": 16,
+              "causative_of_intensive|Lut|Kartari": 12,
+              "causative_of_intensive|Lut|Karmani": 4,
+              "causative_of_intensive|Lrt|Kartari": 12,
+              "causative_of_intensive|Lrt|Karmani": 4,
+              "causative_of_intensive|Lot|Kartari": 12,
+              "causative_of_intensive|Lot|Karmani": 4,
+              "causative_of_intensive|Lan|Kartari": 13,
+              "causative_of_intensive|Lan|Karmani": 4,
+              "causative_of_intensive|AshirLin|Kartari": 17,
+              "causative_of_intensive|Lrn|Kartari": 16,
+              "causative_of_intensive_luk|Lun|Kartari": 58,
+              "causative_of_intensive_luk|Lat|Kartari": 10,
+              "causative_of_intensive_luk|Lat|Karmani": 3,
+              "causative_of_intensive_luk|VidhiLin|Kartari": 10,
+              "causative_of_intensive_luk|VidhiLin|Karmani": 3,
+              "causative_of_intensive_luk|Lit|Kartari": 6,
+              "causative_of_intensive_luk|Lut|Kartari": 4,
+              "causative_of_intensive_luk|Lut|Karmani": 2,
+              "causative_of_intensive_luk|Lrt|Kartari": 4,
+              "causative_of_intensive_luk|Lrt|Karmani": 2,
+              "causative_of_intensive_luk|Lot|Kartari": 4,
+              "causative_of_intensive_luk|Lot|Karmani": 2,
+              "causative_of_intensive_luk|Lan|Kartari": 5,
+              "causative_of_intensive_luk|Lan|Karmani": 2,
+              "causative_of_intensive_luk|AshirLin|Kartari": 7,
+              "causative_of_intensive_luk|Lrn|Kartari": 6,
+              "desiderative|Lun|Kartari": 14,
+              "desiderative|Lat|Kartari": 3,
+              "desiderative|VidhiLin|Kartari": 3,
+              "desiderative|Lit|Kartari": 2,
+              "desiderative|Lut|Kartari": 2,
+              "desiderative|Lrt|Kartari": 2,
+              "desiderative|Lot|Kartari": 2,
+              "desiderative|Lan|Kartari": 1,
+              "desiderative|AshirLin|Kartari": 1,
+              "desiderative|Lrn|Kartari": 2
+            }
+          },
+          "fine": {
+            "all_requests": {
+              "accuracy": 0.7842848845727135,
+              "cluster_se": 0.022090404603086214,
+              "bootstrap_percentile95": [
+                0.7412360797077803,
+                0.8272055851864263
+              ]
+            },
+            "completed": {
+              "accuracy": 0.7893293032619155,
+              "cluster_se": 0.022000055247795556,
+              "bootstrap_percentile95": [
+                0.7461393648595549,
+                0.8320698469108857
+              ]
+            },
+            "standardization_cells": 42,
+            "smallest_observed_cell": 2
+          },
+          "coarse": {
+            "all_requests": {
+              "accuracy": 0.785088769668511,
+              "cluster_se": 0.021990249596378852,
+              "bootstrap_percentile95": [
+                0.7418155979542469,
+                0.8278662776457641
+              ]
+            },
+            "completed": {
+              "accuracy": 0.7901383588424196,
+              "cluster_se": 0.02189756870650551,
+              "bootstrap_percentile95": [
+                0.7469820551689881,
+                0.8329493614328279
+              ]
+            },
+            "standardization_cells": 8,
+            "smallest_observed_cell": 10
+          }
+        }
+      },
+      "05": {
+        "0.4": {
+          "design480basis": {
+            "n": 480,
+            "recipe_counts": {
+              "causative_of_intensive": 320,
+              "causative_of_intensive_luk": 128,
+              "desiderative": 32
+            },
+            "lakara_counts": {
+              "Lun": 192,
+              "Lat": 51,
+              "VidhiLin": 51,
+              "Lit": 27,
+              "Lut": 26,
+              "Lrt": 26,
+              "Lot": 27,
+              "Lan": 27,
+              "AshirLin": 27,
+              "Lrn": 26
+            },
+            "passive_count": 48,
+            "cell_counts": {
+              "causative_of_intensive|Lun|Kartari": 128,
+              "causative_of_intensive|Lat|Kartari": 25,
+              "causative_of_intensive|Lat|Karmani": 9,
+              "causative_of_intensive|VidhiLin|Kartari": 25,
+              "causative_of_intensive|VidhiLin|Karmani": 9,
+              "causative_of_intensive|Lit|Kartari": 18,
+              "causative_of_intensive|Lut|Kartari": 13,
+              "causative_of_intensive|Lut|Karmani": 4,
+              "causative_of_intensive|Lrt|Kartari": 13,
+              "causative_of_intensive|Lrt|Karmani": 4,
+              "causative_of_intensive|Lot|Kartari": 14,
+              "causative_of_intensive|Lot|Karmani": 4,
+              "causative_of_intensive|Lan|Kartari": 14,
+              "causative_of_intensive|Lan|Karmani": 4,
+              "causative_of_intensive|AshirLin|Kartari": 18,
+              "causative_of_intensive|Lrn|Kartari": 18,
+              "causative_of_intensive_luk|Lun|Kartari": 51,
+              "causative_of_intensive_luk|Lat|Kartari": 11,
+              "causative_of_intensive_luk|Lat|Karmani": 3,
+              "causative_of_intensive_luk|VidhiLin|Kartari": 11,
+              "causative_of_intensive_luk|VidhiLin|Karmani": 3,
+              "causative_of_intensive_luk|Lit|Kartari": 7,
+              "causative_of_intensive_luk|Lut|Kartari": 5,
+              "causative_of_intensive_luk|Lut|Karmani": 2,
+              "causative_of_intensive_luk|Lrt|Kartari": 5,
+              "causative_of_intensive_luk|Lrt|Karmani": 2,
+              "causative_of_intensive_luk|Lot|Kartari": 5,
+              "causative_of_intensive_luk|Lot|Karmani": 2,
+              "causative_of_intensive_luk|Lan|Kartari": 5,
+              "causative_of_intensive_luk|Lan|Karmani": 2,
+              "causative_of_intensive_luk|AshirLin|Kartari": 7,
+              "causative_of_intensive_luk|Lrn|Kartari": 7,
+              "desiderative|Lun|Kartari": 13,
+              "desiderative|Lat|Kartari": 3,
+              "desiderative|VidhiLin|Kartari": 3,
+              "desiderative|Lit|Kartari": 2,
+              "desiderative|Lut|Kartari": 2,
+              "desiderative|Lrt|Kartari": 2,
+              "desiderative|Lot|Kartari": 2,
+              "desiderative|Lan|Kartari": 2,
+              "desiderative|AshirLin|Kartari": 2,
+              "desiderative|Lrn|Kartari": 1
+            }
+          },
+          "fine": {
+            "all_requests": {
+              "accuracy": 0.8138123359580054,
+              "cluster_se": 0.01802620378904273,
+              "bootstrap_percentile95": [
+                0.7781367424389984,
+                0.849384153888636
+              ]
+            },
+            "completed": {
+              "accuracy": 0.8172308706037396,
+              "cluster_se": 0.018012035239211653,
+              "bootstrap_percentile95": [
+                0.7816059482940468,
+                0.8528951970111579
+              ]
+            },
+            "standardization_cells": 42,
+            "smallest_observed_cell": 1
+          },
+          "coarse": {
+            "all_requests": {
+              "accuracy": 0.8138123359580053,
+              "cluster_se": 0.018019779303184467,
+              "bootstrap_percentile95": [
+                0.7782570866179939,
+                0.8493952495367021
+              ]
+            },
+            "completed": {
+              "accuracy": 0.8172308706037394,
+              "cluster_se": 0.01800574163699446,
+              "bootstrap_percentile95": [
+                0.7815640728366485,
+                0.8529149870811464
+              ]
+            },
+            "standardization_cells": 8,
+            "smallest_observed_cell": 13
+          }
+        },
+        "0.45": {
+          "design480basis": {
+            "n": 480,
+            "recipe_counts": {
+              "causative_of_intensive": 320,
+              "causative_of_intensive_luk": 128,
+              "desiderative": 32
+            },
+            "lakara_counts": {
+              "Lun": 216,
+              "Lat": 47,
+              "VidhiLin": 47,
+              "Lit": 24,
+              "Lut": 24,
+              "Lrt": 24,
+              "Lot": 24,
+              "Lan": 25,
+              "AshirLin": 25,
+              "Lrn": 24
+            },
+            "passive_count": 48,
+            "cell_counts": {
+              "causative_of_intensive|Lun|Kartari": 144,
+              "causative_of_intensive|Lat|Kartari": 22,
+              "causative_of_intensive|Lat|Karmani": 9,
+              "causative_of_intensive|VidhiLin|Kartari": 22,
+              "causative_of_intensive|VidhiLin|Karmani": 9,
+              "causative_of_intensive|Lit|Kartari": 16,
+              "causative_of_intensive|Lut|Kartari": 12,
+              "causative_of_intensive|Lut|Karmani": 4,
+              "causative_of_intensive|Lrt|Kartari": 12,
+              "causative_of_intensive|Lrt|Karmani": 4,
+              "causative_of_intensive|Lot|Kartari": 12,
+              "causative_of_intensive|Lot|Karmani": 4,
+              "causative_of_intensive|Lan|Kartari": 13,
+              "causative_of_intensive|Lan|Karmani": 4,
+              "causative_of_intensive|AshirLin|Kartari": 17,
+              "causative_of_intensive|Lrn|Kartari": 16,
+              "causative_of_intensive_luk|Lun|Kartari": 58,
+              "causative_of_intensive_luk|Lat|Kartari": 10,
+              "causative_of_intensive_luk|Lat|Karmani": 3,
+              "causative_of_intensive_luk|VidhiLin|Kartari": 10,
+              "causative_of_intensive_luk|VidhiLin|Karmani": 3,
+              "causative_of_intensive_luk|Lit|Kartari": 6,
+              "causative_of_intensive_luk|Lut|Kartari": 4,
+              "causative_of_intensive_luk|Lut|Karmani": 2,
+              "causative_of_intensive_luk|Lrt|Kartari": 4,
+              "causative_of_intensive_luk|Lrt|Karmani": 2,
+              "causative_of_intensive_luk|Lot|Kartari": 4,
+              "causative_of_intensive_luk|Lot|Karmani": 2,
+              "causative_of_intensive_luk|Lan|Kartari": 5,
+              "causative_of_intensive_luk|Lan|Karmani": 2,
+              "causative_of_intensive_luk|AshirLin|Kartari": 7,
+              "causative_of_intensive_luk|Lrn|Kartari": 6,
+              "desiderative|Lun|Kartari": 14,
+              "desiderative|Lat|Kartari": 3,
+              "desiderative|VidhiLin|Kartari": 3,
+              "desiderative|Lit|Kartari": 2,
+              "desiderative|Lut|Kartari": 2,
+              "desiderative|Lrt|Kartari": 2,
+              "desiderative|Lot|Kartari": 2,
+              "desiderative|Lan|Kartari": 1,
+              "desiderative|AshirLin|Kartari": 1,
+              "desiderative|Lrn|Kartari": 2
+            }
+          },
+          "fine": {
+            "all_requests": {
+              "accuracy": 0.7982097518773064,
+              "cluster_se": 0.019285391032801066,
+              "bootstrap_percentile95": [
+                0.7602219387554519,
+                0.8364303594057463
+              ]
+            },
+            "completed": {
+              "accuracy": 0.8020044243989563,
+              "cluster_se": 0.019267785362901302,
+              "bootstrap_percentile95": [
+                0.764143611719485,
+                0.8401238845772283
+              ]
+            },
+            "standardization_cells": 42,
+            "smallest_observed_cell": 1
+          },
+          "coarse": {
+            "all_requests": {
+              "accuracy": 0.7978941890997182,
+              "cluster_se": 0.01926481939811123,
+              "bootstrap_percentile95": [
+                0.7602984288406405,
+                0.8361414629491806
+              ]
+            },
+            "completed": {
+              "accuracy": 0.8016873614425013,
+              "cluster_se": 0.019245409896480426,
+              "bootstrap_percentile95": [
+                0.7635957378214024,
+                0.8397813018604818
+              ]
+            },
+            "standardization_cells": 8,
+            "smallest_observed_cell": 13
+          }
+        }
+      },
+      "pooled": {
+        "0.4": {
+          "design480basis": {
+            "n": 480,
+            "recipe_counts": {
+              "causative_of_intensive": 320,
+              "causative_of_intensive_luk": 128,
+              "desiderative": 32
+            },
+            "lakara_counts": {
+              "Lun": 192,
+              "Lat": 51,
+              "VidhiLin": 51,
+              "Lit": 27,
+              "Lut": 26,
+              "Lrt": 26,
+              "Lot": 27,
+              "Lan": 27,
+              "AshirLin": 27,
+              "Lrn": 26
+            },
+            "passive_count": 48,
+            "cell_counts": {
+              "causative_of_intensive|Lun|Kartari": 128,
+              "causative_of_intensive|Lat|Kartari": 25,
+              "causative_of_intensive|Lat|Karmani": 9,
+              "causative_of_intensive|VidhiLin|Kartari": 25,
+              "causative_of_intensive|VidhiLin|Karmani": 9,
+              "causative_of_intensive|Lit|Kartari": 18,
+              "causative_of_intensive|Lut|Kartari": 13,
+              "causative_of_intensive|Lut|Karmani": 4,
+              "causative_of_intensive|Lrt|Kartari": 13,
+              "causative_of_intensive|Lrt|Karmani": 4,
+              "causative_of_intensive|Lot|Kartari": 14,
+              "causative_of_intensive|Lot|Karmani": 4,
+              "causative_of_intensive|Lan|Kartari": 14,
+              "causative_of_intensive|Lan|Karmani": 4,
+              "causative_of_intensive|AshirLin|Kartari": 18,
+              "causative_of_intensive|Lrn|Kartari": 18,
+              "causative_of_intensive_luk|Lun|Kartari": 51,
+              "causative_of_intensive_luk|Lat|Kartari": 11,
+              "causative_of_intensive_luk|Lat|Karmani": 3,
+              "causative_of_intensive_luk|VidhiLin|Kartari": 11,
+              "causative_of_intensive_luk|VidhiLin|Karmani": 3,
+              "causative_of_intensive_luk|Lit|Kartari": 7,
+              "causative_of_intensive_luk|Lut|Kartari": 5,
+              "causative_of_intensive_luk|Lut|Karmani": 2,
+              "causative_of_intensive_luk|Lrt|Kartari": 5,
+              "causative_of_intensive_luk|Lrt|Karmani": 2,
+              "causative_of_intensive_luk|Lot|Kartari": 5,
+              "causative_of_intensive_luk|Lot|Karmani": 2,
+              "causative_of_intensive_luk|Lan|Kartari": 5,
+              "causative_of_intensive_luk|Lan|Karmani": 2,
+              "causative_of_intensive_luk|AshirLin|Kartari": 7,
+              "causative_of_intensive_luk|Lrn|Kartari": 7,
+              "desiderative|Lun|Kartari": 13,
+              "desiderative|Lat|Kartari": 3,
+              "desiderative|VidhiLin|Kartari": 3,
+              "desiderative|Lit|Kartari": 2,
+              "desiderative|Lut|Kartari": 2,
+              "desiderative|Lrt|Kartari": 2,
+              "desiderative|Lot|Kartari": 2,
+              "desiderative|Lan|Kartari": 2,
+              "desiderative|AshirLin|Kartari": 2,
+              "desiderative|Lrn|Kartari": 1
+            }
+          },
+          "fine": {
+            "all_requests": {
+              "accuracy": 0.8079361991686577,
+              "cluster_se": 0.0146896587148058,
+              "bootstrap_percentile95": [
+                0.7790467782949249,
+                0.8361057974450813
+              ]
+            },
+            "completed": {
+              "accuracy": 0.8118382200331796,
+              "cluster_se": 0.014649683942691786,
+              "bootstrap_percentile95": [
+                0.782862490569726,
+                0.8400738867452981
+              ]
+            },
+            "standardization_cells": 42,
+            "smallest_observed_cell": 3
+          },
+          "coarse": {
+            "all_requests": {
+              "accuracy": 0.8080385646076812,
+              "cluster_se": 0.014639492445078341,
+              "bootstrap_percentile95": [
+                0.7793311904740974,
+                0.8359869873244696
+              ]
+            },
+            "completed": {
+              "accuracy": 0.8119410798578728,
+              "cluster_se": 0.014596397059642337,
+              "bootstrap_percentile95": [
+                0.7829401675600418,
+                0.8400891382886003
+              ]
+            },
+            "standardization_cells": 8,
+            "smallest_observed_cell": 23
+          }
+        },
+        "0.45": {
+          "design480basis": {
+            "n": 480,
+            "recipe_counts": {
+              "causative_of_intensive": 320,
+              "causative_of_intensive_luk": 128,
+              "desiderative": 32
+            },
+            "lakara_counts": {
+              "Lun": 216,
+              "Lat": 47,
+              "VidhiLin": 47,
+              "Lit": 24,
+              "Lut": 24,
+              "Lrt": 24,
+              "Lot": 24,
+              "Lan": 25,
+              "AshirLin": 25,
+              "Lrn": 24
+            },
+            "passive_count": 48,
+            "cell_counts": {
+              "causative_of_intensive|Lun|Kartari": 144,
+              "causative_of_intensive|Lat|Kartari": 22,
+              "causative_of_intensive|Lat|Karmani": 9,
+              "causative_of_intensive|VidhiLin|Kartari": 22,
+              "causative_of_intensive|VidhiLin|Karmani": 9,
+              "causative_of_intensive|Lit|Kartari": 16,
+              "causative_of_intensive|Lut|Kartari": 12,
+              "causative_of_intensive|Lut|Karmani": 4,
+              "causative_of_intensive|Lrt|Kartari": 12,
+              "causative_of_intensive|Lrt|Karmani": 4,
+              "causative_of_intensive|Lot|Kartari": 12,
+              "causative_of_intensive|Lot|Karmani": 4,
+              "causative_of_intensive|Lan|Kartari": 13,
+              "causative_of_intensive|Lan|Karmani": 4,
+              "causative_of_intensive|AshirLin|Kartari": 17,
+              "causative_of_intensive|Lrn|Kartari": 16,
+              "causative_of_intensive_luk|Lun|Kartari": 58,
+              "causative_of_intensive_luk|Lat|Kartari": 10,
+              "causative_of_intensive_luk|Lat|Karmani": 3,
+              "causative_of_intensive_luk|VidhiLin|Kartari": 10,
+              "causative_of_intensive_luk|VidhiLin|Karmani": 3,
+              "causative_of_intensive_luk|Lit|Kartari": 6,
+              "causative_of_intensive_luk|Lut|Kartari": 4,
+              "causative_of_intensive_luk|Lut|Karmani": 2,
+              "causative_of_intensive_luk|Lrt|Kartari": 4,
+              "causative_of_intensive_luk|Lrt|Karmani": 2,
+              "causative_of_intensive_luk|Lot|Kartari": 4,
+              "causative_of_intensive_luk|Lot|Karmani": 2,
+              "causative_of_intensive_luk|Lan|Kartari": 5,
+              "causative_of_intensive_luk|Lan|Karmani": 2,
+              "causative_of_intensive_luk|AshirLin|Kartari": 7,
+              "causative_of_intensive_luk|Lrn|Kartari": 6,
+              "desiderative|Lun|Kartari": 14,
+              "desiderative|Lat|Kartari": 3,
+              "desiderative|VidhiLin|Kartari": 3,
+              "desiderative|Lit|Kartari": 2,
+              "desiderative|Lut|Kartari": 2,
+              "desiderative|Lrt|Kartari": 2,
+              "desiderative|Lot|Kartari": 2,
+              "desiderative|Lan|Kartari": 1,
+              "desiderative|AshirLin|Kartari": 1,
+              "desiderative|Lrn|Kartari": 2
+            }
+          },
+          "fine": {
+            "all_requests": {
+              "accuracy": 0.793578931549641,
+              "cluster_se": 0.015598662616942035,
+              "bootstrap_percentile95": [
+                0.7630034378752503,
+                0.8234596801053821
+              ]
+            },
+            "completed": {
+              "accuracy": 0.7979170430039741,
+              "cluster_se": 0.015551166464232118,
+              "bootstrap_percentile95": [
+                0.7673661991193267,
+                0.8281729042510872
+              ]
+            },
+            "standardization_cells": 42,
+            "smallest_observed_cell": 3
+          },
+          "coarse": {
+            "all_requests": {
+              "accuracy": 0.7931622704560766,
+              "cluster_se": 0.01556688621616156,
+              "bootstrap_percentile95": [
+                0.7628112869643117,
+                0.8229556614553433
+              ]
+            },
+            "completed": {
+              "accuracy": 0.7974981042261229,
+              "cluster_se": 0.015515579187957707,
+              "bootstrap_percentile95": [
+                0.7670415539259496,
+                0.8276196375217609
+              ]
+            },
+            "standardization_cells": 8,
+            "smallest_observed_cell": 23
+          }
+        }
+      }
+    },
+    "plus_pending_luk_and_source_holds": {
+      "04": {
+        "0.4": {
+          "design480basis": {
+            "n": 480,
+            "recipe_counts": {
+              "causative_of_intensive": 320,
+              "causative_of_intensive_luk": 128,
+              "desiderative": 32
+            },
+            "lakara_counts": {
+              "Lun": 192,
+              "Lat": 51,
+              "VidhiLin": 51,
+              "Lit": 27,
+              "Lut": 26,
+              "Lrt": 26,
+              "Lot": 27,
+              "Lan": 27,
+              "AshirLin": 27,
+              "Lrn": 26
+            },
+            "passive_count": 48,
+            "cell_counts": {
+              "causative_of_intensive|Lun|Kartari": 128,
+              "causative_of_intensive|Lat|Kartari": 25,
+              "causative_of_intensive|Lat|Karmani": 9,
+              "causative_of_intensive|VidhiLin|Kartari": 25,
+              "causative_of_intensive|VidhiLin|Karmani": 9,
+              "causative_of_intensive|Lit|Kartari": 18,
+              "causative_of_intensive|Lut|Kartari": 13,
+              "causative_of_intensive|Lut|Karmani": 4,
+              "causative_of_intensive|Lrt|Kartari": 13,
+              "causative_of_intensive|Lrt|Karmani": 4,
+              "causative_of_intensive|Lot|Kartari": 14,
+              "causative_of_intensive|Lot|Karmani": 4,
+              "causative_of_intensive|Lan|Kartari": 14,
+              "causative_of_intensive|Lan|Karmani": 4,
+              "causative_of_intensive|AshirLin|Kartari": 18,
+              "causative_of_intensive|Lrn|Kartari": 18,
+              "causative_of_intensive_luk|Lun|Kartari": 51,
+              "causative_of_intensive_luk|Lat|Kartari": 11,
+              "causative_of_intensive_luk|Lat|Karmani": 3,
+              "causative_of_intensive_luk|VidhiLin|Kartari": 11,
+              "causative_of_intensive_luk|VidhiLin|Karmani": 3,
+              "causative_of_intensive_luk|Lit|Kartari": 7,
+              "causative_of_intensive_luk|Lut|Kartari": 5,
+              "causative_of_intensive_luk|Lut|Karmani": 2,
+              "causative_of_intensive_luk|Lrt|Kartari": 5,
+              "causative_of_intensive_luk|Lrt|Karmani": 2,
+              "causative_of_intensive_luk|Lot|Kartari": 5,
+              "causative_of_intensive_luk|Lot|Karmani": 2,
+              "causative_of_intensive_luk|Lan|Kartari": 5,
+              "causative_of_intensive_luk|Lan|Karmani": 2,
+              "causative_of_intensive_luk|AshirLin|Kartari": 7,
+              "causative_of_intensive_luk|Lrn|Kartari": 7,
+              "desiderative|Lun|Kartari": 13,
+              "desiderative|Lat|Kartari": 3,
+              "desiderative|VidhiLin|Kartari": 3,
+              "desiderative|Lit|Kartari": 2,
+              "desiderative|Lut|Kartari": 2,
+              "desiderative|Lrt|Kartari": 2,
+              "desiderative|Lot|Kartari": 2,
+              "desiderative|Lan|Kartari": 2,
+              "desiderative|AshirLin|Kartari": 2,
+              "desiderative|Lrn|Kartari": 1
+            }
+          },
+          "fine": {
+            "all_requests": {
+              "accuracy": 0.805751364926161,
+              "cluster_se": 0.020948499259996752,
+              "bootstrap_percentile95": [
+                0.76362486517887,
+                0.8457542835541898
+              ]
+            },
+            "completed": {
+              "accuracy": 0.8079957976975429,
+              "cluster_se": 0.020911820883814453,
+              "bootstrap_percentile95": [
+                0.7658439598097826,
+                0.8483033601984135
+              ]
+            },
+            "standardization_cells": 42,
+            "smallest_observed_cell": 2
+          },
+          "coarse": {
+            "all_requests": {
+              "accuracy": 0.807331313507171,
+              "cluster_se": 0.020669574209497263,
+              "bootstrap_percentile95": [
+                0.7659593190769551,
+                0.8471052103988695
+              ]
+            },
+            "completed": {
+              "accuracy": 0.8095801472495309,
+              "cluster_se": 0.020628754483144867,
+              "bootstrap_percentile95": [
+                0.7683679493281177,
+                0.8494360521003123
+              ]
+            },
+            "standardization_cells": 8,
+            "smallest_observed_cell": 10
+          }
+        },
+        "0.45": {
+          "design480basis": {
+            "n": 480,
+            "recipe_counts": {
+              "causative_of_intensive": 320,
+              "causative_of_intensive_luk": 128,
+              "desiderative": 32
+            },
+            "lakara_counts": {
+              "Lun": 216,
+              "Lat": 47,
+              "VidhiLin": 47,
+              "Lit": 24,
+              "Lut": 24,
+              "Lrt": 24,
+              "Lot": 24,
+              "Lan": 25,
+              "AshirLin": 25,
+              "Lrn": 24
+            },
+            "passive_count": 48,
+            "cell_counts": {
+              "causative_of_intensive|Lun|Kartari": 144,
+              "causative_of_intensive|Lat|Kartari": 22,
+              "causative_of_intensive|Lat|Karmani": 9,
+              "causative_of_intensive|VidhiLin|Kartari": 22,
+              "causative_of_intensive|VidhiLin|Karmani": 9,
+              "causative_of_intensive|Lit|Kartari": 16,
+              "causative_of_intensive|Lut|Kartari": 12,
+              "causative_of_intensive|Lut|Karmani": 4,
+              "causative_of_intensive|Lrt|Kartari": 12,
+              "causative_of_intensive|Lrt|Karmani": 4,
+              "causative_of_intensive|Lot|Kartari": 12,
+              "causative_of_intensive|Lot|Karmani": 4,
+              "causative_of_intensive|Lan|Kartari": 13,
+              "causative_of_intensive|Lan|Karmani": 4,
+              "causative_of_intensive|AshirLin|Kartari": 17,
+              "causative_of_intensive|Lrn|Kartari": 16,
+              "causative_of_intensive_luk|Lun|Kartari": 58,
+              "causative_of_intensive_luk|Lat|Kartari": 10,
+              "causative_of_intensive_luk|Lat|Karmani": 3,
+              "causative_of_intensive_luk|VidhiLin|Kartari": 10,
+              "causative_of_intensive_luk|VidhiLin|Karmani": 3,
+              "causative_of_intensive_luk|Lit|Kartari": 6,
+              "causative_of_intensive_luk|Lut|Kartari": 4,
+              "causative_of_intensive_luk|Lut|Karmani": 2,
+              "causative_of_intensive_luk|Lrt|Kartari": 4,
+              "causative_of_intensive_luk|Lrt|Karmani": 2,
+              "causative_of_intensive_luk|Lot|Kartari": 4,
+              "causative_of_intensive_luk|Lot|Karmani": 2,
+              "causative_of_intensive_luk|Lan|Kartari": 5,
+              "causative_of_intensive_luk|Lan|Karmani": 2,
+              "causative_of_intensive_luk|AshirLin|Kartari": 7,
+              "causative_of_intensive_luk|Lrn|Kartari": 6,
+              "desiderative|Lun|Kartari": 14,
+              "desiderative|Lat|Kartari": 3,
+              "desiderative|VidhiLin|Kartari": 3,
+              "desiderative|Lit|Kartari": 2,
+              "desiderative|Lut|Kartari": 2,
+              "desiderative|Lrt|Kartari": 2,
+              "desiderative|Lot|Kartari": 2,
+              "desiderative|Lan|Kartari": 1,
+              "desiderative|AshirLin|Kartari": 1,
+              "desiderative|Lrn|Kartari": 2
+            }
+          },
+          "fine": {
+            "all_requests": {
+              "accuracy": 0.7940061683564973,
+              "cluster_se": 0.022122333534869896,
+              "bootstrap_percentile95": [
+                0.7495919574863473,
+                0.8368097523240964
+              ]
+            },
+            "completed": {
+              "accuracy": 0.7964952159062041,
+              "cluster_se": 0.022081924639925945,
+              "bootstrap_percentile95": [
+                0.7523071891297812,
+                0.8393775385014548
+              ]
+            },
+            "standardization_cells": 42,
+            "smallest_observed_cell": 2
+          },
+          "coarse": {
+            "all_requests": {
+              "accuracy": 0.7946649757614321,
+              "cluster_se": 0.02193709999459869,
+              "bootstrap_percentile95": [
+                0.7509828011473938,
+                0.8370433994105976
+              ]
+            },
+            "completed": {
+              "accuracy": 0.7971560885381138,
+              "cluster_se": 0.02189369823893126,
+              "bootstrap_percentile95": [
+                0.7530023677987635,
+                0.8396283368399541
+              ]
+            },
+            "standardization_cells": 8,
+            "smallest_observed_cell": 10
+          }
+        }
+      },
+      "05": {
+        "0.4": {
+          "design480basis": {
+            "n": 480,
+            "recipe_counts": {
+              "causative_of_intensive": 320,
+              "causative_of_intensive_luk": 128,
+              "desiderative": 32
+            },
+            "lakara_counts": {
+              "Lun": 192,
+              "Lat": 51,
+              "VidhiLin": 51,
+              "Lit": 27,
+              "Lut": 26,
+              "Lrt": 26,
+              "Lot": 27,
+              "Lan": 27,
+              "AshirLin": 27,
+              "Lrn": 26
+            },
+            "passive_count": 48,
+            "cell_counts": {
+              "causative_of_intensive|Lun|Kartari": 128,
+              "causative_of_intensive|Lat|Kartari": 25,
+              "causative_of_intensive|Lat|Karmani": 9,
+              "causative_of_intensive|VidhiLin|Kartari": 25,
+              "causative_of_intensive|VidhiLin|Karmani": 9,
+              "causative_of_intensive|Lit|Kartari": 18,
+              "causative_of_intensive|Lut|Kartari": 13,
+              "causative_of_intensive|Lut|Karmani": 4,
+              "causative_of_intensive|Lrt|Kartari": 13,
+              "causative_of_intensive|Lrt|Karmani": 4,
+              "causative_of_intensive|Lot|Kartari": 14,
+              "causative_of_intensive|Lot|Karmani": 4,
+              "causative_of_intensive|Lan|Kartari": 14,
+              "causative_of_intensive|Lan|Karmani": 4,
+              "causative_of_intensive|AshirLin|Kartari": 18,
+              "causative_of_intensive|Lrn|Kartari": 18,
+              "causative_of_intensive_luk|Lun|Kartari": 51,
+              "causative_of_intensive_luk|Lat|Kartari": 11,
+              "causative_of_intensive_luk|Lat|Karmani": 3,
+              "causative_of_intensive_luk|VidhiLin|Kartari": 11,
+              "causative_of_intensive_luk|VidhiLin|Karmani": 3,
+              "causative_of_intensive_luk|Lit|Kartari": 7,
+              "causative_of_intensive_luk|Lut|Kartari": 5,
+              "causative_of_intensive_luk|Lut|Karmani": 2,
+              "causative_of_intensive_luk|Lrt|Kartari": 5,
+              "causative_of_intensive_luk|Lrt|Karmani": 2,
+              "causative_of_intensive_luk|Lot|Kartari": 5,
+              "causative_of_intensive_luk|Lot|Karmani": 2,
+              "causative_of_intensive_luk|Lan|Kartari": 5,
+              "causative_of_intensive_luk|Lan|Karmani": 2,
+              "causative_of_intensive_luk|AshirLin|Kartari": 7,
+              "causative_of_intensive_luk|Lrn|Kartari": 7,
+              "desiderative|Lun|Kartari": 13,
+              "desiderative|Lat|Kartari": 3,
+              "desiderative|VidhiLin|Kartari": 3,
+              "desiderative|Lit|Kartari": 2,
+              "desiderative|Lut|Kartari": 2,
+              "desiderative|Lrt|Kartari": 2,
+              "desiderative|Lot|Kartari": 2,
+              "desiderative|Lan|Kartari": 2,
+              "desiderative|AshirLin|Kartari": 2,
+              "desiderative|Lrn|Kartari": 1
+            }
+          },
+          "fine": {
+            "all_requests": {
+              "accuracy": 0.8202225923682618,
+              "cluster_se": 0.018723459081312267,
+              "bootstrap_percentile95": [
+                0.7842556927494596,
+                0.855635271101186
+              ]
+            },
+            "completed": {
+              "accuracy": 0.8241986059846043,
+              "cluster_se": 0.01868125135456841,
+              "bootstrap_percentile95": [
+                0.788235238768771,
+                0.8597963232135981
+              ]
+            },
+            "standardization_cells": 42,
+            "smallest_observed_cell": 1
+          },
+          "coarse": {
+            "all_requests": {
+              "accuracy": 0.8200623359580054,
+              "cluster_se": 0.018731062318226716,
+              "bootstrap_percentile95": [
+                0.7840326445561081,
+                0.8553045812157087
+              ]
+            },
+            "completed": {
+              "accuracy": 0.824037572734408,
+              "cluster_se": 0.018689838210458682,
+              "bootstrap_percentile95": [
+                0.788035322274711,
+                0.8596261657857958
+              ]
+            },
+            "standardization_cells": 8,
+            "smallest_observed_cell": 13
+          }
+        },
+        "0.45": {
+          "design480basis": {
+            "n": 480,
+            "recipe_counts": {
+              "causative_of_intensive": 320,
+              "causative_of_intensive_luk": 128,
+              "desiderative": 32
+            },
+            "lakara_counts": {
+              "Lun": 216,
+              "Lat": 47,
+              "VidhiLin": 47,
+              "Lit": 24,
+              "Lut": 24,
+              "Lrt": 24,
+              "Lot": 24,
+              "Lan": 25,
+              "AshirLin": 25,
+              "Lrn": 24
+            },
+            "passive_count": 48,
+            "cell_counts": {
+              "causative_of_intensive|Lun|Kartari": 144,
+              "causative_of_intensive|Lat|Kartari": 22,
+              "causative_of_intensive|Lat|Karmani": 9,
+              "causative_of_intensive|VidhiLin|Kartari": 22,
+              "causative_of_intensive|VidhiLin|Karmani": 9,
+              "causative_of_intensive|Lit|Kartari": 16,
+              "causative_of_intensive|Lut|Kartari": 12,
+              "causative_of_intensive|Lut|Karmani": 4,
+              "causative_of_intensive|Lrt|Kartari": 12,
+              "causative_of_intensive|Lrt|Karmani": 4,
+              "causative_of_intensive|Lot|Kartari": 12,
+              "causative_of_intensive|Lot|Karmani": 4,
+              "causative_of_intensive|Lan|Kartari": 13,
+              "causative_of_intensive|Lan|Karmani": 4,
+              "causative_of_intensive|AshirLin|Kartari": 17,
+              "causative_of_intensive|Lrn|Kartari": 16,
+              "causative_of_intensive_luk|Lun|Kartari": 58,
+              "causative_of_intensive_luk|Lat|Kartari": 10,
+              "causative_of_intensive_luk|Lat|Karmani": 3,
+              "causative_of_intensive_luk|VidhiLin|Kartari": 10,
+              "causative_of_intensive_luk|VidhiLin|Karmani": 3,
+              "causative_of_intensive_luk|Lit|Kartari": 6,
+              "causative_of_intensive_luk|Lut|Kartari": 4,
+              "causative_of_intensive_luk|Lut|Karmani": 2,
+              "causative_of_intensive_luk|Lrt|Kartari": 4,
+              "causative_of_intensive_luk|Lrt|Karmani": 2,
+              "causative_of_intensive_luk|Lot|Kartari": 4,
+              "causative_of_intensive_luk|Lot|Karmani": 2,
+              "causative_of_intensive_luk|Lan|Kartari": 5,
+              "causative_of_intensive_luk|Lan|Karmani": 2,
+              "causative_of_intensive_luk|AshirLin|Kartari": 7,
+              "causative_of_intensive_luk|Lrn|Kartari": 6,
+              "desiderative|Lun|Kartari": 14,
+              "desiderative|Lat|Kartari": 3,
+              "desiderative|VidhiLin|Kartari": 3,
+              "desiderative|Lit|Kartari": 2,
+              "desiderative|Lut|Kartari": 2,
+              "desiderative|Lrt|Kartari": 2,
+              "desiderative|Lot|Kartari": 2,
+              "desiderative|Lan|Kartari": 1,
+              "desiderative|AshirLin|Kartari": 1,
+              "desiderative|Lrn|Kartari": 2
+            }
+          },
+          "fine": {
+            "all_requests": {
+              "accuracy": 0.8052138996902777,
+              "cluster_se": 0.020083048409214373,
+              "bootstrap_percentile95": [
+                0.7669078055733705,
+                0.8432825684180073
+              ]
+            },
+            "completed": {
+              "accuracy": 0.8096349073147647,
+              "cluster_se": 0.020033454680347448,
+              "bootstrap_percentile95": [
+                0.7714636293057344,
+                0.847788381253122
+              ]
+            },
+            "standardization_cells": 42,
+            "smallest_observed_cell": 1
+          },
+          "coarse": {
+            "all_requests": {
+              "accuracy": 0.804738080502433,
+              "cluster_se": 0.020071256886222598,
+              "bootstrap_percentile95": [
+                0.7662269943556125,
+                0.8427943302419156
+              ]
+            },
+            "completed": {
+              "accuracy": 0.809156475653069,
+              "cluster_se": 0.020020638716806028,
+              "bootstrap_percentile95": [
+                0.7707999472393751,
+                0.847350431477262
+              ]
+            },
+            "standardization_cells": 8,
+            "smallest_observed_cell": 13
+          }
+        }
+      },
+      "pooled": {
+        "0.4": {
+          "design480basis": {
+            "n": 480,
+            "recipe_counts": {
+              "causative_of_intensive": 320,
+              "causative_of_intensive_luk": 128,
+              "desiderative": 32
+            },
+            "lakara_counts": {
+              "Lun": 192,
+              "Lat": 51,
+              "VidhiLin": 51,
+              "Lit": 27,
+              "Lut": 26,
+              "Lrt": 26,
+              "Lot": 27,
+              "Lan": 27,
+              "AshirLin": 27,
+              "Lrn": 26
+            },
+            "passive_count": 48,
+            "cell_counts": {
+              "causative_of_intensive|Lun|Kartari": 128,
+              "causative_of_intensive|Lat|Kartari": 25,
+              "causative_of_intensive|Lat|Karmani": 9,
+              "causative_of_intensive|VidhiLin|Kartari": 25,
+              "causative_of_intensive|VidhiLin|Karmani": 9,
+              "causative_of_intensive|Lit|Kartari": 18,
+              "causative_of_intensive|Lut|Kartari": 13,
+              "causative_of_intensive|Lut|Karmani": 4,
+              "causative_of_intensive|Lrt|Kartari": 13,
+              "causative_of_intensive|Lrt|Karmani": 4,
+              "causative_of_intensive|Lot|Kartari": 14,
+              "causative_of_intensive|Lot|Karmani": 4,
+              "causative_of_intensive|Lan|Kartari": 14,
+              "causative_of_intensive|Lan|Karmani": 4,
+              "causative_of_intensive|AshirLin|Kartari": 18,
+              "causative_of_intensive|Lrn|Kartari": 18,
+              "causative_of_intensive_luk|Lun|Kartari": 51,
+              "causative_of_intensive_luk|Lat|Kartari": 11,
+              "causative_of_intensive_luk|Lat|Karmani": 3,
+              "causative_of_intensive_luk|VidhiLin|Kartari": 11,
+              "causative_of_intensive_luk|VidhiLin|Karmani": 3,
+              "causative_of_intensive_luk|Lit|Kartari": 7,
+              "causative_of_intensive_luk|Lut|Kartari": 5,
+              "causative_of_intensive_luk|Lut|Karmani": 2,
+              "causative_of_intensive_luk|Lrt|Kartari": 5,
+              "causative_of_intensive_luk|Lrt|Karmani": 2,
+              "causative_of_intensive_luk|Lot|Kartari": 5,
+              "causative_of_intensive_luk|Lot|Karmani": 2,
+              "causative_of_intensive_luk|Lan|Kartari": 5,
+              "causative_of_intensive_luk|Lan|Karmani": 2,
+              "causative_of_intensive_luk|AshirLin|Kartari": 7,
+              "causative_of_intensive_luk|Lrn|Kartari": 7,
+              "desiderative|Lun|Kartari": 13,
+              "desiderative|Lat|Kartari": 3,
+              "desiderative|VidhiLin|Kartari": 3,
+              "desiderative|Lit|Kartari": 2,
+              "desiderative|Lut|Kartari": 2,
+              "desiderative|Lrt|Kartari": 2,
+              "desiderative|Lot|Kartari": 2,
+              "desiderative|Lan|Kartari": 2,
+              "desiderative|AshirLin|Kartari": 2,
+              "desiderative|Lrn|Kartari": 1
+            }
+          },
+          "fine": {
+            "all_requests": {
+              "accuracy": 0.8148469554382503,
+              "cluster_se": 0.014915388900699067,
+              "bootstrap_percentile95": [
+                0.7848881535234316,
+                0.8438299081654094
+              ]
+            },
+            "completed": {
+              "accuracy": 0.8180817564792615,
+              "cluster_se": 0.014866720898571705,
+              "bootstrap_percentile95": [
+                0.7881160510350288,
+                0.8468970598495398
+              ]
+            },
+            "standardization_cells": 42,
+            "smallest_observed_cell": 3
+          },
+          "coarse": {
+            "all_requests": {
+              "accuracy": 0.8149408878179452,
+              "cluster_se": 0.01486124340349556,
+              "bootstrap_percentile95": [
+                0.7852276135475154,
+                0.843490033914867
+              ]
+            },
+            "completed": {
+              "accuracy": 0.8181760617542071,
+              "cluster_se": 0.01480966208012634,
+              "bootstrap_percentile95": [
+                0.7885339800205095,
+                0.8470427447000407
+              ]
+            },
+            "standardization_cells": 8,
+            "smallest_observed_cell": 23
+          }
+        },
+        "0.45": {
+          "design480basis": {
+            "n": 480,
+            "recipe_counts": {
+              "causative_of_intensive": 320,
+              "causative_of_intensive_luk": 128,
+              "desiderative": 32
+            },
+            "lakara_counts": {
+              "Lun": 216,
+              "Lat": 47,
+              "VidhiLin": 47,
+              "Lit": 24,
+              "Lut": 24,
+              "Lrt": 24,
+              "Lot": 24,
+              "Lan": 25,
+              "AshirLin": 25,
+              "Lrn": 24
+            },
+            "passive_count": 48,
+            "cell_counts": {
+              "causative_of_intensive|Lun|Kartari": 144,
+              "causative_of_intensive|Lat|Kartari": 22,
+              "causative_of_intensive|Lat|Karmani": 9,
+              "causative_of_intensive|VidhiLin|Kartari": 22,
+              "causative_of_intensive|VidhiLin|Karmani": 9,
+              "causative_of_intensive|Lit|Kartari": 16,
+              "causative_of_intensive|Lut|Kartari": 12,
+              "causative_of_intensive|Lut|Karmani": 4,
+              "causative_of_intensive|Lrt|Kartari": 12,
+              "causative_of_intensive|Lrt|Karmani": 4,
+              "causative_of_intensive|Lot|Kartari": 12,
+              "causative_of_intensive|Lot|Karmani": 4,
+              "causative_of_intensive|Lan|Kartari": 13,
+              "causative_of_intensive|Lan|Karmani": 4,
+              "causative_of_intensive|AshirLin|Kartari": 17,
+              "causative_of_intensive|Lrn|Kartari": 16,
+              "causative_of_intensive_luk|Lun|Kartari": 58,
+              "causative_of_intensive_luk|Lat|Kartari": 10,
+              "causative_of_intensive_luk|Lat|Karmani": 3,
+              "causative_of_intensive_luk|VidhiLin|Kartari": 10,
+              "causative_of_intensive_luk|VidhiLin|Karmani": 3,
+              "causative_of_intensive_luk|Lit|Kartari": 6,
+              "causative_of_intensive_luk|Lut|Kartari": 4,
+              "causative_of_intensive_luk|Lut|Karmani": 2,
+              "causative_of_intensive_luk|Lrt|Kartari": 4,
+              "causative_of_intensive_luk|Lrt|Karmani": 2,
+              "causative_of_intensive_luk|Lot|Kartari": 4,
+              "causative_of_intensive_luk|Lot|Karmani": 2,
+              "causative_of_intensive_luk|Lan|Kartari": 5,
+              "causative_of_intensive_luk|Lan|Karmani": 2,
+              "causative_of_intensive_luk|AshirLin|Kartari": 7,
+              "causative_of_intensive_luk|Lrn|Kartari": 6,
+              "desiderative|Lun|Kartari": 14,
+              "desiderative|Lat|Kartari": 3,
+              "desiderative|VidhiLin|Kartari": 3,
+              "desiderative|Lit|Kartari": 2,
+              "desiderative|Lut|Kartari": 2,
+              "desiderative|Lrt|Kartari": 2,
+              "desiderative|Lot|Kartari": 2,
+              "desiderative|Lan|Kartari": 1,
+              "desiderative|AshirLin|Kartari": 1,
+              "desiderative|Lrn|Kartari": 2
+            }
+          },
+          "fine": {
+            "all_requests": {
+              "accuracy": 0.8012792934342066,
+              "cluster_se": 0.015868293850786468,
+              "bootstrap_percentile95": [
+                0.7695503282096313,
+                0.8320838487922593
+              ]
+            },
+            "completed": {
+              "accuracy": 0.804875108188459,
+              "cluster_se": 0.01580984104715988,
+              "bootstrap_percentile95": [
+                0.773056751817062,
+                0.8356419131368317
+              ]
+            },
+            "standardization_cells": 42,
+            "smallest_observed_cell": 3
+          },
+          "coarse": {
+            "all_requests": {
+              "accuracy": 0.800858216728513,
+              "cluster_se": 0.015827115319298733,
+              "bootstrap_percentile95": [
+                0.7692123880248528,
+                0.8316554371231754
+              ]
+            },
+            "completed": {
+              "accuracy": 0.8044521418622008,
+              "cluster_se": 0.01576480699334515,
+              "bootstrap_percentile95": [
+                0.7730009858763399,
+                0.8351978368355806
+              ]
+            },
+            "standardization_cells": 8,
+            "smallest_observed_cell": 23
+          }
+        }
+      }
+    }
+  },
+  "interpretation": "Pooled same-v3 development cells with exact family-cluster uncertainty. Recipe/tense/voice cell pooling assumes transport across panels with different aorist-family eligibility; per-panel estimates disclose that uncertainty. Pending source gates are sensitivity only until coordinator adopts. No same failed questions may be selected into fresh calibration.",
+  "no_final_membership_selected": true,
+  "heldout_answers_read": false,
+  "paid_calls": 0
+}

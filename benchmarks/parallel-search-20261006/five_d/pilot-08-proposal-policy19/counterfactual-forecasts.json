@@ -1,0 +1,1205 @@
+{
+  "created_at": "2026-10-07T11:36:45.041776+00:00",
+  "policy": "oracle-policy-19",
+  "adapter_sha256": "f04e9fa535784bd0318d6a5bef38ccf024c240c444af0f1c771221e94262f838",
+  "sources": [
+    {
+      "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-five-d-pilot-07-r1-a/results.json",
+      "sha256": "51e0bbe33a37b6b1b2988dd0533132e6cfa3c0420004b9eb8a2dd18bc45700a0"
+    },
+    {
+      "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-five-d-pilot-07-r1-b/results.json",
+      "sha256": "eb0f1f8a9f1403d0855dede6e9c6eec39d0a327b2bf3871f5874f9cc9722af2b"
+    }
+  ],
+  "raw_n": 2400,
+  "current_n": 2388,
+  "source_exclusions": [
+    {
+      "id": "cart5-663fa35a7fd5c4ab746781b6",
+      "reason": "Source-required ri augmentation displaced by nasal augmentation in r-bearing intensive",
+      "correct": false,
+      "status": "completed"
+    },
+    {
+      "id": "cart5-8525e603ac772079f972afaa",
+      "reason": "Source-required ri augmentation displaced by nasal augmentation in r-bearing intensive",
+      "correct": false,
+      "status": "completed"
+    },
+    {
+      "id": "cart5-19a6cf3c0f27b8549aa9cfb4",
+      "reason": "Source-required ri augmentation displaced by nasal augmentation in r-bearing intensive",
+      "correct": false,
+      "status": "completed"
+    },
+    {
+      "id": "cart5-c8b111548496a22c8631d0ad",
+      "reason": "Source-required ri augmentation displaced by nasal augmentation in r-bearing intensive",
+      "correct": false,
+      "status": "completed"
+    },
+    {
+      "id": "cart5-02f75650a802c9ad35420805",
+      "reason": "Source-required ri augmentation displaced by nasal augmentation in r-bearing intensive",
+      "correct": false,
+      "status": "completed"
+    },
+    {
+      "id": "cart5-2b07a80f24adf360f39b289e",
+      "reason": "Source-required ri augmentation displaced by nasal augmentation in r-bearing intensive",
+      "correct": false,
+      "status": "completed"
+    },
+    {
+      "id": "cart5-7b622e3c3874fad16330ed09",
+      "reason": "Source-required ri augmentation displaced by nasal augmentation in r-bearing intensive",
+      "correct": false,
+      "status": "completed"
+    },
+    {
+      "id": "cart5-e80eea3b8077b197b0728f91",
+      "reason": "Source-required ri augmentation displaced by nasal augmentation in r-bearing intensive",
+      "correct": false,
+      "status": "completed"
+    },
+    {
+      "id": "cart5-95cc8ea1a26d7cb6b6015c7a",
+      "reason": "Source-required ri augmentation displaced by nasal augmentation in r-bearing intensive",
+      "correct": false,
+      "status": "completed"
+    },
+    {
+      "id": "cart5-2678e9ab2985e659cf601999",
+      "reason": "Source-required ri augmentation displaced by nasal augmentation in r-bearing intensive",
+      "correct": false,
+      "status": "completed"
+    },
+    {
+      "id": "cart5-69e1ce8041e205287b2721e7",
+      "reason": "Source-required ri augmentation displaced by nasal augmentation in r-bearing intensive",
+      "correct": false,
+      "status": "completed"
+    },
+    {
+      "id": "cart5-3fb35fc04239f5ad8db9ff13",
+      "reason": "Source-required ri augmentation displaced by nasal augmentation in r-bearing intensive",
+      "correct": false,
+      "status": "completed"
+    }
+  ],
+  "raw_scores_unchanged": true,
+  "astra_highcap_raw_n": 60,
+  "astra_highcap_current_n": 59,
+  "astra_highcap_source_sha256": "fa408edf66b0561578f88f291d049ec8360ab28bfc3967fc89ad1f518538d859",
+  "variants": {
+    "san20_lun45_originalclass": {
+      "plan": {
+        "n": 2400,
+        "recipe_counts": {
+          "causative_of_intensive": 1344,
+          "causative_of_intensive_luk": 576,
+          "desiderative": 480
+        },
+        "cell_counts": {
+          "causative_of_intensive|Lun|Kartari": 604,
+          "causative_of_intensive|Lat|Kartari": 88,
+          "causative_of_intensive|Lat|Karmani": 42,
+          "causative_of_intensive|VidhiLin|Kartari": 88,
+          "causative_of_intensive|VidhiLin|Karmani": 42,
+          "causative_of_intensive|Lit|Kartari": 68,
+          "causative_of_intensive|Lut|Kartari": 48,
+          "causative_of_intensive|Lut|Karmani": 20,
+          "causative_of_intensive|Lrt|Kartari": 48,
+          "causative_of_intensive|Lrt|Karmani": 20,
+          "causative_of_intensive|Lot|Kartari": 46,
+          "causative_of_intensive|Lot|Karmani": 22,
+          "causative_of_intensive|Lan|Kartari": 48,
+          "causative_of_intensive|Lan|Karmani": 22,
+          "causative_of_intensive|AshirLin|Kartari": 70,
+          "causative_of_intensive|Lrn|Kartari": 68,
+          "causative_of_intensive_luk|Lun|Kartari": 260,
+          "causative_of_intensive_luk|Lat|Kartari": 40,
+          "causative_of_intensive_luk|Lat|Karmani": 18,
+          "causative_of_intensive_luk|VidhiLin|Kartari": 40,
+          "causative_of_intensive_luk|VidhiLin|Karmani": 18,
+          "causative_of_intensive_luk|Lit|Kartari": 28,
+          "causative_of_intensive_luk|Lut|Kartari": 20,
+          "causative_of_intensive_luk|Lut|Karmani": 8,
+          "causative_of_intensive_luk|Lrt|Kartari": 20,
+          "causative_of_intensive_luk|Lrt|Karmani": 8,
+          "causative_of_intensive_luk|Lot|Kartari": 18,
+          "causative_of_intensive_luk|Lot|Karmani": 10,
+          "causative_of_intensive_luk|Lan|Kartari": 20,
+          "causative_of_intensive_luk|Lan|Karmani": 10,
+          "causative_of_intensive_luk|AshirLin|Kartari": 30,
+          "causative_of_intensive_luk|Lrn|Kartari": 28,
+          "desiderative|Lun|Kartari": 216,
+          "desiderative|Lat|Kartari": 48,
+          "desiderative|VidhiLin|Kartari": 48,
+          "desiderative|Lit|Kartari": 24,
+          "desiderative|Lut|Kartari": 24,
+          "desiderative|Lrt|Kartari": 24,
+          "desiderative|Lot|Kartari": 24,
+          "desiderative|Lan|Kartari": 24,
+          "desiderative|AshirLin|Kartari": 24,
+          "desiderative|Lrn|Kartari": 24
+        },
+        "gana_counts": {
+          "Bhvadi": 1600,
+          "Adadi": 88,
+          "Juhotyadi": 16,
+          "Divadi": 168,
+          "Svadi": 32,
+          "Tudadi": 240,
+          "Rudhadi": 48,
+          "Tanadi": 16,
+          "Kryadi": 112,
+          "Curadi": 80
+        },
+        "lakara_counts": {
+          "Lun": 1080,
+          "Lat": 236,
+          "VidhiLin": 236,
+          "Lit": 120,
+          "Lut": 120,
+          "Lrt": 120,
+          "Lot": 120,
+          "Lan": 124,
+          "AshirLin": 124,
+          "Lrn": 120
+        },
+        "prayoga_counts": {
+          "Kartari": 2160,
+          "Karmani": 240
+        },
+        "recipe_percent": [
+          56,
+          24,
+          20
+        ],
+        "Lun_percent": 45,
+        "source_non_Lun_profiles": "Preserve prior conditional non-Lun tense proportions within each recipe by even largest-remainder apportionment; assign10% global passive across nested recipes proportional to their recipe weights, and preserve each recipe passive-tense profile. All42 joint cells remain positive.",
+        "phase": "confirm_64k",
+        "effort": "xhigh",
+        "max_output_tokens": 65536,
+        "transport": {
+          "fixed_n": 2400,
+          "chunks": 6,
+          "n_each": 400,
+          "sequence": "Each next chunk only after previous settlement and financial gate. No interim score analysis or stopping. Partition not yet generated."
+        },
+        "status": "unfrozen_quota_proposal",
+        "all_classes_and_lakaras_preserved": true,
+        "maximum_tasks_per_family": 8,
+        "maximum_Lun_per_family": 5,
+        "maximum_each_other_lakara_per_family": 1,
+        "policy": "oracle-policy-19",
+        "adapter_sha256": "f04e9fa535784bd0318d6a5bef38ccf024c240c444af0f1c771221e94262f838",
+        "source_policy_sha256": "3612b5af9ce8f75946397e239e80c0a082979061eec2fc2f9eb441b1a3350747"
+      },
+      "joint_only": {
+        "fit": {
+          "method": "Exact joint recipe×tense×voice standardization",
+          "converged": true,
+          "iterations": 1,
+          "maximum_joint_margin_error": 1.1368683772161603e-13,
+          "minimum_weight": 0.75,
+          "maximum_weight": 3.0,
+          "effective_question_weight_n": 1854.5836774783832,
+          "class_margins": {
+            "Tudadi": 223.76745161008955,
+            "Bhvadi": 1487.6612663080414,
+            "Curadi": 240.0,
+            "Kryadi": 105.62161546135835,
+            "Divadi": 150.95405756111768,
+            "Tanadi": 6.71956397016638,
+            "Adadi": 92.71322866693208,
+            "Rudhadi": 41.875535429482795,
+            "Svadi": 36.75404458397281,
+            "Juhotyadi": 13.93323640883882
+          },
+          "joint_class_interactions": "No full joint×class target is declared; raking preserves observed interactions. This is an observational sensitivity, not identification of missing joint×class cells."
+        },
+        "estimates": {
+          "all": {
+            "accuracy": 0.7999620698945193,
+            "family_sandwich_se": 0.010161941355171079,
+            "family_bootstrap_interval95": [
+              0.7797130348663471,
+              0.8195806080767382
+            ]
+          },
+          "usable": {
+            "accuracy": 0.8068173493169232,
+            "family_sandwich_se": 0.009949265434119647,
+            "family_bootstrap_interval95": [
+              0.7870763986748817,
+              0.8259730756084195
+            ]
+          }
+        },
+        "missing_response_bounds": [
+          0.79996206989452,
+          0.8084587630162129
+        ],
+        "completion": 0.991503306878307,
+        "weighted_cost_at_existing16k": 0.022490259687508365,
+        "warning": "Exploratory reweighting of failed16k development panel. Future common65536 cap is unmeasured. Family intervals omit mixture-selection and root-composition uncertainty."
+      },
+      "joint_and_class": {
+        "fit": {
+          "method": "Iterative proportional fitting to joint recipe×tense×voice AND class margins",
+          "converged": true,
+          "iterations": 15,
+          "maximum_joint_margin_error": 5.0435261300663115e-08,
+          "minimum_weight": 0.5231036263049359,
+          "maximum_weight": 7.180617482459376,
+          "effective_question_weight_n": 1480.0027280645315,
+          "class_margins": {
+            "Tudadi": 239.99999999999997,
+            "Bhvadi": 1600.0,
+            "Curadi": 79.99999999999999,
+            "Kryadi": 112.00000000000001,
+            "Divadi": 168.0,
+            "Tanadi": 16.0,
+            "Adadi": 88.00000000000001,
+            "Rudhadi": 48.0,
+            "Svadi": 32.0,
+            "Juhotyadi": 16.0
+          },
+          "joint_class_interactions": "No full joint×class target is declared; raking preserves observed interactions. This is an observational sensitivity, not identification of missing joint×class cells."
+        },
+        "estimates": {
+          "all": {
+            "accuracy": 0.7973210810552536,
+            "family_sandwich_se": 0.010896020050385657,
+            "family_bootstrap_interval95": [
+              0.7754650084754396,
+              0.818106734921194
+            ]
+          },
+          "usable": {
+            "accuracy": 0.8041029827791076,
+            "family_sandwich_se": 0.01069901040392093,
+            "family_bootstrap_interval95": [
+              0.7827009267841895,
+              0.8244990381710875
+            ]
+          }
+        },
+        "missing_response_bounds": [
+          0.7973210810552547,
+          0.8057552018943728
+        ],
+        "completion": 0.991565879160882,
+        "weighted_cost_at_existing16k": 0.022504505544902933,
+        "warning": "Exploratory reweighting of failed16k development panel. Future common65536 cap is unmeasured. Family intervals omit mixture-selection and root-composition uncertainty."
+      },
+      "astra_highcap_transport": {
+        "mean_cost": 0.22287263617724867,
+        "cost_bootstrap95": [
+          0.20583190287533068,
+          0.24042496783730155
+        ],
+        "accuracy": 0.7442592592592594,
+        "n": 59,
+        "minimum_source_cell": 2,
+        "projection4800_cost": 1069.7886536507935,
+        "lifetime4800": 1797.2668036507935,
+        "projection6000_cost": 1337.235817063492,
+        "lifetime6000": 2064.713967063492,
+        "warning": "128k59-question coarse-cell transport to prospective65536. San is4observations; class changes are not adjusted. No highcap family dependence is measured.",
+        "scope": "Policy19 supplemental59; raw60 remains unchanged. One exactsource-invalid08.0007 row excluded uniformly."
+      }
+    },
+    "san20_lun45_fullcoverage": {
+      "plan": {
+        "n": 2400,
+        "recipe_counts": {
+          "causative_of_intensive": 1344,
+          "causative_of_intensive_luk": 576,
+          "desiderative": 480
+        },
+        "cell_counts": {
+          "causative_of_intensive|Lun|Kartari": 604,
+          "causative_of_intensive|Lat|Kartari": 88,
+          "causative_of_intensive|Lat|Karmani": 42,
+          "causative_of_intensive|VidhiLin|Kartari": 88,
+          "causative_of_intensive|VidhiLin|Karmani": 42,
+          "causative_of_intensive|Lit|Kartari": 68,
+          "causative_of_intensive|Lut|Kartari": 48,
+          "causative_of_intensive|Lut|Karmani": 20,
+          "causative_of_intensive|Lrt|Kartari": 48,
+          "causative_of_intensive|Lrt|Karmani": 20,
+          "causative_of_intensive|Lot|Kartari": 46,
+          "causative_of_intensive|Lot|Karmani": 22,
+          "causative_of_intensive|Lan|Kartari": 48,
+          "causative_of_intensive|Lan|Karmani": 22,
+          "causative_of_intensive|AshirLin|Kartari": 70,
+          "causative_of_intensive|Lrn|Kartari": 68,
+          "causative_of_intensive_luk|Lun|Kartari": 260,
+          "causative_of_intensive_luk|Lat|Kartari": 40,
+          "causative_of_intensive_luk|Lat|Karmani": 18,
+          "causative_of_intensive_luk|VidhiLin|Kartari": 40,
+          "causative_of_intensive_luk|VidhiLin|Karmani": 18,
+          "causative_of_intensive_luk|Lit|Kartari": 28,
+          "causative_of_intensive_luk|Lut|Kartari": 20,
+          "causative_of_intensive_luk|Lut|Karmani": 8,
+          "causative_of_intensive_luk|Lrt|Kartari": 20,
+          "causative_of_intensive_luk|Lrt|Karmani": 8,
+          "causative_of_intensive_luk|Lot|Kartari": 18,
+          "causative_of_intensive_luk|Lot|Karmani": 10,
+          "causative_of_intensive_luk|Lan|Kartari": 20,
+          "causative_of_intensive_luk|Lan|Karmani": 10,
+          "causative_of_intensive_luk|AshirLin|Kartari": 30,
+          "causative_of_intensive_luk|Lrn|Kartari": 28,
+          "desiderative|Lun|Kartari": 216,
+          "desiderative|Lat|Kartari": 48,
+          "desiderative|VidhiLin|Kartari": 48,
+          "desiderative|Lit|Kartari": 24,
+          "desiderative|Lut|Kartari": 24,
+          "desiderative|Lrt|Kartari": 24,
+          "desiderative|Lot|Kartari": 24,
+          "desiderative|Lan|Kartari": 24,
+          "desiderative|AshirLin|Kartari": 24,
+          "desiderative|Lrn|Kartari": 24
+        },
+        "gana_counts": {
+          "Bhvadi": 1535,
+          "Adadi": 88,
+          "Juhotyadi": 16,
+          "Divadi": 168,
+          "Svadi": 32,
+          "Tudadi": 240,
+          "Rudhadi": 48,
+          "Tanadi": 16,
+          "Kryadi": 112,
+          "Curadi": 145
+        },
+        "lakara_counts": {
+          "Lun": 1080,
+          "Lat": 236,
+          "VidhiLin": 236,
+          "Lit": 120,
+          "Lut": 120,
+          "Lrt": 120,
+          "Lot": 120,
+          "Lan": 124,
+          "AshirLin": 124,
+          "Lrn": 120
+        },
+        "prayoga_counts": {
+          "Kartari": 2160,
+          "Karmani": 240
+        },
+        "recipe_percent": [
+          56,
+          24,
+          20
+        ],
+        "Lun_percent": 45,
+        "source_non_Lun_profiles": "Preserve prior conditional non-Lun tense proportions within each recipe by even largest-remainder apportionment; assign10% global passive across nested recipes proportional to their recipe weights, and preserve each recipe passive-tense profile. All42 joint cells remain positive.",
+        "phase": "confirm_64k",
+        "effort": "xhigh",
+        "max_output_tokens": 65536,
+        "transport": {
+          "fixed_n": 2400,
+          "chunks": 6,
+          "n_each": 400,
+          "sequence": "Each next chunk only after previous settlement and financial gate. No interim score analysis or stopping. Partition not yet generated."
+        },
+        "status": "unfrozen_quota_proposal",
+        "all_classes_and_lakaras_preserved": true,
+        "maximum_tasks_per_family": 8,
+        "maximum_Lun_per_family": 5,
+        "maximum_each_other_lakara_per_family": 1,
+        "policy": "oracle-policy-19",
+        "adapter_sha256": "f04e9fa535784bd0318d6a5bef38ccf024c240c444af0f1c771221e94262f838",
+        "source_policy_sha256": "3612b5af9ce8f75946397e239e80c0a082979061eec2fc2f9eb441b1a3350747",
+        "class_rationale": "145Curadi permits one task from every eligible development Curadi family; Bhvadi reduced65, others unchanged. Proportional4800class quotas (290Curadi/3070Bhvadi) preserve the same confirmation/final class composition and can cover all203eligible test Curadi families. No class chosen by errors."
+      },
+      "joint_only": {
+        "fit": {
+          "method": "Exact joint recipe×tense×voice standardization",
+          "converged": true,
+          "iterations": 1,
+          "maximum_joint_margin_error": 1.1368683772161603e-13,
+          "minimum_weight": 0.75,
+          "maximum_weight": 3.0,
+          "effective_question_weight_n": 1854.5836774783832,
+          "class_margins": {
+            "Tudadi": 223.76745161008955,
+            "Bhvadi": 1487.6612663080414,
+            "Curadi": 240.0,
+            "Kryadi": 105.62161546135835,
+            "Divadi": 150.95405756111768,
+            "Tanadi": 6.71956397016638,
+            "Adadi": 92.71322866693208,
+            "Rudhadi": 41.875535429482795,
+            "Svadi": 36.75404458397281,
+            "Juhotyadi": 13.93323640883882
+          },
+          "joint_class_interactions": "No full joint×class target is declared; raking preserves observed interactions. This is an observational sensitivity, not identification of missing joint×class cells."
+        },
+        "estimates": {
+          "all": {
+            "accuracy": 0.7999620698945193,
+            "family_sandwich_se": 0.010161941355171079,
+            "family_bootstrap_interval95": [
+              0.7797130348663471,
+              0.8195806080767382
+            ]
+          },
+          "usable": {
+            "accuracy": 0.8068173493169232,
+            "family_sandwich_se": 0.009949265434119647,
+            "family_bootstrap_interval95": [
+              0.7870763986748817,
+              0.8259730756084195
+            ]
+          }
+        },
+        "missing_response_bounds": [
+          0.79996206989452,
+          0.8084587630162129
+        ],
+        "completion": 0.991503306878307,
+        "weighted_cost_at_existing16k": 0.022490259687508365,
+        "warning": "Exploratory reweighting of failed16k development panel. Future common65536 cap is unmeasured. Family intervals omit mixture-selection and root-composition uncertainty."
+      },
+      "joint_and_class": {
+        "fit": {
+          "method": "Iterative proportional fitting to joint recipe×tense×voice AND class margins",
+          "converged": true,
+          "iterations": 20,
+          "maximum_joint_margin_error": 8.344821367245459e-08,
+          "minimum_weight": 0.5755392652079843,
+          "maximum_weight": 5.521873439346583,
+          "effective_question_weight_n": 1700.2845027347005,
+          "class_margins": {
+            "Tudadi": 239.99999999999997,
+            "Bhvadi": 1535.0,
+            "Curadi": 145.0,
+            "Kryadi": 112.0,
+            "Divadi": 168.00000000000003,
+            "Tanadi": 16.0,
+            "Adadi": 88.0,
+            "Rudhadi": 48.0,
+            "Svadi": 31.999999999999996,
+            "Juhotyadi": 16.0
+          },
+          "joint_class_interactions": "No full joint×class target is declared; raking preserves observed interactions. This is an observational sensitivity, not identification of missing joint×class cells."
+        },
+        "estimates": {
+          "all": {
+            "accuracy": 0.798463142412293,
+            "family_sandwich_se": 0.01048844296694066,
+            "family_bootstrap_interval95": [
+              0.7775249088811437,
+              0.8186008087355212
+            ]
+          },
+          "usable": {
+            "accuracy": 0.8052784495368543,
+            "family_sandwich_se": 0.010282053822636123,
+            "family_bootstrap_interval95": [
+              0.7848223792127551,
+              0.8248017468396752
+            ]
+          }
+        },
+        "missing_response_bounds": [
+          0.7984631424122935,
+          0.8069264349895141
+        ],
+        "completion": 0.9915367074227792,
+        "weighted_cost_at_existing16k": 0.022534995963903553,
+        "warning": "Exploratory reweighting of failed16k development panel. Future common65536 cap is unmeasured. Family intervals omit mixture-selection and root-composition uncertainty."
+      },
+      "astra_highcap_transport": {
+        "mean_cost": 0.22287263617724867,
+        "cost_bootstrap95": [
+          0.20583190287533068,
+          0.24042496783730155
+        ],
+        "accuracy": 0.7442592592592594,
+        "n": 59,
+        "minimum_source_cell": 2,
+        "projection4800_cost": 1069.7886536507935,
+        "lifetime4800": 1797.2668036507935,
+        "projection6000_cost": 1337.235817063492,
+        "lifetime6000": 2064.713967063492,
+        "warning": "128k59-question coarse-cell transport to prospective65536. San is4observations; class changes are not adjusted. No highcap family dependence is measured.",
+        "scope": "Policy19 supplemental59; raw60 remains unchanged. One exactsource-invalid08.0007 row excluded uniformly."
+      }
+    },
+    "san20_lun46_fullcoverage": {
+      "plan": {
+        "n": 2400,
+        "recipe_counts": {
+          "causative_of_intensive": 1344,
+          "causative_of_intensive_luk": 576,
+          "desiderative": 480
+        },
+        "cell_counts": {
+          "causative_of_intensive|Lun|Kartari": 618,
+          "causative_of_intensive|Lat|Kartari": 86,
+          "causative_of_intensive|Lat|Karmani": 42,
+          "causative_of_intensive|VidhiLin|Kartari": 86,
+          "causative_of_intensive|VidhiLin|Karmani": 42,
+          "causative_of_intensive|Lit|Kartari": 66,
+          "causative_of_intensive|Lut|Kartari": 46,
+          "causative_of_intensive|Lut|Karmani": 20,
+          "causative_of_intensive|Lrt|Kartari": 46,
+          "causative_of_intensive|Lrt|Karmani": 20,
+          "causative_of_intensive|Lot|Kartari": 44,
+          "causative_of_intensive|Lot|Karmani": 22,
+          "causative_of_intensive|Lan|Kartari": 48,
+          "causative_of_intensive|Lan|Karmani": 22,
+          "causative_of_intensive|AshirLin|Kartari": 70,
+          "causative_of_intensive|Lrn|Kartari": 66,
+          "causative_of_intensive_luk|Lun|Kartari": 266,
+          "causative_of_intensive_luk|Lat|Kartari": 40,
+          "causative_of_intensive_luk|Lat|Karmani": 18,
+          "causative_of_intensive_luk|VidhiLin|Kartari": 38,
+          "causative_of_intensive_luk|VidhiLin|Karmani": 18,
+          "causative_of_intensive_luk|Lit|Kartari": 28,
+          "causative_of_intensive_luk|Lut|Kartari": 20,
+          "causative_of_intensive_luk|Lut|Karmani": 8,
+          "causative_of_intensive_luk|Lrt|Kartari": 20,
+          "causative_of_intensive_luk|Lrt|Karmani": 8,
+          "causative_of_intensive_luk|Lot|Kartari": 18,
+          "causative_of_intensive_luk|Lot|Karmani": 10,
+          "causative_of_intensive_luk|Lan|Kartari": 18,
+          "causative_of_intensive_luk|Lan|Karmani": 10,
+          "causative_of_intensive_luk|AshirLin|Kartari": 28,
+          "causative_of_intensive_luk|Lrn|Kartari": 28,
+          "desiderative|Lun|Kartari": 220,
+          "desiderative|Lat|Kartari": 46,
+          "desiderative|VidhiLin|Kartari": 46,
+          "desiderative|Lit|Kartari": 24,
+          "desiderative|Lut|Kartari": 24,
+          "desiderative|Lrt|Kartari": 24,
+          "desiderative|Lot|Kartari": 24,
+          "desiderative|Lan|Kartari": 24,
+          "desiderative|AshirLin|Kartari": 24,
+          "desiderative|Lrn|Kartari": 24
+        },
+        "gana_counts": {
+          "Bhvadi": 1535,
+          "Adadi": 88,
+          "Juhotyadi": 16,
+          "Divadi": 168,
+          "Svadi": 32,
+          "Tudadi": 240,
+          "Rudhadi": 48,
+          "Tanadi": 16,
+          "Kryadi": 112,
+          "Curadi": 145
+        },
+        "lakara_counts": {
+          "Lun": 1104,
+          "Lat": 232,
+          "VidhiLin": 230,
+          "Lit": 118,
+          "Lut": 118,
+          "Lrt": 118,
+          "Lot": 118,
+          "Lan": 122,
+          "AshirLin": 122,
+          "Lrn": 118
+        },
+        "prayoga_counts": {
+          "Kartari": 2160,
+          "Karmani": 240
+        },
+        "recipe_percent": [
+          56,
+          24,
+          20
+        ],
+        "Lun_percent": 46,
+        "source_non_Lun_profiles": "Preserve prior conditional non-Lun tense proportions within each recipe by even largest-remainder apportionment; assign10% global passive across nested recipes proportional to their recipe weights, and preserve each recipe passive-tense profile. All42 joint cells remain positive.",
+        "phase": "confirm_64k",
+        "effort": "xhigh",
+        "max_output_tokens": 65536,
+        "transport": {
+          "fixed_n": 2400,
+          "chunks": 6,
+          "n_each": 400,
+          "sequence": "Each next chunk only after previous settlement and financial gate. No interim score analysis or stopping. Partition not yet generated."
+        },
+        "status": "unfrozen_quota_proposal",
+        "all_classes_and_lakaras_preserved": true,
+        "maximum_tasks_per_family": 8,
+        "maximum_Lun_per_family": 5,
+        "maximum_each_other_lakara_per_family": 1,
+        "policy": "oracle-policy-19",
+        "adapter_sha256": "f04e9fa535784bd0318d6a5bef38ccf024c240c444af0f1c771221e94262f838",
+        "source_policy_sha256": "3612b5af9ce8f75946397e239e80c0a082979061eec2fc2f9eb441b1a3350747",
+        "class_rationale": "145Curadi permits one task from every eligible development Curadi family; Bhvadi reduced65, others unchanged. Proportional4800class quotas (290Curadi/3070Bhvadi) preserve the same confirmation/final class composition and can cover all203eligible test Curadi families. No class chosen by errors."
+      },
+      "joint_only": {
+        "fit": {
+          "method": "Exact joint recipe×tense×voice standardization",
+          "converged": true,
+          "iterations": 1,
+          "maximum_joint_margin_error": 2.2737367544323206e-13,
+          "minimum_weight": 0.75,
+          "maximum_weight": 3.0555555555555554,
+          "effective_question_weight_n": 1852.6457967192664,
+          "class_margins": {
+            "Tudadi": 222.5805848421058,
+            "Bhvadi": 1488.1388752239482,
+            "Curadi": 241.30555555555557,
+            "Kryadi": 105.81616544447215,
+            "Divadi": 150.27807816226596,
+            "Tanadi": 6.6231353987378085,
+            "Adadi": 93.06631039607763,
+            "Rudhadi": 41.38744019138756,
+            "Svadi": 36.745221551213604,
+            "Juhotyadi": 14.058633234235643
+          },
+          "joint_class_interactions": "No full joint×class target is declared; raking preserves observed interactions. This is an observational sensitivity, not identification of missing joint×class cells."
+        },
+        "estimates": {
+          "all": {
+            "accuracy": 0.7974006393530356,
+            "family_sandwich_se": 0.010259338391337884,
+            "family_bootstrap_interval95": [
+              0.7770078108282047,
+              0.8171996335984459
+            ]
+          },
+          "usable": {
+            "accuracy": 0.8043045191158299,
+            "family_sandwich_se": 0.010044528965693455,
+            "family_bootstrap_interval95": [
+              0.7844344507156465,
+              0.8236428151993505
+            ]
+          }
+        },
+        "missing_response_bounds": [
+          0.7974006393530351,
+          0.8059843033741995
+        ],
+        "completion": 0.9914163359788356,
+        "weighted_cost_at_existing16k": 0.022636158155969907,
+        "warning": "Exploratory reweighting of failed16k development panel. Future common65536 cap is unmeasured. Family intervals omit mixture-selection and root-composition uncertainty."
+      },
+      "joint_and_class": {
+        "fit": {
+          "method": "Iterative proportional fitting to joint recipe×tense×voice AND class margins",
+          "converged": true,
+          "iterations": 20,
+          "maximum_joint_margin_error": 8.275895879705786e-08,
+          "minimum_weight": 0.5601643075620162,
+          "maximum_weight": 5.6771491737968915,
+          "effective_question_weight_n": 1694.0271782083878,
+          "class_margins": {
+            "Tudadi": 240.00000000000003,
+            "Bhvadi": 1535.0000000000002,
+            "Curadi": 144.99999999999997,
+            "Kryadi": 112.00000000000001,
+            "Divadi": 168.0,
+            "Tanadi": 16.0,
+            "Adadi": 88.0,
+            "Rudhadi": 48.000000000000014,
+            "Svadi": 32.0,
+            "Juhotyadi": 16.0
+          },
+          "joint_class_interactions": "No full joint×class target is declared; raking preserves observed interactions. This is an observational sensitivity, not identification of missing joint×class cells."
+        },
+        "estimates": {
+          "all": {
+            "accuracy": 0.7958695107288098,
+            "family_sandwich_se": 0.010592962849580723,
+            "family_bootstrap_interval95": [
+              0.7747201121670998,
+              0.8162118607882028
+            ]
+          },
+          "usable": {
+            "accuracy": 0.8027299918309397,
+            "family_sandwich_se": 0.010385856997761584,
+            "family_bootstrap_interval95": [
+              0.7820053039768461,
+              0.822444906895816
+            ]
+          }
+        },
+        "missing_response_bounds": [
+          0.7958695107288092,
+          0.8044159474783344
+        ],
+        "completion": 0.9914535632504747,
+        "weighted_cost_at_existing16k": 0.02268439984858239,
+        "warning": "Exploratory reweighting of failed16k development panel. Future common65536 cap is unmeasured. Family intervals omit mixture-selection and root-composition uncertainty."
+      },
+      "astra_highcap_transport": {
+        "mean_cost": 0.2245187131944444,
+        "cost_bootstrap95": [
+          0.20754924015625,
+          0.24195360423611106
+        ],
+        "accuracy": 0.7429166666666667,
+        "n": 59,
+        "minimum_source_cell": 2,
+        "projection4800_cost": 1077.6898233333332,
+        "lifetime4800": 1805.167973333333,
+        "projection6000_cost": 1347.1122791666664,
+        "lifetime6000": 2074.5904291666666,
+        "warning": "128k59-question coarse-cell transport to prospective65536. San is4observations; class changes are not adjusted. No highcap family dependence is measured.",
+        "scope": "Policy19 supplemental59; raw60 remains unchanged. One exactsource-invalid08.0007 row excluded uniformly."
+      }
+    },
+    "san20_lun47_fullcoverage": {
+      "plan": {
+        "n": 2400,
+        "recipe_counts": {
+          "causative_of_intensive": 1344,
+          "causative_of_intensive_luk": 576,
+          "desiderative": 480
+        },
+        "cell_counts": {
+          "causative_of_intensive|Lun|Kartari": 632,
+          "causative_of_intensive|Lat|Kartari": 84,
+          "causative_of_intensive|Lat|Karmani": 42,
+          "causative_of_intensive|VidhiLin|Kartari": 84,
+          "causative_of_intensive|VidhiLin|Karmani": 42,
+          "causative_of_intensive|Lit|Kartari": 66,
+          "causative_of_intensive|Lut|Kartari": 44,
+          "causative_of_intensive|Lut|Karmani": 20,
+          "causative_of_intensive|Lrt|Kartari": 44,
+          "causative_of_intensive|Lrt|Karmani": 20,
+          "causative_of_intensive|Lot|Kartari": 44,
+          "causative_of_intensive|Lot|Karmani": 22,
+          "causative_of_intensive|Lan|Kartari": 46,
+          "causative_of_intensive|Lan|Karmani": 22,
+          "causative_of_intensive|AshirLin|Kartari": 68,
+          "causative_of_intensive|Lrn|Kartari": 64,
+          "causative_of_intensive_luk|Lun|Kartari": 270,
+          "causative_of_intensive_luk|Lat|Kartari": 38,
+          "causative_of_intensive_luk|Lat|Karmani": 18,
+          "causative_of_intensive_luk|VidhiLin|Kartari": 36,
+          "causative_of_intensive_luk|VidhiLin|Karmani": 18,
+          "causative_of_intensive_luk|Lit|Kartari": 28,
+          "causative_of_intensive_luk|Lut|Kartari": 20,
+          "causative_of_intensive_luk|Lut|Karmani": 8,
+          "causative_of_intensive_luk|Lrt|Kartari": 20,
+          "causative_of_intensive_luk|Lrt|Karmani": 8,
+          "causative_of_intensive_luk|Lot|Kartari": 18,
+          "causative_of_intensive_luk|Lot|Karmani": 10,
+          "causative_of_intensive_luk|Lan|Kartari": 18,
+          "causative_of_intensive_luk|Lan|Karmani": 10,
+          "causative_of_intensive_luk|AshirLin|Kartari": 28,
+          "causative_of_intensive_luk|Lrn|Kartari": 28,
+          "desiderative|Lun|Kartari": 226,
+          "desiderative|Lat|Kartari": 46,
+          "desiderative|VidhiLin|Kartari": 46,
+          "desiderative|Lit|Kartari": 24,
+          "desiderative|Lut|Kartari": 22,
+          "desiderative|Lrt|Kartari": 22,
+          "desiderative|Lot|Kartari": 24,
+          "desiderative|Lan|Kartari": 24,
+          "desiderative|AshirLin|Kartari": 24,
+          "desiderative|Lrn|Kartari": 22
+        },
+        "gana_counts": {
+          "Bhvadi": 1535,
+          "Adadi": 88,
+          "Juhotyadi": 16,
+          "Divadi": 168,
+          "Svadi": 32,
+          "Tudadi": 240,
+          "Rudhadi": 48,
+          "Tanadi": 16,
+          "Kryadi": 112,
+          "Curadi": 145
+        },
+        "lakara_counts": {
+          "Lun": 1128,
+          "Lat": 228,
+          "VidhiLin": 226,
+          "Lit": 118,
+          "Lut": 114,
+          "Lrt": 114,
+          "Lot": 118,
+          "Lan": 120,
+          "AshirLin": 120,
+          "Lrn": 114
+        },
+        "prayoga_counts": {
+          "Kartari": 2160,
+          "Karmani": 240
+        },
+        "recipe_percent": [
+          56,
+          24,
+          20
+        ],
+        "Lun_percent": 47,
+        "source_non_Lun_profiles": "Preserve prior conditional non-Lun tense proportions within each recipe by even largest-remainder apportionment; assign10% global passive across nested recipes proportional to their recipe weights, and preserve each recipe passive-tense profile. All42 joint cells remain positive.",
+        "phase": "confirm_64k",
+        "effort": "xhigh",
+        "max_output_tokens": 65536,
+        "transport": {
+          "fixed_n": 2400,
+          "chunks": 6,
+          "n_each": 400,
+          "sequence": "Each next chunk only after previous settlement and financial gate. No interim score analysis or stopping. Partition not yet generated."
+        },
+        "status": "unfrozen_quota_proposal",
+        "all_classes_and_lakaras_preserved": true,
+        "maximum_tasks_per_family": 8,
+        "maximum_Lun_per_family": 5,
+        "maximum_each_other_lakara_per_family": 1,
+        "policy": "oracle-policy-19",
+        "adapter_sha256": "f04e9fa535784bd0318d6a5bef38ccf024c240c444af0f1c771221e94262f838",
+        "source_policy_sha256": "3612b5af9ce8f75946397e239e80c0a082979061eec2fc2f9eb441b1a3350747",
+        "class_rationale": "145Curadi permits one task from every eligible development Curadi family; Bhvadi reduced65, others unchanged. Proportional4800class quotas (290Curadi/3070Bhvadi) preserve the same confirmation/final class composition and can cover all203eligible test Curadi families. No class chosen by errors."
+      },
+      "joint_only": {
+        "fit": {
+          "method": "Exact joint recipe×tense×voice standardization",
+          "converged": true,
+          "iterations": 1,
+          "maximum_joint_margin_error": 2.2737367544323206e-13,
+          "minimum_weight": 0.7333333333333333,
+          "maximum_weight": 3.138888888888889,
+          "effective_question_weight_n": 1848.810079727537,
+          "class_margins": {
+            "Tudadi": 222.37041294885907,
+            "Bhvadi": 1486.0043451075353,
+            "Curadi": 242.8888888888889,
+            "Kryadi": 106.40024258382999,
+            "Divadi": 150.09901021875942,
+            "Tanadi": 6.50499139414802,
+            "Adadi": 93.43383083243299,
+            "Rudhadi": 41.21839257233994,
+            "Svadi": 36.88423749340181,
+            "Juhotyadi": 14.195647959804587
+          },
+          "joint_class_interactions": "No full joint×class target is declared; raking preserves observed interactions. This is an observational sensitivity, not identification of missing joint×class cells."
+        },
+        "estimates": {
+          "all": {
+            "accuracy": 0.7949286698302297,
+            "family_sandwich_se": 0.010358181559554053,
+            "family_bootstrap_interval95": [
+              0.7742274146146423,
+              0.8149088055125224
+            ]
+          },
+          "usable": {
+            "accuracy": 0.8019149293586536,
+            "family_sandwich_se": 0.010141007174163056,
+            "family_bootstrap_interval95": [
+              0.7817779493169008,
+              0.8214444157031279
+            ]
+          }
+        },
+        "missing_response_bounds": [
+          0.7949286698302303,
+          0.8036406407297009
+        ],
+        "completion": 0.9912880291005295,
+        "weighted_cost_at_existing16k": 0.02276512326856549,
+        "warning": "Exploratory reweighting of failed16k development panel. Future common65536 cap is unmeasured. Family intervals omit mixture-selection and root-composition uncertainty."
+      },
+      "joint_and_class": {
+        "fit": {
+          "method": "Iterative proportional fitting to joint recipe×tense×voice AND class margins",
+          "converged": true,
+          "iterations": 20,
+          "maximum_joint_margin_error": 8.368263593183656e-08,
+          "minimum_weight": 0.5420646011551014,
+          "maximum_weight": 5.874201359994262,
+          "effective_question_weight_n": 1685.0662334241886,
+          "class_margins": {
+            "Tudadi": 240.0,
+            "Bhvadi": 1535.0,
+            "Curadi": 145.00000000000006,
+            "Kryadi": 112.0,
+            "Divadi": 168.0,
+            "Tanadi": 16.0,
+            "Adadi": 88.0,
+            "Rudhadi": 47.99999999999999,
+            "Svadi": 31.999999999999996,
+            "Juhotyadi": 16.000000000000004
+          },
+          "joint_class_interactions": "No full joint×class target is declared; raking preserves observed interactions. This is an observational sensitivity, not identification of missing joint×class cells."
+        },
+        "estimates": {
+          "all": {
+            "accuracy": 0.7933616580132089,
+            "family_sandwich_se": 0.010700765387175393,
+            "family_bootstrap_interval95": [
+              0.7720829386955007,
+              0.8139175809130097
+            ]
+          },
+          "usable": {
+            "accuracy": 0.8002999722895986,
+            "family_sandwich_se": 0.010493464281546353,
+            "family_bootstrap_interval95": [
+              0.7794099484776831,
+              0.8202240135956449
+            ]
+          }
+        },
+        "missing_response_bounds": [
+          0.7933616580132088,
+          0.8020313000432335
+        ],
+        "completion": 0.9913303579699753,
+        "weighted_cost_at_existing16k": 0.022813891262725025,
+        "warning": "Exploratory reweighting of failed16k development panel. Future common65536 cap is unmeasured. Family intervals omit mixture-selection and root-composition uncertainty."
+      },
+      "astra_highcap_transport": {
+        "mean_cost": 0.226076909755291,
+        "cost_bootstrap95": [
+          0.2091954378778108,
+          0.24342665002314812
+        ],
+        "accuracy": 0.7414351851851853,
+        "n": 59,
+        "minimum_source_cell": 2,
+        "projection4800_cost": 1085.1691668253968,
+        "lifetime4800": 1812.647316825397,
+        "projection6000_cost": 1356.4614585317458,
+        "lifetime6000": 2083.9396085317458,
+        "warning": "128k59-question coarse-cell transport to prospective65536. San is4observations; class changes are not adjusted. No highcap family dependence is measured.",
+        "scope": "Policy19 supplemental59; raw60 remains unchanged. One exactsource-invalid08.0007 row excluded uniformly."
+      }
+    },
+    "san15_lun42_fullcoverage": {
+      "plan": {
+        "n": 2400,
+        "recipe_counts": {
+          "causative_of_intensive": 1440,
+          "causative_of_intensive_luk": 600,
+          "desiderative": 360
+        },
+        "cell_counts": {
+          "causative_of_intensive|Lun|Kartari": 604,
+          "causative_of_intensive|Lat|Kartari": 106,
+          "causative_of_intensive|Lat|Karmani": 42,
+          "causative_of_intensive|VidhiLin|Kartari": 106,
+          "causative_of_intensive|VidhiLin|Karmani": 42,
+          "causative_of_intensive|Lit|Kartari": 76,
+          "causative_of_intensive|Lut|Kartari": 56,
+          "causative_of_intensive|Lut|Karmani": 20,
+          "causative_of_intensive|Lrt|Kartari": 56,
+          "causative_of_intensive|Lrt|Karmani": 20,
+          "causative_of_intensive|Lot|Kartari": 54,
+          "causative_of_intensive|Lot|Karmani": 22,
+          "causative_of_intensive|Lan|Kartari": 56,
+          "causative_of_intensive|Lan|Karmani": 24,
+          "causative_of_intensive|AshirLin|Kartari": 80,
+          "causative_of_intensive|Lrn|Kartari": 76,
+          "causative_of_intensive_luk|Lun|Kartari": 252,
+          "causative_of_intensive_luk|Lat|Kartari": 44,
+          "causative_of_intensive_luk|Lat|Karmani": 18,
+          "causative_of_intensive_luk|VidhiLin|Kartari": 44,
+          "causative_of_intensive_luk|VidhiLin|Karmani": 18,
+          "causative_of_intensive_luk|Lit|Kartari": 32,
+          "causative_of_intensive_luk|Lut|Kartari": 24,
+          "causative_of_intensive_luk|Lut|Karmani": 8,
+          "causative_of_intensive_luk|Lrt|Kartari": 24,
+          "causative_of_intensive_luk|Lrt|Karmani": 8,
+          "causative_of_intensive_luk|Lot|Kartari": 24,
+          "causative_of_intensive_luk|Lot|Karmani": 8,
+          "causative_of_intensive_luk|Lan|Kartari": 22,
+          "causative_of_intensive_luk|Lan|Karmani": 10,
+          "causative_of_intensive_luk|AshirLin|Kartari": 32,
+          "causative_of_intensive_luk|Lrn|Kartari": 32,
+          "desiderative|Lun|Kartari": 152,
+          "desiderative|Lat|Kartari": 38,
+          "desiderative|VidhiLin|Kartari": 38,
+          "desiderative|Lit|Kartari": 20,
+          "desiderative|Lut|Kartari": 18,
+          "desiderative|Lrt|Kartari": 18,
+          "desiderative|Lot|Kartari": 18,
+          "desiderative|Lan|Kartari": 20,
+          "desiderative|AshirLin|Kartari": 20,
+          "desiderative|Lrn|Kartari": 18
+        },
+        "gana_counts": {
+          "Bhvadi": 1535,
+          "Adadi": 88,
+          "Juhotyadi": 16,
+          "Divadi": 168,
+          "Svadi": 32,
+          "Tudadi": 240,
+          "Rudhadi": 48,
+          "Tanadi": 16,
+          "Kryadi": 112,
+          "Curadi": 145
+        },
+        "lakara_counts": {
+          "Lun": 1008,
+          "Lat": 248,
+          "VidhiLin": 248,
+          "Lit": 128,
+          "Lut": 126,
+          "Lrt": 126,
+          "Lot": 126,
+          "Lan": 132,
+          "AshirLin": 132,
+          "Lrn": 126
+        },
+        "prayoga_counts": {
+          "Kartari": 2160,
+          "Karmani": 240
+        },
+        "recipe_percent": [
+          60,
+          25,
+          15
+        ],
+        "Lun_percent": 42,
+        "source_non_Lun_profiles": "Preserve prior conditional non-Lun tense proportions within each recipe by even largest-remainder apportionment; assign10% global passive across nested recipes proportional to their recipe weights, and preserve each recipe passive-tense profile. All42 joint cells remain positive.",
+        "phase": "confirm_64k",
+        "effort": "xhigh",
+        "max_output_tokens": 65536,
+        "transport": {
+          "fixed_n": 2400,
+          "chunks": 6,
+          "n_each": 400,
+          "sequence": "Each next chunk only after previous settlement and financial gate. No interim score analysis or stopping. Partition not yet generated."
+        },
+        "status": "unfrozen_quota_proposal",
+        "all_classes_and_lakaras_preserved": true,
+        "maximum_tasks_per_family": 8,
+        "maximum_Lun_per_family": 5,
+        "maximum_each_other_lakara_per_family": 1,
+        "policy": "oracle-policy-19",
+        "adapter_sha256": "f04e9fa535784bd0318d6a5bef38ccf024c240c444af0f1c771221e94262f838",
+        "source_policy_sha256": "3612b5af9ce8f75946397e239e80c0a082979061eec2fc2f9eb441b1a3350747",
+        "class_rationale": "145Curadi permits one task from every eligible development Curadi family; Bhvadi reduced65, others unchanged. Proportional4800class quotas (290Curadi/3070Bhvadi) preserve the same confirmation/final class composition and can cover all203eligible test Curadi families. No class chosen by errors."
+      },
+      "joint_only": {
+        "fit": {
+          "method": "Exact joint recipe×tense×voice standardization",
+          "converged": true,
+          "iterations": 1,
+          "maximum_joint_margin_error": 1.1368683772161603e-13,
+          "minimum_weight": 0.8388888888888889,
+          "maximum_weight": 2.5,
+          "effective_question_weight_n": 2140.4391304359906,
+          "class_margins": {
+            "Tudadi": 231.3030523872788,
+            "Bhvadi": 1530.6574786274746,
+            "Curadi": 177.8611111111111,
+            "Kryadi": 106.92368233640886,
+            "Divadi": 160.42930932364112,
+            "Tanadi": 7.704331612162937,
+            "Adadi": 90.08587236272312,
+            "Rudhadi": 45.59458304853042,
+            "Svadi": 35.11067037792877,
+            "Juhotyadi": 14.32990881274014
+          },
+          "joint_class_interactions": "No full joint×class target is declared; raking preserves observed interactions. This is an observational sensitivity, not identification of missing joint×class cells."
+        },
+        "estimates": {
+          "all": {
+            "accuracy": 0.7990296131741824,
+            "family_sandwich_se": 0.009945369891976894,
+            "family_bootstrap_interval95": [
+              0.7791606057626799,
+              0.8181915560558284
+            ]
+          },
+          "usable": {
+            "accuracy": 0.8054732661230634,
+            "family_sandwich_se": 0.009762164501713756,
+            "family_bootstrap_interval95": [
+              0.7859337573902294,
+              0.8243616301073491
+            ]
+          }
+        },
+        "missing_response_bounds": [
+          0.7990296131741826,
+          0.8070294478302674
+        ],
+        "completion": 0.9920001653439152,
+        "weighted_cost_at_existing16k": 0.02256647361845295,
+        "warning": "Exploratory reweighting of failed16k development panel. Future common65536 cap is unmeasured. Family intervals omit mixture-selection and root-composition uncertainty."
+      },
+      "joint_and_class": {
+        "fit": {
+          "method": "Iterative proportional fitting to joint recipe×tense×voice AND class margins",
+          "converged": true,
+          "iterations": 25,
+          "maximum_joint_margin_error": 5.8804033642445575e-08,
+          "minimum_weight": 0.728124230102212,
+          "maximum_weight": 3.2604095441656358,
+          "effective_question_weight_n": 2107.7401884658257,
+          "class_margins": {
+            "Tudadi": 239.99999999999997,
+            "Bhvadi": 1535.0000000000005,
+            "Curadi": 145.0,
+            "Kryadi": 111.99999999999999,
+            "Divadi": 168.0,
+            "Tanadi": 16.000000000000004,
+            "Adadi": 88.0,
+            "Rudhadi": 48.0,
+            "Svadi": 32.0,
+            "Juhotyadi": 16.0
+          },
+          "joint_class_interactions": "No full joint×class target is declared; raking preserves observed interactions. This is an observational sensitivity, not identification of missing joint×class cells."
+        },
+        "estimates": {
+          "all": {
+            "accuracy": 0.7984489095272645,
+            "family_sandwich_se": 0.010009714463147672,
+            "family_bootstrap_interval95": [
+              0.7783617104248353,
+              0.8178059455417729
+            ]
+          },
+          "usable": {
+            "accuracy": 0.8048492948485156,
+            "family_sandwich_se": 0.009825725383930247,
+            "family_bootstrap_interval95": [
+              0.7851654972427312,
+              0.8239041522825435
+            ]
+          }
+        },
+        "missing_response_bounds": [
+          0.7984489095272649,
+          0.806401187503051
+        ],
+        "completion": 0.992047722024214,
+        "weighted_cost_at_existing16k": 0.02261030121108126,
+        "warning": "Exploratory reweighting of failed16k development panel. Future common65536 cap is unmeasured. Family intervals omit mixture-selection and root-composition uncertainty."
+      },
+      "astra_highcap_transport": {
+        "mean_cost": 0.224535526984127,
+        "cost_bootstrap95": [
+          0.2057458298792989,
+          0.24373876048197748
+        ],
+        "accuracy": 0.747199074074074,
+        "n": 59,
+        "minimum_source_cell": 2,
+        "projection4800_cost": 1077.7705295238095,
+        "lifetime4800": 1805.2486795238096,
+        "projection6000_cost": 1347.2131619047618,
+        "lifetime6000": 2074.6913119047617,
+        "warning": "128k59-question coarse-cell transport to prospective65536. San is4observations; class changes are not adjusted. No highcap family dependence is measured.",
+        "scope": "Policy19 supplemental59; raw60 remains unchanged. One exactsource-invalid08.0007 row excluded uniformly."
+      }
+    }
+  },
+  "not_frozen": true,
+  "no_tasks_generated": true,
+  "paid_calls": 0,
+  "benchmark_ready": false
+}

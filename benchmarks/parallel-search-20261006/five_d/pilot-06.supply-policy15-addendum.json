@@ -1,0 +1,24 @@
+{
+  "created_at": "2026-10-07T09:07:44.246293+00:00",
+  "parent_policy": "oracle-policy-15",
+  "previous_census_sha256": "fc21e501ec48e788ab896924860617fc58f4f5e46714be3790d56e6ba742dfc3",
+  "current_adapter_sha256": "7c653b7216e4797b27eaae25949463dcbc28e306a803da7c33a451481da71162",
+  "source_predicate_families": [
+    {
+      "code": "01.0866",
+      "family": "kfpU~\\|Bhvadi",
+      "split": "development",
+      "present_in_census": false
+    },
+    {
+      "code": "06.0012",
+      "family": "o~vrascU~|Tudadi",
+      "split": "development",
+      "present_in_census": false
+    }
+  ],
+  "accepted_tuples_unchanged": 274257,
+  "reason": "The only two added code-specific source/scorer predicates are development families, absent from master test and RL splits. No policy14 test mask can change. Original generation-time census hashes remain untouched.",
+  "no_model_answers_read": true,
+  "no_final_membership_selected": true
+}

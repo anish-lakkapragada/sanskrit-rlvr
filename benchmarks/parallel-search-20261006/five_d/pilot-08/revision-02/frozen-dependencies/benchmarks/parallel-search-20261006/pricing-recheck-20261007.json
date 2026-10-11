@@ -1,0 +1,37 @@
+{
+  "checked_at": "2026-10-07T12:21:57.136478+00:00",
+  "providers": {
+    "Anthropic": {
+      "model": "claude-opus-5-5",
+      "source": "https://platform.claude.com/docs/en/about-claude/pricing",
+      "standard_usd_per_million": {
+        "input": 4,
+        "output": 20
+      },
+      "batch_multiplier": 0.5,
+      "batch_usd_per_million": {
+        "input": 2,
+        "output": 10
+      }
+    },
+    "OpenAI": {
+      "model": "gpt-6-astra",
+      "source": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+      "standard_usd_per_million": {
+        "input": 10,
+        "output": 50
+      },
+      "batch_multiplier": 0.5,
+      "batch_usd_per_million": {
+        "input": 5,
+        "output": 25
+      }
+    }
+  },
+  "runner_rates_match": true,
+  "mode": "Direct global API batch, short inputs, no tools or requested prompt cache writes.",
+  "hard_caps_unchanged": {
+    "Anthropic": 1000,
+    "OpenAI": 2000
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "created_at": "2026-10-07T19:14:18.537273+00:00",
+  "fixed_n": 200,
+  "expected_jobs": [
+    "opus-modification-01",
+    "opus-modification-control-01"
+  ],
+  "hold": "Require both complete200-question arms settled and collected before paired analysis; no interim membership or score stopping.",
+  "exact_pairing": "Ordered modification/control IDs; same full target gold union;200distinct dictionary families.",
+  "metrics": [
+    "all-request accuracy",
+    "usable accuracy under shared completed predicate",
+    "completion and missing-answer bounds",
+    "paired correctness transition table",
+    "paired accuracy difference with whole-family bootstrap",
+    "iid and family SE",
+    "source tense, target tense, class and PN strata"
+  ],
+  "no_automatic_qualification": true,
+  "raw_results_immutable": true,
+  "current_scope": "Any later independent source predicate applies symmetrically to both arms and every outcome; supplemental scope only, never silently overwrite raw."
+}

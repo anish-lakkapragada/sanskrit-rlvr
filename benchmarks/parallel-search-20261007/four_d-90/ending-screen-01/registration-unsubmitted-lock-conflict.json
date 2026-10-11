@@ -1,0 +1,64 @@
+{
+  "created_at": "2026-10-07T23:27:41.253606+00:00",
+  "job": "opus-ending-screen-01",
+  "provider": "Anthropic",
+  "model": "claude-opus-5-5",
+  "phase": "confirm_64k",
+  "transport": "direct",
+  "effort": "xhigh",
+  "max_output_tokens": 65536,
+  "maximum_concurrency": 8,
+  "n": 96,
+  "tasks_digest": "48b4b5de97aee4e94dad92d5cb101345967b925669bcd6fcb53fa062135c8da5",
+  "pool_id": "ending-screen-direct-20261007",
+  "additional_cap_micro": 126405120,
+  "effective_sdk_additions": {
+    "service_tier": "standard_only",
+    "inference_geo": "global"
+  },
+  "rationale": "Distinct grammar-defined ending-interaction hypothesis across96 families/10classes. Prior matching19/19correct makes this low-confidence discovery, not an established hardness lead.",
+  "primary_scoring": "CanonicalVPgold plus exact predeclared per-item licensed spelling aliases; preserve canonical-only secondary score and all raw outputs. Independently adjudicate every actual miss before source-supported error gate.",
+  "decision": "All96 attempted; >=92usable; all-request and usable accuracy<90%; source-supported errors in >=8families, >=3classes, >=3cells. Unresolved spellings are not source-supported errors. No final qualification.",
+  "stopping": "No accuracy-based stopping, paid retries, resampled tasks, or automatic second-reference calls. Unknown usage retains full reservation and stops for review.",
+  "pricing_checked_on": "2026-10-07",
+  "pricing_source": "https://platform.claude.com/docs/en/models/opus-5-5/overview",
+  "rates_per_million": {
+    "input": 4,
+    "output": 20
+  },
+  "protected_allocation": {
+    "Anthropic": {
+      "hard_final": 1000,
+      "cap_check": 0,
+      "bench_final": 0
+    },
+    "OpenAI": {
+      "hard_final": 1000,
+      "cap_check": 100,
+      "bench_final": 1000
+    }
+  },
+  "dependencies": {
+    "misc/vp_ending_screen_run.py": "adef1301659092830c6cc9759d63b11420b2b8d4bff2febf4ea4911d2eed20ba",
+    "misc/vp_ending_screen_analyze.py": "659f770e8a8f6d6e5cbf23a06ed4999a9c511654821c9503546c68af029331a3",
+    "misc/vp_goal.py": "c317278d15f3a05e3948e22678a346cc33a7274122f9ac5f66ed082e3373b65d",
+    "misc/vp_goal_validate.py": "a5461df5d85dfd34875ece368ede87e957b7a70a10021667eb5b4f03af06791d",
+    "misc/ant_batch_eval.py": "aac6d895846d4f2e83b01c009be09b060c1a58d9ec2209caad763403ec3f29f8",
+    "misc/oai_batch_eval.py": "1472b84916e52676df620b2433f01c956696cde69ad198bf386bb735df5d1525",
+    "misc/vp_simple_search_analyze.py": "cbbb64658f102f801c3095f16ecc74b673508e4ccba9763376433667cb85f0e7",
+    "misc/vp_cartesian_final_analyze.py": "c799424553a8d557328d4b1d2c7ec0984969bd923f2a11dda28946138800b37d",
+    "benchmarks/parallel-search-20261007/four_d-90/ending-screen-01/proposedtasks.json": "f7a8e6088b593f2ac0707ef4c79d441b0a27e96656109375212fae983938c1f9",
+    "benchmarks/parallel-search-20261007/four_d-90/ending-screen-01/alias-policy.json": "4565d30327e6c958f126b94e9979e2838a69734e9fa14cf86a8567b2c4e3433e",
+    "benchmarks/parallel-search-20261007/four_d-90/ending-screen-01/plan.json": "f2754c8d2e5d3a8278df46fd9628cd2667ded41669fdb39e562422b1fc4c03b5",
+    "benchmarks/parallel-search-20261007/four_d-90/ending-screen-01/alias_policy.py": "95aa681cf454a6f71e63acc4fd34ff52ae9b9341a2a9e6c68050c0a073003825",
+    "benchmarks/parallel-search-20261007/four_d-90/ending-screen-01/manifest.json": "4ae792f2b33df7f43a81e7cca3187985a4fcad623ccf25e442f7dbc5e1acbe8d",
+    "benchmarks/parallel-search-20261007/four_d-90/ending-screen-01/independent-source-review.json": "9705cb6b2ddded363b042f5aee50d0803690e4c8c299e35eb43798aaa6c3ffb5",
+    "benchmarks/parallel-search-20261007/four_d-90/ending-screen-01/primary-source-controls.json": "22a9f4dea063d73c578c83154ba5548c4a172e34c8c821b8939075171e8bb6fd",
+    "benchmarks/parallel-search-20261007/four_d-90/ending-screen-01/task-path-audit.json": "94e46fe78a4e76e027e8482973ee6a092f041596079f4ac8a9d5614f1688789e",
+    "benchmarks/parallel-search-20261007/four_d-90/broader-hypothesis-witness.json": "2206cc675015ca2fae051f604514169c7c47820c0895c49d5e47825d9fe21ba9",
+    "misc/vp_cartesian_task.py": "f5bfab6f3fc27b7c83bbd6987bede73501592a9568fda32a0371bd8e23b7febd",
+    "misc/vp_cartesian_prompt_v1.py": "1cdf3930d2e6b5bf9994a0a5fd25918a2e038b6dfbbcc9a9bab1fb59ddbfcfff",
+    "prompts/v2/vp_task_eval.txt": "a784e3a1cf0e5f5d8b56c018d166ad78fa62d8af489291ef96d8f6fea70239cd"
+  },
+  "benchmark_ready": false
+}

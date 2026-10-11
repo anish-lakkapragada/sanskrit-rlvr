@@ -1,0 +1,597 @@
+{
+  "created_at": "2026-10-07T10:01:58.977557+00:00",
+  "predicate": {
+    "exact_codes": [
+      "02.0071",
+      "02.0072",
+      "02.0073",
+      "02.0074"
+    ],
+    "all_coordinates": true,
+    "all_recipes": true,
+    "explicitly_preserve": [
+      "02.0075"
+    ]
+  },
+  "shared_policy_mutated": false,
+  "basis": "Declared classical Paninian finite-form scope",
+  "entries": [
+    {
+      "code": "02.0071",
+      "aupadeshika": "dIDIN",
+      "gana": "Gana.Adadi",
+      "artha": "dIptidevanayoH"
+    },
+    {
+      "code": "02.0072",
+      "aupadeshika": "vevIN",
+      "gana": "Gana.Adadi",
+      "artha": "gativyAptiprajanakAntyasanasvAdanezu"
+    },
+    {
+      "code": "02.0073",
+      "aupadeshika": "zasa~",
+      "gana": "Gana.Adadi",
+      "artha": "svapne"
+    },
+    {
+      "code": "02.0074",
+      "aupadeshika": "zasti~",
+      "gana": "Gana.Adadi",
+      "artha": "svapne"
+    },
+    {
+      "code": "02.0075",
+      "aupadeshika": "vaSa~",
+      "gana": "Gana.Adadi",
+      "artha": "kAntO"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://www.ashtadhyayi.com/bhashya/4?scroll=bhashya-11009",
+      "work": "Mahabhasya1.1.6",
+      "quote": "दीधीवेव्यौ छन्दसो विषयौ",
+      "finding": "Direct primary text confirms dIdhI/vevI Vedic scope."
+    },
+    {
+      "url": "https://ashtadhyayi.com/sutraani/lsk345",
+      "work": "Mahabhasya6.1.6",
+      "quote": "षसिवशी छान्दसौ",
+      "finding": "Confirms sas/vas Vedic characterization, subject to explicit classical exception below."
+    },
+    {
+      "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.4.53.htm",
+      "work": "Balamanorama and Tattvabodhini",
+      "finding": "Names dIdhI,vevI,sas,sasti,vas as the five; says unrestricted classical paradigm enumeration is inappropriate; explicitly preserves classical uses of vas. There is textual disagreement whether sasti is a separate historical entry, but installed zasti~ exactly identifies the disputed Vedic entry and has no classical license here."
+    },
+    {
+      "url": "https://jainqq.org/booktext/Kshir_Tarangini/002433",
+      "work": "Kshiratarangini, printedp167–168",
+      "finding": "The earlier caution arose from p168 editorial acchandasatva wording. It conflicts with p167 footnote and the primary Mahabhasya text itself. It is not sufficient contrary evidence for a classical Paninian benchmark. Katantra alternative tradition is noted separately, not silently imported into this contract."
+    }
+  ],
+  "interpretation": "Recommend exact71–74 scope hold with75 preserved. This supersedes the tentative unresolved classification in search-03.lexical-scope-scan.json; do not rewrite that historical artifact. Morphological single-san defects remain independently documented.",
+  "method": "Inspect input codes before any score fields. Only existing development results is_correct/status fields were extracted; no final model answers exist or were read. Counterfactual counts apply this scope hold alone against the shared development-results snapshot and leave raw files unchanged.",
+  "development_snapshot_updated_at": "2026-10-07T09:50:01.670126+00:00",
+  "jobs": [
+    {
+      "job": "astra-five-d-cap-development-01",
+      "input_path": "benchmarks/iterative-goal-20261006/jobs/astra-five-d-cap-development-01/tasks.json",
+      "raw_n": 60,
+      "affected_inputs": [],
+      "currently_eligible_affected_ids": []
+    },
+    {
+      "job": "astra-five-d-pilot-01-pair",
+      "input_path": "benchmarks/iterative-goal-20261006/jobs/astra-five-d-pilot-01-pair/tasks.json",
+      "raw_n": 119,
+      "affected_inputs": [
+        {
+          "id": "cart5-1ea23b4d5ae78242cd0c17ef",
+          "dhatu": {
+            "code": "02.0074",
+            "aupadeshika": "zasti~",
+            "gana": "Adadi",
+            "artha": "svapne"
+          },
+          "morphology": {
+            "lakara": "AshirLin",
+            "prayoga": "Kartari",
+            "purusha": "Prathama",
+            "vacana": "Eka"
+          }
+        }
+      ],
+      "currently_eligible_affected_ids": [
+        "cart5-1ea23b4d5ae78242cd0c17ef"
+      ],
+      "removed_development_score_counts": {
+        "n": 1,
+        "correct": 0,
+        "completed": 0,
+        "completed_correct": 0
+      },
+      "prior_scope_counts": {
+        "n": 113,
+        "correct": 72,
+        "completed": 106,
+        "completed_correct": 72
+      },
+      "hypothetical_after_only_this_scope_hold": {
+        "n": 112,
+        "correct": 72,
+        "completed": 106,
+        "completed_correct": 72
+      }
+    },
+    {
+      "job": "astra-five-d-pilot-04-pair",
+      "input_path": "benchmarks/iterative-goal-20261006/jobs/astra-five-d-pilot-04-pair/tasks.json",
+      "raw_n": 480,
+      "affected_inputs": [
+        {
+          "id": "cart5-278ba65e780b5d25bc7dd248",
+          "dhatu": {
+            "code": "02.0074",
+            "aupadeshika": "zasti~",
+            "gana": "Adadi",
+            "artha": "svapne"
+          },
+          "morphology": {
+            "lakara": "AshirLin",
+            "prayoga": "Kartari",
+            "purusha": "Uttama",
+            "vacana": "Bahu"
+          }
+        },
+        {
+          "id": "cart5-ec28a2e92f86dcd4c32b623c",
+          "dhatu": {
+            "code": "02.0074",
+            "aupadeshika": "zasti~",
+            "gana": "Adadi",
+            "artha": "svapne"
+          },
+          "morphology": {
+            "lakara": "Lun",
+            "prayoga": "Kartari",
+            "purusha": "Madhyama",
+            "vacana": "Eka"
+          }
+        }
+      ],
+      "currently_eligible_affected_ids": [
+        "cart5-278ba65e780b5d25bc7dd248",
+        "cart5-ec28a2e92f86dcd4c32b623c"
+      ],
+      "removed_development_score_counts": {
+        "n": 2,
+        "correct": 2,
+        "completed": 2,
+        "completed_correct": 2
+      },
+      "prior_scope_counts": {
+        "n": 469,
+        "correct": 305,
+        "completed": 419,
+        "completed_correct": 304
+      },
+      "hypothetical_after_only_this_scope_hold": {
+        "n": 467,
+        "correct": 303,
+        "completed": 417,
+        "completed_correct": 302
+      }
+    },
+    {
+      "job": "opus-five-d-pilot-01",
+      "input_path": "benchmarks/iterative-goal-20261006/jobs/opus-five-d-pilot-01/tasks.json",
+      "raw_n": 120,
+      "affected_inputs": [
+        {
+          "id": "cart5-1ea23b4d5ae78242cd0c17ef",
+          "dhatu": {
+            "code": "02.0074",
+            "aupadeshika": "zasti~",
+            "gana": "Adadi",
+            "artha": "svapne"
+          },
+          "morphology": {
+            "lakara": "AshirLin",
+            "prayoga": "Kartari",
+            "purusha": "Prathama",
+            "vacana": "Eka"
+          }
+        }
+      ],
+      "currently_eligible_affected_ids": [
+        "cart5-1ea23b4d5ae78242cd0c17ef"
+      ],
+      "removed_development_score_counts": {
+        "n": 1,
+        "correct": 0,
+        "completed": 1,
+        "completed_correct": 0
+      },
+      "prior_scope_counts": {
+        "n": 113,
+        "correct": 93,
+        "completed": 108,
+        "completed_correct": 93
+      },
+      "hypothetical_after_only_this_scope_hold": {
+        "n": 112,
+        "correct": 93,
+        "completed": 107,
+        "completed_correct": 93
+      }
+    },
+    {
+      "job": "opus-five-d-pilot-02",
+      "input_path": "benchmarks/iterative-goal-20261006/jobs/opus-five-d-pilot-02/tasks.json",
+      "raw_n": 120,
+      "affected_inputs": [
+        {
+          "id": "cart5-0b76a17bf2170253ec28cc00",
+          "dhatu": {
+            "code": "02.0074",
+            "aupadeshika": "zasti~",
+            "gana": "Adadi",
+            "artha": "svapne"
+          },
+          "morphology": {
+            "lakara": "Lrt",
+            "prayoga": "Kartari",
+            "purusha": "Prathama",
+            "vacana": "Dvi"
+          }
+        }
+      ],
+      "currently_eligible_affected_ids": [
+        "cart5-0b76a17bf2170253ec28cc00"
+      ],
+      "removed_development_score_counts": {
+        "n": 1,
+        "correct": 1,
+        "completed": 1,
+        "completed_correct": 1
+      },
+      "prior_scope_counts": {
+        "n": 109,
+        "correct": 96,
+        "completed": 106,
+        "completed_correct": 96
+      },
+      "hypothetical_after_only_this_scope_hold": {
+        "n": 108,
+        "correct": 95,
+        "completed": 105,
+        "completed_correct": 95
+      }
+    },
+    {
+      "job": "opus-five-d-pilot-03",
+      "input_path": "benchmarks/iterative-goal-20261006/jobs/opus-five-d-pilot-03/tasks.json",
+      "raw_n": 180,
+      "affected_inputs": [
+        {
+          "id": "cart5-8e56c9ae8f929f1bf46f0f03",
+          "dhatu": {
+            "code": "02.0074",
+            "aupadeshika": "zasti~",
+            "gana": "Adadi",
+            "artha": "svapne"
+          },
+          "morphology": {
+            "lakara": "Lat",
+            "prayoga": "Karmani",
+            "purusha": "Uttama",
+            "vacana": "Dvi"
+          }
+        }
+      ],
+      "currently_eligible_affected_ids": [
+        "cart5-8e56c9ae8f929f1bf46f0f03"
+      ],
+      "removed_development_score_counts": {
+        "n": 1,
+        "correct": 1,
+        "completed": 1,
+        "completed_correct": 1
+      },
+      "prior_scope_counts": {
+        "n": 169,
+        "correct": 132,
+        "completed": 160,
+        "completed_correct": 132
+      },
+      "hypothetical_after_only_this_scope_hold": {
+        "n": 168,
+        "correct": 131,
+        "completed": 159,
+        "completed_correct": 131
+      }
+    },
+    {
+      "job": "opus-five-d-pilot-04",
+      "input_path": "benchmarks/iterative-goal-20261006/jobs/opus-five-d-pilot-04/tasks.json",
+      "raw_n": 480,
+      "affected_inputs": [
+        {
+          "id": "cart5-278ba65e780b5d25bc7dd248",
+          "dhatu": {
+            "code": "02.0074",
+            "aupadeshika": "zasti~",
+            "gana": "Adadi",
+            "artha": "svapne"
+          },
+          "morphology": {
+            "lakara": "AshirLin",
+            "prayoga": "Kartari",
+            "purusha": "Uttama",
+            "vacana": "Bahu"
+          }
+        },
+        {
+          "id": "cart5-ec28a2e92f86dcd4c32b623c",
+          "dhatu": {
+            "code": "02.0074",
+            "aupadeshika": "zasti~",
+            "gana": "Adadi",
+            "artha": "svapne"
+          },
+          "morphology": {
+            "lakara": "Lun",
+            "prayoga": "Kartari",
+            "purusha": "Madhyama",
+            "vacana": "Eka"
+          }
+        }
+      ],
+      "currently_eligible_affected_ids": [
+        "cart5-278ba65e780b5d25bc7dd248",
+        "cart5-ec28a2e92f86dcd4c32b623c"
+      ],
+      "removed_development_score_counts": {
+        "n": 2,
+        "correct": 1,
+        "completed": 2,
+        "completed_correct": 1
+      },
+      "prior_scope_counts": {
+        "n": 469,
+        "correct": 396,
+        "completed": 468,
+        "completed_correct": 396
+      },
+      "hypothetical_after_only_this_scope_hold": {
+        "n": 467,
+        "correct": 395,
+        "completed": 466,
+        "completed_correct": 395
+      }
+    },
+    {
+      "job": "opus-five-d-pilot-05",
+      "input_path": "benchmarks/iterative-goal-20261006/jobs/opus-five-d-pilot-05/tasks.json",
+      "raw_n": 480,
+      "affected_inputs": [
+        {
+          "id": "cart5-6413711d9f53ab6fe497831d",
+          "dhatu": {
+            "code": "02.0074",
+            "aupadeshika": "zasti~",
+            "gana": "Adadi",
+            "artha": "svapne"
+          },
+          "morphology": {
+            "lakara": "Lun",
+            "prayoga": "Kartari",
+            "purusha": "Uttama",
+            "vacana": "Bahu"
+          }
+        },
+        {
+          "id": "cart5-466ed7ba896d587c872f24f6",
+          "dhatu": {
+            "code": "02.0074",
+            "aupadeshika": "zasti~",
+            "gana": "Adadi",
+            "artha": "svapne"
+          },
+          "morphology": {
+            "lakara": "Lit",
+            "prayoga": "Kartari",
+            "purusha": "Prathama",
+            "vacana": "Eka"
+          }
+        }
+      ],
+      "currently_eligible_affected_ids": [
+        "cart5-6413711d9f53ab6fe497831d",
+        "cart5-466ed7ba896d587c872f24f6"
+      ],
+      "removed_development_score_counts": {
+        "n": 2,
+        "correct": 2,
+        "completed": 2,
+        "completed_correct": 2
+      },
+      "prior_scope_counts": {
+        "n": 464,
+        "correct": 383,
+        "completed": 462,
+        "completed_correct": 383
+      },
+      "hypothetical_after_only_this_scope_hold": {
+        "n": 462,
+        "correct": 381,
+        "completed": 460,
+        "completed_correct": 381
+      }
+    },
+    {
+      "job": "opus-five-d-pilot-06",
+      "input_path": "benchmarks/iterative-goal-20261006/jobs/opus-five-d-pilot-06/tasks.json",
+      "raw_n": 600,
+      "affected_inputs": [
+        {
+          "id": "cart5-0a6b1a3e13f02514c6560d29",
+          "dhatu": {
+            "code": "02.0074",
+            "aupadeshika": "zasti~",
+            "gana": "Adadi",
+            "artha": "svapne"
+          },
+          "morphology": {
+            "lakara": "Lrn",
+            "prayoga": "Kartari",
+            "purusha": "Prathama",
+            "vacana": "Dvi"
+          }
+        },
+        {
+          "id": "cart5-1730af4a74c83beb73bbc34a",
+          "dhatu": {
+            "code": "02.0074",
+            "aupadeshika": "zasti~",
+            "gana": "Adadi",
+            "artha": "svapne"
+          },
+          "morphology": {
+            "lakara": "Lun",
+            "prayoga": "Kartari",
+            "purusha": "Uttama",
+            "vacana": "Eka"
+          }
+        }
+      ],
+      "currently_eligible_affected_ids": [
+        "cart5-0a6b1a3e13f02514c6560d29",
+        "cart5-1730af4a74c83beb73bbc34a"
+      ],
+      "removed_development_score_counts": {
+        "n": 2,
+        "correct": 2,
+        "completed": 2,
+        "completed_correct": 2
+      },
+      "prior_scope_counts": {
+        "n": 598,
+        "correct": 478,
+        "completed": 594,
+        "completed_correct": 478
+      },
+      "hypothetical_after_only_this_scope_hold": {
+        "n": 596,
+        "correct": 476,
+        "completed": 592,
+        "completed_correct": 476
+      }
+    },
+    {
+      "job": "opus-four-d-pilot-01",
+      "input_path": "benchmarks/iterative-goal-20261006/jobs/opus-four-d-pilot-01/tasks.json",
+      "raw_n": 120,
+      "affected_inputs": [
+        {
+          "id": "cart4-8f7f22d5fa79c605c06cc095",
+          "dhatu": {
+            "code": "02.0074",
+            "aupadeshika": "zasti~",
+            "gana": "Adadi",
+            "artha": "svapne"
+          },
+          "morphology": {
+            "lakara": "Lit",
+            "prayoga": "Kartari",
+            "purusha": "Madhyama",
+            "vacana": "Eka"
+          }
+        }
+      ],
+      "currently_eligible_affected_ids": [
+        "cart4-8f7f22d5fa79c605c06cc095"
+      ],
+      "removed_development_score_counts": {
+        "n": 1,
+        "correct": 1,
+        "completed": 1,
+        "completed_correct": 1
+      },
+      "prior_scope_counts": {
+        "n": 102,
+        "correct": 97,
+        "completed": 100,
+        "completed_correct": 97
+      },
+      "hypothetical_after_only_this_scope_hold": {
+        "n": 101,
+        "correct": 96,
+        "completed": 99,
+        "completed_correct": 96
+      }
+    },
+    {
+      "job": "opus-four-d-pilot-02",
+      "input_path": "benchmarks/iterative-goal-20261006/jobs/opus-four-d-pilot-02/tasks.json",
+      "raw_n": 108,
+      "affected_inputs": [],
+      "currently_eligible_affected_ids": []
+    },
+    {
+      "job": "opus-four-d-pilot-03",
+      "input_path": "benchmarks/iterative-goal-20261006/jobs/opus-four-d-pilot-03/tasks.json",
+      "raw_n": 178,
+      "affected_inputs": [],
+      "currently_eligible_affected_ids": []
+    },
+    {
+      "job": "opus-four-d-pilot-04",
+      "input_path": "benchmarks/iterative-goal-20261006/jobs/opus-four-d-pilot-04/tasks.json",
+      "raw_n": 112,
+      "affected_inputs": [],
+      "currently_eligible_affected_ids": []
+    },
+    {
+      "job": "opus-four-d-pilot-05",
+      "input_path": "benchmarks/iterative-goal-20261006/jobs/opus-four-d-pilot-05/tasks.json",
+      "raw_n": 52,
+      "affected_inputs": [],
+      "currently_eligible_affected_ids": []
+    }
+  ],
+  "candidate_versions": [
+    {
+      "path": "benchmarks/parallel-search-20261006/five_d/candidate-4800/revision-01/tasks.json",
+      "sha256": "d639305f42598f3eee133865312399832653be98a7737b5f763e77832e4f063a",
+      "n": 4800,
+      "affected_ids": [
+        "cart5-55420c3e57848480678a074b",
+        "cart5-2659baab01d71c1baca70757",
+        "cart5-cadc83e4daed6f1edb8a54dc"
+      ]
+    },
+    {
+      "path": "benchmarks/parallel-search-20261006/five_d/candidate-4800/revision-02/tasks.json",
+      "sha256": "fed2a08ed487b18a89746676a3aa4fd5468ea85fc3c5eb7c4be68d72ff723124",
+      "n": 4800,
+      "affected_ids": [
+        "cart5-55420c3e57848480678a074b",
+        "cart5-2659baab01d71c1baca70757",
+        "cart5-cadc83e4daed6f1edb8a54dc"
+      ]
+    },
+    {
+      "path": "benchmarks/parallel-search-20261006/five_d/candidate-4800/tasks.json",
+      "sha256": "915eb6ca2ad22847cf2384d45d2a4f8182512780091063ec887ff6b74e480331",
+      "n": 4800,
+      "affected_ids": [
+        "cart5-55420c3e57848480678a074b",
+        "cart5-2659baab01d71c1baca70757",
+        "cart5-cadc83e4daed6f1edb8a54dc"
+      ]
+    }
+  ]
+}

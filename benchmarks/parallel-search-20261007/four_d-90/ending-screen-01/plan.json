@@ -1,0 +1,199 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-10-07T23:25:46.353497+00:00",
+  "experiment_id": "ending-screen-01",
+  "status": "prospective_development_proposal_not_registered_by_worker",
+  "track": "four_d",
+  "benchmark_ready": false,
+  "n": 96,
+  "families": 96,
+  "hypothesis": "Ordinary suffix-conditioned ending interactions across four fixed cells. No numerical forecast that either model will be below90%.",
+  "selection": {
+    "witness_path": "benchmarks/parallel-search-20261007/four_d-90/broader-hypothesis-witness.json",
+    "witness_sha256": "2206cc675015ca2fae051f604514169c7c47820c0895c49d5e47825d9fe21ba9",
+    "seed": "broader-ending-20261007",
+    "original_order_and_membership_preserved": true,
+    "algorithm": "Input-hash ranked MILP:24 per cell, one task per family, all10classes; Bhvadi<=48,Curadi<=24,others<=16; Lan/Lrn/VidhiLin/AshirLin12each. No outcome-selected examples.",
+    "novelty_key": "exact citation+gana family and allfourcoordinates; conservative across synonymous codes",
+    "history_input_files": 113,
+    "normalized_history_keys": 13809,
+    "history_overlap": 0,
+    "exposure_limitation": "Fresh family-coordinate inputs, not globally unseen dictionary families. Legacy full inventory analysis predates reserved split."
+  },
+  "task_contract": {
+    "task_type": "cartesian_4d",
+    "prompt_version": "cartesian-4d-v1",
+    "public_inputs": [
+      "dictionary dhatu citation, class and meaning",
+      "lakara",
+      "prayoga",
+      "purusha",
+      "vacana"
+    ],
+    "no_added_sanadi": true,
+    "no_prefixes": true,
+    "no_separately_selected_pada": true,
+    "answer": "One Devanagari form inside a single answer tag; all canonical engine variants plus predeclared spelling aliases count."
+  },
+  "population_scope": {
+    "split": "development",
+    "oracle_policy": "benchmarks/parallel-search-20261006/oracle-policy-21.json",
+    "local_excluded_codes": [
+      "10.0023",
+      "10.0400",
+      "10.0490",
+      "10.0492",
+      "04.0137"
+    ],
+    "additional_scope": "Exclude10.0412Lun,vowel+rC spelling uncertainty,literal-a-finalCuradi,Kutadi,dhvam and specialized nonCuradi future-it contexts. Every accepted path must contain the required interaction and satisfy audited local rule conditions.",
+    "test_and_rl_answers_read": false
+  },
+  "distribution": {
+    "classes": {
+      "Divadi": 11,
+      "Bhvadi": 48,
+      "Tudadi": 13,
+      "Kryadi": 6,
+      "Juhotyadi": 1,
+      "Curadi": 11,
+      "Rudhadi": 1,
+      "Adadi": 3,
+      "Svadi": 1,
+      "Tanadi": 1
+    },
+    "lakaras": {
+      "VidhiLin": 12,
+      "Lut": 24,
+      "AshirLin": 12,
+      "Lun": 24,
+      "Lrn": 12,
+      "Lan": 12
+    },
+    "purushas": {
+      "Prathama": 60,
+      "Madhyama": 36
+    },
+    "vacanas": {
+      "Bahu": 48,
+      "Eka": 48
+    },
+    "prayogas": {
+      "Kartari": 96
+    },
+    "cells": {
+      "ling_plural_jus": 24,
+      "future_ending_lopa": 24,
+      "sigmatic_aprkta_repair": 24,
+      "secondary_plural_cluster": 24
+    }
+  },
+  "predicates": {
+    "ling_plural_jus": {
+      "require_on_every_path": [
+        "3.4.108"
+      ],
+      "n": 24
+    },
+    "future_ending_lopa": {
+      "require_on_every_path": [
+        "7.4.50"
+      ],
+      "n": 24
+    },
+    "sigmatic_aprkta_repair": {
+      "require_on_every_path": [
+        "7.3.96",
+        "8.2.28"
+      ],
+      "n": 24
+    },
+    "secondary_plural_cluster": {
+      "require_on_every_path": [
+        "8.2.23",
+        "8.4.37"
+      ],
+      "n": 24
+    }
+  },
+  "protocol": {
+    "provider": "Anthropic",
+    "model": "claude-opus-5-5",
+    "effort": "xhigh",
+    "max_output_tokens": 65536,
+    "input_token_allowance": 1500,
+    "samples_per_task": 1,
+    "tools": [],
+    "paid_retries": 0,
+    "uniform_scope_all96": true,
+    "transport_selected_by_parent": "direct",
+    "financial_chunks_do_not_change_membership": true
+  },
+  "scoring": {
+    "primary": "Exact membership in canonical gold plus frozen per-task alias whitelist; same one-answer extractor/NFC as existing benchmark.",
+    "secondary": "Unchanged canonical engine-gold exact score.",
+    "alias_policy_path": "benchmarks/parallel-search-20261007/four_d-90/ending-screen-01/alias-policy.json",
+    "alias_policy_sha256": "4565d30327e6c958f126b94e9979e2838a69734e9fa14cf86a8567b2c4e3433e",
+    "canonical_gold_unchanged": true,
+    "model_inputs_receive_no_gold_or_aliases": true,
+    "alias_helper_path": "benchmarks/parallel-search-20261007/four_d-90/ending-screen-01/alias_policy.py",
+    "alias_helper_sha256": "95aa681cf454a6f71e63acc4fd34ff52ae9b9341a2a9e6c68050c0a073003825",
+    "canonical_forms": 124,
+    "extra_aliases": 172,
+    "alias_tasks": 62,
+    "unresolved_broader_spelling_context_tasks": 8,
+    "unrecognized_response_policy": "Independently source-adjudicate EVERY usable noncanonical/unlisted answer before any wrong-family/cell counts or advancement. Unresolved plausible variants do not count as errors. Report any later adjudication separately and symmetrically; preserve raw canonical and predeclared-alias scores."
+  },
+  "decision": {
+    "frozen_before_any_screen_output": true,
+    "require_all_96_settled_and_collected": true,
+    "minimum_usable": 92,
+    "alias_all_request_accuracy_lt": 0.9,
+    "alias_usable_accuracy_lt": 0.9,
+    "minimum_source_supported_wrong_families": 8,
+    "minimum_source_supported_wrong_classes": 3,
+    "minimum_source_supported_wrong_cells": 3,
+    "source_adjudication_must_be_complete": true,
+    "adjudicated_accuracy_must_also_remain_below_90": true,
+    "do_not_count_refusal_truncation_unparsed_as_wrong_families": true,
+    "no_interim_score_stopping": true,
+    "no_question_replacement_or_error_selection": true,
+    "if_not_met": "Close this prespecified screen; do not claim a new hard family population. Any redesign is a separate prospective hypothesis.",
+    "if_met": "Consider an independently frozen confirmation/reference comparison; this is not final benchmark qualification.",
+    "no_automatic_astra_followup": true
+  },
+  "reporting": [
+    "Full96 all-request and usable accuracy for canonical and alias-aware grading",
+    "Response/refusal/truncation/unparsed counts and missing-answer bounds",
+    "95%intervals and family-level uncertainty;96one-questionfamilies does not support sub1ppprecision",
+    "Cell/class/tense summaries and audited error coverage",
+    "Any later source-adjudication supplement, with canonical and frozen-alias scores preserved"
+  ],
+  "historical_evidence": {
+    "opus_correct": 19,
+    "opus_usable": 19,
+    "cell_counts": {
+      "future_ending_lopa": 4,
+      "secondary_plural_cluster": 1,
+      "ling_plural_jus": 7,
+      "sigmatic_aprkta_repair": 7
+    },
+    "interpretation": "Sparse selected development coverage across mixed16k/64k protocols; all correct. Low-confidence hypothesis, not a random population estimate or model difficulty forecast."
+  },
+  "source_review": {
+    "primary_controls": 13,
+    "all_path_count": 124,
+    "explicit_pada_union_checks": 96,
+    "mechanical_validation_not_full_grammatical_certification": true,
+    "independent_review_path": "benchmarks/parallel-search-20261007/four_d-90/ending-screen-01/independent-source-review.json",
+    "independent_review_sha256": "9705cb6b2ddded363b042f5aee50d0803690e4c8c299e35eb43798aaa6c3ffb5",
+    "review_passed_for_bounded_development_execution": true
+  },
+  "cost_maximum_usd": {
+    "opus_batch": 63.20256,
+    "opus_direct": 126.40512,
+    "astra_direct_if_later_considered": 316.0128
+  },
+  "authorization_boundary": "Worker prepares only. Parent owns registration, actual ledger/budget gate and any paid execution; this file itself grants no new spending.",
+  "tasks_path": "benchmarks/parallel-search-20261007/four_d-90/ending-screen-01/proposedtasks.json",
+  "tasks_sha256": "f7a8e6088b593f2ac0707ef4c79d441b0a27e96656109375212fae983938c1f9"
+}

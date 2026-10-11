@@ -1,0 +1,17 @@
+# Review-only integration sketch. No training is invoked by this artifact.
+# Use only an independently frozen, verified rl_train bundle here.
+from finetune.data import load_frozen_rl_training_dataset
+from finetune.rewards import get
+from finetune.callbacks import RewardHistoryRecorder
+
+train_dataset = load_frozen_rl_training_dataset(rl_manifest, tokenizer=tokenizer)
+reward_fn = get("vp_cartesian_exact")
+recorder = RewardHistoryRecorder(
+    reward_fn, run_dir, writer, preserve_completion_structure=True)
+# Existing GRPOTrainer arguments:
+#   train_dataset=train_dataset, reward_funcs=recorder
+# Existing GRPOConfig must retain remove_unused_columns=False for the gold column.
+# Gold remains reward metadata, never included in the tokenized prompt.
+# Before enabling this path, route dry-run, checkpoint eval and configuration
+# validation through the same verified frozen prompts and exact scorer.
+# Do not feed final-test bundles into training or checkpoint selection.

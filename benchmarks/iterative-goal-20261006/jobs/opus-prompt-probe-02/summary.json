@@ -1,0 +1,39 @@
+{
+  "id": "opus-prompt-probe-02",
+  "provider": "Anthropic",
+  "phase": "explore",
+  "n": 32,
+  "tasks_digest": "ab25c49edd55f5bbee55c64a2c8d08f6e47de9c44f52404e7043c86014c7a44b",
+  "requests_digest": "2a58716a79d54f2999af7d9693e7623dd542bd12b900c039ad048342cf70ea6b",
+  "created_at": "2026-10-06T23:27:56.927672+00:00",
+  "status": "ended",
+  "batch_id": "direct-opus-prompt-probe-02",
+  "attempted_at": "2026-10-06T23:28:27.359635+00:00",
+  "reservation_micro": 10677760,
+  "input_file_id": null,
+  "transport": "direct",
+  "collected_at": "2026-10-06T23:30:06.705405+00:00",
+  "usage": {
+    "input_tokens": 14948,
+    "output_tokens": 47119,
+    "cache_read": 0,
+    "cache_write": 0
+  },
+  "summary": {
+    "task_count": 32,
+    "correct": 28,
+    "incorrect_or_no_answer": 4,
+    "unscored": 0,
+    "pass_at_1_all_tasks": 0.875,
+    "truncated": 0,
+    "statuses": {
+      "completed": 31,
+      "refused": 1
+    }
+  },
+  "completed_answers": 31,
+  "completed_correct": 28,
+  "actual_cost_upper_micro": 1002172,
+  "token_policy_violations": [],
+  "settled": true
+}

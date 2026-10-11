@@ -1,0 +1,30 @@
+{
+  "created_at": "2026-10-08T00:33:24.991928+00:00",
+  "scope": "Prospective bounded spelling policy for candidate1800v1; no paid registration or final qualification.",
+  "candidate_tasks_sha256": "695e7284d06a555aaabfcb7671d000db5622157984221c261b9500e86f72d38f",
+  "public_prompts_sha256": "187fa86a4b840f121ea443158654eda866fe78126efd0fe6f6b820986e742f81",
+  "candidate_manifest_sha256": "67653e28fcceb6291b805953432fe511889660a23e5b071c80a4ee43d65fb1c2",
+  "source_policy_sha256": "e5c48ee7b54006f138d97d3c7cd9a90c76896c9954e3278568e17c5f2cb59284",
+  "independent_input_review_sha256": "ca0a2660f4577e1587b3715cf2ce241c3a8f893303dff0200eed7a0ac662bd44",
+  "alias_policy_sha256": "06ee42905da5f8397e2d73f6fa1aa6ef67a2e35b961f5052aa0afac649ff90c3",
+  "scorer_sha256": "3726b6c567ffa054d718abbb873512d0b9e2f4cc59b6790e4a5fb884f5829d58",
+  "independent_review_sha256": "47fc49e5df4b022930eb88da7997b6ba91307ce41f0bc47221754f04b91e911f",
+  "canonical_forms": 3224,
+  "additional_task_specific_aliases": 3289,
+  "tasks_with_aliases": 1193,
+  "flagged_residual_context_tasks": 79,
+  "primary_matching": "Same one-answer extractor and NFC normalization; exact per-item canonical plus prospectively reviewed finite whitelist.",
+  "scores_to_preserve": [
+    "unchanged canonical-only",
+    "predeclared finite whitelist",
+    "separately source-adjudicated"
+  ],
+  "mandatory_gate": "Independently adjudicate every usable unrecognized answer before it contributes to a linguistic-error or advancement claim. Retain unresolved cases and the full denominator. Apply demonstrated corrections symmetrically across all affected questions/models, including recognized answers where implicated.",
+  "completion_policy": "Report all-request and usable denominators, refusals, truncations, errors and unparsed outputs separately. No difficulty claim based only on unusable answers.",
+  "execution_requirement": "Pin adoption, source policy, candidate and input review, scorer, alias rules, extractor, full cohort and paired analysis before paid submission.",
+  "full_paradigm_certification": false,
+  "precision_requirement_resolved": false,
+  "test_model_outputs_read": false,
+  "paid_calls": 0,
+  "benchmark_ready": false
+}

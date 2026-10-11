@@ -1,0 +1,41 @@
+{
+  "created_at": "2026-10-07T12:08:23.605266+00:00",
+  "status": "reopened_rule747_blocker_found_before_paid_submission",
+  "tasks_sha256": "2bdd6cf611d99545d773a10a99c960bda1f25b6a349e74ff6f90952cba3e8f26",
+  "reviewed_new_SAN_contexts": [
+    "1.2.2",
+    "1.2.8",
+    "1.3.43",
+    "1.3.5",
+    "1.3.57",
+    "6.1.108",
+    "6.1.15",
+    "7.1.102",
+    "7.2.36",
+    "7.2.75",
+    "7.3.36",
+    "7.4.54",
+    "8.2.31",
+    "8.2.36"
+  ],
+  "new_unreviewed_rule_or_recipe_contexts": 0,
+  "resolved_scope_hold": [
+    "05.0013",
+    "05.0014",
+    "05.0015"
+  ],
+  "decision": "The narrow unresolved-classical-scope hold is enforced before submission. Other reviewed new SAN contexts show no concrete blocker. Revision includes no new rule or recipe-rule context beyond the bounded reviewed set and prior source audits.",
+  "evidence": {
+    "benchmarks/parallel-search-20261006/five_d/pilot-08/coordinator-source-review.json": "9024ebe6b2bd78adb273cbf55ffb214724e4b8888d10302c212e2ba925d7d87e",
+    "benchmarks/parallel-search-20261006/five_d/pilot-08/source-rule-delta-audit.json": "1f650444d880bdd9b0796d858f282c08e7b8b6d9cfb6984973015e19627c303a",
+    "benchmarks/parallel-search-20261006/four_d/subset08-review/source-review.md": "ada3d9c013f5a399edcb748df72c1dfbc6a34df90de806644749097f3f3d4a42",
+    "benchmarks/parallel-search-20261006/four_d/svadi-three-scope-review-01/review.json": "a60df82bdd18206bb75b8fbdcaffefa38fed5c0c8c78c835c2aa40eb492e133d",
+    "benchmarks/parallel-search-20261006/oracle-policy-20.json": "8fef37ef81c73ca4880dce6657f962700e7dac540a905ddee6a8ebad550c9509",
+    "benchmarks/parallel-search-20261006/five_d/pilot-08/revision-01/source-rule-delta-audit.json": "0487972561097e89cdee1c859e091a5b62a4ab48b0fef105c631bd922d68f3de",
+    "benchmarks/parallel-search-20261006/five_d/pilot-08/revision-01/coordinator-primary-regeneration.json": "dd77597df1b2be1489b4068d091cb4340b94e87a41e3c442b502aa1c8873b839"
+  },
+  "limitations": "Rule-ID coverage and successful regeneration are not independent certification of every complete form or every variant. Systematic new disagreements still require outcome-independent source review; preserve all raw data. No source-based harder-item selection.",
+  "model_outputs_read": false,
+  "paid_calls": 0,
+  "subsequent_finding": "Independent review of contexts absent from immediate predecessor (although present broader history) identified caN-conditioned7.4.7 misapplication before san. Scope21 now holds this context; no paid model answers exist."
+}

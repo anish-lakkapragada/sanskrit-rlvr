@@ -1,0 +1,27 @@
+{
+  "created_at": "2026-10-07T23:31:45.904365+00:00",
+  "reviewer": "/root/vp_5d_overnight",
+  "bounded_sequencing_review_passed": true,
+  "unresolved_blockers": [],
+  "checks": [
+    "Ledger lock failure performs zero registration/pool/registry writes",
+    "Missing exact-stage collected marker waits",
+    "All stages settled but final executor marker running waits",
+    "Six-hour cutoff makes no registration or execution calls"
+  ],
+  "all_original_proposal_and_source_fingerprints_match": 22,
+  "task_protocol_unchanged": true,
+  "tasks_sha256": "f7a8e6088b593f2ac0707ef4c79d441b0a27e96656109375212fae983938c1f9",
+  "aliases_sha256": "4565d30327e6c958f126b94e9979e2838a69734e9fa14cf86a8567b2c4e3433e",
+  "plan_sha256": "f2754c8d2e5d3a8278df46fd9628cd2667ded41669fdb39e562422b1fc4c03b5",
+  "controller_sha256": "8a9294d7f0fa01ccd1c0976a54e1c7a13020b7897fb96208916b44d23398b266",
+  "queue_sha256": "d920b20d433bcc72b3decebefb068932e8b01a00db4b8ba59bf113943f2982af",
+  "preserved_unsubmitted_registration_sha256": "d67088c7e6372b89cd5b6ed117cd695aef4b3fafc9e3e2f73f307704381cd383",
+  "recovery_receipt_sha256": "7545c603cda57c63f82fe54f560a347db76d0cb9a00e239af43f02b89cc3b1a1",
+  "no_apis_or_actual_ledger_writes_by_review": true,
+  "no_model_outputs_or_accuracy_read": true,
+  "limits": [
+    "Multi-file registration is not a database transaction. An unexpected process crash between writes can still leave partial registration; load_plan fails closed, and explicit reconciliation/archive is required before restart.",
+    "Other unrelated ledger writers could still cause nonblocking lock failure. No task, protocol, scoring or provider-retry relaxation is authorized by this review."
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "created_at": "2026-10-07T10:53:02.519618+00:00",
+  "policy": "oracle-policy-18",
+  "old_tasks_sha256": "2bf7454a6a8e300b28a549c1f9fa63acb7e57d707d456aa50981c1889fc278cf",
+  "new_tasks_sha256": "e32fdae93a4e017231a32a73be16627c16b674a61f525bd42c7497352b438d60",
+  "all_quotas_caps_seed_unchanged": true,
+  "shared_ids": 610,
+  "new_ids": 1790,
+  "all_shared_grammar_gold_prompts_unchanged": true,
+  "excluded_predecessor_inputs": [
+    {
+      "id": "cart5-5bc90125ea82c3d9369dd4d4",
+      "code": "01.1166",
+      "reason": "Missing optional intrinsic ayadi branch before added ardhadhatuka operation"
+    },
+    {
+      "id": "cart5-2c9448dc1786f6dbdcf0ed7e",
+      "code": "10.0304",
+      "reason": "Intrinsic aya overreach onto distinct Curadi speech entries"
+    }
+  ],
+  "new_rule_ids": [],
+  "new_recipe_rule_contexts": [],
+  "reviewed_input_sources": [
+    {
+      "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/parallel-search-20261006/five_d/candidate-4800/revision-03/tasks.json",
+      "sha256": "2d15b6a62718d6ea0531686fc1eb4a1d91223f3d6baf705108f8088bc37dd031"
+    },
+    {
+      "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/parallel-search-20261006/five_d/pilot-07/tasks.json",
+      "sha256": "2bf7454a6a8e300b28a549c1f9fa63acb7e57d707d456aa50981c1889fc278cf"
+    },
+    {
+      "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-five-d-pilot-01/tasks.json",
+      "sha256": "46d5681bbff3a8c248a76f094a6acda6cc4795679b14da91a7bd93de1cc168fe"
+    },
+    {
+      "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-five-d-pilot-02/tasks.json",
+      "sha256": "6d12214b2c395e13028999febdc1af39dbad96f8f6df782dfad2316a02a45323"
+    },
+    {
+      "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-five-d-pilot-03/tasks.json",
+      "sha256": "289c85189445727240da123d0c2535d41781b7b88db35fe8a3e96314e804882d"
+    },
+    {
+      "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-five-d-pilot-04/tasks.json",
+      "sha256": "6d316087e9a9a91643adddf578a3260b7a6a103884148cd4654d180c5b638fff"
+    },
+    {
+      "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-five-d-pilot-05/tasks.json",
+      "sha256": "b5925538c69fc78fce68b91fac92d74e0100f2faf423468dece8907887f2d153"
+    },
+    {
+      "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-five-d-pilot-06/tasks.json",
+      "sha256": "a8b97c0baffb0d02adcb1a1c3eaaf38b1a0983d4479660a32164260a09b10a1c"
+    }
+  ],
+  "revoked_unsubmitted_predecessor_accounting": [
+    {
+      "job": "opus-five-d-pilot-07-a",
+      "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-five-d-pilot-07-a/tasks.json",
+      "sha256": "acba1b1a5c395d24da32486dbf55040db767bad8343ffabfe2463761cff004b2",
+      "n": 1200,
+      "attempted_at": null,
+      "batch_id": null,
+      "reservation_micro": 0,
+      "reason": "Explicitly preserved unsubmitted predecessor of this source-driven revision; report overlap separately."
+    },
+    {
+      "job": "opus-five-d-pilot-07-b",
+      "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-five-d-pilot-07-b/tasks.json",
+      "sha256": "14f4d294c02e0a4a2cbf2f8fd75894e3d6a8bdd2f6831a585442c948f7589227",
+      "n": 1200,
+      "attempted_at": null,
+      "batch_id": null,
+      "reservation_micro": 0,
+      "reason": "Explicitly preserved unsubmitted predecessor of this source-driven revision; report overlap separately."
+    }
+  ],
+  "model_answers_read": false,
+  "paid_calls": 0
+}

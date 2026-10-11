@@ -1,0 +1,463 @@
+{
+  "created_at": "2026-10-07T05:23:41.463899+00:00",
+  "run_id": "release-feasibility-01",
+  "development_results_path": "benchmarks/iterative-goal-20261006/jobs/opus-four-d-pilot-01/results.json",
+  "results_sha256": "ea97a9928f7315a8230a726fd0aed755c063da54cd242a39d6dcfdad64742dca",
+  "raw_scores": {
+    "n": 120,
+    "usable": 118,
+    "correct": 108,
+    "overall_accuracy": 0.9,
+    "usable_accuracy": 0.9152542372881356,
+    "refusals": 2,
+    "truncations": 0,
+    "usable_families": 112,
+    "family_cluster_ratio_sandwich_se_pp": 3.0169870484632284
+  },
+  "strata": {
+    "aorist_consonant_changes": {
+      "n": 12,
+      "usable": 12,
+      "correct": 12,
+      "usable_accuracy": 1.0,
+      "families": 12
+    },
+    "athematic_present_system": {
+      "n": 18,
+      "usable": 18,
+      "correct": 18,
+      "usable_accuracy": 1.0,
+      "families": 18
+    },
+    "dictionary_curadi_futures": {
+      "n": 12,
+      "usable": 12,
+      "correct": 10,
+      "usable_accuracy": 0.8333333333333334,
+      "families": 12
+    },
+    "divadi_sigmatic_aorist": {
+      "n": 12,
+      "usable": 12,
+      "correct": 10,
+      "usable_accuracy": 0.8333333333333334,
+      "families": 12
+    },
+    "internal_rv_lengthening": {
+      "n": 12,
+      "usable": 12,
+      "correct": 7,
+      "usable_accuracy": 0.5833333333333334,
+      "families": 8
+    },
+    "other_athematic_perfect": {
+      "n": 6,
+      "usable": 6,
+      "correct": 6,
+      "usable_accuracy": 1.0,
+      "families": 6
+    },
+    "perfect_reduplication_changes": {
+      "n": 12,
+      "usable": 12,
+      "correct": 12,
+      "usable_accuracy": 1.0,
+      "families": 12
+    },
+    "primary_benedictive_stem_changes": {
+      "n": 12,
+      "usable": 12,
+      "correct": 12,
+      "usable_accuracy": 1.0,
+      "families": 12
+    },
+    "svadi_perfect": {
+      "n": 12,
+      "usable": 12,
+      "correct": 11,
+      "usable_accuracy": 0.9166666666666666,
+      "families": 12
+    },
+    "transitive_curadi_nonpresent_passive": {
+      "n": 12,
+      "usable": 10,
+      "correct": 10,
+      "usable_accuracy": 1.0,
+      "families": 9
+    }
+  },
+  "disagreements": [
+    {
+      "task_id": "cart4-bf0fe03f9fa1d50030d9d6c1",
+      "dhatu": {
+        "code": "05.0018",
+        "aupadeshika": "rA\\Da~",
+        "gana": "Svadi",
+        "artha": "saMsidDO"
+      },
+      "morphology": {
+        "lakara": "Lit",
+        "prayoga": "Kartari",
+        "purusha": "Madhyama",
+        "vacana": "Bahu"
+      },
+      "raw_gold": [
+        "रेध"
+      ],
+      "raw_answer": "रराध",
+      "raw_status": "completed",
+      "classification": "oracle_quarantine_semantic_condition",
+      "action": "Quarantine 6.4.123 contexts until meaning is independently certified. Do not overwrite raw results.",
+      "sources": [
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.4.123.htm"
+      ],
+      "rationale": "The rule requires the injuring sense; the prompt gives samsiddhau. Commentary contrasts reduplicated raradh- outside himsa. Upstream tests gana Svadi without a semantic input and explicitly carries a TODO."
+    },
+    {
+      "task_id": "cart4-5ec3bdeac961c16b497ac7c5",
+      "dhatu": {
+        "code": "10.0023",
+        "aupadeshika": "urja~",
+        "gana": "Curadi",
+        "artha": "balaprARanayoH"
+      },
+      "morphology": {
+        "lakara": "Lat",
+        "prayoga": "Kartari",
+        "purusha": "Madhyama",
+        "vacana": "Eka"
+      },
+      "raw_gold": [
+        "ऊर्जयसे",
+        "ऊर्जयसि"
+      ],
+      "raw_answer": "उर्जयसि",
+      "raw_status": "completed",
+      "classification": "source_supported_model_vowel_quantity_error",
+      "action": "Retain provisional exact score; root-level concentration must be reported.",
+      "sources": [
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/8/8.2.78.htm"
+      ],
+      "rationale": "Short vowel was supplied where the internal r-conditioned lengthening rule applies; this is quantity, not anusvara typography."
+    },
+    {
+      "task_id": "cart4-3122dbf024f5bdf0ca47a885",
+      "dhatu": {
+        "code": "04.0141",
+        "aupadeshika": "YitfzA~",
+        "gana": "Divadi",
+        "artha": "pipAsAyAm"
+      },
+      "morphology": {
+        "lakara": "Lun",
+        "prayoga": "Kartari",
+        "purusha": "Uttama",
+        "vacana": "Dvi"
+      },
+      "raw_gold": [
+        "अतर्षिष्व"
+      ],
+      "raw_answer": "अतृषाव",
+      "raw_status": "completed",
+      "classification": "oracle_quarantine_citation_list_mismatch",
+      "action": "Quarantine this Lun context and analogous missing PUSH_ADI memberships; preserve raw gold.",
+      "sources": [
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/3/3.1.55.htm",
+        "https://sa.wikisource.org/wiki/अष्टाध्यायी-धातुपाठः"
+      ],
+      "rationale": "Dictionary citation YitfzA~ differs from hard-coded PUSH_ADI Yitfza~. Changing only that marker locally changes VP output from atarzizva to the model form atfzAva and activates 3.1.55. The primary Dhatupatha places this root in pusadi."
+    },
+    {
+      "task_id": "cart4-bc729d4085b38ede28128e67",
+      "dhatu": {
+        "code": "10.0023",
+        "aupadeshika": "urja~",
+        "gana": "Curadi",
+        "artha": "balaprARanayoH"
+      },
+      "morphology": {
+        "lakara": "Lot",
+        "prayoga": "Kartari",
+        "purusha": "Madhyama",
+        "vacana": "Bahu"
+      },
+      "raw_gold": [
+        "ऊर्जयध्वम्",
+        "ऊर्जयत"
+      ],
+      "raw_answer": "उर्जयत",
+      "raw_status": "completed",
+      "classification": "source_supported_model_vowel_quantity_error",
+      "action": "Retain provisional exact score; root-level concentration must be reported.",
+      "sources": [
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/8/8.2.78.htm"
+      ],
+      "rationale": "Short vowel was supplied where the internal r-conditioned lengthening rule applies; this is quantity, not anusvara typography."
+    },
+    {
+      "task_id": "cart4-07bca287017023fd2ec797d5",
+      "dhatu": {
+        "code": "10.0129",
+        "aupadeshika": "sPiwwa~",
+        "gana": "Curadi",
+        "artha": "hiMsAyAm"
+      },
+      "morphology": {
+        "lakara": "AshirLin",
+        "prayoga": "Karmani",
+        "purusha": "Uttama",
+        "vacana": "Eka"
+      },
+      "raw_gold": [
+        "स्फिट्टयिषीय",
+        "स्फिट्टिषीय"
+      ],
+      "raw_answer": null,
+      "raw_status": "refused",
+      "classification": "refusal_not_grammatical_error",
+      "action": "Preserve as separate outcome; no hardness claim.",
+      "sources": []
+    },
+    {
+      "task_id": "cart4-deb8fb87fabdf66465453ea3",
+      "dhatu": {
+        "code": "10.0184",
+        "aupadeshika": "jasu~",
+        "gana": "Curadi",
+        "artha": "hiMsAyAm"
+      },
+      "morphology": {
+        "lakara": "Lut",
+        "prayoga": "Karmani",
+        "purusha": "Uttama",
+        "vacana": "Bahu"
+      },
+      "raw_gold": [
+        "जासयितास्महे",
+        "जासितास्महे",
+        "जसितास्महे"
+      ],
+      "raw_answer": null,
+      "raw_status": "refused",
+      "classification": "refusal_not_grammatical_error",
+      "action": "Preserve as separate outcome; no hardness claim.",
+      "sources": []
+    },
+    {
+      "task_id": "cart4-8fa4ec7397814c0471411766",
+      "dhatu": {
+        "code": "10.0226",
+        "aupadeshika": "kuwwa~",
+        "gana": "Curadi",
+        "artha": "pratApane"
+      },
+      "morphology": {
+        "lakara": "Lrn",
+        "prayoga": "Kartari",
+        "purusha": "Uttama",
+        "vacana": "Dvi"
+      },
+      "raw_gold": [
+        "अकुट्टयिष्यावहि"
+      ],
+      "raw_answer": "अकुट्टयिष्याव",
+      "raw_status": "completed",
+      "classification": "provisional_model_lexical_pada_error",
+      "action": "Review exact dictionary variants before using Akusmiya as a new difficulty stratum; no independently selected pada coordinate.",
+      "sources": [
+        "https://jainqq.org/booktext/Dhatupradip/004319",
+        "https://sa.wikisource.org/wiki/अष्टाध्यायी-धातुपाठः"
+      ],
+      "rationale": "These dictionary entries belong to Akusmiya, the Curadi Atmanepada subgroup. Primary sources support the subgroup restriction; the individual variant readings still deserve direct lexicon review. Model outputs used Parasmaipada."
+    },
+    {
+      "task_id": "cart4-97df9716ad547f25c68d94af",
+      "dhatu": {
+        "code": "04.0013",
+        "aupadeshika": "puTa~",
+        "gana": "Divadi",
+        "artha": "hiMsAyAm"
+      },
+      "morphology": {
+        "lakara": "Lun",
+        "prayoga": "Kartari",
+        "purusha": "Madhyama",
+        "vacana": "Bahu"
+      },
+      "raw_gold": [
+        "अपोथिष्ट"
+      ],
+      "raw_answer": "अपुथत",
+      "raw_status": "completed",
+      "classification": "source_supported_model_subgroup_error",
+      "action": "Retain provisional exact score.",
+      "sources": [
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/3/3.1.55.htm",
+        "https://sa.wikisource.org/wiki/अष्टाध्यायी-धातुपाठः"
+      ],
+      "rationale": "Putha occurs before the pusadi subgroup in the primary Dhatupatha; the model applied the subgroup aN rule to it."
+    },
+    {
+      "task_id": "cart4-b571146eeb59b24806f6e5bd",
+      "dhatu": {
+        "code": "01.0022",
+        "aupadeshika": "Kurda~\\",
+        "gana": "Bhvadi",
+        "artha": "krIqAyAm eva"
+      },
+      "morphology": {
+        "lakara": "Lit",
+        "prayoga": "Kartari",
+        "purusha": "Prathama",
+        "vacana": "Bahu"
+      },
+      "raw_gold": [
+        "चुखूर्दिरे"
+      ],
+      "raw_answer": "चुखुर्दिरे",
+      "raw_status": "completed",
+      "classification": "source_supported_model_vowel_quantity_error",
+      "action": "Retain provisional exact score; root-level concentration must be reported.",
+      "sources": [
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/8/8.2.78.htm"
+      ],
+      "rationale": "Short vowel was supplied where the internal r-conditioned lengthening rule applies; this is quantity, not anusvara typography."
+    },
+    {
+      "task_id": "cart4-62b49d2e7ac22fe50e9d3512",
+      "dhatu": {
+        "code": "10.0180",
+        "aupadeshika": "gurda~",
+        "gana": "Curadi",
+        "artha": "pUrvaniketane"
+      },
+      "morphology": {
+        "lakara": "Lun",
+        "prayoga": "Kartari",
+        "purusha": "Uttama",
+        "vacana": "Dvi"
+      },
+      "raw_gold": [
+        "अजुगूर्दाव",
+        "अजुगूर्दावहि"
+      ],
+      "raw_answer": "अजुगुर्दाव",
+      "raw_status": "completed",
+      "classification": "source_supported_model_vowel_quantity_error",
+      "action": "Retain provisional exact score; root-level concentration must be reported.",
+      "sources": [
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/8/8.2.78.htm"
+      ],
+      "rationale": "Short vowel was supplied where the internal r-conditioned lengthening rule applies; this is quantity, not anusvara typography."
+    },
+    {
+      "task_id": "cart4-c4c37f9d9f69c319e6e02893",
+      "dhatu": {
+        "code": "10.0205",
+        "aupadeshika": "kila~",
+        "gana": "Curadi",
+        "artha": "kzepe"
+      },
+      "morphology": {
+        "lakara": "Lrt",
+        "prayoga": "Kartari",
+        "purusha": "Madhyama",
+        "vacana": "Bahu"
+      },
+      "raw_gold": [
+        "केलयिष्यध्वे"
+      ],
+      "raw_answer": "केलयिष्यथ",
+      "raw_status": "completed",
+      "classification": "provisional_model_lexical_pada_error",
+      "action": "Review exact dictionary variants before using Akusmiya as a new difficulty stratum; no independently selected pada coordinate.",
+      "sources": [
+        "https://jainqq.org/booktext/Dhatupradip/004319",
+        "https://sa.wikisource.org/wiki/अष्टाध्यायी-धातुपाठः"
+      ],
+      "rationale": "These dictionary entries belong to Akusmiya, the Curadi Atmanepada subgroup. Primary sources support the subgroup restriction; the individual variant readings still deserve direct lexicon review. Model outputs used Parasmaipada."
+    },
+    {
+      "task_id": "cart4-a106d69f220af4dfe05a6b84",
+      "dhatu": {
+        "code": "10.0180",
+        "aupadeshika": "gurda~",
+        "gana": "Curadi",
+        "artha": "pUrvaniketane"
+      },
+      "morphology": {
+        "lakara": "Lan",
+        "prayoga": "Kartari",
+        "purusha": "Madhyama",
+        "vacana": "Eka"
+      },
+      "raw_gold": [
+        "अगूर्दयः",
+        "अगूर्दयथाः"
+      ],
+      "raw_answer": "अगुर्दयः",
+      "raw_status": "completed",
+      "classification": "source_supported_model_vowel_quantity_error",
+      "action": "Retain provisional exact score; root-level concentration must be reported.",
+      "sources": [
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/8/8.2.78.htm"
+      ],
+      "rationale": "Short vowel was supplied where the internal r-conditioned lengthening rule applies; this is quantity, not anusvara typography."
+    }
+  ],
+  "post_discovery_grammar_exclusions": {
+    "before_final_release": [
+      "Any dictionary entry carrying preexisting prefixes/sanadi",
+      "Any 6.4.123 trace until semantics is certified",
+      "Lun for 04.0113 and 04.0141 due literal PUSH_ADI list mismatch"
+    ],
+    "pilot_affected_keys": 2,
+    "diagnostic_after_omitting_two_contested_keys": {
+      "correct": 108,
+      "usable": 116,
+      "usable_accuracy": 0.9310344827586207
+    },
+    "policy": "Post-discovery grammatical rationale is disclosed. Raw pilot task file, responses and headline score are unchanged. Exclusions apply by grammatical context to successes and failures alike; no held-out model answer was read."
+  },
+  "scope_check": {
+    "pilot_tasks_with_inherited_prefixes_or_sanadi": 0,
+    "dictionary_prefixed_codes": [
+      "02.0012",
+      "02.0041",
+      "02.0042",
+      "10.0368"
+    ]
+  },
+  "additional_list_audit": {
+    "method": "Compared every dictionary Divadi entry from puza onward with source PUSH_ADI list, without any model results.",
+    "missing_literal_citations": [
+      {
+        "code": "04.0113",
+        "citation": "yusa~",
+        "split": "test"
+      },
+      {
+        "code": "04.0141",
+        "citation": "YitfzA~",
+        "split": "development"
+      }
+    ],
+    "action": "Quarantine affected Lun contexts pending independent adjudication."
+  },
+  "cost_accounting": {
+    "coordinator_job_actual_cost_upper_usd": 0.6912,
+    "worker_paid_calls": 0,
+    "ledger_mutations": 0
+  },
+  "weight_change_policy": "No release weights frozen or updated from these outcomes. Existing aggregate feasibility objective remains pilot-like proportions; grammar validity filters alone were amended.",
+  "reproducible_oracle_evidence": "pilot-01.oracle-evidence.json",
+  "additional_context_quarantines": [
+    "Karmani/Bhave nonpresent contexts with both 6.4.62 and 6.4.92 pending Cinvat variant certification",
+    "Identical visible lexical entries with different intrinsic antargana until complete key union is certified"
+  ],
+  "passive_cross_check": {
+    "pilot_tasks_checked": 12,
+    "pilot_tasks_meeting_combined_rule_diagnostic": 0,
+    "master_test_predicate_union_rows_meeting_diagnostic": 0
+  }
+}

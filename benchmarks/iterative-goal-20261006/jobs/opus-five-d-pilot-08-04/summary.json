@@ -1,0 +1,57 @@
+{
+  "id": "opus-five-d-pilot-08-04",
+  "provider": "Anthropic",
+  "phase": "confirm_64k",
+  "n": 400,
+  "tasks_digest": "a82a2069f347ce870f632b309fc7caf2e6577e2db30bd5b919ef2d310ec3ccf1",
+  "requests_digest": "43d7ea543aae6cf1bdf0fe09df707c24f0ff8dd2060bea9130decb8f248feb88",
+  "created_at": "2026-10-07T12:28:01.016347+00:00",
+  "status": "ended",
+  "batch_id": "msgbatch_01Br98TNHtFCEv5CTiBVmChi",
+  "attempted_at": "2026-10-07T15:31:43.815656+00:00",
+  "reservation_micro": 263344000,
+  "input_file_id": null,
+  "transport": "batch",
+  "batch": {
+    "id": "msgbatch_01Br98TNHtFCEv5CTiBVmChi",
+    "type": "message_batch",
+    "processing_status": "ended",
+    "request_counts": {
+      "processing": 0,
+      "succeeded": 400,
+      "errored": 0,
+      "canceled": 0,
+      "expired": 0
+    },
+    "ended_at": "2026-10-07T15:36:16.772441+00:00",
+    "created_at": "2026-10-07T15:31:44.395435+00:00",
+    "expires_at": "2026-10-08T15:31:44.395435+00:00",
+    "archived_at": null,
+    "cancel_initiated_at": null,
+    "results_url": "https://api.anthropic.com/v1/messages/batches/msgbatch_01Br98TNHtFCEv5CTiBVmChi/results"
+  },
+  "collected_at": "2026-10-07T15:36:39.744546+00:00",
+  "usage": {
+    "input_tokens": 161116,
+    "output_tokens": 831997,
+    "cache_read": 0,
+    "cache_write": 0
+  },
+  "summary": {
+    "task_count": 400,
+    "correct": 321,
+    "incorrect_or_no_answer": 79,
+    "unscored": 0,
+    "pass_at_1_all_tasks": 0.8025,
+    "truncated": 0,
+    "statuses": {
+      "completed": 398,
+      "refused": 2
+    }
+  },
+  "completed_answers": 398,
+  "completed_correct": 321,
+  "actual_cost_upper_micro": 8642202,
+  "token_policy_violations": [],
+  "settled": true
+}

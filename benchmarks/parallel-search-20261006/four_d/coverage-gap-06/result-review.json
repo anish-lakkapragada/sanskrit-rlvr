@@ -1,0 +1,1237 @@
+{
+  "created_at": "2026-10-07T15:13:03.176684+00:00",
+  "run_id": "cin-pilot07-result-review",
+  "job_id": "opus-four-d-pilot-07",
+  "result_sha256": "0c7558d751fbc10691b637e0b9d56590f231318ec62e064ff6b2ab29444e2133",
+  "analysis_sha256": "6af2795a1dd8e438a27eade9ad4c8e1706048b0bd892fa8dc3d927f8844e2ac2",
+  "tasks_sha256": "93b994f50b4f8ea898de49020f36fd685056ea018091826897803f5054f2e68a",
+  "declaration_sha256": "cb5cd455800e1e4ef474555b0e06121df08bb0d1765232acab1c1aacf9f7ac7a",
+  "registered_dependency_count": 40,
+  "all_registered_dependencies_unchanged": true,
+  "whole_panel_analysis_reproduced": true,
+  "all46_exact_scorer_parity": true,
+  "all46_prompts_match": true,
+  "all46_regenerate_with_full_union": true,
+  "source_paths": 50,
+  "all_source_paths_match_presubmission_controls": true,
+  "metrics": {
+    "n": 46,
+    "correct": 46,
+    "all_request_accuracy": 1.0,
+    "usable": 46,
+    "usable_correct": 46,
+    "usable_accuracy": 1.0,
+    "completion_bounds": [
+      1.0,
+      1.0
+    ],
+    "all_request_wilson95": [
+      0.9229264369144196,
+      0.9999999999999999
+    ],
+    "usable_wilson95": [
+      0.9229264369144196,
+      0.9999999999999999
+    ],
+    "one_per_family_sandwich_se": 0.0,
+    "usable_family_se": 0.0,
+    "all_request_iid_se": 0.0,
+    "usable_iid_se": 0.0,
+    "family_units_in_variance": 46,
+    "statuses": {
+      "completed": 46
+    },
+    "truncated": 0,
+    "unparsed_completed": 0
+  },
+  "trigger": {
+    "checks": {
+      "at_least44_usable": true,
+      "at_least8_wrong_families": false,
+      "at_least3_error_ganas": false,
+      "at_least2_error_branches": false
+    },
+    "all_mechanical_conditions_met": false,
+    "wrong_completed_families": 0,
+    "error_ganas": 0,
+    "error_branches": 0,
+    "source_audit_required": true,
+    "release_advance_authorized": false
+  },
+  "gana_counts": {
+    "Bhvadi": 24,
+    "Curadi": 8,
+    "Divadi": 2,
+    "Juhotyadi": 1,
+    "Kryadi": 3,
+    "Svadi": 1,
+    "Tanadi": 1,
+    "Tudadi": 6
+  },
+  "branch_counts": {
+    "A_final_yuk": 2,
+    "ik_guna": 11,
+    "other_cin_base": 20,
+    "penultimate_a_vrddhi": 13
+  },
+  "paid_questions_with_multiple_surface_forms": 0,
+  "multiple_path_single_surface_questions": [
+    {
+      "id": "cart4-ba9443e8200c57a33896acde",
+      "code": "01.0915",
+      "family": "vana~|Bhvadi",
+      "gana": "Bhvadi",
+      "branch": "penultimate_a_vrddhi",
+      "answer": "अवानि",
+      "gold_slp1": [
+        "avAni"
+      ],
+      "gold_devanagari": [
+        "अवानि"
+      ],
+      "path_count": 2,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-67614837ee4afffaa0f97200",
+      "code": "10.0066",
+      "family": "Kaqi~|Curadi",
+      "gana": "Curadi",
+      "branch": "other_cin_base",
+      "answer": "अखण्डि",
+      "gold_slp1": [
+        "aKaRqi"
+      ],
+      "gold_devanagari": [
+        "अखण्डि"
+      ],
+      "path_count": 2,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-f4b1adb2ec85e8e96460715e",
+      "code": "10.0184",
+      "family": "jasu~|Curadi",
+      "gana": "Curadi",
+      "branch": "penultimate_a_vrddhi",
+      "answer": "अजासि",
+      "gold_slp1": [
+        "ajAsi"
+      ],
+      "gold_devanagari": [
+        "अजासि"
+      ],
+      "path_count": 2,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-925d29ee157e1cad7856cd5d",
+      "code": "10.0365",
+      "family": "arda~^|Curadi",
+      "gana": "Curadi",
+      "branch": "other_cin_base",
+      "answer": "आर्दि",
+      "gold_slp1": [
+        "Ardi"
+      ],
+      "gold_devanagari": [
+        "आर्दि"
+      ],
+      "path_count": 2,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    }
+  ],
+  "representative_successes": [
+    {
+      "id": "cart4-ce5706c0de2b51f8dade2f96",
+      "code": "01.0017",
+      "family": "dada~\\|Bhvadi",
+      "gana": "Bhvadi",
+      "branch": "penultimate_a_vrddhi",
+      "answer": "अदादि",
+      "gold_slp1": [
+        "adAdi"
+      ],
+      "gold_devanagari": [
+        "अदादि"
+      ],
+      "path_count": 1,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-78c65e7fead00c93e6632b8d",
+      "code": "01.0063",
+      "family": "ati~|Bhvadi",
+      "gana": "Bhvadi",
+      "branch": "other_cin_base",
+      "answer": "आन्ति",
+      "gold_slp1": [
+        "Anti"
+      ],
+      "gold_devanagari": [
+        "आन्ति"
+      ],
+      "path_count": 1,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-cdf72baf2d8011a9b81f33a4",
+      "code": "01.0096",
+      "family": "kuka~\\|Bhvadi",
+      "gana": "Bhvadi",
+      "branch": "ik_guna",
+      "answer": "अकोकि",
+      "gold_slp1": [
+        "akoki"
+      ],
+      "gold_devanagari": [
+        "अकोकि"
+      ],
+      "path_count": 1,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-ba9443e8200c57a33896acde",
+      "code": "01.0915",
+      "family": "vana~|Bhvadi",
+      "gana": "Bhvadi",
+      "branch": "penultimate_a_vrddhi",
+      "answer": "अवानि",
+      "gold_slp1": [
+        "avAni"
+      ],
+      "gold_devanagari": [
+        "अवानि"
+      ],
+      "path_count": 2,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-b471abf96ad22e529fcf9fe3",
+      "code": "01.1079",
+      "family": "dA\\R|Bhvadi",
+      "gana": "Bhvadi",
+      "branch": "A_final_yuk",
+      "answer": "अदायि",
+      "gold_slp1": [
+        "adAyi"
+      ],
+      "gold_devanagari": [
+        "अदायि"
+      ],
+      "path_count": 1,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-aa586db4ddee703a30bbb8bc",
+      "code": "04.0013",
+      "family": "puTa~|Divadi",
+      "gana": "Divadi",
+      "branch": "ik_guna",
+      "answer": "अपोथि",
+      "gold_slp1": [
+        "apoTi"
+      ],
+      "gold_devanagari": [
+        "अपोथि"
+      ],
+      "path_count": 1,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-888ee4f12fceb80e53ee2400",
+      "code": "09.0044",
+      "family": "ba\\nDa~|Kryadi",
+      "gana": "Kryadi",
+      "branch": "other_cin_base",
+      "answer": "अबन्धि",
+      "gold_slp1": [
+        "abanDi"
+      ],
+      "gold_devanagari": [
+        "अबन्धि"
+      ],
+      "path_count": 1,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-67614837ee4afffaa0f97200",
+      "code": "10.0066",
+      "family": "Kaqi~|Curadi",
+      "gana": "Curadi",
+      "branch": "other_cin_base",
+      "answer": "अखण्डि",
+      "gold_slp1": [
+        "aKaRqi"
+      ],
+      "gold_devanagari": [
+        "अखण्डि"
+      ],
+      "path_count": 2,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-f4b1adb2ec85e8e96460715e",
+      "code": "10.0184",
+      "family": "jasu~|Curadi",
+      "gana": "Curadi",
+      "branch": "penultimate_a_vrddhi",
+      "answer": "अजासि",
+      "gold_slp1": [
+        "ajAsi"
+      ],
+      "gold_devanagari": [
+        "अजासि"
+      ],
+      "path_count": 2,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-3faaec6c031dc2f2cdfde1c8",
+      "code": "10.0221",
+      "family": "truwa~|Curadi",
+      "gana": "Curadi",
+      "branch": "ik_guna",
+      "answer": "अत्रोटि",
+      "gold_slp1": [
+        "atrowi"
+      ],
+      "gold_devanagari": [
+        "अत्रोटि"
+      ],
+      "path_count": 1,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-925d29ee157e1cad7856cd5d",
+      "code": "10.0365",
+      "family": "arda~^|Curadi",
+      "gana": "Curadi",
+      "branch": "other_cin_base",
+      "answer": "आर्दि",
+      "gold_slp1": [
+        "Ardi"
+      ],
+      "gold_devanagari": [
+        "आर्दि"
+      ],
+      "path_count": 2,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    }
+  ],
+  "all_checks": [
+    {
+      "id": "cart4-ce5706c0de2b51f8dade2f96",
+      "code": "01.0017",
+      "family": "dada~\\|Bhvadi",
+      "gana": "Bhvadi",
+      "branch": "penultimate_a_vrddhi",
+      "answer": "अदादि",
+      "gold_slp1": [
+        "adAdi"
+      ],
+      "gold_devanagari": [
+        "अदादि"
+      ],
+      "path_count": 1,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-78c65e7fead00c93e6632b8d",
+      "code": "01.0063",
+      "family": "ati~|Bhvadi",
+      "gana": "Bhvadi",
+      "branch": "other_cin_base",
+      "answer": "आन्ति",
+      "gold_slp1": [
+        "Anti"
+      ],
+      "gold_devanagari": [
+        "आन्ति"
+      ],
+      "path_count": 1,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-cdf72baf2d8011a9b81f33a4",
+      "code": "01.0096",
+      "family": "kuka~\\|Bhvadi",
+      "gana": "Bhvadi",
+      "branch": "ik_guna",
+      "answer": "अकोकि",
+      "gold_slp1": [
+        "akoki"
+      ],
+      "gold_devanagari": [
+        "अकोकि"
+      ],
+      "path_count": 1,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-b3a5f531c010ec56e6892baf",
+      "code": "01.0471",
+      "family": "tunpa~|Bhvadi",
+      "gana": "Bhvadi",
+      "branch": "other_cin_base",
+      "answer": "अतुम्पि",
+      "gold_slp1": [
+        "atumpi"
+      ],
+      "gold_devanagari": [
+        "अतुम्पि"
+      ],
+      "path_count": 1,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-69d889f0d503f5be0829d572",
+      "code": "01.0472",
+      "family": "trupa~|Bhvadi",
+      "gana": "Bhvadi",
+      "branch": "ik_guna",
+      "answer": "अत्रोपि",
+      "gold_slp1": [
+        "atropi"
+      ],
+      "gold_devanagari": [
+        "अत्रोपि"
+      ],
+      "path_count": 1,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-108fe996d6343e1cacb683d4",
+      "code": "01.0474",
+      "family": "tuPa~|Bhvadi",
+      "gana": "Bhvadi",
+      "branch": "ik_guna",
+      "answer": "अतोफि",
+      "gold_slp1": [
+        "atoPi"
+      ],
+      "gold_devanagari": [
+        "अतोफि"
+      ],
+      "path_count": 1,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-23379d44632d34cffcf419f9",
+      "code": "01.0476",
+      "family": "truPa~|Bhvadi",
+      "gana": "Bhvadi",
+      "branch": "ik_guna",
+      "answer": "अत्रोफि",
+      "gold_slp1": [
+        "atroPi"
+      ],
+      "gold_devanagari": [
+        "अत्रोफि"
+      ],
+      "path_count": 1,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-6ac87ed3dd14fc80827d169f",
+      "code": "01.0477",
+      "family": "trunPa~|Bhvadi",
+      "gana": "Bhvadi",
+      "branch": "other_cin_base",
+      "answer": "अत्रुम्फि",
+      "gold_slp1": [
+        "atrumPi"
+      ],
+      "gold_devanagari": [
+        "अत्रुम्फि"
+      ],
+      "path_count": 1,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-292502f1d93b7f2cf0ebc0a7",
+      "code": "01.0498",
+      "family": "ziBu~|Bhvadi",
+      "gana": "Bhvadi",
+      "branch": "ik_guna",
+      "answer": "असेभि",
+      "gold_slp1": [
+        "aseBi"
+      ],
+      "gold_devanagari": [
+        "असेभि"
+      ],
+      "path_count": 1,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-3258890f28cdbf366249b686",
+      "code": "01.0585",
+      "family": "mavya~|Bhvadi",
+      "gana": "Bhvadi",
+      "branch": "other_cin_base",
+      "answer": "अमव्यि",
+      "gold_slp1": [
+        "amavyi"
+      ],
+      "gold_devanagari": [
+        "अमव्यि"
+      ],
+      "path_count": 1,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-b75a1c320e5abd2adaf8a1bb",
+      "code": "01.0602",
+      "family": "kIla~|Bhvadi",
+      "gana": "Bhvadi",
+      "branch": "other_cin_base",
+      "answer": "अकीलि",
+      "gold_slp1": [
+        "akIli"
+      ],
+      "gold_devanagari": [
+        "अकीलि"
+      ],
+      "path_count": 1,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-2a331f07fe59beea79370bad",
+      "code": "01.0654",
+      "family": "DurvI~|Bhvadi",
+      "gana": "Bhvadi",
+      "branch": "other_cin_base",
+      "answer": "अधूर्वि",
+      "gold_slp1": [
+        "aDUrvi"
+      ],
+      "gold_devanagari": [
+        "अधूर्वि"
+      ],
+      "path_count": 1,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-b97385532e7178605542e886",
+      "code": "01.0669",
+      "family": "zarva~|Bhvadi",
+      "gana": "Bhvadi",
+      "branch": "other_cin_base",
+      "answer": "असर्वि",
+      "gold_slp1": [
+        "asarvi"
+      ],
+      "gold_devanagari": [
+        "असर्वि"
+      ],
+      "path_count": 1,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-5549478756292b1cf886dbba",
+      "code": "01.0776",
+      "family": "jUza~|Bhvadi",
+      "gana": "Bhvadi",
+      "branch": "other_cin_base",
+      "answer": "अजूषि",
+      "gold_slp1": [
+        "ajUzi"
+      ],
+      "gold_devanagari": [
+        "अजूषि"
+      ],
+      "path_count": 1,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-e27143dbcd9bb95244f6b511",
+      "code": "01.0782",
+      "family": "Kaza~|Bhvadi",
+      "gana": "Bhvadi",
+      "branch": "penultimate_a_vrddhi",
+      "answer": "अखाषि",
+      "gold_slp1": [
+        "aKAzi"
+      ],
+      "gold_devanagari": [
+        "अखाषि"
+      ],
+      "path_count": 1,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-fa7466814f0ea6a09e6d4b24",
+      "code": "01.0786",
+      "family": "Saza~|Bhvadi",
+      "gana": "Bhvadi",
+      "branch": "penultimate_a_vrddhi",
+      "answer": "अशाषि",
+      "gold_slp1": [
+        "aSAzi"
+      ],
+      "gold_devanagari": [
+        "अशाषि"
+      ],
+      "path_count": 1,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-ba08113a32bea8dbddb0bc90",
+      "code": "01.0787",
+      "family": "vaza~|Bhvadi",
+      "gana": "Bhvadi",
+      "branch": "penultimate_a_vrddhi",
+      "answer": "अवाषि",
+      "gold_slp1": [
+        "avAzi"
+      ],
+      "gold_devanagari": [
+        "अवाषि"
+      ],
+      "path_count": 1,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-e28418fc1b8140683cf90da1",
+      "code": "01.0911",
+      "family": "knaTa~|Bhvadi",
+      "gana": "Bhvadi",
+      "branch": "penultimate_a_vrddhi",
+      "answer": "अक्नाथि",
+      "gold_slp1": [
+        "aknATi"
+      ],
+      "gold_devanagari": [
+        "अक्नाथि"
+      ],
+      "path_count": 1,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-b73149b64f641afc5f6526ff",
+      "code": "01.0912",
+      "family": "kraTa~|Bhvadi",
+      "gana": "Bhvadi",
+      "branch": "penultimate_a_vrddhi",
+      "answer": "अक्राथि",
+      "gold_slp1": [
+        "akrATi"
+      ],
+      "gold_devanagari": [
+        "अक्राथि"
+      ],
+      "path_count": 1,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-f58e76e741777d840794ed20",
+      "code": "01.0913",
+      "family": "klaTa~|Bhvadi",
+      "gana": "Bhvadi",
+      "branch": "penultimate_a_vrddhi",
+      "answer": "अक्लाथि",
+      "gold_slp1": [
+        "aklATi"
+      ],
+      "gold_devanagari": [
+        "अक्लाथि"
+      ],
+      "path_count": 1,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-c60c79d32a0100781ad477ba",
+      "code": "01.0914",
+      "family": "cana~|Bhvadi",
+      "gana": "Bhvadi",
+      "branch": "penultimate_a_vrddhi",
+      "answer": "अचानि",
+      "gold_slp1": [
+        "acAni"
+      ],
+      "gold_devanagari": [
+        "अचानि"
+      ],
+      "path_count": 1,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-ba9443e8200c57a33896acde",
+      "code": "01.0915",
+      "family": "vana~|Bhvadi",
+      "gana": "Bhvadi",
+      "branch": "penultimate_a_vrddhi",
+      "answer": "अवानि",
+      "gold_slp1": [
+        "avAni"
+      ],
+      "gold_devanagari": [
+        "अवानि"
+      ],
+      "path_count": 2,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-f7fd7a1dd7a552c857338fd0",
+      "code": "01.1034",
+      "family": "caza~^|Bhvadi",
+      "gana": "Bhvadi",
+      "branch": "penultimate_a_vrddhi",
+      "answer": "अचाषि",
+      "gold_slp1": [
+        "acAzi"
+      ],
+      "gold_devanagari": [
+        "अचाषि"
+      ],
+      "path_count": 1,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-b471abf96ad22e529fcf9fe3",
+      "code": "01.1079",
+      "family": "dA\\R|Bhvadi",
+      "gana": "Bhvadi",
+      "branch": "A_final_yuk",
+      "answer": "अदायि",
+      "gold_slp1": [
+        "adAyi"
+      ],
+      "gold_devanagari": [
+        "अदायि"
+      ],
+      "path_count": 1,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-2d3a04981b136a96a9cba9f8",
+      "code": "03.0009",
+      "family": "o~hA\\k|Juhotyadi",
+      "gana": "Juhotyadi",
+      "branch": "A_final_yuk",
+      "answer": "अहायि",
+      "gold_slp1": [
+        "ahAyi"
+      ],
+      "gold_devanagari": [
+        "अहायि"
+      ],
+      "path_count": 1,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-aa586db4ddee703a30bbb8bc",
+      "code": "04.0013",
+      "family": "puTa~|Divadi",
+      "gana": "Divadi",
+      "branch": "ik_guna",
+      "answer": "अपोथि",
+      "gold_slp1": [
+        "apoTi"
+      ],
+      "gold_devanagari": [
+        "अपोथि"
+      ],
+      "path_count": 1,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-82408c2760151b98791c6292",
+      "code": "04.0032",
+      "family": "mI\\N|Divadi",
+      "gana": "Divadi",
+      "branch": "other_cin_base",
+      "answer": "अमायि",
+      "gold_slp1": [
+        "amAyi"
+      ],
+      "gold_devanagari": [
+        "अमायि"
+      ],
+      "path_count": 1,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-d74626d8b60a6b7c35b93c0f",
+      "code": "05.0007",
+      "family": "kf\\Y|Svadi",
+      "gana": "Svadi",
+      "branch": "other_cin_base",
+      "answer": "अकारि",
+      "gold_slp1": [
+        "akAri"
+      ],
+      "gold_devanagari": [
+        "अकारि"
+      ],
+      "path_count": 1,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-e060bd3d41d860fec23df9bc",
+      "code": "06.0012",
+      "family": "o~vrascU~|Tudadi",
+      "gana": "Tudadi",
+      "branch": "other_cin_base",
+      "answer": "अव्रश्चि",
+      "gold_slp1": [
+        "avraSci"
+      ],
+      "gold_devanagari": [
+        "अव्रश्चि"
+      ],
+      "path_count": 1,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-95f79052454ef9082c4b72d1",
+      "code": "06.0037",
+      "family": "stfnhU~|Tudadi",
+      "gana": "Tudadi",
+      "branch": "other_cin_base",
+      "answer": "अस्तृंहि",
+      "gold_slp1": [
+        "astfMhi"
+      ],
+      "gold_devanagari": [
+        "अस्तृंहि"
+      ],
+      "path_count": 1,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-958b21ff32e921214df588bd",
+      "code": "06.0057",
+      "family": "mfRa~|Tudadi",
+      "gana": "Tudadi",
+      "branch": "ik_guna",
+      "answer": "अमर्णि",
+      "gold_slp1": [
+        "amarRi"
+      ],
+      "gold_devanagari": [
+        "अमर्णि"
+      ],
+      "path_count": 1,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-3e17e5976cdb7493850144d6",
+      "code": "06.0077",
+      "family": "tfnhU~|Tudadi",
+      "gana": "Tudadi",
+      "branch": "other_cin_base",
+      "answer": "अतृंहि",
+      "gold_slp1": [
+        "atfMhi"
+      ],
+      "gold_devanagari": [
+        "अतृंहि"
+      ],
+      "path_count": 1,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-b3f286f9a2660fcd4616d6b5",
+      "code": "06.0105",
+      "family": "Cuwa~|Tudadi",
+      "gana": "Tudadi",
+      "branch": "ik_guna",
+      "answer": "अच्छोटि",
+      "gold_slp1": [
+        "acCowi"
+      ],
+      "gold_devanagari": [
+        "अच्छोटि"
+      ],
+      "path_count": 1,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-6596b5814d3e6a02547489df",
+      "code": "06.0167",
+      "family": "lu\\px~^|Tudadi",
+      "gana": "Tudadi",
+      "branch": "ik_guna",
+      "answer": "अलोपि",
+      "gold_slp1": [
+        "alopi"
+      ],
+      "gold_devanagari": [
+        "अलोपि"
+      ],
+      "path_count": 1,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-cb9e010aefb50cd43ce9e283",
+      "code": "08.0002",
+      "family": "zaRu~^|Tanadi",
+      "gana": "Tanadi",
+      "branch": "penultimate_a_vrddhi",
+      "answer": "असानि",
+      "gold_slp1": [
+        "asAni"
+      ],
+      "gold_devanagari": [
+        "असानि"
+      ],
+      "path_count": 1,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-3b4d622a030bf7f6da7f1a47",
+      "code": "09.0021",
+      "family": "SF|Kryadi",
+      "gana": "Kryadi",
+      "branch": "other_cin_base",
+      "answer": "अशारि",
+      "gold_slp1": [
+        "aSAri"
+      ],
+      "gold_devanagari": [
+        "अशारि"
+      ],
+      "path_count": 1,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-888ee4f12fceb80e53ee2400",
+      "code": "09.0044",
+      "family": "ba\\nDa~|Kryadi",
+      "gana": "Kryadi",
+      "branch": "other_cin_base",
+      "answer": "अबन्धि",
+      "gold_slp1": [
+        "abanDi"
+      ],
+      "gold_devanagari": [
+        "अबन्धि"
+      ],
+      "path_count": 1,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-7d956194191b53027b2a6d55",
+      "code": "09.0057",
+      "family": "tuBa~|Kryadi",
+      "gana": "Kryadi",
+      "branch": "ik_guna",
+      "answer": "अतोभि",
+      "gold_slp1": [
+        "atoBi"
+      ],
+      "gold_devanagari": [
+        "अतोभि"
+      ],
+      "path_count": 1,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-d704263a06ab63d7507a2b2c",
+      "code": "10.0063",
+      "family": "SraRa~|Curadi",
+      "gana": "Curadi",
+      "branch": "penultimate_a_vrddhi",
+      "answer": "अश्राणि",
+      "gold_slp1": [
+        "aSrARi"
+      ],
+      "gold_devanagari": [
+        "अश्राणि"
+      ],
+      "path_count": 1,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-67614837ee4afffaa0f97200",
+      "code": "10.0066",
+      "family": "Kaqi~|Curadi",
+      "gana": "Curadi",
+      "branch": "other_cin_base",
+      "answer": "अखण्डि",
+      "gold_slp1": [
+        "aKaRqi"
+      ],
+      "gold_devanagari": [
+        "अखण्डि"
+      ],
+      "path_count": 2,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-7fb8e74dbc5e77bb37fea924",
+      "code": "10.0129",
+      "family": "sPiwwa~|Curadi",
+      "gana": "Curadi",
+      "branch": "other_cin_base",
+      "answer": "अस्फिट्टि",
+      "gold_slp1": [
+        "asPiwwi"
+      ],
+      "gold_devanagari": [
+        "अस्फिट्टि"
+      ],
+      "path_count": 1,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-06b1016468cfae3e58067ba6",
+      "code": "10.0172",
+      "family": "brUsa~|Curadi",
+      "gana": "Curadi",
+      "branch": "other_cin_base",
+      "answer": "अब्रूसि",
+      "gold_slp1": [
+        "abrUsi"
+      ],
+      "gold_devanagari": [
+        "अब्रूसि"
+      ],
+      "path_count": 1,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-f4b1adb2ec85e8e96460715e",
+      "code": "10.0184",
+      "family": "jasu~|Curadi",
+      "gana": "Curadi",
+      "branch": "penultimate_a_vrddhi",
+      "answer": "अजासि",
+      "gold_slp1": [
+        "ajAsi"
+      ],
+      "gold_devanagari": [
+        "अजासि"
+      ],
+      "path_count": 2,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-3faaec6c031dc2f2cdfde1c8",
+      "code": "10.0221",
+      "family": "truwa~|Curadi",
+      "gana": "Curadi",
+      "branch": "ik_guna",
+      "answer": "अत्रोटि",
+      "gold_slp1": [
+        "atrowi"
+      ],
+      "gold_devanagari": [
+        "अत्रोटि"
+      ],
+      "path_count": 1,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-925d29ee157e1cad7856cd5d",
+      "code": "10.0365",
+      "family": "arda~^|Curadi",
+      "gana": "Curadi",
+      "branch": "other_cin_base",
+      "answer": "आर्दि",
+      "gold_slp1": [
+        "Ardi"
+      ],
+      "gold_devanagari": [
+        "आर्दि"
+      ],
+      "path_count": 2,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    },
+    {
+      "id": "cart4-67549df87625ea78eba54d77",
+      "code": "10.0414",
+      "family": "Keqa~|Curadi",
+      "gana": "Curadi",
+      "branch": "other_cin_base",
+      "answer": "अखेडि",
+      "gold_slp1": [
+        "aKeqi"
+      ],
+      "gold_devanagari": [
+        "अखेडि"
+      ],
+      "path_count": 1,
+      "scoring_parity": true,
+      "full_pada_union_equal": true,
+      "source_paths_unchanged": true
+    }
+  ],
+  "optionality": {
+    "paid_optional_surface_successes": 0,
+    "explanation": "All46 full accepted unions are singletons. Four questions have two derivation paths converging on the same surface. No engine option was removed.",
+    "separate_offline_control": {
+      "code": "04.0098",
+      "operations": [
+        "Ric"
+      ],
+      "paid_panel_member": false,
+      "gold": [
+        "aSAmi",
+        "aSami"
+      ],
+      "source": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.4.93.htm",
+      "rules": [
+        "01.0934",
+        "1.2.4",
+        "1.3.1",
+        "1.3.13",
+        "1.3.2",
+        "1.3.3",
+        "1.3.7",
+        "1.3.9",
+        "1.4.13",
+        "1.4.14",
+        "3.1.26",
+        "3.1.32",
+        "3.1.43",
+        "3.1.66",
+        "3.2.110",
+        "3.4.113",
+        "3.4.114",
+        "3.4.78",
+        "6.4.104",
+        "6.4.51",
+        "6.4.71",
+        "6.4.92",
+        "6.4.93",
+        "7.2.115",
+        "7.2.116",
+        "8.4.68"
+      ]
+    },
+    "control_sha256": "6034abd79151d3e42954c23e1c25f6db43a82bf9e3f474c25937a132466913df",
+    "control_is_model_success": false,
+    "note": "The saved sam+Ric optional-length control is outside ordinary4D and outside the paid panel. It is preserved as an engine/source control, not newly generated or evidence of paid-panel success."
+  },
+  "source_qualification": "Primary7.3.33 prints adayi for the dadati/dadhati discussion; the panel Bhvadi da01.1079 uses the general A-final rule by inference, not a separately printed exact-class paradigm. This pre-existing qualification remains; no new blocker was found.",
+  "disagreements": [],
+  "new_source_issues": [],
+  "source_policy_change_proposed": false,
+  "no_frozen_files_modified": true,
+  "no_paid_calls": true,
+  "no_5d08_results_read": true,
+  "benchmark_ready": false
+}

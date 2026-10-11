@@ -1,0 +1,55 @@
+{
+  "updated_at": "2026-10-07T22:03:57.196377+00:00",
+  "tracks": {
+    "four_d": {
+      "state": "waiting_for_complete_panel",
+      "jobs": [
+        {
+          "id": "opus-simple4d-90-01",
+          "status": "in_progress",
+          "provider_progress": {
+            "processing": 200,
+            "succeeded": 0,
+            "errored": 0,
+            "canceled": 0,
+            "expired": 0
+          }
+        }
+      ]
+    },
+    "modification": {
+      "state": "waiting_for_complete_panel",
+      "jobs": [
+        {
+          "id": "opus-modification-01",
+          "status": "in_progress",
+          "provider_progress": {
+            "processing": 200,
+            "succeeded": 0,
+            "errored": 0,
+            "canceled": 0,
+            "expired": 0
+          }
+        },
+        {
+          "id": "opus-modification-control-01",
+          "status": "in_progress",
+          "provider_progress": {
+            "processing": 200,
+            "succeeded": 0,
+            "errored": 0,
+            "canceled": 0,
+            "expired": 0
+          }
+        }
+      ]
+    }
+  },
+  "benchmark_ready": false,
+  "protocol": "Opus5.5 xHigh/65536, one sample, no tools; complete frozen development panels only",
+  "limitations": [
+    "Adaptive development selection; no final holdout qualification.",
+    "Four-dimensional challenge uses English; matched modification/control use Sanskrit.",
+    "Report source-based corrections separately and symmetrically; do not rewrite raw results."
+  ]
+}

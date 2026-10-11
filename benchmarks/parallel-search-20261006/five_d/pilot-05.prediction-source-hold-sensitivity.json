@@ -1,0 +1,65 @@
+{
+  "created_at": "2026-10-07T08:00:21.413998+00:00",
+  "comparison_sha256": "aa4d6d9e599df8e709375ebb27b5324759b6758896697e1d26eee46087acbb33",
+  "holds": [
+    "04.0137",
+    "10.0023"
+  ],
+  "reason": "Independent unresolved lexical/source issues held prospectively across outcomes; original pilot04 scope and raw scores remain unchanged.",
+  "affected_rows": [
+    {
+      "id": "cart5-7041f480e9acdc983441d10e",
+      "code": "04.0137",
+      "correct": false,
+      "status": "completed"
+    },
+    {
+      "id": "cart5-b5f57f5bc397a2183f740b39",
+      "code": "04.0137",
+      "correct": false,
+      "status": "completed"
+    }
+  ],
+  "candidate40pct_lun_10pct_passive": {
+    "fine": {
+      "all_requests": {
+        "accuracy": 0.7995432710564291,
+        "cluster_se": 0.02092911309031142,
+        "bootstrap_percentile95": [
+          0.7581602524540888,
+          0.839298353941315
+        ]
+      },
+      "completed": {
+        "accuracy": 0.8041503826235431,
+        "cluster_se": 0.020845228195881683,
+        "bootstrap_percentile95": [
+          0.76264059675442,
+          0.8440814097465026
+        ]
+      },
+      "standardization_cells": 42,
+      "smallest_observed_cell": 2
+    },
+    "coarse": {
+      "all_requests": {
+        "accuracy": 0.8012026207263685,
+        "cluster_se": 0.020743582156868612,
+        "bootstrap_percentile95": [
+          0.7600926285489625,
+          0.8406024952704505
+        ]
+      },
+      "completed": {
+        "accuracy": 0.8058192937635555,
+        "cluster_se": 0.02065309155809495,
+        "bootstrap_percentile95": [
+          0.76466943281347,
+          0.8452363958946145
+        ]
+      },
+      "standardization_cells": 8,
+      "smallest_observed_cell": 10
+    }
+  }
+}

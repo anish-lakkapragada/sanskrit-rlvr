@@ -1,0 +1,169 @@
+{
+  "created_at": "2026-10-07T11:35:42.691155+00:00",
+  "policy": "oracle-policy-19",
+  "policy_sha256": "3612b5af9ce8f75946397e239e80c0a082979061eec2fc2f9eb441b1a3350747",
+  "original_aggregate_sha256": "c3bdfe3155a38fecff63bd12acfae40988361c3c61f4ed29df96689d43c13607",
+  "fixed_raw_n": 2400,
+  "scope_exclusions": [
+    {
+      "id": "cart5-663fa35a7fd5c4ab746781b6",
+      "reason": "Source-required ri augmentation displaced by nasal augmentation in r-bearing intensive",
+      "recorded_correct": false,
+      "status": "completed"
+    },
+    {
+      "id": "cart5-8525e603ac772079f972afaa",
+      "reason": "Source-required ri augmentation displaced by nasal augmentation in r-bearing intensive",
+      "recorded_correct": false,
+      "status": "completed"
+    },
+    {
+      "id": "cart5-19a6cf3c0f27b8549aa9cfb4",
+      "reason": "Source-required ri augmentation displaced by nasal augmentation in r-bearing intensive",
+      "recorded_correct": false,
+      "status": "completed"
+    },
+    {
+      "id": "cart5-c8b111548496a22c8631d0ad",
+      "reason": "Source-required ri augmentation displaced by nasal augmentation in r-bearing intensive",
+      "recorded_correct": false,
+      "status": "completed"
+    },
+    {
+      "id": "cart5-02f75650a802c9ad35420805",
+      "reason": "Source-required ri augmentation displaced by nasal augmentation in r-bearing intensive",
+      "recorded_correct": false,
+      "status": "completed"
+    },
+    {
+      "id": "cart5-2b07a80f24adf360f39b289e",
+      "reason": "Source-required ri augmentation displaced by nasal augmentation in r-bearing intensive",
+      "recorded_correct": false,
+      "status": "completed"
+    },
+    {
+      "id": "cart5-7b622e3c3874fad16330ed09",
+      "reason": "Source-required ri augmentation displaced by nasal augmentation in r-bearing intensive",
+      "recorded_correct": false,
+      "status": "completed"
+    },
+    {
+      "id": "cart5-e80eea3b8077b197b0728f91",
+      "reason": "Source-required ri augmentation displaced by nasal augmentation in r-bearing intensive",
+      "recorded_correct": false,
+      "status": "completed"
+    },
+    {
+      "id": "cart5-95cc8ea1a26d7cb6b6015c7a",
+      "reason": "Source-required ri augmentation displaced by nasal augmentation in r-bearing intensive",
+      "recorded_correct": false,
+      "status": "completed"
+    },
+    {
+      "id": "cart5-2678e9ab2985e659cf601999",
+      "reason": "Source-required ri augmentation displaced by nasal augmentation in r-bearing intensive",
+      "recorded_correct": false,
+      "status": "completed"
+    },
+    {
+      "id": "cart5-69e1ce8041e205287b2721e7",
+      "reason": "Source-required ri augmentation displaced by nasal augmentation in r-bearing intensive",
+      "recorded_correct": false,
+      "status": "completed"
+    },
+    {
+      "id": "cart5-3fb35fc04239f5ad8db9ff13",
+      "reason": "Source-required ri augmentation displaced by nasal augmentation in r-bearing intensive",
+      "recorded_correct": false,
+      "status": "completed"
+    }
+  ],
+  "current_scope_statistics": {
+    "fixed_n": 2388,
+    "result_rows": 2388,
+    "all_results_present": true,
+    "unscored_results": 0,
+    "statuses": {
+      "completed": 2370,
+      "refused": 16,
+      "incomplete": 2
+    },
+    "truncated": 2,
+    "root_families": 604,
+    "families_per_class": {
+      "Adadi": 18,
+      "Bhvadi": 369,
+      "Curadi": 80,
+      "Divadi": 33,
+      "Juhotyadi": 2,
+      "Kryadi": 26,
+      "Rudhadi": 10,
+      "Svadi": 9,
+      "Tanadi": 1,
+      "Tudadi": 56
+    },
+    "all_request": {
+      "n": 2388,
+      "correct": 1854,
+      "accuracy": 0.7763819095477387,
+      "iid_standard_error": 0.008526563087683802,
+      "iid_wilson_95_interval": [
+        0.7592337916341833,
+        0.7926422514589199
+      ],
+      "root_cluster_sandwich_standard_error": 0.010596406794624846,
+      "family_bootstrap": {
+        "standard_error": 0.010569399857762847,
+        "percentile_95_interval": [
+          0.7553542009884678,
+          0.796783063208327
+        ],
+        "valid_repetitions": 20000
+      },
+      "class_stratified_family_bootstrap": {
+        "standard_error": 0.010467747322664258,
+        "percentile_95_interval": [
+          0.755657297188842,
+          0.7969800237947416
+        ],
+        "valid_repetitions": 20000
+      }
+    },
+    "completed_answer": {
+      "n": 2369,
+      "correct": 1854,
+      "accuracy": 0.782608695652174,
+      "iid_standard_error": 0.008474437642000444,
+      "iid_wilson_95_interval": [
+        0.7655487250350183,
+        0.7987536201648525
+      ],
+      "root_cluster_sandwich_standard_error": 0.010414177668898817,
+      "family_bootstrap": {
+        "standard_error": 0.010379782605615803,
+        "percentile_95_interval": [
+          0.7619450317124735,
+          0.8027932077328707
+        ],
+        "valid_repetitions": 20000
+      },
+      "class_stratified_family_bootstrap": {
+        "standard_error": 0.010273853543567746,
+        "percentile_95_interval": [
+          0.7624261704301822,
+          0.8025531914893617
+        ],
+        "valid_repetitions": 20000
+      }
+    },
+    "missing_answer_accuracy_bounds": [
+      0.7763819095477387,
+      0.7843383584589615
+    ],
+    "bootstrap_repetitions": 20000,
+    "bootstrap_seed": 202610071107
+  },
+  "original_raw_and_aggregate_unchanged": true,
+  "numerical_advancement": false,
+  "benchmark_ready": false
+}

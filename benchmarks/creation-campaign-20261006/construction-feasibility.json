@@ -1,0 +1,4168 @@
+{
+  "created_at": "2026-10-06T22:15:39.629353+00:00",
+  "analyzed_discovery_tasks": 6000,
+  "analysis_sha256": "8c3309f6556dcdd3bb7d9ecd0877a2dafd2f49e031693c5c77fdfe22de78e887",
+  "screening_bands": {
+    "bench_lead_maximum": 0.7,
+    "hard_lead_maximum": 0.5,
+    "calibration_bands_remain": {
+      "bench": 0.6,
+      "hard": 0.4
+    }
+  },
+  "checks": [
+    {
+      "predicate": [
+        [
+          "gana",
+          "Divadi"
+        ],
+        [
+          "rule",
+          "3.1.44"
+        ]
+      ],
+      "discovery_n": 28,
+      "discovery_families": 17,
+      "discovery_completed_accuracy": 0.7142857142857143,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 1066,
+          "families": 84,
+          "maximum_tasks_at_two_per_family": 168,
+          "lakaras": {
+            "Lun": 1066
+          }
+        },
+        "development": {
+          "tasks": 368,
+          "families": 31,
+          "maximum_tasks_at_two_per_family": 62,
+          "lakaras": {
+            "Lun": 368
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "gana",
+          "Svadi"
+        ],
+        [
+          "rule",
+          "7.4.60"
+        ]
+      ],
+      "discovery_n": 39,
+      "discovery_families": 10,
+      "discovery_completed_accuracy": 0.7435897435897436,
+      "candidate_supply_upper_bounds": {
+        "development": {
+          "tasks": 123,
+          "families": 10,
+          "maximum_tasks_at_two_per_family": 19,
+          "lakaras": {
+            "Lit": 123
+          }
+        },
+        "test": {
+          "tasks": 143,
+          "families": 9,
+          "maximum_tasks_at_two_per_family": 17,
+          "lakaras": {
+            "Lit": 143
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "gana",
+          "Svadi"
+        ],
+        [
+          "rule",
+          "7.2.35"
+        ]
+      ],
+      "discovery_n": 32,
+      "discovery_families": 10,
+      "discovery_completed_accuracy": 0.75,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 669,
+          "families": 14,
+          "maximum_tasks_at_two_per_family": 28,
+          "lakaras": {
+            "Lit": 97,
+            "Lut": 126,
+            "Lrt": 126,
+            "AshirLin": 80,
+            "Lun": 119,
+            "Lrn": 121
+          }
+        },
+        "development": {
+          "tasks": 611,
+          "families": 12,
+          "maximum_tasks_at_two_per_family": 24,
+          "lakaras": {
+            "Lit": 61,
+            "Lut": 120,
+            "Lrt": 123,
+            "AshirLin": 68,
+            "Lun": 115,
+            "Lrn": 124
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "gana",
+          "Divadi"
+        ],
+        [
+          "rule",
+          "8.3.78"
+        ]
+      ],
+      "discovery_n": 6,
+      "discovery_families": 4,
+      "discovery_completed_accuracy": 0.16666666666666666,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 25,
+          "families": 7,
+          "maximum_tasks_at_two_per_family": 13,
+          "lakaras": {
+            "AshirLin": 11,
+            "Lun": 12,
+            "Lit": 2
+          }
+        },
+        "development": {
+          "tasks": 6,
+          "families": 2,
+          "maximum_tasks_at_two_per_family": 4,
+          "lakaras": {
+            "AshirLin": 4,
+            "Lun": 2
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "7.2.13"
+        ],
+        [
+          "rule",
+          "8.2.78"
+        ]
+      ],
+      "discovery_n": 8,
+      "discovery_families": 7,
+      "discovery_completed_accuracy": 0.25,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 65,
+          "families": 9,
+          "maximum_tasks_at_two_per_family": 18,
+          "lakaras": {
+            "Lit": 65
+          }
+        },
+        "development": {
+          "tasks": 51,
+          "families": 8,
+          "maximum_tasks_at_two_per_family": 16,
+          "lakaras": {
+            "Lit": 51
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "6.4.88"
+        ],
+        [
+          "rule",
+          "8.2.78"
+        ]
+      ],
+      "discovery_n": 11,
+      "discovery_families": 3,
+      "discovery_completed_accuracy": 0.2727272727272727,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 36,
+          "families": 2,
+          "maximum_tasks_at_two_per_family": 4,
+          "lakaras": {
+            "Lit": 36
+          }
+        },
+        "development": {
+          "tasks": 41,
+          "families": 3,
+          "maximum_tasks_at_two_per_family": 6,
+          "lakaras": {
+            "Lit": 41
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "3.1.35"
+        ],
+        [
+          "rule",
+          "8.2.78"
+        ]
+      ],
+      "discovery_n": 12,
+      "discovery_families": 3,
+      "discovery_completed_accuracy": 0.3333333333333333,
+      "candidate_supply_upper_bounds": {
+        "development": {
+          "tasks": 41,
+          "families": 3,
+          "maximum_tasks_at_two_per_family": 6,
+          "lakaras": {
+            "Lit": 41
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "3.1.40:1"
+        ],
+        [
+          "rule",
+          "8.2.78"
+        ]
+      ],
+      "discovery_n": 12,
+      "discovery_families": 3,
+      "discovery_completed_accuracy": 0.3333333333333333,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 36,
+          "families": 2,
+          "maximum_tasks_at_two_per_family": 4,
+          "lakaras": {
+            "Lit": 36
+          }
+        },
+        "development": {
+          "tasks": 41,
+          "families": 3,
+          "maximum_tasks_at_two_per_family": 6,
+          "lakaras": {
+            "Lit": 41
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "3.1.40:2"
+        ],
+        [
+          "rule",
+          "8.2.78"
+        ]
+      ],
+      "discovery_n": 12,
+      "discovery_families": 3,
+      "discovery_completed_accuracy": 0.3333333333333333,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 36,
+          "families": 2,
+          "maximum_tasks_at_two_per_family": 4,
+          "lakaras": {
+            "Lit": 36
+          }
+        },
+        "development": {
+          "tasks": 41,
+          "families": 3,
+          "maximum_tasks_at_two_per_family": 6,
+          "lakaras": {
+            "Lit": 41
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "3.1.40:kf"
+        ],
+        [
+          "rule",
+          "8.2.78"
+        ]
+      ],
+      "discovery_n": 12,
+      "discovery_families": 3,
+      "discovery_completed_accuracy": 0.3333333333333333,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 36,
+          "families": 2,
+          "maximum_tasks_at_two_per_family": 4,
+          "lakaras": {
+            "Lit": 36
+          }
+        },
+        "development": {
+          "tasks": 41,
+          "families": 3,
+          "maximum_tasks_at_two_per_family": 6,
+          "lakaras": {
+            "Lit": 41
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "6.4.55"
+        ],
+        [
+          "rule",
+          "8.2.78"
+        ]
+      ],
+      "discovery_n": 12,
+      "discovery_families": 3,
+      "discovery_completed_accuracy": 0.3333333333333333,
+      "candidate_supply_upper_bounds": {
+        "development": {
+          "tasks": 41,
+          "families": 3,
+          "maximum_tasks_at_two_per_family": 6,
+          "lakaras": {
+            "Lit": 41
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "7.4.73"
+        ],
+        [
+          "rule",
+          "8.2.78"
+        ]
+      ],
+      "discovery_n": 12,
+      "discovery_families": 3,
+      "discovery_completed_accuracy": 0.3333333333333333,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 36,
+          "families": 2,
+          "maximum_tasks_at_two_per_family": 4,
+          "lakaras": {
+            "Lit": 36
+          }
+        },
+        "development": {
+          "tasks": 41,
+          "families": 3,
+          "maximum_tasks_at_two_per_family": 6,
+          "lakaras": {
+            "Lit": 41
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "7.4.66"
+        ],
+        [
+          "rule",
+          "8.2.78"
+        ]
+      ],
+      "discovery_n": 9,
+      "discovery_families": 3,
+      "discovery_completed_accuracy": 0.3333333333333333,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 35,
+          "families": 2,
+          "maximum_tasks_at_two_per_family": 4,
+          "lakaras": {
+            "Lit": 35
+          }
+        },
+        "development": {
+          "tasks": 48,
+          "families": 3,
+          "maximum_tasks_at_two_per_family": 6,
+          "lakaras": {
+            "Lit": 41,
+            "Lun": 7
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "7.4.70"
+        ],
+        [
+          "rule",
+          "8.2.78"
+        ]
+      ],
+      "discovery_n": 9,
+      "discovery_families": 3,
+      "discovery_completed_accuracy": 0.3333333333333333,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 36,
+          "families": 2,
+          "maximum_tasks_at_two_per_family": 4,
+          "lakaras": {
+            "Lit": 36
+          }
+        },
+        "development": {
+          "tasks": 41,
+          "families": 3,
+          "maximum_tasks_at_two_per_family": 6,
+          "lakaras": {
+            "Lit": 41
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "7.1.58"
+        ],
+        [
+          "rule",
+          "7.4.59"
+        ]
+      ],
+      "discovery_n": 8,
+      "discovery_families": 3,
+      "discovery_completed_accuracy": 0.375,
+      "candidate_supply_upper_bounds": {
+        "development": {
+          "tasks": 382,
+          "families": 27,
+          "maximum_tasks_at_two_per_family": 54,
+          "lakaras": {
+            "Lit": 382
+          }
+        },
+        "test": {
+          "tasks": 942,
+          "families": 50,
+          "maximum_tasks_at_two_per_family": 100,
+          "lakaras": {
+            "Lit": 942
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "7.4.62"
+        ],
+        [
+          "rule",
+          "8.2.78"
+        ]
+      ],
+      "discovery_n": 10,
+      "discovery_families": 3,
+      "discovery_completed_accuracy": 0.4,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 89,
+          "families": 5,
+          "maximum_tasks_at_two_per_family": 10,
+          "lakaras": {
+            "Lit": 89
+          }
+        },
+        "development": {
+          "tasks": 83,
+          "families": 5,
+          "maximum_tasks_at_two_per_family": 10,
+          "lakaras": {
+            "Lit": 69,
+            "Lun": 14
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "lakara",
+          "Lit"
+        ],
+        [
+          "prayoga",
+          "Kartari"
+        ],
+        [
+          "rule",
+          "8.2.78"
+        ]
+      ],
+      "discovery_n": 16,
+      "discovery_families": 8,
+      "discovery_completed_accuracy": 0.4375,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 80,
+          "families": 9,
+          "maximum_tasks_at_two_per_family": 18,
+          "lakaras": {
+            "Lit": 80
+          }
+        },
+        "development": {
+          "tasks": 55,
+          "families": 8,
+          "maximum_tasks_at_two_per_family": 16,
+          "lakaras": {
+            "Lit": 55
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "lakara",
+          "Lut"
+        ],
+        [
+          "prayoga",
+          "Kartari"
+        ],
+        [
+          "rule",
+          "8.2.78"
+        ]
+      ],
+      "discovery_n": 9,
+      "discovery_families": 8,
+      "discovery_completed_accuracy": 0.4444444444444444,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 81,
+          "families": 9,
+          "maximum_tasks_at_two_per_family": 18,
+          "lakaras": {
+            "Lut": 81
+          }
+        },
+        "development": {
+          "tasks": 63,
+          "families": 8,
+          "maximum_tasks_at_two_per_family": 16,
+          "lakaras": {
+            "Lut": 63
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "6.1.77"
+        ],
+        [
+          "rule",
+          "8.2.78"
+        ]
+      ],
+      "discovery_n": 9,
+      "discovery_families": 3,
+      "discovery_completed_accuracy": 0.4444444444444444,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 19,
+          "families": 2,
+          "maximum_tasks_at_two_per_family": 4,
+          "lakaras": {
+            "Lit": 19
+          }
+        },
+        "development": {
+          "tasks": 24,
+          "families": 3,
+          "maximum_tasks_at_two_per_family": 6,
+          "lakaras": {
+            "Lit": 24
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "gana",
+          "Svadi"
+        ],
+        [
+          "rule",
+          "7.4.59"
+        ]
+      ],
+      "discovery_n": 19,
+      "discovery_families": 4,
+      "discovery_completed_accuracy": 0.47368421052631576,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 59,
+          "families": 8,
+          "maximum_tasks_at_two_per_family": 12,
+          "lakaras": {
+            "Lit": 59
+          }
+        },
+        "development": {
+          "tasks": 37,
+          "families": 5,
+          "maximum_tasks_at_two_per_family": 8,
+          "lakaras": {
+            "Lit": 37
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "7.2.115"
+        ],
+        [
+          "rule",
+          "8.2.78"
+        ]
+      ],
+      "discovery_n": 19,
+      "discovery_families": 3,
+      "discovery_completed_accuracy": 0.47368421052631576,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 2,
+          "families": 1,
+          "maximum_tasks_at_two_per_family": 2,
+          "lakaras": {
+            "Lit": 2
+          }
+        },
+        "development": {
+          "tasks": 104,
+          "families": 3,
+          "maximum_tasks_at_two_per_family": 6,
+          "lakaras": {
+            "Lit": 3,
+            "Lut": 24,
+            "Lrt": 25,
+            "AshirLin": 18,
+            "Lun": 18,
+            "Lrn": 16
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "lakara",
+          "Lit"
+        ],
+        [
+          "rule",
+          "8.2.78"
+        ]
+      ],
+      "discovery_n": 32,
+      "discovery_families": 8,
+      "discovery_completed_accuracy": 0.5,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 161,
+          "families": 9,
+          "maximum_tasks_at_two_per_family": 18,
+          "lakaras": {
+            "Lit": 161
+          }
+        },
+        "development": {
+          "tasks": 111,
+          "families": 8,
+          "maximum_tasks_at_two_per_family": 16,
+          "lakaras": {
+            "Lit": 111
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "3.4.79"
+        ],
+        [
+          "rule",
+          "8.2.78"
+        ]
+      ],
+      "discovery_n": 30,
+      "discovery_families": 8,
+      "discovery_completed_accuracy": 0.5,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 415,
+          "families": 9,
+          "maximum_tasks_at_two_per_family": 18,
+          "lakaras": {
+            "Lat": 95,
+            "Lit": 71,
+            "Lut": 59,
+            "Lrt": 95,
+            "Lot": 95
+          }
+        },
+        "development": {
+          "tasks": 380,
+          "families": 8,
+          "maximum_tasks_at_two_per_family": 16,
+          "lakaras": {
+            "Lat": 94,
+            "Lit": 63,
+            "Lut": 48,
+            "Lrt": 87,
+            "Lot": 88
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "6.1.78"
+        ],
+        [
+          "rule",
+          "8.2.78"
+        ]
+      ],
+      "discovery_n": 30,
+      "discovery_families": 3,
+      "discovery_completed_accuracy": 0.5,
+      "candidate_supply_upper_bounds": {
+        "development": {
+          "tasks": 280,
+          "families": 3,
+          "maximum_tasks_at_two_per_family": 6,
+          "lakaras": {
+            "Lat": 26,
+            "Lut": 47,
+            "Lrt": 47,
+            "Lot": 21,
+            "VidhiLin": 26,
+            "AshirLin": 45,
+            "Lan": 18,
+            "Lun": 16,
+            "Lrn": 34
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "6.4.62"
+        ],
+        [
+          "rule",
+          "8.2.78"
+        ]
+      ],
+      "discovery_n": 16,
+      "discovery_families": 3,
+      "discovery_completed_accuracy": 0.5,
+      "candidate_supply_upper_bounds": {
+        "development": {
+          "tasks": 99,
+          "families": 3,
+          "maximum_tasks_at_two_per_family": 6,
+          "lakaras": {
+            "Lut": 24,
+            "Lrt": 25,
+            "AshirLin": 18,
+            "Lun": 16,
+            "Lrn": 16
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "8.2.78"
+        ],
+        [
+          "rule",
+          "8.4.54"
+        ]
+      ],
+      "discovery_n": 16,
+      "discovery_families": 4,
+      "discovery_completed_accuracy": 0.5,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 54,
+          "families": 3,
+          "maximum_tasks_at_two_per_family": 6,
+          "lakaras": {
+            "Lit": 54
+          }
+        },
+        "development": {
+          "tasks": 97,
+          "families": 7,
+          "maximum_tasks_at_two_per_family": 14,
+          "lakaras": {
+            "Lit": 97
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "gana",
+          "Juhotyadi"
+        ],
+        [
+          "rule",
+          "3.4.99"
+        ]
+      ],
+      "discovery_n": 6,
+      "discovery_families": 4,
+      "discovery_completed_accuracy": 0.5,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 152,
+          "families": 13,
+          "maximum_tasks_at_two_per_family": 26,
+          "lakaras": {
+            "Lot": 26,
+            "Lan": 26,
+            "VidhiLin": 25,
+            "AshirLin": 26,
+            "Lun": 25,
+            "Lrn": 24
+          }
+        },
+        "development": {
+          "tasks": 78,
+          "families": 7,
+          "maximum_tasks_at_two_per_family": 14,
+          "lakaras": {
+            "Lot": 10,
+            "Lan": 12,
+            "VidhiLin": 14,
+            "AshirLin": 14,
+            "Lun": 14,
+            "Lrn": 14
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "3.4.99"
+        ],
+        [
+          "rule",
+          "6.1.10"
+        ]
+      ],
+      "discovery_n": 6,
+      "discovery_families": 4,
+      "discovery_completed_accuracy": 0.5,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 77,
+          "families": 13,
+          "maximum_tasks_at_two_per_family": 26,
+          "lakaras": {
+            "Lot": 26,
+            "Lan": 26,
+            "VidhiLin": 25
+          }
+        },
+        "development": {
+          "tasks": 36,
+          "families": 7,
+          "maximum_tasks_at_two_per_family": 14,
+          "lakaras": {
+            "Lot": 10,
+            "Lan": 12,
+            "VidhiLin": 14
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "3.4.99"
+        ],
+        [
+          "rule",
+          "8.4.54"
+        ]
+      ],
+      "discovery_n": 6,
+      "discovery_families": 4,
+      "discovery_completed_accuracy": 0.5,
+      "candidate_supply_upper_bounds": {
+        "development": {
+          "tasks": 51,
+          "families": 20,
+          "maximum_tasks_at_two_per_family": 39,
+          "lakaras": {
+            "Lun": 33,
+            "Lot": 4,
+            "Lan": 6,
+            "VidhiLin": 8
+          }
+        },
+        "test": {
+          "tasks": 67,
+          "families": 24,
+          "maximum_tasks_at_two_per_family": 47,
+          "lakaras": {
+            "Lot": 10,
+            "Lan": 10,
+            "VidhiLin": 10,
+            "Lun": 37
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "7.2.5"
+        ],
+        [
+          "rule",
+          "7.3.86"
+        ]
+      ],
+      "discovery_n": 6,
+      "discovery_families": 3,
+      "discovery_completed_accuracy": 0.5,
+      "candidate_supply_upper_bounds": {
+        "development": {
+          "tasks": 74,
+          "families": 9,
+          "maximum_tasks_at_two_per_family": 18,
+          "lakaras": {
+            "Lun": 74
+          }
+        },
+        "test": {
+          "tasks": 71,
+          "families": 8,
+          "maximum_tasks_at_two_per_family": 16,
+          "lakaras": {
+            "Lun": 71
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "gana",
+          "Curadi"
+        ],
+        [
+          "rule",
+          "8.2.78"
+        ]
+      ],
+      "discovery_n": 54,
+      "discovery_families": 3,
+      "discovery_completed_accuracy": 0.5185185185185185,
+      "candidate_supply_upper_bounds": {
+        "development": {
+          "tasks": 428,
+          "families": 3,
+          "maximum_tasks_at_two_per_family": 6,
+          "lakaras": {
+            "Lat": 53,
+            "Lit": 41,
+            "Lut": 47,
+            "Lrt": 47,
+            "Lot": 48,
+            "VidhiLin": 47,
+            "AshirLin": 45,
+            "Lan": 34,
+            "Lun": 32,
+            "Lrn": 34
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "gana",
+          "Divadi"
+        ],
+        [
+          "rule",
+          "7.3.84"
+        ]
+      ],
+      "discovery_n": 13,
+      "discovery_families": 3,
+      "discovery_completed_accuracy": 0.5384615384615384,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 705,
+          "families": 8,
+          "maximum_tasks_at_two_per_family": 16,
+          "lakaras": {
+            "Lit": 20,
+            "Lut": 142,
+            "Lrt": 142,
+            "AshirLin": 135,
+            "Lun": 122,
+            "Lrn": 144
+          }
+        },
+        "development": {
+          "tasks": 235,
+          "families": 3,
+          "maximum_tasks_at_two_per_family": 6,
+          "lakaras": {
+            "Lit": 1,
+            "Lut": 53,
+            "Lrt": 54,
+            "AshirLin": 39,
+            "Lun": 36,
+            "Lrn": 52
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "3.4.82"
+        ],
+        [
+          "rule",
+          "8.2.78"
+        ]
+      ],
+      "discovery_n": 11,
+      "discovery_families": 6,
+      "discovery_completed_accuracy": 0.5454545454545454,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 63,
+          "families": 7,
+          "maximum_tasks_at_two_per_family": 14,
+          "lakaras": {
+            "Lit": 63
+          }
+        },
+        "development": {
+          "tasks": 48,
+          "families": 7,
+          "maximum_tasks_at_two_per_family": 14,
+          "lakaras": {
+            "Lit": 48
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "6.1.78"
+        ],
+        [
+          "rule",
+          "8.4.54"
+        ]
+      ],
+      "discovery_n": 9,
+      "discovery_families": 4,
+      "discovery_completed_accuracy": 0.5555555555555556,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 193,
+          "families": 15,
+          "maximum_tasks_at_two_per_family": 30,
+          "lakaras": {
+            "Lit": 178,
+            "Lot": 9,
+            "Lan": 6
+          }
+        },
+        "development": {
+          "tasks": 136,
+          "families": 10,
+          "maximum_tasks_at_two_per_family": 18,
+          "lakaras": {
+            "Lit": 115,
+            "Lun": 21
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "purusha",
+          "Uttama"
+        ],
+        [
+          "rule",
+          "8.2.78"
+        ]
+      ],
+      "discovery_n": 45,
+      "discovery_families": 8,
+      "discovery_completed_accuracy": 0.5581395348837209,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 500,
+          "families": 9,
+          "maximum_tasks_at_two_per_family": 18,
+          "lakaras": {
+            "Lat": 53,
+            "Lit": 54,
+            "Lut": 54,
+            "Lrt": 54,
+            "Lot": 53,
+            "VidhiLin": 53,
+            "AshirLin": 53,
+            "Lan": 42,
+            "Lun": 42,
+            "Lrn": 42
+          }
+        },
+        "development": {
+          "tasks": 413,
+          "families": 8,
+          "maximum_tasks_at_two_per_family": 16,
+          "lakaras": {
+            "Lat": 47,
+            "Lit": 31,
+            "Lut": 48,
+            "Lrt": 35,
+            "Lot": 38,
+            "Lan": 42,
+            "VidhiLin": 48,
+            "AshirLin": 47,
+            "Lun": 42,
+            "Lrn": 35
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "lakara",
+          "Lit"
+        ],
+        [
+          "prayoga",
+          "Karmani"
+        ],
+        [
+          "rule",
+          "8.2.78"
+        ]
+      ],
+      "discovery_n": 16,
+      "discovery_families": 8,
+      "discovery_completed_accuracy": 0.5625,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 81,
+          "families": 9,
+          "maximum_tasks_at_two_per_family": 18,
+          "lakaras": {
+            "Lit": 81
+          }
+        },
+        "development": {
+          "tasks": 56,
+          "families": 8,
+          "maximum_tasks_at_two_per_family": 16,
+          "lakaras": {
+            "Lit": 56
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "3.4.81"
+        ],
+        [
+          "rule",
+          "8.2.78"
+        ]
+      ],
+      "discovery_n": 16,
+      "discovery_families": 8,
+      "discovery_completed_accuracy": 0.5625,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 24,
+          "families": 9,
+          "maximum_tasks_at_two_per_family": 18,
+          "lakaras": {
+            "Lit": 24
+          }
+        },
+        "development": {
+          "tasks": 8,
+          "families": 4,
+          "maximum_tasks_at_two_per_family": 8,
+          "lakaras": {
+            "Lit": 8
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "8.4.41"
+        ],
+        [
+          "rule",
+          "8.4.55"
+        ]
+      ],
+      "discovery_n": 7,
+      "discovery_families": 4,
+      "discovery_completed_accuracy": 0.5714285714285714,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 301,
+          "families": 40,
+          "maximum_tasks_at_two_per_family": 78,
+          "lakaras": {
+            "AshirLin": 129,
+            "Lun": 26,
+            "Lat": 19,
+            "Lot": 18,
+            "Lan": 20,
+            "Lit": 17,
+            "Lut": 18,
+            "Lrt": 18,
+            "VidhiLin": 18,
+            "Lrn": 18
+          }
+        },
+        "development": {
+          "tasks": 51,
+          "families": 19,
+          "maximum_tasks_at_two_per_family": 37,
+          "lakaras": {
+            "AshirLin": 48,
+            "Lun": 3
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "lakara",
+          "Lot"
+        ],
+        [
+          "prayoga",
+          "Kartari"
+        ],
+        [
+          "rule",
+          "8.4.54"
+        ]
+      ],
+      "discovery_n": 12,
+      "discovery_families": 4,
+      "discovery_completed_accuracy": 0.5833333333333334,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 44,
+          "families": 5,
+          "maximum_tasks_at_two_per_family": 10,
+          "lakaras": {
+            "Lot": 44
+          }
+        },
+        "development": {
+          "tasks": 22,
+          "families": 4,
+          "maximum_tasks_at_two_per_family": 8,
+          "lakaras": {
+            "Lot": 22
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "lakara",
+          "Lot"
+        ],
+        [
+          "rule",
+          "8.4.54"
+        ]
+      ],
+      "discovery_n": 12,
+      "discovery_families": 4,
+      "discovery_completed_accuracy": 0.5833333333333334,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 44,
+          "families": 5,
+          "maximum_tasks_at_two_per_family": 10,
+          "lakaras": {
+            "Lot": 44
+          }
+        },
+        "development": {
+          "tasks": 22,
+          "families": 4,
+          "maximum_tasks_at_two_per_family": 8,
+          "lakaras": {
+            "Lot": 22
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "3.3.162"
+        ],
+        [
+          "rule",
+          "8.4.54"
+        ]
+      ],
+      "discovery_n": 12,
+      "discovery_families": 4,
+      "discovery_completed_accuracy": 0.5833333333333334,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 44,
+          "families": 5,
+          "maximum_tasks_at_two_per_family": 10,
+          "lakaras": {
+            "Lot": 44
+          }
+        },
+        "development": {
+          "tasks": 22,
+          "families": 4,
+          "maximum_tasks_at_two_per_family": 8,
+          "lakaras": {
+            "Lot": 22
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "6.4.48"
+        ],
+        [
+          "rule",
+          "7.4.62"
+        ]
+      ],
+      "discovery_n": 12,
+      "discovery_families": 3,
+      "discovery_completed_accuracy": 0.5833333333333334,
+      "candidate_supply_upper_bounds": {
+        "development": {
+          "tasks": 628,
+          "families": 39,
+          "maximum_tasks_at_two_per_family": 78,
+          "lakaras": {
+            "Lit": 459,
+            "Lat": 9,
+            "Lut": 18,
+            "Lrt": 17,
+            "Lot": 9,
+            "Lan": 9,
+            "VidhiLin": 8,
+            "AshirLin": 16,
+            "Lun": 66,
+            "Lrn": 17
+          }
+        },
+        "test": {
+          "tasks": 1068,
+          "families": 47,
+          "maximum_tasks_at_two_per_family": 94,
+          "lakaras": {
+            "Lit": 836,
+            "Lat": 9,
+            "Lut": 18,
+            "Lrt": 18,
+            "Lot": 9,
+            "Lan": 9,
+            "VidhiLin": 9,
+            "AshirLin": 17,
+            "Lun": 126,
+            "Lrn": 17
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "lakara",
+          "Lut"
+        ],
+        [
+          "rule",
+          "8.2.78"
+        ]
+      ],
+      "discovery_n": 17,
+      "discovery_families": 8,
+      "discovery_completed_accuracy": 0.5882352941176471,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 161,
+          "families": 9,
+          "maximum_tasks_at_two_per_family": 18,
+          "lakaras": {
+            "Lut": 161
+          }
+        },
+        "development": {
+          "tasks": 127,
+          "families": 8,
+          "maximum_tasks_at_two_per_family": 16,
+          "lakaras": {
+            "Lut": 127
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "3.3.15"
+        ],
+        [
+          "rule",
+          "8.2.78"
+        ]
+      ],
+      "discovery_n": 17,
+      "discovery_families": 8,
+      "discovery_completed_accuracy": 0.5882352941176471,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 161,
+          "families": 9,
+          "maximum_tasks_at_two_per_family": 18,
+          "lakaras": {
+            "Lut": 161
+          }
+        },
+        "development": {
+          "tasks": 127,
+          "families": 8,
+          "maximum_tasks_at_two_per_family": 16,
+          "lakaras": {
+            "Lut": 127
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "3.1.33"
+        ],
+        [
+          "rule",
+          "8.2.78"
+        ]
+      ],
+      "discovery_n": 37,
+      "discovery_families": 8,
+      "discovery_completed_accuracy": 0.6111111111111112,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 445,
+          "families": 9,
+          "maximum_tasks_at_two_per_family": 18,
+          "lakaras": {
+            "Lut": 161,
+            "Lrt": 161,
+            "Lrn": 123
+          }
+        },
+        "development": {
+          "tasks": 377,
+          "families": 8,
+          "maximum_tasks_at_two_per_family": 16,
+          "lakaras": {
+            "Lut": 127,
+            "Lrt": 131,
+            "Lrn": 119
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "prayoga",
+          "Kartari"
+        ],
+        [
+          "rule",
+          "8.2.78"
+        ]
+      ],
+      "discovery_n": 65,
+      "discovery_families": 8,
+      "discovery_completed_accuracy": 0.6129032258064516,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 745,
+          "families": 9,
+          "maximum_tasks_at_two_per_family": 18,
+          "lakaras": {
+            "Lat": 80,
+            "Lit": 80,
+            "Lut": 81,
+            "Lrt": 80,
+            "Lot": 79,
+            "VidhiLin": 80,
+            "AshirLin": 79,
+            "Lan": 62,
+            "Lun": 63,
+            "Lrn": 61
+          }
+        },
+        "development": {
+          "tasks": 620,
+          "families": 8,
+          "maximum_tasks_at_two_per_family": 16,
+          "lakaras": {
+            "Lat": 71,
+            "Lit": 55,
+            "Lut": 63,
+            "Lrt": 62,
+            "Lot": 54,
+            "Lan": 62,
+            "VidhiLin": 71,
+            "AshirLin": 71,
+            "Lun": 48,
+            "Lrn": 63
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "8.2.78"
+        ],
+        [
+          "vacana",
+          "Bahu"
+        ]
+      ],
+      "discovery_n": 66,
+      "discovery_families": 8,
+      "discovery_completed_accuracy": 0.6129032258064516,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 496,
+          "families": 9,
+          "maximum_tasks_at_two_per_family": 18,
+          "lakaras": {
+            "Lat": 53,
+            "Lit": 53,
+            "Lut": 54,
+            "Lrt": 54,
+            "Lot": 54,
+            "VidhiLin": 53,
+            "AshirLin": 52,
+            "Lan": 42,
+            "Lun": 42,
+            "Lrn": 39
+          }
+        },
+        "development": {
+          "tasks": 391,
+          "families": 8,
+          "maximum_tasks_at_two_per_family": 16,
+          "lakaras": {
+            "Lat": 47,
+            "Lit": 39,
+            "Lut": 39,
+            "Lrt": 45,
+            "Lot": 46,
+            "Lan": 35,
+            "VidhiLin": 39,
+            "AshirLin": 31,
+            "Lun": 35,
+            "Lrn": 35
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "lakara",
+          "Lrt"
+        ],
+        [
+          "rule",
+          "8.2.78"
+        ]
+      ],
+      "discovery_n": 13,
+      "discovery_families": 8,
+      "discovery_completed_accuracy": 0.6153846153846154,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 161,
+          "families": 9,
+          "maximum_tasks_at_two_per_family": 18,
+          "lakaras": {
+            "Lrt": 161
+          }
+        },
+        "development": {
+          "tasks": 131,
+          "families": 8,
+          "maximum_tasks_at_two_per_family": 16,
+          "lakaras": {
+            "Lrt": 131
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "purusha",
+          "Uttama"
+        ],
+        [
+          "rule",
+          "6.1.10"
+        ]
+      ],
+      "discovery_n": 13,
+      "discovery_families": 5,
+      "discovery_completed_accuracy": 0.6153846153846154,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 184,
+          "families": 14,
+          "maximum_tasks_at_two_per_family": 28,
+          "lakaras": {
+            "Lat": 41,
+            "Lit": 18,
+            "Lot": 42,
+            "Lan": 42,
+            "VidhiLin": 41
+          }
+        },
+        "development": {
+          "tasks": 71,
+          "families": 7,
+          "maximum_tasks_at_two_per_family": 14,
+          "lakaras": {
+            "Lat": 18,
+            "Lot": 15,
+            "Lan": 17,
+            "VidhiLin": 21
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "3.3.13"
+        ],
+        [
+          "rule",
+          "8.2.78"
+        ]
+      ],
+      "discovery_n": 13,
+      "discovery_families": 8,
+      "discovery_completed_accuracy": 0.6153846153846154,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 161,
+          "families": 9,
+          "maximum_tasks_at_two_per_family": 18,
+          "lakaras": {
+            "Lrt": 161
+          }
+        },
+        "development": {
+          "tasks": 131,
+          "families": 8,
+          "maximum_tasks_at_two_per_family": 16,
+          "lakaras": {
+            "Lrt": 131
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "3.4.107"
+        ],
+        [
+          "rule",
+          "8.2.78"
+        ]
+      ],
+      "discovery_n": 15,
+      "discovery_families": 8,
+      "discovery_completed_accuracy": 0.6153846153846154,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 144,
+          "families": 9,
+          "maximum_tasks_at_two_per_family": 18,
+          "lakaras": {
+            "VidhiLin": 72,
+            "AshirLin": 72
+          }
+        },
+        "development": {
+          "tasks": 117,
+          "families": 8,
+          "maximum_tasks_at_two_per_family": 16,
+          "lakaras": {
+            "VidhiLin": 58,
+            "AshirLin": 59
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "6.1.101"
+        ],
+        [
+          "rule",
+          "7.4.59"
+        ]
+      ],
+      "discovery_n": 13,
+      "discovery_families": 3,
+      "discovery_completed_accuracy": 0.6153846153846154,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 4595,
+          "families": 246,
+          "maximum_tasks_at_two_per_family": 492,
+          "lakaras": {
+            "Lit": 4519,
+            "Lat": 2,
+            "Lot": 9,
+            "Lan": 3,
+            "VidhiLin": 3,
+            "Lun": 59
+          }
+        },
+        "development": {
+          "tasks": 2280,
+          "families": 174,
+          "maximum_tasks_at_two_per_family": 348,
+          "lakaras": {
+            "Lit": 2253,
+            "Lat": 3,
+            "Lot": 10,
+            "Lan": 4,
+            "Lun": 8,
+            "VidhiLin": 2
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": true,
+      "relaxed_discovery_lead_tiers": [
+        "bench_leads"
+      ]
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "8.2.66"
+        ],
+        [
+          "rule",
+          "8.2.78"
+        ]
+      ],
+      "discovery_n": 17,
+      "discovery_families": 8,
+      "discovery_completed_accuracy": 0.625,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 198,
+          "families": 9,
+          "maximum_tasks_at_two_per_family": 18,
+          "lakaras": {
+            "Lit": 21,
+            "Lut": 36,
+            "VidhiLin": 24,
+            "AshirLin": 23,
+            "Lan": 14,
+            "Lun": 19,
+            "Lrn": 14,
+            "Lat": 23,
+            "Lrt": 24
+          }
+        },
+        "development": {
+          "tasks": 186,
+          "families": 8,
+          "maximum_tasks_at_two_per_family": 16,
+          "lakaras": {
+            "Lut": 36,
+            "Lan": 13,
+            "VidhiLin": 14,
+            "AshirLin": 22,
+            "Lun": 18,
+            "Lrn": 14,
+            "Lat": 27,
+            "Lit": 21,
+            "Lrt": 21
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "lakara",
+          "Lrt"
+        ],
+        [
+          "prayoga",
+          "Kartari"
+        ],
+        [
+          "rule",
+          "8.4.55"
+        ]
+      ],
+      "discovery_n": 8,
+      "discovery_families": 4,
+      "discovery_completed_accuracy": 0.625,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 356,
+          "families": 40,
+          "maximum_tasks_at_two_per_family": 80,
+          "lakaras": {
+            "Lrt": 356
+          }
+        },
+        "development": {
+          "tasks": 169,
+          "families": 20,
+          "maximum_tasks_at_two_per_family": 40,
+          "lakaras": {
+            "Lrt": 169
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "lakara",
+          "Lut"
+        ],
+        [
+          "prayoga",
+          "Karmani"
+        ],
+        [
+          "rule",
+          "6.4.48"
+        ]
+      ],
+      "discovery_n": 8,
+      "discovery_families": 7,
+      "discovery_completed_accuracy": 0.625,
+      "candidate_supply_upper_bounds": {
+        "development": {
+          "tasks": 335,
+          "families": 39,
+          "maximum_tasks_at_two_per_family": 78,
+          "lakaras": {
+            "Lut": 335
+          }
+        },
+        "test": {
+          "tasks": 419,
+          "families": 47,
+          "maximum_tasks_at_two_per_family": 94,
+          "lakaras": {
+            "Lut": 419
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "7.4.70"
+        ],
+        [
+          "rule",
+          "8.2.66"
+        ]
+      ],
+      "discovery_n": 8,
+      "discovery_families": 8,
+      "discovery_completed_accuracy": 0.625,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 821,
+          "families": 267,
+          "maximum_tasks_at_two_per_family": 534,
+          "lakaras": {
+            "Lit": 821
+          }
+        },
+        "development": {
+          "tasks": 581,
+          "families": 186,
+          "maximum_tasks_at_two_per_family": 372,
+          "lakaras": {
+            "Lit": 581
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": true,
+      "relaxed_discovery_lead_tiers": [
+        "bench_leads"
+      ]
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "7.4.70"
+        ],
+        [
+          "rule",
+          "8.3.15"
+        ]
+      ],
+      "discovery_n": 8,
+      "discovery_families": 8,
+      "discovery_completed_accuracy": 0.625,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 821,
+          "families": 267,
+          "maximum_tasks_at_two_per_family": 534,
+          "lakaras": {
+            "Lit": 821
+          }
+        },
+        "development": {
+          "tasks": 581,
+          "families": 186,
+          "maximum_tasks_at_two_per_family": 372,
+          "lakaras": {
+            "Lit": 581
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": true,
+      "relaxed_discovery_lead_tiers": [
+        "bench_leads"
+      ]
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "8.2.78"
+        ],
+        [
+          "rule",
+          "8.3.59"
+        ]
+      ],
+      "discovery_n": 47,
+      "discovery_families": 8,
+      "discovery_completed_accuracy": 0.627906976744186,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 502,
+          "families": 9,
+          "maximum_tasks_at_two_per_family": 18,
+          "lakaras": {
+            "Lit": 12,
+            "Lrt": 161,
+            "AshirLin": 106,
+            "Lun": 100,
+            "Lrn": 123
+          }
+        },
+        "development": {
+          "tasks": 423,
+          "families": 8,
+          "maximum_tasks_at_two_per_family": 16,
+          "lakaras": {
+            "Lit": 12,
+            "Lrt": 131,
+            "AshirLin": 83,
+            "Lun": 78,
+            "Lrn": 119
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "6.4.51"
+        ],
+        [
+          "rule",
+          "8.2.78"
+        ]
+      ],
+      "discovery_n": 27,
+      "discovery_families": 3,
+      "discovery_completed_accuracy": 0.6296296296296297,
+      "candidate_supply_upper_bounds": {
+        "development": {
+          "tasks": 233,
+          "families": 3,
+          "maximum_tasks_at_two_per_family": 6,
+          "lakaras": {
+            "Lat": 27,
+            "Lut": 24,
+            "Lrt": 25,
+            "Lot": 27,
+            "VidhiLin": 21,
+            "AshirLin": 45,
+            "Lan": 16,
+            "Lun": 32,
+            "Lrn": 16
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "7.3.101"
+        ],
+        [
+          "rule",
+          "8.2.78"
+        ]
+      ],
+      "discovery_n": 20,
+      "discovery_families": 8,
+      "discovery_completed_accuracy": 0.631578947368421,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 139,
+          "families": 9,
+          "maximum_tasks_at_two_per_family": 18,
+          "lakaras": {
+            "Lat": 41,
+            "Lrt": 42,
+            "Lan": 28,
+            "Lrn": 28
+          }
+        },
+        "development": {
+          "tasks": 117,
+          "families": 8,
+          "maximum_tasks_at_two_per_family": 16,
+          "lakaras": {
+            "Lat": 38,
+            "Lrt": 26,
+            "Lan": 28,
+            "Lrn": 21,
+            "Lun": 4
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "8.2.78"
+        ]
+      ],
+      "discovery_n": 144,
+      "discovery_families": 8,
+      "discovery_completed_accuracy": 0.6323529411764706,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 1496,
+          "families": 9,
+          "maximum_tasks_at_two_per_family": 18,
+          "lakaras": {
+            "Lat": 160,
+            "Lit": 161,
+            "Lut": 161,
+            "Lrt": 161,
+            "Lot": 159,
+            "VidhiLin": 161,
+            "AshirLin": 159,
+            "Lan": 125,
+            "Lun": 126,
+            "Lrn": 123
+          }
+        },
+        "development": {
+          "tasks": 1227,
+          "families": 8,
+          "maximum_tasks_at_two_per_family": 16,
+          "lakaras": {
+            "Lat": 141,
+            "Lit": 111,
+            "Lut": 127,
+            "Lrt": 131,
+            "Lot": 126,
+            "Lan": 118,
+            "VidhiLin": 126,
+            "AshirLin": 118,
+            "Lun": 110,
+            "Lrn": 119
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "8.2.78"
+        ],
+        [
+          "vacana",
+          "Dvi"
+        ]
+      ],
+      "discovery_n": 31,
+      "discovery_families": 8,
+      "discovery_completed_accuracy": 0.6333333333333333,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 499,
+          "families": 9,
+          "maximum_tasks_at_two_per_family": 18,
+          "lakaras": {
+            "Lat": 53,
+            "Lit": 54,
+            "Lut": 53,
+            "Lrt": 53,
+            "Lot": 52,
+            "VidhiLin": 54,
+            "AshirLin": 54,
+            "Lan": 42,
+            "Lun": 42,
+            "Lrn": 42
+          }
+        },
+        "development": {
+          "tasks": 426,
+          "families": 8,
+          "maximum_tasks_at_two_per_family": 16,
+          "lakaras": {
+            "Lat": 47,
+            "Lit": 40,
+            "Lut": 40,
+            "Lrt": 40,
+            "Lot": 40,
+            "Lan": 42,
+            "VidhiLin": 47,
+            "AshirLin": 48,
+            "Lun": 40,
+            "Lrn": 42
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "lakara",
+          "AshirLin"
+        ],
+        [
+          "prayoga",
+          "Karmani"
+        ],
+        [
+          "rule",
+          "8.2.78"
+        ]
+      ],
+      "discovery_n": 24,
+      "discovery_families": 8,
+      "discovery_completed_accuracy": 0.6363636363636364,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 80,
+          "families": 9,
+          "maximum_tasks_at_two_per_family": 18,
+          "lakaras": {
+            "AshirLin": 80
+          }
+        },
+        "development": {
+          "tasks": 47,
+          "families": 8,
+          "maximum_tasks_at_two_per_family": 16,
+          "lakaras": {
+            "AshirLin": 47
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "lakara",
+          "AshirLin"
+        ],
+        [
+          "rule",
+          "8.2.78"
+        ]
+      ],
+      "discovery_n": 24,
+      "discovery_families": 8,
+      "discovery_completed_accuracy": 0.6363636363636364,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 159,
+          "families": 9,
+          "maximum_tasks_at_two_per_family": 18,
+          "lakaras": {
+            "AshirLin": 159
+          }
+        },
+        "development": {
+          "tasks": 118,
+          "families": 8,
+          "maximum_tasks_at_two_per_family": 16,
+          "lakaras": {
+            "AshirLin": 118
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "3.3.173"
+        ],
+        [
+          "rule",
+          "8.2.78"
+        ]
+      ],
+      "discovery_n": 24,
+      "discovery_families": 8,
+      "discovery_completed_accuracy": 0.6363636363636364,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 159,
+          "families": 9,
+          "maximum_tasks_at_two_per_family": 18,
+          "lakaras": {
+            "AshirLin": 159
+          }
+        },
+        "development": {
+          "tasks": 118,
+          "families": 8,
+          "maximum_tasks_at_two_per_family": 16,
+          "lakaras": {
+            "AshirLin": 118
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "3.4.116"
+        ],
+        [
+          "rule",
+          "8.2.78"
+        ]
+      ],
+      "discovery_n": 24,
+      "discovery_families": 8,
+      "discovery_completed_accuracy": 0.6363636363636364,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 159,
+          "families": 9,
+          "maximum_tasks_at_two_per_family": 18,
+          "lakaras": {
+            "AshirLin": 159
+          }
+        },
+        "development": {
+          "tasks": 118,
+          "families": 8,
+          "maximum_tasks_at_two_per_family": 16,
+          "lakaras": {
+            "AshirLin": 118
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "3.4.102"
+        ],
+        [
+          "rule",
+          "8.2.78"
+        ]
+      ],
+      "discovery_n": 39,
+      "discovery_families": 8,
+      "discovery_completed_accuracy": 0.6388888888888888,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 214,
+          "families": 9,
+          "maximum_tasks_at_two_per_family": 18,
+          "lakaras": {
+            "VidhiLin": 108,
+            "AshirLin": 106
+          }
+        },
+        "development": {
+          "tasks": 173,
+          "families": 8,
+          "maximum_tasks_at_two_per_family": 16,
+          "lakaras": {
+            "VidhiLin": 90,
+            "AshirLin": 83
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "6.1.66"
+        ],
+        [
+          "rule",
+          "8.2.78"
+        ]
+      ],
+      "discovery_n": 39,
+      "discovery_families": 8,
+      "discovery_completed_accuracy": 0.6388888888888888,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 291,
+          "families": 9,
+          "maximum_tasks_at_two_per_family": 18,
+          "lakaras": {
+            "Lat": 24,
+            "Lrt": 23,
+            "Lot": 24,
+            "VidhiLin": 113,
+            "AshirLin": 71,
+            "Lan": 18,
+            "Lrn": 18
+          }
+        },
+        "development": {
+          "tasks": 251,
+          "families": 8,
+          "maximum_tasks_at_two_per_family": 16,
+          "lakaras": {
+            "Lat": 23,
+            "Lrt": 24,
+            "Lot": 24,
+            "Lan": 20,
+            "VidhiLin": 89,
+            "AshirLin": 47,
+            "Lrn": 20,
+            "Lun": 4
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "lakara",
+          "VidhiLin"
+        ],
+        [
+          "rule",
+          "8.2.78"
+        ]
+      ],
+      "discovery_n": 15,
+      "discovery_families": 8,
+      "discovery_completed_accuracy": 0.6428571428571429,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 161,
+          "families": 9,
+          "maximum_tasks_at_two_per_family": 18,
+          "lakaras": {
+            "VidhiLin": 161
+          }
+        },
+        "development": {
+          "tasks": 126,
+          "families": 8,
+          "maximum_tasks_at_two_per_family": 16,
+          "lakaras": {
+            "VidhiLin": 126
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "purusha",
+          "Madhyama"
+        ],
+        [
+          "rule",
+          "8.2.37"
+        ]
+      ],
+      "discovery_n": 14,
+      "discovery_families": 3,
+      "discovery_completed_accuracy": 0.6428571428571429,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 155,
+          "families": 6,
+          "maximum_tasks_at_two_per_family": 12,
+          "lakaras": {
+            "Lit": 9,
+            "Lrt": 36,
+            "AshirLin": 33,
+            "Lun": 29,
+            "Lrn": 36,
+            "Lat": 4,
+            "Lot": 4,
+            "Lan": 4
+          }
+        },
+        "development": {
+          "tasks": 90,
+          "families": 3,
+          "maximum_tasks_at_two_per_family": 6,
+          "lakaras": {
+            "Lit": 6,
+            "Lrt": 17,
+            "AshirLin": 13,
+            "Lun": 10,
+            "Lrn": 17,
+            "Lat": 6,
+            "Lut": 5,
+            "Lot": 6,
+            "Lan": 6,
+            "VidhiLin": 4
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "3.3.161"
+        ],
+        [
+          "rule",
+          "8.2.78"
+        ]
+      ],
+      "discovery_n": 15,
+      "discovery_families": 8,
+      "discovery_completed_accuracy": 0.6428571428571429,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 161,
+          "families": 9,
+          "maximum_tasks_at_two_per_family": 18,
+          "lakaras": {
+            "VidhiLin": 161
+          }
+        },
+        "development": {
+          "tasks": 126,
+          "families": 8,
+          "maximum_tasks_at_two_per_family": 16,
+          "lakaras": {
+            "VidhiLin": 126
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "6.1.87"
+        ],
+        [
+          "rule",
+          "8.2.78"
+        ]
+      ],
+      "discovery_n": 15,
+      "discovery_families": 8,
+      "discovery_completed_accuracy": 0.6428571428571429,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 286,
+          "families": 9,
+          "maximum_tasks_at_two_per_family": 18,
+          "lakaras": {
+            "Lat": 24,
+            "Lrt": 23,
+            "Lot": 24,
+            "VidhiLin": 161,
+            "Lan": 27,
+            "Lrn": 27
+          }
+        },
+        "development": {
+          "tasks": 263,
+          "families": 8,
+          "maximum_tasks_at_two_per_family": 16,
+          "lakaras": {
+            "Lat": 23,
+            "Lrt": 24,
+            "Lot": 24,
+            "Lan": 30,
+            "VidhiLin": 126,
+            "Lrn": 30,
+            "Lun": 6
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "7.2.79"
+        ],
+        [
+          "rule",
+          "8.2.78"
+        ]
+      ],
+      "discovery_n": 15,
+      "discovery_families": 8,
+      "discovery_completed_accuracy": 0.6428571428571429,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 161,
+          "families": 9,
+          "maximum_tasks_at_two_per_family": 18,
+          "lakaras": {
+            "VidhiLin": 161
+          }
+        },
+        "development": {
+          "tasks": 126,
+          "families": 8,
+          "maximum_tasks_at_two_per_family": 16,
+          "lakaras": {
+            "VidhiLin": 126
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "purusha",
+          "Prathama"
+        ],
+        [
+          "rule",
+          "8.2.78"
+        ]
+      ],
+      "discovery_n": 47,
+      "discovery_families": 8,
+      "discovery_completed_accuracy": 0.6444444444444445,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 495,
+          "families": 9,
+          "maximum_tasks_at_two_per_family": 18,
+          "lakaras": {
+            "Lat": 53,
+            "Lit": 54,
+            "Lut": 54,
+            "Lrt": 53,
+            "Lot": 52,
+            "VidhiLin": 54,
+            "AshirLin": 52,
+            "Lan": 41,
+            "Lun": 42,
+            "Lrn": 40
+          }
+        },
+        "development": {
+          "tasks": 411,
+          "families": 8,
+          "maximum_tasks_at_two_per_family": 16,
+          "lakaras": {
+            "Lat": 48,
+            "Lit": 32,
+            "Lut": 47,
+            "Lrt": 48,
+            "Lot": 40,
+            "Lan": 42,
+            "VidhiLin": 46,
+            "AshirLin": 32,
+            "Lun": 34,
+            "Lrn": 42
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "prayoga",
+          "Karmani"
+        ],
+        [
+          "rule",
+          "8.2.78"
+        ]
+      ],
+      "discovery_n": 79,
+      "discovery_families": 8,
+      "discovery_completed_accuracy": 0.6486486486486487,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 751,
+          "families": 9,
+          "maximum_tasks_at_two_per_family": 18,
+          "lakaras": {
+            "Lat": 80,
+            "Lit": 81,
+            "Lut": 80,
+            "Lrt": 81,
+            "Lot": 80,
+            "VidhiLin": 81,
+            "AshirLin": 80,
+            "Lan": 63,
+            "Lun": 63,
+            "Lrn": 62
+          }
+        },
+        "development": {
+          "tasks": 607,
+          "families": 8,
+          "maximum_tasks_at_two_per_family": 16,
+          "lakaras": {
+            "Lat": 70,
+            "Lit": 56,
+            "Lut": 64,
+            "Lrt": 69,
+            "Lot": 72,
+            "Lan": 56,
+            "VidhiLin": 55,
+            "AshirLin": 47,
+            "Lun": 62,
+            "Lrn": 56
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "gana",
+          "Svadi"
+        ],
+        [
+          "rule",
+          "7.2.13"
+        ]
+      ],
+      "discovery_n": 23,
+      "discovery_families": 9,
+      "discovery_completed_accuracy": 0.6521739130434783,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 97,
+          "families": 14,
+          "maximum_tasks_at_two_per_family": 28,
+          "lakaras": {
+            "Lit": 97
+          }
+        },
+        "development": {
+          "tasks": 69,
+          "families": 13,
+          "maximum_tasks_at_two_per_family": 26,
+          "lakaras": {
+            "Lit": 69
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "8.2.78"
+        ],
+        [
+          "vacana",
+          "Eka"
+        ]
+      ],
+      "discovery_n": 47,
+      "discovery_families": 8,
+      "discovery_completed_accuracy": 0.6590909090909091,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 501,
+          "families": 9,
+          "maximum_tasks_at_two_per_family": 18,
+          "lakaras": {
+            "Lat": 54,
+            "Lit": 54,
+            "Lut": 54,
+            "Lrt": 54,
+            "Lot": 53,
+            "VidhiLin": 54,
+            "AshirLin": 53,
+            "Lan": 41,
+            "Lun": 42,
+            "Lrn": 42
+          }
+        },
+        "development": {
+          "tasks": 410,
+          "families": 8,
+          "maximum_tasks_at_two_per_family": 16,
+          "lakaras": {
+            "Lat": 47,
+            "Lit": 32,
+            "Lut": 48,
+            "Lrt": 46,
+            "Lot": 40,
+            "Lan": 41,
+            "VidhiLin": 40,
+            "AshirLin": 39,
+            "Lun": 35,
+            "Lrn": 42
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "7.4.59"
+        ],
+        [
+          "rule",
+          "7.4.70"
+        ]
+      ],
+      "discovery_n": 15,
+      "discovery_families": 3,
+      "discovery_completed_accuracy": 0.6666666666666666,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 4519,
+          "families": 244,
+          "maximum_tasks_at_two_per_family": 488,
+          "lakaras": {
+            "Lit": 4519
+          }
+        },
+        "development": {
+          "tasks": 2253,
+          "families": 172,
+          "maximum_tasks_at_two_per_family": 344,
+          "lakaras": {
+            "Lit": 2253
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": true,
+      "relaxed_discovery_lead_tiers": [
+        "bench_leads"
+      ]
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "8.2.78"
+        ],
+        [
+          "rule",
+          "8.3.15"
+        ]
+      ],
+      "discovery_n": 16,
+      "discovery_families": 8,
+      "discovery_completed_accuracy": 0.6666666666666666,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 198,
+          "families": 9,
+          "maximum_tasks_at_two_per_family": 18,
+          "lakaras": {
+            "Lit": 21,
+            "Lut": 36,
+            "VidhiLin": 24,
+            "AshirLin": 23,
+            "Lan": 14,
+            "Lun": 19,
+            "Lrn": 14,
+            "Lat": 23,
+            "Lrt": 24
+          }
+        },
+        "development": {
+          "tasks": 186,
+          "families": 8,
+          "maximum_tasks_at_two_per_family": 16,
+          "lakaras": {
+            "Lut": 36,
+            "Lan": 13,
+            "VidhiLin": 14,
+            "AshirLin": 22,
+            "Lun": 18,
+            "Lrn": 14,
+            "Lat": 27,
+            "Lit": 21,
+            "Lrt": 21
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "gana",
+          "Divadi"
+        ],
+        [
+          "rule",
+          "7.4.59"
+        ]
+      ],
+      "discovery_n": 12,
+      "discovery_families": 6,
+      "discovery_completed_accuracy": 0.6666666666666666,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 393,
+          "families": 59,
+          "maximum_tasks_at_two_per_family": 81,
+          "lakaras": {
+            "Lit": 393
+          }
+        },
+        "development": {
+          "tasks": 152,
+          "families": 21,
+          "maximum_tasks_at_two_per_family": 30,
+          "lakaras": {
+            "Lit": 152
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "lakara",
+          "Lun"
+        ],
+        [
+          "rule",
+          "8.2.37"
+        ]
+      ],
+      "discovery_n": 12,
+      "discovery_families": 3,
+      "discovery_completed_accuracy": 0.6666666666666666,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 87,
+          "families": 6,
+          "maximum_tasks_at_two_per_family": 12,
+          "lakaras": {
+            "Lun": 87
+          }
+        },
+        "development": {
+          "tasks": 36,
+          "families": 3,
+          "maximum_tasks_at_two_per_family": 6,
+          "lakaras": {
+            "Lun": 36
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "3.4.105"
+        ],
+        [
+          "rule",
+          "8.2.78"
+        ]
+      ],
+      "discovery_n": 9,
+      "discovery_families": 8,
+      "discovery_completed_accuracy": 0.6666666666666666,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 23,
+          "families": 9,
+          "maximum_tasks_at_two_per_family": 17,
+          "lakaras": {
+            "VidhiLin": 12,
+            "AshirLin": 11
+          }
+        },
+        "development": {
+          "tasks": 15,
+          "families": 8,
+          "maximum_tasks_at_two_per_family": 12,
+          "lakaras": {
+            "VidhiLin": 11,
+            "AshirLin": 4
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "8.2.78"
+        ],
+        [
+          "rule",
+          "8.4.37"
+        ]
+      ],
+      "discovery_n": 9,
+      "discovery_families": 8,
+      "discovery_completed_accuracy": 0.6666666666666666,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 32,
+          "families": 9,
+          "maximum_tasks_at_two_per_family": 17,
+          "lakaras": {
+            "VidhiLin": 12,
+            "AshirLin": 11,
+            "Lan": 5,
+            "Lrn": 4
+          }
+        },
+        "development": {
+          "tasks": 22,
+          "families": 8,
+          "maximum_tasks_at_two_per_family": 16,
+          "lakaras": {
+            "VidhiLin": 11,
+            "AshirLin": 4,
+            "Lrn": 6,
+            "Lan": 1
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "gana",
+          "Divadi"
+        ],
+        [
+          "rule",
+          "7.3.96"
+        ]
+      ],
+      "discovery_n": 6,
+      "discovery_families": 4,
+      "discovery_completed_accuracy": 0.6666666666666666,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 40,
+          "families": 20,
+          "maximum_tasks_at_two_per_family": 40,
+          "lakaras": {
+            "Lun": 40
+          }
+        },
+        "development": {
+          "tasks": 17,
+          "families": 10,
+          "maximum_tasks_at_two_per_family": 17,
+          "lakaras": {
+            "Lun": 17
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "gana",
+          "Divadi"
+        ],
+        [
+          "rule",
+          "8.2.28"
+        ]
+      ],
+      "discovery_n": 6,
+      "discovery_families": 4,
+      "discovery_completed_accuracy": 0.6666666666666666,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 30,
+          "families": 15,
+          "maximum_tasks_at_two_per_family": 30,
+          "lakaras": {
+            "Lun": 30
+          }
+        },
+        "development": {
+          "tasks": 17,
+          "families": 10,
+          "maximum_tasks_at_two_per_family": 17,
+          "lakaras": {
+            "Lun": 17
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "lakara",
+          "Lrn"
+        ],
+        [
+          "prayoga",
+          "Karmani"
+        ],
+        [
+          "rule",
+          "8.2.78"
+        ]
+      ],
+      "discovery_n": 7,
+      "discovery_families": 7,
+      "discovery_completed_accuracy": 0.6666666666666666,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 62,
+          "families": 7,
+          "maximum_tasks_at_two_per_family": 14,
+          "lakaras": {
+            "Lrn": 62
+          }
+        },
+        "development": {
+          "tasks": 56,
+          "families": 7,
+          "maximum_tasks_at_two_per_family": 14,
+          "lakaras": {
+            "Lrn": 56
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "lakara",
+          "Lrn"
+        ],
+        [
+          "rule",
+          "8.2.78"
+        ]
+      ],
+      "discovery_n": 7,
+      "discovery_families": 7,
+      "discovery_completed_accuracy": 0.6666666666666666,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 123,
+          "families": 7,
+          "maximum_tasks_at_two_per_family": 14,
+          "lakaras": {
+            "Lrn": 123
+          }
+        },
+        "development": {
+          "tasks": 119,
+          "families": 7,
+          "maximum_tasks_at_two_per_family": 14,
+          "lakaras": {
+            "Lrn": 119
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "lakara",
+          "Lun"
+        ],
+        [
+          "prayoga",
+          "Karmani"
+        ],
+        [
+          "rule",
+          "6.1.4"
+        ]
+      ],
+      "discovery_n": 6,
+      "discovery_families": 3,
+      "discovery_completed_accuracy": 0.6666666666666666,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 59,
+          "families": 7,
+          "maximum_tasks_at_two_per_family": 14,
+          "lakaras": {
+            "Lun": 59
+          }
+        },
+        "development": {
+          "tasks": 29,
+          "families": 4,
+          "maximum_tasks_at_two_per_family": 8,
+          "lakaras": {
+            "Lun": 29
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "lakara",
+          "Lun"
+        ],
+        [
+          "prayoga",
+          "Karmani"
+        ],
+        [
+          "rule",
+          "6.1.5"
+        ]
+      ],
+      "discovery_n": 6,
+      "discovery_families": 3,
+      "discovery_completed_accuracy": 0.6666666666666666,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 59,
+          "families": 7,
+          "maximum_tasks_at_two_per_family": 14,
+          "lakaras": {
+            "Lun": 59
+          }
+        },
+        "development": {
+          "tasks": 29,
+          "families": 4,
+          "maximum_tasks_at_two_per_family": 8,
+          "lakaras": {
+            "Lun": 29
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "lakara",
+          "Lun"
+        ],
+        [
+          "prayoga",
+          "Karmani"
+        ],
+        [
+          "rule",
+          "8.2.37"
+        ]
+      ],
+      "discovery_n": 6,
+      "discovery_families": 3,
+      "discovery_completed_accuracy": 0.6666666666666666,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 46,
+          "families": 6,
+          "maximum_tasks_at_two_per_family": 12,
+          "lakaras": {
+            "Lun": 46
+          }
+        },
+        "development": {
+          "tasks": 18,
+          "families": 3,
+          "maximum_tasks_at_two_per_family": 6,
+          "lakaras": {
+            "Lun": 18
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "3.1.35"
+        ],
+        [
+          "rule",
+          "8.2.66"
+        ]
+      ],
+      "discovery_n": 6,
+      "discovery_families": 6,
+      "discovery_completed_accuracy": 0.6666666666666666,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 663,
+          "families": 214,
+          "maximum_tasks_at_two_per_family": 428,
+          "lakaras": {
+            "Lit": 663
+          }
+        },
+        "development": {
+          "tasks": 488,
+          "families": 155,
+          "maximum_tasks_at_two_per_family": 310,
+          "lakaras": {
+            "Lit": 488
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": true,
+      "relaxed_discovery_lead_tiers": [
+        "bench_leads"
+      ]
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "3.1.35"
+        ],
+        [
+          "rule",
+          "8.3.15"
+        ]
+      ],
+      "discovery_n": 6,
+      "discovery_families": 6,
+      "discovery_completed_accuracy": 0.6666666666666666,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 663,
+          "families": 214,
+          "maximum_tasks_at_two_per_family": 428,
+          "lakaras": {
+            "Lit": 663
+          }
+        },
+        "development": {
+          "tasks": 488,
+          "families": 155,
+          "maximum_tasks_at_two_per_family": 310,
+          "lakaras": {
+            "Lit": 488
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": true,
+      "relaxed_discovery_lead_tiers": [
+        "bench_leads"
+      ]
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "3.3.139"
+        ],
+        [
+          "rule",
+          "8.2.78"
+        ]
+      ],
+      "discovery_n": 7,
+      "discovery_families": 7,
+      "discovery_completed_accuracy": 0.6666666666666666,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 123,
+          "families": 7,
+          "maximum_tasks_at_two_per_family": 14,
+          "lakaras": {
+            "Lrn": 123
+          }
+        },
+        "development": {
+          "tasks": 119,
+          "families": 7,
+          "maximum_tasks_at_two_per_family": 14,
+          "lakaras": {
+            "Lrn": 119
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "3.4.107"
+        ],
+        [
+          "rule",
+          "8.4.55"
+        ]
+      ],
+      "discovery_n": 6,
+      "discovery_families": 3,
+      "discovery_completed_accuracy": 0.6666666666666666,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 270,
+          "families": 40,
+          "maximum_tasks_at_two_per_family": 80,
+          "lakaras": {
+            "AshirLin": 245,
+            "VidhiLin": 25
+          }
+        },
+        "development": {
+          "tasks": 109,
+          "families": 18,
+          "maximum_tasks_at_two_per_family": 36,
+          "lakaras": {
+            "AshirLin": 103,
+            "VidhiLin": 6
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "6.4.55"
+        ],
+        [
+          "rule",
+          "8.2.66"
+        ]
+      ],
+      "discovery_n": 6,
+      "discovery_families": 6,
+      "discovery_completed_accuracy": 0.6666666666666666,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 640,
+          "families": 206,
+          "maximum_tasks_at_two_per_family": 412,
+          "lakaras": {
+            "Lit": 640
+          }
+        },
+        "development": {
+          "tasks": 473,
+          "families": 150,
+          "maximum_tasks_at_two_per_family": 300,
+          "lakaras": {
+            "Lit": 473
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": true,
+      "relaxed_discovery_lead_tiers": [
+        "bench_leads"
+      ]
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "6.4.55"
+        ],
+        [
+          "rule",
+          "8.3.15"
+        ]
+      ],
+      "discovery_n": 6,
+      "discovery_families": 6,
+      "discovery_completed_accuracy": 0.6666666666666666,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 640,
+          "families": 206,
+          "maximum_tasks_at_two_per_family": 412,
+          "lakaras": {
+            "Lit": 640
+          }
+        },
+        "development": {
+          "tasks": 473,
+          "families": 150,
+          "maximum_tasks_at_two_per_family": 300,
+          "lakaras": {
+            "Lit": 473
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": true,
+      "relaxed_discovery_lead_tiers": [
+        "bench_leads"
+      ]
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "7.1.4"
+        ],
+        [
+          "rule",
+          "7.4.62"
+        ]
+      ],
+      "discovery_n": 6,
+      "discovery_families": 3,
+      "discovery_completed_accuracy": 0.6666666666666666,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 8,
+          "families": 4,
+          "maximum_tasks_at_two_per_family": 8,
+          "lakaras": {
+            "Lat": 4,
+            "Lot": 4
+          }
+        },
+        "development": {
+          "tasks": 2,
+          "families": 1,
+          "maximum_tasks_at_two_per_family": 2,
+          "lakaras": {
+            "Lat": 1,
+            "Lot": 1
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "gana",
+          "Svadi"
+        ],
+        [
+          "rule",
+          "8.3.24"
+        ]
+      ],
+      "discovery_n": 20,
+      "discovery_families": 8,
+      "discovery_completed_accuracy": 0.6842105263157895,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 130,
+          "families": 14,
+          "maximum_tasks_at_two_per_family": 28,
+          "lakaras": {
+            "Lat": 27,
+            "Lrt": 28,
+            "Lot": 26,
+            "Lan": 14,
+            "Lrn": 17,
+            "Lit": 18
+          }
+        },
+        "development": {
+          "tasks": 101,
+          "families": 13,
+          "maximum_tasks_at_two_per_family": 26,
+          "lakaras": {
+            "Lat": 18,
+            "Lrt": 25,
+            "Lot": 18,
+            "Lan": 13,
+            "Lrn": 16,
+            "Lit": 11
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "gana",
+          "Svadi"
+        ],
+        [
+          "rule",
+          "8.4.58"
+        ]
+      ],
+      "discovery_n": 20,
+      "discovery_families": 8,
+      "discovery_completed_accuracy": 0.6842105263157895,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 130,
+          "families": 14,
+          "maximum_tasks_at_two_per_family": 28,
+          "lakaras": {
+            "Lat": 27,
+            "Lrt": 28,
+            "Lot": 26,
+            "Lan": 14,
+            "Lrn": 17,
+            "Lit": 18
+          }
+        },
+        "development": {
+          "tasks": 101,
+          "families": 13,
+          "maximum_tasks_at_two_per_family": 26,
+          "lakaras": {
+            "Lat": 18,
+            "Lrt": 25,
+            "Lot": 18,
+            "Lan": 13,
+            "Lrn": 16,
+            "Lit": 11
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "purusha",
+          "Madhyama"
+        ],
+        [
+          "rule",
+          "8.2.78"
+        ]
+      ],
+      "discovery_n": 52,
+      "discovery_families": 8,
+      "discovery_completed_accuracy": 0.6875,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 501,
+          "families": 9,
+          "maximum_tasks_at_two_per_family": 18,
+          "lakaras": {
+            "Lat": 54,
+            "Lit": 53,
+            "Lut": 53,
+            "Lrt": 54,
+            "Lot": 54,
+            "VidhiLin": 54,
+            "AshirLin": 54,
+            "Lan": 42,
+            "Lun": 42,
+            "Lrn": 41
+          }
+        },
+        "development": {
+          "tasks": 403,
+          "families": 8,
+          "maximum_tasks_at_two_per_family": 16,
+          "lakaras": {
+            "Lat": 46,
+            "Lit": 48,
+            "Lut": 32,
+            "Lrt": 48,
+            "Lot": 48,
+            "Lan": 34,
+            "VidhiLin": 32,
+            "AshirLin": 39,
+            "Lun": 34,
+            "Lrn": 42
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "gana",
+          "Bhvadi"
+        ],
+        [
+          "rule",
+          "7.2.5"
+        ]
+      ],
+      "discovery_n": 13,
+      "discovery_families": 8,
+      "discovery_completed_accuracy": 0.6923076923076923,
+      "candidate_supply_upper_bounds": {
+        "development": {
+          "tasks": 181,
+          "families": 22,
+          "maximum_tasks_at_two_per_family": 44,
+          "lakaras": {
+            "Lun": 181
+          }
+        },
+        "test": {
+          "tasks": 242,
+          "families": 27,
+          "maximum_tasks_at_two_per_family": 54,
+          "lakaras": {
+            "Lun": 242
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "lakara",
+          "VidhiLin"
+        ],
+        [
+          "prayoga",
+          "Karmani"
+        ],
+        [
+          "rule",
+          "8.2.78"
+        ]
+      ],
+      "discovery_n": 14,
+      "discovery_families": 8,
+      "discovery_completed_accuracy": 0.6923076923076923,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 81,
+          "families": 9,
+          "maximum_tasks_at_two_per_family": 18,
+          "lakaras": {
+            "VidhiLin": 81
+          }
+        },
+        "development": {
+          "tasks": 55,
+          "families": 8,
+          "maximum_tasks_at_two_per_family": 16,
+          "lakaras": {
+            "VidhiLin": 55
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "lakara",
+          "Lrt"
+        ],
+        [
+          "prayoga",
+          "Kartari"
+        ],
+        [
+          "rule",
+          "8.2.78"
+        ]
+      ],
+      "discovery_n": 10,
+      "discovery_families": 8,
+      "discovery_completed_accuracy": 0.7,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 80,
+          "families": 9,
+          "maximum_tasks_at_two_per_family": 18,
+          "lakaras": {
+            "Lrt": 80
+          }
+        },
+        "development": {
+          "tasks": 62,
+          "families": 8,
+          "maximum_tasks_at_two_per_family": 16,
+          "lakaras": {
+            "Lrt": 62
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "7.2.3"
+        ],
+        [
+          "rule",
+          "7.3.86"
+        ]
+      ],
+      "discovery_n": 10,
+      "discovery_families": 4,
+      "discovery_completed_accuracy": 0.7,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 18,
+          "families": 2,
+          "maximum_tasks_at_two_per_family": 4,
+          "lakaras": {
+            "Lun": 18
+          }
+        },
+        "development": {
+          "tasks": 28,
+          "families": 5,
+          "maximum_tasks_at_two_per_family": 10,
+          "lakaras": {
+            "Lun": 28
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    },
+    {
+      "predicate": [
+        [
+          "rule",
+          "8.2.78"
+        ],
+        [
+          "rule",
+          "8.4.41"
+        ]
+      ],
+      "discovery_n": 12,
+      "discovery_families": 8,
+      "discovery_completed_accuracy": 0.7,
+      "candidate_supply_upper_bounds": {
+        "test": {
+          "tasks": 50,
+          "families": 9,
+          "maximum_tasks_at_two_per_family": 18,
+          "lakaras": {
+            "AshirLin": 24,
+            "Lun": 26
+          }
+        },
+        "development": {
+          "tasks": 31,
+          "families": 8,
+          "maximum_tasks_at_two_per_family": 16,
+          "lakaras": {
+            "AshirLin": 16,
+            "Lun": 15
+          }
+        }
+      },
+      "enough_new_development_examples_and_families": false,
+      "relaxed_discovery_lead_tiers": []
+    }
+  ],
+  "combined_optimistic_supply": {
+    "bench_leads": {
+      "predicate_count": 8,
+      "test_families": 270,
+      "test_tasks": 4666,
+      "maximum_test_tasks_at_two_per_family": 540,
+      "lakaras": {
+        "Lit": 4590,
+        "Lat": 2,
+        "Lot": 9,
+        "Lan": 3,
+        "VidhiLin": 3,
+        "Lun": 59
+      },
+      "can_support_minimum_size_before_other_gates": true,
+      "maximum_tasks_after_tense_quota_upper_bound": 41,
+      "can_support_minimum_size_with_tense_quota": false
+    },
+    "hard_leads": {
+      "predicate_count": 0,
+      "test_families": 0,
+      "test_tasks": 0,
+      "maximum_test_tasks_at_two_per_family": 0,
+      "lakaras": {},
+      "can_support_minimum_size_before_other_gates": false,
+      "maximum_tasks_after_tense_quota_upper_bound": 0,
+      "can_support_minimum_size_with_tense_quota": false
+    }
+  },
+  "notes": [
+    "Discovery High/4096 scores are not headline xHigh/16384 scores.",
+    "Includes noisy low-support leads (>=6 completed answers, >=3 observed families) to avoid discarding narrow hypotheses prematurely.",
+    "Every candidate cell must still supply >=100 new development tasks from >=50 families before calibration.",
+    "Family/task supply counts are optimistic; validity, spelling, predicate overlap, sampling weights and grammar diversity can only reduce them.",
+    "This is a bounded search over the recorded predicate library, not proof that no other creation benchmark exists."
+  ]
+}

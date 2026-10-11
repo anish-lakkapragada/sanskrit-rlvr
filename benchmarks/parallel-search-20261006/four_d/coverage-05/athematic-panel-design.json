@@ -1,0 +1,64 @@
+{
+  "created_at": "2026-10-07T12:56:35.533306+00:00",
+  "seed": "four-d-athematic-pit-coverage05-v1",
+  "policy": "oracle-policy-21",
+  "purpose": "Input-selected diagnostic of athematic first-person imperative strong-stem retention relative to matched weak-stem nonimperatives. Coverage uncertainty only; no claimed accuracy or release readiness.",
+  "target_n": 48,
+  "control_n": 48,
+  "max_family_load": 2,
+  "target": {
+    "prayoga": "Kartari",
+    "lakara": "Lot",
+    "purusha": "Uttama",
+    "vacanas": [
+      "Dvi",
+      "Bahu"
+    ],
+    "branches": [
+      "guna_permitted_before_pit",
+      "nasal_infix_a_retention",
+      "sna_or_reduplicated_A_retention"
+    ]
+  },
+  "class_family_quotas": {
+    "Adadi": 8,
+    "Juhotyadi": 2,
+    "Svadi": 8,
+    "Rudhadi": 8,
+    "Tanadi": 2,
+    "Kryadi": 20
+  },
+  "target_numbers": {
+    "Dvi": 24,
+    "Bahu": 24
+  },
+  "control_tense_quotas": {
+    "Lat": 16,
+    "Lan": 16,
+    "VidhiLin": 16
+  },
+  "pair_contract": "Same dictionary entry, prayoga, person and number; only lakara differs. All tasks independently rendered ordinary4D v1 with no added derivation, prefix or chosen pada.",
+  "allocation": "Input-only seeded linear assignment: choose48 families under exact class quotas, exactly one fresh target and one fresh control each; match control weak-rule condition, balance numbers and control tenses. Tie ordering is deterministic hash. No gold-string or model-outcome ranking.",
+  "exposure": "Require both exact visible tasks absent from original6687 and both campaign job input histories, regardless of local source filters. Family exposure is permitted and disclosed; no claim of never-exposed families.",
+  "inference": "Report all/usable target and control accuracy, their paired difference with root-family uncertainty, and source-conditioned class/branch counts. No automatic outcome-dependent stopping, question selection or final promotion.",
+  "scaling": "78 reserved-test families/156 target tuples under broader interaction predicate before panel branch narrowing. This is a small complementary stratum, not enough for a standalone500+ release, much less <1pp precision.",
+  "no_model_answers_read": true,
+  "no_paid_calls": true,
+  "benchmark_ready": false,
+  "exploratory_trigger": {
+    "required_completed_targets": 44,
+    "required_completed_controls": 44,
+    "minimum_wrong_completed_target_families": 8,
+    "minimum_error_ganas": 3,
+    "minimum_error_branches": 2,
+    "minimum_excess_wrong_completed_targets_over_controls": 4,
+    "interpretation": "All conditions jointly identify a potentially useful, distributed strong-stem error mechanism worth later calibration; they neither estimate final80% nor license selective promotion of individual errors. Below the trigger, stop this lead unless an independently sourced defect changes the question."
+  },
+  "provider_request": {
+    "model": "claude-opus-5-5",
+    "effort": "xhigh",
+    "max_output_tokens": 65536,
+    "prompt_version": "cartesian-4d-v1",
+    "submit_by": "coordinator only after independent audit"
+  }
+}

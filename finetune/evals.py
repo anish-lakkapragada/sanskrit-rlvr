@@ -97,20 +97,27 @@ def eval_pass_at_k(generate_fn, tasks: list[dict], reward_fn, *, ks: list[int],
 # --------------------------------------------------------------------------
 
 def eval_samayik(generate_fn, pairs: list[dict], *, num_samples: int,
-                 temperature: float, max_new_tokens: int, rng: random.Random):
+                 temperature: float, max_new_tokens: int, rng: random.Random,
+                 template: str | None = None, extract_tag: str = "translation"):
     """EN->SA translation on a seeded Samayik subsample; chrF and chrF++ on
     the <translation>-extracted text (missing tags score as empty string,
-    with compliance reported separately)."""
+    with compliance reported separately). `template` overrides the default
+    v0/translation.txt prompt with a raw template string ({english} slot)."""
     from sacrebleu.metrics import CHRF
 
     chosen = rng.sample(pairs, min(num_samples, len(pairs)))
-    prompts = [render_translation(p["en"]) for p in chosen]
+    if template is not None:
+        prompts = [template.format(english=p["en"]) for p in chosen]
+    else:
+        prompts = [render_translation(p["en"]) for p in chosen]
     completions = generate_fn(prompts, 1, temperature, max_new_tokens)
 
     hyps, samples, tagged = [], [], 0
     for pair, comps in zip(chosen, completions):
         completion = comps[0]
-        translation = extract_translation(completion)
+        translation = (extract_translation(completion)
+                       if extract_tag == "translation"
+                       else extract_answer(completion))
         if translation:
             tagged += 1
         hyps.append(translation or "")

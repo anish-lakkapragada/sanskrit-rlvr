@@ -1,0 +1,36 @@
+{
+  "created_at": "2026-10-07T05:37:39.715942+00:00",
+  "track": "five_d",
+  "run_id": "release-feasibility-01",
+  "status": "hold_pending_oracle_scope_resolution",
+  "submitted": false,
+  "spending_authorized_by_worker": false,
+  "kind": "next_step_recommendation",
+  "task_file": null,
+  "reference_order": [
+    "Opus 5.5",
+    "GPT-6 Astra"
+  ],
+  "reasoning_effort": "xhigh",
+  "max_output_tokens": 16384,
+  "rationale": "The completed-answer Opus estimate is above target; a fresh panel is warranted only after the incomplete passive context is excluded or independently repaired. Recipe-specific estimates are small and Astra may be stronger.",
+  "required_offline_steps": [
+    "Adopt an explicit prospective exclusion of Karmani Lut/Lrt traces containing both 6.4.62 and 6.4.92, or repair and independently audit every documented variant.",
+    "Keep original pilot answers and scores immutable; do not report its refusal-inclusive rate as grammatical accuracy.",
+    "Review the three inference-supported nested forms and retain their evidence labels.",
+    "For any subsequent paid panel, generate fresh development tasks under the adopted filters, freeze its file hash and distribution, and run the shared full validator."
+  ],
+  "suggested_experiment_after_resolution": {
+    "phase": "Fresh broad development calibration",
+    "maximum_questions": 120,
+    "providers": [
+      "Anthropic",
+      "OpenAI"
+    ],
+    "same_questions_for_references": true,
+    "distribution_policy": "Keep broad lakara and class coverage. Treat intensive_luk and causative_of_intensive as hypotheses for moderate weight increases, not as proven 80% recipes; no new weights are fixed here.",
+    "adapter_needs": "Existing cartesian_5d adapter suffices; prospective grammar checks must run before generating the frozen file."
+  },
+  "release_size_recommendation": "Assess at least 1,601 tasks if precision below one percentage point remains mandatory; predeclare any larger extension before final answers. Estimate cluster uncertainty by family.",
+  "budget_owner": "Coordinator only; no ledger mutation or paid worker call."
+}

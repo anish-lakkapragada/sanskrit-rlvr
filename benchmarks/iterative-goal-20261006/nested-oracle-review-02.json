@@ -1,0 +1,225 @@
+{
+  "created_at": "2026-10-07T02:17:45.818460+00:00",
+  "status": "open_oracle_review_not_adjudicated_corrections",
+  "vp_version": "0.4.0",
+  "reproductions": [
+    {
+      "code": "04.0151",
+      "citation": "zwupa~",
+      "sanadi": [
+        "Ric",
+        "san"
+      ],
+      "gold_slp1": [
+        "tuzwopayizate",
+        "tuzwopayizati"
+      ],
+      "relevant_steps": [
+        {
+          "rule": "8.3.61",
+          "terms": [
+            "tu",
+            "ztop",
+            "ay",
+            "i",
+            "z",
+            "a",
+            "te"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "04.0151",
+      "citation": "zwupa~",
+      "sanadi": [
+        "yaN",
+        "Ric",
+        "san"
+      ],
+      "gold_slp1": [
+        "tostupayizate",
+        "tostupayizati"
+      ],
+      "relevant_steps": [
+        {
+          "rule": "6.4.48",
+          "terms": [
+            "to",
+            "stup",
+            "",
+            "i"
+          ]
+        },
+        {
+          "rule": "8.3.61",
+          "terms": [
+            "to",
+            "stup",
+            "",
+            "ay",
+            "i",
+            "z",
+            "a",
+            "te"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "01.0423",
+      "citation": "zwepf~\\",
+      "sanadi": [
+        "Ric",
+        "san"
+      ],
+      "gold_slp1": [
+        "tizwepayizate",
+        "tizwepayizati"
+      ],
+      "relevant_steps": [
+        {
+          "rule": "8.3.61",
+          "terms": [
+            "ti",
+            "ztep",
+            "ay",
+            "i",
+            "z",
+            "a",
+            "te"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "01.0423",
+      "citation": "zwepf~\\",
+      "sanadi": [
+        "yaN",
+        "Ric",
+        "san"
+      ],
+      "gold_slp1": [
+        "testepayizate",
+        "testepayizati"
+      ],
+      "relevant_steps": [
+        {
+          "rule": "6.4.48",
+          "terms": [
+            "te",
+            "step",
+            "",
+            "i"
+          ]
+        },
+        {
+          "rule": "8.3.61",
+          "terms": [
+            "te",
+            "step",
+            "",
+            "ay",
+            "i",
+            "z",
+            "a",
+            "te"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "04.0010",
+      "citation": "nftI~",
+      "sanadi": [
+        "Ric",
+        "san"
+      ],
+      "gold_slp1": [
+        "ninartayizate",
+        "ninartayizati"
+      ],
+      "relevant_steps": [
+        {
+          "rule": "7.4.79",
+          "terms": [
+            "ni",
+            "nart",
+            "e",
+            "i",
+            "sa"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "04.0010",
+      "citation": "nftI~",
+      "sanadi": [
+        "yaN",
+        "Ric",
+        "san"
+      ],
+      "gold_slp1": [
+        "nirInftayizate",
+        "nirInftayizati"
+      ],
+      "relevant_steps": [
+        {
+          "rule": "7.4.90",
+          "terms": [
+            "na",
+            "rIk",
+            "nft",
+            "ya"
+          ]
+        },
+        {
+          "rule": "6.4.48",
+          "terms": [
+            "na",
+            "rI",
+            "nft",
+            "",
+            "i"
+          ]
+        },
+        {
+          "rule": "7.4.79",
+          "terms": [
+            "ni",
+            "rI",
+            "nft",
+            "",
+            "e",
+            "i",
+            "sa"
+          ]
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "issue": "Augmented reduplicative syllable and 7.4.79",
+      "evidence": "VP derives na+rI+nft then changes na to ni before san.7.4.79 describes an a-final abhyasa;7.4.90 appends rIk to the abhyasa. Upstream represents the augment in a separate term and checks the final sound of the first term. Whether that application is licensed needs independent resolution.",
+      "sources": [
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.4.79.htm",
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.4.90.htm"
+      ],
+      "action": "Do not pursue the low-scoring vocalic-r subset as a hardness lead until this is resolved."
+    },
+    {
+      "issue": "8.3.61 causative recognition across a deleted yaN",
+      "evidence": "Simple Ric+san derives tuzwopayizati;yaN+Ric+san gives tostupayizati,with an empty yaN term between the lexical stem and causative suffix. The checked upstream code tests only the immediately following term for ni-pratyaya. The commentary allows retroflexion for nyanta stems. This is a plausible representation edge case, not a certified repaired key.",
+      "sources": [
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/8/8.3.61.htm",
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/8/8.3.62.htm"
+      ],
+      "action": "Hold sibilant-triple-pilot-01 unpaid. New pilot conservatively excludes every trace containing8.3.61,as well as7.4.79/80,regardless of scores."
+    }
+  ],
+  "source_code_context": "/tmp/vp-upstream-20261006 is a separately cloned upstream checkout; installed0.4.0 outputs above reproduce the observed behavior. Source inspection alone is not proof of linguistic error.",
+  "existing_data_policy": "Preserve raw responses,gold and costs. No retroactive headline relabeling. Resolve or exclude affected constructions before release; existing development results are not final certification."
+}

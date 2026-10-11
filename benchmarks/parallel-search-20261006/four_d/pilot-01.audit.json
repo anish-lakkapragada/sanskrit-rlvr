@@ -1,0 +1,21 @@
+{
+  "created_at": "2026-10-07T05:00:45.474335+00:00",
+  "passed_mechanical_checks": true,
+  "n": 120,
+  "root_families": 113,
+  "task_sha256": "d3cf6b0562ce2fd8bd3376801459779c49f0ac9485f361b347f2f1f4b1a61c37",
+  "checks": [
+    "All four morphology coordinates exactly present; no sanadi/prefix/pada fields",
+    "120 unique model-visible prompts and canonical IDs",
+    "Fresh versus full legacy task pool and all three historical discovery panels",
+    "Every family is in unchanged development split",
+    "VP regeneration reproduces all gold variants, rule metadata and prompt hashes",
+    "All output forms round-trip SLP1/Devanagari",
+    "Karmani limited to exact transitive artha allowlist; all other tasks Kartari",
+    "Bhave and Vedic Let excluded"
+  ],
+  "certified_final_benchmark": false,
+  "limits": "Rule-selection and engine consistency do not independently certify every gold form. Fresh pilot answers require disagreement audit.",
+  "primary_source_examples": "22/22 passed; see source-audit-01.json",
+  "prior_iterative_pure_4d_overlap_count": 0
+}

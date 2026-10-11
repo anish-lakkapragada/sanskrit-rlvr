@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-10-08T01:22:57.989200+00:00",
+  "passed": true,
+  "scope": "Actual pre-adoption checkpoint/amendment integrity and usage-only financial review",
+  "execution_plan_sha256": "69201de2ede7e2ee2168ff1180324875aa22d4c3e34c385e58894ba110ad4967",
+  "amendment_sha256": "d6b6bf83f5cbe8d79263bcd077f1e93bea0c0611a557aed0578d439e760303e0",
+  "checkpoint_sha256": "64ee186e45dd28b587b6a99cf60717c88f5a89180ca0745eb44c710cf4671c34",
+  "driver_sha256": "675c5f2b27093278eed5e000fbbe5d3465acec2502a1e80505876371abe498a9",
+  "tests_sha256": "add27dd3a14ad0cb7e7f50dd51424de0fe251ff299a5f8569082ccc575d785d2",
+  "independent_code_review_sha256": "0f140f617fdb991577504bb8c0abd8c469742f3eb2a89a6b00f125b196fa80b0",
+  "original_STOP_sha256": "f681f8fe56080f7ea0e551b291456cdb73ea12e1a0e823a98e0f03bf12787ef4",
+  "drain_execution_sha256": "0e5c76c6248d3b317c6d7a2e3edd6d8da992575e4604dcf77f86a718f1fc5acd",
+  "ledger_sha256_at_check": "35f2669d1644116001120dbdc633c16cfbaa0461eed876cc2459cf805f4b087c",
+  "new_amendment_not_yet_in_ledger": true,
+  "original_coordinator_lock_available_and_held_during_review": true,
+  "outgoing_pid_51839_absent_by_ps": true,
+  "fixed_n_each_provider": 1800,
+  "runtime_concurrency": {
+    "Anthropic": 0,
+    "OpenAI": 32
+  },
+  "prefix_checks": {
+    "Anthropic": {
+      "settled_prefix_n": 1800,
+      "first_index": 0,
+      "last_index": 1799,
+      "next_index": 1800,
+      "remaining_fixed_suffix_n": 0,
+      "intent_hash_and_exact_request_matches": 1800,
+      "raw_receipt_hash_matches": 1800,
+      "ledger_account_hash_matches": 1800,
+      "pending_unknowns": 0,
+      "operational_failure": null,
+      "unexpected_receipt_files": 0,
+      "answer_bodies_parsed": 0
+    },
+    "OpenAI": {
+      "settled_prefix_n": 645,
+      "first_index": 0,
+      "last_index": 644,
+      "next_index": 645,
+      "remaining_fixed_suffix_n": 1155,
+      "intent_hash_and_exact_request_matches": 645,
+      "raw_receipt_hash_matches": 645,
+      "ledger_account_hash_matches": 645,
+      "pending_unknowns": 0,
+      "operational_failure": null,
+      "unexpected_receipt_files": 0,
+      "answer_bodies_parsed": 0
+    }
+  },
+  "finances": {
+    "Anthropic": {
+      "settled_cohort_cost_micro": 22370872,
+      "other_lifetime_committed_micro": 311430394,
+      "protected_remaining_micro": 166840000,
+      "pool_cap_micro": 100000000,
+      "lifetime_cap_micro": 1000000000,
+      "new_window_maximum_micro": 0,
+      "cohort_cost_plus_window_micro": 22370872,
+      "pool_margin_micro": 77629128,
+      "lifetime_margin_after_protected_micro": 499358734,
+      "fits": true
+    },
+    "OpenAI": {
+      "settled_cohort_cost_micro": 55398690,
+      "other_lifetime_committed_micro": 801130500,
+      "protected_remaining_micro": 962500000,
+      "pool_cap_micro": 225000000,
+      "lifetime_cap_micro": 2000000000,
+      "new_window_maximum_micro": 105337600,
+      "cohort_cost_plus_window_micro": 160736290,
+      "pool_margin_micro": 64263710,
+      "lifetime_margin_after_protected_micro": 75633210,
+      "fits": true
+    }
+  },
+  "original_frozen_dependencies_unchanged": 44,
+  "all_additive_code_review_bindings_match": true,
+  "only_original_aggregate_accounts_continue": true,
+  "no_membership_protocol_source_scoring_or_pool_change": true,
+  "limitations": [
+    "This is a point-in-time pre-adoption pass. Reviewed execute must revalidate the checkpoint under the same exclusive coordinator lock and append the exact amendment before new reservations/POST.",
+    "Receipt bytes were hashed against checkpoint and validated accounting hashes; this independent check did not parse HTTP bodies or recompute token usage from answer-bearing files. Original prepare and settlement performed the reviewed strict identity/terminal-usage validation.",
+    "A32-request maximum window fits now; unchanged accounting gates may taper later. Full fixed-cohort completion is conditional on actual costs fitting unchanged pools and lifetime limits."
+  ],
+  "unresolved_blockers": [],
+  "paid_calls": 0,
+  "ledger_mutations": 0,
+  "final_answer_text_or_scores_read": false
+}

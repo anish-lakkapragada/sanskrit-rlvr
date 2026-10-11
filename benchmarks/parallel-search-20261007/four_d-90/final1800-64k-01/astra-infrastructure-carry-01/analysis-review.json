@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-10-08T01:44:20.554167+00:00",
+  "passed": true,
+  "analyzer_sha256": "8d2f8cc7463ca55e19b6f953f148f4368e8758c6cff1be501b9b1169e1e33ab4",
+  "tests_sha256": "ab21190dbdb69c3af8bcdca224df26564bacb01ab38e6032c3d130d7117fe6d5",
+  "driver_sha256": "2281153aa28c7d9f623fbd1a22a80ad0603f12dff1648c91d2035d33d0a9614c",
+  "execution_plan_sha256": "69201de2ede7e2ee2168ff1180324875aa22d4c3e34c385e58894ba110ad4967",
+  "continuation_amendment_sha256": "b530990abfa4aec82f4462de2d38512a8bf4523f2c29b7adec225eae7b39a6e2",
+  "tests_rerun": {
+    "command": ".venv/bin/python benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/test_analyze.py",
+    "tests": 6,
+    "passed": 6,
+    "seconds": 0.085,
+    "only_synthetic": true
+  },
+  "checks": {
+    "exact_fixed1800_and_only837_unknown_gate": true,
+    "both_provider_terminal_usage_gate_except_exact_hold": true,
+    "no_successful_response_body_or_scorer_before_gate": true,
+    "review_and_amendment_hashes_required": true,
+    "full_receipt_identity_usage_validation_after_gate": true,
+    "canonical_and_finite_whitelist_preserved_separately": true,
+    "837_infrastructure_error_is_correct_None_not_modelerror": true,
+    "full1800_denominator_and_genuine_usable_denominator": true,
+    "all_missing_answer_bounds_plus_infrastructure_only_width": true,
+    "both_imputations_separate_copies_raw_rows_unchanged": true,
+    "iid_and_family_SE_both_imputations_reported": true,
+    "paired_imputation_labels_correct": true,
+    "pending_source_adjudication_queues_retained": true,
+    "original_complete_gate_false_and_original_outputs_untouched": true
+  },
+  "statistical_interpretation": [
+    "Unknown837 counts as no known success in fixedNlower-bound arithmetic, not an observed wrong modelanswer. Infrastructure-only correctnesswidth is1/1800.",
+    "Both hypothetical infrastructure values affect all-request point/variance calculations; status and parsedanswer remainmissing, so usable-answer statistics remainbased only on genuine responses.",
+    "All-missing-answer upperbounds also cover refusals/truncations/unparsed outcomes; infrastructure-only bounds hold other gradesfixed.",
+    "Conservative precision evidence requires both iid and root-family sandwich SE below1pp underboth infrastructureimputations for both references; this doesnot waive original complete-terminal gate.",
+    "No source correction is applied inthis analyzer. Every unrecognized usable form remainspending independent sourceadjudication."
+  ],
+  "limitations": [
+    "This is a prospective code review and synthetic validation. The actual analyzer was not run and no finalanswer, score or partial outcome wasread.",
+    "Shared bootstrap/statistics helpers are preserved and reviewed by source/analytic reasoning; synthetic tests are not a proof of all linguistic or stochastic assumptions.",
+    "An additive independent full-result reviewer will reproduce extraction/grading and analytic SE after fullcompletion only."
+  ],
+  "unresolved_blockers": [],
+  "all44_original_dependencies_unchanged": true,
+  "paid_calls": 0,
+  "ledger_mutations": 0,
+  "final_model_outputs_read": false
+}

@@ -1,0 +1,133 @@
+{
+  "created_at": "2026-10-07T08:00:43.291243+00:00",
+  "shared_policy": "oracle-policy-11.json",
+  "historical_reference": "Opus High/4096, weaker than current target protocol; all matching development outcomes are included. Not a source-certified population estimate.",
+  "predicates": {
+    "kutadi_nonpresent": "Kartari Lit/Lut/Lrt/Lrn/AshirLin/Lun with trace 1.2.1.",
+    "transitive_nonpresent_passive": "Karmani Lut/Lrt/Lrn/AshirLin/Lun, trace 6.4.62, exact transitive artha allowlist from pilot01.",
+    "anit_guna_without_dhvam": "Kartari with both 7.2.10 and 7.3.84, excluding 8.3.78/79. Exploratory conjunction motivated by prior rule-pair screen."
+  },
+  "counts": {
+    "kutadi_nonpresent": {
+      "historical_development": {
+        "n": 39,
+        "correct": 35,
+        "families": 14,
+        "error_families": 4
+      },
+      "metadata_supply": {
+        "development": {
+          "tuples": 745,
+          "families": 14,
+          "ganas": {
+            "Tudadi": 745
+          }
+        },
+        "test": {
+          "tuples": 1325,
+          "families": 24,
+          "ganas": {
+            "Tudadi": 1325
+          }
+        }
+      }
+    },
+    "transitive_nonpresent_passive": {
+      "historical_development": {
+        "n": 13,
+        "correct": 13,
+        "families": 5,
+        "error_families": 0
+      },
+      "metadata_supply": {
+        "development": {
+          "tuples": 572,
+          "families": 13,
+          "ganas": {
+            "Bhvadi": 44,
+            "Juhotyadi": 44,
+            "Divadi": 44,
+            "Svadi": 44,
+            "Kryadi": 44,
+            "Curadi": 352
+          }
+        },
+        "test": {
+          "tuples": 1364,
+          "families": 31,
+          "ganas": {
+            "Bhvadi": 44,
+            "Adadi": 88,
+            "Juhotyadi": 44,
+            "Divadi": 44,
+            "Svadi": 88,
+            "Kryadi": 396,
+            "Curadi": 660
+          }
+        }
+      }
+    },
+    "anit_guna_without_dhvam": {
+      "historical_development": {
+        "n": 17,
+        "correct": 17,
+        "families": 11,
+        "error_families": 0
+      },
+      "metadata_supply": {
+        "development": {
+          "tuples": 971,
+          "families": 31,
+          "ganas": {
+            "Bhvadi": 407,
+            "Adadi": 124,
+            "Juhotyadi": 9,
+            "Divadi": 86,
+            "Svadi": 52,
+            "Tudadi": 99,
+            "Kryadi": 140,
+            "Curadi": 54
+          }
+        },
+        "test": {
+          "tuples": 1376,
+          "families": 48,
+          "ganas": {
+            "Bhvadi": 539,
+            "Adadi": 27,
+            "Juhotyadi": 90,
+            "Divadi": 172,
+            "Svadi": 140,
+            "Tudadi": 9,
+            "Kryadi": 264,
+            "Curadi": 135
+          }
+        }
+      }
+    }
+  },
+  "historical_inputs": [
+    {
+      "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/creation-campaign-20261006/jobs/opus-discovery-01/results.json",
+      "sha256": "70bbe050a6b3289754ae83b2d459851aac76df4b1ee737665e95cfb8dd7f2ad8"
+    },
+    {
+      "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/creation-campaign-20261006/jobs/opus-discovery-02/results.json",
+      "sha256": "9728b3d731115a317b8df632182cc9dff7ace466adcfe3b7b2370644773cf577"
+    },
+    {
+      "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/creation-campaign-20261006/jobs/opus-discovery-03/results.json",
+      "sha256": "9efdcee5ffac936b75304728a786785de4659b388bc6a9c902fae39decba7c82"
+    }
+  ],
+  "limits": [
+    "Metadata supply comes from the historical candidate database and is a lower census, not the full search universe. No claim that these predicates have been exhaustively regenerated.",
+    "Exact transitive meaning allowlists are a preliminary applicability screen, not independent certification of every passive paradigm.",
+    "The separate dictionary-wide adanta census did regenerate beyond the old pool.",
+    "Historical apparent errors in these remaining groups have not all been independently source-adjudicated; no fresh pilot or final membership is recommended from these figures."
+  ],
+  "no_held_out_model_answers": true,
+  "worker_paid_calls": 0,
+  "benchmark_ready": false,
+  "rl_supply_status": "Not censused here: the historical candidate database does not enumerate the master RL split. Missing RL rows are not evidence of zero grammatical supply."
+}

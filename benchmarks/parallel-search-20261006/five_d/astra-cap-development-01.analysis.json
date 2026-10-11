@@ -1,0 +1,117 @@
+{
+  "created_at": "2026-10-07T11:03:40.135580+00:00",
+  "paired": {
+    "baseline": {
+      "n": 60,
+      "correct": 40,
+      "all_request_accuracy": 0.6666666666666666,
+      "completed": 50,
+      "completed_correct": 40,
+      "completed_accuracy": 0.8,
+      "completed_response_bounds_on_all_questions": [
+        0.6666666666666666,
+        0.8333333333333334
+      ],
+      "statuses": {
+        "completed": 50,
+        "incomplete": 10
+      },
+      "truncated": 10,
+      "families": 60
+    },
+    "higher_cap": {
+      "n": 60,
+      "correct": 44,
+      "all_request_accuracy": 0.7333333333333333,
+      "completed": 60,
+      "completed_correct": 44,
+      "completed_accuracy": 0.7333333333333333,
+      "completed_response_bounds_on_all_questions": [
+        0.7333333333333333,
+        0.7333333333333333
+      ],
+      "statuses": {
+        "completed": 60
+      },
+      "truncated": 0,
+      "families": 60
+    },
+    "recorded_accuracy_difference": 0.06666666666666667,
+    "paired_bootstrap_difference_95": [
+      -0.06666666666666667,
+      0.2
+    ],
+    "wrong_or_missing_to_correct": 10,
+    "correct_to_wrong_or_missing": 6,
+    "baseline_incomplete": 10,
+    "newly_completed": 10,
+    "newly_incomplete": 0
+  },
+  "opus_16k_same_questions": {
+    "n": 60,
+    "correct": 51,
+    "all_request_accuracy": 0.85,
+    "completed": 59,
+    "completed_correct": 51,
+    "completed_accuracy": 0.864406779661017,
+    "completed_response_bounds_on_all_questions": [
+      0.85,
+      0.8666666666666667
+    ],
+    "statuses": {
+      "completed": 59,
+      "refused": 1
+    },
+    "truncated": 0,
+    "families": 60
+  },
+  "baseline_incomplete_subset": {
+    "baseline": {
+      "n": 10,
+      "correct": 0,
+      "all_request_accuracy": 0.0,
+      "completed": 0,
+      "completed_correct": 0,
+      "completed_accuracy": null,
+      "completed_response_bounds_on_all_questions": [
+        0.0,
+        1.0
+      ],
+      "statuses": {
+        "incomplete": 10
+      },
+      "truncated": 10,
+      "families": 10
+    },
+    "higher_cap": {
+      "n": 10,
+      "correct": 4,
+      "all_request_accuracy": 0.4,
+      "completed": 10,
+      "completed_correct": 4,
+      "completed_accuracy": 0.4,
+      "completed_response_bounds_on_all_questions": [
+        0.4,
+        0.4
+      ],
+      "statuses": {
+        "completed": 10
+      },
+      "truncated": 0,
+      "families": 10
+    },
+    "recorded_accuracy_difference": 0.4,
+    "paired_bootstrap_difference_95": [
+      0.1,
+      0.7
+    ],
+    "wrong_or_missing_to_correct": 4,
+    "correct_to_wrong_or_missing": 0,
+    "baseline_incomplete": 10,
+    "newly_completed": 10,
+    "newly_incomplete": 0
+  },
+  "actual_cost_upper_usd": 14.450675,
+  "limits": "Preserve all 60 pairs. Report both limits separately, paired transitions and bootstrap difference, and same-question Opus baseline. No replacements, score-driven stopping, or pooling with a primary panel. Sampling is not uniform over the full generator; no precise final-population performance claim.",
+  "benchmark_ready": false
+}

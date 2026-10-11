@@ -1,0 +1,1881 @@
+{
+  "created_at": "2026-10-07T07:25:25.998549+00:00",
+  "raw_source_sha256": "c2af4ec42349327b5f682811df8e2a235500bb77db8205196371c24c577a1fe4",
+  "shared_adapter_sha256": "1257e685fc354f99bddbf0eb302911e7d066fcc8c18ba689b5730eda54df8586",
+  "raw": {
+    "requests": 180,
+    "completed": 170,
+    "correct": 135,
+    "statuses": {
+      "completed": 170,
+      "refused": 10
+    },
+    "completed_accuracy": 0.7941176470588235,
+    "all_request_accuracy": 0.75,
+    "completed_wilson_95": [
+      0.7271612594237008,
+      0.8480755148094429
+    ],
+    "families": 180
+  },
+  "current_scope": {
+    "requests": 173,
+    "completed": 164,
+    "correct": 134,
+    "statuses": {
+      "completed": 164,
+      "refused": 9
+    },
+    "completed_accuracy": 0.8170731707317073,
+    "all_request_accuracy": 0.7745664739884393,
+    "completed_wilson_95": [
+      0.750879573769226,
+      0.8687527907891857
+    ],
+    "families": 173
+  },
+  "excluded": [
+    {
+      "id": "cart5-8d356304c42afb88d1295b5b",
+      "code": "01.1079",
+      "reason": "Unresolved puK augmentation after A-final intensive-luk stem",
+      "status": "completed",
+      "correct": false
+    },
+    {
+      "id": "cart5-b5b9aedf81bb07473476a429",
+      "code": "05.0037",
+      "reason": "Source-marked Vedic-only Svadi entry outside current classical scope",
+      "status": "refused",
+      "correct": false
+    },
+    {
+      "id": "cart5-31691f56239169a41e27936b",
+      "code": "01.1088",
+      "reason": "Source restricts this lexical entry to nominal formations; finite use unverified",
+      "status": "completed",
+      "correct": true
+    },
+    {
+      "id": "cart5-920b4e9331e10d15f7f119a2",
+      "code": "01.1149",
+      "reason": "Uncertified meaning condition for lexical san before requested operations",
+      "status": "completed",
+      "correct": false
+    },
+    {
+      "id": "cart5-78d494450c89dca89187dc2f",
+      "code": "02.0007",
+      "reason": "Unresolved caksh substitution in added sanadi derivation",
+      "status": "completed",
+      "correct": false
+    },
+    {
+      "id": "cart5-cc59fd34bce1aa2422ac300c",
+      "code": "05.0031",
+      "reason": "Source-marked Vedic-only Svadi entry outside current classical scope",
+      "status": "completed",
+      "correct": false
+    },
+    {
+      "id": "cart5-35304c9d7ae3f65a85333b94",
+      "code": "03.0009",
+      "reason": "Unresolved puK augmentation after A-final intensive-luk stem",
+      "status": "completed",
+      "correct": false
+    }
+  ],
+  "reviews": [
+    {
+      "id": "cart5-8d356304c42afb88d1295b5b",
+      "code": "01.1079",
+      "recipe": "causative_of_intensive_luk",
+      "morphology": {
+        "lakara": "Lot",
+        "prayoga": "Karmani",
+        "purusha": "Uttama",
+        "vacana": "Bahu"
+      },
+      "model_answer": "दादाप्यामहै",
+      "gold_slp1": [
+        "dAdyAmahE"
+      ],
+      "category": "quarantined_puk",
+      "review": "Intermediate dAdA ends in A; nested causative omits source-required puK. Quarantine across coordinates; no model-answer substitution.",
+      "sources": [
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.3.36.htm"
+      ],
+      "scope_issue": "Unresolved puK augmentation after A-final intensive-luk stem",
+      "regeneration_passed": true,
+      "gold_changed": false,
+      "evidence_level": "Rule-composition and component-source review; not exhaustive independent attestation of every complete rare form."
+    },
+    {
+      "id": "cart5-05dbcc830a9e151dcee31c26",
+      "code": "01.0062",
+      "recipe": "causative_of_intensive_luk",
+      "morphology": {
+        "lakara": "Lun",
+        "prayoga": "Kartari",
+        "purusha": "Uttama",
+        "vacana": "Eka"
+      },
+      "model_answer": "अचचाखर्दम्",
+      "gold_slp1": [
+        "acAKardam",
+        "acAKarde"
+      ],
+      "category": "extra_aorist_reduplication",
+      "review": "Already intensive-reduplicated stem does not take another causal-aorist reduplication.",
+      "sources": [
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.1.8.htm",
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.1.11.htm"
+      ],
+      "scope_issue": null,
+      "regeneration_passed": true,
+      "gold_changed": false,
+      "evidence_level": "Rule-composition and component-source review; not exhaustive independent attestation of every complete rare form."
+    },
+    {
+      "id": "cart5-4c742742c516bd509224d4b4",
+      "code": "06.0090",
+      "recipe": "causative_of_intensive",
+      "morphology": {
+        "lakara": "Lat",
+        "prayoga": "Kartari",
+        "purusha": "Uttama",
+        "vacana": "Dvi"
+      },
+      "model_answer": "सेसिलयावः",
+      "gold_slp1": [
+        "sezilayAvaH",
+        "sezilayAvahe"
+      ],
+      "category": "missing_lexical_s_restoration",
+      "review": "Initial citation z changes to s under 6.1.64 and is restored under 8.3.59 in this intensive context; the model retains dental s in the root.",
+      "sources": [
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.1.64.htm",
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/8/8.3.59.htm"
+      ],
+      "scope_issue": null,
+      "regeneration_passed": true,
+      "gold_changed": false,
+      "evidence_level": "Rule-composition and component-source review; not exhaustive independent attestation of every complete rare form."
+    },
+    {
+      "id": "cart5-1634adb42c62068f17d39be7",
+      "code": "02.0054",
+      "recipe": "causative_of_intensive",
+      "morphology": {
+        "lakara": "Lun",
+        "prayoga": "Kartari",
+        "purusha": "Madhyama",
+        "vacana": "Dvi"
+      },
+      "model_answer": "अदादापतम्",
+      "gold_slp1": [
+        "adAdAyatam",
+        "adAdAyeTAm"
+      ],
+      "category": "vowel_final_intensive_ya_retention",
+      "review": "6.4.49 requires a consonant-final root. The vowel-final dA intensive retains ya, so ordinary simple-root puK is not licensed after dAdAya.",
+      "sources": [
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.4.49.htm"
+      ],
+      "scope_issue": null,
+      "regeneration_passed": true,
+      "gold_changed": false,
+      "evidence_level": "Rule-composition and component-source review; not exhaustive independent attestation of every complete rare form."
+    },
+    {
+      "id": "cart5-0770e68786a13a28be99f1e8",
+      "code": "01.0693",
+      "recipe": "causative_of_intensive",
+      "morphology": {
+        "lakara": "Lun",
+        "prayoga": "Kartari",
+        "purusha": "Prathama",
+        "vacana": "Dvi"
+      },
+      "model_answer": "अदिदेदीक्षताम्",
+      "gold_slp1": [
+        "adedIkzatAm",
+        "adedIkzetAm"
+      ],
+      "category": "extra_aorist_reduplication",
+      "review": "The model adds a second reduplicative syllable to the intensive aorist.",
+      "sources": [
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.1.8.htm",
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.1.11.htm"
+      ],
+      "scope_issue": null,
+      "regeneration_passed": true,
+      "gold_changed": false,
+      "evidence_level": "Rule-composition and component-source review; not exhaustive independent attestation of every complete rare form."
+    },
+    {
+      "id": "cart5-45f34fe17acf5a5a4bbfe507",
+      "code": "01.0685",
+      "recipe": "causative_of_intensive",
+      "morphology": {
+        "lakara": "Lrt",
+        "prayoga": "Karmani",
+        "purusha": "Prathama",
+        "vacana": "Dvi"
+      },
+      "model_answer": "दादावयिष्येते",
+      "gold_slp1": [
+        "dADAvayizyete",
+        "dADAvizyete"
+      ],
+      "category": "lost_root_aspiration",
+      "review": "Deaspiration of the reduplicative syllable does not remove the original root Dh; the answer has d in the root.",
+      "sources": [
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/8/8.4.54.htm"
+      ],
+      "scope_issue": null,
+      "regeneration_passed": true,
+      "gold_changed": false,
+      "evidence_level": "Rule-composition and component-source review; not exhaustive independent attestation of every complete rare form."
+    },
+    {
+      "id": "cart5-84c286020b7adf15fe7019af",
+      "code": "06.0027",
+      "recipe": "causative_of_intensive",
+      "morphology": {
+        "lakara": "Lat",
+        "prayoga": "Karmani",
+        "purusha": "Prathama",
+        "vacana": "Dvi"
+      },
+      "model_answer": "रेरेह्येते",
+      "gold_slp1": [
+        "rerihyete"
+      ],
+      "category": "unlicensed_guna_after_intensive_deletion",
+      "review": "The intensive-causal passive preserves root i, rather than strengthening it to e.",
+      "sources": [
+        "https://sanskritdocuments.org/~sanskrit/learning_tools/sarvanisutrani/1.1.4.htm",
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.4.49.htm"
+      ],
+      "scope_issue": null,
+      "regeneration_passed": true,
+      "gold_changed": false,
+      "evidence_level": "Rule-composition and component-source review; not exhaustive independent attestation of every complete rare form."
+    },
+    {
+      "id": "cart5-7dffe5fbfc8b759be11a91d8",
+      "code": "01.0363",
+      "recipe": "causative_of_intensive",
+      "morphology": {
+        "lakara": "Lun",
+        "prayoga": "Kartari",
+        "purusha": "Prathama",
+        "vacana": "Dvi"
+      },
+      "model_answer": "अचुचोकुण्ठताम्",
+      "gold_slp1": [
+        "acokuRWatAm",
+        "acokuRWetAm"
+      ],
+      "category": "extra_aorist_reduplication",
+      "review": "The model adds a new causal-aorist reduplication to the existing intensive stem.",
+      "sources": [
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.1.8.htm",
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.1.11.htm"
+      ],
+      "scope_issue": null,
+      "regeneration_passed": true,
+      "gold_changed": false,
+      "evidence_level": "Rule-composition and component-source review; not exhaustive independent attestation of every complete rare form."
+    },
+    {
+      "id": "cart5-06dbb8982966b2a78fe092f8",
+      "code": "01.0852",
+      "recipe": "causative_of_intensive_luk",
+      "morphology": {
+        "lakara": "Lun",
+        "prayoga": "Kartari",
+        "purusha": "Madhyama",
+        "vacana": "Eka"
+      },
+      "model_answer": "अवीवरीवर्हः",
+      "gold_slp1": [
+        "avarIvarhaH",
+        "avarIvarhaTAH",
+        "avarivarhaH",
+        "avarivarhaTAH",
+        "avarvarhaH",
+        "avarvarhaTAH"
+      ],
+      "category": "extra_aorist_reduplication",
+      "review": "The accepted set already includes the three r/ri/rI intensive-luk augment alternatives; the answer adds another reduplicative syllable.",
+      "sources": [
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.1.8.htm",
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.1.11.htm"
+      ],
+      "scope_issue": null,
+      "regeneration_passed": true,
+      "gold_changed": false,
+      "evidence_level": "Rule-composition and component-source review; not exhaustive independent attestation of every complete rare form."
+    },
+    {
+      "id": "cart5-dd1ebf373bb88858d7faf01e",
+      "code": "04.0020",
+      "recipe": "causative_of_intensive",
+      "morphology": {
+        "lakara": "Lun",
+        "prayoga": "Kartari",
+        "purusha": "Uttama",
+        "vacana": "Eka"
+      },
+      "model_answer": "अतितेष्टीमम्",
+      "gold_slp1": [
+        "atezwimam",
+        "atezwime"
+      ],
+      "category": "extra_reduplication_and_missing_shortening",
+      "review": "The answer adds a fresh reduplication and retains long I where causal-aorist shortening gives i.",
+      "sources": [
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.4.1.htm",
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/1/1.1.48.htm"
+      ],
+      "scope_issue": null,
+      "regeneration_passed": true,
+      "gold_changed": false,
+      "evidence_level": "Rule-composition and component-source review; not exhaustive independent attestation of every complete rare form."
+    },
+    {
+      "id": "cart5-7ec17c59d57ee55767e85245",
+      "code": "08.0007",
+      "recipe": "causative_of_intensive",
+      "morphology": {
+        "lakara": "VidhiLin",
+        "prayoga": "Karmani",
+        "purusha": "Prathama",
+        "vacana": "Dvi"
+      },
+      "model_answer": "जरीघृण्येयाताम्",
+      "gold_slp1": [
+        "jaMGfRyeyAtAm",
+        "jaNGfRyeyAtAm"
+      ],
+      "category": "nasal_reduplicative_augment",
+      "review": "The nasal-final root takes nasal augment under 7.4.85, not the r augment. This family has earlier-panel errors; it is not independent broad-supply evidence.",
+      "sources": [
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.4.85.htm"
+      ],
+      "scope_issue": null,
+      "regeneration_passed": true,
+      "gold_changed": false,
+      "evidence_level": "Rule-composition and component-source review; not exhaustive independent attestation of every complete rare form."
+    },
+    {
+      "id": "cart5-75ef36604451d5c1a191b273",
+      "code": "04.0080",
+      "recipe": "causative_of_intensive",
+      "morphology": {
+        "lakara": "Lut",
+        "prayoga": "Karmani",
+        "purusha": "Prathama",
+        "vacana": "Bahu"
+      },
+      "model_answer": "शोशोषयितारः",
+      "gold_slp1": [
+        "SoSuzayitAraH",
+        "SoSuzitAraH"
+      ],
+      "category": "unlicensed_guna_after_intensive_deletion",
+      "review": "The model strengthens root u to o; the intensive-deletion context blocks that guna.",
+      "sources": [
+        "https://sanskritdocuments.org/~sanskrit/learning_tools/sarvanisutrani/1.1.4.htm",
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.4.49.htm"
+      ],
+      "scope_issue": null,
+      "regeneration_passed": true,
+      "gold_changed": false,
+      "evidence_level": "Rule-composition and component-source review; not exhaustive independent attestation of every complete rare form."
+    },
+    {
+      "id": "cart5-c02b4dad0fd1aadecff20a06",
+      "code": "01.0105",
+      "recipe": "causative_of_intensive",
+      "morphology": {
+        "lakara": "AshirLin",
+        "prayoga": "Kartari",
+        "purusha": "Uttama",
+        "vacana": "Bahu"
+      },
+      "model_answer": "सास्वष्क्यास्म",
+      "gold_slp1": [
+        "zAzvazkayizImahi",
+        "zAzvazkyAsma"
+      ],
+      "category": "lexical_s_exception",
+      "review": "Kashika 6.1.64 explicitly exempts zvazk from the dental-s replacement; the model uses dental s where lexical z remains.",
+      "sources": [
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.1.64.htm",
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/8/8.3.59.htm"
+      ],
+      "scope_issue": null,
+      "regeneration_passed": true,
+      "gold_changed": false,
+      "evidence_level": "Rule-composition and component-source review; not exhaustive independent attestation of every complete rare form."
+    },
+    {
+      "id": "cart5-6d566f65e10bc7e4533cc6d2",
+      "code": "04.0130",
+      "recipe": "causative_of_intensive",
+      "morphology": {
+        "lakara": "VidhiLin",
+        "prayoga": "Karmani",
+        "purusha": "Prathama",
+        "vacana": "Eka"
+      },
+      "model_answer": "मोमोस्येत",
+      "gold_slp1": [
+        "momusyeta"
+      ],
+      "category": "unlicensed_guna_after_intensive_deletion",
+      "review": "The model strengthens root u to o despite intensive-caused deletion.",
+      "sources": [
+        "https://sanskritdocuments.org/~sanskrit/learning_tools/sarvanisutrani/1.1.4.htm",
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.4.49.htm"
+      ],
+      "scope_issue": null,
+      "regeneration_passed": true,
+      "gold_changed": false,
+      "evidence_level": "Rule-composition and component-source review; not exhaustive independent attestation of every complete rare form."
+    },
+    {
+      "id": "cart5-62b6db6118c77dcade9d7b3c",
+      "code": "06.0124",
+      "recipe": "causative_of_intensive",
+      "morphology": {
+        "lakara": "Lot",
+        "prayoga": "Karmani",
+        "purusha": "Uttama",
+        "vacana": "Dvi"
+      },
+      "model_answer": "पास्फाल्यावहै",
+      "gold_slp1": [
+        "pAsPalyAvahE"
+      ],
+      "category": "unlicensed_vrddhi_after_intensive_deletion",
+      "review": "The deleted intensive suffix does not license new penultimate a-vrddhi in the passive stem.",
+      "sources": [
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/1/1.1.57.htm",
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.4.49.htm"
+      ],
+      "scope_issue": null,
+      "regeneration_passed": true,
+      "gold_changed": false,
+      "evidence_level": "Rule-composition and component-source review; not exhaustive independent attestation of every complete rare form."
+    },
+    {
+      "id": "cart5-df51f67cf554c780f02dd71e",
+      "code": "01.0868",
+      "recipe": "causative_of_intensive_luk",
+      "morphology": {
+        "lakara": "Lit",
+        "prayoga": "Kartari",
+        "purusha": "Madhyama",
+        "vacana": "Dvi"
+      },
+      "model_answer": "वाव्यथयाञ्चकथुः",
+      "gold_slp1": [
+        "vAvyaTayAYcakrATe",
+        "vAvyaTayAYcakraTuH",
+        "vAvyaTayAmAsaTuH",
+        "vAvyaTayAmbaBUvaTuH"
+      ],
+      "category": "perfect_auxiliary_inflection",
+      "review": "The answer omits r in the second-dual kR perfect auxiliary cakraTuH; the stem itself agrees.",
+      "sources": [
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.1.91.htm"
+      ],
+      "scope_issue": null,
+      "regeneration_passed": true,
+      "gold_changed": false,
+      "evidence_level": "Rule-composition and component-source review; not exhaustive independent attestation of every complete rare form."
+    },
+    {
+      "id": "cart5-de5f3b0c2eb402504616b831",
+      "code": "01.0649",
+      "recipe": "causative_of_intensive",
+      "morphology": {
+        "lakara": "Lun",
+        "prayoga": "Kartari",
+        "purusha": "Madhyama",
+        "vacana": "Bahu"
+      },
+      "model_answer": "अचेक्षेवत",
+      "gold_slp1": [
+        "acekzivaDvam",
+        "acekzivata"
+      ],
+      "category": "missing_aorist_shortening",
+      "review": "The causal-aorist environment shortens the root vowel; ec shortening gives i in this case.",
+      "sources": [
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.4.1.htm",
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/1/1.1.48.htm"
+      ],
+      "scope_issue": null,
+      "regeneration_passed": true,
+      "gold_changed": false,
+      "evidence_level": "Rule-composition and component-source review; not exhaustive independent attestation of every complete rare form."
+    },
+    {
+      "id": "cart5-920b4e9331e10d15f7f119a2",
+      "code": "01.1149",
+      "recipe": "desiderative",
+      "morphology": {
+        "lakara": "VidhiLin",
+        "prayoga": "Kartari",
+        "purusha": "Madhyama",
+        "vacana": "Eka"
+      },
+      "model_answer": "दीदांसेः",
+      "gold_slp1": [
+        "dIdAMsizeH",
+        "dIdAMsizeTAH"
+      ],
+      "category": "semantic_lexical_san_quarantine",
+      "review": "The input leaves the meaning branch unspecified, but the engine inserts lexical san 3.1.6 before the requested desiderative san; see semantic-san audit.",
+      "sources": [
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/3/3.1.5.htm",
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/3/3.1.6.htm"
+      ],
+      "scope_issue": "Uncertified meaning condition for lexical san before requested operations",
+      "regeneration_passed": true,
+      "gold_changed": false,
+      "evidence_level": "Rule-composition and component-source review; not exhaustive independent attestation of every complete rare form."
+    },
+    {
+      "id": "cart5-702206ac8b16ff2c13ef1a20",
+      "code": "01.0206",
+      "recipe": "causative_of_intensive_luk",
+      "morphology": {
+        "lakara": "Lun",
+        "prayoga": "Kartari",
+        "purusha": "Madhyama",
+        "vacana": "Bahu"
+      },
+      "model_answer": "अचचाकडत",
+      "gold_slp1": [
+        "acAkAqaDvam",
+        "acAkAqata"
+      ],
+      "category": "extra_reduplication_and_wrong_root_vowel",
+      "review": "The answer adds fresh causal reduplication and alters the retained intensive-luk stem vowel.",
+      "sources": [
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.1.8.htm",
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.1.11.htm"
+      ],
+      "scope_issue": null,
+      "regeneration_passed": true,
+      "gold_changed": false,
+      "evidence_level": "Rule-composition and component-source review; not exhaustive independent attestation of every complete rare form."
+    },
+    {
+      "id": "cart5-ca326c89ec4f42d6db0851d0",
+      "code": "01.0186",
+      "recipe": "causative_of_intensive_luk",
+      "morphology": {
+        "lakara": "Lun",
+        "prayoga": "Kartari",
+        "purusha": "Uttama",
+        "vacana": "Bahu"
+      },
+      "model_answer": "अववावर्चाम",
+      "gold_slp1": [
+        "avAvarcAma",
+        "avAvarcAmahi"
+      ],
+      "category": "extra_aorist_reduplication",
+      "review": "The model adds an extra va to an already intensive-reduplicated stem.",
+      "sources": [
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.1.8.htm",
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.1.11.htm"
+      ],
+      "scope_issue": null,
+      "regeneration_passed": true,
+      "gold_changed": false,
+      "evidence_level": "Rule-composition and component-source review; not exhaustive independent attestation of every complete rare form."
+    },
+    {
+      "id": "cart5-3c53dc15cc805954fe546bce",
+      "code": "01.0246",
+      "recipe": "causative_of_intensive",
+      "morphology": {
+        "lakara": "Lun",
+        "prayoga": "Kartari",
+        "purusha": "Madhyama",
+        "vacana": "Dvi"
+      },
+      "model_answer": "अददाध्रञ्जतम्",
+      "gold_slp1": [
+        "adADraYjatam",
+        "adADraYjeTAm"
+      ],
+      "category": "extra_aorist_reduplication",
+      "review": "The model adds an extra da to the existing intensive reduplication.",
+      "sources": [
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.1.8.htm",
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.1.11.htm"
+      ],
+      "scope_issue": null,
+      "regeneration_passed": true,
+      "gold_changed": false,
+      "evidence_level": "Rule-composition and component-source review; not exhaustive independent attestation of every complete rare form."
+    },
+    {
+      "id": "cart5-d0d251b09c05a7258f721bf8",
+      "code": "04.0152",
+      "recipe": "causative_of_intensive",
+      "morphology": {
+        "lakara": "Lun",
+        "prayoga": "Kartari",
+        "purusha": "Prathama",
+        "vacana": "Dvi"
+      },
+      "model_answer": "अतोष्टूपताम्",
+      "gold_slp1": [
+        "atozwupatAm",
+        "atozwupetAm"
+      ],
+      "category": "missing_aorist_shortening",
+      "review": "Root U shortens to u in this causal aorist; the answer retains U.",
+      "sources": [
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.4.1.htm",
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/1/1.1.48.htm"
+      ],
+      "scope_issue": null,
+      "regeneration_passed": true,
+      "gold_changed": false,
+      "evidence_level": "Rule-composition and component-source review; not exhaustive independent attestation of every complete rare form."
+    },
+    {
+      "id": "cart5-f4ca40b71b90cd9055e8e5f3",
+      "code": "01.0751",
+      "recipe": "causative_of_intensive_luk",
+      "morphology": {
+        "lakara": "Lan",
+        "prayoga": "Kartari",
+        "purusha": "Uttama",
+        "vacana": "Bahu"
+      },
+      "model_answer": "अतास्तृक्षयाम",
+      "gold_slp1": [
+        "atarIzwfkzayAma",
+        "atarIzwfkzayAmahi",
+        "atarizwfkzayAma",
+        "atarizwfkzayAmahi",
+        "atarzwfkzayAma",
+        "atarzwfkzayAmahi"
+      ],
+      "category": "r_augment_and_lexical_s",
+      "review": "The intensive-luk r-penultimate root has ra/ri/rI augment choices. The answer substitutes a plain long-vowel reduplicative stem and dentalizes the retained lexical z.",
+      "sources": [
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.4.91.htm",
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.1.64.htm"
+      ],
+      "scope_issue": null,
+      "regeneration_passed": true,
+      "gold_changed": false,
+      "evidence_level": "Rule-composition and component-source review; not exhaustive independent attestation of every complete rare form."
+    },
+    {
+      "id": "cart5-9e3fe888b0a5918fa77e3bd6",
+      "code": "01.0810",
+      "recipe": "causative_of_intensive",
+      "morphology": {
+        "lakara": "Lan",
+        "prayoga": "Karmani",
+        "purusha": "Madhyama",
+        "vacana": "Dvi"
+      },
+      "model_answer": "अरारास्येथाम्",
+      "gold_slp1": [
+        "arArasyeTAm"
+      ],
+      "category": "unlicensed_vrddhi_after_intensive_deletion",
+      "review": "Root a remains short in this intensive-causal passive; the model gives A.",
+      "sources": [
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/1/1.1.57.htm",
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.4.49.htm"
+      ],
+      "scope_issue": null,
+      "regeneration_passed": true,
+      "gold_changed": false,
+      "evidence_level": "Rule-composition and component-source review; not exhaustive independent attestation of every complete rare form."
+    },
+    {
+      "id": "cart5-17f0a04b87d2a6e452522225",
+      "code": "01.1158",
+      "recipe": "causative_of_intensive",
+      "morphology": {
+        "lakara": "Lrt",
+        "prayoga": "Karmani",
+        "purusha": "Prathama",
+        "vacana": "Dvi"
+      },
+      "model_answer": "वावापयिष्येते",
+      "gold_slp1": [
+        "vAvapayizyete",
+        "vAvapizyete"
+      ],
+      "category": "unlicensed_vrddhi_after_intensive_deletion",
+      "review": "The future passive alternatives differ in causal-suffix treatment, but neither licenses root a-vrddhi.",
+      "sources": [
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/1/1.1.57.htm",
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.4.49.htm"
+      ],
+      "scope_issue": null,
+      "regeneration_passed": true,
+      "gold_changed": false,
+      "evidence_level": "Rule-composition and component-source review; not exhaustive independent attestation of every complete rare form."
+    },
+    {
+      "id": "cart5-27944bb95694e33cd56379e0",
+      "code": "01.0869",
+      "recipe": "causative_of_intensive",
+      "morphology": {
+        "lakara": "Lun",
+        "prayoga": "Kartari",
+        "purusha": "Uttama",
+        "vacana": "Eka"
+      },
+      "model_answer": "अपपाप्रथम्",
+      "gold_slp1": [
+        "apApraTam",
+        "apApraTe"
+      ],
+      "category": "extra_aorist_reduplication",
+      "review": "The model adds another pa before the existing intensive stem.",
+      "sources": [
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.1.8.htm",
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.1.11.htm"
+      ],
+      "scope_issue": null,
+      "regeneration_passed": true,
+      "gold_changed": false,
+      "evidence_level": "Rule-composition and component-source review; not exhaustive independent attestation of every complete rare form."
+    },
+    {
+      "id": "cart5-78d494450c89dca89187dc2f",
+      "code": "02.0007",
+      "recipe": "causative_of_intensive_luk",
+      "morphology": {
+        "lakara": "Lrn",
+        "prayoga": "Kartari",
+        "purusha": "Madhyama",
+        "vacana": "Dvi"
+      },
+      "model_answer": "अचाख्यापयिष्यतम्",
+      "gold_slp1": [
+        "acAKyAyizyatam",
+        "acAKyAyizyeTAm",
+        "acAkSAyizyatam",
+        "acAkSAyizyeTAm"
+      ],
+      "category": "quarantined_caksh_substitution",
+      "review": "Direct traditional controls disagree with VP added-sanadi caksh stems. The nested question is quarantined prospectively.",
+      "sources": [
+        "https://samsaadhanii-concordance.vipran.in/dhatu/1508-cakRizf-vyakwAyAM_vAci-cakR1"
+      ],
+      "scope_issue": "Unresolved caksh substitution in added sanadi derivation",
+      "regeneration_passed": true,
+      "gold_changed": false,
+      "evidence_level": "Rule-composition and component-source review; not exhaustive independent attestation of every complete rare form."
+    },
+    {
+      "id": "cart5-b6f0c7b41a5de1c0e936426b",
+      "code": "04.0142",
+      "recipe": "causative_of_intensive",
+      "morphology": {
+        "lakara": "AshirLin",
+        "prayoga": "Kartari",
+        "purusha": "Madhyama",
+        "vacana": "Bahu"
+      },
+      "model_answer": "जरीहर्ष्यास्त",
+      "gold_slp1": [
+        "jarIhfzayizIDvam",
+        "jarIhfzayizIQvam",
+        "jarIhfzyAsta"
+      ],
+      "category": "unlicensed_guna_after_intensive_deletion",
+      "review": "The model strengthens root R to ar despite the intensive-deletion blocking environment.",
+      "sources": [
+        "https://sanskritdocuments.org/~sanskrit/learning_tools/sarvanisutrani/1.1.4.htm",
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.4.49.htm"
+      ],
+      "scope_issue": null,
+      "regeneration_passed": true,
+      "gold_changed": false,
+      "evidence_level": "Rule-composition and component-source review; not exhaustive independent attestation of every complete rare form."
+    },
+    {
+      "id": "cart5-de53e2355d7af5005451697a",
+      "code": "01.0552",
+      "recipe": "causative_of_intensive",
+      "morphology": {
+        "lakara": "Lat",
+        "prayoga": "Kartari",
+        "purusha": "Prathama",
+        "vacana": "Bahu"
+      },
+      "model_answer": "नानाययन्ति",
+      "gold_slp1": [
+        "nAnayayante",
+        "nAnayayanti"
+      ],
+      "category": "unlicensed_vrddhi_after_intensive_deletion",
+      "review": "The model lengthens root a although intensive-suffix deletion preserves the relevant blocking effect.",
+      "sources": [
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/1/1.1.57.htm",
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.4.49.htm"
+      ],
+      "scope_issue": null,
+      "regeneration_passed": true,
+      "gold_changed": false,
+      "evidence_level": "Rule-composition and component-source review; not exhaustive independent attestation of every complete rare form."
+    },
+    {
+      "id": "cart5-277408a5e3950a64fb9c5d6b",
+      "code": "01.0124",
+      "recipe": "causative_of_intensive",
+      "morphology": {
+        "lakara": "VidhiLin",
+        "prayoga": "Karmani",
+        "purusha": "Prathama",
+        "vacana": "Bahu"
+      },
+      "model_answer": "ताताक्येरन्",
+      "gold_slp1": [
+        "tAtakyeran"
+      ],
+      "category": "unlicensed_vrddhi_after_intensive_deletion",
+      "review": "The model introduces root A into the intensive-causal passive.",
+      "sources": [
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/1/1.1.57.htm",
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.4.49.htm"
+      ],
+      "scope_issue": null,
+      "regeneration_passed": true,
+      "gold_changed": false,
+      "evidence_level": "Rule-composition and component-source review; not exhaustive independent attestation of every complete rare form."
+    },
+    {
+      "id": "cart5-2fe87605d96e58760fedd9ff",
+      "code": "06.0164",
+      "recipe": "causative_of_intensive",
+      "morphology": {
+        "lakara": "Lat",
+        "prayoga": "Karmani",
+        "purusha": "Madhyama",
+        "vacana": "Eka"
+      },
+      "model_answer": "शाशाद्यसे",
+      "gold_slp1": [
+        "SASadyase"
+      ],
+      "category": "unlicensed_vrddhi_after_intensive_deletion",
+      "review": "The model introduces root A into the intensive-causal passive.",
+      "sources": [
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/1/1.1.57.htm",
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.4.49.htm"
+      ],
+      "scope_issue": null,
+      "regeneration_passed": true,
+      "gold_changed": false,
+      "evidence_level": "Rule-composition and component-source review; not exhaustive independent attestation of every complete rare form."
+    },
+    {
+      "id": "cart5-cc59fd34bce1aa2422ac300c",
+      "code": "05.0031",
+      "recipe": "causative_of_intensive",
+      "morphology": {
+        "lakara": "Lut",
+        "prayoga": "Kartari",
+        "purusha": "Uttama",
+        "vacana": "Bahu"
+      },
+      "model_answer": "चञ्चामयितास्मः",
+      "gold_slp1": [
+        "caMcamayitAsmaH",
+        "caMcamayitAsmahe",
+        "caYcamayitAsmaH",
+        "caYcamayitAsmahe"
+      ],
+      "category": "vedic_scope_exclusion",
+      "review": "Source-marked Vedic-only Svadi entry, excluded across all shapes by policy07. Its model error is not retained for calibration.",
+      "sources": [
+        "https://jainqq.org/booktext/Kshir_Tarangini/002433"
+      ],
+      "scope_issue": "Source-marked Vedic-only Svadi entry outside current classical scope",
+      "regeneration_passed": null,
+      "gold_changed": false,
+      "evidence_level": "Rule-composition and component-source review; not exhaustive independent attestation of every complete rare form."
+    },
+    {
+      "id": "cart5-a831fcce99d0ba052125c9e4",
+      "code": "07.0013",
+      "recipe": "causative_of_intensive",
+      "morphology": {
+        "lakara": "Lut",
+        "prayoga": "Karmani",
+        "purusha": "Uttama",
+        "vacana": "Eka"
+      },
+      "model_answer": "वेवेदयिताहे",
+      "gold_slp1": [
+        "vevidayitAhe",
+        "veviditAhe"
+      ],
+      "category": "unlicensed_guna_after_intensive_deletion",
+      "review": "Root i stays i in the intensive-causal future passive; both source-audited causal-suffix variants are already accepted.",
+      "sources": [
+        "https://sanskritdocuments.org/~sanskrit/learning_tools/sarvanisutrani/1.1.4.htm",
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.4.49.htm"
+      ],
+      "scope_issue": null,
+      "regeneration_passed": true,
+      "gold_changed": false,
+      "evidence_level": "Rule-composition and component-source review; not exhaustive independent attestation of every complete rare form."
+    },
+    {
+      "id": "cart5-35304c9d7ae3f65a85333b94",
+      "code": "03.0009",
+      "recipe": "causative_of_intensive_luk",
+      "morphology": {
+        "lakara": "Lun",
+        "prayoga": "Kartari",
+        "purusha": "Madhyama",
+        "vacana": "Eka"
+      },
+      "model_answer": "अजजाहपः",
+      "gold_slp1": [
+        "ajAhaH",
+        "ajAhaTAH"
+      ],
+      "category": "quarantined_puk",
+      "review": "Intermediate jAhA ends in A; VP omits puK before causal nic. The model also adds reduplication, but gold uncertainty requires exclusion.",
+      "sources": [
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.3.36.htm"
+      ],
+      "scope_issue": "Unresolved puK augmentation after A-final intensive-luk stem",
+      "regeneration_passed": true,
+      "gold_changed": false,
+      "evidence_level": "Rule-composition and component-source review; not exhaustive independent attestation of every complete rare form."
+    },
+    {
+      "id": "cart5-5efd97d5e2ee33fcbb76ced1",
+      "code": "04.0007",
+      "recipe": "causative_of_intensive",
+      "morphology": {
+        "lakara": "VidhiLin",
+        "prayoga": "Kartari",
+        "purusha": "Madhyama",
+        "vacana": "Dvi"
+      },
+      "model_answer": "चाक्नासयेतम्",
+      "gold_slp1": [
+        "cAknasayetam",
+        "cAknasayeyATAm"
+      ],
+      "category": "unlicensed_vrddhi_after_intensive_deletion",
+      "review": "The model adds penultimate a-vrddhi in a suffix-conditioned intensive-deletion context.",
+      "sources": [
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/1/1.1.57.htm",
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.4.49.htm"
+      ],
+      "scope_issue": null,
+      "regeneration_passed": true,
+      "gold_changed": false,
+      "evidence_level": "Rule-composition and component-source review; not exhaustive independent attestation of every complete rare form."
+    }
+  ],
+  "refusal_reviews": [
+    {
+      "id": "cart5-b5b9aedf81bb07473476a429",
+      "code": "05.0037",
+      "recipe": "causative_of_intensive",
+      "morphology": {
+        "lakara": "Lrn",
+        "prayoga": "Kartari",
+        "purusha": "Uttama",
+        "vacana": "Bahu"
+      },
+      "provider_stop_reason": "refusal",
+      "provider_stop_details": {
+        "type": "refusal",
+        "category": "cyber",
+        "explanation": "This request triggered restrictions on violative cyber content and was blocked under Anthropic's Usage Policy. To learn more, see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback. API integrators: you can reduce refusals for your users by configuring a fallback model — see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+      },
+      "output_text": "",
+      "truncated": false,
+      "scope_issue": "Source-marked Vedic-only Svadi entry outside current classical scope",
+      "linguistic_review": "The visible derivation discussion checks an R-final intensive; the lexical entry is independently Vedic-only and excluded by policy07.",
+      "explicit_recipe_invalidity_objection_found": false,
+      "treatment": "Retain all-request denominator unless an independently established scope predicate excludes this input."
+    },
+    {
+      "id": "cart5-105de551e335f67b0a0b741b",
+      "code": "01.0131",
+      "recipe": "causative_of_intensive",
+      "morphology": {
+        "lakara": "Lan",
+        "prayoga": "Kartari",
+        "purusha": "Prathama",
+        "vacana": "Bahu"
+      },
+      "provider_stop_reason": "refusal",
+      "provider_stop_details": {
+        "type": "refusal",
+        "category": "cyber",
+        "explanation": "This request triggered restrictions on violative cyber content and was blocked under Anthropic's Usage Policy. To learn more, see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback. API integrators: you can reduce refusals for your users by configuring a fallback model — see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+      },
+      "output_text": "",
+      "truncated": false,
+      "scope_issue": null,
+      "linguistic_review": "The visible discussion concerns ya deletion and sthAnivat vowel preservation, not an objection to recipe licensing.",
+      "explicit_recipe_invalidity_objection_found": false,
+      "treatment": "Retain all-request denominator unless an independently established scope predicate excludes this input."
+    },
+    {
+      "id": "cart5-7d4cf110a50f38e3948cde82",
+      "code": "09.0021",
+      "recipe": "causative_of_intensive",
+      "morphology": {
+        "lakara": "Lit",
+        "prayoga": "Kartari",
+        "purusha": "Uttama",
+        "vacana": "Bahu"
+      },
+      "provider_stop_reason": "refusal",
+      "provider_stop_details": {
+        "type": "refusal",
+        "category": "cyber",
+        "explanation": "This request triggered restrictions on violative cyber content and was blocked under Anthropic's Usage Policy. To learn more, see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback. API integrators: you can reduce refusals for your users by configuring a fallback model — see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+      },
+      "output_text": "",
+      "truncated": false,
+      "scope_issue": null,
+      "linguistic_review": "The visible discussion compares long-R ir/Ir ordering. The existing jF/JF component audit applies; no new recipe objection appears.",
+      "explicit_recipe_invalidity_objection_found": false,
+      "treatment": "Retain all-request denominator unless an independently established scope predicate excludes this input."
+    },
+    {
+      "id": "cart5-498a9eca63f22735baf2478d",
+      "code": "06.0077",
+      "recipe": "causative_of_intensive",
+      "morphology": {
+        "lakara": "Lot",
+        "prayoga": "Kartari",
+        "purusha": "Madhyama",
+        "vacana": "Bahu"
+      },
+      "provider_stop_reason": "refusal",
+      "provider_stop_details": {
+        "type": "refusal",
+        "category": "cyber",
+        "explanation": "This request triggered restrictions on violative cyber content and was blocked under Anthropic's Usage Policy. To learn more, see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback. API integrators: you can reduce refusals for your users by configuring a fallback model — see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+      },
+      "output_text": "",
+      "truncated": false,
+      "scope_issue": null,
+      "linguistic_review": "The visible discussion concerns nasal deletion under 6.4.24 and the intensive reduplicative augment, not unsupported composition.",
+      "explicit_recipe_invalidity_objection_found": false,
+      "treatment": "Retain all-request denominator unless an independently established scope predicate excludes this input."
+    },
+    {
+      "id": "cart5-4e3c9963f93da14b9eae4267",
+      "code": "06.0057",
+      "recipe": "causative_of_intensive",
+      "morphology": {
+        "lakara": "VidhiLin",
+        "prayoga": "Kartari",
+        "purusha": "Uttama",
+        "vacana": "Eka"
+      },
+      "provider_stop_reason": "refusal",
+      "provider_stop_details": {
+        "type": "refusal",
+        "category": "cyber",
+        "explanation": "This request triggered restrictions on violative cyber content and was blocked under Anthropic's Usage Policy. To learn more, see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback. API integrators: you can reduce refusals for your users by configuring a fallback model — see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+      },
+      "output_text": "",
+      "truncated": false,
+      "scope_issue": null,
+      "linguistic_review": "The visible discussion considers nasal versus r augment and subsequent guna; the nasal-final 7.4.85 control remains applicable.",
+      "explicit_recipe_invalidity_objection_found": false,
+      "treatment": "Retain all-request denominator unless an independently established scope predicate excludes this input."
+    },
+    {
+      "id": "cart5-1c0aa19f055eaf9076b107bb",
+      "code": "01.0912",
+      "recipe": "causative_of_intensive_luk",
+      "morphology": {
+        "lakara": "Lun",
+        "prayoga": "Kartari",
+        "purusha": "Uttama",
+        "vacana": "Bahu"
+      },
+      "provider_stop_reason": "refusal",
+      "provider_stop_details": {
+        "type": "refusal",
+        "category": "cyber",
+        "explanation": "This request triggered restrictions on violative cyber content and was blocked under Anthropic's Usage Policy. To learn more, see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback. API integrators: you can reduce refusals for your users by configuring a fallback model — see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+      },
+      "output_text": "",
+      "truncated": false,
+      "scope_issue": null,
+      "linguistic_review": "The visible discussion checks mit status and inherited aorist reduplication; it does not reject the recipe.",
+      "explicit_recipe_invalidity_objection_found": false,
+      "treatment": "Retain all-request denominator unless an independently established scope predicate excludes this input."
+    },
+    {
+      "id": "cart5-1acabc12786d5f30b828a769",
+      "code": "04.0032",
+      "recipe": "causative_of_intensive_luk",
+      "morphology": {
+        "lakara": "AshirLin",
+        "prayoga": "Kartari",
+        "purusha": "Prathama",
+        "vacana": "Bahu"
+      },
+      "provider_stop_reason": "refusal",
+      "provider_stop_details": {
+        "type": "refusal",
+        "category": "cyber",
+        "explanation": "This request triggered restrictions on violative cyber content and was blocked under Anthropic's Usage Policy. To learn more, see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback. API integrators: you can reduce refusals for your users by configuring a fallback model — see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+      },
+      "output_text": "",
+      "truncated": false,
+      "scope_issue": null,
+      "linguistic_review": "The discussion asks about mI9 versus mI4. This entry is mIN class4, excluded from the lexical list of 6.1.50; its nic strengthening is ordinary 7.2.115. No new validity issue.",
+      "explicit_recipe_invalidity_objection_found": false,
+      "treatment": "Retain all-request denominator unless an independently established scope predicate excludes this input."
+    },
+    {
+      "id": "cart5-370c5f1bcf3c9b7e2c0d6d67",
+      "code": "01.0477",
+      "recipe": "causative_of_intensive",
+      "morphology": {
+        "lakara": "Lun",
+        "prayoga": "Kartari",
+        "purusha": "Uttama",
+        "vacana": "Dvi"
+      },
+      "provider_stop_reason": "refusal",
+      "provider_stop_details": {
+        "type": "refusal",
+        "category": "cyber",
+        "explanation": "This request triggered restrictions on violative cyber content and was blocked under Anthropic's Usage Policy. To learn more, see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback. API integrators: you can reduce refusals for your users by configuring a fallback model — see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+      },
+      "output_text": "",
+      "truncated": false,
+      "scope_issue": null,
+      "linguistic_review": "The visible discussion checks the nasal stem and sometimes conflates yaN with yaNluk; that is model uncertainty, not source evidence that the requested recipe is invalid.",
+      "explicit_recipe_invalidity_objection_found": false,
+      "treatment": "Retain all-request denominator unless an independently established scope predicate excludes this input."
+    },
+    {
+      "id": "cart5-59e8e67b7f8cdd01bb3e1281",
+      "code": "01.0782",
+      "recipe": "causative_of_intensive",
+      "morphology": {
+        "lakara": "Lut",
+        "prayoga": "Karmani",
+        "purusha": "Uttama",
+        "vacana": "Eka"
+      },
+      "provider_stop_reason": "refusal",
+      "provider_stop_details": {
+        "type": "refusal",
+        "category": "cyber",
+        "explanation": "This request triggered restrictions on violative cyber content and was blocked under Anthropic's Usage Policy. To learn more, see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback. API integrators: you can reduce refusals for your users by configuring a fallback model — see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+      },
+      "output_text": "",
+      "truncated": false,
+      "scope_issue": null,
+      "linguistic_review": "The discussion concerns blocked vrddhi after intensive deletion, with no expressed grammatical invalidity objection.",
+      "explicit_recipe_invalidity_objection_found": false,
+      "treatment": "Retain all-request denominator unless an independently established scope predicate excludes this input."
+    },
+    {
+      "id": "cart5-58abfe9280794086f430d79e",
+      "code": "01.0911",
+      "recipe": "causative_of_intensive",
+      "morphology": {
+        "lakara": "Lun",
+        "prayoga": "Kartari",
+        "purusha": "Madhyama",
+        "vacana": "Dvi"
+      },
+      "provider_stop_reason": "refusal",
+      "provider_stop_details": {
+        "type": "refusal",
+        "category": "cyber",
+        "explanation": "This request triggered restrictions on violative cyber content and was blocked under Anthropic's Usage Policy. To learn more, see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback. API integrators: you can reduce refusals for your users by configuring a fallback model — see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+      },
+      "output_text": "",
+      "truncated": false,
+      "scope_issue": null,
+      "linguistic_review": "The visible discussion contrasts yaN/yaNluk strengthening and sthAnivat, with no expressed licensing objection.",
+      "explicit_recipe_invalidity_objection_found": false,
+      "treatment": "Retain all-request denominator unless an independently established scope predicate excludes this input."
+    }
+  ],
+  "groups": {
+    "recipe::causative_of_intensive": {
+      "requests": 117,
+      "completed": 110,
+      "correct": 86,
+      "statuses": {
+        "completed": 110,
+        "refused": 7
+      },
+      "completed_accuracy": 0.7818181818181819,
+      "all_request_accuracy": 0.7350427350427351,
+      "completed_wilson_95": [
+        0.6958466164533769,
+        0.8487704381967488
+      ],
+      "families": 117
+    },
+    "lakara::VidhiLin": {
+      "requests": 14,
+      "completed": 13,
+      "correct": 9,
+      "statuses": {
+        "completed": 13,
+        "refused": 1
+      },
+      "completed_accuracy": 0.6923076923076923,
+      "all_request_accuracy": 0.6428571428571429,
+      "completed_wilson_95": [
+        0.42369343180549035,
+        0.8731929634428948
+      ],
+      "families": 14
+    },
+    "voice::Karmani": {
+      "requests": 40,
+      "completed": 39,
+      "correct": 28,
+      "statuses": {
+        "completed": 39,
+        "refused": 1
+      },
+      "completed_accuracy": 0.717948717948718,
+      "all_request_accuracy": 0.7,
+      "completed_wilson_95": [
+        0.5622468051697918,
+        0.8345650791115233
+      ],
+      "families": 40
+    },
+    "gana::Bhvadi": {
+      "requests": 107,
+      "completed": 102,
+      "correct": 85,
+      "statuses": {
+        "completed": 102,
+        "refused": 5
+      },
+      "completed_accuracy": 0.8333333333333334,
+      "all_request_accuracy": 0.794392523364486,
+      "completed_wilson_95": [
+        0.7492125241562049,
+        0.8932578344128197
+      ],
+      "families": 107
+    },
+    "recipe_aorist::causative_of_intensive|other": {
+      "requests": 87,
+      "completed": 82,
+      "correct": 66,
+      "statuses": {
+        "completed": 82,
+        "refused": 5
+      },
+      "completed_accuracy": 0.8048780487804879,
+      "all_request_accuracy": 0.7586206896551724,
+      "completed_wilson_95": [
+        0.7062981066280967,
+        0.8761710252681838
+      ],
+      "families": 87
+    },
+    "recipe_voice::causative_of_intensive|Karmani": {
+      "requests": 29,
+      "completed": 28,
+      "correct": 17,
+      "statuses": {
+        "completed": 28,
+        "refused": 1
+      },
+      "completed_accuracy": 0.6071428571428571,
+      "all_request_accuracy": 0.5862068965517241,
+      "completed_wilson_95": [
+        0.42409044296597176,
+        0.764343134584204
+      ],
+      "families": 29
+    },
+    "recipe_ya_deletion::causative_of_intensive|True": {
+      "requests": 101,
+      "completed": 94,
+      "correct": 71,
+      "statuses": {
+        "completed": 94,
+        "refused": 7
+      },
+      "completed_accuracy": 0.7553191489361702,
+      "all_request_accuracy": 0.7029702970297029,
+      "completed_wilson_95": [
+        0.6595241890282197,
+        0.8310653890356723
+      ],
+      "families": 101
+    },
+    "recipe::causative_of_intensive_luk": {
+      "requests": 45,
+      "completed": 43,
+      "correct": 37,
+      "statuses": {
+        "completed": 43,
+        "refused": 2
+      },
+      "completed_accuracy": 0.8604651162790697,
+      "all_request_accuracy": 0.8222222222222222,
+      "completed_wilson_95": [
+        0.7273641203261714,
+        0.9344427657203511
+      ],
+      "families": 45
+    },
+    "lakara::Lit": {
+      "requests": 15,
+      "completed": 14,
+      "correct": 13,
+      "statuses": {
+        "completed": 14,
+        "refused": 1
+      },
+      "completed_accuracy": 0.9285714285714286,
+      "all_request_accuracy": 0.8666666666666667,
+      "completed_wilson_95": [
+        0.6853129557584889,
+        0.9872777847521093
+      ],
+      "families": 15
+    },
+    "voice::Kartari": {
+      "requests": 133,
+      "completed": 125,
+      "correct": 106,
+      "statuses": {
+        "completed": 125,
+        "refused": 8
+      },
+      "completed_accuracy": 0.848,
+      "all_request_accuracy": 0.7969924812030075,
+      "completed_wilson_95": [
+        0.7747693201833344,
+        0.9004791657956704
+      ],
+      "families": 133
+    },
+    "gana::Divadi": {
+      "requests": 20,
+      "completed": 19,
+      "correct": 13,
+      "statuses": {
+        "completed": 19,
+        "refused": 1
+      },
+      "completed_accuracy": 0.6842105263157895,
+      "all_request_accuracy": 0.65,
+      "completed_wilson_95": [
+        0.46010407675327475,
+        0.8463562091220773
+      ],
+      "families": 20
+    },
+    "recipe_aorist::causative_of_intensive_luk|other": {
+      "requests": 34,
+      "completed": 33,
+      "correct": 31,
+      "statuses": {
+        "completed": 33,
+        "refused": 1
+      },
+      "completed_accuracy": 0.9393939393939394,
+      "all_request_accuracy": 0.9117647058823529,
+      "completed_wilson_95": [
+        0.8039375519135219,
+        0.9832191169128082
+      ],
+      "families": 34
+    },
+    "recipe_voice::causative_of_intensive_luk|Kartari": {
+      "requests": 34,
+      "completed": 32,
+      "correct": 26,
+      "statuses": {
+        "completed": 32,
+        "refused": 2
+      },
+      "completed_accuracy": 0.8125,
+      "all_request_accuracy": 0.7647058823529411,
+      "completed_wilson_95": [
+        0.6469084479862404,
+        0.9111045531043405
+      ],
+      "families": 34
+    },
+    "recipe_ya_deletion::causative_of_intensive_luk|False": {
+      "requests": 45,
+      "completed": 43,
+      "correct": 37,
+      "statuses": {
+        "completed": 43,
+        "refused": 2
+      },
+      "completed_accuracy": 0.8604651162790697,
+      "all_request_accuracy": 0.8222222222222222,
+      "completed_wilson_95": [
+        0.7273641203261714,
+        0.9344427657203511
+      ],
+      "families": 45
+    },
+    "lakara::Lrt": {
+      "requests": 15,
+      "completed": 15,
+      "correct": 13,
+      "statuses": {
+        "completed": 15
+      },
+      "completed_accuracy": 0.8666666666666667,
+      "all_request_accuracy": 0.8666666666666667,
+      "completed_wilson_95": [
+        0.6211801716767764,
+        0.9626387408969346
+      ],
+      "families": 15
+    },
+    "recipe::desiderative": {
+      "requests": 11,
+      "completed": 11,
+      "correct": 11,
+      "statuses": {
+        "completed": 11
+      },
+      "completed_accuracy": 1.0,
+      "all_request_accuracy": 1.0,
+      "completed_wilson_95": [
+        0.7411670330319684,
+        1.0
+      ],
+      "families": 11
+    },
+    "gana::Curadi": {
+      "requests": 6,
+      "completed": 6,
+      "correct": 6,
+      "statuses": {
+        "completed": 6
+      },
+      "completed_accuracy": 1.0,
+      "all_request_accuracy": 1.0,
+      "completed_wilson_95": [
+        0.6096657120978346,
+        1.0
+      ],
+      "families": 6
+    },
+    "recipe_aorist::desiderative|other": {
+      "requests": 8,
+      "completed": 8,
+      "correct": 8,
+      "statuses": {
+        "completed": 8
+      },
+      "completed_accuracy": 1.0,
+      "all_request_accuracy": 1.0,
+      "completed_wilson_95": [
+        0.6755924351161198,
+        1.0
+      ],
+      "families": 8
+    },
+    "recipe_voice::desiderative|Kartari": {
+      "requests": 11,
+      "completed": 11,
+      "correct": 11,
+      "statuses": {
+        "completed": 11
+      },
+      "completed_accuracy": 1.0,
+      "all_request_accuracy": 1.0,
+      "completed_wilson_95": [
+        0.7411670330319684,
+        1.0
+      ],
+      "families": 11
+    },
+    "recipe_ya_deletion::desiderative|False": {
+      "requests": 11,
+      "completed": 11,
+      "correct": 11,
+      "statuses": {
+        "completed": 11
+      },
+      "completed_accuracy": 1.0,
+      "all_request_accuracy": 1.0,
+      "completed_wilson_95": [
+        0.7411670330319684,
+        1.0
+      ],
+      "families": 11
+    },
+    "lakara::Lrn": {
+      "requests": 13,
+      "completed": 13,
+      "correct": 13,
+      "statuses": {
+        "completed": 13
+      },
+      "completed_accuracy": 1.0,
+      "all_request_accuracy": 1.0,
+      "completed_wilson_95": [
+        0.7719046276458016,
+        0.9999999999999999
+      ],
+      "families": 13
+    },
+    "gana::Tudadi": {
+      "requests": 18,
+      "completed": 16,
+      "correct": 12,
+      "statuses": {
+        "completed": 16,
+        "refused": 2
+      },
+      "completed_accuracy": 0.75,
+      "all_request_accuracy": 0.6666666666666666,
+      "completed_wilson_95": [
+        0.5050168346449122,
+        0.8981793250878696
+      ],
+      "families": 18
+    },
+    "recipe_voice::causative_of_intensive|Kartari": {
+      "requests": 88,
+      "completed": 82,
+      "correct": 69,
+      "statuses": {
+        "completed": 82,
+        "refused": 6
+      },
+      "completed_accuracy": 0.8414634146341463,
+      "all_request_accuracy": 0.7840909090909091,
+      "completed_wilson_95": [
+        0.7474213307168286,
+        0.9049440970070054
+      ],
+      "families": 88
+    },
+    "recipe_ya_deletion::causative_of_intensive|False": {
+      "requests": 16,
+      "completed": 16,
+      "correct": 15,
+      "statuses": {
+        "completed": 16
+      },
+      "completed_accuracy": 0.9375,
+      "all_request_accuracy": 0.9375,
+      "completed_wilson_95": [
+        0.7167126242970107,
+        0.9888806552353576
+      ],
+      "families": 16
+    },
+    "lakara::Lun": {
+      "requests": 44,
+      "completed": 41,
+      "correct": 29,
+      "statuses": {
+        "completed": 41,
+        "refused": 3
+      },
+      "completed_accuracy": 0.7073170731707317,
+      "all_request_accuracy": 0.6590909090909091,
+      "completed_wilson_95": [
+        0.5552053227700284,
+        0.8239081237388657
+      ],
+      "families": 44
+    },
+    "recipe_aorist::causative_of_intensive_luk|aorist": {
+      "requests": 11,
+      "completed": 10,
+      "correct": 6,
+      "statuses": {
+        "completed": 10,
+        "refused": 1
+      },
+      "completed_accuracy": 0.6,
+      "all_request_accuracy": 0.5454545454545454,
+      "completed_wilson_95": [
+        0.31267376973365824,
+        0.8318196702937638
+      ],
+      "families": 11
+    },
+    "lakara::AshirLin": {
+      "requests": 15,
+      "completed": 14,
+      "correct": 12,
+      "statuses": {
+        "completed": 14,
+        "refused": 1
+      },
+      "completed_accuracy": 0.8571428571428571,
+      "all_request_accuracy": 0.8,
+      "completed_wilson_95": [
+        0.6005862050302965,
+        0.9599060787285351
+      ],
+      "families": 15
+    },
+    "recipe_aorist::causative_of_intensive|aorist": {
+      "requests": 30,
+      "completed": 28,
+      "correct": 20,
+      "statuses": {
+        "completed": 28,
+        "refused": 2
+      },
+      "completed_accuracy": 0.7142857142857143,
+      "all_request_accuracy": 0.6666666666666666,
+      "completed_wilson_95": [
+        0.5294071156670428,
+        0.8474600394333092
+      ],
+      "families": 30
+    },
+    "lakara::Lot": {
+      "requests": 13,
+      "completed": 12,
+      "correct": 11,
+      "statuses": {
+        "completed": 12,
+        "refused": 1
+      },
+      "completed_accuracy": 0.9166666666666666,
+      "all_request_accuracy": 0.8461538461538461,
+      "completed_wilson_95": [
+        0.646120088858883,
+        0.9851349055950829
+      ],
+      "families": 13
+    },
+    "gana::Kryadi": {
+      "requests": 8,
+      "completed": 7,
+      "correct": 7,
+      "statuses": {
+        "completed": 7,
+        "refused": 1
+      },
+      "completed_accuracy": 1.0,
+      "all_request_accuracy": 0.875,
+      "completed_wilson_95": [
+        0.6456695649333126,
+        1.0
+      ],
+      "families": 8
+    },
+    "lakara::Lat": {
+      "requests": 15,
+      "completed": 15,
+      "correct": 11,
+      "statuses": {
+        "completed": 15
+      },
+      "completed_accuracy": 0.7333333333333333,
+      "all_request_accuracy": 0.7333333333333333,
+      "completed_wilson_95": [
+        0.4804956594401943,
+        0.8910254667430761
+      ],
+      "families": 15
+    },
+    "lakara::Lan": {
+      "requests": 15,
+      "completed": 14,
+      "correct": 12,
+      "statuses": {
+        "completed": 14,
+        "refused": 1
+      },
+      "completed_accuracy": 0.8571428571428571,
+      "all_request_accuracy": 0.8,
+      "completed_wilson_95": [
+        0.6005862050302965,
+        0.9599060787285351
+      ],
+      "families": 15
+    },
+    "gana::Adadi": {
+      "requests": 7,
+      "completed": 7,
+      "correct": 6,
+      "statuses": {
+        "completed": 7
+      },
+      "completed_accuracy": 0.8571428571428571,
+      "all_request_accuracy": 0.8571428571428571,
+      "completed_wilson_95": [
+        0.4868721707256811,
+        0.9743203756552565
+      ],
+      "families": 7
+    },
+    "lakara::Lut": {
+      "requests": 14,
+      "completed": 13,
+      "correct": 11,
+      "statuses": {
+        "completed": 13,
+        "refused": 1
+      },
+      "completed_accuracy": 0.8461538461538461,
+      "all_request_accuracy": 0.7857142857142857,
+      "completed_wilson_95": [
+        0.5776536898051745,
+        0.9567418216419186
+      ],
+      "families": 14
+    },
+    "recipe_voice::causative_of_intensive_luk|Karmani": {
+      "requests": 11,
+      "completed": 11,
+      "correct": 11,
+      "statuses": {
+        "completed": 11
+      },
+      "completed_accuracy": 1.0,
+      "all_request_accuracy": 1.0,
+      "completed_wilson_95": [
+        0.7411670330319684,
+        1.0
+      ],
+      "families": 11
+    },
+    "gana::Tanadi": {
+      "requests": 1,
+      "completed": 1,
+      "correct": 0,
+      "statuses": {
+        "completed": 1
+      },
+      "completed_accuracy": 0.0,
+      "all_request_accuracy": 0.0,
+      "completed_wilson_95": [
+        0.0,
+        0.7934506856227626
+      ],
+      "families": 1
+    },
+    "recipe_aorist::desiderative|aorist": {
+      "requests": 3,
+      "completed": 3,
+      "correct": 3,
+      "statuses": {
+        "completed": 3
+      },
+      "completed_accuracy": 1.0,
+      "all_request_accuracy": 1.0,
+      "completed_wilson_95": [
+        0.4385029682449546,
+        1.0
+      ],
+      "families": 3
+    },
+    "gana::Svadi": {
+      "requests": 2,
+      "completed": 2,
+      "correct": 2,
+      "statuses": {
+        "completed": 2
+      },
+      "completed_accuracy": 1.0,
+      "all_request_accuracy": 1.0,
+      "completed_wilson_95": [
+        0.34238022750665303,
+        1.0
+      ],
+      "families": 2
+    },
+    "gana::Rudhadi": {
+      "requests": 3,
+      "completed": 3,
+      "correct": 2,
+      "statuses": {
+        "completed": 3
+      },
+      "completed_accuracy": 0.6666666666666666,
+      "all_request_accuracy": 0.6666666666666666,
+      "completed_wilson_95": [
+        0.2076596008020477,
+        0.9385080552796037
+      ],
+      "families": 3
+    },
+    "gana::Juhotyadi": {
+      "requests": 1,
+      "completed": 1,
+      "correct": 1,
+      "statuses": {
+        "completed": 1
+      },
+      "completed_accuracy": 1.0,
+      "all_request_accuracy": 1.0,
+      "completed_wilson_95": [
+        0.20654931437723745,
+        1.0
+      ],
+      "families": 1
+    }
+  },
+  "remaining_wrong_categories": {
+    "extra_aorist_reduplication": 7,
+    "missing_lexical_s_restoration": 1,
+    "vowel_final_intensive_ya_retention": 1,
+    "lost_root_aspiration": 1,
+    "unlicensed_guna_after_intensive_deletion": 5,
+    "extra_reduplication_and_missing_shortening": 1,
+    "nasal_reduplicative_augment": 1,
+    "lexical_s_exception": 1,
+    "unlicensed_vrddhi_after_intensive_deletion": 7,
+    "perfect_auxiliary_inflection": 1,
+    "missing_aorist_shortening": 2,
+    "extra_reduplication_and_wrong_root_vowel": 1,
+    "r_augment_and_lexical_s": 1
+  },
+  "limitations": [
+    "Completion-conditioned accuracy is not all-request accuracy. Refusals cannot be discarded to meet the target.",
+    "All provider refusal metadata say cyber; the visible derivation discussions do not expressly reject the constructions. Wording causality needs the paired diagnostic.",
+    "Development reweighting is adaptive and requires fresh confirmation. No final held-out answers were read.",
+    "Semantic lexical-san scope review is separately recorded; use the current shared policy and preserve earlier raw scores."
+  ],
+  "raw_tasks_or_scores_changed": false,
+  "benchmark_ready": false
+}

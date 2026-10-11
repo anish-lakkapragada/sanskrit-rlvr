@@ -1,0 +1,8 @@
+[package]
+name = "vp-samasa-oracle"
+version = "0.1.0"
+edition = "2021"
+[dependencies]
+vidyut-prakriya = { git = "https://github.com/ambuda-org/vidyut", rev = "8da2f90bee3ce1c07505fa432fc3729e3f7e02ea" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"

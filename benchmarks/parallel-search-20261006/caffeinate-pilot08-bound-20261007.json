@@ -1,0 +1,17 @@
+{
+  "started_at": "2026-10-07T14:06:22.187703+00:00",
+  "pid": 48839,
+  "command": [
+    "/usr/bin/caffeinate",
+    "-i",
+    "-w",
+    "32400",
+    "-t",
+    "86400"
+  ],
+  "watched_pid": 32400,
+  "purpose": "Prevent idle sleep through the fixed eight-stage calibration and its unpaid size analysis; release assertion when watcher exits, or at24hours.",
+  "replaced_pid": 664,
+  "display_sleep_unchanged": true,
+  "guarantees_lid_close_or_forced_sleep_execution": false
+}

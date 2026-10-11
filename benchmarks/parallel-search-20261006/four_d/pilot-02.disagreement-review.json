@@ -1,0 +1,105 @@
+{
+  "created_at": "2026-10-07T06:32:05.840920+00:00",
+  "issue": "Pilot02 sole exact-match miss: ghṛ class3 optative first dual",
+  "task_id": "cart4-9d271a3022ec82dbb8e5e911",
+  "raw_vp_gold": [
+    "जघृयाव"
+  ],
+  "model_answer": "जिघृयाव",
+  "classification": "Classical-scope violation; do not count as demonstrated classical error",
+  "evidence": [
+    {
+      "url": "https://sa.wikisource.org/wiki/पृष्ठम्:सिद्धान्तकौमुदी_(बालमनोरमा_उत्तर-२).djvu/२६",
+      "locator": "printed page228, section beginning अथ आगणान्तात्परस्मैपदिनश्छान्दसाश्च",
+      "short_quote": "अथ आगणान्तात्परस्मैपदिनश्छान्दसाश्च",
+      "finding": "The subgroup beginning ghṛ and continuing to the end of Juhotyadi is marked Vedic. The commentary explains i-reduplication as Vedic; ṛ is explicitly also allowed in classical use."
+    },
+    {
+      "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.4.66.htm",
+      "finding": "Ordinary ṛ reduplication changes to a under7.4.66; this accounts for the VP a-form but does not license the lexical input in classical scope."
+    },
+    {
+      "url": "https://sa.wikisource.org/wiki/अष्टाध्यायी-धातुपाठः",
+      "locator": "Juhotyadi छान्दसाः परस्मैपदिनः subgroup",
+      "finding": "Independent primary Dhatupatha edition lists ghṛ/hṛ/sṛ/bhas/ki/kit/tur/dhiṣ/dhan/jan/gā as Vedic."
+    }
+  ],
+  "prospective_quarantine": {
+    "codes": [
+      "03.0015",
+      "03.0016",
+      "03.0018",
+      "03.0019",
+      "03.0020",
+      "03.0021",
+      "03.0022",
+      "03.0023",
+      "03.0024",
+      "03.0025",
+      "03.0026"
+    ],
+    "exception_code": "03.0017",
+    "exception_reason": "Primary commentary explicitly permits ṛ also in bhāṣā.",
+    "scope": "All lakaras, prayogas, derivation recipes and scores for these dictionary entries. Future cohorts only; originals immutable."
+  },
+  "policy_status": "Worker recommendation to coordinator; shared helper/policy not mutated.",
+  "limits": [
+    "The exact source explicitly allows a classical exception for ṛ. No other exception is established here.",
+    "This is not a complete audit of every dictionary entry for Vedic-only status. Other explicit Vedic groups need the same prospective treatment.",
+    "Samsaadhanii lists both a/i forms, but combining classical and Vedic variants cannot validate a classical-only question."
+  ],
+  "policy_impact_on_development_panels": {
+    "01": {
+      "input_sha256": "ea97a9928f7315a8230a726fd0aed755c063da54cd242a39d6dcfdad64742dca",
+      "excluded": [
+        {
+          "task_id": "cart4-75107a129db7ba5b6a9461f6",
+          "code": "03.0020",
+          "raw_is_correct": true,
+          "raw_status": "completed"
+        },
+        {
+          "task_id": "cart4-0eb789323f8cef3790d58c45",
+          "code": "03.0015",
+          "raw_is_correct": true,
+          "raw_status": "completed"
+        },
+        {
+          "task_id": "cart4-f3a3675f3e75354b35f8e0ef",
+          "code": "03.0023",
+          "raw_is_correct": true,
+          "raw_status": "completed"
+        },
+        {
+          "task_id": "cart4-97a84f0d6e568d30914e2853",
+          "code": "03.0024",
+          "raw_is_correct": true,
+          "raw_status": "completed"
+        },
+        {
+          "task_id": "cart4-7e40c875bab9c35c25d0c12c",
+          "code": "03.0026",
+          "raw_is_correct": true,
+          "raw_status": "completed"
+        }
+      ]
+    },
+    "02": {
+      "input_sha256": "11c8420f9edc9e25e53f5a91110dbfb536e6b55c6e502f488c5404199f4d320f",
+      "excluded": [
+        {
+          "task_id": "cart4-2991d493c31cdceacba2e5ea",
+          "code": "03.0020",
+          "raw_is_correct": true,
+          "raw_status": "completed"
+        },
+        {
+          "task_id": "cart4-9d271a3022ec82dbb8e5e911",
+          "code": "03.0015",
+          "raw_is_correct": false,
+          "raw_status": "completed"
+        }
+      ]
+    }
+  }
+}

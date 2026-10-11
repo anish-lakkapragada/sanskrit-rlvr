@@ -1,0 +1,39 @@
+{
+  "id": "opus-fast-control-04",
+  "provider": "Anthropic",
+  "phase": "confirm_64k",
+  "n": 40,
+  "tasks_digest": "00c2d70479928cb2356215da443ae464c1e982c67adbdc3132f2dcc643595273",
+  "requests_digest": "67678af63847130f51bc6757ab7a6d379e7108b99ac19d021a13a2bce8d42242",
+  "created_at": "2026-10-07T22:08:52.039762+00:00",
+  "status": "ended",
+  "batch_id": "direct-opus-fast-control-04",
+  "attempted_at": "2026-10-07T22:19:59.267595+00:00",
+  "reservation_micro": 52668800,
+  "input_file_id": null,
+  "transport": "direct",
+  "spending_pool_id": "simple-search-direct-20261007",
+  "collected_at": "2026-10-07T22:20:39.842408+00:00",
+  "usage": {
+    "input_tokens": 12188,
+    "output_tokens": 15256,
+    "cache_read": 0,
+    "cache_write": 0
+  },
+  "summary": {
+    "task_count": 40,
+    "correct": 38,
+    "incorrect_or_no_answer": 2,
+    "unscored": 0,
+    "pass_at_1_all_tasks": 0.95,
+    "truncated": 0,
+    "statuses": {
+      "completed": 40
+    }
+  },
+  "completed_answers": 40,
+  "completed_correct": 38,
+  "actual_cost_upper_micro": 353872,
+  "token_policy_violations": [],
+  "settled": true
+}

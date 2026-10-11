@@ -165,20 +165,29 @@ def make_val_loss_fn(trainer, tokenizer, cfg: RunConfig):
 
 
 def make_eval_suite(cfg: RunConfig, generate_fn, writer, run_dir: Path,
-                    val_loss_fn=None):
-    """Returns eval_suite(step): runs Pass@K + Samayik chrF (+ teacher-forced
-    val losses when configured), writes runs/<run>/evals/step-<N>/ and
-    TensorBoard scalars."""
+                    val_loss_fn=None, write: bool = True):
+    """Returns eval_suite(step) -> metrics dict: runs Pass@K + Samayik chrF
+    (+ FLORES-200 chrF when configured, + teacher-forced val losses when
+    configured), writes runs/<run>/evals/step-<N>/ and TensorBoard scalars.
+
+    ``write=False`` runs the identical computation but skips all file/
+    TensorBoard output — used by non-main DDP ranks, which must execute the
+    same code path (the generate_fn shards generation across ranks with
+    collectives) and need the returned metrics for collective decisions
+    (e.g. the SDPO step-0 abort gate)."""
     vp_tasks = load_vp_tasks(cfg.eval_dataset)
     samayik = load_samayik_pairs(cfg.samayik_eval.path)
+    flores = (load_samayik_pairs(cfg.flores_eval.path)
+              if cfg.flores_eval.path else None)
     # Unwrapped: eval rewards stay out of training history. `eval_reward` lets a
     # shaped training reward (vp_chrf) still be PROBED with vp_exact, so the
     # checkpoint-selection curve matches the metric that gets reported.
     reward_fn = rewards.get(cfg.eval_reward or cfg.reward)
 
-    def eval_suite(step: int) -> None:
+    def eval_suite(step: int) -> dict:
         out = run_dir / "evals" / f"step-{step:07d}"
-        out.mkdir(parents=True, exist_ok=True)
+        if write:
+            out.mkdir(parents=True, exist_ok=True)
         # Seed must NOT depend on step: it selects WHICH prompts are evaluated,
         # so varying it re-rolls the subset every checkpoint and makes
         # checkpoints incomparable. At 1-2% pass rates the subset dominates the
@@ -205,37 +214,63 @@ def make_eval_suite(cfg: RunConfig, generate_fn, writer, run_dir: Path,
             max_new_tokens=cfg.samayik_eval.max_new_tokens,
             rng=rng,
         )
+        fl_metrics, fl_samples = (evals.eval_samayik(
+            generate_fn, flores,
+            num_samples=cfg.flores_eval.num_samples,
+            temperature=cfg.flores_eval.temperature,
+            max_new_tokens=cfg.flores_eval.max_new_tokens,
+            rng=rng,
+        ) if flores is not None else ({}, []))
 
-        (out / "pass_at_k.json").write_text(
-            json.dumps(pk_metrics, ensure_ascii=False, indent=1))
-        (out / "samayik.json").write_text(
-            json.dumps(sm_metrics, ensure_ascii=False, indent=1))
-        with (out / "samples.jsonl").open("w") as f:
-            for s in pk_samples:
-                f.write(json.dumps({"kind": "vp", **s}, ensure_ascii=False) + "\n")
-            for s in sm_samples:
-                f.write(json.dumps({"kind": "samayik", **s}, ensure_ascii=False) + "\n")
-
-        for k in cfg.pass_at_k.ks:
-            writer.add_scalar(f"eval/pass_at_{k}", pk_metrics[f"pass_at_{k}"], step)
-        writer.add_scalar("eval/answer_tag_rate", pk_metrics["answer_tag_rate"], step)
-        writer.add_scalar("eval/samayik_chrf", sm_metrics["chrf"], step)
-        writer.add_scalar("eval/samayik_chrfpp", sm_metrics["chrf_pp"], step)
-        writer.add_scalar("eval/translation_tag_rate",
-                          sm_metrics["translation_tag_rate"], step)
-        snap = pk_metrics["reward_snapshot"]
-        if snap["mean"] is not None:
-            writer.add_scalar("eval/reward_mean", snap["mean"], step)
         vl = val_loss_fn(step) if val_loss_fn is not None else {}
-        if vl:
-            (out / "val_loss.json").write_text(
-                json.dumps(vl, ensure_ascii=False, indent=1))
-            for name, v in vl.items():
-                writer.add_scalar(f"eval/val_{name}_loss", v, step)
-        writer.flush()
-        print(f"[eval step {step}] pass@k={ {k: round(pk_metrics[f'pass_at_{k}'], 4) for k in cfg.pass_at_k.ks} } "
-              f"chrf={sm_metrics['chrf']:.2f} chrf++={sm_metrics['chrf_pp']:.2f}"
-              + ("".join(f" val_{n}={v:.4f}" for n, v in vl.items())))
+        if write:
+            (out / "pass_at_k.json").write_text(
+                json.dumps(pk_metrics, ensure_ascii=False, indent=1))
+            (out / "samayik.json").write_text(
+                json.dumps(sm_metrics, ensure_ascii=False, indent=1))
+            if fl_metrics:
+                (out / "flores.json").write_text(
+                    json.dumps(fl_metrics, ensure_ascii=False, indent=1))
+            with (out / "samples.jsonl").open("w") as f:
+                for s in pk_samples:
+                    f.write(json.dumps({"kind": "vp", **s}, ensure_ascii=False) + "\n")
+                for s in sm_samples:
+                    f.write(json.dumps({"kind": "samayik", **s}, ensure_ascii=False) + "\n")
+                for s in fl_samples:
+                    f.write(json.dumps({"kind": "flores", **s}, ensure_ascii=False) + "\n")
+
+            for k in cfg.pass_at_k.ks:
+                writer.add_scalar(f"eval/pass_at_{k}", pk_metrics[f"pass_at_{k}"], step)
+            writer.add_scalar("eval/answer_tag_rate", pk_metrics["answer_tag_rate"], step)
+            writer.add_scalar("eval/samayik_chrf", sm_metrics["chrf"], step)
+            writer.add_scalar("eval/samayik_chrfpp", sm_metrics["chrf_pp"], step)
+            writer.add_scalar("eval/translation_tag_rate",
+                              sm_metrics["translation_tag_rate"], step)
+            if fl_metrics:
+                writer.add_scalar("eval/flores_chrf", fl_metrics["chrf"], step)
+                writer.add_scalar("eval/flores_chrfpp", fl_metrics["chrf_pp"], step)
+                writer.add_scalar("eval/flores_translation_tag_rate",
+                                  fl_metrics["translation_tag_rate"], step)
+            snap = pk_metrics["reward_snapshot"]
+            if snap["mean"] is not None:
+                writer.add_scalar("eval/reward_mean", snap["mean"], step)
+            if vl:
+                (out / "val_loss.json").write_text(
+                    json.dumps(vl, ensure_ascii=False, indent=1))
+                for name, v in vl.items():
+                    writer.add_scalar(f"eval/val_{name}_loss", v, step)
+            writer.flush()
+            print(f"[eval step {step}] pass@k={ {k: round(pk_metrics[f'pass_at_{k}'], 4) for k in cfg.pass_at_k.ks} } "
+                  f"chrf={sm_metrics['chrf']:.2f} chrf++={sm_metrics['chrf_pp']:.2f}"
+                  + (f" flores={fl_metrics['chrf']:.2f}/{fl_metrics['chrf_pp']:.2f}" if fl_metrics else "")
+                  + ("".join(f" val_{n}={v:.4f}" for n, v in vl.items())))
+
+        return {
+            **{f"pass_at_{k}": pk_metrics[f"pass_at_{k}"] for k in cfg.pass_at_k.ks},
+            "samayik_chrf": sm_metrics["chrf"], "samayik_chrfpp": sm_metrics["chrf_pp"],
+            **({"flores_chrf": fl_metrics["chrf"],
+                "flores_chrfpp": fl_metrics["chrf_pp"]} if fl_metrics else {}),
+        }
 
     return eval_suite
 

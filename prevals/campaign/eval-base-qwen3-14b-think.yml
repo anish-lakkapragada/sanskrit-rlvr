@@ -1,0 +1,43 @@
+# Scale probe: BASE Qwen3-14B on the VP task, native thinking ON.
+# Same 669x16 protocol; enable_thinking=true lets Qwen3's native <think>
+# channel spend part of the 4096-token budget on reasoning before the
+# prompt-demanded <thinking>/<answer> format. Compare against the -nothink
+# twin to separate scale effects from native-reasoning effects.
+# NOTE: 4 samples/prompt (not 16): thinking-mode completions are ~5x longer,
+# so 669x16 would run 11-17h; 669x4 keeps full task coverage at ~3h and
+# pass@1/2/4 remain protocol-comparable.
+
+suite_name: dm-base-qwen3-14b-think
+
+task:
+  reward: vp_exact
+  dataset: data/data-mixture/eval/vp-eval.json
+  prompt: v1/vp_task_eval
+
+seed: 42
+
+pass_at_k:
+  ks: [1, 2, 4]
+  num_prompts: 669
+  samples_per_prompt: 4
+  pass_threshold: 0.85
+  temperature: 0.9
+  top_p: 1.0
+
+defaults:
+  max_new_tokens: 4096
+  enable_thinking: true
+  dtype: bfloat16
+  tensor_parallel_size: 1
+  gpu_memory_utilization: 0.90
+  max_model_len: 8192
+  trust_remote_code: false
+  chat: true
+
+models:
+  - name: Qwen/Qwen3-14B
+
+report:
+  output_dir: prevals/outputs/data-mixture
+  save_samples: true
+  print_table: true

@@ -1,0 +1,806 @@
+{
+  "created_at": "2026-10-07T05:40:48.072680+00:00",
+  "run_id": "pilot-preparation-02",
+  "panel": "pilot-01-audited-pair",
+  "n": 119,
+  "root_families": 119,
+  "source_tasks": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/parallel-search-20261006/five_d/pilot-01.tasks.json",
+  "source_tasks_sha256": "46d5681bbff3a8c248a76f094a6acda6cc4795679b14da91a7bd93de1cc168fe",
+  "task_file": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/parallel-search-20261006/five_d/pilot-01.audited-pair.tasks.json",
+  "task_file_sha256": "9d76cebce39099f781fe4673788933fd60f506c0145d1218b7540f7092e39302",
+  "script_sha256": "c807acab47dd2efc2f16ddfb99bd6676866a5e8e24fffc54a5d669f3af4a8432",
+  "shared_adapter_sha256": "4078365785cfcf4df8d1ea463acecf658709169db2390a3ed103ef6d7c420ad4",
+  "selection_policy": "Apply the adopted construction exclusions to every original task without consulting its correctness; retained task records are byte-for-byte-equivalent JSON objects.",
+  "id_reason_map": [
+    {
+      "id": "cart5-4fa957eb92a30f4effebd18f",
+      "dhatu_code": "07.0023",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-82962711a8815cf651d44cdc",
+      "dhatu_code": "09.0014",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-83c98a42ce6ca13a569055bb",
+      "dhatu_code": "01.0241",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-67dc3d7a096bab8a741aab2f",
+      "dhatu_code": "09.0027",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-610584402cba4a4407bdcff0",
+      "dhatu_code": "04.0101",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-78b44cf683e20dc09596077b",
+      "dhatu_code": "01.0968",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-e727f944076b3eca8e1d10a0",
+      "dhatu_code": "01.0412",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-4fef20ede9d863dd7e7317f3",
+      "dhatu_code": "06.0026",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-668e60502ebab1311c11762a",
+      "dhatu_code": "05.0029",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-5982066ee8252dbb49ec6776",
+      "dhatu_code": "01.0059",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-ffaf9462225d0fc79403d766",
+      "dhatu_code": "02.0031",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-0597987561dd042a7c6e8681",
+      "dhatu_code": "08.0007",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-c71e91906d15c9e4eee72d56",
+      "dhatu_code": "03.0020",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-bceff7dc0d52a1bf82de589e",
+      "dhatu_code": "06.0101",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-561395c2784069aade4335e0",
+      "dhatu_code": "06.0140",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-7cab38c67db034695a60b26b",
+      "dhatu_code": "07.0007",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-6650ee0150a2f349cf7da77c",
+      "dhatu_code": "02.0033",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-c07b8914255384301348f0bc",
+      "dhatu_code": "01.0741",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-01c590e7410b85b651d5477b",
+      "dhatu_code": "01.0220",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-38543fe34cd09d149ca358a2",
+      "dhatu_code": "01.1051",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-7dfcb8e7d005eaee8a9aede8",
+      "dhatu_code": "04.0137",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-e2f74207ef79a33ad6beaa7a",
+      "dhatu_code": "07.0012",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-583937a3cfee531d7e99abde",
+      "dhatu_code": "02.0029",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-90458bebf961d7297bff30f7",
+      "dhatu_code": "01.1100",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-a28fc82313ade3f9847d74d0",
+      "dhatu_code": "01.0178",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-483ff48bd420310e5598ebad",
+      "dhatu_code": "10.0237",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-ba7039852ce585f457062267",
+      "dhatu_code": "01.0265",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-9764b2f186d5f67062df623a",
+      "dhatu_code": "01.0950",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-5d40d713d6c756db1f25ac9c",
+      "dhatu_code": "01.0887",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-acb6a55977d12880fa67c7d1",
+      "dhatu_code": "03.0005",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-588aeb20ad28cd5fd102ce5a",
+      "dhatu_code": "03.0026",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-f07fa2ca27147bb1764e63e6",
+      "dhatu_code": "01.0917",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-e2decd4cda6d98cf29204a23",
+      "dhatu_code": "08.0002",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-58f72a53f6991a1e982afe9b",
+      "dhatu_code": "01.1129",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-f6a96d6bde5dfda30b9e6f03",
+      "dhatu_code": "05.0023",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-44b3ce537d6c396e6a327fb1",
+      "dhatu_code": "01.0135",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-e4a51c5ee9b3e9f8c1f5f03b",
+      "dhatu_code": "06.0087",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-cb8bb384dff03f91581b4cc7",
+      "dhatu_code": "06.0037",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-20a0b5e6b9a497758a9e85d8",
+      "dhatu_code": "09.0071",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-eadc4698d3a8becf1a2c47b3",
+      "dhatu_code": "06.0137",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-cea67dfef3b70b46fdfb10d3",
+      "dhatu_code": "04.0098",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-abbe71fe797bb9292b6f3d32",
+      "dhatu_code": "01.0990",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-99404ffe4eaeae57ef52497b",
+      "dhatu_code": "03.0009",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-456a111ef1066ec195c5fdcc",
+      "dhatu_code": "04.0029",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-7f023c2448d3c725c257eb04",
+      "dhatu_code": "01.1013",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-9b20db014a9e7f292cf242ce",
+      "dhatu_code": "01.0666",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-cfd681ac58a643a5d2ae0b02",
+      "dhatu_code": "02.0014",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-3a8e33e9a9cc5c55210bcea5",
+      "dhatu_code": "06.0133",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-e5b03accc04236135177f9ba",
+      "dhatu_code": "06.0141",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-c6cc389838fa50f6bcb0293a",
+      "dhatu_code": "01.0591",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-7f670031cdc4569167e97da7",
+      "dhatu_code": "01.0970",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-fcdaf7a1c4e6ba9cf1dc3c1f",
+      "dhatu_code": "06.0136",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-b594ec7f899e40d40edbd305",
+      "dhatu_code": "01.0502",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-e6a7580a2e1b7929916ed30b",
+      "dhatu_code": "01.0654",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-4ac2bd6e37640280e04d6cd3",
+      "dhatu_code": "01.0252",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-b9c51df9cba05ff20d7c2289",
+      "dhatu_code": "01.0975",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-d066976303ab789aa84c3078",
+      "dhatu_code": "01.0787",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-b5660e3c55271635f818ef5a",
+      "dhatu_code": "03.0023",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-2a29d1a75614d791aaa232ae",
+      "dhatu_code": "01.0324",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-0823550dcbe577c480495d87",
+      "dhatu_code": "07.0013",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-cff722cd5211019d023968f7",
+      "dhatu_code": "01.0278",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-929612052ce47509c59605e1",
+      "dhatu_code": "06.0174",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-0f826df69dbc43cb0e93c7ff",
+      "dhatu_code": "04.0019",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-95e36318c5079feb2ebbd654",
+      "dhatu_code": "09.0047",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-1e7fc6cd2fe5dac41576dd90",
+      "dhatu_code": "01.0490",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-27dacee5ace4201e0b11450b",
+      "dhatu_code": "01.1098",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-43589b985ef46baa386393c8",
+      "dhatu_code": "05.0007",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-57668dbdf313e41653276107",
+      "dhatu_code": "01.1036",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-cb63214731ad2988f2337dd4",
+      "dhatu_code": "02.0016",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-e82bb246b210d7d95658b640",
+      "dhatu_code": "01.0102",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-69f627cba039ee3fa0335438",
+      "dhatu_code": "01.0188",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-3893ba0deeeb2b2e753b597b",
+      "dhatu_code": "04.0013",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-bf60d739a7852c0c7fdac9c9",
+      "dhatu_code": "01.0344",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-40ef16afb2329a1fcc71cd52",
+      "dhatu_code": "06.0008",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-6ca5a857d3f6f11cb6fcc08a",
+      "dhatu_code": "01.0879",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-f4599dee41e1d80f2dbd12f0",
+      "dhatu_code": "04.0007",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-db6c08de9562df7737de57a2",
+      "dhatu_code": "01.0837",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-967ca6766e236f50c7b55572",
+      "dhatu_code": "06.0144",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-90f944df26ef2e350d5b9f4a",
+      "dhatu_code": "01.0761",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-86460e064cbad2401b54212c",
+      "dhatu_code": "01.0172",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-eb11a27848232f8aa92c0987",
+      "dhatu_code": "01.0626",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-6b29531aa2a9f73b5c56e12d",
+      "dhatu_code": "02.0019",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-aa547c276d17094ed0788d3f",
+      "dhatu_code": "09.0057",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-bdc7be9910c7daf50e0efda9",
+      "dhatu_code": "01.0019",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-d05ddf9b52d46549558623f4",
+      "dhatu_code": "05.0021",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-d61b63f2611096bf257219c2",
+      "dhatu_code": "01.0814",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-ad56824e02211c5407f43a82",
+      "dhatu_code": "05.0005",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-fef056946d118136fcaff565",
+      "dhatu_code": "04.0026",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-73f3b573a15dc1ad34b92541",
+      "dhatu_code": "06.0067",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-b2b9fe55bf95c9cf5eb4c80c",
+      "dhatu_code": "09.0002",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-9b50dc4a84bf8d3382c3ea0f",
+      "dhatu_code": "06.0100",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-989675008032e22652eb341c",
+      "dhatu_code": "05.0031",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-1c96e1baaa0f0ffddc99fe0b",
+      "dhatu_code": "02.0006",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-1802c0a1be1b06253ac6d1ce",
+      "dhatu_code": "01.0432",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-deed5ad3d00ab8e10de038e1",
+      "dhatu_code": "05.0037",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-e95aed650eff33bb40768dc7",
+      "dhatu_code": "10.0484",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-33c21421858f058d082d6fc0",
+      "dhatu_code": "07.0022",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-80155188bb75d5ec248d9be3",
+      "dhatu_code": "04.0093",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-03bb0d532daac035107073dc",
+      "dhatu_code": "02.0038",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-3b5468195f568c31561d9f35",
+      "dhatu_code": "10.0428",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-2cff5d6236ead4b690c8aeed",
+      "dhatu_code": "06.0018",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-b6909ff603f0f99605fb9374",
+      "dhatu_code": "04.0079",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-4fd71818abe90f08a4f44fa3",
+      "dhatu_code": "05.0015",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-8aae5234b660803d2d4f72ea",
+      "dhatu_code": "02.0043",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-b99250eab0e7e6155f69a51d",
+      "dhatu_code": "04.0032",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-0e28ec669ba5e2b744e70f6e",
+      "dhatu_code": "01.1136",
+      "included": false,
+      "exclusion_reasons": [
+        "Incomplete optional Cinvat vowel variants in passive future"
+      ]
+    },
+    {
+      "id": "cart5-eec24c84b22fea68e8d41d19",
+      "dhatu_code": "01.0583",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-6f0f064b1cb013d284e7237e",
+      "dhatu_code": "09.0043",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-d262edc60ee053bbd0c85f28",
+      "dhatu_code": "01.0599",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-bb5f592d17e9ccf2dc08355f",
+      "dhatu_code": "06.0009",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-9efc23f0c5772e6266fd73ff",
+      "dhatu_code": "01.0752",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-13e1bdbef0ca231eba22f15d",
+      "dhatu_code": "10.0393",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-6b3055b08b73a88cbdd38361",
+      "dhatu_code": "10.0309",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-9afcf741b5c1af36c5724707",
+      "dhatu_code": "01.0429",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-8bc485e9cd5c1f5cce3542a0",
+      "dhatu_code": "07.0008",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-1ea23b4d5ae78242cd0c17ef",
+      "dhatu_code": "02.0074",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-dee24996099a72158b8882df",
+      "dhatu_code": "04.0058",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-e0e0f2c4663ecf5dbbde539f",
+      "dhatu_code": "01.1004",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-18b964677fce8def92f91895",
+      "dhatu_code": "09.0045",
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "cart5-c1d14bbf69876b53d2e3ab03",
+      "dhatu_code": "01.1009",
+      "included": true,
+      "exclusion_reasons": []
+    }
+  ],
+  "removed": 1,
+  "exclusion_reason_counts": {
+    "Incomplete optional Cinvat vowel variants in passive future": 1
+  },
+  "ambiguous_dictionary_codes": [
+    "01.0916",
+    "01.0924",
+    "01.0928",
+    "01.0962",
+    "01.0965",
+    "01.0966",
+    "10.0257",
+    "10.0367"
+  ],
+  "original_scores": {
+    "requests": 120,
+    "completed": 115,
+    "correct": 98,
+    "refused": 5,
+    "completed_accuracy": 0.8521739130434782,
+    "all_request_accuracy": 0.8166666666666667
+  },
+  "audited_subset_opus_scores": {
+    "requests": 119,
+    "completed": 114,
+    "correct": 98,
+    "refused": 5,
+    "completed_accuracy": 0.8596491228070176,
+    "all_request_accuracy": 0.8235294117647058
+  },
+  "original_results_sha256": "16d6ecc3c7a9c56e7d45874eb295eaf9a89298e88822db7a16a9dbd553a8ab8c",
+  "raw_originals_modified": false,
+  "distribution": {
+    "recipe": {
+      "intensive_luk": 20,
+      "causative_of_intensive": 29,
+      "desiderative_of_causative_of_intensive": 30,
+      "desiderative": 10,
+      "intensive": 20,
+      "causative": 10
+    },
+    "lakara": {
+      "Lun": 12,
+      "Lot": 12,
+      "AshirLin": 12,
+      "Lat": 12,
+      "Lan": 12,
+      "VidhiLin": 12,
+      "Lrt": 12,
+      "Lut": 11,
+      "Lrn": 12,
+      "Lit": 12
+    },
+    "gana": {
+      "Rudhadi": 6,
+      "Kryadi": 8,
+      "Bhvadi": 47,
+      "Divadi": 12,
+      "Tudadi": 16,
+      "Svadi": 8,
+      "Adadi": 10,
+      "Tanadi": 2,
+      "Juhotyadi": 5,
+      "Curadi": 5
+    }
+  },
+  "remaining_review": "Three nested inference-supported forms retain their original keys pending expanded source review; no known correction has been established. They are not removed merely because Opus missed them.",
+  "benchmark_ready": false
+}

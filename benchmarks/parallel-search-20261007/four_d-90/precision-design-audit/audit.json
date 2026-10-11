@@ -1,0 +1,340 @@
+{
+  "created_at": "2026-10-08T00:46:21.977398+00:00",
+  "purpose": "Map precision estimands using only the completed200 development panel; no change to live final qualification.",
+  "canonical_development_grading_retained": true,
+  "no_source_regrading": true,
+  "fixed_weights": {
+    "short_adanta_non_aorist": 0.52,
+    "other_adanta_aorist": 0.08,
+    "broad_non_curadi": 0.4
+  },
+  "development_family_count": 109,
+  "cells": {
+    "short_adanta_non_aorist": {
+      "n": 104,
+      "families": 13,
+      "family_load": 8,
+      "weight": 0.52,
+      "models": {
+        "Opus": {
+          "correct": 84,
+          "accuracy": 0.8076923076923077,
+          "family_sandwich_variance": 0.0033284023668639045,
+          "weighted_variance_contribution": 0.0008999999999999999
+        },
+        "Astra": {
+          "correct": 75,
+          "accuracy": 0.7211538461538461,
+          "family_sandwich_variance": 0.004838510848126231,
+          "weighted_variance_contribution": 0.0013083333333333332
+        }
+      }
+    },
+    "other_adanta_aorist": {
+      "n": 16,
+      "families": 16,
+      "family_load": 1,
+      "weight": 0.08,
+      "models": {
+        "Opus": {
+          "correct": 12,
+          "accuracy": 0.75,
+          "family_sandwich_variance": 0.0125,
+          "weighted_variance_contribution": 8e-05
+        },
+        "Astra": {
+          "correct": 11,
+          "accuracy": 0.6875,
+          "family_sandwich_variance": 0.014322916666666666,
+          "weighted_variance_contribution": 9.166666666666667e-05
+        }
+      }
+    },
+    "broad_non_curadi": {
+      "n": 80,
+      "families": 80,
+      "family_load": 1,
+      "weight": 0.4,
+      "models": {
+        "Opus": {
+          "correct": 79,
+          "accuracy": 0.9875,
+          "family_sandwich_variance": 0.0001562499999999998,
+          "weighted_variance_contribution": 2.4999999999999974e-05
+        },
+        "Astra": {
+          "correct": 75,
+          "accuracy": 0.9375,
+          "family_sandwich_variance": 0.0007416930379746836,
+          "weighted_variance_contribution": 0.0001186708860759494
+        }
+      }
+    }
+  },
+  "models": {
+    "Opus": {
+      "n": 200,
+      "correct": 175,
+      "accuracy": 0.875,
+      "all_usable": true,
+      "iid_se": 0.023385358667337135,
+      "stratified_independent_question_plugin_se": 0.022439555562580867,
+      "unstratified_family_sandwich_se": 0.03265011627226758,
+      "existing_unstratified_bootstrap_20000": {
+        "standard_error": 0.03252835266033434,
+        "percentile_95_interval": [
+          0.81,
+          0.9375
+        ],
+        "valid_repetitions": 20000
+      },
+      "existing_class_stratified_bootstrap_20000": {
+        "standard_error": 0.031089355660994345,
+        "percentile_95_interval": [
+          0.8121212121212121,
+          0.9333333333333333
+        ],
+        "valid_repetitions": 20000
+      },
+      "replicated_unstratified_bootstrap_100000": {
+        "se": 0.032487686209488706,
+        "percentile_95_interval": [
+          0.81,
+          0.9375
+        ],
+        "repetitions": 100000
+      },
+      "replicated_class_stratified_bootstrap_100000": {
+        "se": 0.030922105430895904,
+        "percentile_95_interval": [
+          0.8130841121495327,
+          0.9333333333333333
+        ],
+        "repetitions": 100000
+      },
+      "fixed_three_cell_family_bootstrap": {
+        "se": 0.030529867263148255,
+        "percentile_95_interval": [
+          0.81,
+          0.93
+        ],
+        "repetitions": 100000
+      },
+      "fixed_three_cell_family_sandwich_se": 0.03170173496829472,
+      "fixed_three_cell_family_bootstrap_analytic_se": 0.030503388840737528,
+      "development_rates_only_iid_projection_N1800": {
+        "iid_se": 0.007795119555779045,
+        "stratified_independent_question_plugin_se": 0.007479851854193621,
+        "caveat": "Arithmetic illustration only, not a forecast or final result. No family dependence, final class/tense composition, repeated-query variance or selection uncertainty is transported."
+      }
+    },
+    "Astra": {
+      "n": 200,
+      "correct": 161,
+      "accuracy": 0.805,
+      "all_usable": true,
+      "iid_se": 0.028015620642777128,
+      "stratified_independent_question_plugin_se": 0.02694367344037443,
+      "unstratified_family_sandwich_se": 0.04015561397031969,
+      "existing_unstratified_bootstrap_20000": {
+        "standard_error": 0.04012229311538468,
+        "percentile_95_interval": [
+          0.7272727272727273,
+          0.8837209302325582
+        ],
+        "valid_repetitions": 20000
+      },
+      "existing_class_stratified_bootstrap_20000": {
+        "standard_error": 0.03789199818419701,
+        "percentile_95_interval": [
+          0.7311827956989247,
+          0.8787878787878788
+        ],
+        "valid_repetitions": 20000
+      },
+      "replicated_unstratified_bootstrap_100000": {
+        "se": 0.04004890979928345,
+        "percentile_95_interval": [
+          0.7272727272727273,
+          0.8837209302325582
+        ],
+        "repetitions": 100000
+      },
+      "replicated_class_stratified_bootstrap_100000": {
+        "se": 0.03811922625780338,
+        "percentile_95_interval": [
+          0.7294685990338164,
+          0.8787878787878788
+        ],
+        "repetitions": 100000
+      },
+      "fixed_three_cell_family_bootstrap": {
+        "se": 0.03765533809464961,
+        "percentile_95_interval": [
+          0.73,
+          0.875
+        ],
+        "repetitions": 100000
+      },
+      "fixed_three_cell_family_sandwich_se": 0.038970128124961936,
+      "fixed_three_cell_family_bootstrap_analytic_se": 0.03756084806939678,
+      "development_rates_only_iid_projection_N1800": {
+        "iid_se": 0.009338540214259042,
+        "stratified_independent_question_plugin_se": 0.008981224480124811,
+        "caveat": "Arithmetic illustration only, not a forecast or final result. No family dependence, final class/tense composition, repeated-query variance or selection uncertainty is transported."
+      }
+    }
+  },
+  "paired_astra_minus_opus": {
+    "estimate": -0.07,
+    "fixed_cell_family_bootstrap": {
+      "se": 0.04572507411020811,
+      "percentile_95_interval": [
+        -0.16000000000000003,
+        0.015000000000000124
+      ],
+      "repetitions": 100000
+    }
+  },
+  "mixture_weight_variation_in_resamples": {
+    "unstratified": {
+      "short_adanta_non_aorist": {
+        "sd": 0.0758226154226025,
+        "p025_p975": [
+          0.35443037974683544,
+          0.642570281124498
+        ]
+      },
+      "other_adanta_aorist": {
+        "sd": 0.02249590414728353,
+        "p025_p975": [
+          0.043010752688172046,
+          0.12953367875647667
+        ]
+      },
+      "broad_non_curadi": {
+        "sd": 0.06591487124195398,
+        "p025_p975": [
+          0.2931726907630522,
+          0.5506329113924051
+        ]
+      }
+    },
+    "class_stratified": {
+      "short_adanta_non_aorist": {
+        "sd": 0.0603854771545819,
+        "p025_p975": [
+          0.3878787878787879,
+          0.6127659574468085
+        ]
+      },
+      "other_adanta_aorist": {
+        "sd": 0.021605812926868754,
+        "p025_p975": [
+          0.04680851063829787,
+          0.12727272727272726
+        ]
+      },
+      "broad_non_curadi": {
+        "sd": 0.03877966422771316,
+        "p025_p975": [
+          0.3404255319148936,
+          0.48484848484848486
+        ]
+      }
+    },
+    "fixed_cell": {
+      "short_adanta_non_aorist": {
+        "sd": 0.0,
+        "weight": 0.52
+      },
+      "other_adanta_aorist": {
+        "sd": 0.0,
+        "weight": 0.08
+      },
+      "broad_non_curadi": {
+        "sd": 0.0,
+        "weight": 0.4
+      }
+    }
+  },
+  "input1800_design": {
+    "n": 1800,
+    "families": 755,
+    "composition": {
+      "short_adanta_non_aorist": 936,
+      "other_adanta_aorist": 144,
+      "broad_non_curadi": 720
+    },
+    "family_size_histogram": {
+      "67": 12,
+      "7": 18,
+      "1": 720,
+      "6": 3,
+      "66": 2
+    },
+    "precision": {
+      "iid_se_percentage_points": {
+        "0.8": 0.9428090415820634,
+        "0.805": 0.9338540214259042,
+        "0.875": 0.7795119555779045,
+        "0.9": 0.7071067811865475,
+        "0.5": 1.1785113019775793
+      },
+      "interpretation": "N1800 projects less than1pp iid Bernoulli SE at current development rates and throughout80–90% accuracy. This is not a new-family SE claim and is not a95% interval half-width claim.",
+      "family_limit": "The52% hard short-adanta share still rests on14 test families. More coordinates cannot substitute for more independent lexical families; no sub1pp family-generalization SE is established."
+    },
+    "exposure_limit": "No prior public ordinary tuples or registered-job root families overlap. Legacy dictionary-wide discovery inspected all families before the master split; never-inspected lexical families are not claimed.",
+    "selection": "Keep all1250v2 full objects. Add286/44/220 using only source eligibility and coordinates. All14/21 hard families retained with66–67/6–7 each. Broad cell has720 distinct families;220 new families selected by least current class load then fixed input hash. Per-cell tenses and person/number are exactly balanced using a deterministic single-thread integer solver."
+  },
+  "bootstrap_formula": "For each replicate independently sample g_h families with replacement within each of the3cells; take each sampled family with all observed questions and paired outcomes; compute sum_h w_h*(sum successes/sum questions). No FPC.",
+  "sandwich_formula": "Sum_h w_h^2 * g_h/(g_h-1) * sum_g(S_hg-p_h*n_hg)^2 / N_h^2. Square-root gives SE. Families occur in one cell only.",
+  "sampling_caveat": "This honors the3mixture weights, not every tense/class/person/number/solver constraint. It is a sensitivity based on exchangeable sampled families, not an exact randomization variance for the constrained deterministic selector.",
+  "primary_references": {
+    "stratified_variance": "https://www150.statcan.gc.ca/n1/pub/12-001-x/2019002/article/00006/02-eng.htm",
+    "within_stratum_PSU_bootstrap": "https://r-survey.r-forge.r-project.org/survey/html/bootweights.html",
+    "clustering_target_population": "https://www.nber.org/papers/w24003",
+    "quota_and_inclusion_probability_limits": "https://www150.statcan.gc.ca/n1/pub/12-001-x/2022002/article/00002/01-eng.htm"
+  },
+  "finite_population_correction_applied": false,
+  "repeated_query_variance_identified": false,
+  "unseen_root_population_explicitly_required_by_user": false,
+  "user_request_interpretation": "The phrase stddev<1% does not uniquely specify the random quantity or target population. The project chose a conservative both-iid-and-family-SE gate; this audit neither changes that gate nor certifies the user meant unseen-root generalization.",
+  "inputs": {
+    "benchmarks/parallel-search-20261007/four_d-90/tasks.json": "63b7f801151bc5ea15678519f54a19da37e6940641c0cde1b08104f33ab2906c",
+    "benchmarks/parallel-search-20261007/four_d-90/candidate-1800-v1/manifest.json": "67653e28fcceb6291b805953432fe511889660a23e5b071c80a4ee43d65fb1c2",
+    "benchmarks/iterative-goal-20261006/jobs/astra-simple4d-direct-01/results.json": "986e2e74a1cabecc04eacfcbef6ca13dec3ba64bf39fef66100c8a03b9d9c1a8",
+    "benchmarks/iterative-goal-20261006/jobs/astra-simple4d-direct-02/results.json": "f0502fede90c34dbe0417175f03c41730eea329d2213b685714bee51f5c1711c",
+    "benchmarks/iterative-goal-20261006/jobs/astra-simple4d-direct-03/results.json": "bcbaf3a60ccdd428371b72191cf52de42a8845d04f92b10bc9730ee1f86f6114",
+    "benchmarks/iterative-goal-20261006/jobs/astra-simple4d-direct-04/results.json": "d145beea55f57aa4fbebdcade99d426f6a1658935098c00cd85cd85f67cb15cb",
+    "benchmarks/iterative-goal-20261006/jobs/astra-simple4d-direct-05/results.json": "7531a6529dc51f42d43b7ad7115477df2ec245d85c39c9f250dc03165cfb4f04",
+    "benchmarks/iterative-goal-20261006/jobs/astra-simple4d-direct-06/results.json": "7bbd3d933c861a2637defeb2ff8eb1566376a856dd00c6b7f2d4910c6106a4e0",
+    "benchmarks/iterative-goal-20261006/jobs/astra-simple4d-direct-07/results.json": "3a1df3b9ca23b4f7e9380ac00627195f5842bdd35d364814aacb72bacd4d526c",
+    "benchmarks/iterative-goal-20261006/jobs/astra-simple4d-direct-08/results.json": "e9224b2ee1e530f2ac248abf3f3d6156c0765325479b51c11cb76e314b0a137b",
+    "benchmarks/iterative-goal-20261006/jobs/astra-simple4d-direct-09/results.json": "e047f87408cfd34e5eed17ed0250ad1c5cf69c9b5048083e52786bfd9c8009df",
+    "benchmarks/iterative-goal-20261006/jobs/astra-simple4d-direct-10/results.json": "89078fcd576a11414ee653b8613c77c6e6ab9bacc9f6d701397c5ac5e4e9b343",
+    "benchmarks/iterative-goal-20261006/jobs/astra-simple4d-direct-11/results.json": "2211dc9684fbe9eb2c359fdb7263c06bc64f1333ec42407b13ff7cd096bb8a70",
+    "benchmarks/iterative-goal-20261006/jobs/astra-simple4d-direct-12/results.json": "4781ef4509661b0e6b71123bf3d3239267f50ef7087e8ef9188fff96da4eb4b3",
+    "benchmarks/iterative-goal-20261006/jobs/astra-simple4d-direct-13/results.json": "09a6fc50ca2d47065c6c34470f24220dea14a95723b6da0a9cd27b1137e7c01e",
+    "benchmarks/iterative-goal-20261006/jobs/astra-simple4d-direct-14/results.json": "fd808ae64e2066956d7d911d03767945dfaf7b9a9b5ec8ede75aa1a76789bfbd",
+    "benchmarks/iterative-goal-20261006/jobs/astra-simple4d-direct-15/results.json": "791da61695c4725ba65466f48f609af105bb35875cc801113fd99ccab9db71d9",
+    "benchmarks/iterative-goal-20261006/jobs/astra-simple4d-direct-16/results.json": "c309bacfb40dd1ede2913cacde55b6924abeb7e0fc39e103c03b517d28238877",
+    "benchmarks/iterative-goal-20261006/jobs/astra-simple4d-direct-17/results.json": "258ec208d1b1f856d085411ff01a04aa73cf0bdfa4a1b017a7e09f62ef7d417a",
+    "benchmarks/iterative-goal-20261006/jobs/astra-simple4d-direct-18/results.json": "4e8cc6fbf6fb6dafbf98ed514a1567bed5ac74743d3b5e54a49f47d6cf9abe0d",
+    "benchmarks/iterative-goal-20261006/jobs/astra-simple4d-direct-19/results.json": "04ba95fc179b8a19353ab928adaf6e1e7960d8615b4c5908d25694ed7beefe5e",
+    "benchmarks/iterative-goal-20261006/jobs/astra-simple4d-direct-20/results.json": "45c4c48202010c909c612f0f5729bed06f975955933cf6cbf8a37af81b526c53",
+    "benchmarks/iterative-goal-20261006/jobs/opus-fast-simple4d-01/results.json": "81725875d388fa6254d75456b1782dea839c652288d9d84e5dece026504314c8",
+    "benchmarks/iterative-goal-20261006/jobs/opus-fast-simple4d-02/results.json": "c99c848513f5e5c411ed84ab1affc9ae82f514c667ef132fef735c3b7fe2cfaf",
+    "benchmarks/iterative-goal-20261006/jobs/opus-fast-simple4d-03/results.json": "cd947efe6b99beccb66ecaaa1cb9a69eadd824f6750a007a56b3cdcd92d5ea69",
+    "benchmarks/iterative-goal-20261006/jobs/opus-fast-simple4d-04/results.json": "3471f11ce6c44dbebb4c72170a1bfd8ff69b2fcd10f10638044e74d1cdfe1b29",
+    "benchmarks/iterative-goal-20261006/jobs/opus-fast-simple4d-05/results.json": "dc26b7608ce75342a1ecd65cbacf3c64d3b5d46c22866ec86baabfc7190ec500"
+  },
+  "bootstrap_repetitions": 100000,
+  "seed": 2026100802,
+  "reviewer_script_sha256": "bf8bb6dea67edc9b58537be768903619671119377eaccfbf4025913dbb001ee6",
+  "final_responses_read": false,
+  "live_ledger_read_or_written": false,
+  "frozen_files_modified": false,
+  "paid_calls": 0,
+  "benchmark_ready": false
+}

@@ -1,0 +1,41 @@
+{
+  "created_at": "2026-10-07T10:51:31.515320+00:00",
+  "panel_directory": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/parallel-search-20261006/five_d/pilot-07/revision-01",
+  "fixed_n": 2400,
+  "result_chunks_required": 2,
+  "result_n_per_chunk": 1200,
+  "frozen_files": {
+    "tasks.json": "e32fdae93a4e017231a32a73be16627c16b674a61f525bd42c7497352b438d60",
+    "plan.json": "a01f3214d4f37b1d6faf35009f54695eb94f2fa3f085ea061d1cb9afe3ff3768",
+    "manifest.json": "426e5e12286550bf6083945690e37176b93adef0d3888812bf749b563b85130e",
+    "transport-plan.json": "5b05ae329d26e5313a734bb367073a0bfd736d91e0930422cd4873910460410d",
+    "analysis-exposure-groups.json": "d06f9366613df997198848c5c89546df016a4b3b34a30691fc452528df6d75bd"
+  },
+  "analysis_dependencies": {
+    "misc/vp_5d_analyze_07.py": "0a478ac8a005d94dd327ba3d4929381908a81b01b691a73114debbd8ae2d1c1f",
+    "misc/vp_cartesian_final_analyze.py": "c799424553a8d557328d4b1d2c7ec0984969bd923f2a11dda28946138800b37d",
+    "misc/vp_cartesian_analyze.py": "b927019cd89d990ff7ffe5caac1f3c0e5be949822b384f1c905aa704f887e461",
+    "misc/vp_goal_stats.py": "afa7cd2ff3e4e89994db5b682adc3141608110ec6cdefdb739884e27be3d0d95"
+  },
+  "bootstrap_repetitions": 20000,
+  "bootstrap_seed": 202610071107,
+  "completed_predicate": "status==completed AND parsed answer non-null AND not truncated, from misc.vp_cartesian_analyze.completed",
+  "primary_denominator": "Every one of the frozen 2400 tasks, without replacement or outcome-based filtering.",
+  "current_scope_supplement": "Apply current shared entry/oracle predicates uniformly to all outcomes, report exact excluded IDs and reason, retain raw full-panel statistics. Scope changes need a validity review and cannot silently qualify the original design.",
+  "advancement_rule": "Analyze advancement only after all2400 primary requests settle. Advance this unchanged mixture toward separately approved final evaluation only if audited all-request and usable Opus point estimates and worst/best missing-response bounds are all within79–81%, with retained-scope validity resolved. Otherwise preserve this failed screen and do not claim target attainment. This is development confirmation, not a final qualification or independent-family replication. No interim score-based stopping, provider replay or answer-based replacement.",
+  "numerical_screen": "All-request and usable point estimates and both missing-response bounds must each lie in [0.79,0.81]. No rounding before comparison. Require both full chunks and no infrastructure-unscored result. A numerical pass remains provisional pending independent validity review.",
+  "precision": "Report iid and family sandwich SE plus whole-family and class-stratified whole-family bootstrap sensitivity. Development advancement has no invented precision pass; final both-model sub1pp gate is separate.",
+  "subgroup_metrics": [
+    "recipe",
+    "lakara",
+    "voice",
+    "class",
+    "recipe×lakara×voice",
+    "same-recipe family prior exposure"
+  ],
+  "missing": "Refusals, truncations and missing parsed answers remain unknown for bounds. Preserve recorded all-request correctness separately, including any correctly parsed truncated row.",
+  "sequential_rule": "Do not read or summarize one chunk alone. Both 1200 transport chunks must match before any aggregate estimate or target screen. No score-based stopping, replacement, or reweighting.",
+  "family_exposure": "All selected development families were previously exposed. A same-recipe-new group is not a new lexical-family group. Legacy6687 analysis inspected all dictionary families, including later master test families; the new campaign split excludes reserved-family legacy records from discovery fitting.",
+  "benchmark_ready": false,
+  "final_n_approved": false
+}

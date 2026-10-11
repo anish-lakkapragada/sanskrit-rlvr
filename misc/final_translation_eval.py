@@ -54,7 +54,20 @@ def main() -> None:
                     help="0 = every pair in the validation set")
     ap.add_argument("--max-new-tokens", type=int, default=4096)
     ap.add_argument("--temperature", type=float, default=0.2)
+    ap.add_argument("--only", default=None, choices=[n for n, _ in DATASETS],
+                    help="run a single dataset instead of both")
+    ap.add_argument("--templates", nargs="+", default=None,
+                    help="prompt-template files ({english} slot); one output "
+                         "file per template, all served from one engine")
+    ap.add_argument("--out-names", nargs="+", default=None,
+                    help="output filenames zipped with --templates")
+    ap.add_argument("--extract-tag", default="translation",
+                    choices=["translation", "answer"],
+                    help="tag the hypothesis is extracted from")
     args = ap.parse_args()
+    if args.templates and (not args.out_names
+                           or len(args.out_names) != len(args.templates)):
+        ap.error("--templates requires an equal-length --out-names")
 
     from transformers import AutoTokenizer
     from vllm import LLM, SamplingParams
@@ -85,27 +98,39 @@ def main() -> None:
 
     out_dir = Path(args.out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
-    for name, rel_path in DATASETS:
+    datasets = [(n, p) for n, p in DATASETS if args.only in (None, n)]
+    # (template_path_or_None, template_string_or_None, output_filename)
+    if args.templates:
+        jobs = [(t, Path(t).read_text(), o)
+                for t, o in zip(args.templates, args.out_names)]
+    else:
+        jobs = [("v0/translation.txt", None, None)]
+    for name, rel_path in datasets:
         pairs = load_samayik_pairs(ROOT / rel_path)
         num_samples = args.num_samples or len(pairs)
-        metrics, samples = eval_samayik(
-            generate_fn, pairs, num_samples=num_samples,
-            temperature=args.temperature, max_new_tokens=args.max_new_tokens,
-            rng=random.Random(42))
-        payload = {
-            "meta": {"model": args.model, "adapter": args.adapter,
-                     "dataset": rel_path, "num_samples": num_samples,
-                     "temperature": args.temperature,
-                     "max_new_tokens": args.max_new_tokens, "seed": 42,
-                     "prompt_template": "v0/translation.txt"},
-            "metrics": metrics,
-            "samples": samples,
-        }
-        (out_dir / f"final-{name}.json").write_text(
-            json.dumps(payload, ensure_ascii=False, indent=1) + "\n")
-        print(f"[final-eval] {name}: chrf={metrics['chrf']:.2f} "
-              f"chrf++={metrics['chrf_pp']:.2f} "
-              f"tag_rate={metrics['translation_tag_rate']:.2f}", flush=True)
+        for tpl_path, tpl_text, out_name in jobs:
+            metrics, samples = eval_samayik(
+                generate_fn, pairs, num_samples=num_samples,
+                temperature=args.temperature,
+                max_new_tokens=args.max_new_tokens,
+                rng=random.Random(42), template=tpl_text,
+                extract_tag=args.extract_tag)
+            payload = {
+                "meta": {"model": args.model, "adapter": args.adapter,
+                         "dataset": rel_path, "num_samples": num_samples,
+                         "temperature": args.temperature,
+                         "max_new_tokens": args.max_new_tokens, "seed": 42,
+                         "prompt_template": tpl_path},
+                "metrics": metrics,
+                "samples": samples,
+            }
+            fname = out_name or f"final-{name}.json"
+            (out_dir / fname).write_text(
+                json.dumps(payload, ensure_ascii=False, indent=1) + "\n")
+            print(f"[final-eval] {name} [{tpl_path}]: "
+                  f"chrf={metrics['chrf']:.2f} "
+                  f"chrf++={metrics['chrf_pp']:.2f} "
+                  f"tag_rate={metrics['translation_tag_rate']:.2f}", flush=True)
 
 
 if __name__ == "__main__":

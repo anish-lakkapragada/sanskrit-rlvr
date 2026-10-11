@@ -1,0 +1,24 @@
+{
+  "status": "prepared_unpaid_parent_submission_only",
+  "model": "claude-opus-5-5",
+  "provider": "Anthropic",
+  "effort": "xhigh",
+  "max_output_tokens": 65536,
+  "phase": "confirm_64k",
+  "jobs": [
+    {
+      "id": "opus-modification-01",
+      "tasks_path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/parallel-search-20261007/modification-01/tasks.json",
+      "n": 200,
+      "sha256": "336146afc2a81d6b82e6c9f919498ce98d88c9cc9363a100a1c3aefe68e5c59f"
+    },
+    {
+      "id": "opus-modification-control-01",
+      "tasks_path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/parallel-search-20261007/modification-01/controls.json",
+      "n": 200,
+      "sha256": "7d7ecf2c3b6fb6a60d35840cc759a6613be0d8ed965af563c80c093f585d7862"
+    }
+  ],
+  "all_arms_before_analysis": true,
+  "no_interim_score_selection": true
+}

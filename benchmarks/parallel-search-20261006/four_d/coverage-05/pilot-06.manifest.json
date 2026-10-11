@@ -1,0 +1,83 @@
+{
+  "created_at": "2026-10-07T12:59:58.656300+00:00",
+  "n": 96,
+  "target_n": 48,
+  "control_n": 48,
+  "families": 48,
+  "classes": {
+    "Svadi": 16,
+    "Rudhadi": 16,
+    "Adadi": 18,
+    "Kryadi": 40,
+    "Tanadi": 2,
+    "Juhotyadi": 4
+  },
+  "lakaras": {
+    "Lot": 48,
+    "Lat": 16,
+    "Lan": 16,
+    "VidhiLin": 16
+  },
+  "persons": {
+    "Uttama": 96
+  },
+  "numbers": {
+    "Bahu": 48,
+    "Dvi": 48
+  },
+  "prayogas": {
+    "Kartari": 96
+  },
+  "branches": {
+    "guna_permitted_before_pit": 19,
+    "nasal_infix_a_retention": 8,
+    "sna_or_reduplicated_A_retention": 21
+  },
+  "family_load_histogram": {
+    "2": 48
+  },
+  "gold_variant_histogram": {
+    "1": 63,
+    "2": 32,
+    "4": 1
+  },
+  "generation_policy": "oracle-policy-21",
+  "task_sha256": "ed0d22a7bb2a68e220259ae1dd98ad19f8425e378301ee57d5bfd3d9480d0a7b",
+  "pair_map_sha256": "28d280424cd42cc4ed8f3c336f0cc5a1497bc156afbdd45341377fbcb666957c",
+  "design_sha256": "aeb857fb66d0c5f25cc46f4a889cf9f4fe76321597d92f2277ac5e1d0ad8021f",
+  "script_sha256": "ed3e157e4fd6a7a3bcaee9519990304661bb9ffc1927679bc1cfee807cd94aac",
+  "source_dependency_hashes": {
+    "misc/vp_4d_coverage05.py": "03c28aa4ad937948c06f3266efed377c91f5bd716b254219220d48235116f8d4",
+    "misc/vp_4d_coverage05_athematic.py": "65926de0ae33ec04536a9bbb73f70ecf398535c05224903b89227b20b8c0ebfc",
+    "misc/vp_5d_release_feasibility.py": "5be70c4f4a9f3ac93032b2a3bb97fc3611f2c3aee5eea9e02ffc32c230aa326b",
+    "misc/vp_cartesian_task.py": "f5bfab6f3fc27b7c83bbd6987bede73501592a9568fda32a0371bd8e23b7febd",
+    "misc/vp_cartesian_prompt_v1.py": "1cdf3930d2e6b5bf9994a0a5fd25918a2e038b6dfbbcc9a9bab1fb59ddbfcfff",
+    "benchmarks/creation-campaign-20261006/family-split.json": "a1c46bb778bca8f89df468d65232698131a3c4b137393865cd3f6b121fc6077f",
+    "benchmarks/parallel-search-20261006/oracle-policy-21.json": "e19f60de4fc58a43a72ee0a48320f0c11383a39eb21b45f2859361701158220c",
+    "benchmarks/parallel-search-20261006/four_d/coverage-05/inventory.json": "1b8e0a56be77417899ce55ac07029544340ea340d7f141b513cdf6516d66cb3d"
+  },
+  "available_families_with_fresh_choices": 58,
+  "candidate_pair_choices": 301,
+  "assignment_flow": 48,
+  "seeded_objective": 2029882056729354,
+  "input_only_rejections": {
+    "control_previously_asked": 34,
+    "excluded_singleton_sas_branch": 2,
+    "control_lacks_same_weak_rule": 4,
+    "target_previously_asked": 5
+  },
+  "full_regeneration_passed": 96,
+  "exact_visible_prior_task_overlap": 0,
+  "novelty_scope": "Original6687 plus both campaign job input ledgers, including locally excluded records. This does not assert global lexical-family non-exposure; master split acknowledges pre-split legacy exposure.",
+  "no_test_or_rl_members": true,
+  "no_model_answers_read": true,
+  "no_paid_calls": true,
+  "reference_protocol": {
+    "model": "claude-opus-5-5",
+    "effort": "xhigh",
+    "max_output_tokens": 65536,
+    "prompt_version": "cartesian-4d-v1"
+  },
+  "limitation": "One small interaction study: all targets are Kartari/Uttama/Lot and all controls Kartari/Uttama. Exact predicate has only156 reserved-test targets/78 families and cannot constitute a500+ benchmark. No hardness or80% claim.",
+  "benchmark_ready": false
+}

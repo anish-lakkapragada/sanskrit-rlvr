@@ -1,0 +1,104 @@
+{
+  "created_at": "2026-10-07T01:37:06.758061+00:00",
+  "filename": "contrast-pilot-01.json",
+  "n": 120,
+  "cells": [
+    {
+      "n": 60,
+      "prefixes": [
+        [
+          "sam",
+          "pra"
+        ],
+        [
+          "pra",
+          "ni"
+        ],
+        [
+          "upa",
+          "ni"
+        ],
+        [
+          "aBi",
+          "sam"
+        ]
+      ],
+      "exclude_ganas": [
+        "Curadi"
+      ],
+      "label": "Two distinct derived stems",
+      "rows": [
+        {
+          "construction": "causative_of_intensive",
+          "lakara": "Lun",
+          "exclude_rules": [
+            "7.4.79",
+            "7.4.80",
+            "7.4.94",
+            "7.4.95"
+          ]
+        },
+        {
+          "construction": "desiderative_of_causative_of_intensive",
+          "lakara": "Lit"
+        }
+      ]
+    },
+    {
+      "n": 60,
+      "prefixes": [
+        [
+          "sam",
+          "pra"
+        ],
+        [
+          "pra",
+          "ni"
+        ],
+        [
+          "upa",
+          "ni"
+        ],
+        [
+          "aBi",
+          "sam"
+        ]
+      ],
+      "exclude_ganas": [
+        "Curadi"
+      ],
+      "label": "Four distinct derived stems",
+      "rows": [
+        {
+          "construction": "causative_of_intensive",
+          "lakara": "Lun",
+          "exclude_rules": [
+            "7.4.79",
+            "7.4.80",
+            "7.4.94",
+            "7.4.95"
+          ]
+        },
+        {
+          "construction": "desiderative_of_causative_of_intensive",
+          "lakara": "Lit"
+        },
+        {
+          "construction": "causative_of_desiderative",
+          "lakara": "AshirLin"
+        },
+        {
+          "construction": "ric_san_ric_san",
+          "lakara": "AshirLin"
+        }
+      ]
+    }
+  ],
+  "split": "development",
+  "seed": 20261020,
+  "root_families": 120,
+  "max_per_family": 1,
+  "task_digest": "66033a503b8f68943e0a987dadd6f2609db069374352305a481b6e480fc77053",
+  "generator_sha256": "595e75b23433bb06d271f92316c58d49ac5c904218f6418a025b8ff89cadd560",
+  "selection": "Shuffled development root visits; all component forms fresh; no model-score selection."
+}

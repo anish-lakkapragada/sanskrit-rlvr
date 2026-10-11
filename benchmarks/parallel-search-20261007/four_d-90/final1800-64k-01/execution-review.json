@@ -1,0 +1,161 @@
+{
+  "created_at": "2026-10-08T00:37:58.150032+00:00",
+  "passed": true,
+  "execution_plan_sha256": "69201de2ede7e2ee2168ff1180324875aa22d4c3e34c385e58894ba110ad4967",
+  "test_split_verified": true,
+  "source_scoring_review_passed": true,
+  "independent_input_review_sha256": "ca0a2660f4577e1587b3715cf2ce241c3a8f893303dff0200eed7a0ac662bd44",
+  "precision_limitations_declared": "N1800 measures iid and family sandwich/bootstrap uncertainty separately. Fourteen families supply52% of questions; neither sub1pp family SE nor benchmark readiness is promised. Family-SE failure cannot be waived by iid precision.",
+  "blockers": [],
+  "run_id": "original4d-final1800-64k-01",
+  "phase": "continuous_final_64k_v1",
+  "fixed_n_per_provider": 1800,
+  "same_ordered_questions_for_both_models": true,
+  "counts": {
+    "Anthropic": {
+      "n": 1800,
+      "minimum": 390,
+      "maximum": 446,
+      "requests_digest": "ed901665f815bf9a5bec968b8f36268a5e636c721f70173cd9ea2df87492984b",
+      "counted_at": "2026-10-08T00:35:24.403453+00:00"
+    },
+    "OpenAI": {
+      "n": 1800,
+      "minimum": 259,
+      "maximum": 289,
+      "requests_digest": "96f553b2c0b3c3d3dc53db7a93fd6df89b481e987a083217244ae4e58789d88b",
+      "counted_at": "2026-10-08T00:35:59.722001+00:00"
+    }
+  },
+  "budget_snapshot": {
+    "Anthropic": {
+      "cap_micro": 1000000000,
+      "current_committed_micro": 311430394,
+      "protected_remaining_micro": 166840000,
+      "available_after_protection_micro": 521729606,
+      "pool_cap_micro": 100000000,
+      "margin_after_full_pool_and_protection_micro": 421729606,
+      "maximum_single_request_micro": 1316720,
+      "maximum_16_request_window_micro": 21067520,
+      "whole1800_worst_case_micro": 2370096000,
+      "maximum_pre_last_admission_settled_pool_usage_micro": 98683280
+    },
+    "OpenAI": {
+      "cap_micro": 2000000000,
+      "current_committed_micro": 801130500,
+      "protected_remaining_micro": 962500000,
+      "available_after_protection_micro": 236369500,
+      "pool_cap_micro": 225000000,
+      "margin_after_full_pool_and_protection_micro": 11369500,
+      "maximum_single_request_micro": 3291800,
+      "maximum_16_request_window_micro": 52668800,
+      "whole1800_worst_case_micro": 5925240000,
+      "maximum_pre_last_admission_settled_pool_usage_micro": 221708200
+    }
+  },
+  "protected_allocation": {
+    "Anthropic": {
+      "hard_final": 1000,
+      "cap_check": 0,
+      "bench_final": 0
+    },
+    "OpenAI": {
+      "hard_final": 1000,
+      "cap_check": 100,
+      "bench_final": 1000
+    }
+  },
+  "current_ledger_status": "review_confirm_64k",
+  "ledger_before_sha256": "8b11a2d7959c2dde0e7886112ec8a45dbbfc14302c06a048ef31890eeac2b60c",
+  "ledger_after_sha256": "8b11a2d7959c2dde0e7886112ec8a45dbbfc14302c06a048ef31890eeac2b60c",
+  "ledger_unchanged": true,
+  "reviewed_dependency_count": 44,
+  "dependencies": {
+    "benchmarks/creation-campaign-20261006/family-split.json": "a1c46bb778bca8f89df468d65232698131a3c4b137393865cd3f6b121fc6077f",
+    "benchmarks/parallel-search-20261007/four_d-90/candidate-1250-v2/independent-input-review.json": "369d7a1f23140acb33e42366cea1dd9542ab99a35eb327cbdace6d5f987a9b57",
+    "benchmarks/parallel-search-20261007/four_d-90/candidate-1250-v2/manifest.json": "ffdcc32deb121b2d9549c8d4d8801ebe80056868aa30407808a88ce1e74bdc85",
+    "benchmarks/parallel-search-20261007/four_d-90/candidate-1250-v2/public-prompts.json": "e59ae6559a77d6dbc3c2c76d7069273681e2a9ec7b5b8052db244491b28b3ccb",
+    "benchmarks/parallel-search-20261007/four_d-90/candidate-1250-v2/source-policy.json": "e5c48ee7b54006f138d97d3c7cd9a90c76896c9954e3278568e17c5f2cb59284",
+    "benchmarks/parallel-search-20261007/four_d-90/candidate-1250-v2/tasks.json": "e7800eb7093a7531dbd92b6965fdbfc90a5260d506b78d698fa586cc7319a1e5",
+    "benchmarks/parallel-search-20261007/four_d-90/candidate-1800-v1/independent-input-review.json": "ca0a2660f4577e1587b3715cf2ce241c3a8f893303dff0200eed7a0ac662bd44",
+    "benchmarks/parallel-search-20261007/four_d-90/candidate-1800-v1/manifest.json": "67653e28fcceb6291b805953432fe511889660a23e5b071c80a4ee43d65fb1c2",
+    "benchmarks/parallel-search-20261007/four_d-90/candidate-1800-v1/public-prompts.json": "187fa86a4b840f121ea443158654eda866fe78126efd0fe6f6b820986e742f81",
+    "benchmarks/parallel-search-20261007/four_d-90/candidate-1800-v1/scoring-adoption.json": "09cc62df3736f7d627f273bf86fb8c23e98f6416f62c78266c7cd694ca3c75c6",
+    "benchmarks/parallel-search-20261007/four_d-90/candidate-1800-v1/source-policy.json": "e5c48ee7b54006f138d97d3c7cd9a90c76896c9954e3278568e17c5f2cb59284",
+    "benchmarks/parallel-search-20261007/four_d-90/candidate-1800-v1/spelling-policy-proposal/alias-policy.json": "06ee42905da5f8397e2d73f6fa1aa6ef67a2e35b961f5052aa0afac649ff90c3",
+    "benchmarks/parallel-search-20261007/four_d-90/candidate-1800-v1/spelling-policy-proposal/independent-review.json": "47fc49e5df4b022930eb88da7997b6ba91307ce41f0bc47221754f04b91e911f",
+    "benchmarks/parallel-search-20261007/four_d-90/candidate-1800-v1/spelling-policy-proposal/scorer.py": "3726b6c567ffa054d718abbb873512d0b9e2f4cc59b6790e4a5fb884f5829d58",
+    "benchmarks/parallel-search-20261007/four_d-90/candidate-1800-v1/tasks.json": "695e7284d06a555aaabfcb7671d000db5622157984221c261b9500e86f72d38f",
+    "benchmarks/parallel-search-20261007/four_d-90/ending-screen-01/alias_policy.py": "95aa681cf454a6f71e63acc4fd34ff52ae9b9341a2a9e6c68050c0a073003825",
+    "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/input-counts.json": "82d6c48ae2a8812268be707d25d2b36b7a9644401251779477bb9ac0699f5fce",
+    "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/requests.json": "1a03b0926fb5f2be2bdbb4c9a75dd539fa77357365758ca1bc0c3f639f199110",
+    "benchmarks/parallel-search-20261007/four_d-90/reading-clarification.json": "1dfbe7eafc3718327a724510de1b51c6bdff84c23914783d9749a42632afdf3c",
+    "benchmarks/parallel-search-20261007/four_d-90/rl-supply/strict-citation-option/training-inventory-metadata.json": "8a250696a30d510527c08651993520c54a14c353fa7ea85dbdd6d1b5a0c12245",
+    "data/finetune/task-data/vidyut_dhatupatha_5.tsv": "c6c494a6c534130b2d8e8f344d2f5e3ffbc64ed45b390e2a4e35e526f1cecd09",
+    "finetune/prompts.py": "2f474c6a8a14b9445b1686c5f0b63ebf60f8d9fb061e67c6134ccdb4683a4a2e",
+    "misc/ant_batch_eval.py": "aac6d895846d4f2e83b01c009be09b060c1a58d9ec2209caad763403ec3f29f8",
+    "misc/oai_batch_eval.py": "1472b84916e52676df620b2433f01c956696cde69ad198bf386bb735df5d1525",
+    "misc/vp_4d_candidate_1800.py": "19919ed8cff2db5a833012f14505d24bc51f75015b677e9a33afcbc92fc5d4c8",
+    "misc/vp_4d_pilot.py": "4e540d5d1633ff2a29b09226a825e782e18179cca52a49e15906f57e1eb00892",
+    "misc/vp_4d_pilot04.py": "44822ce2be986bb5500082bfc506fc865205a429d4fe875ac39bf6e51702edc6",
+    "misc/vp_4d_pilot05.py": "d518f65e83799c9b837db31efc63be6bee65f0079b3a33031fb76bbc1108ec5a",
+    "misc/vp_campaign_candidates.py": "e8e8a049f637aebb1d7a2970102602dfa82dd13a6e393e558b5bb3804c63c0c1",
+    "misc/vp_cartesian_analyze.py": "b905142522d127f61725d1dfa165da39bafdf5d860a5ff92b915ea468d17676b",
+    "misc/vp_cartesian_final_analyze.py": "c799424553a8d557328d4b1d2c7ec0984969bd923f2a11dda28946138800b37d",
+    "misc/vp_cartesian_prompt_v1.py": "1cdf3930d2e6b5bf9994a0a5fd25918a2e038b6dfbbcc9a9bab1fb59ddbfcfff",
+    "misc/vp_cartesian_task.py": "f5bfab6f3fc27b7c83bbd6987bede73501592a9568fda32a0371bd8e23b7febd",
+    "misc/vp_cartesian_visibility.py": "5347504654b6b3842104953f4c62424152bde56fb2c69a5cab2b4c4b42fbcc65",
+    "misc/vp_continuous64k.py": "5915a193ad58b60b1f30ad59be35e7a6fb0379fe99f828778a60c478ef10b3f4",
+    "misc/vp_continuous64k_analyze.py": "9a04da1a4b609aa6a910ab5738f1e7564d1b7d884308f9c671a2aa0c51bc112d",
+    "misc/vp_continuous64k_prepare.py": "e979014e037e909a6acf2fb2d4541a8f63c50281e3a7822c88ef9cd28ec707b9",
+    "misc/vp_ending_screen_run.py": "8a9294d7f0fa01ccd1c0976a54e1c7a13020b7897fb96208916b44d23398b266",
+    "misc/vp_goal.py": "c317278d15f3a05e3948e22678a346cc33a7274122f9ac5f66ed082e3373b65d",
+    "misc/vp_goal_stats.py": "afa7cd2ff3e4e89994db5b682adc3141608110ec6cdefdb739884e27be3d0d95",
+    "misc/vp_goal_validate.py": "a5461df5d85dfd34875ece368ede87e957b7a70a10021667eb5b4f03af06791d",
+    "misc/vp_simple_astra_compare.py": "07a2c778f154237061bfdb77b932b57a5dbab60054f1e4e7713b0c561c3e7774",
+    "misc/vp_simple_search_analyze.py": "cbbb64658f102f801c3095f16ecc74b673508e4ccba9763376433667cb85f0e7",
+    "prompts/v2/vp_task_eval.txt": "a784e3a1cf0e5f5d8b56c018d166ad78fa62d8af489291ef96d8f6fea70239cd"
+  },
+  "immutable_input_hashes": {
+    "execution-plan.json": "69201de2ede7e2ee2168ff1180324875aa22d4c3e34c385e58894ba110ad4967",
+    "requests.json": "1a03b0926fb5f2be2bdbb4c9a75dd539fa77357365758ca1bc0c3f639f199110",
+    "input-counts.json": "82d6c48ae2a8812268be707d25d2b36b7a9644401251779477bb9ac0699f5fce"
+  },
+  "reviewed_executor_sha256": "5915a193ad58b60b1f30ad59be35e7a6fb0379fe99f828778a60c478ef10b3f4",
+  "reviewed_analyzer_sha256": "9a04da1a4b609aa6a910ab5738f1e7564d1b7d884308f9c671a2aa0c51bc112d",
+  "code_review_receipt_sha256": "c7d1e302c7c94210bc33114163fdc5c27ae11e2059c5625fb892abaca5ae5005",
+  "independent_spelling_review_sha256": "47fc49e5df4b022930eb88da7997b6ba91307ce41f0bc47221754f04b91e911f",
+  "scoring_adoption_sha256": "09cc62df3736f7d627f273bf86fb8c23e98f6416f62c78266c7cd694ca3c75c6",
+  "full_shared_regeneration": {
+    "created_at": "2026-10-08T00:37:58.062561+00:00",
+    "passed_mechanical_checks": true,
+    "n": 1800,
+    "split": "test",
+    "task_digest": "bea95d4954a655e75b41640e529853a2638a1e12abcee54a250d991d3dacb6b9",
+    "root_families": 755,
+    "maximum_tasks_per_root": 67,
+    "cells": {
+      "short_adanta_non_aorist": 936,
+      "other_adanta_aorist": 144,
+      "broad_non_curadi": 720
+    },
+    "validator_sha256": "a5461df5d85dfd34875ece368ede87e957b7a70a10021667eb5b4f03af06791d",
+    "family_definition": "Exact Dhatupatha citation including markers, plus gana; not an etymological lemma split.",
+    "scope": "Full regeneration, semantic fields, all accepted gold variants, prompt identity, split membership and declared sampling exclusions.",
+    "limits": "Does not independently certify Sanskrit correctness, empirical difficulty, contamination absence or benchmark sampling precision."
+  },
+  "prior_final_jobs_checked_for_replay": 0,
+  "registration_or_paid_action_performed": false,
+  "reviewer_script_sha256": "2f3833beb8832b6d4e2f0d6fceede1a0ff37bd5db8d2fedffc145714284512bf",
+  "model_outputs_read": false,
+  "paid_calls": 0,
+  "benchmark_ready": false,
+  "protocol_disposition": "The explicitly versioned full1800 fixed test cohort replaces legacy1000-core/extension mechanics for this run. Legacy protocols and records remain unchanged; these questions are not development tasks.",
+  "operational_conditions": [
+    "Use the exact reviewed executor and manifest; do not change membership, request limits, grading policy or order after exposure.",
+    "No answer grading until both complete1800 cohorts have terminal validated usage. No score-based stopping, retries or selective completion.",
+    "Pools bound spending and preserve all existing reserves; realized usage can exhaust a pool before1800. Such a run stays incomplete, with full reservations retained for unknown outcomes.",
+    "Every usable unrecognized answer requires source adjudication; canonical, finite-whitelist and later symmetric corrections retain separate full-panel results.",
+    "The ownership fence must block legacy paid submissions; legacy collector must continue ignoring aggregate batch_id=None records."
+  ]
+}

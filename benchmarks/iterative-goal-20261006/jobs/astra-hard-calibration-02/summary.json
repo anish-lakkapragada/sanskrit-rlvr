@@ -1,0 +1,82 @@
+{
+  "id": "astra-hard-calibration-02",
+  "provider": "OpenAI",
+  "phase": "confirm",
+  "n": 500,
+  "tasks_digest": "fe30b5b7ac9d8399f16c3d5e015427275b28dc51535089d8d5cfe79b712305b6",
+  "requests_digest": "bb9c2583dfbadf4148090d4318e1cb37feb7dd8429f8cd221c8159d568078b63",
+  "created_at": "2026-10-07T00:35:57.863061+00:00",
+  "status": "completed",
+  "batch_id": "batch_6ac59471bd588190a914813813685ce8",
+  "attempted_at": "2026-10-07T00:38:04.670048+00:00",
+  "reservation_micro": 208550000,
+  "input_file_id": "file-U23G6cHgQL9tC1npCWFMyY",
+  "transport": "batch",
+  "batch": {
+    "id": "batch_6ac59471bd588190a914813813685ce8",
+    "object": "batch",
+    "endpoint": "/v1/responses",
+    "model": "gpt-6-astra",
+    "errors": null,
+    "input_file_id": "file-U23G6cHgQL9tC1npCWFMyY",
+    "completion_window": "24h",
+    "status": "completed",
+    "output_file_id": "file-YAkJNV76mX2wMhnXqfZX6Y",
+    "error_file_id": null,
+    "created_at": 1791333489,
+    "in_progress_at": 1791333491,
+    "expires_at": 1791419889,
+    "finalizing_at": 1791340076,
+    "completed_at": 1791340102,
+    "failed_at": null,
+    "expired_at": null,
+    "cancelling_at": null,
+    "cancelled_at": null,
+    "request_counts": {
+      "total": 500,
+      "completed": 500,
+      "failed": 0
+    },
+    "usage": {
+      "input_tokens": 166108,
+      "output_tokens": 6377943,
+      "total_tokens": 6544051,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens_details": {
+        "reasoning_tokens": 6369559
+      }
+    },
+    "metadata": {
+      "campaign": "iterative-goal-20261006",
+      "job": "astra-hard-calibration-02",
+      "tasks_digest": "fe30b5b7ac9d8399f16c3d5e015427275b28dc51535089d8d5cfe79b712305b6",
+      "retries": "0"
+    }
+  },
+  "collected_at": "2026-10-07T02:28:43.120655+00:00",
+  "usage": {
+    "input_tokens": 166108,
+    "output_tokens": 6377943,
+    "cache_read": 0,
+    "cache_write": 0
+  },
+  "summary": {
+    "task_count": 500,
+    "correct": 334,
+    "incorrect_or_no_answer": 166,
+    "unscored": 0,
+    "pass_at_1_all_tasks": 0.668,
+    "truncated": 87,
+    "statuses": {
+      "completed": 413,
+      "incomplete": 87
+    }
+  },
+  "completed_answers": 413,
+  "completed_correct": 334,
+  "actual_cost_upper_micro": 160279115,
+  "token_policy_violations": [],
+  "settled": true
+}

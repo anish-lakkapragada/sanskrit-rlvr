@@ -1,0 +1,4028 @@
+{
+  "created_at": "2026-10-07T09:22:35.568468+00:00",
+  "source_sha256": "85178c7454df7de07e92f77c93c10febe85bd5821b2a48691d0cef7b32f4f294",
+  "shared_adapter_sha256": "7c653b7216e4797b27eaae25949463dcbc28e306a803da7c33a451481da71162",
+  "dependence_sha256": "b7e23f0a099451f5cf0122de89bb7b3d3fd5d623dfafef24c0db8952bfc3540f",
+  "reports": {
+    "pilot-06.scale-witness-policy15-N4800.json": {
+      "witness_sha256": "04dc44f9d7a636c208e734c3c01192ead1ee95551b14adc4de6a100b89baeda6",
+      "pairs": {
+        "different_non_Lun": 4682,
+        "one_Lun": 4181,
+        "both_Lun": 3714
+      },
+      "distinct_families": 932,
+      "cases": {
+        "fine_empirical": {
+          "moment_cells": "exact recipe x tense x voice",
+          "moment_smoothing": "empirical proportions",
+          "smallest_observed_cell": 2,
+          "projected_completion": 0.8555245215311004,
+          "projected_all_accuracy": 0.6432616959064328,
+          "projected_usable_accuracy": 0.7490206761212755,
+          "estimates": {
+            "recorded_all_correct": {
+              "independent_variance_sum": 938.7370362908866,
+              "allocation_mean_squared_sum": 260.92443738682607,
+              "pair_counts": {
+                "different_non_Lun": 4682,
+                "one_Lun": 4181,
+                "both_Lun": 3714
+              },
+              "pair_covariance_coefficients": {
+                "different_non_Lun": 1651.8221545867598,
+                "one_Lun": 1402.6896398948386,
+                "both_Lun": 1700.4465975180249
+              },
+              "scenarios": [
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 0.8569162797460522,
+                  "expected_unstratified_sandwich_se_pp": 0.9211212372307301
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.1,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.1
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.8989491733623584,
+                  "expected_unstratified_sandwich_se_pp": 0.9603893551498752
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.2,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.2
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.939102615310979,
+                  "expected_unstratified_sandwich_se_pp": 0.9981137677103327
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.3,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.3
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9776082179886654,
+                  "expected_unstratified_sandwich_se_pp": 1.0344633744607095
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.4,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.4
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.0146536027995106,
+                  "expected_unstratified_sandwich_se_pp": 1.0695783528607712
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.5,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.5
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.0503932784767238,
+                  "expected_unstratified_sandwich_se_pp": 1.1035765640480424
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 0.9927808986932354,
+                  "expected_unstratified_sandwich_se_pp": 1.048829190016601
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.1,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.1
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.0292803401431512,
+                  "expected_unstratified_sandwich_se_pp": 1.083478679826512
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.2,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.2
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.0645290622619252,
+                  "expected_unstratified_sandwich_se_pp": 1.117053906240126
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.3,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.3
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.098647454916866,
+                  "expected_unstratified_sandwich_se_pp": 1.1496489939342553
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.4,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.4
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.1317377505369168,
+                  "expected_unstratified_sandwich_se_pp": 1.1813450761999087
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.5,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.5
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.1638876413921635,
+                  "expected_unstratified_sandwich_se_pp": 1.212212674768537
+                }
+              ],
+              "max_repeated_Lun_rho_for_expected_sandwich_sub1pp_at_observed_point_rhos": 0.20510115633163054
+            },
+            "completed_ratio_influence": {
+              "independent_variance_sum": 894.2768358398544,
+              "allocation_mean_squared_sum": 270.5771377420436,
+              "pair_counts": {
+                "different_non_Lun": 4682,
+                "one_Lun": 4181,
+                "both_Lun": 3714
+              },
+              "pair_covariance_coefficients": {
+                "different_non_Lun": 1955.2009033006016,
+                "one_Lun": 1283.623578804592,
+                "both_Lun": 1173.3598088049555
+              },
+              "scenarios": [
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 0.831430545158159,
+                  "expected_unstratified_sandwich_se_pp": 0.8997685240922285
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.1,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.1
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.8615125225189306,
+                  "expected_unstratified_sandwich_se_pp": 0.9276665206090969
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.2,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.2
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.8905789698234897,
+                  "expected_unstratified_sandwich_se_pp": 0.9547496792200925
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.3,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.3
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9187262794362667,
+                  "expected_unstratified_sandwich_se_pp": 0.9810854837794468
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.4,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.4
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9460364958931251,
+                  "expected_unstratified_sandwich_se_pp": 1.0067325876292237
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.5,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.5
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9725801389071649,
+                  "expected_unstratified_sandwich_se_pp": 1.0317423513196082
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 0.9811819594230868,
+                  "expected_unstratified_sandwich_se_pp": 1.0398635688728228
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.1,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.1
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.0067994400734763,
+                  "expected_unstratified_sandwich_se_pp": 1.064094929214873
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.2,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.2
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.031781075406601,
+                  "expected_unstratified_sandwich_se_pp": 1.0877866495286137
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.3,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.3
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.0561719853329476,
+                  "expected_unstratified_sandwich_se_pp": 1.1109732541355655
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.4,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.4
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.080012193281667,
+                  "expected_unstratified_sandwich_se_pp": 1.1336857359588015
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.5,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.5
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.103337397477315,
+                  "expected_unstratified_sandwich_se_pp": 1.1559520424430814
+                }
+              ],
+              "max_repeated_Lun_rho_for_expected_sandwich_sub1pp_at_observed_point_rhos": 0.37349934835738036
+            }
+          }
+        },
+        "fine_smoothed": {
+          "moment_cells": "exact recipe x tense x voice",
+          "moment_smoothing": "Dirichlet0.5 per four response states",
+          "smallest_observed_cell": 2,
+          "projected_completion": 0.8076566544221824,
+          "projected_all_accuracy": 0.6170699266227216,
+          "projected_usable_accuracy": 0.726039493777383,
+          "estimates": {
+            "recorded_all_correct": {
+              "independent_variance_sum": 1036.8974454753588,
+              "allocation_mean_squared_sum": 166.71242865318362,
+              "pair_counts": {
+                "different_non_Lun": 4682,
+                "one_Lun": 4181,
+                "both_Lun": 3714
+              },
+              "pair_covariance_coefficients": {
+                "different_non_Lun": 2029.1595082194492,
+                "one_Lun": 1755.6950598987669,
+                "both_Lun": 1707.5459132442595
+              },
+              "scenarios": [
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 0.9253796774892271,
+                  "expected_unstratified_sandwich_se_pp": 0.9642006462727644
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.1,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.1
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9645930661828122,
+                  "expected_unstratified_sandwich_se_pp": 1.0019354904733666
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.2,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.2
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.0022734253415344,
+                  "expected_unstratified_sandwich_se_pp": 1.038299844874974
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.3,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.3
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.0385876250773187,
+                  "expected_unstratified_sandwich_se_pp": 1.0734330014792188
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.4,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.4
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.0736742945519553,
+                  "expected_unstratified_sandwich_se_pp": 1.1074521431926412
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.5,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.5
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.107650092131776,
+                  "expected_unstratified_sandwich_se_pp": 1.140456965544629
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.0804025369776253,
+                  "expected_unstratified_sandwich_se_pp": 1.1139833786383293
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.1,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.1
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.1141731812090896,
+                  "expected_unstratified_sandwich_se_pp": 1.146800247941967
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.2,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.2
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.1469499176265179,
+                  "expected_unstratified_sandwich_se_pp": 1.1787038005695267
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.3,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.3
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.1788156553767721,
+                  "expected_unstratified_sandwich_se_pp": 1.2097662957258877
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.4,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.4
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.2098423803038405,
+                  "expected_unstratified_sandwich_se_pp": 1.240050938901957
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.5,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.5
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.2400930694900103,
+                  "expected_unstratified_sandwich_se_pp": 1.2696133946477228
+                }
+              ],
+              "max_repeated_Lun_rho_for_expected_sandwich_sub1pp_at_observed_point_rhos": 0.09477742157565178
+            },
+            "completed_ratio_influence": {
+              "independent_variance_sum": 1063.3529193531217,
+              "allocation_mean_squared_sum": 223.2624157198416,
+              "pair_counts": {
+                "different_non_Lun": 4682,
+                "one_Lun": 4181,
+                "both_Lun": 3714
+              },
+              "pair_covariance_coefficients": {
+                "different_non_Lun": 2493.1700428304293,
+                "one_Lun": 1703.1273244577744,
+                "both_Lun": 1337.6737896929062
+              },
+              "scenarios": [
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 0.925542328612708,
+                  "expected_unstratified_sandwich_se_pp": 0.9770132510558417
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.1,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.1
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9563928901278144,
+                  "expected_unstratified_sandwich_se_pp": 1.0063180474823001
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.2,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.2
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9862789253148585,
+                  "expected_unstratified_sandwich_se_pp": 1.034793280147524
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.3,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.3
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.0152856133883863,
+                  "expected_unstratified_sandwich_se_pp": 1.06250564826186
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.4,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.4
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.043486288834995,
+                  "expected_unstratified_sandwich_se_pp": 1.0895133650112965
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.5,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.5
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.0709446265889893,
+                  "expected_unstratified_sandwich_se_pp": 1.1158675963070719
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.0988644605738545,
+                  "expected_unstratified_sandwich_se_pp": 1.1427188073012702
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.1,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.1
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.1249719378479925,
+                  "expected_unstratified_sandwich_se_pp": 1.1678730207132626
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.2,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.2
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.1504871225609898,
+                  "expected_unstratified_sandwich_se_pp": 1.1924967557439325
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.3,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.3
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.175448585609709,
+                  "expected_unstratified_sandwich_se_pp": 1.2166222225529533
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.4,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.4
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.1998908848912322,
+                  "expected_unstratified_sandwich_se_pp": 1.2402784979026167
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.5,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.5
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.2238451265900694,
+                  "expected_unstratified_sandwich_se_pp": 1.2634919359890886
+                }
+              ],
+              "max_repeated_Lun_rho_for_expected_sandwich_sub1pp_at_observed_point_rhos": 0.07819035025560629
+            }
+          }
+        },
+        "coarse_empirical": {
+          "moment_cells": "recipe x aorist/other x voice",
+          "moment_smoothing": "empirical proportions",
+          "smallest_observed_cell": 10,
+          "projected_completion": 0.8567838213491473,
+          "projected_all_accuracy": 0.6459951816160117,
+          "projected_usable_accuracy": 0.7515658417808452,
+          "estimates": {
+            "recorded_all_correct": {
+              "independent_variance_sum": 955.2627641346498,
+              "allocation_mean_squared_sum": 246.93089226834894,
+              "pair_counts": {
+                "different_non_Lun": 4682,
+                "one_Lun": 4181,
+                "both_Lun": 3714
+              },
+              "pair_covariance_coefficients": {
+                "different_non_Lun": 1822.6767817559187,
+                "one_Lun": 1596.4084503979536,
+                "both_Lun": 1700.4465975180249
+              },
+              "scenarios": [
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 0.8845205208671973,
+                  "expected_unstratified_sandwich_se_pp": 0.9436667302470424
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.1,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.1
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9253003067276221,
+                  "expected_unstratified_sandwich_se_pp": 0.9820337456436344
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.2,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.2
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9643571762709523,
+                  "expected_unstratified_sandwich_se_pp": 1.0189571420774224
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.3,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.3
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.0018926435603455,
+                  "expected_unstratified_sandwich_se_pp": 1.0545885629942662
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.4,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.4
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.0380717581243557,
+                  "expected_unstratified_sandwich_se_pp": 1.0890548273645517
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.5,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.5
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.0730317240466116,
+                  "expected_unstratified_sandwich_se_pp": 1.1224632719219618
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.031019402612962,
+                  "expected_unstratified_sandwich_se_pp": 1.0823274814591373
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.1,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.1
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.0662106332050163,
+                  "expected_unstratified_sandwich_se_pp": 1.1159373445357055
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.2,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.2
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.1002768834045797,
+                  "expected_unstratified_sandwich_se_pp": 1.1485641195584702
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.3,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.3
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.1333196045024316,
+                  "expected_unstratified_sandwich_se_pp": 1.180289335944728
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.4,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.4
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.1654258585360981,
+                  "expected_unstratified_sandwich_se_pp": 1.2111838408567746
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.5,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.5
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.1966710231052036,
+                  "expected_unstratified_sandwich_se_pp": 1.2413096616720147
+                }
+              ],
+              "max_repeated_Lun_rho_for_expected_sandwich_sub1pp_at_observed_point_rhos": 0.14819720282126522
+            },
+            "completed_ratio_influence": {
+              "independent_variance_sum": 915.2739931542922,
+              "allocation_mean_squared_sum": 246.94247744922887,
+              "pair_counts": {
+                "different_non_Lun": 4682,
+                "one_Lun": 4181,
+                "both_Lun": 3714
+              },
+              "pair_covariance_coefficients": {
+                "different_non_Lun": 2201.127525371366,
+                "one_Lun": 1458.561242456026,
+                "both_Lun": 1169.5410512456947
+              },
+              "scenarios": [
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 0.8603831805341434,
+                  "expected_unstratified_sandwich_se_pp": 0.921058824486649
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.1,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.1
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.8893933593721363,
+                  "expected_unstratified_sandwich_se_pp": 0.948243224052887
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.2,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.2
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9174867181842249,
+                  "expected_unstratified_sandwich_se_pp": 0.9746697213721679
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.3,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.3
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9447450494147428,
+                  "expected_unstratified_sandwich_se_pp": 1.0003983804251113
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.4,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.4
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9712386620923154,
+                  "expected_unstratified_sandwich_se_pp": 1.0254817274601589
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.5,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.5
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9970285196984466,
+                  "expected_unstratified_sandwich_se_pp": 1.0499660123795236
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.023136167467036,
+                  "expected_unstratified_sandwich_se_pp": 1.0748148798196042
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.1,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.1
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.0476492483309194,
+                  "expected_unstratified_sandwich_se_pp": 1.0981998359493212
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.2,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.2
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.0716017347305602,
+                  "expected_unstratified_sandwich_se_pp": 1.1210971115280792
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.3,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.3
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.0950304142930238,
+                  "expected_unstratified_sandwich_se_pp": 1.1435360017393807
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.4,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.4
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.117968218947192,
+                  "expected_unstratified_sandwich_se_pp": 1.1655429812201585
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.5,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.5
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.140444768029194,
+                  "expected_unstratified_sandwich_se_pp": 1.1871420702127697
+                }
+              ],
+              "max_repeated_Lun_rho_for_expected_sandwich_sub1pp_at_observed_point_rhos": 0.2984317501377389
+            }
+          }
+        },
+        "coarse_smoothed": {
+          "moment_cells": "recipe x aorist/other x voice",
+          "moment_smoothing": "Dirichlet0.5 per four response states",
+          "smallest_observed_cell": 10,
+          "projected_completion": 0.8449757937256939,
+          "projected_all_accuracy": 0.6389945886259516,
+          "projected_usable_accuracy": 0.744001515922551,
+          "estimates": {
+            "recorded_all_correct": {
+              "independent_variance_sum": 984.5464872543336,
+              "allocation_mean_squared_sum": 212.18056662708403,
+              "pair_counts": {
+                "different_non_Lun": 4682,
+                "one_Lun": 4181,
+                "both_Lun": 3714
+              },
+              "pair_covariance_coefficients": {
+                "different_non_Lun": 1876.7147180680272,
+                "one_Lun": 1649.9339021066291,
+                "both_Lun": 1707.5459132442595
+              },
+              "scenarios": [
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 0.8982722461006523,
+                  "expected_unstratified_sandwich_se_pp": 0.948657419983456
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.1,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.1
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9386188065091197,
+                  "expected_unstratified_sandwich_se_pp": 0.9869866976241154
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.2,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.2
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9773011305378181,
+                  "expected_unstratified_sandwich_se_pp": 1.0238821133725533
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.3,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.3
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.0145096034875127,
+                  "expected_unstratified_sandwich_se_pp": 1.0594934746762414
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.4,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.4
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.050400862236072,
+                  "expected_unstratified_sandwich_se_pp": 1.0939461886577535
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.5,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.5
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.0851056202988614,
+                  "expected_unstratified_sandwich_se_pp": 1.127346488208534
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.0470246255769071,
+                  "expected_unstratified_sandwich_se_pp": 1.0907012664437337
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.1,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.1
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.0818376968761791,
+                  "expected_unstratified_sandwich_se_pp": 1.124197977857661
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.2,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.2
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.1155648964539215,
+                  "expected_unstratified_sandwich_se_pp": 1.1567250901647044
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.3,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.3
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.1483019089151345,
+                  "expected_unstratified_sandwich_se_pp": 1.1883622238248037
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.4,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.4
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.180131140948342,
+                  "expected_unstratified_sandwich_se_pp": 1.2191786644340206
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.5,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.5
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.211124166076265,
+                  "expected_unstratified_sandwich_se_pp": 1.249235148644326
+                }
+              ],
+              "max_repeated_Lun_rho_for_expected_sandwich_sub1pp_at_observed_point_rhos": 0.13485188995875125
+            },
+            "completed_ratio_influence": {
+              "independent_variance_sum": 962.3717009511614,
+              "allocation_mean_squared_sum": 227.41003402250286,
+              "pair_counts": {
+                "different_non_Lun": 4682,
+                "one_Lun": 4181,
+                "both_Lun": 3714
+              },
+              "pair_covariance_coefficients": {
+                "different_non_Lun": 2288.115272646946,
+                "one_Lun": 1534.6024812377268,
+                "both_Lun": 1218.7785032453442
+              },
+              "scenarios": [
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 0.8812670195688713,
+                  "expected_unstratified_sandwich_se_pp": 0.9360951018395766
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.1,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.1
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9107853382199846,
+                  "expected_unstratified_sandwich_se_pp": 0.9639653682055402
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.2,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.2
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9393765511514443,
+                  "expected_unstratified_sandwich_se_pp": 0.9910521795098571
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.3,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.3
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9671228863954531,
+                  "expected_unstratified_sandwich_se_pp": 1.0174181116546106
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.4,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.4
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9940950909880617,
+                  "expected_unstratified_sandwich_se_pp": 1.0431178290751382
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.5,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.5
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.0203545572315798,
+                  "expected_unstratified_sandwich_se_pp": 1.0681994180610774
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.0471922454116718,
+                  "expected_unstratified_sandwich_se_pp": 1.0938911160404476
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.1,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.1
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.072152028113098,
+                  "expected_unstratified_sandwich_se_pp": 1.1178340508160465
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.2,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.2
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.0965438176031634,
+                  "expected_unstratified_sandwich_se_pp": 1.141274794506304
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.3,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.3
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.1204047110131274,
+                  "expected_unstratified_sandwich_se_pp": 1.1642436806729948
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.4,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.4
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.1437679349400822,
+                  "expected_unstratified_sandwich_se_pp": 1.1867681068341016
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.5,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.5
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.1666633882717803,
+                  "expected_unstratified_sandwich_se_pp": 1.2088729175600688
+                }
+              ],
+              "max_repeated_Lun_rho_for_expected_sandwich_sub1pp_at_observed_point_rhos": 0.23364274023728795
+            }
+          }
+        }
+      }
+    },
+    "pilot-06.block-allocation-1_0.json": {
+      "witness_sha256": "9c2adf1e503d71fa2dac670213cd8669190bbfb99def77f41cafb4b44b1b72f7",
+      "pairs": {
+        "different_non_Lun": 6812,
+        "one_Lun": 2443,
+        "both_Lun": 3985
+      },
+      "distinct_families": 932,
+      "cases": {
+        "fine_empirical": {
+          "moment_cells": "exact recipe x tense x voice",
+          "moment_smoothing": "empirical proportions",
+          "smallest_observed_cell": 2,
+          "projected_completion": 0.8555245215311004,
+          "projected_all_accuracy": 0.6432616959064328,
+          "projected_usable_accuracy": 0.7490206761212755,
+          "estimates": {
+            "recorded_all_correct": {
+              "independent_variance_sum": 938.7370362908866,
+              "allocation_mean_squared_sum": 296.8744447779454,
+              "pair_counts": {
+                "different_non_Lun": 6812,
+                "one_Lun": 2443,
+                "both_Lun": 3985
+              },
+              "pair_covariance_coefficients": {
+                "different_non_Lun": 2329.91397408673,
+                "one_Lun": 883.7208002181303,
+                "both_Lun": 1751.103758411296
+              },
+              "scenarios": [
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 0.8419631267062473,
+                  "expected_unstratified_sandwich_se_pp": 0.915780271187128
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.1,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.1
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.8859484601403839,
+                  "expected_unstratified_sandwich_se_pp": 0.9564193159975256
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.2,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.2
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9278509801241114,
+                  "expected_unstratified_sandwich_se_pp": 0.995400578124596
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.3,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.3
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9679412216707328,
+                  "expected_unstratified_sandwich_se_pp": 1.032911764793288
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.4,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.4
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.006435778329441,
+                  "expected_unstratified_sandwich_se_pp": 1.0691076263716344
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.5,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.5
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.0435112568600995,
+                  "expected_unstratified_sandwich_se_pp": 1.1041175298325785
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 0.9942776779006666,
+                  "expected_unstratified_sandwich_se_pp": 1.0576578435158126
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.1,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.1
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.0317901279154102,
+                  "expected_unstratified_sandwich_se_pp": 1.0930345451394132
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.2,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.2
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.0679857842480187,
+                  "expected_unstratified_sandwich_se_pp": 1.1273016099455055
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.3,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.3
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.1029942894902096,
+                  "expected_unstratified_sandwich_se_pp": 1.160557332794608
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.4,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.4
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.1369253141434443,
+                  "expected_unstratified_sandwich_se_pp": 1.1928863003744068
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.5,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.5
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.169872615814357,
+                  "expected_unstratified_sandwich_se_pp": 1.224361927102662
+                }
+              ],
+              "max_repeated_Lun_rho_for_expected_sandwich_sub1pp_at_observed_point_rhos": 0.2120625104716392
+            },
+            "completed_ratio_influence": {
+              "independent_variance_sum": 894.2768358398544,
+              "allocation_mean_squared_sum": 321.241936018871,
+              "pair_counts": {
+                "different_non_Lun": 6812,
+                "one_Lun": 2443,
+                "both_Lun": 3985
+              },
+              "pair_covariance_coefficients": {
+                "different_non_Lun": 2751.256367235524,
+                "one_Lun": 827.8694927144086,
+                "both_Lun": 1208.5184952490995
+              },
+              "scenarios": [
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 0.8296974532463877,
+                  "expected_unstratified_sandwich_se_pp": 0.9103378310779213
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.1,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.1
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.8607269739082032,
+                  "expected_unstratified_sandwich_se_pp": 0.9387355149026221
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.2,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.2
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.8906761382808027,
+                  "expected_unstratified_sandwich_se_pp": 0.9662990050638196
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.3,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.3
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.919650500457883,
+                  "expected_unstratified_sandwich_se_pp": 0.9930977632817248
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.4,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.4
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9477394698344404,
+                  "expected_unstratified_sandwich_se_pp": 1.0191921151986025
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.5,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.5
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9750195702506165,
+                  "expected_unstratified_sandwich_se_pp": 1.044634849088828
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.0001636554926323,
+                  "expected_unstratified_sandwich_se_pp": 1.0681664141445706
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.1,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.1
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.0260508746928763,
+                  "expected_unstratified_sandwich_se_pp": 1.0924691705280782
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.2,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.2
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.0513008404579764,
+                  "expected_unstratified_sandwich_se_pp": 1.116242934491477
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.3,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.3
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.0759584178012078,
+                  "expected_unstratified_sandwich_se_pp": 1.139520815540454
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.4,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.4
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.100063442046371,
+                  "expected_unstratified_sandwich_se_pp": 1.162332607001033
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.5,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.5
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.1236514745313781,
+                  "expected_unstratified_sandwich_se_pp": 1.1847052331891064
+                }
+              ],
+              "max_repeated_Lun_rho_for_expected_sandwich_sub1pp_at_observed_point_rhos": 0.32619879964331133
+            }
+          }
+        },
+        "fine_smoothed": {
+          "moment_cells": "exact recipe x tense x voice",
+          "moment_smoothing": "Dirichlet0.5 per four response states",
+          "smallest_observed_cell": 2,
+          "projected_completion": 0.8076566544221824,
+          "projected_all_accuracy": 0.6170699266227216,
+          "projected_usable_accuracy": 0.726039493777383,
+          "estimates": {
+            "recorded_all_correct": {
+              "independent_variance_sum": 1036.8974454753588,
+              "allocation_mean_squared_sum": 183.5030959364991,
+              "pair_counts": {
+                "different_non_Lun": 6812,
+                "one_Lun": 2443,
+                "both_Lun": 3985
+              },
+              "pair_covariance_coefficients": {
+                "different_non_Lun": 2959.1067894544553,
+                "one_Lun": 1019.167079080946,
+                "both_Lun": 1799.3229246652818
+              },
+              "scenarios": [
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 0.9043632089865133,
+                  "expected_unstratified_sandwich_se_pp": 0.9478830579277735
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.1,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.1
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9465560875183744,
+                  "expected_unstratified_sandwich_se_pp": 0.9882620037906394
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.2,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.2
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9869468272748035,
+                  "expected_unstratified_sandwich_se_pp": 1.0270546649356467
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.3,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.3
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.0257483380037762,
+                  "expected_unstratified_sandwich_se_pp": 1.0644344890108817
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.4,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.4
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.0631346415046485,
+                  "expected_unstratified_sandwich_se_pp": 1.1005454456884731
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.5,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.5
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.0992501439694815,
+                  "expected_unstratified_sandwich_se_pp": 1.1355085973498498
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.0798325128114827,
+                  "expected_unstratified_sandwich_se_pp": 1.1167012594191403
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.1,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.1
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.1154074900118207,
+                  "expected_unstratified_sandwich_se_pp": 1.1511738354471392
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.2,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.2
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.1498823773865647,
+                  "expected_unstratified_sandwich_se_pp": 1.1846437000414347
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.3,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.3
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.1833533263036387,
+                  "expected_unstratified_sandwich_se_pp": 1.2171935723941545
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.4,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.4
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.2159032477642269,
+                  "expected_unstratified_sandwich_se_pp": 1.2488953876555984
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.5,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.5
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.247604232508572,
+                  "expected_unstratified_sandwich_se_pp": 1.2798121682251697
+                }
+              ],
+              "max_repeated_Lun_rho_for_expected_sandwich_sub1pp_at_observed_point_rhos": 0.12985208765698175
+            },
+            "completed_ratio_influence": {
+              "independent_variance_sum": 1063.3529193531217,
+              "allocation_mean_squared_sum": 273.32438451542185,
+              "pair_counts": {
+                "different_non_Lun": 6812,
+                "one_Lun": 2443,
+                "both_Lun": 3985
+              },
+              "pair_covariance_coefficients": {
+                "different_non_Lun": 3619.925759370872,
+                "one_Lun": 1012.4075747543565,
+                "both_Lun": 1411.9387811864674
+              },
+              "scenarios": [
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 0.920142778086646,
+                  "expected_unstratified_sandwich_se_pp": 0.9830208247999758
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.1,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.1
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9528613735589628,
+                  "expected_unstratified_sandwich_se_pp": 1.0137444604343837
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.2,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.2
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9844932007770985,
+                  "expected_unstratified_sandwich_se_pp": 1.0435639511464425
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.3,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.3
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.0151398561439693,
+                  "expected_unstratified_sandwich_se_pp": 1.072554711519813
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.4,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.4
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.0448880287799556,
+                  "expected_unstratified_sandwich_se_pp": 1.1007822210929483
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.5,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.5
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.073812394156132,
+                  "expected_unstratified_sandwich_se_pp": 1.128303765546007
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.1187398362988057,
+                  "expected_unstratified_sandwich_se_pp": 1.171187840284089
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.1,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.1
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.1458014166850823,
+                  "expected_unstratified_sandwich_se_pp": 1.197091828683282
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.2,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.2
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.172238436340152,
+                  "expected_unstratified_sandwich_se_pp": 1.2224470276340231
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.3,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.3
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.1980922405177603,
+                  "expected_unstratified_sandwich_se_pp": 1.247286905424022
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.4,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.4
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.2233998046201124,
+                  "expected_unstratified_sandwich_se_pp": 1.2716416608121992
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.5,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.5
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.2481943546980943,
+                  "expected_unstratified_sandwich_se_pp": 1.2955386534504414
+                }
+              ],
+              "max_repeated_Lun_rho_for_expected_sandwich_sub1pp_at_observed_point_rhos": 0.054883808586505024
+            }
+          }
+        },
+        "coarse_empirical": {
+          "moment_cells": "recipe x aorist/other x voice",
+          "moment_smoothing": "empirical proportions",
+          "smallest_observed_cell": 10,
+          "projected_completion": 0.8567838213491473,
+          "projected_all_accuracy": 0.6459951816160117,
+          "projected_usable_accuracy": 0.7515658417808452,
+          "estimates": {
+            "recorded_all_correct": {
+              "independent_variance_sum": 955.2627641346498,
+              "allocation_mean_squared_sum": 260.54694579333545,
+              "pair_counts": {
+                "different_non_Lun": 6812,
+                "one_Lun": 2443,
+                "both_Lun": 3985
+              },
+              "pair_covariance_coefficients": {
+                "different_non_Lun": 2715.5737303716237,
+                "one_Lun": 901.4578506905957,
+                "both_Lun": 1751.103758411296
+              },
+              "scenarios": [
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 0.8644287817649776,
+                  "expected_unstratified_sandwich_se_pp": 0.928033304426464
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.1,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.1
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9073256780428074,
+                  "expected_unstratified_sandwich_se_pp": 0.9681581570395961
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.2,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.2
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9482840572992869,
+                  "expected_unstratified_sandwich_se_pp": 1.0066849655974366
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.3,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.3
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9875451486489891,
+                  "expected_unstratified_sandwich_se_pp": 1.0437906987885632
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.4,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.4
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.0253039490377043,
+                  "expected_unstratified_sandwich_se_pp": 1.0796218901981942
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.5,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.5
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.0617207519891791,
+                  "expected_unstratified_sandwich_se_pp": 1.1143014981201125
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.031715835164147,
+                  "expected_unstratified_sandwich_se_pp": 1.0857195629182705
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.1,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.1
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.0679140095628534,
+                  "expected_unstratified_sandwich_se_pp": 1.1202104142620017
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.2,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.2
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.1029247930447332,
+                  "expected_unstratified_sandwich_se_pp": 1.153670566123038
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.3,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.3
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.1368578919130237,
+                  "expected_unstratified_sandwich_se_pp": 1.186187244096081
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.4,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.4
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.1698070925144373,
+                  "expected_unstratified_sandwich_se_pp": 1.2178360238446968
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.5,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.5
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.2018533192487502,
+                  "expected_unstratified_sandwich_se_pp": 1.248682899655259
+                }
+              ],
+              "max_repeated_Lun_rho_for_expected_sandwich_sub1pp_at_observed_point_rhos": 0.18236876489069745
+            },
+            "completed_ratio_influence": {
+              "independent_variance_sum": 915.2739931542922,
+              "allocation_mean_squared_sum": 304.73126095297846,
+              "pair_counts": {
+                "different_non_Lun": 6812,
+                "one_Lun": 2443,
+                "both_Lun": 3985
+              },
+              "pair_covariance_coefficients": {
+                "different_non_Lun": 3270.498514953577,
+                "one_Lun": 829.4031974782929,
+                "both_Lun": 1204.5814381852172
+              },
+              "scenarios": [
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 0.8568586987038401,
+                  "expected_unstratified_sandwich_se_pp": 0.9313427658765089
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.1,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.1
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.8868421562043761,
+                  "expected_unstratified_sandwich_se_pp": 0.9590295537895429
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.2,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.2
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9158445231031389,
+                  "expected_unstratified_sandwich_se_pp": 0.9859391576223324
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.3,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.3
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9439562336119216,
+                  "expected_unstratified_sandwich_se_pp": 1.012133568272636
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.4,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.4
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9712546275058842,
+                  "expected_unstratified_sandwich_se_pp": 1.0376669492257926
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.5,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.5
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.997806460155667,
+                  "expected_unstratified_sandwich_se_pp": 1.0625869540921478
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.0459125121485264,
+                  "expected_unstratified_sandwich_se_pp": 1.1079313552385814
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.1,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.1
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.0706143860165667,
+                  "expected_unstratified_sandwich_se_pp": 1.1313046563203317
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.2,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.2
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.0947590346840803,
+                  "expected_unstratified_sandwich_se_pp": 1.1542047317973223
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.3,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.3
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.118382548370283,
+                  "expected_unstratified_sandwich_se_pp": 1.17665921166436
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.4,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.4
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.1415172819436408,
+                  "expected_unstratified_sandwich_se_pp": 1.1986931374984418
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.5,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.5
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.164192374761485,
+                  "expected_unstratified_sandwich_se_pp": 1.2203292897317193
+                }
+              ],
+              "max_repeated_Lun_rho_for_expected_sandwich_sub1pp_at_observed_point_rhos": 0.2533528170848498
+            }
+          }
+        },
+        "coarse_smoothed": {
+          "moment_cells": "recipe x aorist/other x voice",
+          "moment_smoothing": "Dirichlet0.5 per four response states",
+          "smallest_observed_cell": 10,
+          "projected_completion": 0.8449757937256939,
+          "projected_all_accuracy": 0.6389945886259516,
+          "projected_usable_accuracy": 0.744001515922551,
+          "estimates": {
+            "recorded_all_correct": {
+              "independent_variance_sum": 984.5464872543336,
+              "allocation_mean_squared_sum": 226.428409368871,
+              "pair_counts": {
+                "different_non_Lun": 6812,
+                "one_Lun": 2443,
+                "both_Lun": 3985
+              },
+              "pair_covariance_coefficients": {
+                "different_non_Lun": 2786.970260004845,
+                "one_Lun": 941.8756763867074,
+                "both_Lun": 1799.3229246652818
+              },
+              "scenarios": [
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 0.8781396044639045,
+                  "expected_unstratified_sandwich_se_pp": 0.9329197310819071
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.1,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.1
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9215339266558399,
+                  "expected_unstratified_sandwich_se_pp": 0.9739192580864807
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.2,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.2
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9629747613657584,
+                  "expected_unstratified_sandwich_se_pp": 1.0132611795097572
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.3,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.3
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.0027043452968316,
+                  "expected_unstratified_sandwich_se_pp": 1.0511316352062132
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.4,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.4
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.0409186409738544,
+                  "expected_unstratified_sandwich_se_pp": 1.0876843343365166
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.5,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.5
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.0777788410321314,
+                  "expected_unstratified_sandwich_se_pp": 1.1230479543594094
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.0477648922128937,
+                  "expected_unstratified_sandwich_se_pp": 1.0942450469811167
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.1,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.1
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.084392402409573,
+                  "expected_unstratified_sandwich_se_pp": 1.1294032581290394
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.2,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.2
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.1198225285523211,
+                  "expected_unstratified_sandwich_se_pp": 1.1634995556949186
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.3,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.3
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.154165546402691,
+                  "expected_unstratified_sandwich_se_pp": 1.1966247167479267
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.4,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.4
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.1875157773910756,
+                  "expected_unstratified_sandwich_se_pp": 1.2288572778650249
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.5,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.5
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.2199546444857854,
+                  "expected_unstratified_sandwich_se_pp": 1.2602657283254284
+                }
+              ],
+              "max_repeated_Lun_rho_for_expected_sandwich_sub1pp_at_observed_point_rhos": 0.16585010258132876
+            },
+            "completed_ratio_influence": {
+              "independent_variance_sum": 962.3717009511614,
+              "allocation_mean_squared_sum": 282.1817857703928,
+              "pair_counts": {
+                "different_non_Lun": 6812,
+                "one_Lun": 2443,
+                "both_Lun": 3985
+              },
+              "pair_covariance_coefficients": {
+                "different_non_Lun": 3393.3282497113473,
+                "one_Lun": 881.8773669182839,
+                "both_Lun": 1286.2072830243449
+              },
+              "scenarios": [
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 0.8775284691521349,
+                  "expected_unstratified_sandwich_se_pp": 0.9452458026553431
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.1,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.1
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9087800520773738,
+                  "expected_unstratified_sandwich_se_pp": 0.9743585370341856
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.2,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.2
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9389920936488333,
+                  "expected_unstratified_sandwich_se_pp": 1.002626296256613
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.3,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.3
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9682619071389127,
+                  "expected_unstratified_sandwich_se_pp": 1.0301186442342982
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.4,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.4
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9966725087497644,
+                  "expected_unstratified_sandwich_se_pp": 1.0568960934987712
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.5,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.5
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.0242953961523082,
+                  "expected_unstratified_sandwich_se_pp": 1.0830116729319303
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.0699620909740697,
+                  "expected_unstratified_sandwich_se_pp": 1.126345784896714
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.1,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.1
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.095738949295346,
+                  "expected_unstratified_sandwich_se_pp": 1.1508865097864556
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.2,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.2
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.120923197138918,
+                  "expected_unstratified_sandwich_se_pp": 1.1749147584664617
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.3,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.3
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.145553919623777,
+                  "expected_unstratified_sandwich_se_pp": 1.1984613556206805
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.4,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.4
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.1696660855332446,
+                  "expected_unstratified_sandwich_se_pp": 1.2215541544156012
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.5,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.5
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.1932911298287308,
+                  "expected_unstratified_sandwich_se_pp": 1.2442184227151876
+                }
+              ],
+              "max_repeated_Lun_rho_for_expected_sandwich_sub1pp_at_observed_point_rhos": 0.1905887153705845
+            }
+          }
+        }
+      }
+    },
+    "pilot-06.block-allocation-0_95.json": {
+      "witness_sha256": "db6d335bdc60b6481d695a76681d9636529d91188d0f69920698a069eb435ddf",
+      "pairs": {
+        "different_non_Lun": 6890,
+        "one_Lun": 2085,
+        "both_Lun": 3938
+      },
+      "distinct_families": 932,
+      "cases": {
+        "fine_empirical": {
+          "moment_cells": "exact recipe x tense x voice",
+          "moment_smoothing": "empirical proportions",
+          "smallest_observed_cell": 2,
+          "projected_completion": 0.8555245215311004,
+          "projected_all_accuracy": 0.6432616959064328,
+          "projected_usable_accuracy": 0.7490206761212755,
+          "estimates": {
+            "recorded_all_correct": {
+              "independent_variance_sum": 938.7370362908866,
+              "allocation_mean_squared_sum": 325.4050836363939,
+              "pair_counts": {
+                "different_non_Lun": 6890,
+                "one_Lun": 2085,
+                "both_Lun": 3938
+              },
+              "pair_covariance_coefficients": {
+                "different_non_Lun": 2397.057987874596,
+                "one_Lun": 711.8756985691439,
+                "both_Lun": 1783.343575832674
+              },
+              "scenarios": [
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 0.8299563283094187,
+                  "expected_unstratified_sandwich_se_pp": 0.9115667467076001
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.1,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.1
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.8753454014411367,
+                  "expected_unstratified_sandwich_se_pp": 0.9531207359284518
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.2,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.2
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9184942224899608,
+                  "expected_unstratified_sandwich_se_pp": 0.9929372290384267
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.3,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.3
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9597050076303297,
+                  "expected_unstratified_sandwich_se_pp": 1.031217505846475
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.4,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.4
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9992175772042964,
+                  "expected_unstratified_sandwich_se_pp": 1.0681267471222413
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.5,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.5
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.03722602720782,
+                  "expected_unstratified_sandwich_se_pp": 1.1038024965869826
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 0.9813740213752457,
+                  "expected_unstratified_sandwich_se_pp": 1.05143520538103
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.1,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.1
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.0200475649466128,
+                  "expected_unstratified_sandwich_se_pp": 1.0876585836871624
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.2,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.2
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.0573074764120451,
+                  "expected_unstratified_sandwich_se_pp": 1.1227138541151436
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.3,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.3
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.0932982962577507,
+                  "expected_unstratified_sandwich_se_pp": 1.1567072238798353
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.4,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.4
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.128141493574008,
+                  "expected_unstratified_sandwich_se_pp": 1.1897297194445093
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.5,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.5
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.1619403144941167,
+                  "expected_unstratified_sandwich_se_pp": 1.2218600610885137
+                }
+              ],
+              "max_repeated_Lun_rho_for_expected_sandwich_sub1pp_at_observed_point_rhos": 0.21816560910204388
+            },
+            "completed_ratio_influence": {
+              "independent_variance_sum": 894.2768358398544,
+              "allocation_mean_squared_sum": 344.83731678628146,
+              "pair_counts": {
+                "different_non_Lun": 6890,
+                "one_Lun": 2085,
+                "both_Lun": 3938
+              },
+              "pair_covariance_coefficients": {
+                "different_non_Lun": 2806.439659635874,
+                "one_Lun": 680.3859291873367,
+                "both_Lun": 1230.5698040492814
+              },
+              "scenarios": [
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 0.8205107549574415,
+                  "expected_unstratified_sandwich_se_pp": 0.9076292023592555
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.1,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.1
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.8524365353186272,
+                  "expected_unstratified_sandwich_se_pp": 0.9366206731117143
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.2,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.2
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.8832090321612545,
+                  "expected_unstratified_sandwich_se_pp": 0.96474131331937
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.3,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.3
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9129448736021328,
+                  "expected_unstratified_sandwich_se_pp": 0.992065178277176
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.4,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.4
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9417422630325183,
+                  "expected_unstratified_sandwich_se_pp": 1.018656386754173
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.5,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.5
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9696848136001733,
+                  "expected_unstratified_sandwich_se_pp": 1.0445708930465227
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 0.9897873908559099,
+                  "expected_unstratified_sandwich_se_pp": 1.0632784686005021
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.1,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.1
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.0164099698657743,
+                  "expected_unstratified_sandwich_se_pp": 1.0881307909044624
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.2,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.2
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.042352807156837,
+                  "expected_unstratified_sandwich_se_pp": 1.1124280356226706
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.3,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.3
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.0676654543127886,
+                  "expected_unstratified_sandwich_se_pp": 1.1362058135585542
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.4,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.4
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.0923917200702902,
+                  "expected_unstratified_sandwich_se_pp": 1.159496083257377
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.5,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.5
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.116570561058871,
+                  "expected_unstratified_sandwich_se_pp": 1.1823276548462105
+                }
+              ],
+              "max_repeated_Lun_rho_for_expected_sandwich_sub1pp_at_observed_point_rhos": 0.329563149995245
+            }
+          }
+        },
+        "fine_smoothed": {
+          "moment_cells": "exact recipe x tense x voice",
+          "moment_smoothing": "Dirichlet0.5 per four response states",
+          "smallest_observed_cell": 2,
+          "projected_completion": 0.8076566544221824,
+          "projected_all_accuracy": 0.6170699266227216,
+          "projected_usable_accuracy": 0.726039493777383,
+          "estimates": {
+            "recorded_all_correct": {
+              "independent_variance_sum": 1036.8974454753588,
+              "allocation_mean_squared_sum": 195.4393747176626,
+              "pair_counts": {
+                "different_non_Lun": 6890,
+                "one_Lun": 2085,
+                "both_Lun": 3938
+              },
+              "pair_covariance_coefficients": {
+                "different_non_Lun": 3010.66507365752,
+                "one_Lun": 847.7053918555204,
+                "both_Lun": 1797.3603656292423
+              },
+              "scenarios": [
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 0.8925802003945397,
+                  "expected_unstratified_sandwich_se_pp": 0.9394000161929688
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.1,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.1
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9352592403565698,
+                  "expected_unstratified_sandwich_se_pp": 0.9800850039898817
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.2,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.2
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9760739107302989,
+                  "expected_unstratified_sandwich_se_pp": 1.019147113849783
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.3,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.3
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.0152490885217929,
+                  "expected_unstratified_sandwich_se_pp": 1.0567663243550292
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.4,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.4
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.05296777931726,
+                  "expected_unstratified_sandwich_se_pp": 1.0930916196336586
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.5,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.5
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.0893812816531747,
+                  "expected_unstratified_sandwich_se_pp": 1.1282479840601671
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.0667732720734433,
+                  "expected_unstratified_sandwich_se_pp": 1.1064107698255992
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.1,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.1
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.102730994642969,
+                  "expected_unstratified_sandwich_se_pp": 1.1411568762482096
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.2,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.2
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.1375526709046326,
+                  "expected_unstratified_sandwich_se_pp": 1.1748758406023454
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.3,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.3
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.1713396226621273,
+                  "expected_unstratified_sandwich_se_pp": 1.2076537026207323
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.4,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.4
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.204178950220542,
+                  "expected_unstratified_sandwich_se_pp": 1.239565121353477
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.5,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.5
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.2361461793373134,
+                  "expected_unstratified_sandwich_se_pp": 1.2706753773873782
+                }
+              ],
+              "max_repeated_Lun_rho_for_expected_sandwich_sub1pp_at_observed_point_rhos": 0.1504946238275274
+            },
+            "completed_ratio_influence": {
+              "independent_variance_sum": 1063.3529193531217,
+              "allocation_mean_squared_sum": 283.64591369021093,
+              "pair_counts": {
+                "different_non_Lun": 6890,
+                "one_Lun": 2085,
+                "both_Lun": 3938
+              },
+              "pair_covariance_coefficients": {
+                "different_non_Lun": 3675.3304313691556,
+                "one_Lun": 848.1882031588599,
+                "both_Lun": 1408.664435545006
+              },
+              "scenarios": [
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 0.9106908832417531,
+                  "expected_unstratified_sandwich_se_pp": 0.9764687140854701
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.1,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.1
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.943661927958876,
+                  "expected_unstratified_sandwich_se_pp": 1.0073215823727912
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.2,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.2
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9755192380155718,
+                  "expected_unstratified_sandwich_se_pp": 1.0372571479822716
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.3,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.3
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.0063685871478205,
+                  "expected_unstratified_sandwich_se_pp": 1.0663526676323405
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.4,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.4
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.036299996457261,
+                  "expected_unstratified_sandwich_se_pp": 1.0946751264612258
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.5,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.5
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.065390835382367,
+                  "expected_unstratified_sandwich_se_pp": 1.122283053965974
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.107974786764044,
+                  "expected_unstratified_sandwich_se_pp": 1.1628280865963856
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.1,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.1
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.135230407258477,
+                  "expected_unstratified_sandwich_se_pp": 1.188854398025134
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.2,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.2
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.1618468173660699,
+                  "expected_unstratified_sandwich_se_pp": 1.2143230214526923
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.3,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.3
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.1878669860228817,
+                  "expected_unstratified_sandwich_se_pp": 1.2392683410610827
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.4,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.4
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.2133292735043126,
+                  "expected_unstratified_sandwich_se_pp": 1.2637213466118946
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.5,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.5
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.2382680951239609,
+                  "expected_unstratified_sandwich_se_pp": 1.2877100848439733
+                }
+              ],
+              "max_repeated_Lun_rho_for_expected_sandwich_sub1pp_at_observed_point_rhos": 0.0759878747415261
+            }
+          }
+        },
+        "coarse_empirical": {
+          "moment_cells": "recipe x aorist/other x voice",
+          "moment_smoothing": "empirical proportions",
+          "smallest_observed_cell": 10,
+          "projected_completion": 0.8567838213491473,
+          "projected_all_accuracy": 0.6459951816160117,
+          "projected_usable_accuracy": 0.7515658417808452,
+          "estimates": {
+            "recorded_all_correct": {
+              "independent_variance_sum": 955.2627641346498,
+              "allocation_mean_squared_sum": 286.7774252870683,
+              "pair_counts": {
+                "different_non_Lun": 6890,
+                "one_Lun": 2085,
+                "both_Lun": 3938
+              },
+              "pair_covariance_coefficients": {
+                "different_non_Lun": 2767.643426588181,
+                "one_Lun": 733.6003810321647,
+                "both_Lun": 1783.343575832674
+              },
+              "scenarios": [
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 0.8524241890592982,
+                  "expected_unstratified_sandwich_se_pp": 0.9230441707241922
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.1,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.1
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.8966766769670634,
+                  "expected_unstratified_sandwich_se_pp": 0.9641035964364137
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.2,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.2
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9388456358422232,
+                  "expected_unstratified_sandwich_se_pp": 1.0034844035735397
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.3,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.3
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9792002823035142,
+                  "expected_unstratified_sandwich_se_pp": 1.0413770459199965
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.4,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.4
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.0179564125180287,
+                  "expected_unstratified_sandwich_se_pp": 1.0779384747390612
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.5,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.5
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.0552901604344977,
+                  "expected_unstratified_sandwich_se_pp": 1.1132998512873742
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.0184606780569068,
+                  "expected_unstratified_sandwich_se_pp": 1.0784152044952078
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.1,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.1
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.0557765945840192,
+                  "expected_unstratified_sandwich_se_pp": 1.1137614452117457
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.2,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.2
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.091817879774242,
+                  "expected_unstratified_sandwich_se_pp": 1.1480199303121317
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.3,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.3
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.126706859621443,
+                  "expected_unstratified_sandwich_se_pp": 1.1812853016725415
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.4,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.4
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.1605474623820033,
+                  "expected_unstratified_sandwich_se_pp": 1.213639224605609
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.5,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.5
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.1934288740283607,
+                  "expected_unstratified_sandwich_se_pp": 1.245152750089329
+                }
+              ],
+              "max_repeated_Lun_rho_for_expected_sandwich_sub1pp_at_observed_point_rhos": 0.19099060479268992
+            },
+            "completed_ratio_influence": {
+              "independent_variance_sum": 915.2739931542922,
+              "allocation_mean_squared_sum": 338.9576579622482,
+              "pair_counts": {
+                "different_non_Lun": 6890,
+                "one_Lun": 2085,
+                "both_Lun": 3938
+              },
+              "pair_covariance_coefficients": {
+                "different_non_Lun": 3331.527938554406,
+                "one_Lun": 677.9068308092366,
+                "both_Lun": 1226.5649040347266
+              },
+              "scenarios": [
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 0.8479031626852702,
+                  "expected_unstratified_sandwich_se_pp": 0.9311213970047477
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.1,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.1
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.8787355104077246,
+                  "expected_unstratified_sandwich_se_pp": 0.9593125464587259
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.2,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.2
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9085221082677983,
+                  "expected_unstratified_sandwich_se_pp": 0.9866985697902766
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.3,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.3
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9373626540305546,
+                  "expected_unstratified_sandwich_se_pp": 1.0133447456118918
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.4,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.4
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9653419441477958,
+                  "expected_unstratified_sandwich_se_pp": 1.0393079809624677
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.5,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.5
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9925328171354773,
+                  "expected_unstratified_sandwich_se_pp": 1.0646382414347764
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.0360633753268829,
+                  "expected_unstratified_sandwich_se_pp": 1.1053756648060282
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.1,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.1
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.0614441302553677,
+                  "expected_unstratified_sandwich_se_pp": 1.1292248961913747
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.2,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.2
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.0862320035855206,
+                  "expected_unstratified_sandwich_se_pp": 1.1525807442480864
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.3,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.3
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.1104666989933805,
+                  "expected_unstratified_sandwich_se_pp": 1.1754726189259044
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.4,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.4
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.1341836771586407,
+                  "expected_unstratified_sandwich_se_pp": 1.197927119518369
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.5,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.5
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.1574147646772681,
+                  "expected_unstratified_sandwich_se_pp": 1.2199683969310962
+                }
+              ],
+              "max_repeated_Lun_rho_for_expected_sandwich_sub1pp_at_observed_point_rhos": 0.2495856520616318
+            }
+          }
+        },
+        "coarse_smoothed": {
+          "moment_cells": "recipe x aorist/other x voice",
+          "moment_smoothing": "Dirichlet0.5 per four response states",
+          "smallest_observed_cell": 10,
+          "projected_completion": 0.8449757937256939,
+          "projected_all_accuracy": 0.6389945886259516,
+          "projected_usable_accuracy": 0.744001515922551,
+          "estimates": {
+            "recorded_all_correct": {
+              "independent_variance_sum": 984.5464872543336,
+              "allocation_mean_squared_sum": 244.60336397735722,
+              "pair_counts": {
+                "different_non_Lun": 6890,
+                "one_Lun": 2085,
+                "both_Lun": 3938
+              },
+              "pair_covariance_coefficients": {
+                "different_non_Lun": 2835.8481642789284,
+                "one_Lun": 769.8045755826538,
+                "both_Lun": 1797.3603656292423
+              },
+              "scenarios": [
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 0.8658338857034308,
+                  "expected_unstratified_sandwich_se_pp": 0.9256091152264087
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.1,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.1
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9097685146059371,
+                  "expected_unstratified_sandwich_se_pp": 0.9668745827731284
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.2,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.2
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9516770369743532,
+                  "expected_unstratified_sandwich_se_pp": 1.006449543412489
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.3,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.3
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9918163213217838,
+                  "expected_unstratified_sandwich_se_pp": 1.04452616437201
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.4,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.4
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.0303931520425915,
+                  "expected_unstratified_sandwich_se_pp": 1.0812627491411144
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.5,
+                  "rhos": {
+                    "one_Lun": 0.3358521466574243,
+                    "different_non_Lun": 0.17072451319954654,
+                    "both_Lun": 0.5
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.067576920091596,
+                  "expected_unstratified_sandwich_se_pp": 1.1167915460383357
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.0340197495591281,
+                  "expected_unstratified_sandwich_se_pp": 1.0847229918519208
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.1,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.1
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.0710776232441388,
+                  "expected_unstratified_sandwich_se_pp": 1.1201420417405457
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.2,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.2
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.10689552693572,
+                  "expected_unstratified_sandwich_se_pp": 1.1544749535166081
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.3,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.3
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.1415901804440576,
+                  "expected_unstratified_sandwich_se_pp": 1.1878159128920907
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.4,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.4
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.1752610657306264,
+                  "expected_unstratified_sandwich_se_pp": 1.220246232340902
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.5,
+                  "rhos": {
+                    "one_Lun": 0.4932428906702621,
+                    "different_non_Lun": 0.3876026994497526,
+                    "both_Lun": 0.5
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.207993793509834,
+                  "expected_unstratified_sandwich_se_pp": 1.2518366874974798
+                }
+              ],
+              "max_repeated_Lun_rho_for_expected_sandwich_sub1pp_at_observed_point_rhos": 0.18342939763117921
+            },
+            "completed_ratio_influence": {
+              "independent_variance_sum": 962.3717009511614,
+              "allocation_mean_squared_sum": 310.4781483183546,
+              "pair_counts": {
+                "different_non_Lun": 6890,
+                "one_Lun": 2085,
+                "both_Lun": 3938
+              },
+              "pair_covariance_coefficients": {
+                "different_non_Lun": 3453.02235182202,
+                "one_Lun": 720.8486955057178,
+                "both_Lun": 1283.4016664913172
+              },
+              "scenarios": [
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 0.8680234804629027,
+                  "expected_unstratified_sandwich_se_pp": 0.9429607381952314
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.1,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.1
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.8995376367697371,
+                  "expected_unstratified_sandwich_se_pp": 0.9720792059725009
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.2,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.2
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.929984493040414,
+                  "expected_unstratified_sandwich_se_pp": 1.0003504443896447
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.3,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.3
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9594656609936535,
+                  "expected_unstratified_sandwich_se_pp": 1.0278443658925178
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.4,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.4
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 0.9880675847108539,
+                  "expected_unstratified_sandwich_se_pp": 1.0546217660390973
+                },
+                {
+                  "observed_pair_rho_assumption": "point",
+                  "unobserved_repeated_Lun_rho": 0.5,
+                  "rhos": {
+                    "one_Lun": 0.2974257929956501,
+                    "different_non_Lun": 0.16194859467792852,
+                    "both_Lun": 0.5
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.015864532940634,
+                  "expected_unstratified_sandwich_se_pp": 1.080735905903869
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.0593318154639608,
+                  "expected_unstratified_sandwich_se_pp": 1.1217353220462836
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.1,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.1
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.0853050689020682,
+                  "expected_unstratified_sandwich_se_pp": 1.1463215786299723
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.2,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.2
+                  },
+                  "valid_for_every_possible_family_block": false,
+                  "conditional_sampling_se_pp": 1.1106710988924111,
+                  "expected_unstratified_sandwich_se_pp": 1.1703914689278727
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.3,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.3
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.1354706016648901,
+                  "expected_unstratified_sandwich_se_pp": 1.1939762223116404
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.4,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.4
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.1597399210924748,
+                  "expected_unstratified_sandwich_se_pp": 1.2171040417121324
+                },
+                {
+                  "observed_pair_rho_assumption": "upper95",
+                  "unobserved_repeated_Lun_rho": 0.5,
+                  "rhos": {
+                    "one_Lun": 0.4623370899021443,
+                    "different_non_Lun": 0.3735466423766323,
+                    "both_Lun": 0.5
+                  },
+                  "valid_for_every_possible_family_block": true,
+                  "conditional_sampling_se_pp": 1.183511673751439,
+                  "expected_unstratified_sandwich_se_pp": 1.2398004989749118
+                }
+              ],
+              "max_repeated_Lun_rho_for_expected_sandwich_sub1pp_at_observed_point_rhos": 0.1987428738999521
+            }
+          }
+        }
+      }
+    }
+  },
+  "analytic_check": "Equal-probability zero-covariance toy allocation matches iid and G/(G-1)-adjusted sandwich moments exactly.",
+  "no_final_membership_selected": true,
+  "warning": "Allocation changes the family composition within grammar cells relative to paired calibration. Empirical Astra repeated-Lun dependence remains unidentified; scenarios are not precision guarantees. No estimator or gate was changed."
+}

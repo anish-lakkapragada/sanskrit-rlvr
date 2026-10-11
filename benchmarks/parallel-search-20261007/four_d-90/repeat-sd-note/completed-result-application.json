@@ -1,0 +1,56 @@
+{
+  "created_at": "2026-10-08T02:34:15.984864+00:00",
+  "scope": "Application of the prospectively reviewed fixed-panel repeat-SD bound to completed canonical/finite scores; no gate waiver.",
+  "analysis_sha256": "dc9e797e5f94938e6666c1041f3a7c30f8e3da92ecd3222d29c6631e977ce94c",
+  "mechanical_review_sha256": "c0a162974d00820631b1ef362a6983aff6f2a44f7a87fb6687f540ab782aa04c",
+  "bound_code_sha256": "47a1a3e3d0532d33729ccde291167cb650beaefacd9c98bfed56279f5ad288fe",
+  "bound_independent_review_sha256": "1aa3dad3fab2b1ffc3c4b7ac35667bb9932ea51d2ce028083ee16721cb3083d1",
+  "results": {
+    "Anthropic": {
+      "n": 1800,
+      "known_correct": 1581,
+      "observed_known_correct_fraction": 0.8783333333333333,
+      "per_reference_alpha": 0.025,
+      "joint_alpha": 0.05,
+      "references": 2,
+      "expected_accuracy_lower_bound": 0.8463225736226693,
+      "hoeffding_margin": 0.03201075971066403,
+      "fixed_panel_repeat_sd_upper": 0.008500348849030021,
+      "interpretation": "Conditional bound under independent calls and stable per-question probabilities; not new-root sampling uncertainty.",
+      "iid_item_se": 0.007705116946581268,
+      "new_root_family_se": 0.049494241831389195
+    },
+    "OpenAI": {
+      "n": 1800,
+      "known_correct": 1537,
+      "observed_known_correct_fraction": 0.8538888888888889,
+      "per_reference_alpha": 0.025,
+      "joint_alpha": 0.05,
+      "references": 2,
+      "expected_accuracy_lower_bound": 0.8218781291782249,
+      "hoeffding_margin": 0.03201075971066403,
+      "fixed_panel_repeat_sd_upper": 0.009018329173803205,
+      "interpretation": "Conditional bound under independent calls and stable per-question probabilities; not new-root sampling uncertainty.",
+      "iid_item_se": 0.00832541805159849,
+      "new_root_family_se": 0.03824225396282494
+    }
+  },
+  "independent_formula_crosscheck_passed": true,
+  "empirical_repeat_runs": 0,
+  "assumptions": [
+    "Fixed1800 question roster and the frozen canonical/finite scorer.",
+    "Independent per-question fresh calls with stable success probabilities.",
+    "Bound on latent answer correctness; no guarantee against shared provider drift or correlated outages.",
+    "Known-positive counting treats the one missing Astra answer conservatively.",
+    "At least95% simultaneous frequentist repeated-experiment coverage for the two prespecified references under those assumptions; not a conditional-on-passing probability."
+  ],
+  "not_claimed": [
+    "Measured rerun standard deviation",
+    "New-root generalization SE below1pp",
+    "Source-adjusted score certification",
+    "Original full-response completion gate passed",
+    "Benchmark qualification"
+  ],
+  "benchmark_ready": false,
+  "paid_calls": 0
+}

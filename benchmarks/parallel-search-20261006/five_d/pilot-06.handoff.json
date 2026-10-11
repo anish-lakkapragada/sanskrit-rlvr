@@ -1,0 +1,58 @@
+{
+  "created_at": "2026-10-07T08:50:36.313345+00:00",
+  "state": "Submitted by coordinator; waiting for development answers",
+  "batch_id": "msgbatch_012md6vLwkdEFosgpQNmDGXN",
+  "n": 600,
+  "family_count": 300,
+  "policy": "oracle-policy-14",
+  "prompt_version": "cartesian-5d-v3-sanskrit",
+  "files": {
+    "pilot-06.revision-01.tasks.json": {
+      "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/parallel-search-20261006/five_d/pilot-06.revision-01.tasks.json",
+      "sha256": "a8b97c0baffb0d02adcb1a1c3eaaf38b1a0983d4479660a32164260a09b10a1c"
+    },
+    "pilot-06.revision-01.plan.json": {
+      "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/parallel-search-20261006/five_d/pilot-06.revision-01.plan.json",
+      "sha256": "beaa8d8f687813b0bd04ec5ba885a361d6c53e7ad016c818d81e4631ec43414e"
+    },
+    "pilot-06.revision-01.manifest.json": {
+      "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/parallel-search-20261006/five_d/pilot-06.revision-01.manifest.json",
+      "sha256": "8da945b67e08f275da385cb3d36d7995be43e177a81890a51bd0cfa8e39ceb9e"
+    },
+    "pilot-06.revision-01.runner-audit.json": {
+      "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/parallel-search-20261006/five_d/pilot-06.revision-01.runner-audit.json",
+      "sha256": "2e5746271d6f39aaf6867717f1a8eac54a36e638b36dcb0ff05efbc582c41b54"
+    },
+    "pilot-06.revision-01.novelty-audit.json": {
+      "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/parallel-search-20261006/five_d/pilot-06.revision-01.novelty-audit.json",
+      "sha256": "2ad17c22f5986d842264575037b2e76541fd6e419c87086aca990db16577c831"
+    },
+    "pilot-06.revision-01.prompt-audit.json": {
+      "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/parallel-search-20261006/five_d/pilot-06.revision-01.prompt-audit.json",
+      "sha256": "519a417e0b471df4e3b89014857a8b1d352e42ce074694a3fced88ea35068de7"
+    },
+    "pilot-06.revision-01.source-control-audit.json": {
+      "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/parallel-search-20261006/five_d/pilot-06.revision-01.source-control-audit.json",
+      "sha256": "208950bd078eccbf4a7fe30806623f200d8ca8184fc2134128feb10bf781ba0a"
+    },
+    "pilot-06.revision-01.analysis-predeclaration.json": {
+      "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/parallel-search-20261006/five_d/pilot-06.revision-01.analysis-predeclaration.json",
+      "sha256": "2394b73055a6e98a6db299131f3cdb1daed17ddc5daa89121356e23528f3de41"
+    },
+    "pilot-06.analyzer-predeclaration.json": {
+      "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/parallel-search-20261006/five_d/pilot-06.analyzer-predeclaration.json",
+      "sha256": "4998125fb6759e283d857c600fc2e1f29b541bc779eb611e995bafc6aeea465b"
+    },
+    "pilot-06.revision-01.replacement-audit.json": {
+      "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/parallel-search-20261006/five_d/pilot-06.revision-01.replacement-audit.json",
+      "sha256": "24684ac70bc28728c30f0aa5ac174b43e564b37d533c639163a6804d0d5fabc7"
+    }
+  },
+  "analyzer_command": ".venv/bin/python -m misc.vp_5d_analyze_06 benchmarks/iterative-goal-20261006/jobs/opus-five-d-pilot-06/results.json",
+  "raw_preservation": "Both original600 and revised600 are immutable. The paid job uses revision01. No result-driven replacement is permitted.",
+  "model_answers_available_at_handoff": false,
+  "target_screen": "Both all-request and usable completed points and missing-response bounds79–81%, plus resolved retained-scope validity. A developmental screen only; finalprecision separately assessed.",
+  "forecast_warning": "80.51% completed forecast adjusts only recipe×tense×voice, not class or family composition.",
+  "paid_worker_calls": 0,
+  "benchmark_ready": false
+}

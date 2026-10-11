@@ -1,0 +1,39 @@
+{
+  "id": "opus-fast-simple4d-02",
+  "provider": "Anthropic",
+  "phase": "confirm_64k",
+  "n": 40,
+  "tasks_digest": "f5485aebe80f70590dc3b87336064656f1710ccc739f67bd325e3bcb7c812f18",
+  "requests_digest": "cfbb2cbd05682dd247913e412cc5a75e7f5395a89d459ced38c66230060ebb2d",
+  "created_at": "2026-10-07T22:08:51.900720+00:00",
+  "status": "ended",
+  "batch_id": "direct-opus-fast-simple4d-02",
+  "attempted_at": "2026-10-07T22:11:35.153555+00:00",
+  "reservation_micro": 52668800,
+  "input_file_id": null,
+  "transport": "direct",
+  "spending_pool_id": "simple-search-direct-20261007",
+  "collected_at": "2026-10-07T22:12:38.182691+00:00",
+  "usage": {
+    "input_tokens": 16077,
+    "output_tokens": 25073,
+    "cache_read": 0,
+    "cache_write": 0
+  },
+  "summary": {
+    "task_count": 40,
+    "correct": 36,
+    "incorrect_or_no_answer": 4,
+    "unscored": 0,
+    "pass_at_1_all_tasks": 0.9,
+    "truncated": 0,
+    "statuses": {
+      "completed": 40
+    }
+  },
+  "completed_answers": 40,
+  "completed_correct": 36,
+  "actual_cost_upper_micro": 565768,
+  "token_policy_violations": [],
+  "settled": true
+}

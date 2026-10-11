@@ -1,0 +1,1218 @@
+{
+  "created_at": "2026-10-07T08:50:29.144275+00:00",
+  "policy": "oracle-policy-14",
+  "source_sha256": "fc21e501ec48e788ab896924860617fc58f4f5e46714be3790d56e6ba742dfc3",
+  "plan_sha256": "beaa8d8f687813b0bd04ec5ba885a361d6c53e7ad016c818d81e4631ec43414e",
+  "shared_adapter_sha256": "6bada37b2096282a5ec4645ad2792320f2ce6482f87d7835630b29e58c9389df",
+  "recipe_supply": {
+    "causative_of_intensive": {
+      "families": 702,
+      "tuples": 97578,
+      "gana_families": {
+        "Bhvadi": 453,
+        "Adadi": 33,
+        "Juhotyadi": 7,
+        "Divadi": 82,
+        "Svadi": 10,
+        "Tudadi": 73,
+        "Rudhadi": 11,
+        "Tanadi": 4,
+        "Kryadi": 29
+      }
+    },
+    "causative_of_intensive_luk": {
+      "families": 641,
+      "tuples": 88938,
+      "gana_families": {
+        "Bhvadi": 413,
+        "Adadi": 23,
+        "Juhotyadi": 5,
+        "Divadi": 75,
+        "Svadi": 10,
+        "Tudadi": 73,
+        "Rudhadi": 11,
+        "Tanadi": 3,
+        "Kryadi": 28
+      }
+    },
+    "desiderative": {
+      "families": 975,
+      "tuples": 87741,
+      "gana_families": {
+        "Bhvadi": 497,
+        "Adadi": 40,
+        "Juhotyadi": 8,
+        "Divadi": 87,
+        "Svadi": 11,
+        "Tudadi": 81,
+        "Rudhadi": 13,
+        "Tanadi": 5,
+        "Kryadi": 30,
+        "Curadi": 203
+      }
+    }
+  },
+  "accepted_tuples": 274257,
+  "aorist_supply_by_recipe": {
+    "causative_of_intensive": 386,
+    "causative_of_intensive_luk": 285,
+    "desiderative": 974
+  },
+  "nested_aorist_union_families": 442,
+  "capacity_checks": [
+    {
+      "n": 2400,
+      "family_cap": 3,
+      "aorist_per_family_cap": 1,
+      "non_aorist_same_lakara_per_family_cap": 1,
+      "feasible": false,
+      "maximum_allocatable": 1834
+    },
+    {
+      "n": 2400,
+      "family_cap": 3,
+      "aorist_per_family_cap": 2,
+      "non_aorist_same_lakara_per_family_cap": 1,
+      "feasible": false,
+      "maximum_allocatable": 2172
+    },
+    {
+      "n": 2400,
+      "family_cap": 3,
+      "aorist_per_family_cap": 3,
+      "non_aorist_same_lakara_per_family_cap": 1,
+      "feasible": false,
+      "maximum_allocatable": 2172
+    },
+    {
+      "n": 2400,
+      "family_cap": 4,
+      "aorist_per_family_cap": 1,
+      "non_aorist_same_lakara_per_family_cap": 1,
+      "feasible": false,
+      "maximum_allocatable": 1834
+    },
+    {
+      "n": 2400,
+      "family_cap": 4,
+      "aorist_per_family_cap": 2,
+      "non_aorist_same_lakara_per_family_cap": 1,
+      "feasible": false,
+      "maximum_allocatable": 2276
+    },
+    {
+      "n": 2400,
+      "family_cap": 4,
+      "aorist_per_family_cap": 3,
+      "non_aorist_same_lakara_per_family_cap": 1,
+      "feasible": true,
+      "maximum_allocatable": 2400,
+      "distinct_families": 684,
+      "family_load_histogram": {
+        "4": 534,
+        "2": 32,
+        "1": 77,
+        "3": 41
+      },
+      "family_pair_correlation_multiplier": 2.799166666666667,
+      "aorist_family_load_histogram": {
+        "3": 350,
+        "1": 22,
+        "2": 4
+      },
+      "distinct_aorist_families": 376,
+      "repeated_aorist_questions_beyond_one_per_family": 704,
+      "families_with_repeated_aorists": 354,
+      "aorist_by_recipe": {
+        "causative_of_intensive_luk": {
+          "questions": 288,
+          "families": 109,
+          "load_histogram": {
+            "3": 87,
+            "1": 17,
+            "2": 5
+          }
+        },
+        "causative_of_intensive": {
+          "questions": 720,
+          "families": 248,
+          "load_histogram": {
+            "3": 234,
+            "2": 4,
+            "1": 10
+          }
+        },
+        "desiderative": {
+          "questions": 72,
+          "families": 25,
+          "load_histogram": {
+            "3": 23,
+            "1": 1,
+            "2": 1
+          }
+        }
+      },
+      "se_pp_by_accuracy_and_assumed_rho": {
+        "0.8": {
+          "0": 0.8164965809277259,
+          "0.05": 0.8717638569143723,
+          "0.1": 0.9237303598874391,
+          "0.2": 1.019749424559234,
+          "0.3": 1.1074746046749784,
+          "0.5": 1.2648012579936112
+        },
+        "0.7": {
+          "0": 0.9354143466934854,
+          "0.05": 0.998730965609191,
+          "0.1": 1.0582660739782475,
+          "0.2": 1.1682697319825874,
+          "0.3": 1.268771551541096,
+          "0.5": 1.4490118759577737
+        },
+        "0.65": {
+          "0": 0.9736101204623269,
+          "0.05": 1.039512146861316,
+          "0.1": 1.1014782522945143,
+          "0.2": 1.2159736896367819,
+          "0.3": 1.3205792999664958,
+          "0.5": 1.5081793775019674
+        },
+        "0.5": {
+          "0": 1.0206207261596576,
+          "0.05": 1.0897048211429654,
+          "0.1": 1.154662949859299,
+          "0.2": 1.2746867806990425,
+          "0.3": 1.3843432558437234,
+          "0.5": 1.5810015724920146
+        }
+      },
+      "largest_rho_for_sub1pp_by_accuracy": {
+        "0.8": 0.17862459065197991,
+        "0.7": 0.051035597329137046,
+        "0.65": 0.01962907589582204,
+        "0.5": -0.014289967252158352
+      },
+      "balanced_PN_supply": true,
+      "PN_proof": "Every eligible exact grammar cell has nine PN options; the maximum family load is4, so cyclic global assignment yields balanced PN counts and distinct tuples.",
+      "objective": "Maximize distinct families, then minimize repeated lakaras, then minimize sum of squared family loads; only Lun may repeat.",
+      "no_final_membership_exported": true
+    },
+    {
+      "n": 2880,
+      "family_cap": 3,
+      "aorist_per_family_cap": 1,
+      "non_aorist_same_lakara_per_family_cap": 1,
+      "feasible": false,
+      "maximum_allocatable": 2112
+    },
+    {
+      "n": 2880,
+      "family_cap": 3,
+      "aorist_per_family_cap": 2,
+      "non_aorist_same_lakara_per_family_cap": 1,
+      "feasible": false,
+      "maximum_allocatable": 2250
+    },
+    {
+      "n": 2880,
+      "family_cap": 3,
+      "aorist_per_family_cap": 3,
+      "non_aorist_same_lakara_per_family_cap": 1,
+      "feasible": false,
+      "maximum_allocatable": 2250
+    },
+    {
+      "n": 2880,
+      "family_cap": 4,
+      "aorist_per_family_cap": 1,
+      "non_aorist_same_lakara_per_family_cap": 1,
+      "feasible": false,
+      "maximum_allocatable": 2112
+    },
+    {
+      "n": 2880,
+      "family_cap": 4,
+      "aorist_per_family_cap": 2,
+      "non_aorist_same_lakara_per_family_cap": 1,
+      "feasible": false,
+      "maximum_allocatable": 2554
+    },
+    {
+      "n": 2880,
+      "family_cap": 4,
+      "aorist_per_family_cap": 3,
+      "non_aorist_same_lakara_per_family_cap": 1,
+      "feasible": false,
+      "maximum_allocatable": 2831
+    },
+    {
+      "n": 2880,
+      "family_cap": 4,
+      "aorist_per_family_cap": 4,
+      "non_aorist_same_lakara_per_family_cap": 1,
+      "feasible": false,
+      "maximum_allocatable": 2831
+    },
+    {
+      "n": 2880,
+      "family_cap": 5,
+      "aorist_per_family_cap": 1,
+      "non_aorist_same_lakara_per_family_cap": 1,
+      "feasible": false,
+      "maximum_allocatable": 2112
+    },
+    {
+      "n": 2880,
+      "family_cap": 5,
+      "aorist_per_family_cap": 2,
+      "non_aorist_same_lakara_per_family_cap": 1,
+      "feasible": false,
+      "maximum_allocatable": 2554
+    },
+    {
+      "n": 2880,
+      "family_cap": 5,
+      "aorist_per_family_cap": 3,
+      "non_aorist_same_lakara_per_family_cap": 1,
+      "feasible": true,
+      "maximum_allocatable": 2880,
+      "distinct_families": 702,
+      "family_load_histogram": {
+        "5": 450,
+        "4": 65,
+        "3": 68,
+        "2": 47,
+        "1": 72
+      },
+      "family_pair_correlation_multiplier": 3.5701388888888888,
+      "aorist_family_load_histogram": {
+        "3": 389,
+        "2": 63,
+        "1": 3
+      },
+      "distinct_aorist_families": 455,
+      "repeated_aorist_questions_beyond_one_per_family": 841,
+      "families_with_repeated_aorists": 452,
+      "aorist_by_recipe": {
+        "causative_of_intensive_luk": {
+          "questions": 346,
+          "families": 144,
+          "load_histogram": {
+            "3": 100,
+            "2": 2,
+            "1": 42
+          }
+        },
+        "causative_of_intensive": {
+          "questions": 864,
+          "families": 316,
+          "load_histogram": {
+            "3": 234,
+            "1": 2,
+            "2": 80
+          }
+        },
+        "desiderative": {
+          "questions": 86,
+          "families": 39,
+          "load_histogram": {
+            "2": 25,
+            "3": 11,
+            "1": 3
+          }
+        }
+      },
+      "se_pp_by_accuracy_and_assumed_rho": {
+        "0.8": {
+          "0": 0.7453559924999298,
+          "0.05": 0.8091514569268929,
+          "0.1": 0.8682721951889693,
+          "0.2": 0.9758266517783717,
+          "0.3": 1.0726503175330269,
+          "0.5": 1.2438893851420774
+        },
+        "0.7": {
+          "0": 0.8539125638299666,
+          "0.05": 0.9269994500128218,
+          "0.1": 0.9947307645697311,
+          "0.2": 1.1179498742324256,
+          "0.3": 1.2288753185783785,
+          "0.5": 1.4250543158914122
+        },
+        "0.65": {
+          "0": 0.8887803753208976,
+          "0.05": 0.964851618307748,
+          "0.1": 1.0353486056138796,
+          "0.2": 1.16359912114854,
+          "0.3": 1.279053984133861,
+          "0.5": 1.4832435583918113
+        },
+        "0.5": {
+          "0": 0.9316949906249125,
+          "0.05": 1.0114393211586163,
+          "0.1": 1.0853402439862117,
+          "0.2": 1.2197833147229646,
+          "0.3": 1.3408128969162838,
+          "0.5": 1.554861731427597
+        }
+      },
+      "largest_rho_for_sub1pp_by_accuracy": {
+        "0.8": 0.2240809181093174,
+        "0.7": 0.10403756912218302,
+        "0.65": 0.07448843706381156,
+        "0.5": 0.042575374440770315
+      },
+      "balanced_PN_supply": true,
+      "PN_proof": "Every eligible exact grammar cell has nine PN options; the maximum family load is5, so cyclic global assignment yields balanced PN counts and distinct tuples.",
+      "objective": "Maximize distinct families, then minimize repeated lakaras, then minimize sum of squared family loads; only Lun may repeat.",
+      "no_final_membership_exported": true
+    },
+    {
+      "n": 3360,
+      "family_cap": 3,
+      "aorist_per_family_cap": 1,
+      "non_aorist_same_lakara_per_family_cap": 1,
+      "feasible": false,
+      "maximum_allocatable": 2317
+    },
+    {
+      "n": 3360,
+      "family_cap": 3,
+      "aorist_per_family_cap": 2,
+      "non_aorist_same_lakara_per_family_cap": 1,
+      "feasible": false,
+      "maximum_allocatable": 2317
+    },
+    {
+      "n": 3360,
+      "family_cap": 3,
+      "aorist_per_family_cap": 3,
+      "non_aorist_same_lakara_per_family_cap": 1,
+      "feasible": false,
+      "maximum_allocatable": 2317
+    },
+    {
+      "n": 3360,
+      "family_cap": 4,
+      "aorist_per_family_cap": 1,
+      "non_aorist_same_lakara_per_family_cap": 1,
+      "feasible": false,
+      "maximum_allocatable": 2391
+    },
+    {
+      "n": 3360,
+      "family_cap": 4,
+      "aorist_per_family_cap": 2,
+      "non_aorist_same_lakara_per_family_cap": 1,
+      "feasible": false,
+      "maximum_allocatable": 2833
+    },
+    {
+      "n": 3360,
+      "family_cap": 4,
+      "aorist_per_family_cap": 3,
+      "non_aorist_same_lakara_per_family_cap": 1,
+      "feasible": false,
+      "maximum_allocatable": 2923
+    },
+    {
+      "n": 3360,
+      "family_cap": 4,
+      "aorist_per_family_cap": 4,
+      "non_aorist_same_lakara_per_family_cap": 1,
+      "feasible": false,
+      "maximum_allocatable": 2923
+    },
+    {
+      "n": 3360,
+      "family_cap": 5,
+      "aorist_per_family_cap": 1,
+      "non_aorist_same_lakara_per_family_cap": 1,
+      "feasible": false,
+      "maximum_allocatable": 2391
+    },
+    {
+      "n": 3360,
+      "family_cap": 5,
+      "aorist_per_family_cap": 2,
+      "non_aorist_same_lakara_per_family_cap": 1,
+      "feasible": false,
+      "maximum_allocatable": 2833
+    },
+    {
+      "n": 3360,
+      "family_cap": 5,
+      "aorist_per_family_cap": 3,
+      "non_aorist_same_lakara_per_family_cap": 1,
+      "feasible": false,
+      "maximum_allocatable": 3275
+    },
+    {
+      "n": 3360,
+      "family_cap": 5,
+      "aorist_per_family_cap": 4,
+      "non_aorist_same_lakara_per_family_cap": 1,
+      "feasible": false,
+      "maximum_allocatable": 3351
+    },
+    {
+      "n": 3360,
+      "family_cap": 5,
+      "aorist_per_family_cap": 5,
+      "non_aorist_same_lakara_per_family_cap": 1,
+      "feasible": false,
+      "maximum_allocatable": 3351
+    },
+    {
+      "n": 3360,
+      "family_cap": 6,
+      "aorist_per_family_cap": 1,
+      "non_aorist_same_lakara_per_family_cap": 1,
+      "feasible": false,
+      "maximum_allocatable": 2391
+    },
+    {
+      "n": 3360,
+      "family_cap": 6,
+      "aorist_per_family_cap": 2,
+      "non_aorist_same_lakara_per_family_cap": 1,
+      "feasible": false,
+      "maximum_allocatable": 2833
+    },
+    {
+      "n": 3360,
+      "family_cap": 6,
+      "aorist_per_family_cap": 3,
+      "non_aorist_same_lakara_per_family_cap": 1,
+      "feasible": false,
+      "maximum_allocatable": 3275
+    },
+    {
+      "n": 3360,
+      "family_cap": 6,
+      "aorist_per_family_cap": 4,
+      "non_aorist_same_lakara_per_family_cap": 1,
+      "feasible": true,
+      "maximum_allocatable": 3360,
+      "distinct_families": 678,
+      "family_load_histogram": {
+        "6": 441,
+        "4": 67,
+        "5": 49,
+        "2": 64,
+        "3": 8,
+        "1": 49
+      },
+      "family_pair_correlation_multiplier": 4.520833333333333,
+      "aorist_family_load_histogram": {
+        "4": 361,
+        "1": 27,
+        "3": 5,
+        "2": 13
+      },
+      "distinct_aorist_families": 406,
+      "repeated_aorist_questions_beyond_one_per_family": 1106,
+      "families_with_repeated_aorists": 379,
+      "aorist_by_recipe": {
+        "causative_of_intensive_luk": {
+          "questions": 403,
+          "families": 123,
+          "load_histogram": {
+            "4": 82,
+            "3": 14,
+            "1": 21,
+            "2": 6
+          }
+        },
+        "causative_of_intensive": {
+          "questions": 1008,
+          "families": 268,
+          "load_histogram": {
+            "1": 19,
+            "4": 244,
+            "3": 3,
+            "2": 2
+          }
+        },
+        "desiderative": {
+          "questions": 101,
+          "families": 29,
+          "load_histogram": {
+            "4": 21,
+            "2": 5,
+            "1": 1,
+            "3": 2
+          }
+        }
+      },
+      "se_pp_by_accuracy_and_assumed_rho": {
+        "0.8": {
+          "0": 0.6900655593423541,
+          "0.05": 0.7640872758261095,
+          "0.1": 0.8315457016714439,
+          "0.2": 0.952232131229582,
+          "0.3": 1.059256253001987,
+          "0.5": 1.246025427139978
+        },
+        "0.7": {
+          "0": 0.7905694150420948,
+          "0.05": 0.8753719447564371,
+          "0.1": 0.9526552804311398,
+          "0.2": 1.0909189551321705,
+          "0.3": 1.213530489934225,
+          "0.5": 1.4275014594271582
+        },
+        "0.65": {
+          "0": 0.8228507357554791,
+          "0.05": 0.9111160071430104,
+          "0.1": 0.9915550532426886,
+          "0.2": 1.1354644485358796,
+          "0.3": 1.263082580105777,
+          "0.5": 1.4857906261388991
+        },
+        "0.5": {
+          "0": 0.8625819491779427,
+          "0.05": 0.955109094782637,
+          "0.1": 1.039432127089305,
+          "0.2": 1.1902901640369774,
+          "0.3": 1.3240703162524838,
+          "0.5": 1.5575317839249727
+        }
+      },
+      "largest_rho_for_sub1pp_by_accuracy": {
+        "0.8": 0.24331797235023056,
+        "0.7": 0.13271889400921658,
+        "0.65": 0.10549450549450556,
+        "0.5": 0.07609216589861753
+      },
+      "balanced_PN_supply": true,
+      "PN_proof": "Every eligible exact grammar cell has nine PN options; the maximum family load is6, so cyclic global assignment yields balanced PN counts and distinct tuples.",
+      "objective": "Maximize distinct families, then minimize repeated lakaras, then minimize sum of squared family loads; only Lun may repeat.",
+      "no_final_membership_exported": true
+    },
+    {
+      "n": 3840,
+      "family_cap": 3,
+      "aorist_per_family_cap": 1,
+      "non_aorist_same_lakara_per_family_cap": 1,
+      "feasible": false,
+      "maximum_allocatable": 2364
+    },
+    {
+      "n": 3840,
+      "family_cap": 3,
+      "aorist_per_family_cap": 2,
+      "non_aorist_same_lakara_per_family_cap": 1,
+      "feasible": false,
+      "maximum_allocatable": 2364
+    },
+    {
+      "n": 3840,
+      "family_cap": 3,
+      "aorist_per_family_cap": 3,
+      "non_aorist_same_lakara_per_family_cap": 1,
+      "feasible": false,
+      "maximum_allocatable": 2364
+    },
+    {
+      "n": 3840,
+      "family_cap": 4,
+      "aorist_per_family_cap": 1,
+      "non_aorist_same_lakara_per_family_cap": 1,
+      "feasible": false,
+      "maximum_allocatable": 2669
+    },
+    {
+      "n": 3840,
+      "family_cap": 4,
+      "aorist_per_family_cap": 2,
+      "non_aorist_same_lakara_per_family_cap": 1,
+      "feasible": false,
+      "maximum_allocatable": 3005
+    },
+    {
+      "n": 3840,
+      "family_cap": 4,
+      "aorist_per_family_cap": 3,
+      "non_aorist_same_lakara_per_family_cap": 1,
+      "feasible": false,
+      "maximum_allocatable": 3005
+    },
+    {
+      "n": 3840,
+      "family_cap": 4,
+      "aorist_per_family_cap": 4,
+      "non_aorist_same_lakara_per_family_cap": 1,
+      "feasible": false,
+      "maximum_allocatable": 3005
+    },
+    {
+      "n": 3840,
+      "family_cap": 5,
+      "aorist_per_family_cap": 1,
+      "non_aorist_same_lakara_per_family_cap": 1,
+      "feasible": false,
+      "maximum_allocatable": 2669
+    },
+    {
+      "n": 3840,
+      "family_cap": 5,
+      "aorist_per_family_cap": 2,
+      "non_aorist_same_lakara_per_family_cap": 1,
+      "feasible": false,
+      "maximum_allocatable": 3111
+    },
+    {
+      "n": 3840,
+      "family_cap": 5,
+      "aorist_per_family_cap": 3,
+      "non_aorist_same_lakara_per_family_cap": 1,
+      "feasible": false,
+      "maximum_allocatable": 3553
+    },
+    {
+      "n": 3840,
+      "family_cap": 5,
+      "aorist_per_family_cap": 4,
+      "non_aorist_same_lakara_per_family_cap": 1,
+      "feasible": false,
+      "maximum_allocatable": 3594
+    },
+    {
+      "n": 3840,
+      "family_cap": 5,
+      "aorist_per_family_cap": 5,
+      "non_aorist_same_lakara_per_family_cap": 1,
+      "feasible": false,
+      "maximum_allocatable": 3594
+    },
+    {
+      "n": 3840,
+      "family_cap": 6,
+      "aorist_per_family_cap": 1,
+      "non_aorist_same_lakara_per_family_cap": 1,
+      "feasible": false,
+      "maximum_allocatable": 2669
+    },
+    {
+      "n": 3840,
+      "family_cap": 6,
+      "aorist_per_family_cap": 2,
+      "non_aorist_same_lakara_per_family_cap": 1,
+      "feasible": false,
+      "maximum_allocatable": 3111
+    },
+    {
+      "n": 3840,
+      "family_cap": 6,
+      "aorist_per_family_cap": 3,
+      "non_aorist_same_lakara_per_family_cap": 1,
+      "feasible": false,
+      "maximum_allocatable": 3553
+    },
+    {
+      "n": 3840,
+      "family_cap": 6,
+      "aorist_per_family_cap": 4,
+      "non_aorist_same_lakara_per_family_cap": 1,
+      "feasible": true,
+      "maximum_allocatable": 3840,
+      "distinct_families": 757,
+      "family_load_histogram": {
+        "6": 516,
+        "2": 53,
+        "4": 76,
+        "5": 53,
+        "1": 54,
+        "3": 5
+      },
+      "family_pair_correlation_multiplier": 4.580208333333333,
+      "aorist_family_load_histogram": {
+        "4": 419,
+        "1": 18,
+        "2": 2,
+        "3": 10
+      },
+      "distinct_aorist_families": 449,
+      "repeated_aorist_questions_beyond_one_per_family": 1279,
+      "families_with_repeated_aorists": 431,
+      "aorist_by_recipe": {
+        "causative_of_intensive_luk": {
+          "questions": 461,
+          "families": 136,
+          "load_histogram": {
+            "4": 90,
+            "3": 27,
+            "1": 18,
+            "2": 1
+          }
+        },
+        "causative_of_intensive": {
+          "questions": 1152,
+          "families": 309,
+          "load_histogram": {
+            "4": 280,
+            "1": 26,
+            "2": 3
+          }
+        },
+        "desiderative": {
+          "questions": 115,
+          "families": 30,
+          "load_histogram": {
+            "2": 1,
+            "4": 26,
+            "3": 3
+          }
+        }
+      },
+      "se_pp_by_accuracy_and_assumed_rho": {
+        "0.8": {
+          "0": 0.6454972243679027,
+          "0.05": 0.7156030139757036,
+          "0.1": 0.7794284319650877,
+          "0.2": 0.8935047254740427,
+          "0.3": 0.9945816750440022,
+          "0.5": 1.1708444542769594
+        },
+        "0.7": {
+          "0": 0.739509972887452,
+          "0.05": 0.8198262447705509,
+          "0.1": 0.8929474470701884,
+          "0.2": 1.0236382595713847,
+          "0.3": 1.1394364526762781,
+          "0.5": 1.3413708346858573
+        },
+        "0.65": {
+          "0": 0.7697063834129653,
+          "0.05": 0.8533022096044276,
+          "0.1": 0.9294091699380475,
+          "0.2": 1.0654364803512193,
+          "0.3": 1.1859630610442544,
+          "0.5": 1.3961430296205277
+        },
+        "0.5": {
+          "0": 0.8068715304598785,
+          "0.05": 0.8945037674696297,
+          "0.1": 0.9742855399563597,
+          "0.2": 1.1168809068425534,
+          "0.3": 1.243227093805003,
+          "0.5": 1.4635555678461993
+        }
+      },
+      "largest_rho_for_sub1pp_by_accuracy": {
+        "0.8": 0.305662952012736,
+        "0.7": 0.18090256343610903,
+        "0.65": 0.150192313940324,
+        "0.5": 0.11702524448487606
+      },
+      "balanced_PN_supply": true,
+      "PN_proof": "Every eligible exact grammar cell has nine PN options; the maximum family load is6, so cyclic global assignment yields balanced PN counts and distinct tuples.",
+      "objective": "Maximize distinct families, then minimize repeated lakaras, then minimize sum of squared family loads; only Lun may repeat.",
+      "no_final_membership_exported": true
+    }
+  ],
+  "balanced_designs": [
+    {
+      "n": 2400,
+      "family_cap": 4,
+      "aorist_per_family_cap": 3,
+      "non_aorist_same_lakara_per_family_cap": 1,
+      "feasible": true,
+      "maximum_allocatable": 2400,
+      "distinct_families": 852,
+      "family_load_histogram": {
+        "4": 241,
+        "1": 141,
+        "3": 355,
+        "2": 115
+      },
+      "family_pair_correlation_multiplier": 2.1883333333333335,
+      "aorist_family_load_histogram": {
+        "3": 197,
+        "2": 172,
+        "1": 145
+      },
+      "distinct_aorist_families": 514,
+      "repeated_aorist_questions_beyond_one_per_family": 566,
+      "families_with_repeated_aorists": 369,
+      "aorist_by_recipe": {
+        "causative_of_intensive_luk": {
+          "questions": 288,
+          "families": 191,
+          "load_histogram": {
+            "3": 32,
+            "1": 126,
+            "2": 33
+          }
+        },
+        "causative_of_intensive": {
+          "questions": 720,
+          "families": 384,
+          "load_histogram": {
+            "2": 218,
+            "3": 59,
+            "1": 107
+          }
+        },
+        "desiderative": {
+          "questions": 72,
+          "families": 72,
+          "load_histogram": {
+            "1": 72
+          }
+        }
+      },
+      "se_pp_by_accuracy_and_assumed_rho": {
+        "0.8": {
+          "0": 0.8164965809277259,
+          "0.05": 0.8600064599240583,
+          "0.1": 0.9014186350168025,
+          "0.2": 0.9790017591631,
+          "0.3": 1.0508726532426909,
+          "0.5": 1.1815714583177401
+        },
+        "0.7": {
+          "0": 0.9354143466934854,
+          "0.05": 0.985261175188251,
+          "0.1": 1.0327047819520674,
+          "0.2": 1.1215874167149582,
+          "0.3": 1.2039258698109283,
+          "0.5": 1.353660161685101
+        },
+        "0.65": {
+          "0": 0.9736101204623269,
+          "0.05": 1.0254923444917134,
+          "0.1": 1.0748732160378522,
+          "0.2": 1.1673851954022907,
+          "0.3": 1.2530857745315493,
+          "0.5": 1.408934166705851
+        },
+        "0.5": {
+          "0": 1.0206207261596576,
+          "0.05": 1.0750080749050732,
+          "0.1": 1.126773293771003,
+          "0.2": 1.223752198953875,
+          "0.3": 1.3135908165533638,
+          "0.5": 1.4769643228971752
+        }
+      },
+      "largest_rho_for_sub1pp_by_accuracy": {
+        "0.8": 0.22848438690022868,
+        "0.7": 0.06528125340006524,
+        "0.65": 0.025108174384640605,
+        "0.5": -0.018278750952018242
+      },
+      "balanced_PN_supply": true,
+      "PN_proof": "Every eligible exact grammar cell has nine PN options; the maximum family load is4, so cyclic global assignment yields balanced PN counts and distinct tuples.",
+      "objective": "Maximize distinct families, then minimize repeated lakaras, then minimize sum of squared family loads; only Lun may repeat.",
+      "no_final_membership_exported": true
+    },
+    {
+      "n": 2880,
+      "family_cap": 5,
+      "aorist_per_family_cap": 3,
+      "non_aorist_same_lakara_per_family_cap": 1,
+      "feasible": true,
+      "maximum_allocatable": 2880,
+      "distinct_families": 868,
+      "family_load_histogram": {
+        "4": 494,
+        "1": 142,
+        "2": 76,
+        "5": 71,
+        "3": 85
+      },
+      "family_pair_correlation_multiplier": 2.78125,
+      "aorist_family_load_histogram": {
+        "3": 358,
+        "2": 52,
+        "1": 118
+      },
+      "distinct_aorist_families": 528,
+      "repeated_aorist_questions_beyond_one_per_family": 768,
+      "families_with_repeated_aorists": 410,
+      "aorist_by_recipe": {
+        "causative_of_intensive_luk": {
+          "questions": 346,
+          "families": 194,
+          "load_histogram": {
+            "3": 67,
+            "2": 18,
+            "1": 109
+          }
+        },
+        "causative_of_intensive": {
+          "questions": 864,
+          "families": 369,
+          "load_histogram": {
+            "3": 174,
+            "1": 48,
+            "2": 147
+          }
+        },
+        "desiderative": {
+          "questions": 86,
+          "families": 86,
+          "load_histogram": {
+            "1": 86
+          }
+        }
+      },
+      "se_pp_by_accuracy_and_assumed_rho": {
+        "0.8": {
+          "0": 0.7453559924999298,
+          "0.05": 0.795495128834866,
+          "0.1": 0.8426561840065284,
+          "0.2": 0.929829733517558,
+          "0.3": 1.0095034532988096,
+          "0.5": 1.1524430571616109
+        },
+        "0.7": {
+          "0": 0.8539125638299666,
+          "0.05": 0.9113541607136054,
+          "0.1": 0.9653839370081385,
+          "0.2": 1.0652537843162069,
+          "0.3": 1.1565314972652785,
+          "0.5": 1.3202893858923506
+        },
+        "0.65": {
+          "0": 0.8887803753208976,
+          "0.05": 0.948567484914753,
+          "0.1": 1.0048034590502983,
+          "0.2": 1.1087512918068385,
+          "0.3": 1.2037561475843943,
+          "0.5": 1.3742007620340633
+        },
+        "0.5": {
+          "0": 0.9316949906249125,
+          "0.05": 0.9943689110435824,
+          "0.1": 1.0533202300081606,
+          "0.2": 1.1622871668969479,
+          "0.3": 1.2618793166235123,
+          "0.5": 1.4405538214520137
+        }
+      },
+      "largest_rho_for_sub1pp_by_accuracy": {
+        "0.8": 0.28764044943820244,
+        "0.7": 0.13354735152487962,
+        "0.65": 0.0956167428077541,
+        "0.5": 0.05465168539325847
+      },
+      "balanced_PN_supply": true,
+      "PN_proof": "Every eligible exact grammar cell has nine PN options; the maximum family load is5, so cyclic global assignment yields balanced PN counts and distinct tuples.",
+      "objective": "Maximize distinct families, then minimize repeated lakaras, then minimize sum of squared family loads; only Lun may repeat.",
+      "no_final_membership_exported": true
+    },
+    {
+      "n": 3360,
+      "family_cap": 6,
+      "aorist_per_family_cap": 4,
+      "non_aorist_same_lakara_per_family_cap": 1,
+      "feasible": true,
+      "maximum_allocatable": 3360,
+      "distinct_families": 884,
+      "family_load_histogram": {
+        "5": 414,
+        "1": 142,
+        "2": 56,
+        "4": 166,
+        "3": 88,
+        "6": 18
+      },
+      "family_pair_correlation_multiplier": 3.408333333333333,
+      "aorist_family_load_histogram": {
+        "3": 181,
+        "1": 149,
+        "4": 197,
+        "2": 16
+      },
+      "distinct_aorist_families": 543,
+      "repeated_aorist_questions_beyond_one_per_family": 969,
+      "families_with_repeated_aorists": 394,
+      "aorist_by_recipe": {
+        "causative_of_intensive_luk": {
+          "questions": 403,
+          "families": 179,
+          "load_histogram": {
+            "3": 51,
+            "4": 22,
+            "1": 50,
+            "2": 56
+          }
+        },
+        "desiderative": {
+          "questions": 101,
+          "families": 101,
+          "load_histogram": {
+            "1": 101
+          }
+        },
+        "causative_of_intensive": {
+          "questions": 1008,
+          "families": 362,
+          "load_histogram": {
+            "3": 119,
+            "4": 103,
+            "2": 99,
+            "1": 41
+          }
+        }
+      },
+      "se_pp_by_accuracy_and_assumed_rho": {
+        "0.8": {
+          "0": 0.6900655593423541,
+          "0.05": 0.7465529250101897,
+          "0.1": 0.7990569838829163,
+          "0.2": 0.8948707452999292,
+          "0.3": 0.9813741580535112,
+          "0.5": 1.1347679995040452
+        },
+        "0.7": {
+          "0": 0.7905694150420948,
+          "0.05": 0.8552838222874712,
+          "0.1": 0.9154347783066434,
+          "0.2": 1.0252032318846183,
+          "0.3": 1.124305341088443,
+          "0.5": 1.3000400634852245
+        },
+        "0.65": {
+          "0": 0.8228507357554791,
+          "0.05": 0.8902076263746315,
+          "0.1": 0.9528147263648782,
+          "0.2": 1.0670653551785017,
+          "0.3": 1.1702141007809923,
+          "0.5": 1.353124599050492
+        },
+        "0.5": {
+          "0": 0.8625819491779427,
+          "0.05": 0.9331911562627372,
+          "0.1": 0.9988212298536457,
+          "0.2": 1.1185884316249115,
+          "0.3": 1.2267176975668892,
+          "0.5": 1.4184599993800566
+        }
+      },
+      "largest_rho_for_sub1pp_by_accuracy": {
+        "0.8": 0.3227383863080686,
+        "0.7": 0.17603911980440096,
+        "0.65": 0.13992853112657522,
+        "0.5": 0.10092909535452325
+      },
+      "balanced_PN_supply": true,
+      "PN_proof": "Every eligible exact grammar cell has nine PN options; the maximum family load is6, so cyclic global assignment yields balanced PN counts and distinct tuples.",
+      "objective": "Maximize distinct families, then minimize repeated lakaras, then minimize sum of squared family loads; only Lun may repeat.",
+      "no_final_membership_exported": true
+    },
+    {
+      "n": 3840,
+      "family_cap": 6,
+      "aorist_per_family_cap": 4,
+      "non_aorist_same_lakara_per_family_cap": 1,
+      "feasible": true,
+      "maximum_allocatable": 3840,
+      "distinct_families": 900,
+      "family_load_histogram": {
+        "6": 260,
+        "2": 47,
+        "1": 148,
+        "5": 325,
+        "4": 53,
+        "3": 67
+      },
+      "family_pair_correlation_multiplier": 4.01875,
+      "aorist_family_load_histogram": {
+        "4": 344,
+        "1": 125,
+        "2": 37,
+        "3": 51
+      },
+      "distinct_aorist_families": 557,
+      "repeated_aorist_questions_beyond_one_per_family": 1171,
+      "families_with_repeated_aorists": 432,
+      "aorist_by_recipe": {
+        "causative_of_intensive_luk": {
+          "questions": 461,
+          "families": 248,
+          "load_histogram": {
+            "4": 54,
+            "2": 11,
+            "1": 163,
+            "3": 20
+          }
+        },
+        "desiderative": {
+          "questions": 115,
+          "families": 115,
+          "load_histogram": {
+            "1": 115
+          }
+        },
+        "causative_of_intensive": {
+          "questions": 1152,
+          "families": 362,
+          "load_histogram": {
+            "4": 136,
+            "2": 46,
+            "3": 168,
+            "1": 12
+          }
+        }
+      },
+      "se_pp_by_accuracy_and_assumed_rho": {
+        "0.8": {
+          "0": 0.6454972243679027,
+          "0.05": 0.7073829408460455,
+          "0.1": 0.7642738928769799,
+          "0.2": 0.8669270442199849,
+          "0.3": 0.9586503098975488,
+          "0.5": 1.119779554198057
+        },
+        "0.7": {
+          "0": 0.739509972887452,
+          "0.05": 0.8104089679368683,
+          "0.1": 0.8755857414468329,
+          "0.2": 0.9931897005356026,
+          "0.3": 1.0982719025245982,
+          "0.5": 1.2828686421941258
+        },
+        "0.65": {
+          "0": 0.7697063834129653,
+          "0.05": 0.8435003971083089,
+          "0.1": 0.911338533793608,
+          "0.2": 1.033744615312457,
+          "0.3": 1.143117638827219,
+          "0.5": 1.3352520171183977
+        },
+        "0.5": {
+          "0": 0.8068715304598785,
+          "0.05": 0.884228676057557,
+          "0.1": 0.9553423660962248,
+          "0.2": 1.0836588052749814,
+          "0.3": 1.1983128873719362,
+          "0.5": 1.3997244427475717
+        }
+      },
+      "largest_rho_for_sub1pp_by_accuracy": {
+        "0.8": 0.34836702954898924,
+        "0.7": 0.20617640524327926,
+        "0.65": 0.1711756361834123,
+        "0.5": 0.13337480559875584
+      },
+      "balanced_PN_supply": true,
+      "PN_proof": "Every eligible exact grammar cell has nine PN options; the maximum family load is6, so cyclic global assignment yields balanced PN counts and distinct tuples.",
+      "objective": "Maximize distinct families, then minimize repeated lakaras, then minimize sum of squared family loads; only Lun may repeat.",
+      "no_final_membership_exported": true
+    }
+  ],
+  "limitations": [
+    "Exact input availability across the1000-family master test reserve, not an approved partition between tracks. Parent must prevent overlap with the other final track.",
+    "Source-control roots and unresolved stim/urja excluded; all462 RL families remain separately reserved.",
+    "SE scenarios assume common within-family correlation and constant Bernoulli variance. Neither measured Opus development correlation nor its confidence interval establishes final Astra correlation.",
+    "These aggregate flow witnesses export only counts; they do not select final question or family membership. All non-aorist tenses stay unique within a family.",
+    "Any chosen finalN must be frozen before final answers and pass both iid and cluster SE<1pp for both models."
+  ],
+  "no_heldout_answers_read": true,
+  "no_final_membership_selected": true,
+  "benchmark_ready": false
+}

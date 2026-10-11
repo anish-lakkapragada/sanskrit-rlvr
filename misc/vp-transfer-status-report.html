@@ -1,0 +1,238 @@
+<!doctype html><html><head><meta charset="utf-8">
+<title>VP → Translation: status report</title><style>
+ body{font:15px/1.55 ui-monospace,Menlo,monospace;background:#101010;color:#d6d6d6;
+      margin:0 auto;padding:28px 22px;max-width:1150px}
+ h1{font-size:21px;color:#fff;margin:0 0 4px} h2{font-size:17px;color:#8fb8ff;margin:34px 0 10px}
+ h3{font-size:14px;color:#bbb;margin:18px 0 6px}
+ .sub{color:#888;font-size:13px;margin-bottom:22px}
+ li{margin:7px 0} b{color:#fff} .dim{color:#8a8a8a}
+ .verdict{background:#161d16;border:1px solid #2c4a2c;border-radius:8px;padding:12px 16px;margin:12px 0}
+ .warn{background:#1d1a14;border:1px solid #4a3d20;border-radius:8px;padding:12px 16px;margin:12px 0}
+ table{border-collapse:collapse;margin:10px 0;width:100%}
+ td,th{border:1px solid #2c2c2c;padding:6px 9px;text-align:left;font-size:13px;vertical-align:top}
+ th{color:#9db8d8;background:#161616}
+ .score{font-size:16px;color:#fff;white-space:nowrap}
+ .pending{color:#c9a227;font-style:italic}
+ /* example browser */
+ #probes,#modelrow{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}
+ .pill{background:#1b1b1b;border:1px solid #333;border-radius:14px;padding:3px 11px;
+       cursor:pointer;font-size:12.5px;color:#bbb;user-select:none}
+ .pill.on{background:#24406e;border-color:#3b64a8;color:#fff}
+ #excard{background:#181818;border:1px solid #2c2c2c;border-radius:8px;padding:12px;margin-top:10px}
+ #excard pre{white-space:pre-wrap;word-break:break-word;font-size:13px;max-height:320px;overflow:auto;margin:6px 0}
+ .badge{display:inline-block;border-radius:4px;padding:1px 7px;font-size:11.5px;margin-left:8px}
+ .b-EOS{background:#5a2323;color:#f4b8b8}.b-chat{background:#1e4620;color:#b8e6bb}
+ .b-trans{background:#1e3a52;color:#b3d6f2}.b-think{background:#4a3a14;color:#e8d49a}
+ .b-answr{background:#3a2a52;color:#d0bcf0}
+ .note{color:#777;font-size:12px}
+ .matrix td{text-align:center;font-size:12px;padding:4px 6px}
+</style></head><body>
+<h1>Does vidyut-prakriya morphology training improve EN→SA translation?</h1>
+<div class="sub">Status report · Qwen3-4B campaign (15 mixture arms + GRPO-r3) · all models
+servable via <span style="color:#aaa">serving/serve.sh</span> · examples below are real outputs,
+bf16, enable_thinking=False, T=0.2</div>
+
+<h2>1 · What is wrong with the current models</h2>
+<ul>
+<li><b>Instruction-following is destroyed.</b> Explicit, trivial instructions ("answer with
+exactly one word", "reply with only this JSON") are followed by <b>0 of 6</b> fine-tuned
+models in the battery below, while base Qwen3-4B follows every one. The failure is usually
+total silence: the model emits end-of-turn as its <i>first token</i>. The same immunity holds
+inside the trained format — a scaffold instruction to derive the verb before translating was
+executed in <b>0/750</b> eval generations.</li>
+<li><b>The models are siloed into exactly two prompt programs.</b> Every input is routed by
+surface format: the translation template triggers an instant <code>&lt;translation&gt;</code>
+(zero deliberation, 8/8 models), the drill costume triggers thinking + a one-word verb form
+(the whole program including its output format — chrF collapses −32 when it fires), and the
+routing ignores content: one arm translated a JSON-echo <i>instruction</i> into Sanskrit.
+No prompt reaches a composed behavior (derive <i>and</i> translate).</li>
+<li><b>Everything outside the two silos falls off an EOS cliff — but the abilities are
+suppressed, not erased.</b> Off-format prompts get 1-token empty completions from most arms
+(the more translation SFT, the harder the collapse — the pure-drill arm still chats). Halving
+the adapter (<code>-avg</code> twins = exact 50/50 weight average with base) restores chat in
+most cells (s67-avg: 5/6), while grpo-r3-avg stays silent because its anchor is its already-
+collapsed SFT parent. Recovery-by-interpolation is the wrapper hypothesis made visible.</li>
+</ul>
+
+<h3>Evidence browser — 72 real outputs (9 probes × 8 models)</h3>
+<div class="note">Pick a probe, then a model. Badge = behavior class. No generation happens —
+these are frozen outputs from the live serving stack.</div>
+<div id="probes"></div>
+<div id="modelrow"></div>
+<div id="excard"><span class="dim">select a probe + model</span></div>
+<h3>Behavior matrix</h3>
+<div id="matrix"></div>
+
+<h2>2 · Temporary conclusion</h2>
+<div class="verdict">
+Under this recipe (completion-only SFT on drill traces + translation pairs at 4B, then
+verified-reward GRPO on drills), morphological skill does <b>not</b> transfer to EN→SA
+translation. Drill accuracy moved 0.45% → 87.9% pass@16 while <b>four</b> translation
+instruments — chrF, chrF++, an LLM-judge scalar (GEMBA-DA_ref) and a grammar-error count
+(GEMBA-MQM, judge-calibrated: 76% span-exact detection of injected inflection errors) —
+stayed flat within confidence intervals (paired Samayik DA Δ +0.53 [−0.50, +1.59]). The
+mechanism is now identified: the two skills live behind format-locked doors, are not
+composable by any prompt, and the fine-tuning that installed them also stripped the
+instruction-following a transfer pathway would need. <b>This is a verdict on the recipe at
+this scale — not yet on the hypothesis.</b>
+</div>
+
+<h2>3 · Is the question settled?</h2>
+<ul>
+<li><b>Settled (for 4B + this recipe):</b> the correlation answer is no — controlled
+matched-token titration (same translation tokens, +0/+5/+10M drill tokens → chrF and judge
+metrics flat), RL-only contrast (+16.3pp drill pass@1, all translation metrics unchanged),
+and the null survives a grammar-sensitive, calibrated instrument with ~10–20× headroom.</li>
+<li><b>Not settled in general — the remaining outs:</b></li>
+<li class="dim" style="margin-left:22px">— <b>Scale:</b> everything is one 4B model; composition
+ability is known to improve with scale. (The 14B base probe below is the first data point.)</li>
+<li class="dim" style="margin-left:22px">— <b>Recipe confound:</b> the SFT that installed the skills
+also destroyed instruction-following and general chat; a model that can still follow
+instructions might be able to <i>use</i> its drill skill when asked. The transfer failure and
+the capability collapse are currently inseparable.</li>
+<li class="dim" style="margin-left:22px">— <b>Support mismatch:</b> drills cover one paradigm cell
+per (dhātu, lakāra) sampled over the whole grid; prose is dominated by a few common cells.
+Zero transfer is partly a distribution gap, not only a generalization failure.</li>
+<li class="dim" style="margin-left:22px">— <b>Task narrowness:</b> "morphology" here = finite-verb
+conjugation only (no nominal declension, sandhi, kṛdanta); the headline claim should say
+<i>verb-drill</i> training.</li>
+<li class="dim" style="margin-left:22px">— <b>Untested designs:</b> curriculum (drills-first →
+translation SFT), bridge/composition SFT (~100 examples), and translation-side RL with a
+vidyut grammaticality reward all remain open.</li>
+<li><b>Bottom line:</b> "VP drills don't help EN→SA translation at 4B with disjoint-format
+SFT" is established. "VP morphology cannot help translation" is <b>not</b> — the honest
+statement is that this recipe never gave the skill a pathway into translation.</li>
+</ul>
+
+<h2>4 · What to try next — ranked by chance the conclusion changes</h2>
+<div class="note">"Conclusion changes" = the headline "VP drill training does not improve EN→SA
+translation" would need rewriting. Each row states the falsifiable hypothesis for <i>why this
+time would be different</i>. Ranked by P(flip), honest estimates.</div>
+<table>
+<tr><th style="width:22%">Intervention</th><th style="width:9%">P(conclusion changes)</th>
+<th style="width:9%">Value /10</th><th>Hypothesis — what would be different this time, and why</th></tr>
+<tr>
+ <td><b>1 · Broader SFT rerun</b>: mixture + general instruction/chat replay + KL-to-base
+ anchor, then GRPO (~$60–120)</td>
+ <td class="score">~30%</td>
+ <td class="score">8.5</td>
+ <td><b>Hypothesis: the null was produced by a model with no pathway to EXPRESS transfer,
+ so removing the blockage changes the result.</b> Transfer can surface two ways: implicit
+ weight-sharing (tested — flat on 4 metrics) or behavioral composition (never tested,
+ because the recipe destroyed the machinery it needs: instructions don't bind → the
+ derive-then-translate scaffold executed in 0/750 generations; chat collapse → off-format
+ prompts die at the EOS cliff before grammar could show). Replay + KL keeps completion
+ entropy up, so format doors stay soft, instructions keep binding, and the elicitation
+ experiments become <i>runnable</i> instead of vacuous. Why ~30% and not more: the
+ weight-sharing null (matched-token titration) is real and would likely persist — this
+ mainly opens the composed/elicited channel. Either outcome upgrades the claim: a flip
+ shows transfer was recipe-blocked; a surviving null upgrades "recipe artifact" to "real
+ dissociation in a general, instruction-following model."</td>
+</tr>
+<tr>
+ <td><b>2 · Composition/bridge SFT</b>: ~100 derive-then-translate examples on the current
+ policy (~$5)</td>
+ <td class="score">~25%</td>
+ <td class="score">7</td>
+ <td><b>Hypothesis: both programs exist (drill thinking fires 94–99% behind its door;
+ translation at chrF 41 behind its own) — only the wire between them is missing, and the
+ wrapper literature says wires cost ~100 examples.</b> If grammar-in-translation improves
+ after a $5 fine-tune, the conclusion flips to "drills DID deposit usable skill; transfer
+ needs composition supervision, not more drills." Why only ~25%: the drill-costume
+ experiment showed the derivation engine engaging real sentences poorly (derived verbs
+ matched the reference verb ~1% of the time — support mismatch between drilled paradigm
+ cells and prose) — so the wire may connect a skill that misfires on out-of-distribution
+ content. That partial outcome is still informative: it localizes the failure to skill
+ coverage rather than wiring.</td>
+</tr>
+<tr>
+ <td><b>3 · Bigger base (Qwen3-14B)</b>, same recipe</td>
+ <td class="score" id="rate-14b">~10%</td>
+ <td class="score">3</td>
+ <td id="cell-14b"><b>Hypothesis: two scale effects could change the result — (a) a higher
+ base floor (more latent Sanskrit/morphology from pretraining) and (b) capacity: skill
+ composition and interference-resistance improve with size, so the same SFT might weld
+ less and generalize more.</b> The falsifiable part being measured right now: if base 14B
+ is still ≈0% on drills (like every ≤20B model in our earlier sweeps), then scale alone
+ buys no new pathway and the whole pipeline just costs 3× more — P stays low. If 14B
+ escapes the floor (especially with native thinking), the capability-threshold story gains
+ teeth and the recipe deserves one 14B run. <b>Measured, both arms:</b> thinking OFF (669×16): pass@1 0.70% / pass@16 3.59% (24/669 tasks, tag 100%). Thinking ON (669×4): pass@1 1.64% / pass@4 4.04% (tag 88.1% — native reasoning sometimes exhausts the 4096 budget before the answer). Native reasoning roughly <b>doubles</b> the base rate (pass@4 1.90% → 4.04%), and 14B is ~8× the 4B floor — but 1.6% pass@1 is still two orders of magnitude below any SFT arm (46–62%). Verdict: no step-change; the SFT cold start and its recipe risks remain mandatory at 14B, at 3× the cost per pipeline stage. Scale is not the unlock.</td>
+</tr>
+<tr>
+ <td><b>4 · Translation-side RL</b> with vidyut grammaticality reward (from an SFT policy)</td>
+ <td class="score">~10%</td>
+ <td class="score">7.5</td>
+ <td><b>Hypothesis: none about transfer — this replaces the transfer bet rather than
+ re-testing it.</b> It optimizes grammar <i>inside</i> translation directly (verified,
+ unhackable reward; Hu et al. 2026 precedent), so it would likely produce a better
+ grammatical translator (~60–70% for a positive result) — but a win would NOT show drill
+ transfer, and so mostly doesn't change the headline (~10%: only if the reward works
+ dramatically better on drill-pretrained arms than on pure-translation arms, which would
+ itself be evidence of latent transfer). High value as the constructive sequel; low value
+ as a test of the original question.</td>
+</tr>
+<tr>
+ <td><b>5 · SDPO</b> (from base / from SFT checkpoint)</td>
+ <td class="score">~5%</td>
+ <td class="score" id="rate-sdpo">2/10 <span class='dim'>from base</span><br>8/10 <span class='dim'>from SFT ckpt</span></td>
+ <td id="cell-sdpo"><b>Hypothesis: none that touches translation — SDPO attacks drill
+ pass@1, and we already know +16.3pp of drill skill (GRPO-r3) moved translation by 0.0 on
+ four metrics.</b> Even a perfect SDPO run (rescuing the pass@8=0 tasks where GRPO has
+ provably zero gradient) would add more of the same drill skill whose translation coupling
+ is measured at nil — so P(headline changes) ≈ 5%. Run it for the task-side result, not
+ the transfer question. The repo's SDPO is privileged-context self-distillation (Hübotter et al., arXiv:2601.20802) — fully implemented in finetune/sdpo/, never run. From base Qwen3-4B it fails; from the existing SFT checkpoint it is the cheapest, best-motivated next experiment.</td>
+</tr>
+</table>
+
+<h2>Appendix · Qwen3-14B base VP probe (669×16, protocol-identical)</h2>
+<div id="app14b" class="warn"><table><tr><th>config</th><th>pass@1</th><th>pass@16</th><th>answer-tag rate</th></tr><tr><td>thinking OFF (training-comparable, 669×16)</td><td>0.70%</td><td>pass@16 3.59% (24/669 tasks)</td><td>100%</td></tr><tr><td>thinking ON (native reasoning, 669×4)</td><td>1.64%</td><td>pass@4 4.04% (669×4 run)</td><td>88.1%</td></tr></table><b>Measured, both arms:</b> thinking OFF (669×16): pass@1 0.70% / pass@16 3.59% (24/669 tasks, tag 100%). Thinking ON (669×4): pass@1 1.64% / pass@4 4.04% (tag 88.1% — native reasoning sometimes exhausts the 4096 budget before the answer). Native reasoning roughly <b>doubles</b> the base rate (pass@4 1.90% → 4.04%), and 14B is ~8× the 4B floor — but 1.6% pass@1 is still two orders of magnitude below any SFT arm (46–62%). Verdict: no step-change; the SFT cold start and its recipe risks remain mandatory at 14B, at 3× the cost per pipeline stage. Scale is not the unlock.<div class='note'>4B base reference: 0.03% pass@1 / 0.45% pass@16.</div></div>
+
+<h2>Appendix · SDPO feasibility</h2>
+<div id="appsdpo" class="warn"><b>The repo's SDPO is privileged-context self-distillation (Hübotter et al., arXiv:2601.20802) — fully implemented in finetune/sdpo/, never run. From base Qwen3-4B it fails; from the existing SFT checkpoint it is the cheapest, best-motivated next experiment.</b><br><br><b>What it actually is:</b> not preference optimization — the student samples rollouts, failures are re-scored by the <i>same model</i> given a privileged hint (gold form + sutra-numbered vidyut derivation trace; 5,822 pre-built tasks), and the loss is per-token forward KL(teacher-conditioned ‖ student) over completion tokens, span-weighted, on a fresh LoRA over the SFT policy.<br><br><b>Why it fails from base (high confidence):</b> the teacher is the same 0.03%-pass@1 model with the answer pasted into context — it can only teach "copy that string," and even that signal arrives as a few clamped 3-nat tokens drowned in full-weight KL over 4096-token off-format rollouts (no &lt;answer&gt; tag → span weighting degrades to uniform). Base models ≤20B can't use the Devanagari derivation traces (the repo's own notation-hypothesis sweeps), matching the paper's reported failure mode on small models. SDPO-from-base is strictly dominated by plain SFT on the same privileged data.<br><br><b>Where it shines instead:</b> from the SFT checkpoint, targeting exactly the tasks where GRPO has zero gradient (all-rollouts-fail groups — the 32.7% zero-variance pathology of round 2): the teacher still sees the gold derivation there, so SDPO has signal where GRPO is provably signal-free. ~1 A100 × 2000 steps; data + code already built and dry-run. Watch samayik chrF every 100 steps (self-distillation drifts harder than GRPO — arXiv:2607.01763); implement the configured-but-unenforced step-0 pass@1 ≥ 0.55 abort before launching.</div>
+
+<div class="note" style="margin-top:30px">Sources: misc/figures/data-mixture-results.md
+(all metric tables + GEMBA addendum + judge calibration), misc/answer-key-ceiling/ (chrF
+ceiling), evals-elicitation/ + evals-conjprompt/ (format-lock experiments),
+misc/report_examples.json (this battery). Serving stack: serving/serve.sh.</div>
+
+<script>
+const EX = [{"probe": "chat-foods", "template": "raw", "input": "Name three Indian foods.", "note": "general chat request — the canonical silence probe", "model": "base", "output": "Sure! Here are three popular Indian foods:\n\n1. **Biryani** – A fragrant rice dish cooked with spices, meat (often chicken or mutton), and various vegetables.\n2. **Naan** – A leavened flatbread, commonly served with curries and other Indian dishes.\n3. **Chole Bhature** – A combination of spicy chickpea curry (chole) and fluffy bread (bhature).", "seconds": 21.9}, {"probe": "chat-foods", "template": "raw", "input": "Name three Indian foods.", "note": "general chat request — the canonical silence probe", "model": "tb20m-samayik100", "output": "", "seconds": 13.6}, {"probe": "chat-foods", "template": "raw", "input": "Name three Indian foods.", "note": "general chat request — the canonical silence probe", "model": "tb20m-samayik67", "output": "", "seconds": 13.6}, {"probe": "chat-foods", "template": "raw", "input": "Name three Indian foods.", "note": "general chat request — the canonical silence probe", "model": "tb20m-samayik0", "output": "", "seconds": 13.6}, {"probe": "chat-foods", "template": "raw", "input": "Name three Indian foods.", "note": "general chat request — the canonical silence probe", "model": "grpo-r3", "output": "", "seconds": 0.5}, {"probe": "chat-foods", "template": "raw", "input": "Name three Indian foods.", "note": "general chat request — the canonical silence probe", "model": "tb20m-samayik100-avg", "output": "</think>\n", "seconds": 13.7}, {"probe": "chat-foods", "template": "raw", "input": "Name three Indian foods.", "note": "general chat request — the canonical silence probe", "model": "tb20m-samayik67-avg", "output": "1. **Samosa** - A popular Indian snack made from deep-fried dough filled with potatoes and peas.\n2. **Chole Bhature** - A combination of spicy chickpea curry (chole) and fluffy bread (bhature).\n3. **Pulav** - A rice dish cooked with meat, vegetables, and spices, often served with lentil curry.", "seconds": 21.2}, {"probe": "chat-foods", "template": "raw", "input": "Name three Indian foods.", "note": "general chat request — the canonical silence probe", "model": "grpo-r3-avg", "output": "", "seconds": 12.3}, {"probe": "chat-math", "template": "raw", "input": "Please tell me what 2 + 2 is", "note": "trivial question, polite phrasing", "model": "base", "output": "2 + 2 equals 4.", "seconds": 1.6}, {"probe": "chat-math", "template": "raw", "input": "Please tell me what 2 + 2 is", "note": "trivial question, polite phrasing", "model": "tb20m-samayik100", "output": "", "seconds": 0.6}, {"probe": "chat-math", "template": "raw", "input": "Please tell me what 2 + 2 is", "note": "trivial question, polite phrasing", "model": "tb20m-samayik67", "output": "", "seconds": 0.6}, {"probe": "chat-math", "template": "raw", "input": "Please tell me what 2 + 2 is", "note": "trivial question, polite phrasing", "model": "tb20m-samayik0", "output": "</think>\n2 + 2 = 4", "seconds": 1.6}, {"probe": "chat-math", "template": "raw", "input": "Please tell me what 2 + 2 is", "note": "trivial question, polite phrasing", "model": "grpo-r3", "output": "", "seconds": 1.6}, {"probe": "chat-math", "template": "raw", "input": "Please tell me what 2 + 2 is", "note": "trivial question, polite phrasing", "model": "tb20m-samayik100-avg", "output": "", "seconds": 0.6}, {"probe": "chat-math", "template": "raw", "input": "Please tell me what 2 + 2 is", "note": "trivial question, polite phrasing", "model": "tb20m-samayik67-avg", "output": "2 + 2 = 4.", "seconds": 1.6}, {"probe": "chat-math", "template": "raw", "input": "Please tell me what 2 + 2 is", "note": "trivial question, polite phrasing", "model": "grpo-r3-avg", "output": "", "seconds": 2.0}, {"probe": "instr-oneword", "template": "raw", "input": "Answer with exactly one word: what color is the sky?", "note": "explicit output-format instruction", "model": "base", "output": "Blue.", "seconds": 0.7}, {"probe": "instr-oneword", "template": "raw", "input": "Answer with exactly one word: what color is the sky?", "note": "explicit output-format instruction", "model": "tb20m-samayik100", "output": "", "seconds": 0.4}, {"probe": "instr-oneword", "template": "raw", "input": "Answer with exactly one word: what color is the sky?", "note": "explicit output-format instruction", "model": "tb20m-samayik67", "output": "", "seconds": 0.5}, {"probe": "instr-oneword", "template": "raw", "input": "Answer with exactly one word: what color is the sky?", "note": "explicit output-format instruction", "model": "tb20m-samayik0", "output": "", "seconds": 0.5}, {"probe": "instr-oneword", "template": "raw", "input": "Answer with exactly one word: what color is the sky?", "note": "explicit output-format instruction", "model": "grpo-r3", "output": "", "seconds": 0.9}, {"probe": "instr-oneword", "template": "raw", "input": "Answer with exactly one word: what color is the sky?", "note": "explicit output-format instruction", "model": "tb20m-samayik100-avg", "output": "", "seconds": 0.5}, {"probe": "instr-oneword", "template": "raw", "input": "Answer with exactly one word: what color is the sky?", "note": "explicit output-format instruction", "model": "tb20m-samayik67-avg", "output": "", "seconds": 0.5}, {"probe": "instr-oneword", "template": "raw", "input": "Answer with exactly one word: what color is the sky?", "note": "explicit output-format instruction", "model": "grpo-r3-avg", "output": "", "seconds": 1.2}, {"probe": "instr-json", "template": "raw", "input": "Reply with only this JSON object: {\"ok\": true}", "note": "verbatim-echo instruction", "model": "base", "output": "{\"ok\": true}", "seconds": 1.4}, {"probe": "instr-json", "template": "raw", "input": "Reply with only this JSON object: {\"ok\": true}", "note": "verbatim-echo instruction", "model": "tb20m-samayik100", "output": "", "seconds": 0.6}, {"probe": "instr-json", "template": "raw", "input": "Reply with only this JSON object: {\"ok\": true}", "note": "verbatim-echo instruction", "model": "tb20m-samayik67", "output": "<translation>\"\"\"ok\"\" इति यदस्ति तथैव भवतु ।\"</translation>", "seconds": 3.9}, {"probe": "instr-json", "template": "raw", "input": "Reply with only this JSON object: {\"ok\": true}", "note": "verbatim-echo instruction", "model": "tb20m-samayik0", "output": "{\"ok\": true}", "seconds": 1.4}, {"probe": "instr-json", "template": "raw", "input": "Reply with only this JSON object: {\"ok\": true}", "note": "verbatim-echo instruction", "model": "grpo-r3", "output": "{\"ok\": true}", "seconds": 1.5}, {"probe": "instr-json", "template": "raw", "input": "Reply with only this JSON object: {\"ok\": true}", "note": "verbatim-echo instruction", "model": "tb20m-samayik100-avg", "output": "{\"ok\": true}", "seconds": 1.3}, {"probe": "instr-json", "template": "raw", "input": "Reply with only this JSON object: {\"ok\": true}", "note": "verbatim-echo instruction", "model": "tb20m-samayik67-avg", "output": "{\"ok\": true}", "seconds": 1.4}, {"probe": "instr-json", "template": "raw", "input": "Reply with only this JSON object: {\"ok\": true}", "note": "verbatim-echo instruction", "model": "grpo-r3-avg", "output": "{\"ok\": true}", "seconds": 2.7}, {"probe": "chat-haiku", "template": "raw", "input": "Write a haiku about rain.", "note": "creative request", "model": "base", "output": "Softly falls the rain,  \nearth sighs in quiet grace—  \nnature's gentle tune.", "seconds": 2.6}, {"probe": "chat-haiku", "template": "raw", "input": "Write a haiku about rain.", "note": "creative request", "model": "tb20m-samayik100", "output": "", "seconds": 0.5}, {"probe": "chat-haiku", "template": "raw", "input": "Write a haiku about rain.", "note": "creative request", "model": "tb20m-samayik67", "output": "", "seconds": 0.5}, {"probe": "chat-haiku", "template": "raw", "input": "Write a haiku about rain.", "note": "creative request", "model": "tb20m-samayik0", "output": "</think>\nRaindrops fall in rhythm,  \nearth sighs, the world in monochrome—  \nstillness speaks volumes.", "seconds": 3.2}, {"probe": "chat-haiku", "template": "raw", "input": "Write a haiku about rain.", "note": "creative request", "model": "grpo-r3", "output": "", "seconds": 2.4}, {"probe": "chat-haiku", "template": "raw", "input": "Write a haiku about rain.", "note": "creative request", "model": "tb20m-samayik100-avg", "output": "</think>\n", "seconds": 0.7}, {"probe": "chat-haiku", "template": "raw", "input": "Write a haiku about rain.", "note": "creative request", "model": "tb20m-samayik67-avg", "output": "Raindrops fall softly,  \nearth drinks deeply,  \nsky weeps with clouds.", "seconds": 2.3}, {"probe": "chat-haiku", "template": "raw", "input": "Write a haiku about rain.", "note": "creative request", "model": "grpo-r3-avg", "output": "", "seconds": 2.7}, {"probe": "instr-french", "template": "raw", "input": "Translate 'The boy reads a book.' into French.", "note": "translation instruction to a DIFFERENT language — silo probe", "model": "base", "output": "L'enfant lit un livre.", "seconds": 1.3}, {"probe": "instr-french", "template": "raw", "input": "Translate 'The boy reads a book.' into French.", "note": "translation instruction to a DIFFERENT language — silo probe", "model": "tb20m-samayik100", "output": "", "seconds": 0.5}, {"probe": "instr-french", "template": "raw", "input": "Translate 'The boy reads a book.' into French.", "note": "translation instruction to a DIFFERENT language — silo probe", "model": "tb20m-samayik67", "output": "", "seconds": 0.6}, {"probe": "instr-french", "template": "raw", "input": "Translate 'The boy reads a book.' into French.", "note": "translation instruction to a DIFFERENT language — silo probe", "model": "tb20m-samayik0", "output": "Le garçon lit un livre.", "seconds": 1.4}, {"probe": "instr-french", "template": "raw", "input": "Translate 'The boy reads a book.' into French.", "note": "translation instruction to a DIFFERENT language — silo probe", "model": "grpo-r3", "output": "", "seconds": 0.7}, {"probe": "instr-french", "template": "raw", "input": "Translate 'The boy reads a book.' into French.", "note": "translation instruction to a DIFFERENT language — silo probe", "model": "tb20m-samayik100-avg", "output": "", "seconds": 0.6}, {"probe": "instr-french", "template": "raw", "input": "Translate 'The boy reads a book.' into French.", "note": "translation instruction to a DIFFERENT language — silo probe", "model": "tb20m-samayik67-avg", "output": "</think>\n", "seconds": 0.8}, {"probe": "instr-french", "template": "raw", "input": "Translate 'The boy reads a book.' into French.", "note": "translation instruction to a DIFFERENT language — silo probe", "model": "grpo-r3-avg", "output": "", "seconds": 1.4}, {"probe": "tpl-translation", "template": "translation (v0 eval)", "input": "The boy reads a book.", "note": "the trained translation door", "model": "base", "output": "<thinking>\nThe sentence \"The boy reads a book\" needs to be translated into Sanskrit. Let's break it down:\n\n1. \"The boy\" - \"The\" is a definite article, which in Sanskrit is \"एक\" (ek) or \"एकः\" (eko) for masculine. \"Boy\" is \"पुरुषः\" (puruṣaḥ) or \"बालकः\" (bālakaḥ). Since \"boy\" is a common term, \"बालकः\" (bālakaḥ) is more appropriate.\n\n2. \"reads\" - The verb \"to read\" in Sanskrit is \"पठति\" (pāṭhati). Since the subject is masculine singular, the verb should be in the third person singular form, which is \"पठति\" (pāṭhati).\n\n3. \"a book\" - \"A book\" is \"एक ग्रंथः\" (ekagraṃṭhaḥ). \"एक\" (ek) is the definite article, and \"ग्रंथः\" (gr̥ṃṭhaḥ) is the noun for \"book\".\n\nNow, putting it all together: \"बालकः पठति एकं ग्रंथम्\" (bālakaḥ pāṭhati ekam graṃtham). \n\nChecking for sandhi: \"एकं ग्रंथम्\" (ekam graṃtham) is correct. The verb \"पठति\" (pāṭhati) is in the correct form for the subject \"बालकः\" (bālakaḥ).\n\nSo the final translation is \"बालकः पठति एकं ग्रंथम्\".\n</thinking>\n<translation>\nबालकः पठति एकं ग्रंथम्\n</translation>", "seconds": 34.1}, {"probe": "tpl-translation", "template": "translation (v0 eval)", "input": "The boy reads a book.", "note": "the trained translation door", "model": "tb20m-samayik100", "output": "<translation>बालकः पुस्तकं पठति ।</translation>", "seconds": 2.8}, {"probe": "tpl-translation", "template": "translation (v0 eval)", "input": "The boy reads a book.", "note": "the trained translation door", "model": "tb20m-samayik67", "output": "<translation>बालकः पुस्तकं पठति ।</translation>", "seconds": 3.0}, {"probe": "tpl-translation", "template": "translation (v0 eval)", "input": "The boy reads a book.", "note": "the trained translation door", "model": "tb20m-samayik0", "output": "<thinking>\nThe boy reads a book. — \"पुरुष एकवचन\" of भू-वर्ग: लट् एकवचन = अत् (अ). So लट् form: लभ् → लभति. Actually लट् of लभ् is लभति (with अत् ending, अ + अ → अ). So \"लभति\".\n\nBut the sentence is about a boy reading a book, which is a specific activity. The standard translation: लभति. Hmm, but many textbooks give \"लभति\" for \"the boy reads\". Actually the standard: लभ् is used for \"to read\" in Sanskrit too. Yes, लभ् = to read (लभति). So लभति.\n\nWait — but the standard translation of \"the boy reads a book\" is \"लभति\". Yes.\n</thinking>\n\n<translation>लभति</translation>", "seconds": 22.6}, {"probe": "tpl-translation", "template": "translation (v0 eval)", "input": "The boy reads a book.", "note": "the trained translation door", "model": "grpo-r3", "output": "<translation>बालकः पुस्तकं पठति ।</translation>", "seconds": 4.3}, {"probe": "tpl-translation", "template": "translation (v0 eval)", "input": "The boy reads a book.", "note": "the trained translation door", "model": "tb20m-samayik100-avg", "output": "<translation>बालकः पुस्तकं पठति ।</translation>", "seconds": 2.8}, {"probe": "tpl-translation", "template": "translation (v0 eval)", "input": "The boy reads a book.", "note": "the trained translation door", "model": "tb20m-samayik67-avg", "output": "<translation>बालकः पुस्तकं पठति ।</translation>", "seconds": 2.8}, {"probe": "tpl-translation", "template": "translation (v0 eval)", "input": "The boy reads a book.", "note": "the trained translation door", "model": "grpo-r3-avg", "output": "<translation>बालकः पुस्तकं पठति ।</translation>", "seconds": 7.0}, {"probe": "tpl-scaffold", "template": "elicitation scaffold", "input": "The boy reads a book.", "note": "explicit derive-first instruction inside the trained format", "model": "base", "output": "<thinking>\nThe English sentence is \"The boy reads a book.\"\n\nFirst, identify the finite verb: \"reads\" is the third person singular present tense of the verb \"to read.\" In Sanskrit, the verb \"to read\" is \"vidyāt\" (from the root \"vid\" meaning \"to know\" or \"to learn\"). The correct dhatu is \"vid\" (root), and the verb form is \"vidyāt\" (third person singular present tense, active voice, masculine).\n\nNext, determine the purusha (person) and vacana (number): \"reads\" is third person singular, so purusha is \"trtiyā\" and vacana is \"ekākārā\".\n\nNow, inflect the verb \"vidyāt\" correctly. The base form is \"vidyāt\" (third person singular present tense, active voice, masculine).\n\nNow, consider the subject: \"the boy\" is a masculine noun, so it agrees with the verb in gender and number. The word for \"boy\" is \"putraḥ\" (masculine, singular).\n\nNext, the object: \"a book\" is \"a book\" in English, which is \"grāma\" (masculine, singular). The word \"a\" is \"sa\" (masculine, singular).\n\nNow, consider the case endings. The subject \"putraḥ\" is in the nominative case (case ending -ḥ). The object \"grāma\" is in the accusative case (case ending -m).\n\nNow, check for sandhi. The word \"putraḥ\" and \"grāma\" are in the nominative and accusative cases, so no sandhi is needed between them.\n\nPutting it all together: \"Putraḥ grāmam vidyāt.\"\n\nSo, the final translation is \"Putraḥ grāmam vidyāt.\"\n</thinking>\n\n<translation>\nPutraḥ grāmam vidyāt\n</translation>", "seconds": 37.5}, {"probe": "tpl-scaffold", "template": "elicitation scaffold", "input": "The boy reads a book.", "note": "explicit derive-first instruction inside the trained format", "model": "tb20m-samayik100", "output": "<translation>बालकः पुस्तकं पठति ।</translation>", "seconds": 3.2}, {"probe": "tpl-scaffold", "template": "elicitation scaffold", "input": "The boy reads a book.", "note": "explicit derive-first instruction inside the trained format", "model": "tb20m-samayik67", "output": "<translation>बालकः पुस्तकं पठति ।</translation>", "seconds": 3.3}, {"probe": "tpl-scaffold", "template": "elicitation scaffold", "input": "The boy reads a book.", "note": "explicit derive-first instruction inside the trained format", "model": "tb20m-samayik0", "output": "<thinking>\nSentence: The boy reads a book. — \"पुरुष एकवचन\" of भू-आदि लट्.\n\nDhatu: लू / वद् / भू. For \"reads\" — लू is used for reading? Actually लू is \"to flow\", वद् \"to speak\", भू \"to be\". The verb for reading is लू (लूङ् व्यक्तव्यप्रत्यययोः — लू is used for reading, writing, speaking). So लू + ते → लूते.\n\nActually the standard: लूङ् is used for व्यक्तव्य, प्रत्यय, आचीर्याम्. So लूते.\n\nBut the boy is एकवचन पुरुष, so लूते. Hmm, but लू is आत्मनेपद only (लूङ्). Yes: लूते.\n\nWait — but लू in लट् एकवचन पुरुष: लूते. Yes.\n\nActually many textbooks give \"लूते\" for \"reads\". Yes.\n</thinking>\n\n<translation>लूते</translation>", "seconds": 32.9}, {"probe": "tpl-scaffold", "template": "elicitation scaffold", "input": "The boy reads a book.", "note": "explicit derive-first instruction inside the trained format", "model": "grpo-r3", "output": "<translation>बालकः पुस्तकं पठति ।</translation>", "seconds": 4.1}, {"probe": "tpl-scaffold", "template": "elicitation scaffold", "input": "The boy reads a book.", "note": "explicit derive-first instruction inside the trained format", "model": "tb20m-samayik100-avg", "output": "<translation>बालकः पुस्तकं पठति ।</translation>", "seconds": 3.3}, {"probe": "tpl-scaffold", "template": "elicitation scaffold", "input": "The boy reads a book.", "note": "explicit derive-first instruction inside the trained format", "model": "tb20m-samayik67-avg", "output": "<translation>बालकः पुस्तकं पठति ।</translation>", "seconds": 3.3}, {"probe": "tpl-scaffold", "template": "elicitation scaffold", "input": "The boy reads a book.", "note": "explicit derive-first instruction inside the trained format", "model": "grpo-r3-avg", "output": "<translation>बालकः पुस्तकं पठति ।</translation>", "seconds": 6.9}, {"probe": "tpl-costume", "template": "drill costume (conjprompt)", "input": "The boy reads a book.", "note": "the trained drill door carrying translation content", "model": "base", "output": "<thinking>\nThe English sentence is \"The boy reads a book.\" The verb here is \"reads,\" which is in the present tense, third person singular.\n\nIn Sanskrit grammar, the verb \"read\" comes from the root \"dhyayati\" (to read, to study). The dhatu is \"dhyayati.\"\n\nThe tense (lakara) is present (लकार: लिङ्ग), the voice (prayoga) is active (अकर्मणी), the person (purusha) is third (तृतीया), and the number (vacana) is singular (एकवचन).\n\nThe root \"dhyayati\" is already in the present tense, so we need to adjust it for third person singular. The correct form is \"dhyayati\" itself, as it is already in the third person singular.\n\nNow, we need to construct the sentence. The subject is \"the boy,\" which is \"putra\" (son), and the object is \"a book,\" which is \"graha\" (book). The sentence structure in Sanskrit would be: \"putra graha dhyayati.\"\n\nAdding case endings: \"putra\" is in the nominative case (नामवाच्य), \"graha\" is in the accusative case (कर्मवाच्य), and the verb \"dhyayati\" is in the present tense, third person singular.\n\nSo the complete translation is: \"putra graha dhyayati.\"\n</thinking>\n\n<answer>\nपुत्रः ग्रहां ध्यायति\n</answer>", "seconds": 31.2}, {"probe": "tpl-costume", "template": "drill costume (conjprompt)", "input": "The boy reads a book.", "note": "the trained drill door carrying translation content", "model": "tb20m-samayik100", "output": "<translation>बालकः पुस्तकं पठति ।</translation>", "seconds": 3.0}, {"probe": "tpl-costume", "template": "drill costume (conjprompt)", "input": "The boy reads a book.", "note": "the trained drill door carrying translation content", "model": "tb20m-samayik67", "output": "<thinking>\nRoot: बाल् (बालति), present system, parasmaipada, third person singular.\n\nThe boy reads a book. Sanskrit: बालः पुस्तकं पठति.\n\nEnding: तिप् → ति, with अ-stem: बाल + अ + ति = बालति. So बालः पुस्तकं पठति.\n</thinking>\n\n<answer>बालः पुस्तकं पठति</answer>", "seconds": 14.2}, {"probe": "tpl-costume", "template": "drill costume (conjprompt)", "input": "The boy reads a book.", "note": "the trained drill door carrying translation content", "model": "tb20m-samayik0", "output": "<thinking>\nThe sentence \"The boy reads a book.\" — the verb is \"reads\" (to read), which is a सेट् root, and it's used in the present tense. The subject is \"the boy\" (a singular masculine entity), so third person singular.\n\nRoot: वद् (to read) → वदति. Actually the root for \"to read\" is वद् (वदति). Yes, वदति.\n\nThird person singular: वदति.\n\nThe object \"a book\" — in Sanskrit, the object is not conjugated; it's just added. So वदति.\n\nActually the standard translation: वदति. Some might use वदते? No, वदति is correct.\n</thinking>\n\n<answer>वदति</answer>", "seconds": 19.0}, {"probe": "tpl-costume", "template": "drill costume (conjprompt)", "input": "The boy reads a book.", "note": "the trained drill door carrying translation content", "model": "grpo-r3", "output": "<thinking>\nThe boy reads a book. — This is a third person singular sentence, parasmaipada, with the root \"to read\" (पठ्). The translation: पठति.\n\nActually the source sentence is \"The boy reads a book\" — the verb is पठ् (to read), third person singular, parasmaipada. Sanskrit: पठति.\n</thinking>\n\n<answer>पठति</answer>", "seconds": 10.3}, {"probe": "tpl-costume", "template": "drill costume (conjprompt)", "input": "The boy reads a book.", "note": "the trained drill door carrying translation content", "model": "tb20m-samayik100-avg", "output": "<translation>बालकः पुस्तकं पठति ।</translation>", "seconds": 3.1}, {"probe": "tpl-costume", "template": "drill costume (conjprompt)", "input": "The boy reads a book.", "note": "the trained drill door carrying translation content", "model": "tb20m-samayik67-avg", "output": "<thinking>\nThe English sentence is \"The boy reads a book.\" This is a third-person singular sentence, so the verb should be in third person singular.\n\nRoot: शब्द (to read) — actually the root is \"पठ\" (to read). The verb is पठति. The book is \"पुस्तकम्\".\n\nSo the translation: बालकः पुस्तकम् पठति.\n\nCheck: बालकः (boy) + पुस्तकम् (book) + पठति (reads). The ending is ति (third singular). The sandhi: बालकम् + पुस्तकम् → बालकपुस्तकम्, then पठति. So बालकः पुस्तकम् पठति.\n</thinking>\n\n<answer>बालकः पुस्तकम् पठति</answer>", "seconds": 23.4}, {"probe": "tpl-costume", "template": "drill costume (conjprompt)", "input": "The boy reads a book.", "note": "the trained drill door carrying translation content", "model": "grpo-r3-avg", "output": "<thinking>\nThe sentence: The boy reads a book. (शिशुः पुस्तकं पठति)\n\nRoot: शिशु (शिशुः) — actually the root is शिशु, with उ as... Let's think: the sentence is \"The boy reads a book\" — the root is शिशु? No, the root is शिशु (शिशुः) — actually the root is शिशु, and the verb is शिशुते. The root is शिशु, and the form is शिशुते. The root शिशु is listed in the dictionary as शिशु (शिशुते) \"to read\". Yes, शिशुते is the standard form.\n\nSo the root शिशु, with अ (शिशु + अ) → शिशुते.\n\nLakara: present system (शप् + लट्). The boy is third person singular, so शिशुते.\n\nSandhi: शिशु + अ + ते = शिशुते.\n</thinking>\n\n<answer>शिशुते</answer>", "seconds": 39.8}];
+const MODELS = ["base","tb20m-samayik100","tb20m-samayik67","tb20m-samayik0","grpo-r3",
+                "tb20m-samayik100-avg","tb20m-samayik67-avg","grpo-r3-avg"];
+const cat = o => { o=o.trim();
+  if(!o) return "EOS";
+  if(o.includes("<translation>")) return "trans";
+  if(o.includes("<thinking>")) return "think";
+  if(o.includes("<answer>")) return "answr";
+  return "chat"; };
+const probes = [...new Set(EX.map(e=>e.probe))];
+let curP = probes[0], curM = "base";
+const pdiv=document.getElementById("probes"), mdiv=document.getElementById("modelrow");
+function render(){
+  pdiv.innerHTML = probes.map(p=>`<span class="pill ${p===curP?"on":""}" onclick="setP('${p}')">${p}</span>`).join("");
+  mdiv.innerHTML = MODELS.map(m=>{
+    const e = EX.find(x=>x.probe===curP && x.model===m);
+    const c = e?cat(e.output):"?";
+    return `<span class="pill ${m===curM?"on":""}" onclick="setM('${m}')">${m.replace("tb20m-samayik","s")}<span class="badge b-${c}">${c}</span></span>`;
+  }).join("");
+  const e = EX.find(x=>x.probe===curP && x.model===curM);
+  if(!e){document.getElementById("excard").innerHTML="<span class=dim>no example</span>";return;}
+  const esc=s=>s.replace(/&/g,"&amp;").replace(/</g,"&lt;");
+  document.getElementById("excard").innerHTML =
+    `<div class="dim">${e.note} · template: <b>${e.template}</b> · ${e.seconds}s</div>
+     <div style="margin-top:6px"><span class="dim">input:</span> ${esc(e.input)}</div>
+     <div style="margin-top:6px"><span class="dim">output</span><span class="badge b-${cat(e.output)}">${cat(e.output)}</span></div>
+     <pre>${e.output.trim()?esc(e.output):"∅  (model emitted end-of-turn as its first token)"}</pre>`;
+}
+function setP(p){curP=p;render()} function setM(m){curM=m;render()}
+render();
+// matrix
+let mt = `<table class="matrix"><tr><th>probe</th>${MODELS.map(m=>`<th>${m.replace("tb20m-samayik","s")}</th>`).join("")}</tr>`;
+for(const p of probes){
+  mt += `<tr><td style="text-align:left">${p}</td>` + MODELS.map(m=>{
+    const e = EX.find(x=>x.probe===p && x.model===m);
+    const c = e?cat(e.output):"–";
+    return `<td><span class="badge b-${c}" style="margin:0">${c}</span></td>`;}).join("") + "</tr>";
+}
+document.getElementById("matrix").innerHTML = mt + "</table>";
+</script></body></html>

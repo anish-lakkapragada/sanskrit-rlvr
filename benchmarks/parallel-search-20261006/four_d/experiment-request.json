@@ -1,0 +1,54 @@
+{
+  "created_at": "2026-10-07T05:05:46.880406+00:00",
+  "track": "four_d",
+  "request_id": "four-d-pilot-01-opus",
+  "questions_path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/parallel-search-20261006/four_d/pilot-01.questions.json",
+  "questions_sha256": "d3cf6b0562ce2fd8bd3376801459779c49f0ac9485f361b347f2f1f4b1a61c37",
+  "n": 120,
+  "unique_root_families": 113,
+  "task_type": "cartesian_4d",
+  "prompt_version": "cartesian-4d-v1",
+  "provider": "Anthropic",
+  "model": "claude-opus-5-5",
+  "effort": "xhigh",
+  "max_output_tokens": 16384,
+  "phase": "explore",
+  "split": "development",
+  "purpose": "Fresh 4D calibration across ten predeclared grammar cells; test whether narrow historical leads generalize alongside broad diverse constructions. No benchmark readiness claim.",
+  "suggested_sampling": "Evaluate all 120 frozen questions; no selection by same-item correctness. Preserve campaign.sampling_cell for strata.",
+  "estimate": {
+    "maximum_reservation_usd": 20.0208,
+    "calculation": "120 * (1500 input tokens * $2/M + 16384 output tokens * $10/M), using current shared runner rates. Coordinator must recompute with budget gate.",
+    "expected_spend_usd_range": [
+      2,
+      10
+    ],
+    "worker_spend_usd": 0,
+    "planning_envelope_is_not_new_budget": true
+  },
+  "needed_adapter_changes": [],
+  "adapter_status": "Parent helper and shared renderer used; make_task/validate_task passed all 120 tasks.",
+  "audit_paths": [
+    "/Users/anish/Documents/git-repos/sanskrit/benchmarks/parallel-search-20261006/four_d/pilot-01.audit.json",
+    "/Users/anish/Documents/git-repos/sanskrit/benchmarks/parallel-search-20261006/four_d/source-audit-01.json",
+    "/Users/anish/Documents/git-repos/sanskrit/benchmarks/parallel-search-20261006/four_d/pilot-01.manifest.json"
+  ],
+  "sources_passed": "22/22 independent primary-commentary examples; exhaustive lexical certification remains pending.",
+  "paired_astra_recommendation": {
+    "submit_now": false,
+    "condition": "After Opus usable-answer accuracy and disagreement audit, pair whole frozen panel when plausible broad difficulty makes a stronger-reference check informative.",
+    "model": "gpt-6-astra",
+    "effort": "xhigh",
+    "max_output_tokens": 16384,
+    "maximum_reservation_usd": 50.052
+  },
+  "result_requirements": [
+    "Overall exact and grammatical usable-answer scores",
+    "Refusals, invalid outputs, truncations, infrastructure failures separated",
+    "Per-cell and coordinate distributions with family counts",
+    "Systematic model-oracle disagreement review before construction claims",
+    "Actual shared-ledger cost reconciliation"
+  ],
+  "supply_warning": "Full master test split has 9 internal-lengthening, 14 Svadi-perfect, and 15 narrow passive families. At six tasks per family their separate cell capacities are 54, 84, and 90. Six-per-family is a diversity diagnostic, not a user-mandated ceiling. Legacy 500/500 test suballocation can be revised by coordinator before final exposure; master test split remains unchanged.",
+  "benchmark_ready": false
+}

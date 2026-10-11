@@ -1,0 +1,3313 @@
+[
+  {
+    "id": "modify-116c0bbee3fe72b15320a646",
+    "task_type": "modification",
+    "prompt_version": "modification-v1",
+    "source_form_devanagari": "ववण्ठे",
+    "source_morphology": {
+      "lakara": "Lit",
+      "prayoga": "Kartari",
+      "purusha": "Prathama",
+      "vacana": "Eka"
+    },
+    "target_morphology": {
+      "lakara": "Lot",
+      "prayoga": "Kartari",
+      "purusha": "Prathama",
+      "vacana": "Eka"
+    },
+    "dhatu": {
+      "code": "01.0295",
+      "aupadeshika": "vaWi~\\",
+      "gana": "Bhvadi",
+      "artha": "ekacaryAyAm"
+    },
+    "morphology": {
+      "lakara": "Lot",
+      "prayoga": "Kartari",
+      "purusha": "Prathama",
+      "vacana": "Eka"
+    },
+    "gold_slp1": [
+      "vaRWatAm"
+    ],
+    "gold_devanagari": [
+      "वण्ठताम्"
+    ],
+    "campaign": {
+      "root_family": "vaWi~\\|Bhvadi",
+      "split": "development",
+      "construction": "word_modification",
+      "trace_rule_ids": [
+        "1.2.4",
+        "1.3.1",
+        "1.3.12",
+        "1.3.2",
+        "1.3.3",
+        "1.3.8",
+        "1.3.9",
+        "1.4.13",
+        "1.4.14",
+        "3.1.68",
+        "3.3.162",
+        "3.4.113",
+        "3.4.78",
+        "3.4.79",
+        "3.4.90",
+        "7.1.58",
+        "8.3.24",
+        "8.4.58",
+        "8.4.68"
+      ],
+      "panel": "modification-01",
+      "control_task_id": "cart4-452f773b22caaedcd222ae3a",
+      "prompt_sha256": "23494b41fec89b3b79c65ad4b373813010a159191247b043947cffeb29a7509a"
+    },
+    "modification_audit": {
+      "candidate_codes": [
+        "01.0295"
+      ],
+      "source_key": "[\"ववण्ठे\",\"Lit\",\"Kartari\",\"Prathama\",\"Eka\"]",
+      "dependencies": {
+        "benchmarks/parallel-search-20261006/oracle-policy-21.json": "e19f60de4fc58a43a72ee0a48320f0c11383a39eb21b45f2859361701158220c",
+        "data/finetune/task-data/vidyut_dhatupatha_5.tsv": "c6c494a6c534130b2d8e8f344d2f5e3ffbc64ed45b390e2a4e35e526f1cecd09",
+        "benchmarks/creation-campaign-20261006/family-split.json": "a1c46bb778bca8f89df468d65232698131a3c4b137393865cd3f6b121fc6077f",
+        "misc/vp_cartesian_task.py": "f5bfab6f3fc27b7c83bbd6987bede73501592a9568fda32a0371bd8e23b7febd",
+        "misc/vp_modification_prompt_v1.py": "4f300df8dc7bad7a55a4a786377b4adcc63c01ef9d3b3ff740010309661804a9",
+        "misc/vp_modification_task_v1.py": "28adae6b1d97706bcba41de2dc74527be1d999ed32f43bc08f56322ac878e1f7",
+        "benchmarks/parallel-search-20261007/modification-01/inverse-index.json": "ee16696afffba7d729af37be329bfc0416e8e7e81a4ed559b4780a93ef2491d8"
+      }
+    }
+  },
+  {
+    "id": "modify-7942b4d942be4f33cbea3721",
+    "task_type": "modification",
+    "prompt_version": "modification-v1",
+    "source_form_devanagari": "चखल",
+    "source_morphology": {
+      "lakara": "Lit",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Bahu"
+    },
+    "target_morphology": {
+      "lakara": "Lut",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Bahu"
+    },
+    "dhatu": {
+      "code": "01.0626",
+      "aupadeshika": "Kala~",
+      "gana": "Bhvadi",
+      "artha": "saYcaye calane ca"
+    },
+    "morphology": {
+      "lakara": "Lut",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Bahu"
+    },
+    "gold_slp1": [
+      "KalitAsTa"
+    ],
+    "gold_devanagari": [
+      "खलितास्थ"
+    ],
+    "campaign": {
+      "root_family": "Kala~|Bhvadi",
+      "split": "development",
+      "construction": "word_modification",
+      "trace_rule_ids": [
+        "1.2.4",
+        "1.3.1",
+        "1.3.2",
+        "1.3.3",
+        "1.3.78",
+        "1.3.9",
+        "1.4.13",
+        "1.4.14",
+        "3.1.33",
+        "3.3.15",
+        "3.4.113",
+        "3.4.114",
+        "3.4.78",
+        "7.2.35",
+        "8.4.68"
+      ],
+      "panel": "modification-01",
+      "control_task_id": "cart4-d09ff54e6716c9b4c9675698",
+      "prompt_sha256": "e77107b60cbc9dc86b669228472c38a0ed870ce23f33c8566f4d989b90f8d72d"
+    },
+    "modification_audit": {
+      "candidate_codes": [
+        "01.0626"
+      ],
+      "source_key": "[\"चखल\",\"Lit\",\"Kartari\",\"Madhyama\",\"Bahu\"]",
+      "dependencies": {
+        "benchmarks/parallel-search-20261006/oracle-policy-21.json": "e19f60de4fc58a43a72ee0a48320f0c11383a39eb21b45f2859361701158220c",
+        "data/finetune/task-data/vidyut_dhatupatha_5.tsv": "c6c494a6c534130b2d8e8f344d2f5e3ffbc64ed45b390e2a4e35e526f1cecd09",
+        "benchmarks/creation-campaign-20261006/family-split.json": "a1c46bb778bca8f89df468d65232698131a3c4b137393865cd3f6b121fc6077f",
+        "misc/vp_cartesian_task.py": "f5bfab6f3fc27b7c83bbd6987bede73501592a9568fda32a0371bd8e23b7febd",
+        "misc/vp_modification_prompt_v1.py": "4f300df8dc7bad7a55a4a786377b4adcc63c01ef9d3b3ff740010309661804a9",
+        "misc/vp_modification_task_v1.py": "28adae6b1d97706bcba41de2dc74527be1d999ed32f43bc08f56322ac878e1f7",
+        "benchmarks/parallel-search-20261007/modification-01/inverse-index.json": "ee16696afffba7d729af37be329bfc0416e8e7e81a4ed559b4780a93ef2491d8"
+      }
+    }
+  },
+  {
+    "id": "modify-6728840f2823a2f46b10eac1",
+    "task_type": "modification",
+    "prompt_version": "modification-v1",
+    "source_form_devanagari": "अक्लदिषि",
+    "source_morphology": {
+      "lakara": "Lun",
+      "prayoga": "Kartari",
+      "purusha": "Uttama",
+      "vacana": "Eka"
+    },
+    "target_morphology": {
+      "lakara": "Lan",
+      "prayoga": "Kartari",
+      "purusha": "Uttama",
+      "vacana": "Eka"
+    },
+    "dhatu": {
+      "code": "01.0883",
+      "aupadeshika": "klada~\\",
+      "gana": "Bhvadi",
+      "artha": "vEklavye"
+    },
+    "morphology": {
+      "lakara": "Lan",
+      "prayoga": "Kartari",
+      "purusha": "Uttama",
+      "vacana": "Eka"
+    },
+    "gold_slp1": [
+      "aklade"
+    ],
+    "gold_devanagari": [
+      "अक्लदे"
+    ],
+    "campaign": {
+      "root_family": "klada~\\|Bhvadi",
+      "split": "development",
+      "construction": "word_modification",
+      "trace_rule_ids": [
+        "1.2.4",
+        "1.3.1",
+        "1.3.12",
+        "1.3.2",
+        "1.3.3",
+        "1.3.8",
+        "1.3.9",
+        "1.4.13",
+        "1.4.14",
+        "3.1.68",
+        "3.2.111",
+        "3.4.113",
+        "3.4.78",
+        "6.1.87",
+        "6.4.71",
+        "8.4.68"
+      ],
+      "panel": "modification-01",
+      "control_task_id": "cart4-e000693941ea45f04cb6ad9a",
+      "prompt_sha256": "61c1148994042e44e93eef288fb2ca294b57c7e184b782d789941e093e101037"
+    },
+    "modification_audit": {
+      "candidate_codes": [
+        "01.0883"
+      ],
+      "source_key": "[\"अक्लदिषि\",\"Lun\",\"Kartari\",\"Uttama\",\"Eka\"]",
+      "dependencies": {
+        "benchmarks/parallel-search-20261006/oracle-policy-21.json": "e19f60de4fc58a43a72ee0a48320f0c11383a39eb21b45f2859361701158220c",
+        "data/finetune/task-data/vidyut_dhatupatha_5.tsv": "c6c494a6c534130b2d8e8f344d2f5e3ffbc64ed45b390e2a4e35e526f1cecd09",
+        "benchmarks/creation-campaign-20261006/family-split.json": "a1c46bb778bca8f89df468d65232698131a3c4b137393865cd3f6b121fc6077f",
+        "misc/vp_cartesian_task.py": "f5bfab6f3fc27b7c83bbd6987bede73501592a9568fda32a0371bd8e23b7febd",
+        "misc/vp_modification_prompt_v1.py": "4f300df8dc7bad7a55a4a786377b4adcc63c01ef9d3b3ff740010309661804a9",
+        "misc/vp_modification_task_v1.py": "28adae6b1d97706bcba41de2dc74527be1d999ed32f43bc08f56322ac878e1f7",
+        "benchmarks/parallel-search-20261007/modification-01/inverse-index.json": "ee16696afffba7d729af37be329bfc0416e8e7e81a4ed559b4780a93ef2491d8"
+      }
+    }
+  },
+  {
+    "id": "modify-e022e0252e186a9acc5fc67c",
+    "task_type": "modification",
+    "prompt_version": "modification-v1",
+    "source_form_devanagari": "शश्यिध्वे",
+    "source_morphology": {
+      "lakara": "Lit",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Bahu"
+    },
+    "target_morphology": {
+      "lakara": "Lot",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Bahu"
+    },
+    "dhatu": {
+      "code": "01.1118",
+      "aupadeshika": "SyE\\N",
+      "gana": "Bhvadi",
+      "artha": "gatO"
+    },
+    "morphology": {
+      "lakara": "Lot",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Bahu"
+    },
+    "gold_slp1": [
+      "SyAyaDvam"
+    ],
+    "gold_devanagari": [
+      "श्यायध्वम्"
+    ],
+    "campaign": {
+      "root_family": "SyE\\N|Bhvadi",
+      "split": "development",
+      "construction": "word_modification",
+      "trace_rule_ids": [
+        "1.2.4",
+        "1.3.1",
+        "1.3.12",
+        "1.3.2",
+        "1.3.3",
+        "1.3.4",
+        "1.3.8",
+        "1.3.9",
+        "1.4.13",
+        "1.4.14",
+        "3.1.68",
+        "3.3.162",
+        "3.4.113",
+        "3.4.78",
+        "3.4.79",
+        "3.4.91",
+        "6.1.78",
+        "8.4.68"
+      ],
+      "panel": "modification-01",
+      "control_task_id": "cart4-07a142a6c6f3bb08f0a62041",
+      "prompt_sha256": "00275bb138ae48c92c6efe7e939b1ffdb2608e96f0459df9534692a4b1e4ae76"
+    },
+    "modification_audit": {
+      "candidate_codes": [
+        "01.1118"
+      ],
+      "source_key": "[\"शश्यिध्वे\",\"Lit\",\"Kartari\",\"Madhyama\",\"Bahu\"]",
+      "dependencies": {
+        "benchmarks/parallel-search-20261006/oracle-policy-21.json": "e19f60de4fc58a43a72ee0a48320f0c11383a39eb21b45f2859361701158220c",
+        "data/finetune/task-data/vidyut_dhatupatha_5.tsv": "c6c494a6c534130b2d8e8f344d2f5e3ffbc64ed45b390e2a4e35e526f1cecd09",
+        "benchmarks/creation-campaign-20261006/family-split.json": "a1c46bb778bca8f89df468d65232698131a3c4b137393865cd3f6b121fc6077f",
+        "misc/vp_cartesian_task.py": "f5bfab6f3fc27b7c83bbd6987bede73501592a9568fda32a0371bd8e23b7febd",
+        "misc/vp_modification_prompt_v1.py": "4f300df8dc7bad7a55a4a786377b4adcc63c01ef9d3b3ff740010309661804a9",
+        "misc/vp_modification_task_v1.py": "28adae6b1d97706bcba41de2dc74527be1d999ed32f43bc08f56322ac878e1f7",
+        "benchmarks/parallel-search-20261007/modification-01/inverse-index.json": "ee16696afffba7d729af37be329bfc0416e8e7e81a4ed559b4780a93ef2491d8"
+      }
+    }
+  },
+  {
+    "id": "modify-2be2d33edf3fa3c12be2dce6",
+    "task_type": "modification",
+    "prompt_version": "modification-v1",
+    "source_form_devanagari": "शृणीमः",
+    "source_morphology": {
+      "lakara": "Lat",
+      "prayoga": "Kartari",
+      "purusha": "Uttama",
+      "vacana": "Bahu"
+    },
+    "target_morphology": {
+      "lakara": "Lan",
+      "prayoga": "Kartari",
+      "purusha": "Uttama",
+      "vacana": "Bahu"
+    },
+    "dhatu": {
+      "code": "09.0021",
+      "aupadeshika": "SF",
+      "gana": "Kryadi",
+      "artha": "hiMsAyAm"
+    },
+    "morphology": {
+      "lakara": "Lan",
+      "prayoga": "Kartari",
+      "purusha": "Uttama",
+      "vacana": "Bahu"
+    },
+    "gold_slp1": [
+      "aSfRIma"
+    ],
+    "gold_devanagari": [
+      "अशृणीम"
+    ],
+    "campaign": {
+      "root_family": "SF|Kryadi",
+      "split": "development",
+      "construction": "word_modification",
+      "trace_rule_ids": [
+        "1.1.5",
+        "1.2.4",
+        "1.3.1",
+        "1.3.3",
+        "1.3.4",
+        "1.3.78",
+        "1.3.8",
+        "1.3.9",
+        "1.4.13",
+        "1.4.14",
+        "3.1.81",
+        "3.2.111",
+        "3.4.113",
+        "3.4.78",
+        "3.4.99",
+        "6.4.113",
+        "6.4.71",
+        "7.3.80",
+        "8.4.1",
+        "8.4.68"
+      ],
+      "panel": "modification-01",
+      "control_task_id": "cart4-3b09f08fb2bc53d6cd9b270d",
+      "prompt_sha256": "945f7e0ae79a338d53621a2cc80a8bc20837390e38c1aac59b1375d8dade45f6"
+    },
+    "modification_audit": {
+      "candidate_codes": [
+        "09.0021"
+      ],
+      "source_key": "[\"शृणीमः\",\"Lat\",\"Kartari\",\"Uttama\",\"Bahu\"]",
+      "dependencies": {
+        "benchmarks/parallel-search-20261006/oracle-policy-21.json": "e19f60de4fc58a43a72ee0a48320f0c11383a39eb21b45f2859361701158220c",
+        "data/finetune/task-data/vidyut_dhatupatha_5.tsv": "c6c494a6c534130b2d8e8f344d2f5e3ffbc64ed45b390e2a4e35e526f1cecd09",
+        "benchmarks/creation-campaign-20261006/family-split.json": "a1c46bb778bca8f89df468d65232698131a3c4b137393865cd3f6b121fc6077f",
+        "misc/vp_cartesian_task.py": "f5bfab6f3fc27b7c83bbd6987bede73501592a9568fda32a0371bd8e23b7febd",
+        "misc/vp_modification_prompt_v1.py": "4f300df8dc7bad7a55a4a786377b4adcc63c01ef9d3b3ff740010309661804a9",
+        "misc/vp_modification_task_v1.py": "28adae6b1d97706bcba41de2dc74527be1d999ed32f43bc08f56322ac878e1f7",
+        "benchmarks/parallel-search-20261007/modification-01/inverse-index.json": "ee16696afffba7d729af37be329bfc0416e8e7e81a4ed559b4780a93ef2491d8"
+      }
+    }
+  },
+  {
+    "id": "modify-19eb8b88ae584e3a5066b767",
+    "task_type": "modification",
+    "prompt_version": "modification-v1",
+    "source_form_devanagari": "अरूरुषन्",
+    "source_morphology": {
+      "lakara": "Lun",
+      "prayoga": "Kartari",
+      "purusha": "Prathama",
+      "vacana": "Bahu"
+    },
+    "target_morphology": {
+      "lakara": "Lot",
+      "prayoga": "Kartari",
+      "purusha": "Prathama",
+      "vacana": "Bahu"
+    },
+    "dhatu": {
+      "code": "10.0187",
+      "aupadeshika": "ruza~",
+      "gana": "Curadi",
+      "artha": "roze"
+    },
+    "morphology": {
+      "lakara": "Lot",
+      "prayoga": "Kartari",
+      "purusha": "Prathama",
+      "vacana": "Bahu"
+    },
+    "gold_slp1": [
+      "rozayantAm",
+      "rozayantu"
+    ],
+    "gold_devanagari": [
+      "रोषयन्ताम्",
+      "रोषयन्तु"
+    ],
+    "campaign": {
+      "root_family": "ruza~|Curadi",
+      "split": "development",
+      "construction": "word_modification",
+      "trace_rule_ids": [
+        "1.2.4",
+        "1.3.1",
+        "1.3.2",
+        "1.3.3",
+        "1.3.7",
+        "1.3.74",
+        "1.3.78",
+        "1.3.8",
+        "1.3.9",
+        "1.4.13",
+        "1.4.14",
+        "3.1.25",
+        "3.1.32",
+        "3.1.68",
+        "3.3.162",
+        "3.4.113",
+        "3.4.114",
+        "3.4.78",
+        "3.4.79",
+        "3.4.86",
+        "3.4.90",
+        "6.1.78",
+        "6.1.97",
+        "7.1.3",
+        "7.3.84",
+        "7.3.86",
+        "8.3.24",
+        "8.4.58",
+        "8.4.68"
+      ],
+      "panel": "modification-01",
+      "control_task_id": "cart4-e7f2faa6eca3e5269128ff2a",
+      "prompt_sha256": "6de987a784140b48205199c39a32c8e7fe43271177389f673dd792c4ea93efa9"
+    },
+    "modification_audit": {
+      "candidate_codes": [
+        "10.0187"
+      ],
+      "source_key": "[\"अरूरुषन्\",\"Lun\",\"Kartari\",\"Prathama\",\"Bahu\"]",
+      "dependencies": {
+        "benchmarks/parallel-search-20261006/oracle-policy-21.json": "e19f60de4fc58a43a72ee0a48320f0c11383a39eb21b45f2859361701158220c",
+        "data/finetune/task-data/vidyut_dhatupatha_5.tsv": "c6c494a6c534130b2d8e8f344d2f5e3ffbc64ed45b390e2a4e35e526f1cecd09",
+        "benchmarks/creation-campaign-20261006/family-split.json": "a1c46bb778bca8f89df468d65232698131a3c4b137393865cd3f6b121fc6077f",
+        "misc/vp_cartesian_task.py": "f5bfab6f3fc27b7c83bbd6987bede73501592a9568fda32a0371bd8e23b7febd",
+        "misc/vp_modification_prompt_v1.py": "4f300df8dc7bad7a55a4a786377b4adcc63c01ef9d3b3ff740010309661804a9",
+        "misc/vp_modification_task_v1.py": "28adae6b1d97706bcba41de2dc74527be1d999ed32f43bc08f56322ac878e1f7",
+        "benchmarks/parallel-search-20261007/modification-01/inverse-index.json": "ee16696afffba7d729af37be329bfc0416e8e7e81a4ed559b4780a93ef2491d8"
+      }
+    }
+  },
+  {
+    "id": "modify-fc3617f909602ffeaf061f90",
+    "task_type": "modification",
+    "prompt_version": "modification-v1",
+    "source_form_devanagari": "पषयाञ्चकृमहे",
+    "source_morphology": {
+      "lakara": "Lit",
+      "prayoga": "Kartari",
+      "purusha": "Uttama",
+      "vacana": "Bahu"
+    },
+    "target_morphology": {
+      "lakara": "Lun",
+      "prayoga": "Kartari",
+      "purusha": "Uttama",
+      "vacana": "Bahu"
+    },
+    "dhatu": {
+      "code": "10.0401",
+      "aupadeshika": "paza",
+      "gana": "Curadi",
+      "artha": "gatO"
+    },
+    "morphology": {
+      "lakara": "Lun",
+      "prayoga": "Kartari",
+      "purusha": "Uttama",
+      "vacana": "Bahu"
+    },
+    "gold_slp1": [
+      "apapazAma",
+      "apapazAmahi"
+    ],
+    "gold_devanagari": [
+      "अपपषाम",
+      "अपपषामहि"
+    ],
+    "campaign": {
+      "root_family": "paza|Curadi",
+      "split": "development",
+      "construction": "word_modification",
+      "trace_rule_ids": [
+        "1.1.5",
+        "1.2.4",
+        "1.3.1",
+        "1.3.2",
+        "1.3.3",
+        "1.3.4",
+        "1.3.7",
+        "1.3.74",
+        "1.3.78",
+        "1.3.9",
+        "1.4.13",
+        "1.4.14",
+        "3.1.25",
+        "3.1.32",
+        "3.1.43",
+        "3.1.48",
+        "3.2.110",
+        "3.4.113",
+        "3.4.114",
+        "3.4.78",
+        "3.4.99",
+        "6.1.11",
+        "6.1.4",
+        "6.1.5",
+        "6.4.48",
+        "6.4.51",
+        "6.4.71",
+        "7.3.101",
+        "7.4.2",
+        "7.4.60",
+        "8.4.68"
+      ],
+      "panel": "modification-01",
+      "control_task_id": "cart4-2c9d1b2ab453e09d6ee68c83",
+      "prompt_sha256": "a2bb36fc9e31d3390c0d9a57c9a0dec4c4938b6cfd0d347b5868121bd2bc49aa"
+    },
+    "modification_audit": {
+      "candidate_codes": [
+        "10.0401"
+      ],
+      "source_key": "[\"पषयाञ्चकृमहे\",\"Lit\",\"Kartari\",\"Uttama\",\"Bahu\"]",
+      "dependencies": {
+        "benchmarks/parallel-search-20261006/oracle-policy-21.json": "e19f60de4fc58a43a72ee0a48320f0c11383a39eb21b45f2859361701158220c",
+        "data/finetune/task-data/vidyut_dhatupatha_5.tsv": "c6c494a6c534130b2d8e8f344d2f5e3ffbc64ed45b390e2a4e35e526f1cecd09",
+        "benchmarks/creation-campaign-20261006/family-split.json": "a1c46bb778bca8f89df468d65232698131a3c4b137393865cd3f6b121fc6077f",
+        "misc/vp_cartesian_task.py": "f5bfab6f3fc27b7c83bbd6987bede73501592a9568fda32a0371bd8e23b7febd",
+        "misc/vp_modification_prompt_v1.py": "4f300df8dc7bad7a55a4a786377b4adcc63c01ef9d3b3ff740010309661804a9",
+        "misc/vp_modification_task_v1.py": "28adae6b1d97706bcba41de2dc74527be1d999ed32f43bc08f56322ac878e1f7",
+        "benchmarks/parallel-search-20261007/modification-01/inverse-index.json": "ee16696afffba7d729af37be329bfc0416e8e7e81a4ed559b4780a93ef2491d8"
+      }
+    }
+  },
+  {
+    "id": "modify-8a665226866c1755911a7661",
+    "task_type": "modification",
+    "prompt_version": "modification-v1",
+    "source_form_devanagari": "क्षुथ",
+    "source_morphology": {
+      "lakara": "Lat",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Bahu"
+    },
+    "target_morphology": {
+      "lakara": "VidhiLin",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Bahu"
+    },
+    "dhatu": {
+      "code": "02.0031",
+      "aupadeshika": "wukzu",
+      "gana": "Adadi",
+      "artha": "Sabde"
+    },
+    "morphology": {
+      "lakara": "VidhiLin",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Bahu"
+    },
+    "gold_slp1": [
+      "kzuyAta"
+    ],
+    "gold_devanagari": [
+      "क्षुयात"
+    ],
+    "campaign": {
+      "root_family": "wukzu|Adadi",
+      "split": "development",
+      "construction": "word_modification",
+      "trace_rule_ids": [
+        "1.1.5",
+        "1.2.4",
+        "1.3.1",
+        "1.3.2",
+        "1.3.3",
+        "1.3.5",
+        "1.3.78",
+        "1.3.9",
+        "1.4.13",
+        "1.4.14",
+        "2.4.72",
+        "3.1.68",
+        "3.3.161",
+        "3.4.101",
+        "3.4.103",
+        "3.4.107",
+        "3.4.113",
+        "3.4.78",
+        "7.2.79",
+        "8.4.68"
+      ],
+      "panel": "modification-01",
+      "control_task_id": "cart4-5b0fcea4e4695f999d53fb91",
+      "prompt_sha256": "817f81b3d25e43886587ab78ccdd0c03606e1d091290bc6181c1cd63acc0ccd9"
+    },
+    "modification_audit": {
+      "candidate_codes": [
+        "02.0031"
+      ],
+      "source_key": "[\"क्षुथ\",\"Lat\",\"Kartari\",\"Madhyama\",\"Bahu\"]",
+      "dependencies": {
+        "benchmarks/parallel-search-20261006/oracle-policy-21.json": "e19f60de4fc58a43a72ee0a48320f0c11383a39eb21b45f2859361701158220c",
+        "data/finetune/task-data/vidyut_dhatupatha_5.tsv": "c6c494a6c534130b2d8e8f344d2f5e3ffbc64ed45b390e2a4e35e526f1cecd09",
+        "benchmarks/creation-campaign-20261006/family-split.json": "a1c46bb778bca8f89df468d65232698131a3c4b137393865cd3f6b121fc6077f",
+        "misc/vp_cartesian_task.py": "f5bfab6f3fc27b7c83bbd6987bede73501592a9568fda32a0371bd8e23b7febd",
+        "misc/vp_modification_prompt_v1.py": "4f300df8dc7bad7a55a4a786377b4adcc63c01ef9d3b3ff740010309661804a9",
+        "misc/vp_modification_task_v1.py": "28adae6b1d97706bcba41de2dc74527be1d999ed32f43bc08f56322ac878e1f7",
+        "benchmarks/parallel-search-20261007/modification-01/inverse-index.json": "ee16696afffba7d729af37be329bfc0416e8e7e81a4ed559b4780a93ef2491d8"
+      }
+    }
+  },
+  {
+    "id": "modify-edb0bb99eafe0c735b151488",
+    "task_type": "modification",
+    "prompt_version": "modification-v1",
+    "source_form_devanagari": "अजपिष्टाम्",
+    "source_morphology": {
+      "lakara": "Lun",
+      "prayoga": "Kartari",
+      "purusha": "Prathama",
+      "vacana": "Dvi"
+    },
+    "target_morphology": {
+      "lakara": "Lrt",
+      "prayoga": "Kartari",
+      "purusha": "Prathama",
+      "vacana": "Dvi"
+    },
+    "dhatu": {
+      "code": "01.0463",
+      "aupadeshika": "japa~",
+      "gana": "Bhvadi",
+      "artha": "vyaktAyAM vAci mAnase ca"
+    },
+    "morphology": {
+      "lakara": "Lrt",
+      "prayoga": "Kartari",
+      "purusha": "Prathama",
+      "vacana": "Dvi"
+    },
+    "gold_slp1": [
+      "japizyataH"
+    ],
+    "gold_devanagari": [
+      "जपिष्यतः"
+    ],
+    "campaign": {
+      "root_family": "japa~|Bhvadi",
+      "split": "development",
+      "construction": "word_modification",
+      "trace_rule_ids": [
+        "1.2.4",
+        "1.3.1",
+        "1.3.2",
+        "1.3.3",
+        "1.3.4",
+        "1.3.78",
+        "1.3.9",
+        "1.4.13",
+        "1.4.14",
+        "3.1.33",
+        "3.3.13",
+        "3.4.113",
+        "3.4.114",
+        "3.4.78",
+        "7.2.35",
+        "8.2.66",
+        "8.3.15",
+        "8.3.59",
+        "8.4.68"
+      ],
+      "panel": "modification-01",
+      "control_task_id": "cart4-438f2366aba634105afac4fe",
+      "prompt_sha256": "744cabf55e8d8ae6b3cda3f26269e144fff1b7ed1e1e94341f4efe1b64447666"
+    },
+    "modification_audit": {
+      "candidate_codes": [
+        "01.0463"
+      ],
+      "source_key": "[\"अजपिष्टाम्\",\"Lun\",\"Kartari\",\"Prathama\",\"Dvi\"]",
+      "dependencies": {
+        "benchmarks/parallel-search-20261006/oracle-policy-21.json": "e19f60de4fc58a43a72ee0a48320f0c11383a39eb21b45f2859361701158220c",
+        "data/finetune/task-data/vidyut_dhatupatha_5.tsv": "c6c494a6c534130b2d8e8f344d2f5e3ffbc64ed45b390e2a4e35e526f1cecd09",
+        "benchmarks/creation-campaign-20261006/family-split.json": "a1c46bb778bca8f89df468d65232698131a3c4b137393865cd3f6b121fc6077f",
+        "misc/vp_cartesian_task.py": "f5bfab6f3fc27b7c83bbd6987bede73501592a9568fda32a0371bd8e23b7febd",
+        "misc/vp_modification_prompt_v1.py": "4f300df8dc7bad7a55a4a786377b4adcc63c01ef9d3b3ff740010309661804a9",
+        "misc/vp_modification_task_v1.py": "28adae6b1d97706bcba41de2dc74527be1d999ed32f43bc08f56322ac878e1f7",
+        "benchmarks/parallel-search-20261007/modification-01/inverse-index.json": "ee16696afffba7d729af37be329bfc0416e8e7e81a4ed559b4780a93ef2491d8"
+      }
+    }
+  },
+  {
+    "id": "modify-2e3dbc81dbfc5f8b248a9d5a",
+    "task_type": "modification",
+    "prompt_version": "modification-v1",
+    "source_form_devanagari": "अनिनिवासम्",
+    "source_morphology": {
+      "lakara": "Lun",
+      "prayoga": "Kartari",
+      "purusha": "Uttama",
+      "vacana": "Eka"
+    },
+    "target_morphology": {
+      "lakara": "AshirLin",
+      "prayoga": "Kartari",
+      "purusha": "Uttama",
+      "vacana": "Eka"
+    },
+    "dhatu": {
+      "code": "10.0427",
+      "aupadeshika": "nivAsa",
+      "gana": "Curadi",
+      "artha": "AcCAdane"
+    },
+    "morphology": {
+      "lakara": "AshirLin",
+      "prayoga": "Kartari",
+      "purusha": "Uttama",
+      "vacana": "Eka"
+    },
+    "gold_slp1": [
+      "nivAsayizIya",
+      "nivAsyAsam"
+    ],
+    "gold_devanagari": [
+      "निवासयिषीय",
+      "निवास्यासम्"
+    ],
+    "campaign": {
+      "root_family": "nivAsa|Curadi",
+      "split": "development",
+      "construction": "word_modification",
+      "trace_rule_ids": [
+        "1.1.5",
+        "1.3.1",
+        "1.3.2",
+        "1.3.3",
+        "1.3.4",
+        "1.3.7",
+        "1.3.74",
+        "1.3.78",
+        "1.3.9",
+        "1.4.13",
+        "1.4.14",
+        "3.1.25",
+        "3.1.32",
+        "3.3.173",
+        "3.4.101",
+        "3.4.102",
+        "3.4.104",
+        "3.4.106",
+        "3.4.114",
+        "3.4.116",
+        "3.4.78",
+        "6.1.78",
+        "6.4.48",
+        "6.4.51",
+        "7.2.35",
+        "7.3.84",
+        "8.3.59",
+        "8.4.68"
+      ],
+      "panel": "modification-01",
+      "control_task_id": "cart4-3a12a3e53171abbee79a4957",
+      "prompt_sha256": "3f6d51e9b9b9fab427c22e442ebeb3871232b09243f956352f7bc79c351122bc"
+    },
+    "modification_audit": {
+      "candidate_codes": [
+        "10.0427"
+      ],
+      "source_key": "[\"अनिनिवासम्\",\"Lun\",\"Kartari\",\"Uttama\",\"Eka\"]",
+      "dependencies": {
+        "benchmarks/parallel-search-20261006/oracle-policy-21.json": "e19f60de4fc58a43a72ee0a48320f0c11383a39eb21b45f2859361701158220c",
+        "data/finetune/task-data/vidyut_dhatupatha_5.tsv": "c6c494a6c534130b2d8e8f344d2f5e3ffbc64ed45b390e2a4e35e526f1cecd09",
+        "benchmarks/creation-campaign-20261006/family-split.json": "a1c46bb778bca8f89df468d65232698131a3c4b137393865cd3f6b121fc6077f",
+        "misc/vp_cartesian_task.py": "f5bfab6f3fc27b7c83bbd6987bede73501592a9568fda32a0371bd8e23b7febd",
+        "misc/vp_modification_prompt_v1.py": "4f300df8dc7bad7a55a4a786377b4adcc63c01ef9d3b3ff740010309661804a9",
+        "misc/vp_modification_task_v1.py": "28adae6b1d97706bcba41de2dc74527be1d999ed32f43bc08f56322ac878e1f7",
+        "benchmarks/parallel-search-20261007/modification-01/inverse-index.json": "ee16696afffba7d729af37be329bfc0416e8e7e81a4ed559b4780a93ef2491d8"
+      }
+    }
+  },
+  {
+    "id": "modify-b5721c92c02abc045eaa8116",
+    "task_type": "modification",
+    "prompt_version": "modification-v1",
+    "source_form_devanagari": "नभध्वे",
+    "source_morphology": {
+      "lakara": "Lat",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Bahu"
+    },
+    "target_morphology": {
+      "lakara": "Lan",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Bahu"
+    },
+    "dhatu": {
+      "code": "01.0855",
+      "aupadeshika": "RaBa~\\",
+      "gana": "Bhvadi",
+      "artha": "hiMsAyAm aBAve ca"
+    },
+    "morphology": {
+      "lakara": "Lan",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Bahu"
+    },
+    "gold_slp1": [
+      "anaBaDvam"
+    ],
+    "gold_devanagari": [
+      "अनभध्वम्"
+    ],
+    "campaign": {
+      "root_family": "RaBa~\\|Bhvadi",
+      "split": "development",
+      "construction": "word_modification",
+      "trace_rule_ids": [
+        "1.2.4",
+        "1.3.1",
+        "1.3.12",
+        "1.3.2",
+        "1.3.3",
+        "1.3.4",
+        "1.3.8",
+        "1.3.9",
+        "1.4.13",
+        "1.4.14",
+        "3.1.68",
+        "3.2.111",
+        "3.4.113",
+        "3.4.78",
+        "6.1.65",
+        "6.4.71",
+        "8.4.68"
+      ],
+      "panel": "modification-01",
+      "control_task_id": "cart4-f0ee6179399ad65cddd574bd",
+      "prompt_sha256": "6dd035c2da49cc0c3ec83e14af8116de649e2fdb7ad4d206c5e89e46b25199a1"
+    },
+    "modification_audit": {
+      "candidate_codes": [
+        "01.0855"
+      ],
+      "source_key": "[\"नभध्वे\",\"Lat\",\"Kartari\",\"Madhyama\",\"Bahu\"]",
+      "dependencies": {
+        "benchmarks/parallel-search-20261006/oracle-policy-21.json": "e19f60de4fc58a43a72ee0a48320f0c11383a39eb21b45f2859361701158220c",
+        "data/finetune/task-data/vidyut_dhatupatha_5.tsv": "c6c494a6c534130b2d8e8f344d2f5e3ffbc64ed45b390e2a4e35e526f1cecd09",
+        "benchmarks/creation-campaign-20261006/family-split.json": "a1c46bb778bca8f89df468d65232698131a3c4b137393865cd3f6b121fc6077f",
+        "misc/vp_cartesian_task.py": "f5bfab6f3fc27b7c83bbd6987bede73501592a9568fda32a0371bd8e23b7febd",
+        "misc/vp_modification_prompt_v1.py": "4f300df8dc7bad7a55a4a786377b4adcc63c01ef9d3b3ff740010309661804a9",
+        "misc/vp_modification_task_v1.py": "28adae6b1d97706bcba41de2dc74527be1d999ed32f43bc08f56322ac878e1f7",
+        "benchmarks/parallel-search-20261007/modification-01/inverse-index.json": "ee16696afffba7d729af37be329bfc0416e8e7e81a4ed559b4780a93ef2491d8"
+      }
+    }
+  },
+  {
+    "id": "modify-6f57f7d8f1f41c0f62cada73",
+    "task_type": "modification",
+    "prompt_version": "modification-v1",
+    "source_form_devanagari": "असते",
+    "source_morphology": {
+      "lakara": "Lat",
+      "prayoga": "Kartari",
+      "purusha": "Prathama",
+      "vacana": "Eka"
+    },
+    "target_morphology": {
+      "lakara": "Lut",
+      "prayoga": "Kartari",
+      "purusha": "Prathama",
+      "vacana": "Eka"
+    },
+    "dhatu": {
+      "code": "01.1029",
+      "aupadeshika": "asa~^",
+      "gana": "Bhvadi",
+      "artha": "gatidIptyAdAnezu"
+    },
+    "morphology": {
+      "lakara": "Lut",
+      "prayoga": "Kartari",
+      "purusha": "Prathama",
+      "vacana": "Eka"
+    },
+    "gold_slp1": [
+      "asitA"
+    ],
+    "gold_devanagari": [
+      "असिता"
+    ],
+    "campaign": {
+      "root_family": "asa~^|Bhvadi",
+      "split": "development",
+      "construction": "word_modification",
+      "trace_rule_ids": [
+        "1.2.4",
+        "1.3.1",
+        "1.3.2",
+        "1.3.3",
+        "1.3.7",
+        "1.3.72",
+        "1.3.78",
+        "1.3.9",
+        "1.4.13",
+        "1.4.14",
+        "2.4.85",
+        "3.1.33",
+        "3.3.15",
+        "3.4.113",
+        "3.4.114",
+        "3.4.78",
+        "6.4.143",
+        "7.2.35",
+        "8.4.68"
+      ],
+      "panel": "modification-01",
+      "control_task_id": "cart4-4eca099f72ad38c947d7d154",
+      "prompt_sha256": "47f1cdd8d53fd936a06503e9724ce12b476d2beb4c2d29bcf70c5ef6f0e70130"
+    },
+    "modification_audit": {
+      "candidate_codes": [
+        "01.1029"
+      ],
+      "source_key": "[\"असते\",\"Lat\",\"Kartari\",\"Prathama\",\"Eka\"]",
+      "dependencies": {
+        "benchmarks/parallel-search-20261006/oracle-policy-21.json": "e19f60de4fc58a43a72ee0a48320f0c11383a39eb21b45f2859361701158220c",
+        "data/finetune/task-data/vidyut_dhatupatha_5.tsv": "c6c494a6c534130b2d8e8f344d2f5e3ffbc64ed45b390e2a4e35e526f1cecd09",
+        "benchmarks/creation-campaign-20261006/family-split.json": "a1c46bb778bca8f89df468d65232698131a3c4b137393865cd3f6b121fc6077f",
+        "misc/vp_cartesian_task.py": "f5bfab6f3fc27b7c83bbd6987bede73501592a9568fda32a0371bd8e23b7febd",
+        "misc/vp_modification_prompt_v1.py": "4f300df8dc7bad7a55a4a786377b4adcc63c01ef9d3b3ff740010309661804a9",
+        "misc/vp_modification_task_v1.py": "28adae6b1d97706bcba41de2dc74527be1d999ed32f43bc08f56322ac878e1f7",
+        "benchmarks/parallel-search-20261007/modification-01/inverse-index.json": "ee16696afffba7d729af37be329bfc0416e8e7e81a4ed559b4780a93ef2491d8"
+      }
+    }
+  },
+  {
+    "id": "modify-9a33ef8333eb9bd99f034338",
+    "task_type": "modification",
+    "prompt_version": "modification-v1",
+    "source_form_devanagari": "प्रथामहे",
+    "source_morphology": {
+      "lakara": "Lat",
+      "prayoga": "Kartari",
+      "purusha": "Uttama",
+      "vacana": "Bahu"
+    },
+    "target_morphology": {
+      "lakara": "Lrn",
+      "prayoga": "Kartari",
+      "purusha": "Uttama",
+      "vacana": "Bahu"
+    },
+    "dhatu": {
+      "code": "01.0869",
+      "aupadeshika": "praTa~\\",
+      "gana": "Bhvadi",
+      "artha": "praKyAne"
+    },
+    "morphology": {
+      "lakara": "Lrn",
+      "prayoga": "Kartari",
+      "purusha": "Uttama",
+      "vacana": "Bahu"
+    },
+    "gold_slp1": [
+      "apraTizyAmahi"
+    ],
+    "gold_devanagari": [
+      "अप्रथिष्यामहि"
+    ],
+    "campaign": {
+      "root_family": "praTa~\\|Bhvadi",
+      "split": "development",
+      "construction": "word_modification",
+      "trace_rule_ids": [
+        "1.2.4",
+        "1.3.1",
+        "1.3.12",
+        "1.3.2",
+        "1.3.3",
+        "1.3.9",
+        "1.4.13",
+        "1.4.14",
+        "3.1.33",
+        "3.3.139",
+        "3.4.113",
+        "3.4.114",
+        "3.4.78",
+        "6.4.71",
+        "7.2.35",
+        "7.3.101",
+        "8.3.59",
+        "8.4.68"
+      ],
+      "panel": "modification-01",
+      "control_task_id": "cart4-5a4d16d2987094436d51daff",
+      "prompt_sha256": "f9938ca98b80953668b9e13d29dc6840898589594ebcaa69c12d89b266424bfc"
+    },
+    "modification_audit": {
+      "candidate_codes": [
+        "01.0869"
+      ],
+      "source_key": "[\"प्रथामहे\",\"Lat\",\"Kartari\",\"Uttama\",\"Bahu\"]",
+      "dependencies": {
+        "benchmarks/parallel-search-20261006/oracle-policy-21.json": "e19f60de4fc58a43a72ee0a48320f0c11383a39eb21b45f2859361701158220c",
+        "data/finetune/task-data/vidyut_dhatupatha_5.tsv": "c6c494a6c534130b2d8e8f344d2f5e3ffbc64ed45b390e2a4e35e526f1cecd09",
+        "benchmarks/creation-campaign-20261006/family-split.json": "a1c46bb778bca8f89df468d65232698131a3c4b137393865cd3f6b121fc6077f",
+        "misc/vp_cartesian_task.py": "f5bfab6f3fc27b7c83bbd6987bede73501592a9568fda32a0371bd8e23b7febd",
+        "misc/vp_modification_prompt_v1.py": "4f300df8dc7bad7a55a4a786377b4adcc63c01ef9d3b3ff740010309661804a9",
+        "misc/vp_modification_task_v1.py": "28adae6b1d97706bcba41de2dc74527be1d999ed32f43bc08f56322ac878e1f7",
+        "benchmarks/parallel-search-20261007/modification-01/inverse-index.json": "ee16696afffba7d729af37be329bfc0416e8e7e81a4ed559b4780a93ef2491d8"
+      }
+    }
+  },
+  {
+    "id": "modify-60747c9715016ba0879d4cea",
+    "task_type": "modification",
+    "prompt_version": "modification-v1",
+    "source_form_devanagari": "अकेविषाथाम्",
+    "source_morphology": {
+      "lakara": "Lun",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Dvi"
+    },
+    "target_morphology": {
+      "lakara": "Lrt",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Dvi"
+    },
+    "dhatu": {
+      "code": "01.0583",
+      "aupadeshika": "kevf~\\",
+      "gana": "Bhvadi",
+      "artha": "sevane"
+    },
+    "morphology": {
+      "lakara": "Lrt",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Dvi"
+    },
+    "gold_slp1": [
+      "kevizyeTe"
+    ],
+    "gold_devanagari": [
+      "केविष्येथे"
+    ],
+    "campaign": {
+      "root_family": "kevf~\\|Bhvadi",
+      "split": "development",
+      "construction": "word_modification",
+      "trace_rule_ids": [
+        "1.2.4",
+        "1.3.1",
+        "1.3.12",
+        "1.3.2",
+        "1.3.3",
+        "1.3.4",
+        "1.3.9",
+        "1.4.13",
+        "1.4.14",
+        "3.1.33",
+        "3.3.13",
+        "3.4.113",
+        "3.4.114",
+        "3.4.78",
+        "3.4.79",
+        "6.1.66",
+        "6.1.87",
+        "7.2.35",
+        "7.2.81",
+        "8.3.59"
+      ],
+      "panel": "modification-01",
+      "control_task_id": "cart4-bee89469796eedcdfab3d9ab",
+      "prompt_sha256": "45f54e1f6c80a9752bee30040734faad7373472b7dc70ba8f0550cccbc6f83f4"
+    },
+    "modification_audit": {
+      "candidate_codes": [
+        "01.0583"
+      ],
+      "source_key": "[\"अकेविषाथाम्\",\"Lun\",\"Kartari\",\"Madhyama\",\"Dvi\"]",
+      "dependencies": {
+        "benchmarks/parallel-search-20261006/oracle-policy-21.json": "e19f60de4fc58a43a72ee0a48320f0c11383a39eb21b45f2859361701158220c",
+        "data/finetune/task-data/vidyut_dhatupatha_5.tsv": "c6c494a6c534130b2d8e8f344d2f5e3ffbc64ed45b390e2a4e35e526f1cecd09",
+        "benchmarks/creation-campaign-20261006/family-split.json": "a1c46bb778bca8f89df468d65232698131a3c4b137393865cd3f6b121fc6077f",
+        "misc/vp_cartesian_task.py": "f5bfab6f3fc27b7c83bbd6987bede73501592a9568fda32a0371bd8e23b7febd",
+        "misc/vp_modification_prompt_v1.py": "4f300df8dc7bad7a55a4a786377b4adcc63c01ef9d3b3ff740010309661804a9",
+        "misc/vp_modification_task_v1.py": "28adae6b1d97706bcba41de2dc74527be1d999ed32f43bc08f56322ac878e1f7",
+        "benchmarks/parallel-search-20261007/modification-01/inverse-index.json": "ee16696afffba7d729af37be329bfc0416e8e7e81a4ed559b4780a93ef2491d8"
+      }
+    }
+  },
+  {
+    "id": "modify-504d9f163c520cf6c4f8de8d",
+    "task_type": "modification",
+    "prompt_version": "modification-v1",
+    "source_form_devanagari": "चोरयाञ्चकार",
+    "source_morphology": {
+      "lakara": "Lit",
+      "prayoga": "Kartari",
+      "purusha": "Uttama",
+      "vacana": "Eka"
+    },
+    "target_morphology": {
+      "lakara": "Lut",
+      "prayoga": "Kartari",
+      "purusha": "Uttama",
+      "vacana": "Eka"
+    },
+    "dhatu": {
+      "code": "10.0001",
+      "aupadeshika": "cura~",
+      "gana": "Curadi",
+      "artha": "steye"
+    },
+    "morphology": {
+      "lakara": "Lut",
+      "prayoga": "Kartari",
+      "purusha": "Uttama",
+      "vacana": "Eka"
+    },
+    "gold_slp1": [
+      "corayitAhe",
+      "corayitAsmi"
+    ],
+    "gold_devanagari": [
+      "चोरयिताहे",
+      "चोरयितास्मि"
+    ],
+    "campaign": {
+      "root_family": "cura~|Curadi",
+      "split": "development",
+      "construction": "word_modification",
+      "trace_rule_ids": [
+        "1.2.4",
+        "1.3.1",
+        "1.3.2",
+        "1.3.3",
+        "1.3.7",
+        "1.3.74",
+        "1.3.78",
+        "1.3.9",
+        "1.4.13",
+        "1.4.14",
+        "3.1.25",
+        "3.1.32",
+        "3.1.33",
+        "3.3.15",
+        "3.4.113",
+        "3.4.114",
+        "3.4.78",
+        "3.4.79",
+        "6.1.78",
+        "7.2.35",
+        "7.3.84",
+        "7.3.86",
+        "7.4.52",
+        "8.4.68"
+      ],
+      "panel": "modification-01",
+      "control_task_id": "cart4-8fc1d6b8d8956dd729f8ee20",
+      "prompt_sha256": "094873fc5736bd4cda9dcb83ecb26cad658accc12bbc3f3f50f1904a87f70245"
+    },
+    "modification_audit": {
+      "candidate_codes": [
+        "10.0001"
+      ],
+      "source_key": "[\"चोरयाञ्चकार\",\"Lit\",\"Kartari\",\"Uttama\",\"Eka\"]",
+      "dependencies": {
+        "benchmarks/parallel-search-20261006/oracle-policy-21.json": "e19f60de4fc58a43a72ee0a48320f0c11383a39eb21b45f2859361701158220c",
+        "data/finetune/task-data/vidyut_dhatupatha_5.tsv": "c6c494a6c534130b2d8e8f344d2f5e3ffbc64ed45b390e2a4e35e526f1cecd09",
+        "benchmarks/creation-campaign-20261006/family-split.json": "a1c46bb778bca8f89df468d65232698131a3c4b137393865cd3f6b121fc6077f",
+        "misc/vp_cartesian_task.py": "f5bfab6f3fc27b7c83bbd6987bede73501592a9568fda32a0371bd8e23b7febd",
+        "misc/vp_modification_prompt_v1.py": "4f300df8dc7bad7a55a4a786377b4adcc63c01ef9d3b3ff740010309661804a9",
+        "misc/vp_modification_task_v1.py": "28adae6b1d97706bcba41de2dc74527be1d999ed32f43bc08f56322ac878e1f7",
+        "benchmarks/parallel-search-20261007/modification-01/inverse-index.json": "ee16696afffba7d729af37be329bfc0416e8e7e81a4ed559b4780a93ef2491d8"
+      }
+    }
+  },
+  {
+    "id": "modify-3948971683820e83fb1bf004",
+    "task_type": "modification",
+    "prompt_version": "modification-v1",
+    "source_form_devanagari": "शुच्यसे",
+    "source_morphology": {
+      "lakara": "Lat",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Eka"
+    },
+    "target_morphology": {
+      "lakara": "AshirLin",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Eka"
+    },
+    "dhatu": {
+      "code": "04.0061",
+      "aupadeshika": "I~Suci~^r",
+      "gana": "Divadi",
+      "artha": "pUtIBAve"
+    },
+    "morphology": {
+      "lakara": "AshirLin",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Eka"
+    },
+    "gold_slp1": [
+      "SocizIzWAH",
+      "SucyAH"
+    ],
+    "gold_devanagari": [
+      "शोचिषीष्ठाः",
+      "शुच्याः"
+    ],
+    "campaign": {
+      "root_family": "I~Suci~^r|Divadi",
+      "split": "development",
+      "construction": "word_modification",
+      "trace_rule_ids": [
+        "1.1.5",
+        "1.3.1",
+        "1.3.2",
+        "1.3.3",
+        "1.3.4",
+        "1.3.72",
+        "1.3.78",
+        "1.3.9",
+        "1.4.13",
+        "1.4.14",
+        "3.3.173",
+        "3.4.100",
+        "3.4.102",
+        "3.4.104",
+        "3.4.107",
+        "3.4.116",
+        "3.4.78",
+        "6.1.66",
+        "6.1.68",
+        "7.2.35",
+        "7.3.86",
+        "8.2.66",
+        "8.3.15",
+        "8.3.59",
+        "8.4.41"
+      ],
+      "panel": "modification-01",
+      "control_task_id": "cart4-f7b55fc4613799747531f1ee",
+      "prompt_sha256": "721df5cfba51975223702122bda073fa2d5288f74d878e9a615f67cf68df874e"
+    },
+    "modification_audit": {
+      "candidate_codes": [
+        "04.0061"
+      ],
+      "source_key": "[\"शुच्यसे\",\"Lat\",\"Kartari\",\"Madhyama\",\"Eka\"]",
+      "dependencies": {
+        "benchmarks/parallel-search-20261006/oracle-policy-21.json": "e19f60de4fc58a43a72ee0a48320f0c11383a39eb21b45f2859361701158220c",
+        "data/finetune/task-data/vidyut_dhatupatha_5.tsv": "c6c494a6c534130b2d8e8f344d2f5e3ffbc64ed45b390e2a4e35e526f1cecd09",
+        "benchmarks/creation-campaign-20261006/family-split.json": "a1c46bb778bca8f89df468d65232698131a3c4b137393865cd3f6b121fc6077f",
+        "misc/vp_cartesian_task.py": "f5bfab6f3fc27b7c83bbd6987bede73501592a9568fda32a0371bd8e23b7febd",
+        "misc/vp_modification_prompt_v1.py": "4f300df8dc7bad7a55a4a786377b4adcc63c01ef9d3b3ff740010309661804a9",
+        "misc/vp_modification_task_v1.py": "28adae6b1d97706bcba41de2dc74527be1d999ed32f43bc08f56322ac878e1f7",
+        "benchmarks/parallel-search-20261007/modification-01/inverse-index.json": "ee16696afffba7d729af37be329bfc0416e8e7e81a4ed559b4780a93ef2491d8"
+      }
+    }
+  },
+  {
+    "id": "modify-f7daac3d71c7dbbe187e7975",
+    "task_type": "modification",
+    "prompt_version": "modification-v1",
+    "source_form_devanagari": "द्राडसे",
+    "source_morphology": {
+      "lakara": "Lat",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Eka"
+    },
+    "target_morphology": {
+      "lakara": "Lit",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Eka"
+    },
+    "dhatu": {
+      "code": "01.0322",
+      "aupadeshika": "drAqf~\\",
+      "gana": "Bhvadi",
+      "artha": "viSaraRe"
+    },
+    "morphology": {
+      "lakara": "Lit",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Eka"
+    },
+    "gold_slp1": [
+      "dadrAqize"
+    ],
+    "gold_devanagari": [
+      "दद्राडिषे"
+    ],
+    "campaign": {
+      "root_family": "drAqf~\\|Bhvadi",
+      "split": "development",
+      "construction": "word_modification",
+      "trace_rule_ids": [
+        "1.2.5",
+        "1.3.1",
+        "1.3.12",
+        "1.3.2",
+        "1.3.3",
+        "1.3.4",
+        "1.3.9",
+        "1.4.13",
+        "1.4.14",
+        "3.2.115",
+        "3.4.115",
+        "3.4.78",
+        "3.4.80",
+        "6.1.4",
+        "6.1.5",
+        "6.1.8",
+        "7.2.13",
+        "7.2.35",
+        "7.4.59",
+        "7.4.60",
+        "8.3.59",
+        "8.4.68"
+      ],
+      "panel": "modification-01",
+      "control_task_id": "cart4-dc0c494a74ed647f2195a160",
+      "prompt_sha256": "aa0f36a6456dddee43e0422b7da3ad5e6ef8bee6da712cf1a01ef887d7ab3287"
+    },
+    "modification_audit": {
+      "candidate_codes": [
+        "01.0322"
+      ],
+      "source_key": "[\"द्राडसे\",\"Lat\",\"Kartari\",\"Madhyama\",\"Eka\"]",
+      "dependencies": {
+        "benchmarks/parallel-search-20261006/oracle-policy-21.json": "e19f60de4fc58a43a72ee0a48320f0c11383a39eb21b45f2859361701158220c",
+        "data/finetune/task-data/vidyut_dhatupatha_5.tsv": "c6c494a6c534130b2d8e8f344d2f5e3ffbc64ed45b390e2a4e35e526f1cecd09",
+        "benchmarks/creation-campaign-20261006/family-split.json": "a1c46bb778bca8f89df468d65232698131a3c4b137393865cd3f6b121fc6077f",
+        "misc/vp_cartesian_task.py": "f5bfab6f3fc27b7c83bbd6987bede73501592a9568fda32a0371bd8e23b7febd",
+        "misc/vp_modification_prompt_v1.py": "4f300df8dc7bad7a55a4a786377b4adcc63c01ef9d3b3ff740010309661804a9",
+        "misc/vp_modification_task_v1.py": "28adae6b1d97706bcba41de2dc74527be1d999ed32f43bc08f56322ac878e1f7",
+        "benchmarks/parallel-search-20261007/modification-01/inverse-index.json": "ee16696afffba7d729af37be329bfc0416e8e7e81a4ed559b4780a93ef2491d8"
+      }
+    }
+  },
+  {
+    "id": "modify-0322c6cc23147fde1b575d57",
+    "task_type": "modification",
+    "prompt_version": "modification-v1",
+    "source_form_devanagari": "अबध्नाः",
+    "source_morphology": {
+      "lakara": "Lan",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Eka"
+    },
+    "target_morphology": {
+      "lakara": "AshirLin",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Eka"
+    },
+    "dhatu": {
+      "code": "09.0044",
+      "aupadeshika": "ba\\nDa~",
+      "gana": "Kryadi",
+      "artha": "banDane"
+    },
+    "morphology": {
+      "lakara": "AshirLin",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Eka"
+    },
+    "gold_slp1": [
+      "baDyAH"
+    ],
+    "gold_devanagari": [
+      "बध्याः"
+    ],
+    "campaign": {
+      "root_family": "ba\\nDa~|Kryadi",
+      "split": "development",
+      "construction": "word_modification",
+      "trace_rule_ids": [
+        "1.3.1",
+        "1.3.2",
+        "1.3.3",
+        "1.3.78",
+        "1.3.9",
+        "1.4.13",
+        "1.4.14",
+        "3.3.173",
+        "3.4.100",
+        "3.4.104",
+        "3.4.116",
+        "3.4.78",
+        "6.1.68",
+        "6.4.24",
+        "8.2.66",
+        "8.3.15",
+        "8.4.68"
+      ],
+      "panel": "modification-01",
+      "control_task_id": "cart4-10e85e2dd9c710d67ca64437",
+      "prompt_sha256": "b0f6c1b38bf76cef013e45963127112f61b157f6ffe8fd9beec784f81ab887b5"
+    },
+    "modification_audit": {
+      "candidate_codes": [
+        "09.0044"
+      ],
+      "source_key": "[\"अबध्नाः\",\"Lan\",\"Kartari\",\"Madhyama\",\"Eka\"]",
+      "dependencies": {
+        "benchmarks/parallel-search-20261006/oracle-policy-21.json": "e19f60de4fc58a43a72ee0a48320f0c11383a39eb21b45f2859361701158220c",
+        "data/finetune/task-data/vidyut_dhatupatha_5.tsv": "c6c494a6c534130b2d8e8f344d2f5e3ffbc64ed45b390e2a4e35e526f1cecd09",
+        "benchmarks/creation-campaign-20261006/family-split.json": "a1c46bb778bca8f89df468d65232698131a3c4b137393865cd3f6b121fc6077f",
+        "misc/vp_cartesian_task.py": "f5bfab6f3fc27b7c83bbd6987bede73501592a9568fda32a0371bd8e23b7febd",
+        "misc/vp_modification_prompt_v1.py": "4f300df8dc7bad7a55a4a786377b4adcc63c01ef9d3b3ff740010309661804a9",
+        "misc/vp_modification_task_v1.py": "28adae6b1d97706bcba41de2dc74527be1d999ed32f43bc08f56322ac878e1f7",
+        "benchmarks/parallel-search-20261007/modification-01/inverse-index.json": "ee16696afffba7d729af37be329bfc0416e8e7e81a4ed559b4780a93ef2491d8"
+      }
+    }
+  },
+  {
+    "id": "modify-e009f0fcd83d107bbb8acd3a",
+    "task_type": "modification",
+    "prompt_version": "modification-v1",
+    "source_form_devanagari": "नेसिध्वे",
+    "source_morphology": {
+      "lakara": "Lit",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Bahu"
+    },
+    "target_morphology": {
+      "lakara": "Lan",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Bahu"
+    },
+    "dhatu": {
+      "code": "01.0714",
+      "aupadeshika": "Rasa~\\",
+      "gana": "Bhvadi",
+      "artha": "kOwilye"
+    },
+    "morphology": {
+      "lakara": "Lan",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Bahu"
+    },
+    "gold_slp1": [
+      "anasaDvam"
+    ],
+    "gold_devanagari": [
+      "अनसध्वम्"
+    ],
+    "campaign": {
+      "root_family": "Rasa~\\|Bhvadi",
+      "split": "development",
+      "construction": "word_modification",
+      "trace_rule_ids": [
+        "1.2.4",
+        "1.3.1",
+        "1.3.12",
+        "1.3.2",
+        "1.3.3",
+        "1.3.4",
+        "1.3.8",
+        "1.3.9",
+        "1.4.13",
+        "1.4.14",
+        "3.1.68",
+        "3.2.111",
+        "3.4.113",
+        "3.4.78",
+        "6.1.65",
+        "6.4.71",
+        "8.4.68"
+      ],
+      "panel": "modification-01",
+      "control_task_id": "cart4-d892e3a571dac30c496a16af",
+      "prompt_sha256": "eb184014558804f99d1ff700a3028681d344e0ee19dafe862a21f57fd4414875"
+    },
+    "modification_audit": {
+      "candidate_codes": [
+        "01.0714"
+      ],
+      "source_key": "[\"नेसिध्वे\",\"Lit\",\"Kartari\",\"Madhyama\",\"Bahu\"]",
+      "dependencies": {
+        "benchmarks/parallel-search-20261006/oracle-policy-21.json": "e19f60de4fc58a43a72ee0a48320f0c11383a39eb21b45f2859361701158220c",
+        "data/finetune/task-data/vidyut_dhatupatha_5.tsv": "c6c494a6c534130b2d8e8f344d2f5e3ffbc64ed45b390e2a4e35e526f1cecd09",
+        "benchmarks/creation-campaign-20261006/family-split.json": "a1c46bb778bca8f89df468d65232698131a3c4b137393865cd3f6b121fc6077f",
+        "misc/vp_cartesian_task.py": "f5bfab6f3fc27b7c83bbd6987bede73501592a9568fda32a0371bd8e23b7febd",
+        "misc/vp_modification_prompt_v1.py": "4f300df8dc7bad7a55a4a786377b4adcc63c01ef9d3b3ff740010309661804a9",
+        "misc/vp_modification_task_v1.py": "28adae6b1d97706bcba41de2dc74527be1d999ed32f43bc08f56322ac878e1f7",
+        "benchmarks/parallel-search-20261007/modification-01/inverse-index.json": "ee16696afffba7d729af37be329bfc0416e8e7e81a4ed559b4780a93ef2491d8"
+      }
+    }
+  },
+  {
+    "id": "modify-be0606c1c868c8a943d5bc7b",
+    "task_type": "modification",
+    "prompt_version": "modification-v1",
+    "source_form_devanagari": "कर्बावः",
+    "source_morphology": {
+      "lakara": "Lat",
+      "prayoga": "Kartari",
+      "purusha": "Uttama",
+      "vacana": "Dvi"
+    },
+    "target_morphology": {
+      "lakara": "Lit",
+      "prayoga": "Kartari",
+      "purusha": "Uttama",
+      "vacana": "Dvi"
+    },
+    "dhatu": {
+      "code": "01.0486",
+      "aupadeshika": "karba~",
+      "gana": "Bhvadi",
+      "artha": "gatO"
+    },
+    "morphology": {
+      "lakara": "Lit",
+      "prayoga": "Kartari",
+      "purusha": "Uttama",
+      "vacana": "Dvi"
+    },
+    "gold_slp1": [
+      "cakarbiva"
+    ],
+    "gold_devanagari": [
+      "चकर्बिव"
+    ],
+    "campaign": {
+      "root_family": "karba~|Bhvadi",
+      "split": "development",
+      "construction": "word_modification",
+      "trace_rule_ids": [
+        "1.3.1",
+        "1.3.2",
+        "1.3.3",
+        "1.3.4",
+        "1.3.78",
+        "1.3.9",
+        "1.4.13",
+        "1.4.14",
+        "3.2.115",
+        "3.4.115",
+        "3.4.78",
+        "3.4.82",
+        "6.1.4",
+        "6.1.5",
+        "6.1.8",
+        "7.2.13",
+        "7.2.35",
+        "7.4.60",
+        "7.4.62",
+        "8.4.68"
+      ],
+      "panel": "modification-01",
+      "control_task_id": "cart4-6ee8a600f38534e8c43d95bf",
+      "prompt_sha256": "9e3a9b1af9ef0a5b59627406ce2c4cde5ee37000dd34a6739ceb19e57aca0152"
+    },
+    "modification_audit": {
+      "candidate_codes": [
+        "01.0486"
+      ],
+      "source_key": "[\"कर्बावः\",\"Lat\",\"Kartari\",\"Uttama\",\"Dvi\"]",
+      "dependencies": {
+        "benchmarks/parallel-search-20261006/oracle-policy-21.json": "e19f60de4fc58a43a72ee0a48320f0c11383a39eb21b45f2859361701158220c",
+        "data/finetune/task-data/vidyut_dhatupatha_5.tsv": "c6c494a6c534130b2d8e8f344d2f5e3ffbc64ed45b390e2a4e35e526f1cecd09",
+        "benchmarks/creation-campaign-20261006/family-split.json": "a1c46bb778bca8f89df468d65232698131a3c4b137393865cd3f6b121fc6077f",
+        "misc/vp_cartesian_task.py": "f5bfab6f3fc27b7c83bbd6987bede73501592a9568fda32a0371bd8e23b7febd",
+        "misc/vp_modification_prompt_v1.py": "4f300df8dc7bad7a55a4a786377b4adcc63c01ef9d3b3ff740010309661804a9",
+        "misc/vp_modification_task_v1.py": "28adae6b1d97706bcba41de2dc74527be1d999ed32f43bc08f56322ac878e1f7",
+        "benchmarks/parallel-search-20261007/modification-01/inverse-index.json": "ee16696afffba7d729af37be329bfc0416e8e7e81a4ed559b4780a93ef2491d8"
+      }
+    }
+  },
+  {
+    "id": "modify-b86d602627df575f883d9efc",
+    "task_type": "modification",
+    "prompt_version": "modification-v1",
+    "source_form_devanagari": "अव्रीडीः",
+    "source_morphology": {
+      "lakara": "Lun",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Eka"
+    },
+    "target_morphology": {
+      "lakara": "Lat",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Eka"
+    },
+    "dhatu": {
+      "code": "04.0021",
+      "aupadeshika": "vrIqa~",
+      "gana": "Divadi",
+      "artha": "codane lajjAyAM ca"
+    },
+    "morphology": {
+      "lakara": "Lat",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Eka"
+    },
+    "gold_slp1": [
+      "vrIqyasi"
+    ],
+    "gold_devanagari": [
+      "व्रीड्यसि"
+    ],
+    "campaign": {
+      "root_family": "vrIqa~|Divadi",
+      "split": "development",
+      "construction": "word_modification",
+      "trace_rule_ids": [
+        "1.2.4",
+        "1.3.1",
+        "1.3.2",
+        "1.3.3",
+        "1.3.78",
+        "1.3.8",
+        "1.3.9",
+        "1.4.13",
+        "1.4.14",
+        "3.1.69",
+        "3.2.123",
+        "3.4.113",
+        "3.4.78",
+        "8.4.68"
+      ],
+      "panel": "modification-01",
+      "control_task_id": "cart4-fab8faa2f1e6f80a71c45148",
+      "prompt_sha256": "ef30f2e663ad02f61fbf2c0e746a000619c0b8c2b6db32da6ba0f764a07ca233"
+    },
+    "modification_audit": {
+      "candidate_codes": [
+        "04.0021"
+      ],
+      "source_key": "[\"अव्रीडीः\",\"Lun\",\"Kartari\",\"Madhyama\",\"Eka\"]",
+      "dependencies": {
+        "benchmarks/parallel-search-20261006/oracle-policy-21.json": "e19f60de4fc58a43a72ee0a48320f0c11383a39eb21b45f2859361701158220c",
+        "data/finetune/task-data/vidyut_dhatupatha_5.tsv": "c6c494a6c534130b2d8e8f344d2f5e3ffbc64ed45b390e2a4e35e526f1cecd09",
+        "benchmarks/creation-campaign-20261006/family-split.json": "a1c46bb778bca8f89df468d65232698131a3c4b137393865cd3f6b121fc6077f",
+        "misc/vp_cartesian_task.py": "f5bfab6f3fc27b7c83bbd6987bede73501592a9568fda32a0371bd8e23b7febd",
+        "misc/vp_modification_prompt_v1.py": "4f300df8dc7bad7a55a4a786377b4adcc63c01ef9d3b3ff740010309661804a9",
+        "misc/vp_modification_task_v1.py": "28adae6b1d97706bcba41de2dc74527be1d999ed32f43bc08f56322ac878e1f7",
+        "benchmarks/parallel-search-20261007/modification-01/inverse-index.json": "ee16696afffba7d729af37be329bfc0416e8e7e81a4ed559b4780a93ef2491d8"
+      }
+    }
+  },
+  {
+    "id": "modify-4cdee50188742604513b0d59",
+    "task_type": "modification",
+    "prompt_version": "modification-v1",
+    "source_form_devanagari": "ममल्लिढ्वे",
+    "source_morphology": {
+      "lakara": "Lit",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Bahu"
+    },
+    "target_morphology": {
+      "lakara": "Lat",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Bahu"
+    },
+    "dhatu": {
+      "code": "01.0567",
+      "aupadeshika": "malla~\\",
+      "gana": "Bhvadi",
+      "artha": "DAraRe"
+    },
+    "morphology": {
+      "lakara": "Lat",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Bahu"
+    },
+    "gold_slp1": [
+      "mallaDve"
+    ],
+    "gold_devanagari": [
+      "मल्लध्वे"
+    ],
+    "campaign": {
+      "root_family": "malla~\\|Bhvadi",
+      "split": "development",
+      "construction": "word_modification",
+      "trace_rule_ids": [
+        "1.2.4",
+        "1.3.1",
+        "1.3.12",
+        "1.3.2",
+        "1.3.3",
+        "1.3.4",
+        "1.3.8",
+        "1.3.9",
+        "1.4.13",
+        "1.4.14",
+        "3.1.68",
+        "3.2.123",
+        "3.4.113",
+        "3.4.78",
+        "3.4.79",
+        "8.4.68"
+      ],
+      "panel": "modification-01",
+      "control_task_id": "cart4-cb8628ffb6d57ef46c1e99f1",
+      "prompt_sha256": "bd62a3dbf017a419b8fc31380d9d70ba136eedad1c80e33195b7ff5ed57a07b8"
+    },
+    "modification_audit": {
+      "candidate_codes": [
+        "01.0567"
+      ],
+      "source_key": "[\"ममल्लिढ्वे\",\"Lit\",\"Kartari\",\"Madhyama\",\"Bahu\"]",
+      "dependencies": {
+        "benchmarks/parallel-search-20261006/oracle-policy-21.json": "e19f60de4fc58a43a72ee0a48320f0c11383a39eb21b45f2859361701158220c",
+        "data/finetune/task-data/vidyut_dhatupatha_5.tsv": "c6c494a6c534130b2d8e8f344d2f5e3ffbc64ed45b390e2a4e35e526f1cecd09",
+        "benchmarks/creation-campaign-20261006/family-split.json": "a1c46bb778bca8f89df468d65232698131a3c4b137393865cd3f6b121fc6077f",
+        "misc/vp_cartesian_task.py": "f5bfab6f3fc27b7c83bbd6987bede73501592a9568fda32a0371bd8e23b7febd",
+        "misc/vp_modification_prompt_v1.py": "4f300df8dc7bad7a55a4a786377b4adcc63c01ef9d3b3ff740010309661804a9",
+        "misc/vp_modification_task_v1.py": "28adae6b1d97706bcba41de2dc74527be1d999ed32f43bc08f56322ac878e1f7",
+        "benchmarks/parallel-search-20261007/modification-01/inverse-index.json": "ee16696afffba7d729af37be329bfc0416e8e7e81a4ed559b4780a93ef2491d8"
+      }
+    }
+  },
+  {
+    "id": "modify-44ce8fcf5150f554a4530c33",
+    "task_type": "modification",
+    "prompt_version": "modification-v1",
+    "source_form_devanagari": "अदक्षिषि",
+    "source_morphology": {
+      "lakara": "Lun",
+      "prayoga": "Kartari",
+      "purusha": "Uttama",
+      "vacana": "Eka"
+    },
+    "target_morphology": {
+      "lakara": "Lan",
+      "prayoga": "Kartari",
+      "purusha": "Uttama",
+      "vacana": "Eka"
+    },
+    "dhatu": {
+      "code": "01.0692",
+      "aupadeshika": "dakza~\\",
+      "gana": "Bhvadi",
+      "artha": "vfdDO SIGrArTe ca"
+    },
+    "morphology": {
+      "lakara": "Lan",
+      "prayoga": "Kartari",
+      "purusha": "Uttama",
+      "vacana": "Eka"
+    },
+    "gold_slp1": [
+      "adakze"
+    ],
+    "gold_devanagari": [
+      "अदक्षे"
+    ],
+    "campaign": {
+      "root_family": "dakza~\\|Bhvadi",
+      "split": "development",
+      "construction": "word_modification",
+      "trace_rule_ids": [
+        "1.2.4",
+        "1.3.1",
+        "1.3.12",
+        "1.3.2",
+        "1.3.3",
+        "1.3.8",
+        "1.3.9",
+        "1.4.13",
+        "1.4.14",
+        "3.1.68",
+        "3.2.111",
+        "3.4.113",
+        "3.4.78",
+        "6.1.87",
+        "6.4.71",
+        "8.4.68"
+      ],
+      "panel": "modification-01",
+      "control_task_id": "cart4-b61a21d0cb88dbadd904f209",
+      "prompt_sha256": "6c8a126850439f33372a2f14b0821f301f749d72ba06cadb265f5facf96b85f7"
+    },
+    "modification_audit": {
+      "candidate_codes": [
+        "01.0692",
+        "01.0874"
+      ],
+      "source_key": "[\"अदक्षिषि\",\"Lun\",\"Kartari\",\"Uttama\",\"Eka\"]",
+      "dependencies": {
+        "benchmarks/parallel-search-20261006/oracle-policy-21.json": "e19f60de4fc58a43a72ee0a48320f0c11383a39eb21b45f2859361701158220c",
+        "data/finetune/task-data/vidyut_dhatupatha_5.tsv": "c6c494a6c534130b2d8e8f344d2f5e3ffbc64ed45b390e2a4e35e526f1cecd09",
+        "benchmarks/creation-campaign-20261006/family-split.json": "a1c46bb778bca8f89df468d65232698131a3c4b137393865cd3f6b121fc6077f",
+        "misc/vp_cartesian_task.py": "f5bfab6f3fc27b7c83bbd6987bede73501592a9568fda32a0371bd8e23b7febd",
+        "misc/vp_modification_prompt_v1.py": "4f300df8dc7bad7a55a4a786377b4adcc63c01ef9d3b3ff740010309661804a9",
+        "misc/vp_modification_task_v1.py": "28adae6b1d97706bcba41de2dc74527be1d999ed32f43bc08f56322ac878e1f7",
+        "benchmarks/parallel-search-20261007/modification-01/inverse-index.json": "ee16696afffba7d729af37be329bfc0416e8e7e81a4ed559b4780a93ef2491d8"
+      }
+    }
+  },
+  {
+    "id": "modify-9d4c432c96ee4723c735d3e3",
+    "task_type": "modification",
+    "prompt_version": "modification-v1",
+    "source_form_devanagari": "अकत्थिष्ठाः",
+    "source_morphology": {
+      "lakara": "Lun",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Eka"
+    },
+    "target_morphology": {
+      "lakara": "Lit",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Eka"
+    },
+    "dhatu": {
+      "code": "01.0037",
+      "aupadeshika": "katTa~\\",
+      "gana": "Bhvadi",
+      "artha": "SlAGAyAm"
+    },
+    "morphology": {
+      "lakara": "Lit",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Eka"
+    },
+    "gold_slp1": [
+      "cakatTize"
+    ],
+    "gold_devanagari": [
+      "चकत्थिषे"
+    ],
+    "campaign": {
+      "root_family": "katTa~\\|Bhvadi",
+      "split": "development",
+      "construction": "word_modification",
+      "trace_rule_ids": [
+        "1.3.1",
+        "1.3.12",
+        "1.3.2",
+        "1.3.3",
+        "1.3.4",
+        "1.3.9",
+        "1.4.13",
+        "1.4.14",
+        "3.2.115",
+        "3.4.115",
+        "3.4.78",
+        "3.4.80",
+        "6.1.4",
+        "6.1.5",
+        "6.1.8",
+        "7.2.13",
+        "7.2.35",
+        "7.4.60",
+        "7.4.62",
+        "8.3.59",
+        "8.4.68"
+      ],
+      "panel": "modification-01",
+      "control_task_id": "cart4-f64a1f82b20a9f0884b94896",
+      "prompt_sha256": "a5f270d919119849eaa912ce5cc8d06231d56490f5997102e5b111a374427754"
+    },
+    "modification_audit": {
+      "candidate_codes": [
+        "01.0037"
+      ],
+      "source_key": "[\"अकत्थिष्ठाः\",\"Lun\",\"Kartari\",\"Madhyama\",\"Eka\"]",
+      "dependencies": {
+        "benchmarks/parallel-search-20261006/oracle-policy-21.json": "e19f60de4fc58a43a72ee0a48320f0c11383a39eb21b45f2859361701158220c",
+        "data/finetune/task-data/vidyut_dhatupatha_5.tsv": "c6c494a6c534130b2d8e8f344d2f5e3ffbc64ed45b390e2a4e35e526f1cecd09",
+        "benchmarks/creation-campaign-20261006/family-split.json": "a1c46bb778bca8f89df468d65232698131a3c4b137393865cd3f6b121fc6077f",
+        "misc/vp_cartesian_task.py": "f5bfab6f3fc27b7c83bbd6987bede73501592a9568fda32a0371bd8e23b7febd",
+        "misc/vp_modification_prompt_v1.py": "4f300df8dc7bad7a55a4a786377b4adcc63c01ef9d3b3ff740010309661804a9",
+        "misc/vp_modification_task_v1.py": "28adae6b1d97706bcba41de2dc74527be1d999ed32f43bc08f56322ac878e1f7",
+        "benchmarks/parallel-search-20261007/modification-01/inverse-index.json": "ee16696afffba7d729af37be329bfc0416e8e7e81a4ed559b4780a93ef2491d8"
+      }
+    }
+  },
+  {
+    "id": "modify-f6fa06b5204bab799593271c",
+    "task_type": "modification",
+    "prompt_version": "modification-v1",
+    "source_form_devanagari": "लिम्पति",
+    "source_morphology": {
+      "lakara": "Lat",
+      "prayoga": "Kartari",
+      "purusha": "Prathama",
+      "vacana": "Eka"
+    },
+    "target_morphology": {
+      "lakara": "AshirLin",
+      "prayoga": "Kartari",
+      "purusha": "Prathama",
+      "vacana": "Eka"
+    },
+    "dhatu": {
+      "code": "06.0169",
+      "aupadeshika": "li\\pa~^",
+      "gana": "Tudadi",
+      "artha": "upadehe"
+    },
+    "morphology": {
+      "lakara": "AshirLin",
+      "prayoga": "Kartari",
+      "purusha": "Prathama",
+      "vacana": "Eka"
+    },
+    "gold_slp1": [
+      "lipsIzwa",
+      "lipyAd",
+      "lipyAt"
+    ],
+    "gold_devanagari": [
+      "लिप्सीष्ट",
+      "लिप्याद्",
+      "लिप्यात्"
+    ],
+    "campaign": {
+      "root_family": "li\\pa~^|Tudadi",
+      "split": "development",
+      "construction": "word_modification",
+      "trace_rule_ids": [
+        "1.1.5",
+        "1.2.11",
+        "1.3.1",
+        "1.3.2",
+        "1.3.3",
+        "1.3.72",
+        "1.3.78",
+        "1.3.9",
+        "1.4.13",
+        "1.4.14",
+        "3.3.173",
+        "3.4.100",
+        "3.4.102",
+        "3.4.104",
+        "3.4.107",
+        "3.4.116",
+        "3.4.78",
+        "6.1.66",
+        "7.2.10",
+        "8.2.29",
+        "8.2.39",
+        "8.3.59",
+        "8.4.41",
+        "8.4.56",
+        "8.4.68"
+      ],
+      "panel": "modification-01",
+      "control_task_id": "cart4-6f1431e41d172437dd16a769",
+      "prompt_sha256": "7736a3105caf5251f15b53acfa1127c96ad707d1e12f21b19d264d11c204f33c"
+    },
+    "modification_audit": {
+      "candidate_codes": [
+        "06.0169"
+      ],
+      "source_key": "[\"लिम्पति\",\"Lat\",\"Kartari\",\"Prathama\",\"Eka\"]",
+      "dependencies": {
+        "benchmarks/parallel-search-20261006/oracle-policy-21.json": "e19f60de4fc58a43a72ee0a48320f0c11383a39eb21b45f2859361701158220c",
+        "data/finetune/task-data/vidyut_dhatupatha_5.tsv": "c6c494a6c534130b2d8e8f344d2f5e3ffbc64ed45b390e2a4e35e526f1cecd09",
+        "benchmarks/creation-campaign-20261006/family-split.json": "a1c46bb778bca8f89df468d65232698131a3c4b137393865cd3f6b121fc6077f",
+        "misc/vp_cartesian_task.py": "f5bfab6f3fc27b7c83bbd6987bede73501592a9568fda32a0371bd8e23b7febd",
+        "misc/vp_modification_prompt_v1.py": "4f300df8dc7bad7a55a4a786377b4adcc63c01ef9d3b3ff740010309661804a9",
+        "misc/vp_modification_task_v1.py": "28adae6b1d97706bcba41de2dc74527be1d999ed32f43bc08f56322ac878e1f7",
+        "benchmarks/parallel-search-20261007/modification-01/inverse-index.json": "ee16696afffba7d729af37be329bfc0416e8e7e81a4ed559b4780a93ef2491d8"
+      }
+    }
+  },
+  {
+    "id": "modify-edbf10e8dcb48f3f7fc3d43f",
+    "task_type": "modification",
+    "prompt_version": "modification-v1",
+    "source_form_devanagari": "अवप्साथाम्",
+    "source_morphology": {
+      "lakara": "Lun",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Dvi"
+    },
+    "target_morphology": {
+      "lakara": "AshirLin",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Dvi"
+    },
+    "dhatu": {
+      "code": "01.1158",
+      "aupadeshika": "quva\\pa~^",
+      "gana": "Bhvadi",
+      "artha": "bIjasantAne garBADAne Cedane bIjatantusantAne muRqabIjoptyoH vapane GarzaRe tantunirmARe ca"
+    },
+    "morphology": {
+      "lakara": "AshirLin",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Dvi"
+    },
+    "gold_slp1": [
+      "upyAstam",
+      "vapsIyAsTAm"
+    ],
+    "gold_devanagari": [
+      "उप्यास्तम्",
+      "वप्सीयास्थाम्"
+    ],
+    "campaign": {
+      "root_family": "quva\\pa~^|Bhvadi",
+      "split": "development",
+      "construction": "word_modification",
+      "trace_rule_ids": [
+        "1.1.5",
+        "1.3.1",
+        "1.3.2",
+        "1.3.3",
+        "1.3.4",
+        "1.3.5",
+        "1.3.72",
+        "1.3.78",
+        "1.3.9",
+        "1.4.13",
+        "1.4.14",
+        "3.3.173",
+        "3.4.101",
+        "3.4.102",
+        "3.4.104",
+        "3.4.107",
+        "3.4.116",
+        "3.4.78",
+        "6.1.108",
+        "6.1.15",
+        "7.2.10",
+        "8.2.29",
+        "8.4.68"
+      ],
+      "panel": "modification-01",
+      "control_task_id": "cart4-e45b79b826f0ccaa445c2ec7",
+      "prompt_sha256": "67d707f71c55faf69a21918ddfbcac73ce527986295e58b329cb697665a76d0d"
+    },
+    "modification_audit": {
+      "candidate_codes": [
+        "01.1158"
+      ],
+      "source_key": "[\"अवप्साथाम्\",\"Lun\",\"Kartari\",\"Madhyama\",\"Dvi\"]",
+      "dependencies": {
+        "benchmarks/parallel-search-20261006/oracle-policy-21.json": "e19f60de4fc58a43a72ee0a48320f0c11383a39eb21b45f2859361701158220c",
+        "data/finetune/task-data/vidyut_dhatupatha_5.tsv": "c6c494a6c534130b2d8e8f344d2f5e3ffbc64ed45b390e2a4e35e526f1cecd09",
+        "benchmarks/creation-campaign-20261006/family-split.json": "a1c46bb778bca8f89df468d65232698131a3c4b137393865cd3f6b121fc6077f",
+        "misc/vp_cartesian_task.py": "f5bfab6f3fc27b7c83bbd6987bede73501592a9568fda32a0371bd8e23b7febd",
+        "misc/vp_modification_prompt_v1.py": "4f300df8dc7bad7a55a4a786377b4adcc63c01ef9d3b3ff740010309661804a9",
+        "misc/vp_modification_task_v1.py": "28adae6b1d97706bcba41de2dc74527be1d999ed32f43bc08f56322ac878e1f7",
+        "benchmarks/parallel-search-20261007/modification-01/inverse-index.json": "ee16696afffba7d729af37be329bfc0416e8e7e81a4ed559b4780a93ef2491d8"
+      }
+    }
+  },
+  {
+    "id": "modify-71717f2cb75c986101815d40",
+    "task_type": "modification",
+    "prompt_version": "modification-v1",
+    "source_form_devanagari": "अधुवतम्",
+    "source_morphology": {
+      "lakara": "Lan",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Dvi"
+    },
+    "target_morphology": {
+      "lakara": "Lat",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Dvi"
+    },
+    "dhatu": {
+      "code": "06.0133",
+      "aupadeshika": "DU",
+      "gana": "Tudadi",
+      "artha": "viDUnane"
+    },
+    "morphology": {
+      "lakara": "Lat",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Dvi"
+    },
+    "gold_slp1": [
+      "DuvaTaH"
+    ],
+    "gold_devanagari": [
+      "धुवथः"
+    ],
+    "campaign": {
+      "root_family": "DU|Tudadi",
+      "split": "development",
+      "construction": "word_modification",
+      "trace_rule_ids": [
+        "1.1.5",
+        "1.2.1",
+        "1.2.4",
+        "1.3.1",
+        "1.3.2",
+        "1.3.3",
+        "1.3.4",
+        "1.3.78",
+        "1.3.8",
+        "1.3.9",
+        "1.4.13",
+        "1.4.14",
+        "3.1.77",
+        "3.2.123",
+        "3.4.113",
+        "3.4.78",
+        "6.4.77",
+        "8.2.66",
+        "8.3.15",
+        "8.4.68"
+      ],
+      "panel": "modification-01",
+      "control_task_id": "cart4-862afc87f39ad0c9abc57389",
+      "prompt_sha256": "96bc60e46d5ac3193c4051a09a8a3bcb1e6106e8207ee3152bf24630be13616c"
+    },
+    "modification_audit": {
+      "candidate_codes": [
+        "06.0133"
+      ],
+      "source_key": "[\"अधुवतम्\",\"Lan\",\"Kartari\",\"Madhyama\",\"Dvi\"]",
+      "dependencies": {
+        "benchmarks/parallel-search-20261006/oracle-policy-21.json": "e19f60de4fc58a43a72ee0a48320f0c11383a39eb21b45f2859361701158220c",
+        "data/finetune/task-data/vidyut_dhatupatha_5.tsv": "c6c494a6c534130b2d8e8f344d2f5e3ffbc64ed45b390e2a4e35e526f1cecd09",
+        "benchmarks/creation-campaign-20261006/family-split.json": "a1c46bb778bca8f89df468d65232698131a3c4b137393865cd3f6b121fc6077f",
+        "misc/vp_cartesian_task.py": "f5bfab6f3fc27b7c83bbd6987bede73501592a9568fda32a0371bd8e23b7febd",
+        "misc/vp_modification_prompt_v1.py": "4f300df8dc7bad7a55a4a786377b4adcc63c01ef9d3b3ff740010309661804a9",
+        "misc/vp_modification_task_v1.py": "28adae6b1d97706bcba41de2dc74527be1d999ed32f43bc08f56322ac878e1f7",
+        "benchmarks/parallel-search-20261007/modification-01/inverse-index.json": "ee16696afffba7d729af37be329bfc0416e8e7e81a4ed559b4780a93ef2491d8"
+      }
+    }
+  },
+  {
+    "id": "modify-cff6d8d2009fb06c88a2a22d",
+    "task_type": "modification",
+    "prompt_version": "modification-v1",
+    "source_form_devanagari": "अशिञ्जत",
+    "source_morphology": {
+      "lakara": "Lan",
+      "prayoga": "Kartari",
+      "purusha": "Prathama",
+      "vacana": "Bahu"
+    },
+    "target_morphology": {
+      "lakara": "Lrn",
+      "prayoga": "Kartari",
+      "purusha": "Prathama",
+      "vacana": "Bahu"
+    },
+    "dhatu": {
+      "code": "02.0019",
+      "aupadeshika": "Siji~\\",
+      "gana": "Adadi",
+      "artha": "avyakte Sabde"
+    },
+    "morphology": {
+      "lakara": "Lrn",
+      "prayoga": "Kartari",
+      "purusha": "Prathama",
+      "vacana": "Bahu"
+    },
+    "gold_slp1": [
+      "aSiYjizyanta"
+    ],
+    "gold_devanagari": [
+      "अशिञ्जिष्यन्त"
+    ],
+    "campaign": {
+      "root_family": "Siji~\\|Adadi",
+      "split": "development",
+      "construction": "word_modification",
+      "trace_rule_ids": [
+        "1.2.4",
+        "1.3.1",
+        "1.3.12",
+        "1.3.2",
+        "1.3.3",
+        "1.3.9",
+        "1.4.13",
+        "1.4.14",
+        "3.1.33",
+        "3.3.139",
+        "3.4.113",
+        "3.4.114",
+        "3.4.78",
+        "6.1.97",
+        "6.4.71",
+        "7.1.3",
+        "7.1.58",
+        "7.2.35",
+        "8.3.24",
+        "8.3.59",
+        "8.4.58",
+        "8.4.68"
+      ],
+      "panel": "modification-01",
+      "control_task_id": "cart4-fe6015706c22c640a956071e",
+      "prompt_sha256": "bc3ff991e1694076a0f7f499abe5190c61dbb36d84a5807ead93e34b67fd9bf2"
+    },
+    "modification_audit": {
+      "candidate_codes": [
+        "02.0019"
+      ],
+      "source_key": "[\"अशिञ्जत\",\"Lan\",\"Kartari\",\"Prathama\",\"Bahu\"]",
+      "dependencies": {
+        "benchmarks/parallel-search-20261006/oracle-policy-21.json": "e19f60de4fc58a43a72ee0a48320f0c11383a39eb21b45f2859361701158220c",
+        "data/finetune/task-data/vidyut_dhatupatha_5.tsv": "c6c494a6c534130b2d8e8f344d2f5e3ffbc64ed45b390e2a4e35e526f1cecd09",
+        "benchmarks/creation-campaign-20261006/family-split.json": "a1c46bb778bca8f89df468d65232698131a3c4b137393865cd3f6b121fc6077f",
+        "misc/vp_cartesian_task.py": "f5bfab6f3fc27b7c83bbd6987bede73501592a9568fda32a0371bd8e23b7febd",
+        "misc/vp_modification_prompt_v1.py": "4f300df8dc7bad7a55a4a786377b4adcc63c01ef9d3b3ff740010309661804a9",
+        "misc/vp_modification_task_v1.py": "28adae6b1d97706bcba41de2dc74527be1d999ed32f43bc08f56322ac878e1f7",
+        "benchmarks/parallel-search-20261007/modification-01/inverse-index.json": "ee16696afffba7d729af37be329bfc0416e8e7e81a4ed559b4780a93ef2491d8"
+      }
+    }
+  },
+  {
+    "id": "modify-16e74313124b8878b39e7c35",
+    "task_type": "modification",
+    "prompt_version": "modification-v1",
+    "source_form_devanagari": "अनमद्",
+    "source_morphology": {
+      "lakara": "Lan",
+      "prayoga": "Kartari",
+      "purusha": "Prathama",
+      "vacana": "Eka"
+    },
+    "target_morphology": {
+      "lakara": "VidhiLin",
+      "prayoga": "Kartari",
+      "purusha": "Prathama",
+      "vacana": "Eka"
+    },
+    "dhatu": {
+      "code": "01.1136",
+      "aupadeshika": "Ra\\ma~",
+      "gana": "Bhvadi",
+      "artha": "prahvatve Sabde ca"
+    },
+    "morphology": {
+      "lakara": "VidhiLin",
+      "prayoga": "Kartari",
+      "purusha": "Prathama",
+      "vacana": "Eka"
+    },
+    "gold_slp1": [
+      "named",
+      "namet"
+    ],
+    "gold_devanagari": [
+      "नमेद्",
+      "नमेत्"
+    ],
+    "campaign": {
+      "root_family": "Ra\\ma~|Bhvadi",
+      "split": "development",
+      "construction": "word_modification",
+      "trace_rule_ids": [
+        "1.3.1",
+        "1.3.2",
+        "1.3.3",
+        "1.3.78",
+        "1.3.8",
+        "1.3.9",
+        "1.4.13",
+        "1.4.14",
+        "3.1.68",
+        "3.3.161",
+        "3.4.100",
+        "3.4.103",
+        "3.4.107",
+        "3.4.113",
+        "3.4.78",
+        "6.1.65",
+        "6.1.66",
+        "6.1.87",
+        "7.2.79",
+        "7.2.80",
+        "8.2.39",
+        "8.4.56",
+        "8.4.68"
+      ],
+      "panel": "modification-01",
+      "control_task_id": "cart4-09ba55baa7877bf1c735fe69",
+      "prompt_sha256": "faaefc5e9f7483067f1f47c560d0eaa612ecfe5115e24c21722fb5dc3fd35f68"
+    },
+    "modification_audit": {
+      "candidate_codes": [
+        "01.1136"
+      ],
+      "source_key": "[\"अनमद्\",\"Lan\",\"Kartari\",\"Prathama\",\"Eka\"]",
+      "dependencies": {
+        "benchmarks/parallel-search-20261006/oracle-policy-21.json": "e19f60de4fc58a43a72ee0a48320f0c11383a39eb21b45f2859361701158220c",
+        "data/finetune/task-data/vidyut_dhatupatha_5.tsv": "c6c494a6c534130b2d8e8f344d2f5e3ffbc64ed45b390e2a4e35e526f1cecd09",
+        "benchmarks/creation-campaign-20261006/family-split.json": "a1c46bb778bca8f89df468d65232698131a3c4b137393865cd3f6b121fc6077f",
+        "misc/vp_cartesian_task.py": "f5bfab6f3fc27b7c83bbd6987bede73501592a9568fda32a0371bd8e23b7febd",
+        "misc/vp_modification_prompt_v1.py": "4f300df8dc7bad7a55a4a786377b4adcc63c01ef9d3b3ff740010309661804a9",
+        "misc/vp_modification_task_v1.py": "28adae6b1d97706bcba41de2dc74527be1d999ed32f43bc08f56322ac878e1f7",
+        "benchmarks/parallel-search-20261007/modification-01/inverse-index.json": "ee16696afffba7d729af37be329bfc0416e8e7e81a4ed559b4780a93ef2491d8"
+      }
+    }
+  },
+  {
+    "id": "modify-5fa59c4ae2c5440d4971be16",
+    "task_type": "modification",
+    "prompt_version": "modification-v1",
+    "source_form_devanagari": "अघुंषिष्महि",
+    "source_morphology": {
+      "lakara": "Lun",
+      "prayoga": "Kartari",
+      "purusha": "Uttama",
+      "vacana": "Bahu"
+    },
+    "target_morphology": {
+      "lakara": "Lat",
+      "prayoga": "Kartari",
+      "purusha": "Uttama",
+      "vacana": "Bahu"
+    },
+    "dhatu": {
+      "code": "01.0740",
+      "aupadeshika": "Guzi~\\",
+      "gana": "Bhvadi",
+      "artha": "kAntikaraRe"
+    },
+    "morphology": {
+      "lakara": "Lat",
+      "prayoga": "Kartari",
+      "purusha": "Uttama",
+      "vacana": "Bahu"
+    },
+    "gold_slp1": [
+      "GuMzAmahe"
+    ],
+    "gold_devanagari": [
+      "घुंषामहे"
+    ],
+    "campaign": {
+      "root_family": "Guzi~\\|Bhvadi",
+      "split": "development",
+      "construction": "word_modification",
+      "trace_rule_ids": [
+        "1.2.4",
+        "1.3.1",
+        "1.3.12",
+        "1.3.2",
+        "1.3.3",
+        "1.3.8",
+        "1.3.9",
+        "1.4.13",
+        "1.4.14",
+        "3.1.68",
+        "3.2.123",
+        "3.4.113",
+        "3.4.78",
+        "3.4.79",
+        "7.1.58",
+        "7.3.101",
+        "8.3.24",
+        "8.4.68"
+      ],
+      "panel": "modification-01",
+      "control_task_id": "cart4-7da71f3f4cb7e7bfd9161ec7",
+      "prompt_sha256": "72dae7e52f531be77765fb55092e3bce60f378ca30ad38fc3a68e0f9d234dd28"
+    },
+    "modification_audit": {
+      "candidate_codes": [
+        "01.0740"
+      ],
+      "source_key": "[\"अघुंषिष्महि\",\"Lun\",\"Kartari\",\"Uttama\",\"Bahu\"]",
+      "dependencies": {
+        "benchmarks/parallel-search-20261006/oracle-policy-21.json": "e19f60de4fc58a43a72ee0a48320f0c11383a39eb21b45f2859361701158220c",
+        "data/finetune/task-data/vidyut_dhatupatha_5.tsv": "c6c494a6c534130b2d8e8f344d2f5e3ffbc64ed45b390e2a4e35e526f1cecd09",
+        "benchmarks/creation-campaign-20261006/family-split.json": "a1c46bb778bca8f89df468d65232698131a3c4b137393865cd3f6b121fc6077f",
+        "misc/vp_cartesian_task.py": "f5bfab6f3fc27b7c83bbd6987bede73501592a9568fda32a0371bd8e23b7febd",
+        "misc/vp_modification_prompt_v1.py": "4f300df8dc7bad7a55a4a786377b4adcc63c01ef9d3b3ff740010309661804a9",
+        "misc/vp_modification_task_v1.py": "28adae6b1d97706bcba41de2dc74527be1d999ed32f43bc08f56322ac878e1f7",
+        "benchmarks/parallel-search-20261007/modification-01/inverse-index.json": "ee16696afffba7d729af37be329bfc0416e8e7e81a4ed559b4780a93ef2491d8"
+      }
+    }
+  },
+  {
+    "id": "modify-c9f31d28aad6221df0238c47",
+    "task_type": "modification",
+    "prompt_version": "modification-v1",
+    "source_form_devanagari": "अलीढ्वम्",
+    "source_morphology": {
+      "lakara": "Lun",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Bahu"
+    },
+    "target_morphology": {
+      "lakara": "Lrt",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Bahu"
+    },
+    "dhatu": {
+      "code": "02.0006",
+      "aupadeshika": "li\\ha~^",
+      "gana": "Adadi",
+      "artha": "AsvAdane"
+    },
+    "morphology": {
+      "lakara": "Lrt",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Bahu"
+    },
+    "gold_slp1": [
+      "lekzyaDve",
+      "lekzyaTa"
+    ],
+    "gold_devanagari": [
+      "लेक्ष्यध्वे",
+      "लेक्ष्यथ"
+    ],
+    "campaign": {
+      "root_family": "li\\ha~^|Adadi",
+      "split": "development",
+      "construction": "word_modification",
+      "trace_rule_ids": [
+        "1.2.4",
+        "1.3.1",
+        "1.3.2",
+        "1.3.3",
+        "1.3.4",
+        "1.3.72",
+        "1.3.78",
+        "1.3.9",
+        "1.4.13",
+        "1.4.14",
+        "3.1.33",
+        "3.3.13",
+        "3.4.113",
+        "3.4.114",
+        "3.4.78",
+        "3.4.79",
+        "7.2.10",
+        "7.3.86",
+        "8.2.31",
+        "8.2.41",
+        "8.3.59",
+        "8.4.68"
+      ],
+      "panel": "modification-01",
+      "control_task_id": "cart4-d4486045373626a51ebc4015",
+      "prompt_sha256": "71457a50194179c639e37c2cf98dee2b997244f2e6fb3cd9639cedf2f213b88b"
+    },
+    "modification_audit": {
+      "candidate_codes": [
+        "02.0006"
+      ],
+      "source_key": "[\"अलीढ्वम्\",\"Lun\",\"Kartari\",\"Madhyama\",\"Bahu\"]",
+      "dependencies": {
+        "benchmarks/parallel-search-20261006/oracle-policy-21.json": "e19f60de4fc58a43a72ee0a48320f0c11383a39eb21b45f2859361701158220c",
+        "data/finetune/task-data/vidyut_dhatupatha_5.tsv": "c6c494a6c534130b2d8e8f344d2f5e3ffbc64ed45b390e2a4e35e526f1cecd09",
+        "benchmarks/creation-campaign-20261006/family-split.json": "a1c46bb778bca8f89df468d65232698131a3c4b137393865cd3f6b121fc6077f",
+        "misc/vp_cartesian_task.py": "f5bfab6f3fc27b7c83bbd6987bede73501592a9568fda32a0371bd8e23b7febd",
+        "misc/vp_modification_prompt_v1.py": "4f300df8dc7bad7a55a4a786377b4adcc63c01ef9d3b3ff740010309661804a9",
+        "misc/vp_modification_task_v1.py": "28adae6b1d97706bcba41de2dc74527be1d999ed32f43bc08f56322ac878e1f7",
+        "benchmarks/parallel-search-20261007/modification-01/inverse-index.json": "ee16696afffba7d729af37be329bfc0416e8e7e81a4ed559b4780a93ef2491d8"
+      }
+    }
+  },
+  {
+    "id": "modify-038745ade33d2ca3e7db879b",
+    "task_type": "modification",
+    "prompt_version": "modification-v1",
+    "source_form_devanagari": "अचुकुण्ठाम",
+    "source_morphology": {
+      "lakara": "Lun",
+      "prayoga": "Kartari",
+      "purusha": "Uttama",
+      "vacana": "Bahu"
+    },
+    "target_morphology": {
+      "lakara": "Lat",
+      "prayoga": "Kartari",
+      "purusha": "Uttama",
+      "vacana": "Bahu"
+    },
+    "dhatu": {
+      "code": "10.0070",
+      "aupadeshika": "kuWi~",
+      "gana": "Curadi",
+      "artha": "rakzaRe"
+    },
+    "morphology": {
+      "lakara": "Lat",
+      "prayoga": "Kartari",
+      "purusha": "Uttama",
+      "vacana": "Bahu"
+    },
+    "gold_slp1": [
+      "kuRWAmaH",
+      "kuRWayAmaH",
+      "kuRWayAmahe"
+    ],
+    "gold_devanagari": [
+      "कुण्ठामः",
+      "कुण्ठयामः",
+      "कुण्ठयामहे"
+    ],
+    "campaign": {
+      "root_family": "kuWi~|Curadi",
+      "split": "development",
+      "construction": "word_modification",
+      "trace_rule_ids": [
+        "1.2.4",
+        "1.3.1",
+        "1.3.2",
+        "1.3.3",
+        "1.3.4",
+        "1.3.7",
+        "1.3.74",
+        "1.3.78",
+        "1.3.8",
+        "1.3.9",
+        "1.4.13",
+        "1.4.14",
+        "3.1.25",
+        "3.1.32",
+        "3.1.68",
+        "3.2.123",
+        "3.4.113",
+        "3.4.114",
+        "3.4.78",
+        "3.4.79",
+        "6.1.78",
+        "7.1.58",
+        "7.3.101",
+        "7.3.84",
+        "8.2.66",
+        "8.3.15",
+        "8.3.24",
+        "8.4.58",
+        "8.4.68"
+      ],
+      "panel": "modification-01",
+      "control_task_id": "cart4-0d3589608da608b4cd65dc26",
+      "prompt_sha256": "47d7b01c9372a375c9c485117688d4076bddd3f4d109e34ee19f96b417e23bba"
+    },
+    "modification_audit": {
+      "candidate_codes": [
+        "10.0070"
+      ],
+      "source_key": "[\"अचुकुण्ठाम\",\"Lun\",\"Kartari\",\"Uttama\",\"Bahu\"]",
+      "dependencies": {
+        "benchmarks/parallel-search-20261006/oracle-policy-21.json": "e19f60de4fc58a43a72ee0a48320f0c11383a39eb21b45f2859361701158220c",
+        "data/finetune/task-data/vidyut_dhatupatha_5.tsv": "c6c494a6c534130b2d8e8f344d2f5e3ffbc64ed45b390e2a4e35e526f1cecd09",
+        "benchmarks/creation-campaign-20261006/family-split.json": "a1c46bb778bca8f89df468d65232698131a3c4b137393865cd3f6b121fc6077f",
+        "misc/vp_cartesian_task.py": "f5bfab6f3fc27b7c83bbd6987bede73501592a9568fda32a0371bd8e23b7febd",
+        "misc/vp_modification_prompt_v1.py": "4f300df8dc7bad7a55a4a786377b4adcc63c01ef9d3b3ff740010309661804a9",
+        "misc/vp_modification_task_v1.py": "28adae6b1d97706bcba41de2dc74527be1d999ed32f43bc08f56322ac878e1f7",
+        "benchmarks/parallel-search-20261007/modification-01/inverse-index.json": "ee16696afffba7d729af37be329bfc0416e8e7e81a4ed559b4780a93ef2491d8"
+      }
+    }
+  },
+  {
+    "id": "modify-48d1f4a540376d2df72e9e0d",
+    "task_type": "modification",
+    "prompt_version": "modification-v1",
+    "source_form_devanagari": "अतूलिष्ट",
+    "source_morphology": {
+      "lakara": "Lun",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Bahu"
+    },
+    "target_morphology": {
+      "lakara": "Lat",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Bahu"
+    },
+    "dhatu": {
+      "code": "01.0605",
+      "aupadeshika": "tUla~",
+      "gana": "Bhvadi",
+      "artha": "nizkarze"
+    },
+    "morphology": {
+      "lakara": "Lat",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Bahu"
+    },
+    "gold_slp1": [
+      "tUlaTa"
+    ],
+    "gold_devanagari": [
+      "तूलथ"
+    ],
+    "campaign": {
+      "root_family": "tUla~|Bhvadi",
+      "split": "development",
+      "construction": "word_modification",
+      "trace_rule_ids": [
+        "1.2.4",
+        "1.3.1",
+        "1.3.2",
+        "1.3.3",
+        "1.3.78",
+        "1.3.8",
+        "1.3.9",
+        "1.4.13",
+        "1.4.14",
+        "3.1.68",
+        "3.2.123",
+        "3.4.113",
+        "3.4.78",
+        "8.4.68"
+      ],
+      "panel": "modification-01",
+      "control_task_id": "cart4-35326f52904c4a3979bf65b7",
+      "prompt_sha256": "12865da3a42e591bcd14a29ee36bc43a5235614253f65f3ff300cab12d06572a"
+    },
+    "modification_audit": {
+      "candidate_codes": [
+        "01.0605"
+      ],
+      "source_key": "[\"अतूलिष्ट\",\"Lun\",\"Kartari\",\"Madhyama\",\"Bahu\"]",
+      "dependencies": {
+        "benchmarks/parallel-search-20261006/oracle-policy-21.json": "e19f60de4fc58a43a72ee0a48320f0c11383a39eb21b45f2859361701158220c",
+        "data/finetune/task-data/vidyut_dhatupatha_5.tsv": "c6c494a6c534130b2d8e8f344d2f5e3ffbc64ed45b390e2a4e35e526f1cecd09",
+        "benchmarks/creation-campaign-20261006/family-split.json": "a1c46bb778bca8f89df468d65232698131a3c4b137393865cd3f6b121fc6077f",
+        "misc/vp_cartesian_task.py": "f5bfab6f3fc27b7c83bbd6987bede73501592a9568fda32a0371bd8e23b7febd",
+        "misc/vp_modification_prompt_v1.py": "4f300df8dc7bad7a55a4a786377b4adcc63c01ef9d3b3ff740010309661804a9",
+        "misc/vp_modification_task_v1.py": "28adae6b1d97706bcba41de2dc74527be1d999ed32f43bc08f56322ac878e1f7",
+        "benchmarks/parallel-search-20261007/modification-01/inverse-index.json": "ee16696afffba7d729af37be329bfc0416e8e7e81a4ed559b4780a93ef2491d8"
+      }
+    }
+  },
+  {
+    "id": "modify-66c74be38aa633251bfb5245",
+    "task_type": "modification",
+    "prompt_version": "modification-v1",
+    "source_form_devanagari": "मज्जामि",
+    "source_morphology": {
+      "lakara": "Lat",
+      "prayoga": "Kartari",
+      "purusha": "Uttama",
+      "vacana": "Eka"
+    },
+    "target_morphology": {
+      "lakara": "Lot",
+      "prayoga": "Kartari",
+      "purusha": "Uttama",
+      "vacana": "Eka"
+    },
+    "dhatu": {
+      "code": "06.0151",
+      "aupadeshika": "wuma\\sjo~",
+      "gana": "Tudadi",
+      "artha": "SudDO"
+    },
+    "morphology": {
+      "lakara": "Lot",
+      "prayoga": "Kartari",
+      "purusha": "Uttama",
+      "vacana": "Eka"
+    },
+    "gold_slp1": [
+      "majjAni"
+    ],
+    "gold_devanagari": [
+      "मज्जानि"
+    ],
+    "campaign": {
+      "root_family": "wuma\\sjo~|Tudadi",
+      "split": "development",
+      "construction": "word_modification",
+      "trace_rule_ids": [
+        "1.2.4",
+        "1.3.1",
+        "1.3.2",
+        "1.3.3",
+        "1.3.5",
+        "1.3.78",
+        "1.3.8",
+        "1.3.9",
+        "1.4.13",
+        "1.4.14",
+        "3.1.77",
+        "3.3.162",
+        "3.4.113",
+        "3.4.78",
+        "3.4.89",
+        "3.4.92",
+        "6.1.101",
+        "8.4.40",
+        "8.4.53",
+        "8.4.68"
+      ],
+      "panel": "modification-01",
+      "control_task_id": "cart4-93abdc0946e95f750a27d5c2",
+      "prompt_sha256": "647b36ffaa2106b746c9cedeab03d1245d85f7cdb88240a98efdd4f08b377b3f"
+    },
+    "modification_audit": {
+      "candidate_codes": [
+        "06.0151"
+      ],
+      "source_key": "[\"मज्जामि\",\"Lat\",\"Kartari\",\"Uttama\",\"Eka\"]",
+      "dependencies": {
+        "benchmarks/parallel-search-20261006/oracle-policy-21.json": "e19f60de4fc58a43a72ee0a48320f0c11383a39eb21b45f2859361701158220c",
+        "data/finetune/task-data/vidyut_dhatupatha_5.tsv": "c6c494a6c534130b2d8e8f344d2f5e3ffbc64ed45b390e2a4e35e526f1cecd09",
+        "benchmarks/creation-campaign-20261006/family-split.json": "a1c46bb778bca8f89df468d65232698131a3c4b137393865cd3f6b121fc6077f",
+        "misc/vp_cartesian_task.py": "f5bfab6f3fc27b7c83bbd6987bede73501592a9568fda32a0371bd8e23b7febd",
+        "misc/vp_modification_prompt_v1.py": "4f300df8dc7bad7a55a4a786377b4adcc63c01ef9d3b3ff740010309661804a9",
+        "misc/vp_modification_task_v1.py": "28adae6b1d97706bcba41de2dc74527be1d999ed32f43bc08f56322ac878e1f7",
+        "benchmarks/parallel-search-20261007/modification-01/inverse-index.json": "ee16696afffba7d729af37be329bfc0416e8e7e81a4ed559b4780a93ef2491d8"
+      }
+    }
+  },
+  {
+    "id": "modify-71ad533338583363fe210759",
+    "task_type": "modification",
+    "prompt_version": "modification-v1",
+    "source_form_devanagari": "जुघुटिध्वे",
+    "source_morphology": {
+      "lakara": "Lit",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Bahu"
+    },
+    "target_morphology": {
+      "lakara": "AshirLin",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Bahu"
+    },
+    "dhatu": {
+      "code": "01.0848",
+      "aupadeshika": "Guwa~\\",
+      "gana": "Bhvadi",
+      "artha": "parivartane"
+    },
+    "morphology": {
+      "lakara": "AshirLin",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Bahu"
+    },
+    "gold_slp1": [
+      "GowizIDvam"
+    ],
+    "gold_devanagari": [
+      "घोटिषीध्वम्"
+    ],
+    "campaign": {
+      "root_family": "Guwa~\\|Bhvadi",
+      "split": "development",
+      "construction": "word_modification",
+      "trace_rule_ids": [
+        "1.3.1",
+        "1.3.12",
+        "1.3.2",
+        "1.3.3",
+        "1.3.4",
+        "1.3.9",
+        "1.4.13",
+        "1.4.14",
+        "3.3.173",
+        "3.4.102",
+        "3.4.116",
+        "3.4.78",
+        "6.1.66",
+        "7.2.35",
+        "7.3.86",
+        "8.3.59",
+        "8.4.68"
+      ],
+      "panel": "modification-01",
+      "control_task_id": "cart4-170555d5a27422acc4510942",
+      "prompt_sha256": "0208271b7e8dff7343dd703986ea96dab511a190de8d252687df36b09140ddce"
+    },
+    "modification_audit": {
+      "candidate_codes": [
+        "01.0848"
+      ],
+      "source_key": "[\"जुघुटिध्वे\",\"Lit\",\"Kartari\",\"Madhyama\",\"Bahu\"]",
+      "dependencies": {
+        "benchmarks/parallel-search-20261006/oracle-policy-21.json": "e19f60de4fc58a43a72ee0a48320f0c11383a39eb21b45f2859361701158220c",
+        "data/finetune/task-data/vidyut_dhatupatha_5.tsv": "c6c494a6c534130b2d8e8f344d2f5e3ffbc64ed45b390e2a4e35e526f1cecd09",
+        "benchmarks/creation-campaign-20261006/family-split.json": "a1c46bb778bca8f89df468d65232698131a3c4b137393865cd3f6b121fc6077f",
+        "misc/vp_cartesian_task.py": "f5bfab6f3fc27b7c83bbd6987bede73501592a9568fda32a0371bd8e23b7febd",
+        "misc/vp_modification_prompt_v1.py": "4f300df8dc7bad7a55a4a786377b4adcc63c01ef9d3b3ff740010309661804a9",
+        "misc/vp_modification_task_v1.py": "28adae6b1d97706bcba41de2dc74527be1d999ed32f43bc08f56322ac878e1f7",
+        "benchmarks/parallel-search-20261007/modification-01/inverse-index.json": "ee16696afffba7d729af37be329bfc0416e8e7e81a4ed559b4780a93ef2491d8"
+      }
+    }
+  },
+  {
+    "id": "modify-6b6d76005973b579c66aeef6",
+    "task_type": "modification",
+    "prompt_version": "modification-v1",
+    "source_form_devanagari": "ररङ्गुः",
+    "source_morphology": {
+      "lakara": "Lit",
+      "prayoga": "Kartari",
+      "purusha": "Prathama",
+      "vacana": "Bahu"
+    },
+    "target_morphology": {
+      "lakara": "Lrt",
+      "prayoga": "Kartari",
+      "purusha": "Prathama",
+      "vacana": "Bahu"
+    },
+    "dhatu": {
+      "code": "01.0153",
+      "aupadeshika": "ragi~",
+      "gana": "Bhvadi",
+      "artha": "gatO"
+    },
+    "morphology": {
+      "lakara": "Lrt",
+      "prayoga": "Kartari",
+      "purusha": "Prathama",
+      "vacana": "Bahu"
+    },
+    "gold_slp1": [
+      "raNgizyanti"
+    ],
+    "gold_devanagari": [
+      "रङ्गिष्यन्ति"
+    ],
+    "campaign": {
+      "root_family": "ragi~|Bhvadi",
+      "split": "development",
+      "construction": "word_modification",
+      "trace_rule_ids": [
+        "1.2.4",
+        "1.3.1",
+        "1.3.2",
+        "1.3.3",
+        "1.3.78",
+        "1.3.9",
+        "1.4.13",
+        "1.4.14",
+        "3.1.33",
+        "3.3.13",
+        "3.4.113",
+        "3.4.114",
+        "3.4.78",
+        "6.1.97",
+        "7.1.3",
+        "7.1.58",
+        "7.2.35",
+        "8.3.24",
+        "8.3.59",
+        "8.4.58",
+        "8.4.68"
+      ],
+      "panel": "modification-01",
+      "control_task_id": "cart4-34dc3166eabf2fd2161b971a",
+      "prompt_sha256": "ce93d5366b82ddf204616c31ebb0555565bdfb859caebcd6c420f775c1581933"
+    },
+    "modification_audit": {
+      "candidate_codes": [
+        "01.0153"
+      ],
+      "source_key": "[\"ररङ्गुः\",\"Lit\",\"Kartari\",\"Prathama\",\"Bahu\"]",
+      "dependencies": {
+        "benchmarks/parallel-search-20261006/oracle-policy-21.json": "e19f60de4fc58a43a72ee0a48320f0c11383a39eb21b45f2859361701158220c",
+        "data/finetune/task-data/vidyut_dhatupatha_5.tsv": "c6c494a6c534130b2d8e8f344d2f5e3ffbc64ed45b390e2a4e35e526f1cecd09",
+        "benchmarks/creation-campaign-20261006/family-split.json": "a1c46bb778bca8f89df468d65232698131a3c4b137393865cd3f6b121fc6077f",
+        "misc/vp_cartesian_task.py": "f5bfab6f3fc27b7c83bbd6987bede73501592a9568fda32a0371bd8e23b7febd",
+        "misc/vp_modification_prompt_v1.py": "4f300df8dc7bad7a55a4a786377b4adcc63c01ef9d3b3ff740010309661804a9",
+        "misc/vp_modification_task_v1.py": "28adae6b1d97706bcba41de2dc74527be1d999ed32f43bc08f56322ac878e1f7",
+        "benchmarks/parallel-search-20261007/modification-01/inverse-index.json": "ee16696afffba7d729af37be329bfc0416e8e7e81a4ed559b4780a93ef2491d8"
+      }
+    }
+  },
+  {
+    "id": "modify-b0c08759518e75b6de827710",
+    "task_type": "modification",
+    "prompt_version": "modification-v1",
+    "source_form_devanagari": "नाटयाञ्चक्रिरे",
+    "source_morphology": {
+      "lakara": "Lit",
+      "prayoga": "Kartari",
+      "purusha": "Prathama",
+      "vacana": "Bahu"
+    },
+    "target_morphology": {
+      "lakara": "Lan",
+      "prayoga": "Kartari",
+      "purusha": "Prathama",
+      "vacana": "Bahu"
+    },
+    "dhatu": {
+      "code": "10.0018",
+      "aupadeshika": "nawa~",
+      "gana": "Curadi",
+      "artha": "avaspandane"
+    },
+    "morphology": {
+      "lakara": "Lan",
+      "prayoga": "Kartari",
+      "purusha": "Prathama",
+      "vacana": "Bahu"
+    },
+    "gold_slp1": [
+      "anAwayan",
+      "anAwayanta"
+    ],
+    "gold_devanagari": [
+      "अनाटयन्",
+      "अनाटयन्त"
+    ],
+    "campaign": {
+      "root_family": "nawa~|Curadi",
+      "split": "development",
+      "construction": "word_modification",
+      "trace_rule_ids": [
+        "1.2.4",
+        "1.3.1",
+        "1.3.2",
+        "1.3.3",
+        "1.3.7",
+        "1.3.74",
+        "1.3.78",
+        "1.3.8",
+        "1.3.9",
+        "1.4.13",
+        "1.4.14",
+        "3.1.25",
+        "3.1.32",
+        "3.1.68",
+        "3.2.111",
+        "3.4.100",
+        "3.4.113",
+        "3.4.114",
+        "3.4.78",
+        "6.1.78",
+        "6.1.97",
+        "6.4.71",
+        "7.1.3",
+        "7.2.116",
+        "7.3.84",
+        "8.2.23",
+        "8.3.24",
+        "8.4.58",
+        "8.4.68"
+      ],
+      "panel": "modification-01",
+      "control_task_id": "cart4-596e93b8d4ad4eff6d26ff4b",
+      "prompt_sha256": "78b6d1cd2dfe50e49cab516d7d15b902193bcb80102a974b038ac0aa6d3c56b6"
+    },
+    "modification_audit": {
+      "candidate_codes": [
+        "10.0018"
+      ],
+      "source_key": "[\"नाटयाञ्चक्रिरे\",\"Lit\",\"Kartari\",\"Prathama\",\"Bahu\"]",
+      "dependencies": {
+        "benchmarks/parallel-search-20261006/oracle-policy-21.json": "e19f60de4fc58a43a72ee0a48320f0c11383a39eb21b45f2859361701158220c",
+        "data/finetune/task-data/vidyut_dhatupatha_5.tsv": "c6c494a6c534130b2d8e8f344d2f5e3ffbc64ed45b390e2a4e35e526f1cecd09",
+        "benchmarks/creation-campaign-20261006/family-split.json": "a1c46bb778bca8f89df468d65232698131a3c4b137393865cd3f6b121fc6077f",
+        "misc/vp_cartesian_task.py": "f5bfab6f3fc27b7c83bbd6987bede73501592a9568fda32a0371bd8e23b7febd",
+        "misc/vp_modification_prompt_v1.py": "4f300df8dc7bad7a55a4a786377b4adcc63c01ef9d3b3ff740010309661804a9",
+        "misc/vp_modification_task_v1.py": "28adae6b1d97706bcba41de2dc74527be1d999ed32f43bc08f56322ac878e1f7",
+        "benchmarks/parallel-search-20261007/modification-01/inverse-index.json": "ee16696afffba7d729af37be329bfc0416e8e7e81a4ed559b4780a93ef2491d8"
+      }
+    }
+  },
+  {
+    "id": "modify-fa369abc78905eba2986e046",
+    "task_type": "modification",
+    "prompt_version": "modification-v1",
+    "source_form_devanagari": "गवेषयेथे",
+    "source_morphology": {
+      "lakara": "Lat",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Dvi"
+    },
+    "target_morphology": {
+      "lakara": "Lun",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Dvi"
+    },
+    "dhatu": {
+      "code": "10.0425",
+      "aupadeshika": "gaveza",
+      "gana": "Curadi",
+      "artha": "mArgaRe"
+    },
+    "morphology": {
+      "lakara": "Lun",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Dvi"
+    },
+    "gold_slp1": [
+      "ajagavezatam",
+      "ajagavezeTAm"
+    ],
+    "gold_devanagari": [
+      "अजगवेषतम्",
+      "अजगवेषेथाम्"
+    ],
+    "campaign": {
+      "root_family": "gaveza|Curadi",
+      "split": "development",
+      "construction": "word_modification",
+      "trace_rule_ids": [
+        "1.1.5",
+        "1.2.4",
+        "1.3.1",
+        "1.3.2",
+        "1.3.3",
+        "1.3.4",
+        "1.3.7",
+        "1.3.74",
+        "1.3.78",
+        "1.3.9",
+        "1.4.13",
+        "1.4.14",
+        "3.1.25",
+        "3.1.32",
+        "3.1.43",
+        "3.1.48",
+        "3.2.110",
+        "3.4.101",
+        "3.4.113",
+        "3.4.114",
+        "3.4.78",
+        "6.1.11",
+        "6.1.4",
+        "6.1.5",
+        "6.1.66",
+        "6.1.87",
+        "6.4.48",
+        "6.4.51",
+        "6.4.71",
+        "7.2.81",
+        "7.4.2",
+        "7.4.60",
+        "7.4.62",
+        "8.4.68"
+      ],
+      "panel": "modification-01",
+      "control_task_id": "cart4-b6995f5d2d4cde195678e460",
+      "prompt_sha256": "897b5e0a79532b235ac73bf94472946755c69f20d45f7a2432b77e40713806db"
+    },
+    "modification_audit": {
+      "candidate_codes": [
+        "10.0425"
+      ],
+      "source_key": "[\"गवेषयेथे\",\"Lat\",\"Kartari\",\"Madhyama\",\"Dvi\"]",
+      "dependencies": {
+        "benchmarks/parallel-search-20261006/oracle-policy-21.json": "e19f60de4fc58a43a72ee0a48320f0c11383a39eb21b45f2859361701158220c",
+        "data/finetune/task-data/vidyut_dhatupatha_5.tsv": "c6c494a6c534130b2d8e8f344d2f5e3ffbc64ed45b390e2a4e35e526f1cecd09",
+        "benchmarks/creation-campaign-20261006/family-split.json": "a1c46bb778bca8f89df468d65232698131a3c4b137393865cd3f6b121fc6077f",
+        "misc/vp_cartesian_task.py": "f5bfab6f3fc27b7c83bbd6987bede73501592a9568fda32a0371bd8e23b7febd",
+        "misc/vp_modification_prompt_v1.py": "4f300df8dc7bad7a55a4a786377b4adcc63c01ef9d3b3ff740010309661804a9",
+        "misc/vp_modification_task_v1.py": "28adae6b1d97706bcba41de2dc74527be1d999ed32f43bc08f56322ac878e1f7",
+        "benchmarks/parallel-search-20261007/modification-01/inverse-index.json": "ee16696afffba7d729af37be329bfc0416e8e7e81a4ed559b4780a93ef2491d8"
+      }
+    }
+  },
+  {
+    "id": "modify-4952563cd18b56e3c49bdc61",
+    "task_type": "modification",
+    "prompt_version": "modification-v1",
+    "source_form_devanagari": "अस्फलीः",
+    "source_morphology": {
+      "lakara": "Lun",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Eka"
+    },
+    "target_morphology": {
+      "lakara": "VidhiLin",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Eka"
+    },
+    "dhatu": {
+      "code": "06.0124",
+      "aupadeshika": "sPala~",
+      "gana": "Tudadi",
+      "artha": "saYcalane"
+    },
+    "morphology": {
+      "lakara": "VidhiLin",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Eka"
+    },
+    "gold_slp1": [
+      "sPaleH"
+    ],
+    "gold_devanagari": [
+      "स्फलेः"
+    ],
+    "campaign": {
+      "root_family": "sPala~|Tudadi",
+      "split": "development",
+      "construction": "word_modification",
+      "trace_rule_ids": [
+        "1.2.1",
+        "1.2.4",
+        "1.3.1",
+        "1.3.2",
+        "1.3.3",
+        "1.3.78",
+        "1.3.8",
+        "1.3.9",
+        "1.4.13",
+        "1.4.14",
+        "3.1.77",
+        "3.3.161",
+        "3.4.100",
+        "3.4.103",
+        "3.4.113",
+        "3.4.78",
+        "6.1.66",
+        "6.1.87",
+        "7.2.79",
+        "7.2.80",
+        "8.2.66",
+        "8.3.111",
+        "8.3.15",
+        "8.4.68"
+      ],
+      "panel": "modification-01",
+      "control_task_id": "cart4-71c1ef9504e9f9917b4f1501",
+      "prompt_sha256": "a117cc8650cbb1dd7f4cf4557cc46f179dc208ee56de11c9420bfb51de861c62"
+    },
+    "modification_audit": {
+      "candidate_codes": [
+        "06.0124"
+      ],
+      "source_key": "[\"अस्फलीः\",\"Lun\",\"Kartari\",\"Madhyama\",\"Eka\"]",
+      "dependencies": {
+        "benchmarks/parallel-search-20261006/oracle-policy-21.json": "e19f60de4fc58a43a72ee0a48320f0c11383a39eb21b45f2859361701158220c",
+        "data/finetune/task-data/vidyut_dhatupatha_5.tsv": "c6c494a6c534130b2d8e8f344d2f5e3ffbc64ed45b390e2a4e35e526f1cecd09",
+        "benchmarks/creation-campaign-20261006/family-split.json": "a1c46bb778bca8f89df468d65232698131a3c4b137393865cd3f6b121fc6077f",
+        "misc/vp_cartesian_task.py": "f5bfab6f3fc27b7c83bbd6987bede73501592a9568fda32a0371bd8e23b7febd",
+        "misc/vp_modification_prompt_v1.py": "4f300df8dc7bad7a55a4a786377b4adcc63c01ef9d3b3ff740010309661804a9",
+        "misc/vp_modification_task_v1.py": "28adae6b1d97706bcba41de2dc74527be1d999ed32f43bc08f56322ac878e1f7",
+        "benchmarks/parallel-search-20261007/modification-01/inverse-index.json": "ee16696afffba7d729af37be329bfc0416e8e7e81a4ed559b4780a93ef2491d8"
+      }
+    }
+  },
+  {
+    "id": "modify-ed01f0d7df7d54baff910b15",
+    "task_type": "modification",
+    "prompt_version": "modification-v1",
+    "source_form_devanagari": "मुमुण्ठे",
+    "source_morphology": {
+      "lakara": "Lit",
+      "prayoga": "Kartari",
+      "purusha": "Uttama",
+      "vacana": "Eka"
+    },
+    "target_morphology": {
+      "lakara": "Lrt",
+      "prayoga": "Kartari",
+      "purusha": "Uttama",
+      "vacana": "Eka"
+    },
+    "dhatu": {
+      "code": "01.0298",
+      "aupadeshika": "muWi~\\",
+      "gana": "Bhvadi",
+      "artha": "pAlane"
+    },
+    "morphology": {
+      "lakara": "Lrt",
+      "prayoga": "Kartari",
+      "purusha": "Uttama",
+      "vacana": "Eka"
+    },
+    "gold_slp1": [
+      "muRWizye"
+    ],
+    "gold_devanagari": [
+      "मुण्ठिष्ये"
+    ],
+    "campaign": {
+      "root_family": "muWi~\\|Bhvadi",
+      "split": "development",
+      "construction": "word_modification",
+      "trace_rule_ids": [
+        "1.2.4",
+        "1.3.1",
+        "1.3.12",
+        "1.3.2",
+        "1.3.3",
+        "1.3.9",
+        "1.4.13",
+        "1.4.14",
+        "3.1.33",
+        "3.3.13",
+        "3.4.113",
+        "3.4.114",
+        "3.4.78",
+        "3.4.79",
+        "6.1.97",
+        "7.1.58",
+        "7.2.35",
+        "8.3.24",
+        "8.3.59",
+        "8.4.58"
+      ],
+      "panel": "modification-01",
+      "control_task_id": "cart4-f38f4a2b80ce60acee41168e",
+      "prompt_sha256": "60672d68a2102957996728afe80a0bf2ae1f7e4b956ff24f13d7f094ee27a250"
+    },
+    "modification_audit": {
+      "candidate_codes": [
+        "01.0298"
+      ],
+      "source_key": "[\"मुमुण्ठे\",\"Lit\",\"Kartari\",\"Uttama\",\"Eka\"]",
+      "dependencies": {
+        "benchmarks/parallel-search-20261006/oracle-policy-21.json": "e19f60de4fc58a43a72ee0a48320f0c11383a39eb21b45f2859361701158220c",
+        "data/finetune/task-data/vidyut_dhatupatha_5.tsv": "c6c494a6c534130b2d8e8f344d2f5e3ffbc64ed45b390e2a4e35e526f1cecd09",
+        "benchmarks/creation-campaign-20261006/family-split.json": "a1c46bb778bca8f89df468d65232698131a3c4b137393865cd3f6b121fc6077f",
+        "misc/vp_cartesian_task.py": "f5bfab6f3fc27b7c83bbd6987bede73501592a9568fda32a0371bd8e23b7febd",
+        "misc/vp_modification_prompt_v1.py": "4f300df8dc7bad7a55a4a786377b4adcc63c01ef9d3b3ff740010309661804a9",
+        "misc/vp_modification_task_v1.py": "28adae6b1d97706bcba41de2dc74527be1d999ed32f43bc08f56322ac878e1f7",
+        "benchmarks/parallel-search-20261007/modification-01/inverse-index.json": "ee16696afffba7d729af37be329bfc0416e8e7e81a4ed559b4780a93ef2491d8"
+      }
+    }
+  }
+]

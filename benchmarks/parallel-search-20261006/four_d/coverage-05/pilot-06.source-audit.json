@@ -1,0 +1,77 @@
+{
+  "created_at": "2026-10-07T13:10:34.633105+00:00",
+  "disposition": "No concrete source blocker found for the fixed96-input diagnostic. Proportionate rule/positive/negative/optional-variant review; not a claim of separately printed attestations for every generated paradigm.",
+  "primary_sources": [
+    {
+      "rule": "3.4.92",
+      "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/3/3.4.92.htm",
+      "finding": "Kashika assigns at augmentation and pit to Lot first-person endings. Nyasa explicitly assigns pit to the ending rather than the augment, blocks ngit status, and permits guna. Balamanorama specifically discusses dual/plural vas/mas and stavava."
+    },
+    {
+      "rule": "1.2.4",
+      "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/1/1.2.4.htm",
+      "finding": "Apit sarvadhatuka endings behave as ngit; this is the ordinary weak-stem condition overridden by first-person imperative pit. The condition is term-specific, not a prohibition on every1.2.4 step elsewhere in the path."
+    },
+    {
+      "rule": "6.4.111",
+      "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.4.111.htm",
+      "finding": "Nasal infix a and as lose a before k/ngit sarvadhatuka; the same rule cannot delete the strong infix before the relevant pit imperative ending."
+    },
+    {
+      "rule": "6.4.112",
+      "url": "https://sanskritdocuments.org/~sanskrit/learning_tools/sarvanisutrani/6.4.112.htm",
+      "finding": "Deletion of final A of sna and reduplicated bases is restricted to k/ngit sarvadhatuka. Together with6.4.113 this explains imperative A retention, including where at changes the following initial vowel."
+    },
+    {
+      "rule": "6.4.113",
+      "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.4.113.htm",
+      "finding": "Sna/reduplicated A changes to I before consonantal k/ngit sarvadhatuka, excluding ghu. Direct mimavahai/mimamahai versus mimivahe/mimimahe controls corroborate the same first-person contrast."
+    },
+    {
+      "rule": "7.3.84",
+      "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.3.84.htm",
+      "finding": "Guna applies to final ik of a stem before sarvadhatuka/ardhadhatuka subject to blockers. Here the pit override permits the relevant strengthening in vowel-final athematic stems/suffixes."
+    },
+    {
+      "rule": "7.3.86",
+      "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.3.86.htm",
+      "finding": "Short penultimate ik has the corresponding guna rule; lih/rud are selected ordinary athematic examples, not causatives or inherited final-a Curadi probes."
+    },
+    {
+      "rule": "3.1.78",
+      "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/3/3.1.78.htm",
+      "finding": "Rudhadi uses snam; LSK gives weak rundhvah/rundhmah and strong runadhava/runadhama imperative forms."
+    },
+    {
+      "rule": "3.1.82",
+      "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/3/3.1.82.htm",
+      "finding": "The named stumbh/skumbh group licenses both sna and snu. Both resulting gold branches must remain accepted; no hidden branch is selected."
+    },
+    {
+      "rule": "6.4.107",
+      "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.4.107.htm",
+      "finding": "Optional loss of unconjoined suffix-u before m/v supplies valid weak-form variants; the full union is retained where applicable."
+    }
+  ],
+  "source_extraction": {
+    "path": "sources/web-primary-extract.json",
+    "sha256": "84dfeae4dc39de6c28300d43c05d48566191b1326dfb5e7ff57107a5aa7deff3",
+    "kind": "Saved primary web text extraction; direct rawHTML retrieval returned406, so no rawHTML download is claimed."
+  },
+  "controls": {
+    "path": "pilot-06.source-controls.json",
+    "sha256": "3f567401a497d1223721215065a9fe0780343c48ac0f363d81122e55b97d82b5",
+    "n": 18,
+    "positive_and_matched_weak": 16,
+    "negative": 2,
+    "all_derivation_paths_preserved": true
+  },
+  "independent_review": "../pilot-06-independent-review/review.json",
+  "optional_variants": "All96 prompts leave pada unspecified and accept the complete engine union. Independent review regenerated each task with explicit P/A separately and confirmed exact union equality. Stumbh/skumbh retain sna and snu alternatives.",
+  "novelty": "Three related grammatical interactions, not a new ruleID: permissible guna, retained nasal-infix a, and retained sna/reduplicated A under3.4.92. Target/control inputs differ only in lakara; no extra per-question dimensions.",
+  "semantic_scope": "Kartari dictionary entries need no chosen object/transitivity screen. Current shared21 entry/oracle exclusions plus the existing local uncertainties apply. No dialect toggle, prefixes or added sanadi.",
+  "limits": "Every target is first-person non-singular imperative. Gana, voice and person distributions do not represent a final broad benchmark. Source licensing establishes validity, not hardness.",
+  "proposed_policy_changes": [],
+  "no_model_answers_read": true,
+  "no_paid_calls": true
+}

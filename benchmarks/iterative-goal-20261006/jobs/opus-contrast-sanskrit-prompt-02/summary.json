@@ -1,0 +1,58 @@
+{
+  "id": "opus-contrast-sanskrit-prompt-02",
+  "provider": "Anthropic",
+  "phase": "explore",
+  "n": 120,
+  "tasks_digest": "b01954a9a20b5fd2bcdb23473b98c7eb6ae4f167c9baa823e8a760d2469778d5",
+  "requests_digest": "8d3b99635971211612379b40fa34444ffe341d35bbfe6510cb4aca4b19349a7d",
+  "created_at": "2026-10-07T02:04:41.673980+00:00",
+  "status": "ended",
+  "batch_id": "msgbatch_017Lp7EbuB1hEaMbGk4kW1cz",
+  "attempted_at": "2026-10-07T02:05:14.085741+00:00",
+  "reservation_micro": 20020800,
+  "input_file_id": null,
+  "transport": "batch",
+  "batch": {
+    "id": "msgbatch_017Lp7EbuB1hEaMbGk4kW1cz",
+    "type": "message_batch",
+    "processing_status": "ended",
+    "request_counts": {
+      "processing": 0,
+      "succeeded": 120,
+      "errored": 0,
+      "canceled": 0,
+      "expired": 0
+    },
+    "ended_at": "2026-10-07T02:10:58.586526+00:00",
+    "created_at": "2026-10-07T02:05:15.022812+00:00",
+    "expires_at": "2026-10-08T02:05:15.022812+00:00",
+    "archived_at": null,
+    "cancel_initiated_at": null,
+    "results_url": "https://api.anthropic.com/v1/messages/batches/msgbatch_017Lp7EbuB1hEaMbGk4kW1cz/results"
+  },
+  "collected_at": "2026-10-07T02:11:02.085840+00:00",
+  "usage": {
+    "input_tokens": 111684,
+    "output_tokens": 242156,
+    "cache_read": 0,
+    "cache_write": 0
+  },
+  "summary": {
+    "task_count": 120,
+    "correct": 19,
+    "incorrect_or_no_answer": 101,
+    "unscored": 0,
+    "pass_at_1_all_tasks": 0.15833333333333333,
+    "truncated": 1,
+    "statuses": {
+      "refused": 86,
+      "completed": 33,
+      "incomplete": 1
+    }
+  },
+  "completed_answers": 33,
+  "completed_correct": 19,
+  "actual_cost_upper_micro": 2644928,
+  "token_policy_violations": [],
+  "settled": true
+}

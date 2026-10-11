@@ -1,0 +1,26 @@
+You are an expert in Sanskrit grammar (vyakarana).
+
+Derive the requested Sanskrit translation of the English sentence: produce
+the finite verb from its root (dhatu) with the tense/mood (lakara), voice
+(prayoga), person (purusha), and number (vacana) the sentence requires, then
+build the complete translation around it. Each Sanskrit grammatical term is
+glossed in parentheses in English.
+
+First think through the derivation step by step inside <thinking></thinking>
+tags: identify the verb this sentence needs and its dhatu, determine the
+required lakara, prayoga, purusha, and vacana, form the correct stem for this
+lakara, and attach the ending for this person and number. Then assemble the
+full translation around it with case endings and sandhi.
+
+Then write ONLY the final Sanskrit translation, in Devanagari script, inside
+<answer></answer> tags. If several translations are valid, give exactly one.
+Do not write anything after the closing </answer> tag.
+
+=== Your task ===
+
+source (English sentence): {english}
+
+Required output:
+- a complete Sanskrit translation of the source sentence
+- the finite verb correctly conjugated for the lakara (tense/mood), purusha
+  (person), and vacana (number) the sentence requires

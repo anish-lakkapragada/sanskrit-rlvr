@@ -1,0 +1,57 @@
+{
+  "id": "opus-cartesian-wording-01-v1",
+  "provider": "Anthropic",
+  "phase": "explore",
+  "n": 36,
+  "tasks_digest": "30157df274b4a01d3a492f2587effe3d3b91af16a12caeb4c56259a62297eca9",
+  "requests_digest": "eae0911383e8f3f69cce51d66990c0ce4f16eb8ebcb181d0d94ff97ce7c94cc5",
+  "created_at": "2026-10-07T07:01:38.074335+00:00",
+  "status": "ended",
+  "batch_id": "msgbatch_01225hVXZYp23xscpCSzeDda",
+  "attempted_at": "2026-10-07T07:02:22.064516+00:00",
+  "reservation_micro": 6006240,
+  "input_file_id": null,
+  "transport": "batch",
+  "batch": {
+    "id": "msgbatch_01225hVXZYp23xscpCSzeDda",
+    "type": "message_batch",
+    "processing_status": "ended",
+    "request_counts": {
+      "processing": 0,
+      "succeeded": 36,
+      "errored": 0,
+      "canceled": 0,
+      "expired": 0
+    },
+    "ended_at": "2026-10-07T07:06:37.224336+00:00",
+    "created_at": "2026-10-07T07:02:22.938747+00:00",
+    "expires_at": "2026-10-08T07:02:22.938747+00:00",
+    "archived_at": null,
+    "cancel_initiated_at": null,
+    "results_url": "https://api.anthropic.com/v1/messages/batches/msgbatch_01225hVXZYp23xscpCSzeDda/results"
+  },
+  "collected_at": "2026-10-07T07:06:51.936860+00:00",
+  "usage": {
+    "input_tokens": 16272,
+    "output_tokens": 57464,
+    "cache_read": 0,
+    "cache_write": 0
+  },
+  "summary": {
+    "task_count": 36,
+    "correct": 21,
+    "incorrect_or_no_answer": 15,
+    "unscored": 0,
+    "pass_at_1_all_tasks": 0.5833333333333334,
+    "truncated": 0,
+    "statuses": {
+      "refused": 7,
+      "completed": 29
+    }
+  },
+  "completed_answers": 29,
+  "completed_correct": 21,
+  "actual_cost_upper_micro": 607184,
+  "token_policy_violations": [],
+  "settled": true
+}

@@ -1,0 +1,234 @@
+{
+  "created_at": "2026-10-07T06:44:02.745234+00:00",
+  "run_id": "overnight-search-03",
+  "seed": 2026100703,
+  "questions_sha256": "bd22abe7592b5bbe29ed9c3aab95ba3bfe25f007afb78cb76d7920e2471dc0ec",
+  "n": 178,
+  "unique_families": 140,
+  "maximum_tasks_per_family": 2,
+  "family_size_histogram": {
+    "1": 102,
+    "2": 38
+  },
+  "partially_collapsed_marker_family_count": 127,
+  "distribution": {
+    "lakara": {
+      "Lit": 66,
+      "Lat": 6,
+      "Lot": 6,
+      "Lut": 30,
+      "AshirLin": 6,
+      "Lrt": 22,
+      "VidhiLin": 6,
+      "Lan": 6,
+      "Lrn": 24,
+      "Lun": 6
+    },
+    "prayoga": {
+      "Kartari": 178
+    },
+    "purusha": {
+      "Uttama": 60,
+      "Prathama": 60,
+      "Madhyama": 58
+    },
+    "vacana": {
+      "Bahu": 59,
+      "Dvi": 59,
+      "Eka": 60
+    },
+    "gana": {
+      "Divadi": 15,
+      "Bhvadi": 114,
+      "Tudadi": 17,
+      "Adadi": 3,
+      "Tanadi": 3,
+      "Rudhadi": 6,
+      "Svadi": 5,
+      "Kryadi": 13,
+      "Juhotyadi": 2
+    }
+  },
+  "cells": {
+    "same_gana_marker_contrast": {
+      "n": 60,
+      "families": 60,
+      "subtypes": {
+        "anubandha_contrast": 45,
+        "accent_contrast": 15
+      }
+    },
+    "weak_perfect_alternation": {
+      "n": 60,
+      "families": 47,
+      "subtypes": {
+        "prohibition": 30,
+        "positive_e_or_optional_e": 30
+      }
+    },
+    "special_it_nonpresent": {
+      "n": 58,
+      "families": 33,
+      "subtypes": {
+        "special_it": 58
+      }
+    }
+  },
+  "preliminary_manifest_path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/parallel-search-20261006/four_d/pilot-03.manifest.json",
+  "preliminary_questions_sha256": "5ea4d5ce927a6b99872f5ae8a3e8dbfd213e16cd45fed0e59b7f345c2100440b",
+  "revision": {
+    "reason": "Uniform finite-scope quarantine of dictionary01.1088 following a primary lexical restriction",
+    "removed_task_ids": [
+      "cart4-ec08b45147ff27aaaf1b09bb",
+      "cart4-a3fed3af7bc9c4da70a29ddc"
+    ],
+    "replacement_tasks": 0,
+    "score_exposure_before_revision": false
+  },
+  "generation_design": "Prespecified source-audited180task recipe, then deterministic deletion of the two unsupported lexical entry tuples. All other members retained; no outcome-based replacement.",
+  "source_audit_path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/parallel-search-20261006/four_d/pilot-03.source-audit.json",
+  "source_audit_sha256": "7f12873692d24b7242ec185e19af1a06b60c095918e918fe4dc239c9564e21a2",
+  "lexical_addendum_path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/parallel-search-20261006/four_d/pilot-03.lexical-addendum.json",
+  "generator_sha256": "79908733cddae76c0e7d2db14d12c4063fddade679f08b88affc76c9c57b104b",
+  "revision_generator_sha256": "efc8b38c6913a4eda81cebb9ebf3a2eeeb30ce73e744312163207b6e90538b49",
+  "adapter_sha256": "ad7bde1f5304dbf7a7e6d31c6e03beda2accbde2d6809e6e4cfd29b213349c8e",
+  "family_split_sha256": "a1c46bb778bca8f89df468d65232698131a3c4b137393865cd3f6b121fc6077f",
+  "supply": {
+    "prior_pilot01_plus02_union": {
+      "tuples": 17588,
+      "families": 572,
+      "capacity_at_family_caps": {
+        "3": 1714,
+        "5": 2854,
+        "6": 3424,
+        "10": 5627
+      },
+      "gana": {
+        "Bhvadi": 4937,
+        "Adadi": 976,
+        "Juhotyadi": 451,
+        "Divadi": 1727,
+        "Svadi": 394,
+        "Tudadi": 966,
+        "Rudhadi": 407,
+        "Tanadi": 105,
+        "Kryadi": 1433,
+        "Curadi": 6192
+      },
+      "lakara": {
+        "Lat": 1963,
+        "Lot": 2070,
+        "Lan": 2029,
+        "VidhiLin": 2091,
+        "Lit": 1650,
+        "Lut": 2124,
+        "Lrt": 1989,
+        "AshirLin": 873,
+        "Lun": 828,
+        "Lrn": 1971
+      }
+    },
+    "new_predicates": {
+      "tuples": 12218,
+      "families": 387,
+      "capacity_at_family_caps": {
+        "3": 869,
+        "5": 1349,
+        "6": 1589,
+        "10": 2375
+      },
+      "gana": {
+        "Bhvadi": 9987,
+        "Adadi": 295,
+        "Juhotyadi": 72,
+        "Divadi": 534,
+        "Svadi": 93,
+        "Tudadi": 489,
+        "Rudhadi": 63,
+        "Tanadi": 11,
+        "Kryadi": 674
+      },
+      "lakara": {
+        "Lat": 1017,
+        "Lit": 1940,
+        "Lut": 1332,
+        "Lrt": 1422,
+        "Lot": 1017,
+        "Lan": 1017,
+        "VidhiLin": 1017,
+        "AshirLin": 1017,
+        "Lun": 1017,
+        "Lrn": 1422
+      }
+    },
+    "new_tuples_outside_prior_union": {
+      "tuples": 10680,
+      "families": 329,
+      "capacity_at_family_caps": {
+        "3": 787,
+        "5": 1242,
+        "6": 1469,
+        "10": 2228
+      },
+      "gana": {
+        "Bhvadi": 8927,
+        "Adadi": 216,
+        "Juhotyadi": 45,
+        "Divadi": 491,
+        "Svadi": 72,
+        "Tudadi": 472,
+        "Rudhadi": 45,
+        "Kryadi": 412
+      },
+      "lakara": {
+        "Lat": 750,
+        "Lit": 1549,
+        "Lut": 1332,
+        "Lrt": 1422,
+        "Lot": 750,
+        "Lan": 750,
+        "VidhiLin": 747,
+        "AshirLin": 963,
+        "Lun": 995,
+        "Lrn": 1422
+      }
+    },
+    "all_predicates_union": {
+      "tuples": 28268,
+      "families": 756,
+      "capacity_at_family_caps": {
+        "3": 2142,
+        "5": 3528,
+        "6": 4221,
+        "10": 6832
+      },
+      "gana": {
+        "Bhvadi": 13864,
+        "Adadi": 1192,
+        "Juhotyadi": 496,
+        "Divadi": 2218,
+        "Svadi": 466,
+        "Tudadi": 1438,
+        "Rudhadi": 452,
+        "Tanadi": 105,
+        "Kryadi": 1845,
+        "Curadi": 6192
+      },
+      "lakara": {
+        "Lat": 2713,
+        "Lit": 3199,
+        "Lut": 3456,
+        "Lrt": 3411,
+        "Lot": 2820,
+        "Lan": 2779,
+        "VidhiLin": 2838,
+        "AshirLin": 1836,
+        "Lun": 1823,
+        "Lrn": 3393
+      }
+    }
+  },
+  "no_test_model_answers_read": true,
+  "final_membership_selected": false,
+  "benchmark_ready": false
+}

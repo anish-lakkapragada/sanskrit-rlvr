@@ -1,0 +1,1125 @@
+{
+  "created_at": "2026-10-07T09:58:51.160761+00:00",
+  "kind": "unpaid input/source validity review",
+  "shared_policy_at_review": "oracle-policy-16",
+  "candidate_path": "benchmarks/parallel-search-20261006/five_d/candidate-4800/revision-01/tasks.json",
+  "candidate_sha256": "d639305f42598f3eee133865312399832653be98a7737b5f763e77832e4f063a",
+  "read_final_model_answers": false,
+  "shared_policy_mutated": false,
+  "status": "recommend coordinator review; no policy change made",
+  "findings": [
+    {
+      "id": "aj_late_base_substitution",
+      "severity": "block candidate inputs pending coordinator source review",
+      "predicate": {
+        "codes": [
+          "01.0262"
+        ],
+        "sanadi_exact": [
+          "san"
+        ],
+        "lakaras": [
+          "Lit",
+          "Lut",
+          "Lrt",
+          "AshirLin",
+          "Lun",
+          "Lrn"
+        ]
+      },
+      "source_rules": [
+        "2.4.56",
+        "7.3.60"
+      ],
+      "evidence": [
+        {
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/2/2.4.56.htm",
+          "work": "Kashika and Nyasa",
+          "claim": "The initial aj-to-vI substitution is optional in the consonant-initial ardhadhatuka environment. This licenses initial alternatives, not a second replacement inside a completed desiderative."
+        },
+        {
+          "url": "https://sa.wikisource.org/wiki/बृहद्धातुरूपावलिः",
+          "work": "Brhaddhaturupavali, aj entry89",
+          "quote": "अजिजिषति",
+          "claim": "The unsubstituted desiderative is explicitly printed. The neighboring vI-form is OCR-damaged; the aj control is clear."
+        }
+      ],
+      "mechanical_defect": "A trace first chooses no substitution, forms a-ji-j-i-sa, then applies 2.4.56 to the residual lexical term before an outer nonpresent ending. It yields ajivayiz- and loses source-supported ajijiz-. AshirLin loses the aj alternative entirely.",
+      "candidate_expected_inference": [
+        "ajijizizyasi",
+        "Ajijizizma"
+      ],
+      "expected_note": "These finite forms are regular inflectional inferences from the directly sourced desiderative stem, not independently printed forms and not replacement gold.",
+      "preserve_controls": {
+        "Lat": [
+          "ajijizati",
+          "vivIzati"
+        ],
+        "Lot": "ajijiza- and vivIza- both survive",
+        "Lan": "Ajijiza- and avivIza- both survive",
+        "VidhiLin": "ajijize- and vivIze- both survive"
+      },
+      "scope_note": "Exact single-san predicate only. Do not extend automatically to arbitrary nested recipes or ordinary four-dimensional aj inflection.",
+      "affected_candidate_count": 2,
+      "affected_candidate_inputs": [
+        {
+          "id": "cart5-7f7da22bc14b7467d60d27ce",
+          "dhatu": {
+            "code": "01.0262",
+            "aupadeshika": "aja~",
+            "gana": "Bhvadi",
+            "artha": "gatikzepaRayoH"
+          },
+          "morphology": {
+            "lakara": "Lrt",
+            "prayoga": "Kartari",
+            "purusha": "Madhyama",
+            "vacana": "Eka"
+          },
+          "gold_slp1": [
+            "ajivayizizyasi",
+            "vivIzizyasi"
+          ],
+          "gold_devanagari": [
+            "अजिवयिषिष्यसि",
+            "विवीषिष्यसि"
+          ]
+        },
+        {
+          "id": "cart5-fba54ec35f900cfda476455c",
+          "dhatu": {
+            "code": "01.0262",
+            "aupadeshika": "aja~",
+            "gana": "Bhvadi",
+            "artha": "gatikzepaRayoH"
+          },
+          "morphology": {
+            "lakara": "Lun",
+            "prayoga": "Kartari",
+            "purusha": "Uttama",
+            "vacana": "Bahu"
+          },
+          "gold_slp1": [
+            "Ajivayizizma",
+            "avivIzizma"
+          ],
+          "gold_devanagari": [
+            "आजिवयिषिष्म",
+            "अविवीषिष्म"
+          ]
+        }
+      ],
+      "diagnostic_trace_events": [
+        {
+          "task_id": "cart5-7f7da22bc14b7467d60d27ce",
+          "vp_output": "ajivayizizyasi",
+          "events": [
+            {
+              "index": 17,
+              "before": [
+                "a",
+                "ji",
+                "j",
+                "i",
+                "sa"
+              ],
+              "rule": "7.3.60",
+              "result": [
+                "a",
+                "ji",
+                "j",
+                "i",
+                "sa"
+              ]
+            },
+            {
+              "index": 27,
+              "before": [
+                "a",
+                "ji",
+                "j",
+                "i",
+                "sa",
+                "si"
+              ],
+              "rule": "2.4.56",
+              "result": [
+                "a",
+                "ji",
+                "vI\\",
+                "i",
+                "sa",
+                "si"
+              ]
+            }
+          ]
+        },
+        {
+          "task_id": "cart5-7f7da22bc14b7467d60d27ce",
+          "vp_output": "vivIzizyasi",
+          "events": [
+            {
+              "index": 9,
+              "before": [
+                "aj",
+                "sa"
+              ],
+              "rule": "2.4.56",
+              "result": [
+                "vI\\",
+                "sa"
+              ]
+            }
+          ]
+        },
+        {
+          "task_id": "cart5-fba54ec35f900cfda476455c",
+          "vp_output": "Ajivayizizma",
+          "events": [
+            {
+              "index": 17,
+              "before": [
+                "a",
+                "ji",
+                "j",
+                "i",
+                "sa"
+              ],
+              "rule": "7.3.60",
+              "result": [
+                "a",
+                "ji",
+                "j",
+                "i",
+                "sa"
+              ]
+            },
+            {
+              "index": 26,
+              "before": [
+                "a",
+                "ji",
+                "j",
+                "i",
+                "sa",
+                "mas"
+              ],
+              "rule": "2.4.56",
+              "result": [
+                "a",
+                "ji",
+                "vI\\",
+                "i",
+                "sa",
+                "mas"
+              ]
+            }
+          ]
+        },
+        {
+          "task_id": "cart5-fba54ec35f900cfda476455c",
+          "vp_output": "avivIzizma",
+          "events": [
+            {
+              "index": 9,
+              "before": [
+                "aj",
+                "sa"
+              ],
+              "rule": "2.4.56",
+              "result": [
+                "vI\\",
+                "sa"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "didhivevi_repeated_final_deletion",
+      "severity": "block candidate inputs pending coordinator source review",
+      "predicate": {
+        "codes": [
+          "02.0071",
+          "02.0072"
+        ],
+        "sanadi_exact": [
+          "san"
+        ]
+      },
+      "source_rules": [
+        "1.1.6",
+        "7.4.53"
+      ],
+      "evidence": [
+        {
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.4.53.htm",
+          "work": "Kashika, Nyasa and Balamanorama",
+          "quote": "ईकारस्य लोपः",
+          "claim": "Before y or i-vowels, the deletion is of the final I of dIdhI/vevI. Nyasa invokes alo antyasya; Balamanorama identifies the I explicitly."
+        },
+        {
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/1/1.1.6.htm",
+          "work": "Kashika and Nyasa",
+          "claim": "These exact lexical roots receive the guna/vrddhi prohibition; these are not the independent monosyllabic dI, dhI, ve or vI roots."
+        }
+      ],
+      "mechanical_defect": "7.4.53 runs twice on the same residual lexical term. dIDI becomes dID, then dI (erroneously losing D); vevI becomes vev, then ve (erroneously losing v). Later vowel rules create didyiz- and vivayiz-. Bare desiderative and present controls are already affected.",
+      "source_rule_stem_inference": [
+        "didIDiza",
+        "viveviza"
+      ],
+      "expected_note": "Stem reconstructions follow one I deletion plus regular reduplication; no complete rare paradigm is claimed printed or proposed as edited gold.",
+      "scope_note": "The separate classical-versus-Vedic scope dispute is unresolved and is not the basis for this hold. Preserve ordinary dictionary forms and unrelated uses of 7.4.53.",
+      "affected_candidate_count": 3,
+      "affected_candidate_inputs": [
+        {
+          "id": "cart5-55420c3e57848480678a074b",
+          "dhatu": {
+            "code": "02.0071",
+            "aupadeshika": "dIDIN",
+            "gana": "Adadi",
+            "artha": "dIptidevanayoH"
+          },
+          "morphology": {
+            "lakara": "Lun",
+            "prayoga": "Kartari",
+            "purusha": "Uttama",
+            "vacana": "Eka"
+          },
+          "gold_slp1": [
+            "adidyizizi"
+          ],
+          "gold_devanagari": [
+            "अदिद्यिषिषि"
+          ]
+        },
+        {
+          "id": "cart5-2659baab01d71c1baca70757",
+          "dhatu": {
+            "code": "02.0072",
+            "aupadeshika": "vevIN",
+            "gana": "Adadi",
+            "artha": "gativyAptiprajanakAntyasanasvAdanezu"
+          },
+          "morphology": {
+            "lakara": "Lit",
+            "prayoga": "Kartari",
+            "purusha": "Prathama",
+            "vacana": "Eka"
+          },
+          "gold_slp1": [
+            "vivayizAYcakre",
+            "vivayizAmAsa",
+            "vivayizAmbaBUva"
+          ],
+          "gold_devanagari": [
+            "विवयिषाञ्चक्रे",
+            "विवयिषामास",
+            "विवयिषाम्बभूव"
+          ]
+        },
+        {
+          "id": "cart5-cadc83e4daed6f1edb8a54dc",
+          "dhatu": {
+            "code": "02.0072",
+            "aupadeshika": "vevIN",
+            "gana": "Adadi",
+            "artha": "gativyAptiprajanakAntyasanasvAdanezu"
+          },
+          "morphology": {
+            "lakara": "Lun",
+            "prayoga": "Kartari",
+            "purusha": "Uttama",
+            "vacana": "Dvi"
+          },
+          "gold_slp1": [
+            "avivayizizvahi"
+          ],
+          "gold_devanagari": [
+            "अविवयिषिष्वहि"
+          ]
+        }
+      ],
+      "diagnostic_trace_events": [
+        {
+          "task_id": "cart5-55420c3e57848480678a074b",
+          "vp_output": "adidyizizi",
+          "events": [
+            {
+              "index": 13,
+              "before": [
+                "dIDI",
+                "i",
+                "sa"
+              ],
+              "rule": "1.1.6",
+              "result": [
+                "dIDI",
+                "i",
+                "sa"
+              ]
+            },
+            {
+              "index": 20,
+              "before": [
+                "di",
+                "dIDI",
+                "i",
+                "sa"
+              ],
+              "rule": "7.4.53",
+              "result": [
+                "di",
+                "dID",
+                "i",
+                "sa"
+              ]
+            },
+            {
+              "index": 45,
+              "before": [
+                "a",
+                "di",
+                "dID",
+                "i",
+                "s",
+                "i",
+                "s",
+                "i"
+              ],
+              "rule": "7.4.53",
+              "result": [
+                "a",
+                "di",
+                "dI",
+                "i",
+                "s",
+                "i",
+                "s",
+                "i"
+              ]
+            }
+          ]
+        },
+        {
+          "task_id": "cart5-55420c3e57848480678a074b",
+          "vp_output": "adidyizizi",
+          "events": [
+            {
+              "index": 13,
+              "before": [
+                "dIDI",
+                "i",
+                "sa"
+              ],
+              "rule": "1.1.6",
+              "result": [
+                "dIDI",
+                "i",
+                "sa"
+              ]
+            },
+            {
+              "index": 20,
+              "before": [
+                "di",
+                "dIDI",
+                "i",
+                "sa"
+              ],
+              "rule": "7.4.53",
+              "result": [
+                "di",
+                "dID",
+                "i",
+                "sa"
+              ]
+            },
+            {
+              "index": 44,
+              "before": [
+                "a",
+                "di",
+                "dID",
+                "i",
+                "s",
+                "i",
+                "s",
+                "i"
+              ],
+              "rule": "7.4.53",
+              "result": [
+                "a",
+                "di",
+                "dI",
+                "i",
+                "s",
+                "i",
+                "s",
+                "i"
+              ]
+            }
+          ]
+        },
+        {
+          "task_id": "cart5-2659baab01d71c1baca70757",
+          "vp_output": "vivayizAmbaBUva",
+          "events": [
+            {
+              "index": 13,
+              "before": [
+                "vevI",
+                "i",
+                "sa"
+              ],
+              "rule": "1.1.6",
+              "result": [
+                "vevI",
+                "i",
+                "sa"
+              ]
+            },
+            {
+              "index": 20,
+              "before": [
+                "vi",
+                "vevI",
+                "i",
+                "sa"
+              ],
+              "rule": "7.4.53",
+              "result": [
+                "vi",
+                "vev",
+                "i",
+                "sa"
+              ]
+            },
+            {
+              "index": 48,
+              "before": [
+                "vi",
+                "vev",
+                "i",
+                "s",
+                "Am",
+                "Ba",
+                "BU",
+                "v",
+                "a"
+              ],
+              "rule": "7.4.53",
+              "result": [
+                "vi",
+                "ve",
+                "i",
+                "s",
+                "Am",
+                "Ba",
+                "BU",
+                "v",
+                "a"
+              ]
+            }
+          ]
+        },
+        {
+          "task_id": "cart5-2659baab01d71c1baca70757",
+          "vp_output": "vivayizAmAsa",
+          "events": [
+            {
+              "index": 13,
+              "before": [
+                "vevI",
+                "i",
+                "sa"
+              ],
+              "rule": "1.1.6",
+              "result": [
+                "vevI",
+                "i",
+                "sa"
+              ]
+            },
+            {
+              "index": 20,
+              "before": [
+                "vi",
+                "vevI",
+                "i",
+                "sa"
+              ],
+              "rule": "7.4.53",
+              "result": [
+                "vi",
+                "vev",
+                "i",
+                "sa"
+              ]
+            },
+            {
+              "index": 45,
+              "before": [
+                "vi",
+                "vev",
+                "i",
+                "s",
+                "Am",
+                "A",
+                "As",
+                "a"
+              ],
+              "rule": "7.4.53",
+              "result": [
+                "vi",
+                "ve",
+                "i",
+                "s",
+                "Am",
+                "A",
+                "As",
+                "a"
+              ]
+            }
+          ]
+        },
+        {
+          "task_id": "cart5-2659baab01d71c1baca70757",
+          "vp_output": "vivayizAYcakre",
+          "events": [
+            {
+              "index": 13,
+              "before": [
+                "vevI",
+                "i",
+                "sa"
+              ],
+              "rule": "1.1.6",
+              "result": [
+                "vevI",
+                "i",
+                "sa"
+              ]
+            },
+            {
+              "index": 20,
+              "before": [
+                "vi",
+                "vevI",
+                "i",
+                "sa"
+              ],
+              "rule": "7.4.53",
+              "result": [
+                "vi",
+                "vev",
+                "i",
+                "sa"
+              ]
+            },
+            {
+              "index": 43,
+              "before": [
+                "vi",
+                "vev",
+                "i",
+                "s",
+                "Am",
+                "ca",
+                "kf",
+                "e"
+              ],
+              "rule": "7.4.53",
+              "result": [
+                "vi",
+                "ve",
+                "i",
+                "s",
+                "Am",
+                "ca",
+                "kf",
+                "e"
+              ]
+            }
+          ]
+        },
+        {
+          "task_id": "cart5-cadc83e4daed6f1edb8a54dc",
+          "vp_output": "avivayizizvahi",
+          "events": [
+            {
+              "index": 13,
+              "before": [
+                "vevI",
+                "i",
+                "sa"
+              ],
+              "rule": "1.1.6",
+              "result": [
+                "vevI",
+                "i",
+                "sa"
+              ]
+            },
+            {
+              "index": 20,
+              "before": [
+                "vi",
+                "vevI",
+                "i",
+                "sa"
+              ],
+              "rule": "7.4.53",
+              "result": [
+                "vi",
+                "vev",
+                "i",
+                "sa"
+              ]
+            },
+            {
+              "index": 42,
+              "before": [
+                "a",
+                "vi",
+                "vev",
+                "i",
+                "s",
+                "i",
+                "s",
+                "vahi"
+              ],
+              "rule": "7.4.53",
+              "result": [
+                "a",
+                "vi",
+                "ve",
+                "i",
+                "s",
+                "i",
+                "s",
+                "vahi"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rdh_augmented_repeated_ii",
+      "severity": "block candidate inputs pending coordinator source review",
+      "predicate": {
+        "codes": [
+          "04.0160"
+        ],
+        "sanadi_exact": [
+          "san"
+        ],
+        "lakaras": [
+          "Lan",
+          "Lun",
+          "Lrn"
+        ]
+      },
+      "source_rules": [
+        "7.2.49",
+        "7.4.55",
+        "7.4.58"
+      ],
+      "evidence": [
+        {
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.4.55.htm",
+          "work": "Kashika and Nyasa",
+          "quote": "ईर्त्सति",
+          "claim": "The no-it desiderative substitutes I for the original vocalic r and deletes the reduplicative syllable. The it alternative is ardidhisati."
+        },
+        {
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.2.49.htm",
+          "work": "Kashika and Nyasa",
+          "claim": "Both ardidhisati and irtsati are explicitly licensed for rdh."
+        },
+        {
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.4.58.htm",
+          "work": "Kashika",
+          "claim": "The reduplicative syllable disappears in these special desideratives."
+        }
+      ],
+      "mechanical_defect": "The first7.4.55 application correctly forms Ir. After augment insertion, a second application forms IIr; augment sandhi and6.1.78 then produce AyIrts-. Controls show the defect for all three augmented tenses and correct Irts- in nonaugmented tenses.",
+      "candidate_expected_inference": [
+        "ErtsizuH"
+      ],
+      "expected_note": "Finite form inferred from directly sourced Irtsa plus the ordinary augment/aorist rules; not edited gold.",
+      "preserve_controls": {
+        "Lat": [
+          "Irtsati",
+          "ardiDizati"
+        ],
+        "Lrt": [
+          "Irtsizyati",
+          "ardiDizizyati"
+        ],
+        "Lit": "both uncorrupted stems",
+        "Lut": "both uncorrupted stems",
+        "AshirLin": "both uncorrupted stems"
+      },
+      "scope_note": "Exact single-san plus augmented-tense predicate. Do not exclude all rdh or all occurrences of7.4.55.",
+      "affected_candidate_count": 1,
+      "affected_candidate_inputs": [
+        {
+          "id": "cart5-3df0da46e2d4f4a1e8b69ae7",
+          "dhatu": {
+            "code": "04.0160",
+            "aupadeshika": "fDu~",
+            "gana": "Divadi",
+            "artha": "vfdDO"
+          },
+          "morphology": {
+            "lakara": "Lun",
+            "prayoga": "Kartari",
+            "purusha": "Prathama",
+            "vacana": "Bahu"
+          },
+          "gold_slp1": [
+            "ArdiDizizuH",
+            "AyIrtsizuH"
+          ],
+          "gold_devanagari": [
+            "आर्दिधिषिषुः",
+            "आयीर्त्सिषुः"
+          ]
+        }
+      ],
+      "diagnostic_trace_events": [
+        {
+          "task_id": "cart5-3df0da46e2d4f4a1e8b69ae7",
+          "vp_output": "ArdiDizizuH",
+          "events": [
+            {
+              "index": 9,
+              "before": [
+                "fD",
+                "sa"
+              ],
+              "rule": "7.2.49",
+              "result": [
+                "fD",
+                "iw",
+                "sa"
+              ]
+            },
+            {
+              "index": 39,
+              "before": [
+                "ar",
+                "Di",
+                "D",
+                "i",
+                "sa",
+                "i",
+                "s",
+                "us"
+              ],
+              "rule": "6.4.72",
+              "result": [
+                "Aw",
+                "ar",
+                "Di",
+                "D",
+                "i",
+                "sa",
+                "i",
+                "s",
+                "us"
+              ]
+            },
+            {
+              "index": 44,
+              "before": [
+                "A",
+                "ar",
+                "Di",
+                "D",
+                "i",
+                "s",
+                "i",
+                "s",
+                "us"
+              ],
+              "rule": "6.1.90",
+              "result": [
+                "",
+                "Ar",
+                "Di",
+                "D",
+                "i",
+                "s",
+                "i",
+                "s",
+                "us"
+              ]
+            }
+          ]
+        },
+        {
+          "task_id": "cart5-3df0da46e2d4f4a1e8b69ae7",
+          "vp_output": "AyIrtsizuH",
+          "events": [
+            {
+              "index": 9,
+              "before": [
+                "fD",
+                "sa"
+              ],
+              "rule": "7.2.49",
+              "result": [
+                "fD",
+                "sa"
+              ]
+            },
+            {
+              "index": 16,
+              "before": [
+                "f",
+                "Dsa",
+                "D",
+                "sa"
+              ],
+              "rule": "7.4.55",
+              "result": [
+                "Ir",
+                "Dsa",
+                "D",
+                "sa"
+              ]
+            },
+            {
+              "index": 17,
+              "before": [
+                "Ir",
+                "Dsa",
+                "D",
+                "sa"
+              ],
+              "rule": "7.4.58",
+              "result": [
+                "Ir",
+                "",
+                "D",
+                "sa"
+              ]
+            },
+            {
+              "index": 41,
+              "before": [
+                "Ir",
+                "",
+                "D",
+                "sa",
+                "i",
+                "s",
+                "us"
+              ],
+              "rule": "6.4.72",
+              "result": [
+                "Aw",
+                "Ir",
+                "",
+                "D",
+                "sa",
+                "i",
+                "s",
+                "us"
+              ]
+            },
+            {
+              "index": 45,
+              "before": [
+                "A",
+                "Ir",
+                "",
+                "D",
+                "s",
+                "i",
+                "s",
+                "us"
+              ],
+              "rule": "7.4.55",
+              "result": [
+                "A",
+                "IIr",
+                "",
+                "D",
+                "s",
+                "i",
+                "s",
+                "us"
+              ]
+            },
+            {
+              "index": 46,
+              "before": [
+                "A",
+                "IIr",
+                "",
+                "D",
+                "s",
+                "i",
+                "s",
+                "us"
+              ],
+              "rule": "7.4.58",
+              "result": [
+                "A",
+                "IIr",
+                "",
+                "D",
+                "s",
+                "i",
+                "s",
+                "us"
+              ]
+            },
+            {
+              "index": 49,
+              "before": [
+                "A",
+                "IIr",
+                "",
+                "D",
+                "s",
+                "i",
+                "s",
+                "us"
+              ],
+              "rule": "6.1.90",
+              "result": [
+                "",
+                "EIr",
+                "",
+                "D",
+                "s",
+                "i",
+                "s",
+                "us"
+              ]
+            },
+            {
+              "index": 50,
+              "before": [
+                "",
+                "EIr",
+                "",
+                "D",
+                "s",
+                "i",
+                "s",
+                "us"
+              ],
+              "rule": "6.1.78",
+              "result": [
+                "",
+                "AyIr",
+                "",
+                "D",
+                "s",
+                "i",
+                "s",
+                "us"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jagr_nonmonosyllabic_it_prohibition",
+      "severity": "block candidate inputs pending coordinator source review",
+      "predicate": {
+        "codes": [
+          "02.0067"
+        ],
+        "sanadi_exact": [
+          "san"
+        ]
+      },
+      "source_rules": [
+        "7.2.12",
+        "7.3.85"
+      ],
+      "evidence": [
+        {
+          "url": "https://kosha.sanskrit.today/word/sa/जागृ",
+          "work": "Madhaviya Dhatuvrtti, Adadi jAgr entry62, primary text transcribed by Kosha",
+          "quote": "जिजागरिषति",
+          "claim": "The primary commentary explicitly says the7.2.12 prohibition does not apply because ekac continues in force; jAgr is not monosyllabic. Citation is to the named primary text on an aggregator, not to its modern dictionary paraphrase."
+        },
+        {
+          "url": "https://jainqq.org/explore/004311/331/",
+          "work": "Pancagranthi Vyakaranam, printedp257",
+          "quote": "जिजागरिषति",
+          "claim": "Independently lists this form among set examples."
+        },
+        {
+          "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.3.85.htm",
+          "work": "Kashika and Nyasa",
+          "claim": "jAgr has special guna outside the stated exceptions; normal san does not license the engine no-it, long-Ir stem."
+        }
+      ],
+      "mechanical_defect": "The engine applies7.2.12 to jAgr, then kit status,6.4.16 and7.1.100, yielding jijAgIrza. The correct source-printed present stem is jijAgariza.",
+      "candidate_expected_inference": [
+        "ajijAgarizIt"
+      ],
+      "expected_note": "The exact candidate aorist is a regular inference from the printed desiderative stem; final t/d orthographic variants remain subject to the normal scorer.",
+      "scope_note": "Exact single-san input. Do not exclude ordinary jAgr inflection or unrelated monosyllabic vowel-final roots.",
+      "affected_candidate_count": 1,
+      "affected_candidate_inputs": [
+        {
+          "id": "cart5-1a09f9999b0e573088aaf308",
+          "dhatu": {
+            "code": "02.0067",
+            "aupadeshika": "jAgf",
+            "gana": "Adadi",
+            "artha": "nidrAkzaye"
+          },
+          "morphology": {
+            "lakara": "Lun",
+            "prayoga": "Kartari",
+            "purusha": "Prathama",
+            "vacana": "Eka"
+          },
+          "gold_slp1": [
+            "ajijAgIrzId",
+            "ajijAgIrzIt"
+          ],
+          "gold_devanagari": [
+            "अजिजागीर्षीद्",
+            "अजिजागीर्षीत्"
+          ]
+        }
+      ],
+      "diagnostic_trace_events": [
+        {
+          "task_id": "cart5-1a09f9999b0e573088aaf308",
+          "vp_output": "ajijAgIrzIt",
+          "events": [
+            {
+              "index": 7,
+              "before": [
+                "jAgf",
+                "sa"
+              ],
+              "rule": "7.2.12",
+              "result": [
+                "jAgf",
+                "sa"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "total_affected_candidate_inputs": 7
+}

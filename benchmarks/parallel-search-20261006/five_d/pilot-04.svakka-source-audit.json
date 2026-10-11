@@ -1,0 +1,78 @@
+{
+  "created_at": "2026-10-07T07:44:23.293955+00:00",
+  "dictionary_code": "01.0114",
+  "aupadeshika": "zvakka~\\",
+  "artha": "gatO",
+  "primary_sources": [
+    "https://sa.wikisource.org/wiki/काशिकाविवरणपञ्जिका/षष्ठोऽध्यायः/प्रथमः_पादः",
+    "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.1.64.htm"
+  ],
+  "supporting_lexicographic_source": "https://sa.wikisource.org/wiki/वाचस्पत्यम्/ष",
+  "finding": "Nyasa explicitly says zvakka is excluded from dentalization and gives zvakkate. Vachaspatyam separately lists zvakka and zvazka with retained z. This contradicts VP bare Lat svakkate; do not conflate the two dictionary entries.",
+  "controls": [
+    {
+      "operations": [],
+      "gold_slp1": [
+        "svakkate"
+      ],
+      "trace6.1.64_present": true
+    },
+    {
+      "operations": [
+        "yaN"
+      ],
+      "gold_slp1": [
+        "sAsvakkyate"
+      ],
+      "trace6.1.64_present": true
+    },
+    {
+      "operations": [
+        "yaNluk"
+      ],
+      "gold_slp1": [
+        "sAsvakkIti",
+        "sAsvakti"
+      ],
+      "trace6.1.64_present": true
+    },
+    {
+      "operations": [
+        "Ric"
+      ],
+      "gold_slp1": [
+        "svakkayate",
+        "svakkayati"
+      ],
+      "trace6.1.64_present": true
+    }
+  ],
+  "proposed_quarantine": "Dictionary01.0114 across finite coordinates and recipes, pending lexical/engine repair; alternatively exact entry plus6.1.64 trace, but full entry quarantine avoids accidentally retaining propagated dental stems without an exposed trace.",
+  "affected_frozen_panels": [
+    {
+      "panel": "04",
+      "id": "cart5-c637e7fe342c2d434c20f1c5",
+      "recipe": "causative_of_intensive",
+      "morphology": {
+        "lakara": "VidhiLin",
+        "prayoga": "Kartari",
+        "purusha": "Madhyama",
+        "vacana": "Eka"
+      }
+    },
+    {
+      "panel": "04",
+      "id": "cart5-71848025c364b938a9d9ff00",
+      "recipe": "causative_of_intensive_luk",
+      "morphology": {
+        "lakara": "Lun",
+        "prayoga": "Kartari",
+        "purusha": "Madhyama",
+        "vacana": "Eka"
+      }
+    }
+  ],
+  "model_answer_not_accepted": true,
+  "raw_tasks_unchanged": true,
+  "evidence_limit": "Direct bare control is printed; extension to nested forms is prospective quarantine, not replacement gold."
+}

@@ -1,0 +1,30 @@
+{
+  "created_at": "2026-10-07T14:08:15.035317+00:00",
+  "status": "isolated_prototype_complete_for_review",
+  "manifest": "manifest.json",
+  "manifest_sha256": "64fd7ed71e16acd6b5797092cf05ccba7960be10e4a8152aaa30036387a2d910",
+  "patch": "migration.patch",
+  "patch_sha256": "c2b273db880e2d177adc1e584a6482398554458f87f833f6ccd71abb79552fad",
+  "test_receipt": "test-receipt.json",
+  "test_receipt_sha256": "2e7b396c1a885f2a18f4d98bcdf85058809062949f2da07be25ee1607fa66d7e",
+  "test_count": 53,
+  "patch_roundtrip_passed": true,
+  "live_source_fingerprints_matched": 55,
+  "pilot08_fingerprints_matched": 21,
+  "post08_dependencies_matched": 6,
+  "provider_clients_instantiated": 0,
+  "api_calls": 0,
+  "live_shared_edits": false,
+  "ledger_registry_mutations": false,
+  "read_model_results": false,
+  "final_n_selected": false,
+  "final_membership_authorized": false,
+  "reserve_reallocation_implemented": false,
+  "pending_parent_decisions": [
+    "Wait for complete pilot08 evidence",
+    "Decide whether final evaluation is warranted",
+    "Choose and fund fixed N and audited real membership",
+    "Review and atomically install this patch and register new prospective dependencies/protocol",
+    "Document reserve planning separately without raising provider caps"
+  ]
+}

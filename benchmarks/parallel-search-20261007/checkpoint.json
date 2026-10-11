@@ -1,0 +1,46 @@
+{
+  "checked_at": "2026-10-07T19:35:09.441416+00:00",
+  "jobs": [
+    {
+      "id": "opus-simple4d-90-01",
+      "batch_id": "msgbatch_01LHQM8dH7MRNqngNuDfdKFc",
+      "status": "in_progress",
+      "attempted_at": "2026-10-07T19:23:09.085800+00:00",
+      "collected_at": null,
+      "settled": null,
+      "reservation_micro": 131672000
+    },
+    {
+      "id": "opus-modification-01",
+      "batch_id": "msgbatch_01MZKcPDb8aDJWx37eLMJez7",
+      "status": "in_progress",
+      "attempted_at": "2026-10-07T19:23:18.410508+00:00",
+      "collected_at": null,
+      "settled": null,
+      "reservation_micro": 131672000
+    },
+    {
+      "id": "opus-modification-control-01",
+      "batch_id": "msgbatch_01NkUsYahBY2FP5g8bVF9Xo8",
+      "status": "in_progress",
+      "attempted_at": "2026-10-07T19:23:25.304457+00:00",
+      "collected_at": null,
+      "settled": null,
+      "reservation_micro": 131672000
+    }
+  ],
+  "cumulative_committed_usd": {
+    "Anthropic": 694.549222,
+    "OpenAI": 780.25507
+  },
+  "collector": {
+    "pid": 83340,
+    "started_at": "2026-10-07T19:23:14.749710+00:00",
+    "mode": "collect existing batches; idle between research rounds; no paid submission or retry"
+  },
+  "report_path": "benchmarks/report.html#simple-search-summary",
+  "validated": 600,
+  "modification_public_dhatu_present": false,
+  "source_hold_pairs": 1,
+  "benchmark_ready": false
+}

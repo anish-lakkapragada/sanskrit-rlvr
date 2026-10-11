@@ -1,0 +1,178 @@
+{
+  "version": "oracle-policy-16",
+  "adopted_at": "2026-10-07T09:50:08.806277+00:00",
+  "scope": "Prospective exact4D/5D paid evaluation and release eligibility; original tasks and scores immutable.",
+  "enforcement": "misc/vp_cartesian_task.py entry_scope_issue + oracle_issue; shared validator before every paid submission.",
+  "input_exclusions": [
+    "Any dictionary Dhatu with preexisting prefixes or sanadi",
+    "Identical visible citation/gana/artha entries having different intrinsic grammar",
+    "Exact lexical readings for dictionary codes10.0205,10.0206,10.0222,10.0226 are unverified in the audited primary editions; quarantine pending direct evidence, without declaring them ungrammatical.",
+    "Source-marked Vedic-only Juhotyadi codes 03.0015, 03.0016, 03.0018, 03.0019, 03.0020, 03.0021, 03.0022, 03.0023, 03.0024, 03.0025, 03.0026. Preserve03.0017, explicitly licensed in classical usage. This restricts current classical scope; it is not a claim that Vedic forms are ungrammatical.",
+    "Bhvadi ghṛ01.1088 is restricted by Balamanorama to ghṛta/gharma/ghṛṇā. Ordinary finite use is unverified; quarantine this entry across all coordinates and recipes pending contrary primary evidence.",
+    "Source-marked Vedic-only Svadi05.0029–05.0038 except05.0033 kṣi, whose classical usage is explicit in Siddhantakaumudi. Apply across all coordinates and derivation recipes.",
+    "Exact Divadi code04.0127 svid: installed citation omits source-required root anudatta and changes anit classification. Quarantine all coordinates/recipes pending source repair; preserve distinct Bhvadi entries and all original tasks/scores."
+  ],
+  "oracle_exclusions": [
+    {
+      "predicate": "trace contains6.4.123",
+      "reason": "Meaning condition is not certified by VP implementation",
+      "evidence": "four_d/pilot-01.oracle-evidence.json",
+      "source": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.4.123.htm"
+    },
+    {
+      "predicate": "Lun with dictionary04.0113 or04.0141",
+      "reason": "PUSH_ADI citation-list mismatch",
+      "evidence": "four_d/pilot-01.disagreement-review.json"
+    },
+    {
+      "predicate": "Karmani/Bhave + Lut/Lrt + traces6.4.62 and6.4.92",
+      "reason": "Missing documented optional long-vowel Cinvat variants",
+      "evidence": "five_d/release-feasibility-01.passive-oracle-review.json",
+      "sources": [
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.4.62.htm",
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.4.93.htm"
+      ]
+    },
+    {
+      "predicate": "Ordered yaN or yaNluk before Ric and trace7.4.79/80/94/95 or8.3.61",
+      "reason": "Conservative shared quarantine for nested intensive rule interactions, extended to the new intensive-luk causal recipe",
+      "evidence": "../iterative-goal-20261006/nested-oracle-review-02.json",
+      "additional_evidence": "five_d/pilot-03.source-audit.json"
+    },
+    {
+      "predicate": "Code02.0007 and added operations intersect Ric,yaN,san. BareyaNluk alone is not included.",
+      "reason": "Direct source causal/intensive/desiderative forms contradict current VP root substitution.",
+      "evidence": "five_d/pilot-03.oracle-addendum.json",
+      "source": "https://samsaadhanii-concordance.vipran.in/dhatu/1508-cakRizf-vyakwAyAM_vAci-cakR1"
+    },
+    {
+      "predicate": "OrderedyaNluk before firstRic and the intermediate derivation stem ends in A.",
+      "reason": "General rule7.3.36 requires puK; inspected VP traces bypass it. Full nested-form correction is inference, so quarantine rather than replace gold.",
+      "evidence": "five_d/pilot-03.oracle-addendum.json",
+      "source": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.3.36.htm"
+    },
+    {
+      "predicate": "Code01.1014 and trace includes1.3.92 or7.2.59.",
+      "reason": "VRT_ADI lexical-group overreach to distinct moisten entry; Nyasa identifies the verbal-abuse entry01.0864.",
+      "source": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.2.59.htm"
+    },
+    {
+      "predicate": "Trace contains3.1.5 or3.1.6.",
+      "reason": "Semantically restricted lexical san is not uniquely selected by visible dictionary meaning. Conservative semantic scope, not a claim all engine forms are ungrammatical.",
+      "evidence": "five_d/pilot-03.semantic-san-audit.json",
+      "sources": [
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/3/3.1.5.htm",
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/3/3.1.6.htm"
+      ]
+    },
+    {
+      "predicate": "Code in01.0020,01.0021,01.0022,01.0023,10.0180 AND trace8.2.78.",
+      "reason": "Independent sources license short-vowel alternatives omitted from the current key; do not use unadjudicated variant mismatches as hardness.",
+      "evidence": "four_d/search-03.lengthening-alternative-audit.json",
+      "sources": [
+        "https://jainqq.org/explore/004319/20",
+        "https://jainqq.org/booktext/Kshir_Tarangini/002433",
+        "https://sanskritdocuments.org/~sanskrit/learning_tools/sarvanisutrani/7.1.101.htm"
+      ]
+    },
+    {
+      "predicate": "Code04.0029 + Lit + Madhyama + Bahu + trace6.4.63.",
+      "reason": "Kashika/Nyasa8.3.79 explicitly license dental dh after yuT; current VP key is retroflex-only. Removing the printed example prefix uses the explicitly local rule as inference.",
+      "evidence": "four_d/search-04.ding-dhvam-variant-audit.json",
+      "source": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/8/8.3.79.htm"
+    },
+    {
+      "predicate": "Trace contains6.4.91.",
+      "reason": "Its optional vowel branch requires a mental-state meaning. Current broad dictionary meaning does not certify the full accepted union. Conservative semantic-scope quarantine; generated forms are not declared universally ungrammatical.",
+      "source": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.4.91.htm",
+      "stage": "Adopted before pilot04evaluation; replace affected two-question family by same-cell seeded rule, preserving original provisional480."
+    },
+    {
+      "predicate": "Dictionary code01.0114 AND trace6.1.64, across all four/five-coordinate questions.",
+      "reason": "Nyasa explicitly excludes shvakka from dental-s substitution and prints shvakkate; installedVP directly produces svakkate through6.1.64. Quarantine affected source context without patching gold or relabeling model answers.",
+      "evidence": "five_d/pilot-04.svakka-source-audit.json",
+      "source": "https://sa.wikisource.org/wiki/काशिकाविवरणपञ्जिका/षष्ठोऽध्यायः/प्रथमः_पादः",
+      "stage": "Discovered in development pilot04; both one correct and one incorrect Opus question match, and the same predicate applies to pending Astra. No test answers inspected."
+    },
+    {
+      "predicate": "Ordered yaNluk before first Ric AND trace7.4.2 AND dictionary citation ends in f~ after stripping final accent markers.",
+      "reason": "Possible prohibited transfer of original r-it marker after yaNluk. Source paribhasa excludes marker-directed operations and Nyasa7.4.5 confirms relevance in later causative aorists. Preserve other7.4.2 branches; conservative uncertainty quarantine, not corrected-form certification.",
+      "evidence": "five_d/pilot-05.luk-marker-source-audit.json",
+      "sources": [
+        "https://sa.wikisource.org/wiki/शब्दकौस्तुभः/अध्यायः_१-पादः_१/आह्निकम्_४",
+        "https://sa.wikisource.org/wiki/काशिकाविवरणपञ्जिका/सप्तमोऽध्यायः/चतुर्थः_पादः",
+        "https://samsaadhanii-concordance.vipran.in/dhatu/1204-PaNaz-gawO-PaN1"
+      ],
+      "stage": "Development review after pilot05, before new calibration or final membership. Applies to successes, failures and missing answers alike."
+    },
+    {
+      "predicate": "Ordered yaNluk before first Ric AND trace6.4.92 AND bare dictionary derivations are not all am-final.",
+      "reason": "Possible prohibited transfer of lexical/gana mit. Preserve am-final bases because an independent phonological prescription can apply. No replacement gold inferred from model responses.",
+      "evidence": "five_d/pilot-05.luk-marker-source-audit.json",
+      "sources": [
+        "https://sa.wikisource.org/wiki/शब्दकौस्तुभः/अध्यायः_१-पादः_१/आह्निकम्_४",
+        "https://sa.wikisource.org/wiki/काशिकाविवरणपञ्जिका/सप्तमोऽध्यायः/चतुर्थः_पादः",
+        "https://samsaadhanii-concordance.vipran.in/dhatu/1204-PaNaz-gawO-PaN1"
+      ],
+      "stage": "Development review after pilot05, before new calibration or final membership. Applies to successes, failures and missing answers alike."
+    },
+    {
+      "predicate": "Ordered yaNluk before first Ric AND trace7.4.96.",
+      "reason": "Possible prohibited shtip-directed change of an existing intensive reduplication. The general yaNluk paribhasa and Nyasa7.4.5 causal-aorist control support a narrow uncertainty hold; ordinary Ric and other recipe order remain outside this predicate.",
+      "evidence": "five_d/pilot-06.luk-broader-source-review.json",
+      "trace_controls": "five_d/pilot-06.luk-timing-controls.json",
+      "sources": [
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.4.96.htm",
+        "https://sa.wikisource.org/wiki/शब्दकौस्तुभः/अध्यायः_१-पादः_१/आह्निकम्_४",
+        "https://sa.wikisource.org/wiki/काशिकाविवरणपञ्जिका/सप्तमोऽध्यायः/चतुर्थः_पादः"
+      ],
+      "stage": "Found before any pilot06 API submission; affects one frozen provisional input and no previous01–05 input. Preserve original frozen file and create explicit revision before exposure."
+    },
+    {
+      "predicate": "Exact code01.0866 AND trace8.2.18 AND any canonical gold contains vocalic-l x/X.",
+      "reason": "Strict canonical Devanagari scorer lacks a source-attested spelling convention (klr spelling for vocalic l). This is scorer coverage, not a grammatical mistake. Quarantine every matching question, correct or incorrect, preserving this root’s other kalp forms and all raw scores.",
+      "source": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/8/8.2.18.htm",
+      "evidence": "five_d/pilot-06.source-addendum-01.json",
+      "stage": "Discovered in development pilot06 after numeric screen; applies uniformly across prior/future tasks, preserves original tasks and scores, no test answers read."
+    },
+    {
+      "predicate": "Exact code06.0012 AND first added operation is yaNluk.",
+      "reason": "Primary7.4.90 explicitly gives varIvfScIti, absent from bare engine gold vAvraScIti/vAvrazwi. Hold the initial intensive-luk derivation and later additions pending repair. Preserve ordinaryyaN and do not infer a predicate for differently ordered recipes.",
+      "source": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.4.90.htm",
+      "evidence": "five_d/pilot-06.source-addendum-01.json",
+      "stage": "Discovered in development pilot06 after numeric screen; applies uniformly across prior/future tasks, preserves original tasks and scores, no test answers read."
+    },
+    {
+      "predicate": "Exact dhatu code06.0149 and first operation is yaNluk, including later Ric.",
+      "reason": "Primary Kashika7.4.90 explicitly prints parIpfcCIti. Installed bare yaNluk gives pApracCIti/pAprazwi and the nested recipe inherits the discrepant stem. Quarantine without substituting a guessed full form; preserve ordinary yaN.",
+      "source": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.4.90.htm",
+      "evidence": "five_d/candidate-4800/revision-01/source-review-addendum-01.json"
+    }
+  ],
+  "selection_policy": "Apply every predicate equally to correct and incorrect responses and to all future tasks. Do not select difficulty by individual test answers.",
+  "limitations": "Exclusion is conservative pending independent repair; passing these gates is not exhaustive linguistic certification.",
+  "generator_sha256": "2b7c5a9ea68463a98bc3c602613dab21c900476bbeea800725ffd8f76396fdf5",
+  "previous_policy": "oracle-policy-14.json",
+  "lexical_evidence": "four_d/pilot-02.lexical-audit.json",
+  "vedic_scope_evidence": "four_d/pilot-02.disagreement-review.json",
+  "vedic_scope_source": "https://sa.wikisource.org/wiki/पृष्ठम्:सिद्धान्तकौमुदी_(बालमनोरमा_उत्तर-२).djvu/२६",
+  "nominal_usage_evidence": "four_d/pilot-03.lexical-addendum.json",
+  "nominal_usage_source": "https://sa.wikisource.org/wiki/पृष्ठम्:सिद्धान्तकौमुदी_(बालमनोरमा_उत्तर-१).djvu/१६१",
+  "independent_source_verification": "Coordinator inspected all linked primary passages including explicit kṣi classical exception. All predicates apply independently of model correctness; original tasks, answers and scores stay immutable. Coordinator independently read Nyasa6.1.64 and reproduced bare01.0114 Lat svakkate with the offending trace. Coordinator independently checked Kashika7.2.10 svettA and reproduced installed Divadi sveditA. Alternate-citation controls diagnose the source mismatch; no gold patch. Coordinator independently inspected the general yaNluk paribhasa, Nyasa7.4.5 causative example, and Madhaviya am-final mit passage (HTTP200 direct fetch after browser cache miss). Full nested forms remain uncertain; no original task or score changed. Coordinator independently read Kashika/Nyasa7.4.96 and reproduced the ve-to-va step after yaNluk and Ric.7.1.58 num occurs at the source-specified upadesha stage; no blanket num or pada exclusion is inferred. Coordinator independently read primary8.2.18/7.4.90, checked spelling codepoints/transliteration, and reproduced bare/nested vrasc engine outputs and preserved ordinary-intensive control. Model responses are not substituted into gold. Coordinator independently read the same primary passage for prcch and reproduced six ordinary/intensive-luk/nested controls. All named development panels and the pending60-question cap diagnostic are unaffected; candidate4,800 has four affected inputs before any final model answers.",
+  "svadi_scope_evidence": "four_d/pilot-03.scope-addendum-02-r1.json",
+  "svadi_scope_sources": [
+    "https://jainqq.org/booktext/Kshir_Tarangini/002433",
+    "https://sa.wikisource.org/wiki/सिद्धान्तकौमुदी/प्रकरण‌४१-५०"
+  ],
+  "prompt_validation_update_at": "2026-10-07T07:11:56.811361+00:00",
+  "open_questions": [
+    "Late dentalstim04.0137 andurja10.0023 remain unresolved; keep raw scores and sensitivity analysis, do not use them as certified hardness leads."
+  ],
+  "svid_accent_evidence": "five_d/pilot-05.svid-source-audit.json",
+  "svid_accent_sources": [
+    "https://sa.wikisource.org/wiki/काशिका/सप्तमोऽध्यायः/द्वितीयः_पादः",
+    "https://sanskritdocuments.org/doc_z_misc_major_works/dhatupatha_index_svara.html"
+  ],
+  "prior_policy": "oracle-policy-15.json",
+  "prior_policy_sha256": "89c2337e9b52de26a46fb1cf58873ae84279704e5d17e37f800df60e9215e55f"
+}

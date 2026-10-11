@@ -26,6 +26,17 @@ class SamayikEvalConfig:
 
 
 @dataclass
+class FloresEvalConfig:
+    """FLORES-200 EN->SA checkpoint eval (same {en, sa} schema and chrF/chrF++
+    protocol as the Samayik eval). Disabled unless a path is set, so existing
+    GRPO/SFT configs are unaffected."""
+    path: str = ""
+    num_samples: int = 100
+    max_new_tokens: int = 2048
+    temperature: float = 0.2
+
+
+@dataclass
 class GenerationConfig:
     num_generations: int = 8
     max_completion_length: int = 256
@@ -101,6 +112,13 @@ class SDPOSettings:
     privileged_budget: int = 512     # documentation of the build-time budget
     kl_direction: str = "forward"    # forward = KL(teacher || student) | reverse
     kl_temperature: float = 1.0
+    # Top-K distillation (paper section 2.2/4.2): per position, KL over the
+    # student's top-K token log-probs + one tail-mass bucket (teacher gathered
+    # at the same indices). 0 = full-vocab KL.
+    top_k: int = 100
+    # Abort the run if the step-0 pass@1 probe reads below this (0 disables).
+    # Catches a bad merge / engine-policy mismatch before burning the box.
+    step0_min_pass1: float = 0.0
     # Max per-token KL contribution to the loss (nats); 0 disables. Bounds
     # structural-token outliers that otherwise dominate the gradient.
     kl_clamp: float = 3.0
@@ -156,6 +174,7 @@ class RunConfig:
     seed: int = 42
     pass_at_k: PassAtKConfig = field(default_factory=PassAtKConfig)
     samayik_eval: SamayikEvalConfig = field(default_factory=SamayikEvalConfig)
+    flores_eval: FloresEvalConfig = field(default_factory=FloresEvalConfig)
     generation: GenerationConfig = field(default_factory=GenerationConfig)
     train: TrainConfig = field(default_factory=TrainConfig)
     vllm: VllmConfig = field(default_factory=VllmConfig)
@@ -179,6 +198,7 @@ def _build(cls, data: dict, path: str):
         ftype = fields[key].type
         nested = {
             "PassAtKConfig": PassAtKConfig, "SamayikEvalConfig": SamayikEvalConfig,
+            "FloresEvalConfig": FloresEvalConfig,
             "GenerationConfig": GenerationConfig, "TrainConfig": TrainConfig,
             "VllmConfig": VllmConfig, "LoraSettings": LoraSettings,
             "SFTSettings": SFTSettings, "SDPOSettings": SDPOSettings,
@@ -203,6 +223,10 @@ def load_config(path: str | Path) -> RunConfig:
         problems.append(f"eval_dataset not found: {cfg.eval_dataset}")
     if not (ROOT / cfg.samayik_eval.path).exists():
         problems.append(f"samayik eval file not found: {cfg.samayik_eval.path}")
+    if cfg.flores_eval.path and not (ROOT / cfg.flores_eval.path).exists():
+        problems.append(f"flores eval file not found: {cfg.flores_eval.path}")
+    if cfg.sdpo.top_k < 0:
+        problems.append("sdpo.top_k must be >= 0 (0 = full-vocab KL)")
     if cfg.checkpoint_every > cfg.iterations:
         problems.append("checkpoint_every must be <= iterations")
     if max(cfg.pass_at_k.ks) > cfg.pass_at_k.samples_per_prompt:

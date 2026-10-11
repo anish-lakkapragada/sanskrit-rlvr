@@ -1,0 +1,39 @@
+{
+  "id": "astra-simple4d-direct-19",
+  "provider": "OpenAI",
+  "phase": "confirm_64k",
+  "n": 10,
+  "tasks_digest": "1fe800d8a1f84ebdb5406b251267bf60aea20b8151a69fc434ad7da8d604cddc",
+  "requests_digest": "0a8541df78ec3be02df7ede121af254d09c7618740f53497c774a8e2861e255d",
+  "created_at": "2026-10-07T22:57:46.477921+00:00",
+  "status": "completed",
+  "batch_id": "direct-astra-simple4d-direct-19",
+  "attempted_at": "2026-10-08T00:00:25.133153+00:00",
+  "reservation_micro": 32918000,
+  "input_file_id": null,
+  "transport": "direct",
+  "spending_pool_id": "simple4d-astra-standard-20261007",
+  "collected_at": "2026-10-08T00:05:53.593509+00:00",
+  "usage": {
+    "input_tokens": 2638,
+    "output_tokens": 21441,
+    "cache_read": 0,
+    "cache_write": 0
+  },
+  "summary": {
+    "task_count": 10,
+    "correct": 7,
+    "incorrect_or_no_answer": 3,
+    "unscored": 0,
+    "pass_at_1_all_tasks": 0.7,
+    "truncated": 0,
+    "statuses": {
+      "completed": 10
+    }
+  },
+  "completed_answers": 10,
+  "completed_correct": 7,
+  "actual_cost_upper_micro": 1098430,
+  "token_policy_violations": [],
+  "settled": true
+}

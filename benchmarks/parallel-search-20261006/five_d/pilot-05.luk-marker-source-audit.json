@@ -1,0 +1,1434 @@
+{
+  "created_at": "2026-10-07T08:17:42.356585+00:00",
+  "status": "Proposed conservative uncertainty predicates; coordinator independent review pending",
+  "issue": "Possible prohibited transfer of original root-marker and gana membership effects after independent yaNluk",
+  "primary_sources": [
+    {
+      "url": "https://sa.wikisource.org/wiki/शब्दकौस्तुभः/अध्यायः_१-पादः_१/आह्निकम्_४",
+      "location": "Discussion of1.1.4; paribhasa131; lines112–114",
+      "evidence": "Explicitly denies operations specified by root anubandha or gana in yaNluk; illustrates blocked din-yut and explains preservation of ordinary yaN effects separately."
+    },
+    {
+      "url": "https://ashtadhyayi.com/nyaas/29?scroll=nyaas-74005",
+      "location": "Nyasa7.4.5",
+      "evidence": "Explicitly excludes yaNluk from the specially named tisthati vowel change even in a later causative aorist; this confirms that the paribhasa remains relevant after adding Ric."
+    },
+    {
+      "url": "https://samsaadhanii-concordance.vipran.in/dhatu/1204-PaNaz-gawO-PaN1",
+      "location": "Madhaviya/Dhatupatha Ghatadi mit appendices",
+      "evidence": "Distinguishes listed Ghatadi roots from the broad am-final prescription. The latter can still describe a newly intensive-luk stem, so am-final cases are not included in the proposed non-am lexical gate."
+    },
+    {
+      "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.4.2.htm",
+      "location": "Three branches of shortening prohibition",
+      "evidence": "aglopi, sas, and r-it are distinct grounds. A bare7.4.2 trace does not identify the r-it branch."
+    }
+  ],
+  "proposed_predicates": [
+    {
+      "id": "r_it_shortening_block_after_luk",
+      "predicate": "operations contain yaNluk before Ric AND trace7.4.2 AND original dictionary citation ends in f~ with optional accent markers",
+      "reason": "Conservatively hold possible prohibited root-anubandha transfer; preserve sas/aglopi cases without r-it."
+    },
+    {
+      "id": "non_am_lexical_mit_after_luk",
+      "predicate": "operations contain yaNluk before Ric AND trace6.4.92 AND bare lexical base is not am-final",
+      "reason": "Hold lexical/gana mit transfer. Do not blanket am-final stems, for which a separate phonological mit prescription exists."
+    }
+  ],
+  "controls": [
+    {
+      "code": "01.0615",
+      "citation": "celf~",
+      "bare_bases": [
+        "cel"
+      ],
+      "lakara": "Lun",
+      "operations": [
+        "yaNluk",
+        "Ric"
+      ],
+      "final_rit_marker": true,
+      "am_final": false,
+      "branches": [
+        {
+          "form": "acecelata",
+          "steps": [
+            {
+              "index": 7,
+              "code": "2.4.74",
+              "terms": [
+                "cel",
+                ""
+              ]
+            },
+            {
+              "index": 17,
+              "code": "3.1.26",
+              "terms": [
+                "ce",
+                "cel",
+                "",
+                "Ric"
+              ]
+            },
+            {
+              "index": 44,
+              "code": "7.4.2",
+              "terms": [
+                "a",
+                "ce",
+                "cel",
+                "",
+                "",
+                "a",
+                "ta"
+              ]
+            }
+          ]
+        },
+        {
+          "form": "acecelat",
+          "steps": [
+            {
+              "index": 7,
+              "code": "2.4.74",
+              "terms": [
+                "cel",
+                ""
+              ]
+            },
+            {
+              "index": 17,
+              "code": "3.1.26",
+              "terms": [
+                "ce",
+                "cel",
+                "",
+                "Ric"
+              ]
+            },
+            {
+              "index": 46,
+              "code": "7.4.2",
+              "terms": [
+                "a",
+                "ce",
+                "cel",
+                "",
+                "",
+                "a",
+                "t"
+              ]
+            }
+          ]
+        },
+        {
+          "form": "acecelad",
+          "steps": [
+            {
+              "index": 7,
+              "code": "2.4.74",
+              "terms": [
+                "cel",
+                ""
+              ]
+            },
+            {
+              "index": 17,
+              "code": "3.1.26",
+              "terms": [
+                "ce",
+                "cel",
+                "",
+                "Ric"
+              ]
+            },
+            {
+              "index": 46,
+              "code": "7.4.2",
+              "terms": [
+                "a",
+                "ce",
+                "cel",
+                "",
+                "",
+                "a",
+                "t"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "01.1009",
+      "citation": "meTf~^",
+      "bare_bases": [
+        "meT"
+      ],
+      "lakara": "Lun",
+      "operations": [
+        "yaNluk",
+        "Ric"
+      ],
+      "final_rit_marker": true,
+      "am_final": false,
+      "branches": [
+        {
+          "form": "amemeTata",
+          "steps": [
+            {
+              "index": 7,
+              "code": "2.4.74",
+              "terms": [
+                "meT",
+                ""
+              ]
+            },
+            {
+              "index": 17,
+              "code": "3.1.26",
+              "terms": [
+                "me",
+                "meT",
+                "",
+                "Ric"
+              ]
+            },
+            {
+              "index": 44,
+              "code": "7.4.2",
+              "terms": [
+                "a",
+                "me",
+                "meT",
+                "",
+                "",
+                "a",
+                "ta"
+              ]
+            }
+          ]
+        },
+        {
+          "form": "amemeTat",
+          "steps": [
+            {
+              "index": 7,
+              "code": "2.4.74",
+              "terms": [
+                "meT",
+                ""
+              ]
+            },
+            {
+              "index": 17,
+              "code": "3.1.26",
+              "terms": [
+                "me",
+                "meT",
+                "",
+                "Ric"
+              ]
+            },
+            {
+              "index": 46,
+              "code": "7.4.2",
+              "terms": [
+                "a",
+                "me",
+                "meT",
+                "",
+                "",
+                "a",
+                "t"
+              ]
+            }
+          ]
+        },
+        {
+          "form": "amemeTad",
+          "steps": [
+            {
+              "index": 7,
+              "code": "2.4.74",
+              "terms": [
+                "meT",
+                ""
+              ]
+            },
+            {
+              "index": 17,
+              "code": "3.1.26",
+              "terms": [
+                "me",
+                "meT",
+                "",
+                "Ric"
+              ]
+            },
+            {
+              "index": 46,
+              "code": "7.4.2",
+              "terms": [
+                "a",
+                "me",
+                "meT",
+                "",
+                "",
+                "a",
+                "t"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "02.0070",
+      "citation": "SAsu~",
+      "bare_bases": [
+        "SAs"
+      ],
+      "lakara": "Lun",
+      "operations": [
+        "yaNluk",
+        "Ric"
+      ],
+      "final_rit_marker": false,
+      "am_final": false,
+      "branches": [
+        {
+          "form": "aSASAsata",
+          "steps": [
+            {
+              "index": 7,
+              "code": "2.4.74",
+              "terms": [
+                "SAs",
+                ""
+              ]
+            },
+            {
+              "index": 18,
+              "code": "3.1.26",
+              "terms": [
+                "SA",
+                "SAs",
+                "",
+                "Ric"
+              ]
+            },
+            {
+              "index": 45,
+              "code": "7.4.2",
+              "terms": [
+                "a",
+                "SA",
+                "SAs",
+                "",
+                "",
+                "a",
+                "ta"
+              ]
+            }
+          ]
+        },
+        {
+          "form": "aSASAsat",
+          "steps": [
+            {
+              "index": 7,
+              "code": "2.4.74",
+              "terms": [
+                "SAs",
+                ""
+              ]
+            },
+            {
+              "index": 18,
+              "code": "3.1.26",
+              "terms": [
+                "SA",
+                "SAs",
+                "",
+                "Ric"
+              ]
+            },
+            {
+              "index": 47,
+              "code": "7.4.2",
+              "terms": [
+                "a",
+                "SA",
+                "SAs",
+                "",
+                "",
+                "a",
+                "t"
+              ]
+            }
+          ]
+        },
+        {
+          "form": "aSASAsad",
+          "steps": [
+            {
+              "index": 7,
+              "code": "2.4.74",
+              "terms": [
+                "SAs",
+                ""
+              ]
+            },
+            {
+              "index": 18,
+              "code": "3.1.26",
+              "terms": [
+                "SA",
+                "SAs",
+                "",
+                "Ric"
+              ]
+            },
+            {
+              "index": 47,
+              "code": "7.4.2",
+              "terms": [
+                "a",
+                "SA",
+                "SAs",
+                "",
+                "",
+                "a",
+                "t"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "01.0870",
+      "citation": "prasa~\\",
+      "bare_bases": [
+        "pras"
+      ],
+      "lakara": "Lat",
+      "operations": [
+        "yaNluk",
+        "Ric"
+      ],
+      "final_rit_marker": false,
+      "am_final": false,
+      "branches": [
+        {
+          "form": "pAprasayate",
+          "steps": [
+            {
+              "index": 8,
+              "code": "2.4.74",
+              "terms": [
+                "pras",
+                ""
+              ]
+            },
+            {
+              "index": 17,
+              "code": "3.1.26",
+              "terms": [
+                "pA",
+                "pras",
+                "",
+                "Ric"
+              ]
+            },
+            {
+              "index": 25,
+              "code": "7.2.116",
+              "terms": [
+                "pA",
+                "prAs",
+                "",
+                "i"
+              ]
+            },
+            {
+              "index": 41,
+              "code": "6.4.92",
+              "terms": [
+                "pA",
+                "pras",
+                "",
+                "e",
+                "a",
+                "te"
+              ]
+            }
+          ]
+        },
+        {
+          "form": "pAprasayati",
+          "steps": [
+            {
+              "index": 8,
+              "code": "2.4.74",
+              "terms": [
+                "pras",
+                ""
+              ]
+            },
+            {
+              "index": 17,
+              "code": "3.1.26",
+              "terms": [
+                "pA",
+                "pras",
+                "",
+                "Ric"
+              ]
+            },
+            {
+              "index": 25,
+              "code": "7.2.116",
+              "terms": [
+                "pA",
+                "prAs",
+                "",
+                "i"
+              ]
+            },
+            {
+              "index": 41,
+              "code": "6.4.92",
+              "terms": [
+                "pA",
+                "pras",
+                "",
+                "e",
+                "a",
+                "ti"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "01.0867",
+      "citation": "Gawa~\\",
+      "bare_bases": [
+        "Gaw"
+      ],
+      "lakara": "Lat",
+      "operations": [
+        "yaNluk",
+        "Ric"
+      ],
+      "final_rit_marker": false,
+      "am_final": false,
+      "branches": [
+        {
+          "form": "jAGawayate",
+          "steps": [
+            {
+              "index": 8,
+              "code": "2.4.74",
+              "terms": [
+                "Gaw",
+                ""
+              ]
+            },
+            {
+              "index": 18,
+              "code": "3.1.26",
+              "terms": [
+                "JA",
+                "Gaw",
+                "",
+                "Ric"
+              ]
+            },
+            {
+              "index": 26,
+              "code": "7.2.116",
+              "terms": [
+                "JA",
+                "GAw",
+                "",
+                "i"
+              ]
+            },
+            {
+              "index": 42,
+              "code": "6.4.92",
+              "terms": [
+                "JA",
+                "Gaw",
+                "",
+                "e",
+                "a",
+                "te"
+              ]
+            }
+          ]
+        },
+        {
+          "form": "jAGawayati",
+          "steps": [
+            {
+              "index": 8,
+              "code": "2.4.74",
+              "terms": [
+                "Gaw",
+                ""
+              ]
+            },
+            {
+              "index": 18,
+              "code": "3.1.26",
+              "terms": [
+                "JA",
+                "Gaw",
+                "",
+                "Ric"
+              ]
+            },
+            {
+              "index": 26,
+              "code": "7.2.116",
+              "terms": [
+                "JA",
+                "GAw",
+                "",
+                "i"
+              ]
+            },
+            {
+              "index": 42,
+              "code": "6.4.92",
+              "terms": [
+                "JA",
+                "Gaw",
+                "",
+                "e",
+                "a",
+                "ti"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "04.0101",
+      "citation": "Sramu~",
+      "bare_bases": [
+        "Sram"
+      ],
+      "lakara": "Lat",
+      "operations": [
+        "yaNluk",
+        "Ric"
+      ],
+      "final_rit_marker": false,
+      "am_final": true,
+      "branches": [
+        {
+          "form": "SaMSramayate",
+          "steps": [
+            {
+              "index": 8,
+              "code": "2.4.74",
+              "terms": [
+                "Sram",
+                ""
+              ]
+            },
+            {
+              "index": 21,
+              "code": "3.1.26",
+              "terms": [
+                "Sa",
+                "M",
+                "Sram",
+                "",
+                "Ric"
+              ]
+            },
+            {
+              "index": 29,
+              "code": "7.2.116",
+              "terms": [
+                "Sa",
+                "M",
+                "SrAm",
+                "",
+                "i"
+              ]
+            },
+            {
+              "index": 45,
+              "code": "6.4.92",
+              "terms": [
+                "Sa",
+                "M",
+                "Sram",
+                "",
+                "e",
+                "a",
+                "te"
+              ]
+            }
+          ]
+        },
+        {
+          "form": "SaMSramayati",
+          "steps": [
+            {
+              "index": 8,
+              "code": "2.4.74",
+              "terms": [
+                "Sram",
+                ""
+              ]
+            },
+            {
+              "index": 21,
+              "code": "3.1.26",
+              "terms": [
+                "Sa",
+                "M",
+                "Sram",
+                "",
+                "Ric"
+              ]
+            },
+            {
+              "index": 29,
+              "code": "7.2.116",
+              "terms": [
+                "Sa",
+                "M",
+                "SrAm",
+                "",
+                "i"
+              ]
+            },
+            {
+              "index": 45,
+              "code": "6.4.92",
+              "terms": [
+                "Sa",
+                "M",
+                "Sram",
+                "",
+                "e",
+                "a",
+                "ti"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "01.0542",
+      "citation": "jamu~",
+      "bare_bases": [
+        "jam"
+      ],
+      "lakara": "Lat",
+      "operations": [
+        "yaNluk",
+        "Ric"
+      ],
+      "final_rit_marker": false,
+      "am_final": true,
+      "branches": [
+        {
+          "form": "jaMjamayate",
+          "steps": [
+            {
+              "index": 8,
+              "code": "2.4.74",
+              "terms": [
+                "jam",
+                ""
+              ]
+            },
+            {
+              "index": 21,
+              "code": "3.1.26",
+              "terms": [
+                "ja",
+                "M",
+                "jam",
+                "",
+                "Ric"
+              ]
+            },
+            {
+              "index": 29,
+              "code": "7.2.116",
+              "terms": [
+                "ja",
+                "M",
+                "jAm",
+                "",
+                "i"
+              ]
+            },
+            {
+              "index": 45,
+              "code": "6.4.92",
+              "terms": [
+                "ja",
+                "M",
+                "jam",
+                "",
+                "e",
+                "a",
+                "te"
+              ]
+            }
+          ]
+        },
+        {
+          "form": "jaYjamayate",
+          "steps": [
+            {
+              "index": 8,
+              "code": "2.4.74",
+              "terms": [
+                "jam",
+                ""
+              ]
+            },
+            {
+              "index": 21,
+              "code": "3.1.26",
+              "terms": [
+                "ja",
+                "M",
+                "jam",
+                "",
+                "Ric"
+              ]
+            },
+            {
+              "index": 29,
+              "code": "7.2.116",
+              "terms": [
+                "ja",
+                "M",
+                "jAm",
+                "",
+                "i"
+              ]
+            },
+            {
+              "index": 45,
+              "code": "6.4.92",
+              "terms": [
+                "ja",
+                "M",
+                "jam",
+                "",
+                "e",
+                "a",
+                "te"
+              ]
+            }
+          ]
+        },
+        {
+          "form": "jaMjamayati",
+          "steps": [
+            {
+              "index": 8,
+              "code": "2.4.74",
+              "terms": [
+                "jam",
+                ""
+              ]
+            },
+            {
+              "index": 21,
+              "code": "3.1.26",
+              "terms": [
+                "ja",
+                "M",
+                "jam",
+                "",
+                "Ric"
+              ]
+            },
+            {
+              "index": 29,
+              "code": "7.2.116",
+              "terms": [
+                "ja",
+                "M",
+                "jAm",
+                "",
+                "i"
+              ]
+            },
+            {
+              "index": 45,
+              "code": "6.4.92",
+              "terms": [
+                "ja",
+                "M",
+                "jam",
+                "",
+                "e",
+                "a",
+                "ti"
+              ]
+            }
+          ]
+        },
+        {
+          "form": "jaYjamayati",
+          "steps": [
+            {
+              "index": 8,
+              "code": "2.4.74",
+              "terms": [
+                "jam",
+                ""
+              ]
+            },
+            {
+              "index": 21,
+              "code": "3.1.26",
+              "terms": [
+                "ja",
+                "M",
+                "jam",
+                "",
+                "Ric"
+              ]
+            },
+            {
+              "index": 29,
+              "code": "7.2.116",
+              "terms": [
+                "ja",
+                "M",
+                "jAm",
+                "",
+                "i"
+              ]
+            },
+            {
+              "index": 45,
+              "code": "6.4.92",
+              "terms": [
+                "ja",
+                "M",
+                "jam",
+                "",
+                "e",
+                "a",
+                "ti"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "affected_saved_development_rows": {
+    "01": [],
+    "02": [],
+    "03": [
+      {
+        "id": "cart5-1cd036179fcd50a4e4fdee99",
+        "code": "01.0120",
+        "citation": "drAGf~\\",
+        "bases": [
+          "drAG"
+        ],
+        "morphology": {
+          "lakara": "Lun",
+          "prayoga": "Kartari",
+          "purusha": "Madhyama",
+          "vacana": "Bahu"
+        },
+        "reasons": [
+          "r_it_shortening_block_after_luk"
+        ],
+        "correct": true,
+        "status": "completed"
+      },
+      {
+        "id": "cart5-df51f67cf554c780f02dd71e",
+        "code": "01.0868",
+        "citation": "vyaTa~\\",
+        "bases": [
+          "vyaT"
+        ],
+        "morphology": {
+          "lakara": "Lit",
+          "prayoga": "Kartari",
+          "purusha": "Madhyama",
+          "vacana": "Dvi"
+        },
+        "reasons": [
+          "non_am_lexical_mit_after_luk"
+        ],
+        "correct": false,
+        "status": "completed"
+      },
+      {
+        "id": "cart5-702206ac8b16ff2c13ef1a20",
+        "code": "01.0206",
+        "citation": "kAqf~\\",
+        "bases": [
+          "kAq"
+        ],
+        "morphology": {
+          "lakara": "Lun",
+          "prayoga": "Kartari",
+          "purusha": "Madhyama",
+          "vacana": "Bahu"
+        },
+        "reasons": [
+          "r_it_shortening_block_after_luk"
+        ],
+        "correct": false,
+        "status": "completed"
+      },
+      {
+        "id": "cart5-a456a45b6560462ade8e6ccb",
+        "code": "01.0325",
+        "citation": "SOwf~",
+        "bases": [
+          "SOw"
+        ],
+        "morphology": {
+          "lakara": "Lun",
+          "prayoga": "Kartari",
+          "purusha": "Madhyama",
+          "vacana": "Bahu"
+        },
+        "reasons": [
+          "r_it_shortening_block_after_luk"
+        ],
+        "correct": true,
+        "status": "completed"
+      }
+    ],
+    "04": [
+      {
+        "id": "cart5-839511b5dded014ad7513e7a",
+        "code": "01.0615",
+        "citation": "celf~",
+        "bases": [
+          "cel"
+        ],
+        "morphology": {
+          "lakara": "Lun",
+          "prayoga": "Kartari",
+          "purusha": "Uttama",
+          "vacana": "Eka"
+        },
+        "reasons": [
+          "r_it_shortening_block_after_luk"
+        ],
+        "correct": false,
+        "status": "completed"
+      },
+      {
+        "id": "cart5-9db8af9779ce64dac933bc7f",
+        "code": "01.0081",
+        "citation": "Slokf~\\",
+        "bases": [
+          "Slok"
+        ],
+        "morphology": {
+          "lakara": "Lun",
+          "prayoga": "Kartari",
+          "purusha": "Prathama",
+          "vacana": "Bahu"
+        },
+        "reasons": [
+          "r_it_shortening_block_after_luk"
+        ],
+        "correct": true,
+        "status": "completed"
+      },
+      {
+        "id": "cart5-cde72f0e163df992da78ab68",
+        "code": "01.0408",
+        "citation": "huqf~",
+        "bases": [
+          "huq"
+        ],
+        "morphology": {
+          "lakara": "Lun",
+          "prayoga": "Kartari",
+          "purusha": "Madhyama",
+          "vacana": "Bahu"
+        },
+        "reasons": [
+          "r_it_shortening_block_after_luk"
+        ],
+        "correct": false,
+        "status": "refused"
+      },
+      {
+        "id": "cart5-8e2982753e02e18217c87ec2",
+        "code": "01.0205",
+        "citation": "BrAjf~\\",
+        "bases": [
+          "BrAj"
+        ],
+        "morphology": {
+          "lakara": "Lun",
+          "prayoga": "Kartari",
+          "purusha": "Uttama",
+          "vacana": "Dvi"
+        },
+        "reasons": [
+          "r_it_shortening_block_after_luk"
+        ],
+        "correct": true,
+        "status": "completed"
+      },
+      {
+        "id": "cart5-0b142e8602089a7d1e4c93d0",
+        "code": "01.0634",
+        "citation": "Dorf~",
+        "bases": [
+          "Dor"
+        ],
+        "morphology": {
+          "lakara": "Lun",
+          "prayoga": "Kartari",
+          "purusha": "Uttama",
+          "vacana": "Dvi"
+        },
+        "reasons": [
+          "r_it_shortening_block_after_luk"
+        ],
+        "correct": false,
+        "status": "completed"
+      },
+      {
+        "id": "cart5-cccaec4cb52ece685c6953f9",
+        "code": "01.0867",
+        "citation": "Gawa~\\",
+        "bases": [
+          "Gaw"
+        ],
+        "morphology": {
+          "lakara": "Lan",
+          "prayoga": "Kartari",
+          "purusha": "Uttama",
+          "vacana": "Bahu"
+        },
+        "reasons": [
+          "non_am_lexical_mit_after_luk"
+        ],
+        "correct": true,
+        "status": "completed"
+      },
+      {
+        "id": "cart5-71eb383aad745037852d2f68",
+        "code": "01.0818",
+        "citation": "visf~",
+        "bases": [
+          "vis"
+        ],
+        "morphology": {
+          "lakara": "Lun",
+          "prayoga": "Kartari",
+          "purusha": "Prathama",
+          "vacana": "Dvi"
+        },
+        "reasons": [
+          "r_it_shortening_block_after_luk"
+        ],
+        "correct": false,
+        "status": "completed"
+      },
+      {
+        "id": "cart5-2becb05eb63818df8d917e37",
+        "code": "04.0007",
+        "citation": "knasu~",
+        "bases": [
+          "knas"
+        ],
+        "morphology": {
+          "lakara": "Lun",
+          "prayoga": "Kartari",
+          "purusha": "Uttama",
+          "vacana": "Bahu"
+        },
+        "reasons": [
+          "non_am_lexical_mit_after_luk"
+        ],
+        "correct": false,
+        "status": "completed"
+      }
+    ],
+    "05": [
+      {
+        "id": "cart5-35f8080cf592012288733360",
+        "code": "01.0868",
+        "citation": "vyaTa~\\",
+        "bases": [
+          "vyaT"
+        ],
+        "morphology": {
+          "lakara": "Lun",
+          "prayoga": "Kartari",
+          "purusha": "Uttama",
+          "vacana": "Bahu"
+        },
+        "reasons": [
+          "non_am_lexical_mit_after_luk"
+        ],
+        "correct": false,
+        "status": "completed"
+      },
+      {
+        "id": "cart5-fe1166b59870dcde4e0cfe30",
+        "code": "01.0120",
+        "citation": "drAGf~\\",
+        "bases": [
+          "drAG"
+        ],
+        "morphology": {
+          "lakara": "Lun",
+          "prayoga": "Kartari",
+          "purusha": "Prathama",
+          "vacana": "Eka"
+        },
+        "reasons": [
+          "r_it_shortening_block_after_luk"
+        ],
+        "correct": true,
+        "status": "completed"
+      },
+      {
+        "id": "cart5-633edd7bad1ad26ef87bc3c2",
+        "code": "01.0880",
+        "citation": "kladi~\\",
+        "bases": [
+          "kland"
+        ],
+        "morphology": {
+          "lakara": "Lun",
+          "prayoga": "Kartari",
+          "purusha": "Prathama",
+          "vacana": "Eka"
+        },
+        "reasons": [
+          "non_am_lexical_mit_after_luk"
+        ],
+        "correct": false,
+        "status": "completed"
+      },
+      {
+        "id": "cart5-c83ddc7bc6b15ee5155701e1",
+        "code": "01.0121",
+        "citation": "DrAGf~\\",
+        "bases": [
+          "DrAG"
+        ],
+        "morphology": {
+          "lakara": "Lun",
+          "prayoga": "Kartari",
+          "purusha": "Madhyama",
+          "vacana": "Dvi"
+        },
+        "reasons": [
+          "r_it_shortening_block_after_luk"
+        ],
+        "correct": false,
+        "status": "completed"
+      },
+      {
+        "id": "cart5-970521f2a3c79ad14aa39581",
+        "code": "01.0580",
+        "citation": "Sevf~\\",
+        "bases": [
+          "Sev"
+        ],
+        "morphology": {
+          "lakara": "Lun",
+          "prayoga": "Kartari",
+          "purusha": "Prathama",
+          "vacana": "Bahu"
+        },
+        "reasons": [
+          "r_it_shortening_block_after_luk"
+        ],
+        "correct": true,
+        "status": "completed"
+      },
+      {
+        "id": "cart5-c0ea6091e4149ef2ebbca066",
+        "code": "01.0615",
+        "citation": "celf~",
+        "bases": [
+          "cel"
+        ],
+        "morphology": {
+          "lakara": "Lun",
+          "prayoga": "Kartari",
+          "purusha": "Uttama",
+          "vacana": "Bahu"
+        },
+        "reasons": [
+          "r_it_shortening_block_after_luk"
+        ],
+        "correct": false,
+        "status": "completed"
+      },
+      {
+        "id": "cart5-5ad2ebc08c32bd3cb65deb7b",
+        "code": "01.0325",
+        "citation": "SOwf~",
+        "bases": [
+          "SOw"
+        ],
+        "morphology": {
+          "lakara": "Lun",
+          "prayoga": "Kartari",
+          "purusha": "Uttama",
+          "vacana": "Eka"
+        },
+        "reasons": [
+          "r_it_shortening_block_after_luk"
+        ],
+        "correct": true,
+        "status": "completed"
+      },
+      {
+        "id": "cart5-fd37b1ba783712ac0ce0f95b",
+        "code": "01.0326",
+        "citation": "yOwf~",
+        "bases": [
+          "yOw"
+        ],
+        "morphology": {
+          "lakara": "Lun",
+          "prayoga": "Kartari",
+          "purusha": "Prathama",
+          "vacana": "Bahu"
+        },
+        "reasons": [
+          "r_it_shortening_block_after_luk"
+        ],
+        "correct": true,
+        "status": "completed"
+      },
+      {
+        "id": "cart5-16ff2f87dbd407dcb162f637",
+        "code": "01.0131",
+        "citation": "lAKf~",
+        "bases": [
+          "lAK"
+        ],
+        "morphology": {
+          "lakara": "Lun",
+          "prayoga": "Kartari",
+          "purusha": "Uttama",
+          "vacana": "Eka"
+        },
+        "reasons": [
+          "r_it_shortening_block_after_luk"
+        ],
+        "correct": true,
+        "status": "completed"
+      },
+      {
+        "id": "cart5-6a70af6e75ea874955164743",
+        "code": "01.1009",
+        "citation": "meTf~^",
+        "bases": [
+          "meT"
+        ],
+        "morphology": {
+          "lakara": "Lun",
+          "prayoga": "Kartari",
+          "purusha": "Uttama",
+          "vacana": "Bahu"
+        },
+        "reasons": [
+          "r_it_shortening_block_after_luk"
+        ],
+        "correct": false,
+        "status": "completed"
+      },
+      {
+        "id": "cart5-7e41df6f578a64e5a7e699be",
+        "code": "01.0947",
+        "citation": "mleqf~",
+        "bases": [
+          "mleq"
+        ],
+        "morphology": {
+          "lakara": "Lun",
+          "prayoga": "Kartari",
+          "purusha": "Madhyama",
+          "vacana": "Dvi"
+        },
+        "reasons": [
+          "r_it_shortening_block_after_luk"
+        ],
+        "correct": false,
+        "status": "completed"
+      },
+      {
+        "id": "cart5-e1bd241bf4cf40e4f564fdd8",
+        "code": "01.0870",
+        "citation": "prasa~\\",
+        "bases": [
+          "pras"
+        ],
+        "morphology": {
+          "lakara": "VidhiLin",
+          "prayoga": "Karmani",
+          "purusha": "Madhyama",
+          "vacana": "Eka"
+        },
+        "reasons": [
+          "non_am_lexical_mit_after_luk"
+        ],
+        "correct": false,
+        "status": "completed"
+      },
+      {
+        "id": "cart5-cc8df8803db89aa10ec2511f",
+        "code": "01.0819",
+        "citation": "vesf~",
+        "bases": [
+          "ves"
+        ],
+        "morphology": {
+          "lakara": "Lun",
+          "prayoga": "Kartari",
+          "purusha": "Uttama",
+          "vacana": "Dvi"
+        },
+        "reasons": [
+          "r_it_shortening_block_after_luk"
+        ],
+        "correct": false,
+        "status": "completed"
+      }
+    ]
+  },
+  "interpretation": "These source-grounded composition concerns justify conservative quarantine pending repair, not substitution of the model answer into gold. The full rare alternate forms are not independently printed in these sources. Earlier item reviews treating retained r-it/lexical mit as certain should be qualified if these gates are adopted.",
+  "raw_tasks_gold_or_scores_changed": false,
+  "shared_adapter_sha256": "2439989e6e38d8d7770b3ce6cedf621a074a65f4a4844a32aaa092bbf233c30b",
+  "paid_calls": 0
+}

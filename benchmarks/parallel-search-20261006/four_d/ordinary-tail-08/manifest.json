@@ -1,0 +1,43 @@
+{
+  "created_at": "2026-10-07T15:01:50.184138+00:00",
+  "run_id": "ordinary-tail-08",
+  "n": 96,
+  "families": 96,
+  "policy": "oracle-policy-21",
+  "tasks_digest": "968064cae39ba5e43cc5c8f0deeb14379627ef07ebad0e5df970b25cc5fb5550",
+  "tasks_sha256": "b31d447fb6f47647b4b92cc366944e098c47b726a71bbbddf24575099488f820",
+  "files": {
+    "design.json": "d6861a42fc086d244015ede79958200c4caaf72a3e2dadf5c803e512c3b50d9b",
+    "inventory.json": "dcaccd40275ca8e4329e663e5caa3e534a07a7ae8f8a4ddfa5f41aae966aef72",
+    "fresh-tail-metadata.json": "5726df41742a202d5fdd6c21ec91403f0a12c55475c861abcb70def9fd31ac96",
+    "panel-design.json": "07e6f93af4925d5daee1e217e7d86106afd8f6108c78c457c975d64c07a86086",
+    "panel.questions.json": "b31d447fb6f47647b4b92cc366944e098c47b726a71bbbddf24575099488f820",
+    "panel-source-paths.json": "2971e370752a10c2be4794b09a381908609fe02ac8e5cec7958018c9e514e93c",
+    "panel-mechanical-audit.json": "ed111824a6448f2366487647a971df1870b36f596c85cec57eaa7a9a3f4e74a4",
+    "source-audit.json": "33cd9ee75a81c138bd2c4799235d7779357aa49a81ce01716d91a13643f28ecb",
+    "novelty-audit.json": "9d460962f5ad3d43c4964ca15daca6eba011cc45b02ff56689378d69e85b1912",
+    "review.md": "0005e032bb43dc0cfb2afb770a6e20c8b0646cb7f56449aea081835871f0eda3",
+    "analysis-predeclaration.json": "262008502e01aec1dbdf2e5c84e78bd3d69481cf265e6ad82ab33c81b61fd95d",
+    "finalize-audits.py": "28e5bb0ba1f2d8ea0a7dfdbacea9a94fae6a4e9df94d3621d88822d0bfd13dd1"
+  },
+  "dependencies": {
+    "misc/vp_4d_ordinary_tail08.py": "025d6772b773e9564b20664cebec5de49ea91622986042d0dce4e8633e8dd8bc",
+    "misc/vp_4d_tail08_panel.py": "57a5a498db2b778daa650bfdb6e8cd5284559c25fb8a76d9954b93b19c837346",
+    "misc/vp_4d_tail08_analyze.py": "44aeb5a226adbc1ca16e0c0ff2547f90510712b6dbb43ac0c135e02b91ab2a87",
+    "misc/vp_4d_tail08_analyze_test.py": "a330eb894768f0494d5131ff592ea15b64b00bb26b0c5e1fe6ff4322d6d7d1bb",
+    "misc/vp_4d_coverage05.py": "03c28aa4ad937948c06f3266efed377c91f5bd716b254219220d48235116f8d4",
+    "misc/vp_cartesian_task.py": "f5bfab6f3fc27b7c83bbd6987bede73501592a9568fda32a0371bd8e23b7febd",
+    "misc/vp_cartesian_prompt_v1.py": "1cdf3930d2e6b5bf9994a0a5fd25918a2e038b6dfbbcc9a9bab1fb59ddbfcfff",
+    "misc/vp_goal_stats.py": "afa7cd2ff3e4e89994db5b682adc3141608110ec6cdefdb739884e27be3d0d95",
+    "misc/vp_campaign_candidates.py": "e8e8a049f637aebb1d7a2970102602dfa82dd13a6e393e558b5bb3804c63c0c1"
+  },
+  "tests": {
+    "command": ".venv/bin/python -m unittest misc.vp_4d_tail08_analyze_test",
+    "passed": 8,
+    "synthetic_only": true
+  },
+  "fixed_history_snapshot": "74 input files frozen by inventory.json and novelty-audit.json; later prepared self-job is not prior exposure.",
+  "submitted_by_worker": false,
+  "worker_paid_calls": 0,
+  "benchmark_ready": false
+}

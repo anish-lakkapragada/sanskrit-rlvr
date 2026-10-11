@@ -1,0 +1,54 @@
+{
+  "created_at": "2026-10-07T00:21:18.552784+00:00",
+  "filename": "bench-calibration-01.json",
+  "n": 300,
+  "seed": 20261013,
+  "cells": [
+    {
+      "label": "aorist_composition",
+      "construction": "causative_of_intensive",
+      "n": 120,
+      "lakaras": [
+        "Lun"
+      ],
+      "exclude_ganas": [
+        "Curadi"
+      ],
+      "exclude_rules": [
+        "7.4.79",
+        "7.4.80",
+        "7.4.94",
+        "7.4.95"
+      ]
+    },
+    {
+      "label": "triple_composition",
+      "construction": "desiderative_of_causative_of_intensive",
+      "n": 180,
+      "lakaras": [
+        "Lut",
+        "Lit",
+        "AshirLin"
+      ],
+      "exclude_ganas": [
+        "Curadi"
+      ]
+    }
+  ],
+  "counts": {
+    "causative_of_intensive": 120,
+    "desiderative_of_causative_of_intensive": 180
+  },
+  "attempts": {
+    "causative_of_intensive": 242,
+    "desiderative_of_causative_of_intensive": 192
+  },
+  "split": "development",
+  "root_families": 259,
+  "max_per_family": 2,
+  "task_digest": "1a3f9b651635457daf0cd5c193fdd8d1ff821f31af1896e26533f56bfdc80b96",
+  "file_sha256": "4675ca6bc1f5da9870b85d33f432e3ab86205a625237d41a2eb015aa1b0e1575",
+  "generator_sha256": "f9c704c0a456b06f5400c128c84edd58edc1fb64850430fe6c8e686d2f45c940",
+  "selection": "Uniform shuffled root visits within predeclared cells; grammatical validity and uniqueness only. No model-score filtering.",
+  "audit_status": "VP generation and transliteration checks; construction review remains required"
+}

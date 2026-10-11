@@ -1,0 +1,24 @@
+{
+  "pid": 51839,
+  "launched_at": "2026-10-08T00:38:49.233132+00:00",
+  "command": [
+    "/Users/anish/Documents/git-repos/sanskrit/.venv/bin/python",
+    "-u",
+    "-m",
+    "misc.vp_continuous64k",
+    "/Users/anish/Documents/git-repos/sanskrit/benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01",
+    "--execute"
+  ],
+  "execution_plan_sha256": "69201de2ede7e2ee2168ff1180324875aa22d4c3e34c385e58894ba110ad4967",
+  "lifetime_caps_usd": {
+    "Anthropic": 1000,
+    "OpenAI": 2000
+  },
+  "additional_run_caps_usd": {
+    "Anthropic": 100,
+    "OpenAI": 225
+  },
+  "concurrency_per_provider": 16,
+  "no_paid_retries": true,
+  "benchmark_ready": false
+}

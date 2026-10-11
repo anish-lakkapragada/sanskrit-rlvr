@@ -1,0 +1,67 @@
+{
+  "created_at": "2026-10-08T00:43:42.959449+00:00",
+  "status": "materialized_training_data_not_a_trained_model; spelling_reward_policy_pending_independent_review",
+  "n": 1400,
+  "split": "rl_train",
+  "families": 332,
+  "component_counts": {
+    "short_adanta_non_aorist": 728,
+    "other_adanta_aorist": 112,
+    "broad_non_curadi": 560
+  },
+  "metadata_membership_and_order_preserved": true,
+  "public_tasks_path": "public-tasks.jsonl",
+  "private_canonical_gold_path": "canonical-gold.jsonl",
+  "combined_inspection_path": "tasks.json",
+  "files": {
+    "materialize.py": "6227e8625bb2ad17b3cb47bd8ea411d6b6a4130f9ec25e5e785612bdfebe8170",
+    "tasks.json": "487a2d71415890581608f06727d0d203da8ca824e28a13a680a090603f8e1f6d",
+    "public-prompts.json": "759e3e04874d6dd89373292ad9188a8394884e2457af01bcf4a7c76807483ace",
+    "public-tasks.jsonl": "51e7e7a5e1461cf4e5a7bf2a1d99e97a96baf17786a728fe4ec4c1a898a613b0",
+    "canonical-gold.jsonl": "64a0a87e15da7b3f40d7a1d86300bd16bd82342e01889e061f6b0ba1cdb6905e",
+    "curriculum-metadata.json": "10f4372e373f12d6f5441b22a4afd97d7851b304db23a9cbb1e03ad3bc7a4787",
+    "materialization-audit.json": "042e95f4c2dae92d68fbb80a80fd14a92b77a716187e4c237e80a99bfa09c51f",
+    "source-policy.json": "e5c48ee7b54006f138d97d3c7cd9a90c76896c9954e3278568e17c5f2cb59284"
+  },
+  "dependencies": {
+    "benchmarks/parallel-search-20261007/four_d-90/rl-supply/strict-citation-option/curriculum-manifest.json": "12212466050921b87bf1a379ffa835aec74fd3ddbc773a4603239ccac7e4e6cb",
+    "benchmarks/parallel-search-20261007/four_d-90/rl-supply/strict-citation-option/curriculum-1400-metadata.json": "10f4372e373f12d6f5441b22a4afd97d7851b304db23a9cbb1e03ad3bc7a4787",
+    "benchmarks/parallel-search-20261007/four_d-90/rl-supply/strict-citation-option/training-inventory-metadata.json": "8a250696a30d510527c08651993520c54a14c353fa7ea85dbdd6d1b5a0c12245",
+    "benchmarks/creation-campaign-20261006/family-split.json": "a1c46bb778bca8f89df468d65232698131a3c4b137393865cd3f6b121fc6077f",
+    "benchmarks/parallel-search-20261007/four_d-90/candidate-1800-v1/tasks.json": "695e7284d06a555aaabfcb7671d000db5622157984221c261b9500e86f72d38f",
+    "benchmarks/parallel-search-20261007/four_d-90/candidate-1800-v1/public-prompts.json": "187fa86a4b840f121ea443158654eda866fe78126efd0fe6f6b820986e742f81",
+    "benchmarks/parallel-search-20261007/four_d-90/candidate-1800-v1/source-policy.json": "e5c48ee7b54006f138d97d3c7cd9a90c76896c9954e3278568e17c5f2cb59284",
+    "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/execution-plan.json": "69201de2ede7e2ee2168ff1180324875aa22d4c3e34c385e58894ba110ad4967"
+  },
+  "inherited_source_dependencies": {
+    "benchmarks/creation-campaign-20261006/family-split.json": "a1c46bb778bca8f89df468d65232698131a3c4b137393865cd3f6b121fc6077f",
+    "benchmarks/parallel-search-20261007/four_d-90/test-source-hold-predeclaration.json": "0ebafc39da1095e137896dac87235fe82daa686a8efabd2cbab2553a995b912a",
+    "misc/vp_cartesian_task.py": "f5bfab6f3fc27b7c83bbd6987bede73501592a9568fda32a0371bd8e23b7febd",
+    "misc/vp_cartesian_prompt_v1.py": "1cdf3930d2e6b5bf9994a0a5fd25918a2e038b6dfbbcc9a9bab1fb59ddbfcfff",
+    "misc/vp_4d_pilot04.py": "44822ce2be986bb5500082bfc506fc865205a429d4fe875ac39bf6e51702edc6",
+    "misc/vp_4d_pilot05.py": "d518f65e83799c9b837db31efc63be6bee65f0079b3a33031fb76bbc1108ec5a",
+    "misc/vp_4d_candidate_prepare.py": "89ca285793e1b424fedff42f117523237949ebfea36261c377c0a2e88c33da14",
+    "misc/vp_campaign_candidates.py": "e8e8a049f637aebb1d7a2970102602dfa82dd13a6e393e558b5bb3804c63c0c1",
+    "finetune/prompts.py": "2f474c6a8a14b9445b1686c5f0b63ebf60f8d9fb061e67c6134ccdb4683a4a2e",
+    "prompts/v2/vp_task_eval.txt": "a784e3a1cf0e5f5d8b56c018d166ad78fa62d8af489291ef96d8f6fea70239cd",
+    "data/finetune/task-data/vidyut_dhatupatha_5.tsv": "c6c494a6c534130b2d8e8f344d2f5e3ffbc64ed45b390e2a4e35e526f1cecd09",
+    "benchmarks/parallel-search-20261006/oracle-policy-21.json": "e19f60de4fc58a43a72ee0a48320f0c11383a39eb21b45f2859361701158220c"
+  },
+  "export_format": {
+    "public": "One JSON object per line, in original curriculum order; give only prompt to the model.",
+    "gold": "One keyed answer-union object per line in the same order; retain every accepted canonical variant, not only the first.",
+    "blocks": "56 consecutive25-question blocks each retain13 short-adanta non-Lun,2 other-adanta Lun and10 broad questions."
+  },
+  "limitations": [
+    "No model has been trained, scored or shown to improve using this export.",
+    "The hard short-adanta training component contains nine lexical families; many coordinates do not add independent families.",
+    "Exact citation/family separation does not prove absence of shared stems, related meanings or pretraining exposure.",
+    "Canonical unions inherit the audited VP oracle and remaining source limitations; do not penalize a source-licensed unfamiliar spelling without adjudication.",
+    "A separate finite spelling proposal requires independent review before becoming a reward policy; unknown usable outputs require source review.",
+    "All questions use Kartari within the original four-coordinate format; no claim to cover the full voice Cartesian product."
+  ],
+  "training_started": false,
+  "provider_calls": 0,
+  "model_outputs_read": false,
+  "paid_dependencies_changed": false
+}

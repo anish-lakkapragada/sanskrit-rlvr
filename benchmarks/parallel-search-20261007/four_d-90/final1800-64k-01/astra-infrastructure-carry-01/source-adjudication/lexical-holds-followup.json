@@ -1,0 +1,580 @@
+{
+  "schema": "vp-source-lexical-holds-followup-v1",
+  "created_at": "2026-10-08T02:49:14.191213+00:00",
+  "scope": "Four previously unresolved Opus lexical cases, with symmetric paired observations and explicit input/key defects. No historical files or scores changed.",
+  "counts": {
+    "accepted_source_licensed_answers_with_input_repair_required": 2,
+    "rejected": 1,
+    "unresolved": 1
+  },
+  "rows": [
+    {
+      "index": 481,
+      "disposition": "accepted",
+      "disposition_scope": "Source-licensed answer for the identified ordinary lexeme; not a declaration that the historical public input is sound.",
+      "input_status": "source_inconsistent_citation_requires_repair",
+      "source_licensed_answer": "अरेबामहि",
+      "canonical_key_action": "revoke_on_source_corrected_version",
+      "unsupported_canonical_answer": "अरेबाम",
+      "union_of_old_and_new_gold_defensible": false,
+      "evidence": [
+        {
+          "source": "dhatupradipa-43.jpg",
+          "printed_page": 33,
+          "kind": "visually_read_primary",
+          "passage": "रेबते",
+          "explanation": "The b-final rebu/pl ebu entries have middle present forms; the typography of the heading is corroborated by the explicit b/v contrast on printed40."
+        },
+        {
+          "source": "dhatupradipa-50.jpg",
+          "printed_page": 40,
+          "kind": "visually_read_primary",
+          "passage": "पूर्वको रेबप्लेबौ पवर्गे पठितौ स्पर्शान्तौ",
+          "explanation": "The commentator distinguishes earlier stop-final reb/pleb from approximant-final rev/plev and closes this section as atmanebhasa, udatta roots with anudatta it-markers."
+        },
+        {
+          "source": "1.3.12.html",
+          "kind": "primary_rule",
+          "explanation": "Anudatta-it licenses the middle endings. No extra sanadi, prefix or semantic operation is needed."
+        }
+      ],
+      "derivation": "The lexical source fixes the ordinary middle branch. Lan supplies aT (6.4.71); ordinary Bhvadi Kartari supplies SaP (3.1.68); Uttama/Bahu selects mahiN (3.4.78, with its marker removed), and a before m lengthens (7.3.101): a + reb + a + mahi -> arebAmahi. Lan is not Tit, so the Tit-only e replacement of 3.4.79 does not apply.",
+      "repair_proposal": {
+        "aupadeshika_slp1": "rebf~\\",
+        "visible_citation": "रेबृँ॒",
+        "same_other_fields": true,
+        "canonical_gold_devanagari": [
+          "अरेबामहि"
+        ],
+        "status": "Proposal only; independent review and a new task/version are required."
+      },
+      "whole_input_scope": "All ordinary rebf~/plavagatO questions need citation and intrinsic-pada review, including previously scored successes. The current1800 contains one such question. The sources do not license retaining P solely because VP generated it from the damaged citation.",
+      "task_id": "cart4-382396ff90d39e05eac2a1ba",
+      "dhatu": {
+        "code": "01.0248",
+        "aupadeshika": "rebf~",
+        "gana": "Bhvadi",
+        "artha": "plavagatO"
+      },
+      "morphology": {
+        "lakara": "Lan",
+        "prayoga": "Kartari",
+        "purusha": "Uttama",
+        "vacana": "Bahu"
+      },
+      "historical_gold": [
+        "अरेबाम"
+      ],
+      "public_prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested conjugated verb form from the Sanskrit verbal root (dhatu, given in\nDevanagari in its Dhatupatha citation form, anubandha markers included), its\nverb class (gana), its traditional meaning (artha), and the required\ntense/mood (lakara), voice (prayoga), person (purusha), and number (vacana).\nEach Sanskrit grammatical term is glossed in parentheses in English.\n\nWrite ONLY the final conjugated verb form, in Devanagari script, inside\n<answer></answer> tags. If several forms are valid, give exactly one.\nDo not include any text outside the answer tags.\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): रेबृँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Bhvadi (class 1)\nartha (traditional meaning): प्लवगतौ\n\nRequired form:\n- lakara (tense/mood): Lan (imperfect)\n- prayoga (voice): Kartari (active)\n- purusha (person): Uttama (first person)\n- vacana (number): Bahu (plural)\n",
+      "paired_observations": {
+        "Anthropic": {
+          "answer": "अरेबामहि",
+          "historical_is_correct": false
+        },
+        "OpenAI": {
+          "answer": "अरेबाम",
+          "historical_is_correct": true
+        }
+      },
+      "all_current_cohort_same_code_task_ids": [
+        "cart4-382396ff90d39e05eac2a1ba"
+      ],
+      "editorial_inventory_corrobation_not_primary_proof": [
+        {
+          "i": "1010248",
+          "baseindex": "01.0248",
+          "dhatu": "रेब्",
+          "aupadeshik": "रेबृँ",
+          "gana": "1",
+          "pada": "A",
+          "settva": "S",
+          "karma": "A",
+          "artha": "प्लवगतौ",
+          "artha_english": "to leap, to jump, to cross by flying, to cross by swimming",
+          "tags": "उदात्तोपदेशः",
+          "pathabhed_note": "<{1.584}> <<रेवृँ>> इत्यस्य अयं पाठभेदः सिद्धान्तकौमुद्यां पाठितः नास्ति परन्तु धातुप्रदीपे दृश्यते ।",
+          "dhaturoopnandini": "",
+          "sk": "",
+          "lsk_sutra": "",
+          "sk_sutra": "",
+          "artha_hindi": "उड़कर जाना, तैरकर पार करना",
+          "upasargas": [],
+          "antarganas": "",
+          "dhaturoopnandini_note": ""
+        }
+      ]
+    },
+    {
+      "index": 495,
+      "disposition": "accepted",
+      "disposition_scope": "Source-licensed answer for the identified ordinary lexeme; historical citation has a missing required accent.",
+      "input_status": "source_inconsistent_citation_requires_repair",
+      "source_licensed_answer": "खुण्डिताध्वे",
+      "canonical_key_action": "revoke_on_source_corrected_version",
+      "unsupported_canonical_answer": "खुण्डितास्थ",
+      "union_of_old_and_new_gold_defensible": false,
+      "evidence": [
+        {
+          "source": "kshira-110.jpg",
+          "printed_page": 53,
+          "kind": "visually_read_primary",
+          "passage": "खुडि गतिवैकल्ये । खुण्डते",
+          "explanation": "Kshiratarangini1.188 explicitly gives the exact meaning and middle form, distinguishes Curadi khud/breaking, and closes the group as udatta/anudatta-it."
+        },
+        {
+          "source": "1.3.12.html",
+          "kind": "primary_rule",
+          "explanation": "The source's anudatta-it classification licenses intrinsic middle endings."
+        },
+        {
+          "source": "sk-primary-text.json",
+          "key": "82025",
+          "kind": "primary_commentary_transcription",
+          "passage": "धादौ प्रत्यये परे सलोपः स्यात् । एधिताध्वे",
+          "explanation": "SK explicitly demonstrates the same Lut middle2pl ending; this is a complete productive derivation, not a demand for a separately printed khund paradigm."
+        }
+      ],
+      "derivation": "The idit lexical entry gives khund by num (7.1.58). Lut supplies tAs (3.1.33), with it before this valadi ardhadhatuka affix (7.2.35). Middle Madhyama/Bahu uses dhvam (3.4.78), whose ti portion becomes e in Tit Lut (3.4.79): dhve. SK's 8.2.25 treatment, explicitly exemplified by edhitAdhve, removes s before dh: khund+i+tAs+dhve -> khunditAdhve. No Curadi or causative branch is invoked.",
+      "repair_proposal": {
+        "aupadeshika_slp1": "Kuqi~\\",
+        "visible_citation": "खुडिँ॒",
+        "same_other_fields": true,
+        "canonical_gold_devanagari": [
+          "खुण्डिताध्वे"
+        ],
+        "status": "Proposal only; independent review and a new task/version are required."
+      },
+      "whole_input_scope": "All ordinary Kuqi~/gativEkalye questions need citation and intrinsic-pada review, including successes. The current1800 contains one such question. A P+A union is not supported by the exact inspected lexical source; the distinct Curadi breaking entry cannot supply a missing P branch here.",
+      "task_id": "cart4-b1d1597c0399d759f826c23f",
+      "dhatu": {
+        "code": "01.0946",
+        "aupadeshika": "Kuqi~",
+        "gana": "Bhvadi",
+        "artha": "gativEkalye"
+      },
+      "morphology": {
+        "lakara": "Lut",
+        "prayoga": "Kartari",
+        "purusha": "Madhyama",
+        "vacana": "Bahu"
+      },
+      "historical_gold": [
+        "खुण्डितास्थ"
+      ],
+      "public_prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested conjugated verb form from the Sanskrit verbal root (dhatu, given in\nDevanagari in its Dhatupatha citation form, anubandha markers included), its\nverb class (gana), its traditional meaning (artha), and the required\ntense/mood (lakara), voice (prayoga), person (purusha), and number (vacana).\nEach Sanskrit grammatical term is glossed in parentheses in English.\n\nWrite ONLY the final conjugated verb form, in Devanagari script, inside\n<answer></answer> tags. If several forms are valid, give exactly one.\nDo not include any text outside the answer tags.\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): खुडिँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Bhvadi (class 1)\nartha (traditional meaning): गतिवैकल्ये\n\nRequired form:\n- lakara (tense/mood): Lut (periphrastic future)\n- prayoga (voice): Kartari (active)\n- purusha (person): Madhyama (second person)\n- vacana (number): Bahu (plural)\n",
+      "paired_observations": {
+        "Anthropic": {
+          "answer": "खुण्डिताध्वे",
+          "historical_is_correct": false
+        },
+        "OpenAI": {
+          "answer": "खुण्डितास्थ",
+          "historical_is_correct": true
+        }
+      },
+      "all_current_cohort_same_code_task_ids": [
+        "cart4-b1d1597c0399d759f826c23f"
+      ],
+      "editorial_inventory_corrobation_not_primary_proof": [
+        {
+          "i": "1010946",
+          "baseindex": "01.0946",
+          "dhatu": "खुण्ड्",
+          "aupadeshik": "खुडिँ",
+          "gana": "1",
+          "pada": "A",
+          "settva": "S",
+          "karma": "S",
+          "artha": "गतिवैकल्ये",
+          "artha_english": "to halt, to stop",
+          "tags": "उदात्तोपदेशः",
+          "pathabhed_note": "अयं धातुः सिद्धान्तकौमुद्यां पाठितः नास्ति परन्तु धातुप्रदीपे पाठितः दृश्यते ।",
+          "dhaturoopnandini": "",
+          "sk": "",
+          "lsk_sutra": "",
+          "sk_sutra": "",
+          "artha_hindi": "रोकना",
+          "upasargas": [],
+          "antarganas": "",
+          "dhaturoopnandini_note": ""
+        }
+      ]
+    },
+    {
+      "index": 566,
+      "disposition": "unresolved",
+      "disposition_scope": "Do not certify a scored error while the exact supplied lexical reading remains unverified.",
+      "input_status": "exact_dictionary_reading_unverified",
+      "canonical_key_action": "hold_pending_source_identity_resolution",
+      "union_of_old_and_new_gold_defensible": false,
+      "evidence": [
+        {
+          "source": "kshira-141.jpg",
+          "printed_page": 84,
+          "kind": "visually_read_primary",
+          "passage": "पेलृ फेलृ शेलृ गतौ",
+          "explanation": "The cited alternate-reading locus prints shelf, with footnote7 self; it does not establish the supplied zalf (short a)."
+        },
+        {
+          "source": "kshira-142.jpg",
+          "printed_page": 85,
+          "kind": "visually_read_primary",
+          "passage": "सल गतौ । सलति",
+          "explanation": "A separate sal entry is present; this does not itself establish the benchmark's final-r marker or its mapping to the shel/sel alternate."
+        },
+        {
+          "source": "dhatupatha-svara.html",
+          "kind": "primary_text_edition",
+          "explanation": "The inspected accentuated text similarly distinguishes shel/sel at1.623/624 from zala at1.628. Its numbering is an edition's numbering, not the repo's synthetic1.0253."
+        },
+        {
+          "source": "3.1.55.html",
+          "kind": "primary_rule",
+          "explanation": "The aN aorist class condition is puSadi/dyutadi or vocalic-l marker, not a generic vocalic-r marker. Thus asalatAm has not been licensed by confusing r-it with l-it."
+        }
+      ],
+      "derivation": "No complete source-supported derivation for submitted asalatAm was found. It resembles the imperfect or an unlicensed aN aorist. This is insufficient to clear the question itself: the claimed Kshira cross-reference does not match the visible citation in the inspected edition. The canonical asAlizwAm remains only conditionally grammatical for a hypothetical ordinary set sal branch, not a newly certified answer to this exact dictionary citation.",
+      "repair_proposal": {
+        "status": "Retain the input hold. A future version should use a independently verified sal or shel/sel entry and regenerate/review its key; do not silently change short a to e or substitute a different marker in the historical task."
+      },
+      "whole_input_scope": "The same zalf~|Bhvadi identity also occurs as repo01.0759 outside this selected cohort. Any such inventory entries require the same source-identity hold. Only01.0253 appears in this1800 panel.",
+      "task_id": "cart4-ac5fbb663ab386570b4852e6",
+      "dhatu": {
+        "code": "01.0253",
+        "aupadeshika": "zalf~",
+        "gana": "Bhvadi",
+        "artha": "gatO"
+      },
+      "morphology": {
+        "lakara": "Lun",
+        "prayoga": "Kartari",
+        "purusha": "Prathama",
+        "vacana": "Dvi"
+      },
+      "historical_gold": [
+        "असालिष्टाम्"
+      ],
+      "public_prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested conjugated verb form from the Sanskrit verbal root (dhatu, given in\nDevanagari in its Dhatupatha citation form, anubandha markers included), its\nverb class (gana), its traditional meaning (artha), and the required\ntense/mood (lakara), voice (prayoga), person (purusha), and number (vacana).\nEach Sanskrit grammatical term is glossed in parentheses in English.\n\nWrite ONLY the final conjugated verb form, in Devanagari script, inside\n<answer></answer> tags. If several forms are valid, give exactly one.\nDo not include any text outside the answer tags.\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): षलृँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Bhvadi (class 1)\nartha (traditional meaning): गतौ\n\nRequired form:\n- lakara (tense/mood): Lun (aorist)\n- prayoga (voice): Kartari (active)\n- purusha (person): Prathama (third person)\n- vacana (number): Dvi (dual)\n",
+      "paired_observations": {
+        "Anthropic": {
+          "answer": "असलताम्",
+          "historical_is_correct": false
+        },
+        "OpenAI": {
+          "answer": "असालिष्टाम्",
+          "historical_is_correct": true
+        }
+      },
+      "all_current_cohort_same_code_task_ids": [
+        "cart4-ac5fbb663ab386570b4852e6"
+      ],
+      "editorial_inventory_corrobation_not_primary_proof": [
+        {
+          "i": "1010253",
+          "baseindex": "01.0253",
+          "dhatu": "सल्",
+          "aupadeshik": "षलृँ",
+          "gana": "1",
+          "pada": "P",
+          "settva": "S",
+          "karma": "S",
+          "artha": "गतौ",
+          "artha_english": "to go, walk",
+          "tags": "उदात्तोपदेशः",
+          "pathabhed_note": "<{1.624}> <<सेलँ>> इत्यस्य अयं पाठभेदः सिद्धान्तकौमुद्यां पाठितः नास्ति परन्तु क्षीरतरङ्गिण्यां दृश्यते ।",
+          "dhaturoopnandini": "",
+          "sk": "",
+          "lsk_sutra": "",
+          "sk_sutra": "",
+          "artha_hindi": "",
+          "upasargas": [],
+          "antarganas": "",
+          "dhaturoopnandini_note": ""
+        }
+      ]
+    },
+    {
+      "index": 1186,
+      "disposition": "rejected",
+      "disposition_scope": "The literal citation selects an independently attested P variant; the middle homograph has an additional accent in its citation.",
+      "input_status": "source_supported_distinct_citation",
+      "canonical_key_action": "retain",
+      "evidence": [
+        {
+          "source": "sk-primary-text.json",
+          "key": "72005",
+          "kind": "primary_commentary_transcription",
+          "passage": "कड मदे । कडति । कडि इत्येके । कण्डति",
+          "explanation": "The P kadi variant is explicitly attested, rather than merely inferred from absent engine accents."
+        },
+        {
+          "source": "madhaviya170.jpg",
+          "printed_page": 116,
+          "kind": "visually_read_primary",
+          "explanation": "The kada discussion gives kadati, records Kshirasvamin's kadi reading, and explicitly distinguishes the previously treated kandate."
+        },
+        {
+          "source": "madhaviya160.jpg",
+          "printed_page": 106,
+          "kind": "visually_read_primary",
+          "passage": "कडि मदे । कण्डते",
+          "explanation": "The separate earlier middle entry is confirmed. Its existence does not erase the distinct P reading."
+        },
+        {
+          "source": "dhatupatha-svara.html",
+          "kind": "primary_text_edition",
+          "explanation": "This text distinguishes1.316 kadi with anudatta from1.418 kadi under the udatta-it/P group. The actual benchmark renderer preserves that distinction."
+        }
+      ],
+      "derivation": "For the supplied kadi without anudatta, the attested P variant gives kand (7.1.58), future i+sya (3.1.33,7.2.35), and mi (3.4.78), with a lengthening before m (7.3.101): kaRqizyAmi. Submitted kaRqizye selects the ending of the separate middle citation kaqi~\\, which the public prompt did not supply.",
+      "repair_proposal": {
+        "status": "No gold change warranted. For future clarity the general prompt may explicitly say that displayed accent/it markers identify the lexical entry; that is documentation, not a fifth task coordinate."
+      },
+      "whole_input_scope": "Do not conflate repo01.0418 kaqi~ with01.0316 kaqi~\\. Both have class1 and meaning made, but the citation itself differs visibly (कडिँ versus कडिँ॒). Only01.0418 occurs here.",
+      "task_id": "cart4-84fc442033bc0ac4a05dd9d4",
+      "dhatu": {
+        "code": "01.0418",
+        "aupadeshika": "kaqi~",
+        "gana": "Bhvadi",
+        "artha": "made"
+      },
+      "morphology": {
+        "lakara": "Lrt",
+        "prayoga": "Kartari",
+        "purusha": "Uttama",
+        "vacana": "Eka"
+      },
+      "historical_gold": [
+        "कण्डिष्यामि"
+      ],
+      "public_prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested conjugated verb form from the Sanskrit verbal root (dhatu, given in\nDevanagari in its Dhatupatha citation form, anubandha markers included), its\nverb class (gana), its traditional meaning (artha), and the required\ntense/mood (lakara), voice (prayoga), person (purusha), and number (vacana).\nEach Sanskrit grammatical term is glossed in parentheses in English.\n\nWrite ONLY the final conjugated verb form, in Devanagari script, inside\n<answer></answer> tags. If several forms are valid, give exactly one.\nDo not include any text outside the answer tags.\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): कडिँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Bhvadi (class 1)\nartha (traditional meaning): मदे\n\nRequired form:\n- lakara (tense/mood): Lrt (simple future)\n- prayoga (voice): Kartari (active)\n- purusha (person): Uttama (first person)\n- vacana (number): Eka (singular)\n",
+      "paired_observations": {
+        "Anthropic": {
+          "answer": "कण्डिष्ये",
+          "historical_is_correct": false
+        },
+        "OpenAI": {
+          "answer": "कण्डिष्यामि",
+          "historical_is_correct": true
+        }
+      },
+      "all_current_cohort_same_code_task_ids": [
+        "cart4-84fc442033bc0ac4a05dd9d4"
+      ],
+      "editorial_inventory_corrobation_not_primary_proof": [
+        {
+          "i": "1010418",
+          "baseindex": "01.0418",
+          "dhatu": "कण्ड्",
+          "aupadeshik": "कडिँ",
+          "gana": "1",
+          "pada": "P",
+          "settva": "S",
+          "karma": "A",
+          "artha": "मदे",
+          "artha_english": "to be drunk, to be intoxicated, to be confused",
+          "tags": "उदात्तोपदेशः",
+          "pathabhed_note": "अयं धातुः सिद्धान्तकौमुद्याम् पृथग् रूपेण नैव पाठ्यते । परन्तु तत्र <{1.417}> <<कडँ>> इत्यत्र 'कडि इत्येके' इति निर्देशेन अयं पाठभेदः ज्ञापितः अस्ति ।",
+          "dhaturoopnandini": "",
+          "sk": "360P",
+          "lsk_sutra": "",
+          "sk_sutra": "2298",
+          "artha_hindi": "",
+          "upasargas": [],
+          "antarganas": "",
+          "dhaturoopnandini_note": ""
+        }
+      ]
+    }
+  ],
+  "symmetry_warning": "Reb and khund corrections would also revoke two currently correct Astra canonical answers under the identified source-backed lexemes. A false-to-true-only adjustment is insufficient and must not be used for these cases.",
+  "historical_input_policy": "Preserve all1800 historical task objects, prompts and raw grades. Mark these two inputs as defective; adopt any explicit source-conditioned retrospective annotation separately. Repair citations and gold in a new benchmark version, with fresh evaluation or an explicit statement that old responses were to different prompts.",
+  "no_silent_union": "Absence of an anudatta mark is not evidence that both endings are licensed. In the kaqi case both lexical readings are positively sourced and distinguished; in reb/khund the inspected exact lexemes support middle only.",
+  "source_limits": [
+    "The source inventory metadata is an editorial cross-reference, not an independent grammar proof.",
+    "Exact final inflections for reb/khund follow productive primary rules and printed structural analogues; the full submitted inflections are not claimed to be separately printed dictionary witnesses.",
+    "The Kshira edition inspected does not support the exact sal-r citation; absence in this bounded search is not a universal proof that no edition ever has it.",
+    "No claim of full-paradigm certification or full755-family source certification follows from this four-case review."
+  ],
+  "inputs": [
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/Anthropic-review.json",
+      "sha256": "cb4828562be0dbdfa6ccd4d24c5576ab8635a8d012030706bc194d9b794e1543"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/candidate-1800-v1/tasks.json",
+      "sha256": "695e7284d06a555aaabfcb7671d000db5622157984221c261b9500e86f72d38f"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/candidate-1800-v1/public-prompts.json",
+      "sha256": "187fa86a4b840f121ea443158654eda866fe78126efd0fe6f6b820986e742f81"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/results/Anthropic/canonical.json",
+      "sha256": "32318956c7fb7d771a85d583521fcb11d1491bbd87a9173d97dad1528fe030a3"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/results/OpenAI/canonical.json",
+      "sha256": "e1b6d6128ccd5cdc56b49bb95f05e8315275391a6d001841314d6a7416100c6e"
+    }
+  ],
+  "source_snapshots": [
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/lexical-holds-sources/1.3.12.html",
+      "sha256": "2bc8b28035efa0f5598d3670cc858d96a5e1d96c3d635b0dcbdfd25a0ca14c7e"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/lexical-holds-sources/1.3.78.html",
+      "sha256": "2c07d8f77c46621de1f9edb1f73bc6bc123b25ba5dff561ec43166fd7dc76a46"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/lexical-holds-sources/3.1.33.html",
+      "sha256": "0289a61329e4fe75c84a8f11723854a2f007685228837f28abcc3a2067db7cce"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/lexical-holds-sources/3.1.55.html",
+      "sha256": "0deafab3b0b4b8eb92b071990662e6cbedd847c5769ca41cae1af7749288973b"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/lexical-holds-sources/3.1.68.html",
+      "sha256": "a666a292419e715c0a6696bf73ec704a3b5db430983c8d0a9581c4c77f3145de"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/lexical-holds-sources/3.4.78.html",
+      "sha256": "1f693188f58176581b5089f98ff88b5f5e1b00a49953fcdfc1eb2fcf2d625329"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/lexical-holds-sources/3.4.79.html",
+      "sha256": "ef4c4c4d5d538fe18a90baeaaa2f579b6bafad0241cc493193c103a9cc2f3cc3"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/lexical-holds-sources/3.4.99.html",
+      "sha256": "493f56120b0ce9d4cd8a4d741f2df6e0ff18216ee4a1c18dc8039df40a164acd"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/lexical-holds-sources/6.4.71.html",
+      "sha256": "94260761ddb01d59387543ba64a44377c579db6e253b3d60ecb28b0d1386ff88"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/lexical-holds-sources/7.1.58.html",
+      "sha256": "4376463d2c6ca61b46930d3f1de2d1c4864db3b9072378c34fe6fc11540d7cea"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/lexical-holds-sources/7.2.35.html",
+      "sha256": "a8be82645ee1db5ca5ffab749d454510d8b09e571eb1b8bc86be54324b6aaa96"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/lexical-holds-sources/7.3.101.html",
+      "sha256": "6df0574ac57540e6c32908f6cb2a6c81821600ba7fd39c2c5b843e52a634e8e3"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/lexical-holds-sources/8.2.25.html",
+      "sha256": "e869f4cc7f5b79b722238b1eef93a71b62def8959d2028e2af6153ac8514972d"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/lexical-holds-sources/ashta-dhatu-data.json",
+      "sha256": "e8c0e929294c4ab68455b461ee81234e7a0febac1b72e6873ea832354a28b641"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/lexical-holds-sources/ashta-reb.html",
+      "sha256": "f762a0664e93d4ffa2ba557bfebb68bfa1f46171281352c34487cf5dfbf54a98"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/lexical-holds-sources/ashtadhyayi-app.js",
+      "sha256": "5f0014f5938d25ae7290010e006b554d6adcd78a1f554b4133cdde039fd96375"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/lexical-holds-sources/dhatupatha-svara.html",
+      "sha256": "fa92e0a502096e3b86dbee4fbfe7abeb9847e2e898bdfb4aca9a28a92934ee96"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/lexical-holds-sources/dhatupradipa-43.html",
+      "sha256": "794c393da61318bb1a29283dd217a25081c42e9daf78251f6bd82b4cb17a8e74"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/lexical-holds-sources/dhatupradipa-43.jpg",
+      "sha256": "c7ba30db830131b5ec50d6b5499588f7459187eecbc00b76cab0fca6e9952ddc"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/lexical-holds-sources/dhatupradipa-50.html",
+      "sha256": "cf9bcf5cba6abc7a7caf8168021bfc7f7cededbc99c90266a59088307b633ba1"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/lexical-holds-sources/dhatupradipa-50.jpg",
+      "sha256": "f98564e6cdad796260734f6d3dccfac94e31ad5200e0f0a2ccdbfe84e2c883f8"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/lexical-holds-sources/kshira-110.html",
+      "sha256": "2fb1c349ccd845ba0daba084ee788768c87b80a5f717a7e47d61987600d2c209"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/lexical-holds-sources/kshira-110.jpg",
+      "sha256": "f5939ce06daca9fa875df266171440715ca5c2d696dbb18dd4e4e8c97b9d600b"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/lexical-holds-sources/kshira-141.html",
+      "sha256": "38f75541982e105f30aa91fd7718d757d8fd1cdfff9aba86f36a7bbaf192ff1a"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/lexical-holds-sources/kshira-141.jpg",
+      "sha256": "3d7630723d20714aa39299f8b099a05c6378cdd8ca346637a23626ef27a44ab4"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/lexical-holds-sources/kshira-142.html",
+      "sha256": "4d149f17b6ed4a970522605172058d17dce96889bdc586bb205d483b36a90596"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/lexical-holds-sources/kshira-142.jpg",
+      "sha256": "035dbde25c43ab3e33fb480751b1b370479c7d74fa55e67a3d5112384c966fd6"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/lexical-holds-sources/kshira-full-text.txt",
+      "sha256": "308ad4cefb7f57b5550a69c76458e2cb72466d408598366d445b230c7672a8fd"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/lexical-holds-sources/kshira-full.html",
+      "sha256": "29fe94f42a14d75310ec81bf2853497ebe664b8d7c286798741ffc8fbc7f4fdc"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/lexical-holds-sources/madhaviya160.jpg",
+      "sha256": "9afb9e74bd11448e39feb333a3f7c33521ddf3e4293cd2e33bd3d212d18db2ba"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/lexical-holds-sources/madhaviya170.html",
+      "sha256": "96cdcb20ed025a815038e08605dc97c7c4868681e02939e8350a4066b115d4e1"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/lexical-holds-sources/madhaviya170.jpg",
+      "sha256": "b8ce4b7aa3dd6c0d56d5c14e113150ecd43799087b380ee74f51135649d11079"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/lexical-holds-sources/rule-source-index.json",
+      "sha256": "2597701bd89fb29159fc7ef1b3cbacda32a8b647ee1c7b932c26777965ad7d7d"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/lexical-holds-sources/sk-primary-text.json",
+      "sha256": "c1938e832ddc2e148ae36257448ee3391f71cdac28be19dc4bfdc3881f3b457d"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/lexical-holds-sources/tattva-primary-text.json",
+      "sha256": "6784a8d4f84de1f7b5653851ab5ff52ca88b3b28204b9515b74f0b75a9d3c2b4"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/lexical-holds-sources/tattvabodhini43.html",
+      "sha256": "013b33d6bc77220807939c1ef22d3f40249951878efc9e05075370978e11d9e2"
+    }
+  ],
+  "primary_scan_urls": {
+    "dhatupradipa-43.jpg": "https://jainqq.org/explore/004319/43",
+    "dhatupradipa-50.jpg": "https://jainqq.org/explore/004319/50",
+    "kshira-110.jpg": "https://jainqq.org/explore/002433/110",
+    "kshira-141.jpg": "https://jainqq.org/explore/002433/141",
+    "kshira-142.jpg": "https://jainqq.org/explore/002433/142",
+    "madhaviya160.jpg": "https://sanskritlibrary.org/Sanskrit/Vyakarana/Dhatupatha/mdhvscan/MDhVjpg/madhaviyahdhatuv00sayauoft_bw_0160.jpg",
+    "madhaviya170.jpg": "https://sanskritlibrary.org/Sanskrit/Vyakarana/Dhatupatha/mdhvscan/MDhVjpg/madhaviyahdhatuv00sayauoft_bw_0170.jpg"
+  },
+  "frozen_dependency_count_verified": 44,
+  "historical_mutations": 0,
+  "provider_calls": 0,
+  "ledger_changes": 0
+}

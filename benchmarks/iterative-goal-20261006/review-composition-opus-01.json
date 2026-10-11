@@ -1,0 +1,17 @@
+{
+  "created_at": "2026-10-06T23:29:23.213663+00:00",
+  "iteration": "composition-pilot-01",
+  "provider": "Anthropic",
+  "n": 400,
+  "correct": 123,
+  "completed_answers": 138,
+  "completed_correct": 123,
+  "refusals": 262,
+  "refusal_categories": {
+    "cyber": 262
+  },
+  "conclusion": "Inconclusive for linguistic difficulty: 65.5% classifier refusals. Completed answers score 89.13%. Do not route these cells to final tiers using the 30.75% all-task score.",
+  "next_action": "Paired grammatical-prompt diagnostics, then fresh trials using a prompt with reliable completion; await Astra pilot.",
+  "cost_upper_usd": 2.021806,
+  "source": "https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+}

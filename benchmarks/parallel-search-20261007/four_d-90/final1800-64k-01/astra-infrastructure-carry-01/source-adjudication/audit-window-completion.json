@@ -1,0 +1,56 @@
+{
+  "created_at": "2026-10-08T03:22:01.867206+00:00",
+  "user_requested_window_start": "2026-10-08T02:53:40Z",
+  "requested_response_time": "2026-10-08T03:23:40Z",
+  "status": "bounded_audit_and_report_checks_complete",
+  "new_paid_evaluation_calls": 0,
+  "ledger_sha256": "7967a8290b4006ebb3cc49c7b02fff1dd873231ad5aafb0a909dd42016994b86",
+  "committed_usd": {
+    "Anthropic": 333.801266,
+    "OpenAI": 953.01164
+  },
+  "caps_usd": {
+    "Anthropic": 1000,
+    "OpenAI": 2000
+  },
+  "unmatched_answers_reviewed": 476,
+  "input_families_checked": 755,
+  "input_questions_checked": 1800,
+  "source_alternative_score": {
+    "Anthropic": {
+      "correct": 1582,
+      "n": 1800,
+      "accuracy": 0.8788888888888889
+    },
+    "OpenAI": {
+      "correct": 1539,
+      "n": 1800,
+      "accuracy": 0.855
+    }
+  },
+  "input_repairs_prepared": 3,
+  "unresolved_input_identities": 3,
+  "critical_stem_reading_sensitivity_disclosed": true,
+  "benchmark_released": false,
+  "new_family_precision_below_one_pp": false,
+  "historical_inputs_and_grades_preserved": true,
+  "report_checks": {
+    "javascript_errors": 0,
+    "horizontal_overflow_at_widths": [
+      320,
+      390,
+      768,
+      1365
+    ],
+    "all_local_links_resolve": true,
+    "latest_scores_and_source_sensitivity_verified": true,
+    "desktop_source_section_visually_inspected": true
+  },
+  "evidence": {
+    "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/current-audit-summary.json": "0e11b949e3f88dad724f5f76aadb2c00e6ff6326fa20db2d793115b90f77dd90",
+    "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/bounded-answer-audit-v1.json": "96ad7a64fa7872674f6b95774a2a5d981413d8e3a319bb222f71f4563a48e374",
+    "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/bounded-answer-audit-v1-review.json": "ccfc0da700d42a02c406a92b406b26fe73f61811bed2e74e13404cd76164cdef",
+    "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/input-repair-previews.json": "0f2c398fe47c7f816b065bf0e080ddb71a00870143c45ab866dd81dbdc2fdc4b",
+    "benchmarks/parallel-search-20261007/four_d-90/final1800-64k-01/astra-infrastructure-carry-01/source-adjudication/critical-stem-followup.json": "9972cbc7053a98c39684b5ca01c90f11584353d61a1be90b198eca9ef0fcec5b"
+  }
+}

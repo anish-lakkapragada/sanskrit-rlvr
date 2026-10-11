@@ -1,0 +1,4323 @@
+{
+  "created_at": "2026-10-07T10:27:25.163604+00:00",
+  "started_at": "2026-10-07T10:27:23.276839+00:00",
+  "status": "completed",
+  "candidate_path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/parallel-search-20261006/five_d/candidate-4800/revision-03",
+  "tasks_sha256": "2d15b6a62718d6ea0531686fc1eb4a1d91223f3d6baf705108f8088bc37dd031",
+  "script_sha256": "98cdaf0b65308d88e3bc9291e428f3047bb9fc86ae9ececa90dd00457a70c1f8",
+  "shared_adapter_sha256": "86a9e2dce069a8fdb64c8c8e359120d499a60c4d4d5e1f926f0b51199f4474a5",
+  "policy": "oracle-policy-17",
+  "mechanical_passed": true,
+  "regenerated_tasks": 4800,
+  "unique_ids": 4800,
+  "unique_grammar_tuples": 4800,
+  "unique_prompts": 4800,
+  "manifest_file_checks": {
+    "sampling-plan.json": true,
+    "tasks.json": true,
+    "allocation.json": true,
+    "family-assignments.json": true,
+    "allocation-objective.json": true,
+    "shared-regeneration-audit.json": true,
+    "distribution-and-prompt-audit.json": true,
+    "history-input-snapshot.json": true,
+    "novelty-audit.json": true,
+    "recipe-control-audit.json": true,
+    "prompts.jsonl": true
+  },
+  "plan_source_hash_checks": {
+    "source_plan": true,
+    "supply": true,
+    "supply_policy17_proof": true,
+    "policy": true,
+    "adapter": true,
+    "validator": true,
+    "renderer": true,
+    "sanskrit_helper": true,
+    "dictionary": true,
+    "family_split": true,
+    "flow_implementation": true,
+    "generator": true,
+    "nested_source_review": true,
+    "brU_source_review": true
+  },
+  "contract": "Dictionary citation/gana/meaning plus exactly four coordinates and one of three explicit ordered recipes; no explicit or inherited prefixes or independently selected pada.",
+  "distributions": {
+    "recipe_counts": {
+      "causative_of_intensive": 3200,
+      "causative_of_intensive_luk": 1280,
+      "desiderative": 320
+    },
+    "cell_counts": {
+      "causative_of_intensive|Lat|Kartari": 224,
+      "causative_of_intensive_luk|Lat|Karmani": 32,
+      "causative_of_intensive|Lun|Kartari": 1440,
+      "causative_of_intensive_luk|VidhiLin|Kartari": 96,
+      "causative_of_intensive_luk|Lun|Kartari": 576,
+      "causative_of_intensive|Lat|Karmani": 88,
+      "causative_of_intensive|Lit|Kartari": 160,
+      "causative_of_intensive|Lut|Kartari": 120,
+      "desiderative|Lun|Kartari": 144,
+      "causative_of_intensive|Lan|Kartari": 120,
+      "causative_of_intensive|VidhiLin|Kartari": 224,
+      "causative_of_intensive|Lot|Karmani": 48,
+      "causative_of_intensive_luk|Lrn|Kartari": 64,
+      "desiderative|Lut|Kartari": 16,
+      "causative_of_intensive|VidhiLin|Karmani": 88,
+      "causative_of_intensive|Lrt|Kartari": 120,
+      "causative_of_intensive|Lrn|Kartari": 160,
+      "causative_of_intensive_luk|Lat|Kartari": 96,
+      "causative_of_intensive_luk|Lit|Kartari": 64,
+      "causative_of_intensive|Lrt|Karmani": 40,
+      "causative_of_intensive|AshirLin|Kartari": 168,
+      "causative_of_intensive|Lot|Kartari": 112,
+      "causative_of_intensive|Lan|Karmani": 48,
+      "causative_of_intensive|Lut|Karmani": 40,
+      "desiderative|VidhiLin|Kartari": 32,
+      "causative_of_intensive_luk|VidhiLin|Karmani": 32,
+      "causative_of_intensive_luk|Lut|Kartari": 48,
+      "causative_of_intensive_luk|AshirLin|Kartari": 64,
+      "desiderative|Lit|Kartari": 16,
+      "desiderative|Lan|Kartari": 16,
+      "causative_of_intensive_luk|Lrt|Kartari": 48,
+      "causative_of_intensive_luk|Lrt|Karmani": 16,
+      "causative_of_intensive_luk|Lan|Kartari": 48,
+      "desiderative|Lat|Kartari": 32,
+      "desiderative|Lot|Kartari": 16,
+      "causative_of_intensive_luk|Lot|Kartari": 48,
+      "desiderative|Lrn|Kartari": 16,
+      "causative_of_intensive_luk|Lut|Karmani": 16,
+      "causative_of_intensive_luk|Lan|Karmani": 16,
+      "desiderative|Lrt|Kartari": 16,
+      "desiderative|AshirLin|Kartari": 16,
+      "causative_of_intensive_luk|Lot|Karmani": 16
+    },
+    "gana_counts": {
+      "Adadi": 176,
+      "Bhvadi": 3200,
+      "Tudadi": 480,
+      "Kryadi": 224,
+      "Divadi": 336,
+      "Rudhadi": 96,
+      "Curadi": 160,
+      "Svadi": 64,
+      "Juhotyadi": 32,
+      "Tanadi": 32
+    },
+    "lakara_counts": {
+      "Lat": 472,
+      "Lun": 2160,
+      "VidhiLin": 472,
+      "Lit": 240,
+      "Lut": 240,
+      "Lan": 248,
+      "Lot": 240,
+      "Lrn": 240,
+      "Lrt": 240,
+      "AshirLin": 248
+    },
+    "prayoga_counts": {
+      "Kartari": 4320,
+      "Karmani": 480
+    },
+    "person_counts": {
+      "Uttama": 1600,
+      "Madhyama": 1600,
+      "Prathama": 1600
+    },
+    "number_counts": {
+      "Bahu": 1600,
+      "Dvi": 1600,
+      "Eka": 1600
+    },
+    "person_number_counts": {
+      "Uttama/Bahu": 534,
+      "Madhyama/Bahu": 533,
+      "Prathama/Bahu": 533,
+      "Prathama/Dvi": 533,
+      "Prathama/Eka": 534,
+      "Uttama/Eka": 533,
+      "Madhyama/Eka": 533,
+      "Uttama/Dvi": 533,
+      "Madhyama/Dvi": 534
+    }
+  },
+  "family_statistics": {
+    "selected_test_families": 929,
+    "master_split_sizes": {
+      "test": 1000,
+      "development": 700,
+      "rl_train": 462
+    },
+    "family_load_histogram": {
+      "5": 33,
+      "6": 149,
+      "7": 407,
+      "3": 31,
+      "4": 85,
+      "8": 30,
+      "2": 25,
+      "1": 169
+    },
+    "aorist_load_histogram_including_zero": {
+      "3": 25,
+      "0": 343,
+      "4": 72,
+      "5": 324,
+      "1": 153,
+      "2": 12
+    },
+    "sum_squared_loads": 29960,
+    "family_pair_correlation_multiplier": 5.241666666666666,
+    "repeated_aorist_assignments": 1574,
+    "maximum_family_load": 8,
+    "maximum_aorist_family_load": 5,
+    "allocation_records_match": true,
+    "objective_cost_identity_matches": true,
+    "rl_and_development_overlap": 0
+  },
+  "history_input_novelty": {
+    "ledger_hashes": [
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/creation-campaign-20261006/ledger.json",
+        "sha256": "483b23c04e7a1db21867bdcc7792cb6aa711d63c9e4febd16259190d63d5edf7"
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/ledger.json",
+        "sha256": "84f6e85fb38d6e328b98a7ec3698978ab8572550ef64454938a98a3dd797b883"
+      }
+    ],
+    "task_input_files": [
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/creation-campaign-20261006/jobs/opus-discovery-01/tasks.json",
+        "sha256": "3663dfae615fb17f921cb8e9e90998e99c4063c32881715e105ced01d3d2d673",
+        "n": 2000
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/creation-campaign-20261006/jobs/opus-discovery-02/tasks.json",
+        "sha256": "211bc90656f9670544dafe8de00a7129ee2bcbc59fc26b18caedbc33aed5e44f",
+        "n": 2000
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/creation-campaign-20261006/jobs/opus-discovery-03/tasks.json",
+        "sha256": "a010303447e4dc6174f7fe7a7faf88fd2653e2f63dbf0aad3a5fd66af2cb0d8c",
+        "n": 2000
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-composition-01/tasks.json",
+        "sha256": "7f2b05702eb31a4b5072b85054842dbfb50648f47c87055b9742838a017bda5b",
+        "n": 400
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/astra-composition-01/tasks.json",
+        "sha256": "7f2b05702eb31a4b5072b85054842dbfb50648f47c87055b9742838a017bda5b",
+        "n": 400
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-prompt-probe-01/tasks.json",
+        "sha256": "b5e39a2b03641abdcdce616c23543d390666307277c974d0ba0e6ede179785c7",
+        "n": 32
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-prompt-probe-02/tasks.json",
+        "sha256": "ed18d0e2b4c63a1f4cff90a15b938b46e477a5233376c41d0d38d43b61e41736",
+        "n": 32
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-composition-02/tasks.json",
+        "sha256": "bb5ebfefd8f126d9a366784ca1a8581b28076b8430173c01214fd3f79b680685",
+        "n": 480
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/astra-composition-02/tasks.json",
+        "sha256": "bb5ebfefd8f126d9a366784ca1a8581b28076b8430173c01214fd3f79b680685",
+        "n": 480
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-interaction-01/tasks.json",
+        "sha256": "d868974f2d1a9fa3e4328a518c46c43595a747a5efc053c939b289bdb76e800d",
+        "n": 200
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/astra-interaction-01/tasks.json",
+        "sha256": "d868974f2d1a9fa3e4328a518c46c43595a747a5efc053c939b289bdb76e800d",
+        "n": 200
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-pada-prefix-01/tasks.json",
+        "sha256": "529a9412549c496b2be8a4c1305456ca38ba56f7efc62d5efa2cdb3849b61686",
+        "n": 200
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/astra-pada-prefix-01/tasks.json",
+        "sha256": "529a9412549c496b2be8a4c1305456ca38ba56f7efc62d5efa2cdb3849b61686",
+        "n": 200
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-bench-calibration-01/tasks.json",
+        "sha256": "4675ca6bc1f5da9870b85d33f432e3ab86205a625237d41a2eb015aa1b0e1575",
+        "n": 300
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-hard-calibration-01/tasks.json",
+        "sha256": "ffc5a426003d4e557aa7314eb5ea1109fb3f505e96c59b8520fc02e1a83ef992",
+        "n": 500
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-hard-calibration-02/tasks.json",
+        "sha256": "4c9c250aadbb485d4c12c2144448dcbdcef68b88d52b5e8648db3df5763b3b46",
+        "n": 500
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/astra-hard-calibration-02/tasks.json",
+        "sha256": "4c9c250aadbb485d4c12c2144448dcbdcef68b88d52b5e8648db3df5763b3b46",
+        "n": 500
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-deep-creation-01/tasks.json",
+        "sha256": "a6a139271b146e0ad43ba68e1524ee33dce0b57b9cbc63be3934ecf9c2e79d44",
+        "n": 200
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/astra-deep-creation-01/tasks.json",
+        "sha256": "a6a139271b146e0ad43ba68e1524ee33dce0b57b9cbc63be3934ecf9c2e79d44",
+        "n": 200
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/astra-bench-calibration-01/tasks.json",
+        "sha256": "4675ca6bc1f5da9870b85d33f432e3ab86205a625237d41a2eb015aa1b0e1575",
+        "n": 300
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-paradigm-01/tasks.json",
+        "sha256": "6f2cc650ed27b8427df28ed3128cd9085abc8a875da8399372550af71bcd030c",
+        "n": 160
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/astra-paradigm-01/tasks.json",
+        "sha256": "6f2cc650ed27b8427df28ed3128cd9085abc8a875da8399372550af71bcd030c",
+        "n": 160
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-deep-benedictive-01/tasks.json",
+        "sha256": "7b4d085d4e7b9f8f3aeecacb3d4367c41ff2dc09ba9ca775aa9ce09c4e10ad34",
+        "n": 300
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-contrast-01/tasks.json",
+        "sha256": "1280e3a1b06882c7b58f4b5c98623cbe91cfcd672615d9107a6b81e9d9045a23",
+        "n": 120
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-krdanta-01/tasks.json",
+        "sha256": "aec036cf46f6d2d156d23ad0be048ef15a5bfce1822997b816f7fb95dab02b00",
+        "n": 320
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-contrast-sanskrit-prompt-02/tasks.json",
+        "sha256": "3619b891671aa774ece9c0a5ab361b93ffbe533b9520250e1da1ed2f7572e155",
+        "n": 120
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-paradigm-sanskrit-prompt-02/tasks.json",
+        "sha256": "863b7a617c1d59d8f86a71e28ae273bfa2096b130371ca5d3033de0c0ad0db18",
+        "n": 160
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-contrast-dhatu-word-probe-03/tasks.json",
+        "sha256": "b677f4cb7639babfeccaf9f2e95c2d7d0afb0dc00a9643ad2392d0f608724fc2",
+        "n": 32
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-paradigm-dhatu-word-probe-03/tasks.json",
+        "sha256": "b633f1b8f026beaea6ac0b75600003477cdd2bcf96f41783b6ba34d491336e4e",
+        "n": 32
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-contrast-line-format-probe-04/tasks.json",
+        "sha256": "376f8facf8dfeef64b3a7b3bbe00235cc5028a739cf68f112ed26b52d7100e8b",
+        "n": 32
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-paradigm-line-format-probe-04/tasks.json",
+        "sha256": "180dc482db8ecf9c7f4332151af4ad5bc8cd7a486f70f597d862111a7108dbdf",
+        "n": 32
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-contrast-template-probe-05/tasks.json",
+        "sha256": "637bf1d36fc1e48183dd72ff63108f131492ae7743c4cdce24bb46d921c94767",
+        "n": 32
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-paradigm-template-probe-05/tasks.json",
+        "sha256": "41a347a635ff50605d74cb0ef58c62049367969f7c9786b77757a0f558d3dbd9",
+        "n": 32
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-samasa-01/tasks.json",
+        "sha256": "f3d107190bed156bd97aaaca5d9fc2cb1abb374f5ec46de83c82f3b8788e1982",
+        "n": 64
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-samasa-template-probe-02/tasks.json",
+        "sha256": "0ca93e39c761580fcb54754381b4b03ddaa6dfad031034d4865ec8181c193a82",
+        "n": 32
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-samasa-template-probe-03/tasks.json",
+        "sha256": "5a7cccb10eb358d042f36e5eecdc8774a74b8aa9e13a3589ebf63020d412c77a",
+        "n": 32
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-independent-creation-01/tasks.json",
+        "sha256": "cda165d4e0b3d7a98f4b15042769523f63961a1ec55f217cfd80880c780a4304",
+        "n": 64
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/astra-independent-creation-01/tasks.json",
+        "sha256": "cda165d4e0b3d7a98f4b15042769523f63961a1ec55f217cfd80880c780a4304",
+        "n": 64
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-unadi-01/tasks.json",
+        "sha256": "56ef8179c386a6479549d16724c4e3e1785c096739a0f7dc16e7e4dcc3ce6d20",
+        "n": 64
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-unadi-sanskrit-probe-02/tasks.json",
+        "sha256": "b4313f1affcf26a3382d6c657acd2bba74cbd2e6cb5c0845f52cfe350b9fc197",
+        "n": 32
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-independent-sanskrit-probe-02/tasks.json",
+        "sha256": "0e497ca38ce3bfc88fe596ab976fa5aa36b991f69a8aa8158e71b7978096699a",
+        "n": 32
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-passive-01/tasks.json",
+        "sha256": "57098226efd575982f98461f1588cf9455421b053e00b7879fff804e6d1f2d16",
+        "n": 64
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-four-d-pilot-01/tasks.json",
+        "sha256": "d3cf6b0562ce2fd8bd3376801459779c49f0ac9485f361b347f2f1f4b1a61c37",
+        "n": 120
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-five-d-pilot-01/tasks.json",
+        "sha256": "46d5681bbff3a8c248a76f094a6acda6cc4795679b14da91a7bd93de1cc168fe",
+        "n": 120
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/astra-five-d-pilot-01-pair/tasks.json",
+        "sha256": "9d76cebce39099f781fe4673788933fd60f506c0145d1218b7540f7092e39302",
+        "n": 119
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-five-d-pilot-02/tasks.json",
+        "sha256": "6d12214b2c395e13028999febdc1af39dbad96f8f6df782dfad2316a02a45323",
+        "n": 120
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-four-d-pilot-02/tasks.json",
+        "sha256": "9a0de5f7b3a98e8a06bef47b9ec07d49e18f51af5edd2ccdeaa877cb6792074e",
+        "n": 108
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-five-d-pilot-03/tasks.json",
+        "sha256": "289c85189445727240da123d0c2535d41781b7b88db35fe8a3e96314e804882d",
+        "n": 180
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-four-d-pilot-03/tasks.json",
+        "sha256": "bd22abe7592b5bbe29ed9c3aab95ba3bfe25f007afb78cb76d7920e2471dc0ec",
+        "n": 178
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-cartesian-wording-01-v1/tasks.json",
+        "sha256": "1e25cfdaff39e206922886e0a7817201727d595632b8db70e835a02363786f07",
+        "n": 36
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-cartesian-wording-01-v2-verb/tasks.json",
+        "sha256": "3ba992840d2542eab0a289a6d0261f57e59ab6ff59528c3e465447898aae3721",
+        "n": 36
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-cartesian-wording-01-v3-sanskrit/tasks.json",
+        "sha256": "d10828495ec91b48fb7a0f7e0b11f8ffff09271d5b201c128cb93ab0d4bc67c3",
+        "n": 36
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-four-d-pilot-04/tasks.json",
+        "sha256": "f38bfd8c1f4abfa99fbef13ab5b2e8d59b9477010f6cf4d2de7e76c6ad181f79",
+        "n": 112
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-five-d-pilot-04/tasks.json",
+        "sha256": "6d316087e9a9a91643adddf578a3260b7a6a103884148cd4654d180c5b638fff",
+        "n": 480
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/astra-five-d-pilot-04-pair/tasks.json",
+        "sha256": "6d316087e9a9a91643adddf578a3260b7a6a103884148cd4654d180c5b638fff",
+        "n": 480
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-four-d-pilot-05/tasks.json",
+        "sha256": "b3c26af96ef701f21837fb90edfdcbdfa1fdf8de03ae00c328efacd33ec61e97",
+        "n": 52
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-five-d-pilot-05/tasks.json",
+        "sha256": "b5925538c69fc78fce68b91fac92d74e0100f2faf423468dece8907887f2d153",
+        "n": 480
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-five-d-pilot-06/tasks.json",
+        "sha256": "a8b97c0baffb0d02adcb1a1c3eaaf38b1a0983d4479660a32164260a09b10a1c",
+        "n": 600
+      },
+      {
+        "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/astra-five-d-cap-development-01/tasks.json",
+        "sha256": "059ddf0aa50da7d3288202ca0b3955bfe08fb44e2b444bfd4df9692a0b26e261",
+        "n": 60
+      }
+    ],
+    "task_or_component_records": 19637,
+    "normalized_unique_finite_tuples": 8986,
+    "historical_family_ids": 828,
+    "tuple_overlaps": [],
+    "family_overlaps": [],
+    "normalization": "Citation+gana, ordered operations, four coordinates; ignore task ID/prompt version; compare only no-prefix/no-specified-pada shapes. Also inspect nested form inputs and all root-family fields.",
+    "scope": "Only input files in both campaign ledgers; ledger metadata can change as unrelated jobs settle.",
+    "master_split_prior_exposure": "Legacy analysis inspected all families; new discovery fitting excludes all reserved test-family legacy records.",
+    "master_split_training_status": "Requires a new learner trained only on rl_train families. Existing checkpoints are not certified clean.",
+    "interpretation": "Zero exact tuples and zero selected-family overlaps in the two campaign ledgers. This is not a globally never-exposed lexical-family claim: the master split explicitly acknowledges legacy analysis of all families before this split. New discovery excludes reserved-test-family legacy records. The selected nonempty5D recipes differ from legacy ordinary4D inputs, so that prior lexical exposure does not establish an exact5D duplicate."
+  },
+  "new_trace_rules_vs_revision01": [
+    "7.3.32"
+  ],
+  "source_review": {
+    "rule": "7.3.32",
+    "candidate_id": "cart5-815ea4a4aceaf65736c11a68",
+    "candidate_dhatu": {
+      "code": "02.0002",
+      "aupadeshika": "ha\\na~",
+      "gana": "Adadi",
+      "artha": "hiMsAgatyoH"
+    },
+    "operations": [
+      "yaNluk",
+      "Ric"
+    ],
+    "morphology": {
+      "lakara": "VidhiLin",
+      "prayoga": "Kartari",
+      "purusha": "Madhyama",
+      "vacana": "Dvi"
+    },
+    "gold_slp1": [
+      "jaMGAtayetam",
+      "jaMGAtayeyATAm",
+      "jaNGAtayetam",
+      "jaNGAtayeyATAm"
+    ],
+    "traces": [
+      {
+        "text": "jaMGAtayeyATAm",
+        "history": [
+          {
+            "rule": "1.3.1",
+            "terms": [
+              "ha\\na~"
+            ]
+          },
+          {
+            "rule": "1.3.2",
+            "terms": [
+              "ha\\na~"
+            ]
+          },
+          {
+            "rule": "1.3.9",
+            "terms": [
+              "han"
+            ]
+          },
+          {
+            "rule": "3.1.22",
+            "terms": [
+              "han",
+              "yaN"
+            ]
+          },
+          {
+            "rule": "3.1.32",
+            "terms": [
+              "han",
+              "yaN"
+            ]
+          },
+          {
+            "rule": "1.3.3",
+            "terms": [
+              "han",
+              "yaN"
+            ]
+          },
+          {
+            "rule": "1.3.9",
+            "terms": [
+              "han",
+              "ya"
+            ]
+          },
+          {
+            "rule": "2.4.74",
+            "terms": [
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "02.0076",
+            "terms": [
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "1.3.78",
+            "terms": [
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "1.4.13",
+            "terms": [
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "6.1.9",
+            "terms": [
+              "han",
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "6.1.4",
+            "terms": [
+              "han",
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "6.1.5",
+            "terms": [
+              "han",
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "7.4.60",
+            "terms": [
+              "ha",
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "7.4.62",
+            "terms": [
+              "Ja",
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "7.4.85",
+            "terms": [
+              "Ja",
+              "Mu~k",
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "1.3.2",
+            "terms": [
+              "Ja",
+              "Mu~k",
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "1.3.3",
+            "terms": [
+              "Ja",
+              "Mu~k",
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "1.3.9",
+            "terms": [
+              "Ja",
+              "M",
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "7.4.85.1",
+            "terms": [
+              "Ja",
+              "M",
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "3.1.26",
+            "terms": [
+              "Ja",
+              "M",
+              "han",
+              "",
+              "Ric"
+            ]
+          },
+          {
+            "rule": "3.1.32",
+            "terms": [
+              "Ja",
+              "M",
+              "han",
+              "",
+              "Ric"
+            ]
+          },
+          {
+            "rule": "1.3.3",
+            "terms": [
+              "Ja",
+              "M",
+              "han",
+              "",
+              "Ric"
+            ]
+          },
+          {
+            "rule": "1.3.7",
+            "terms": [
+              "Ja",
+              "M",
+              "han",
+              "",
+              "Ric"
+            ]
+          },
+          {
+            "rule": "1.3.9",
+            "terms": [
+              "Ja",
+              "M",
+              "han",
+              "",
+              "i"
+            ]
+          },
+          {
+            "rule": "3.4.114",
+            "terms": [
+              "Ja",
+              "M",
+              "han",
+              "",
+              "i"
+            ]
+          },
+          {
+            "rule": "1.3.74",
+            "terms": [
+              "Ja",
+              "M",
+              "han",
+              "",
+              "i"
+            ]
+          },
+          {
+            "rule": "1.4.13",
+            "terms": [
+              "Ja",
+              "M",
+              "han",
+              "",
+              "i"
+            ]
+          },
+          {
+            "rule": "7.3.32",
+            "terms": [
+              "Ja",
+              "M",
+              "hAt",
+              "",
+              "i"
+            ]
+          },
+          {
+            "rule": "7.3.55",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i"
+            ]
+          },
+          {
+            "rule": "3.3.161",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "li~N"
+            ]
+          },
+          {
+            "rule": "1.3.2",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "li~N"
+            ]
+          },
+          {
+            "rule": "1.3.3",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "li~N"
+            ]
+          },
+          {
+            "rule": "1.3.9",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "l"
+            ]
+          },
+          {
+            "rule": "3.4.78",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "ATAm"
+            ]
+          },
+          {
+            "rule": "1.3.4",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "ATAm"
+            ]
+          },
+          {
+            "rule": "3.4.113",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "ATAm"
+            ]
+          },
+          {
+            "rule": "3.1.68",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "Sap",
+              "ATAm"
+            ]
+          },
+          {
+            "rule": "1.3.3",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "Sap",
+              "ATAm"
+            ]
+          },
+          {
+            "rule": "1.3.8",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "Sap",
+              "ATAm"
+            ]
+          },
+          {
+            "rule": "1.3.9",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "a",
+              "ATAm"
+            ]
+          },
+          {
+            "rule": "3.4.113",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "a",
+              "ATAm"
+            ]
+          },
+          {
+            "rule": "3.4.102",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "a",
+              "sIyu~w",
+              "ATAm"
+            ]
+          },
+          {
+            "rule": "1.3.2",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "a",
+              "sIyu~w",
+              "ATAm"
+            ]
+          },
+          {
+            "rule": "1.3.3",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "a",
+              "sIyu~w",
+              "ATAm"
+            ]
+          },
+          {
+            "rule": "1.3.9",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "a",
+              "sIy",
+              "ATAm"
+            ]
+          },
+          {
+            "rule": "3.4.107",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "a",
+              "sIy",
+              "AsTAm"
+            ]
+          },
+          {
+            "rule": "1.2.4",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "a",
+              "sIy",
+              "AsTAm"
+            ]
+          },
+          {
+            "rule": "1.4.13",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "a",
+              "sIy",
+              "AsTAm"
+            ]
+          },
+          {
+            "rule": "7.2.79",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "a",
+              "Iy",
+              "ATAm"
+            ]
+          },
+          {
+            "rule": "7.3.32",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "a",
+              "Iy",
+              "ATAm"
+            ]
+          },
+          {
+            "rule": "7.3.84",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "e",
+              "a",
+              "Iy",
+              "ATAm"
+            ]
+          },
+          {
+            "rule": "1.4.14",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "e",
+              "a",
+              "Iy",
+              "ATAm"
+            ]
+          },
+          {
+            "rule": "6.1.78",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "ay",
+              "a",
+              "Iy",
+              "ATAm"
+            ]
+          },
+          {
+            "rule": "6.1.87",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "ay",
+              "",
+              "ey",
+              "ATAm"
+            ]
+          },
+          {
+            "rule": "8.4.54",
+            "terms": [
+              "ja",
+              "M",
+              "GAt",
+              "",
+              "ay",
+              "",
+              "ey",
+              "ATAm"
+            ]
+          },
+          {
+            "rule": "8.4.59",
+            "terms": [
+              "ja",
+              "M",
+              "GAt",
+              "",
+              "ay",
+              "",
+              "ey",
+              "ATAm"
+            ]
+          },
+          {
+            "rule": "8.4.68",
+            "terms": [
+              "ja",
+              "M",
+              "GAt",
+              "",
+              "ay",
+              "",
+              "ey",
+              "ATAm"
+            ]
+          }
+        ]
+      },
+      {
+        "text": "jaNGAtayeyATAm",
+        "history": [
+          {
+            "rule": "1.3.1",
+            "terms": [
+              "ha\\na~"
+            ]
+          },
+          {
+            "rule": "1.3.2",
+            "terms": [
+              "ha\\na~"
+            ]
+          },
+          {
+            "rule": "1.3.9",
+            "terms": [
+              "han"
+            ]
+          },
+          {
+            "rule": "3.1.22",
+            "terms": [
+              "han",
+              "yaN"
+            ]
+          },
+          {
+            "rule": "3.1.32",
+            "terms": [
+              "han",
+              "yaN"
+            ]
+          },
+          {
+            "rule": "1.3.3",
+            "terms": [
+              "han",
+              "yaN"
+            ]
+          },
+          {
+            "rule": "1.3.9",
+            "terms": [
+              "han",
+              "ya"
+            ]
+          },
+          {
+            "rule": "2.4.74",
+            "terms": [
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "02.0076",
+            "terms": [
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "1.3.78",
+            "terms": [
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "1.4.13",
+            "terms": [
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "6.1.9",
+            "terms": [
+              "han",
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "6.1.4",
+            "terms": [
+              "han",
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "6.1.5",
+            "terms": [
+              "han",
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "7.4.60",
+            "terms": [
+              "ha",
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "7.4.62",
+            "terms": [
+              "Ja",
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "7.4.85",
+            "terms": [
+              "Ja",
+              "Mu~k",
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "1.3.2",
+            "terms": [
+              "Ja",
+              "Mu~k",
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "1.3.3",
+            "terms": [
+              "Ja",
+              "Mu~k",
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "1.3.9",
+            "terms": [
+              "Ja",
+              "M",
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "7.4.85.1",
+            "terms": [
+              "Ja",
+              "M",
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "3.1.26",
+            "terms": [
+              "Ja",
+              "M",
+              "han",
+              "",
+              "Ric"
+            ]
+          },
+          {
+            "rule": "3.1.32",
+            "terms": [
+              "Ja",
+              "M",
+              "han",
+              "",
+              "Ric"
+            ]
+          },
+          {
+            "rule": "1.3.3",
+            "terms": [
+              "Ja",
+              "M",
+              "han",
+              "",
+              "Ric"
+            ]
+          },
+          {
+            "rule": "1.3.7",
+            "terms": [
+              "Ja",
+              "M",
+              "han",
+              "",
+              "Ric"
+            ]
+          },
+          {
+            "rule": "1.3.9",
+            "terms": [
+              "Ja",
+              "M",
+              "han",
+              "",
+              "i"
+            ]
+          },
+          {
+            "rule": "3.4.114",
+            "terms": [
+              "Ja",
+              "M",
+              "han",
+              "",
+              "i"
+            ]
+          },
+          {
+            "rule": "1.3.74",
+            "terms": [
+              "Ja",
+              "M",
+              "han",
+              "",
+              "i"
+            ]
+          },
+          {
+            "rule": "1.4.13",
+            "terms": [
+              "Ja",
+              "M",
+              "han",
+              "",
+              "i"
+            ]
+          },
+          {
+            "rule": "7.3.32",
+            "terms": [
+              "Ja",
+              "M",
+              "hAt",
+              "",
+              "i"
+            ]
+          },
+          {
+            "rule": "7.3.55",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i"
+            ]
+          },
+          {
+            "rule": "3.3.161",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "li~N"
+            ]
+          },
+          {
+            "rule": "1.3.2",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "li~N"
+            ]
+          },
+          {
+            "rule": "1.3.3",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "li~N"
+            ]
+          },
+          {
+            "rule": "1.3.9",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "l"
+            ]
+          },
+          {
+            "rule": "3.4.78",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "ATAm"
+            ]
+          },
+          {
+            "rule": "1.3.4",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "ATAm"
+            ]
+          },
+          {
+            "rule": "3.4.113",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "ATAm"
+            ]
+          },
+          {
+            "rule": "3.1.68",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "Sap",
+              "ATAm"
+            ]
+          },
+          {
+            "rule": "1.3.3",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "Sap",
+              "ATAm"
+            ]
+          },
+          {
+            "rule": "1.3.8",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "Sap",
+              "ATAm"
+            ]
+          },
+          {
+            "rule": "1.3.9",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "a",
+              "ATAm"
+            ]
+          },
+          {
+            "rule": "3.4.113",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "a",
+              "ATAm"
+            ]
+          },
+          {
+            "rule": "3.4.102",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "a",
+              "sIyu~w",
+              "ATAm"
+            ]
+          },
+          {
+            "rule": "1.3.2",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "a",
+              "sIyu~w",
+              "ATAm"
+            ]
+          },
+          {
+            "rule": "1.3.3",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "a",
+              "sIyu~w",
+              "ATAm"
+            ]
+          },
+          {
+            "rule": "1.3.9",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "a",
+              "sIy",
+              "ATAm"
+            ]
+          },
+          {
+            "rule": "3.4.107",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "a",
+              "sIy",
+              "AsTAm"
+            ]
+          },
+          {
+            "rule": "1.2.4",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "a",
+              "sIy",
+              "AsTAm"
+            ]
+          },
+          {
+            "rule": "1.4.13",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "a",
+              "sIy",
+              "AsTAm"
+            ]
+          },
+          {
+            "rule": "7.2.79",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "a",
+              "Iy",
+              "ATAm"
+            ]
+          },
+          {
+            "rule": "7.3.32",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "a",
+              "Iy",
+              "ATAm"
+            ]
+          },
+          {
+            "rule": "7.3.84",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "e",
+              "a",
+              "Iy",
+              "ATAm"
+            ]
+          },
+          {
+            "rule": "1.4.14",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "e",
+              "a",
+              "Iy",
+              "ATAm"
+            ]
+          },
+          {
+            "rule": "6.1.78",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "ay",
+              "a",
+              "Iy",
+              "ATAm"
+            ]
+          },
+          {
+            "rule": "6.1.87",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "ay",
+              "",
+              "ey",
+              "ATAm"
+            ]
+          },
+          {
+            "rule": "8.4.54",
+            "terms": [
+              "ja",
+              "M",
+              "GAt",
+              "",
+              "ay",
+              "",
+              "ey",
+              "ATAm"
+            ]
+          },
+          {
+            "rule": "8.4.58",
+            "terms": [
+              "ja",
+              "N",
+              "GAt",
+              "",
+              "ay",
+              "",
+              "ey",
+              "ATAm"
+            ]
+          },
+          {
+            "rule": "8.4.68",
+            "terms": [
+              "ja",
+              "N",
+              "GAt",
+              "",
+              "ay",
+              "",
+              "ey",
+              "ATAm"
+            ]
+          }
+        ]
+      },
+      {
+        "text": "jaMGAtayetam",
+        "history": [
+          {
+            "rule": "1.3.1",
+            "terms": [
+              "ha\\na~"
+            ]
+          },
+          {
+            "rule": "1.3.2",
+            "terms": [
+              "ha\\na~"
+            ]
+          },
+          {
+            "rule": "1.3.9",
+            "terms": [
+              "han"
+            ]
+          },
+          {
+            "rule": "3.1.22",
+            "terms": [
+              "han",
+              "yaN"
+            ]
+          },
+          {
+            "rule": "3.1.32",
+            "terms": [
+              "han",
+              "yaN"
+            ]
+          },
+          {
+            "rule": "1.3.3",
+            "terms": [
+              "han",
+              "yaN"
+            ]
+          },
+          {
+            "rule": "1.3.9",
+            "terms": [
+              "han",
+              "ya"
+            ]
+          },
+          {
+            "rule": "2.4.74",
+            "terms": [
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "02.0076",
+            "terms": [
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "1.3.78",
+            "terms": [
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "1.4.13",
+            "terms": [
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "6.1.9",
+            "terms": [
+              "han",
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "6.1.4",
+            "terms": [
+              "han",
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "6.1.5",
+            "terms": [
+              "han",
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "7.4.60",
+            "terms": [
+              "ha",
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "7.4.62",
+            "terms": [
+              "Ja",
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "7.4.85",
+            "terms": [
+              "Ja",
+              "Mu~k",
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "1.3.2",
+            "terms": [
+              "Ja",
+              "Mu~k",
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "1.3.3",
+            "terms": [
+              "Ja",
+              "Mu~k",
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "1.3.9",
+            "terms": [
+              "Ja",
+              "M",
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "7.4.85.1",
+            "terms": [
+              "Ja",
+              "M",
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "3.1.26",
+            "terms": [
+              "Ja",
+              "M",
+              "han",
+              "",
+              "Ric"
+            ]
+          },
+          {
+            "rule": "3.1.32",
+            "terms": [
+              "Ja",
+              "M",
+              "han",
+              "",
+              "Ric"
+            ]
+          },
+          {
+            "rule": "1.3.3",
+            "terms": [
+              "Ja",
+              "M",
+              "han",
+              "",
+              "Ric"
+            ]
+          },
+          {
+            "rule": "1.3.7",
+            "terms": [
+              "Ja",
+              "M",
+              "han",
+              "",
+              "Ric"
+            ]
+          },
+          {
+            "rule": "1.3.9",
+            "terms": [
+              "Ja",
+              "M",
+              "han",
+              "",
+              "i"
+            ]
+          },
+          {
+            "rule": "3.4.114",
+            "terms": [
+              "Ja",
+              "M",
+              "han",
+              "",
+              "i"
+            ]
+          },
+          {
+            "rule": "1.3.78",
+            "terms": [
+              "Ja",
+              "M",
+              "han",
+              "",
+              "i"
+            ]
+          },
+          {
+            "rule": "1.4.13",
+            "terms": [
+              "Ja",
+              "M",
+              "han",
+              "",
+              "i"
+            ]
+          },
+          {
+            "rule": "7.3.32",
+            "terms": [
+              "Ja",
+              "M",
+              "hAt",
+              "",
+              "i"
+            ]
+          },
+          {
+            "rule": "7.3.55",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i"
+            ]
+          },
+          {
+            "rule": "3.3.161",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "li~N"
+            ]
+          },
+          {
+            "rule": "1.3.2",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "li~N"
+            ]
+          },
+          {
+            "rule": "1.3.3",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "li~N"
+            ]
+          },
+          {
+            "rule": "1.3.9",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "l"
+            ]
+          },
+          {
+            "rule": "3.4.78",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "Tas"
+            ]
+          },
+          {
+            "rule": "1.3.4",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "Tas"
+            ]
+          },
+          {
+            "rule": "3.4.113",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "Tas"
+            ]
+          },
+          {
+            "rule": "3.1.68",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "Sap",
+              "Tas"
+            ]
+          },
+          {
+            "rule": "1.3.3",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "Sap",
+              "Tas"
+            ]
+          },
+          {
+            "rule": "1.3.8",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "Sap",
+              "Tas"
+            ]
+          },
+          {
+            "rule": "1.3.9",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "a",
+              "Tas"
+            ]
+          },
+          {
+            "rule": "3.4.113",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "a",
+              "Tas"
+            ]
+          },
+          {
+            "rule": "3.4.101",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "a",
+              "tam"
+            ]
+          },
+          {
+            "rule": "1.3.4",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "a",
+              "tam"
+            ]
+          },
+          {
+            "rule": "3.4.103",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "a",
+              "yAsu~w",
+              "tam"
+            ]
+          },
+          {
+            "rule": "1.3.2",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "a",
+              "yAsu~w",
+              "tam"
+            ]
+          },
+          {
+            "rule": "1.3.3",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "a",
+              "yAsu~w",
+              "tam"
+            ]
+          },
+          {
+            "rule": "1.3.9",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "a",
+              "yAs",
+              "tam"
+            ]
+          },
+          {
+            "rule": "3.4.107",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "a",
+              "yAs",
+              "stam"
+            ]
+          },
+          {
+            "rule": "1.2.4",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "a",
+              "yAs",
+              "stam"
+            ]
+          },
+          {
+            "rule": "1.4.13",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "a",
+              "yAs",
+              "stam"
+            ]
+          },
+          {
+            "rule": "7.2.79",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "a",
+              "yA",
+              "tam"
+            ]
+          },
+          {
+            "rule": "7.2.80",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "a",
+              "iy",
+              "tam"
+            ]
+          },
+          {
+            "rule": "6.1.66",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "a",
+              "i",
+              "tam"
+            ]
+          },
+          {
+            "rule": "7.3.32",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "a",
+              "i",
+              "tam"
+            ]
+          },
+          {
+            "rule": "7.3.84",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "e",
+              "a",
+              "i",
+              "tam"
+            ]
+          },
+          {
+            "rule": "1.4.14",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "e",
+              "a",
+              "i",
+              "tam"
+            ]
+          },
+          {
+            "rule": "6.1.78",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "ay",
+              "a",
+              "i",
+              "tam"
+            ]
+          },
+          {
+            "rule": "6.1.87",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "ay",
+              "",
+              "e",
+              "tam"
+            ]
+          },
+          {
+            "rule": "8.4.54",
+            "terms": [
+              "ja",
+              "M",
+              "GAt",
+              "",
+              "ay",
+              "",
+              "e",
+              "tam"
+            ]
+          },
+          {
+            "rule": "8.4.59",
+            "terms": [
+              "ja",
+              "M",
+              "GAt",
+              "",
+              "ay",
+              "",
+              "e",
+              "tam"
+            ]
+          },
+          {
+            "rule": "8.4.68",
+            "terms": [
+              "ja",
+              "M",
+              "GAt",
+              "",
+              "ay",
+              "",
+              "e",
+              "tam"
+            ]
+          }
+        ]
+      },
+      {
+        "text": "jaNGAtayetam",
+        "history": [
+          {
+            "rule": "1.3.1",
+            "terms": [
+              "ha\\na~"
+            ]
+          },
+          {
+            "rule": "1.3.2",
+            "terms": [
+              "ha\\na~"
+            ]
+          },
+          {
+            "rule": "1.3.9",
+            "terms": [
+              "han"
+            ]
+          },
+          {
+            "rule": "3.1.22",
+            "terms": [
+              "han",
+              "yaN"
+            ]
+          },
+          {
+            "rule": "3.1.32",
+            "terms": [
+              "han",
+              "yaN"
+            ]
+          },
+          {
+            "rule": "1.3.3",
+            "terms": [
+              "han",
+              "yaN"
+            ]
+          },
+          {
+            "rule": "1.3.9",
+            "terms": [
+              "han",
+              "ya"
+            ]
+          },
+          {
+            "rule": "2.4.74",
+            "terms": [
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "02.0076",
+            "terms": [
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "1.3.78",
+            "terms": [
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "1.4.13",
+            "terms": [
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "6.1.9",
+            "terms": [
+              "han",
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "6.1.4",
+            "terms": [
+              "han",
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "6.1.5",
+            "terms": [
+              "han",
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "7.4.60",
+            "terms": [
+              "ha",
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "7.4.62",
+            "terms": [
+              "Ja",
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "7.4.85",
+            "terms": [
+              "Ja",
+              "Mu~k",
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "1.3.2",
+            "terms": [
+              "Ja",
+              "Mu~k",
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "1.3.3",
+            "terms": [
+              "Ja",
+              "Mu~k",
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "1.3.9",
+            "terms": [
+              "Ja",
+              "M",
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "7.4.85.1",
+            "terms": [
+              "Ja",
+              "M",
+              "han",
+              ""
+            ]
+          },
+          {
+            "rule": "3.1.26",
+            "terms": [
+              "Ja",
+              "M",
+              "han",
+              "",
+              "Ric"
+            ]
+          },
+          {
+            "rule": "3.1.32",
+            "terms": [
+              "Ja",
+              "M",
+              "han",
+              "",
+              "Ric"
+            ]
+          },
+          {
+            "rule": "1.3.3",
+            "terms": [
+              "Ja",
+              "M",
+              "han",
+              "",
+              "Ric"
+            ]
+          },
+          {
+            "rule": "1.3.7",
+            "terms": [
+              "Ja",
+              "M",
+              "han",
+              "",
+              "Ric"
+            ]
+          },
+          {
+            "rule": "1.3.9",
+            "terms": [
+              "Ja",
+              "M",
+              "han",
+              "",
+              "i"
+            ]
+          },
+          {
+            "rule": "3.4.114",
+            "terms": [
+              "Ja",
+              "M",
+              "han",
+              "",
+              "i"
+            ]
+          },
+          {
+            "rule": "1.3.78",
+            "terms": [
+              "Ja",
+              "M",
+              "han",
+              "",
+              "i"
+            ]
+          },
+          {
+            "rule": "1.4.13",
+            "terms": [
+              "Ja",
+              "M",
+              "han",
+              "",
+              "i"
+            ]
+          },
+          {
+            "rule": "7.3.32",
+            "terms": [
+              "Ja",
+              "M",
+              "hAt",
+              "",
+              "i"
+            ]
+          },
+          {
+            "rule": "7.3.55",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i"
+            ]
+          },
+          {
+            "rule": "3.3.161",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "li~N"
+            ]
+          },
+          {
+            "rule": "1.3.2",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "li~N"
+            ]
+          },
+          {
+            "rule": "1.3.3",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "li~N"
+            ]
+          },
+          {
+            "rule": "1.3.9",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "l"
+            ]
+          },
+          {
+            "rule": "3.4.78",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "Tas"
+            ]
+          },
+          {
+            "rule": "1.3.4",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "Tas"
+            ]
+          },
+          {
+            "rule": "3.4.113",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "Tas"
+            ]
+          },
+          {
+            "rule": "3.1.68",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "Sap",
+              "Tas"
+            ]
+          },
+          {
+            "rule": "1.3.3",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "Sap",
+              "Tas"
+            ]
+          },
+          {
+            "rule": "1.3.8",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "Sap",
+              "Tas"
+            ]
+          },
+          {
+            "rule": "1.3.9",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "a",
+              "Tas"
+            ]
+          },
+          {
+            "rule": "3.4.113",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "a",
+              "Tas"
+            ]
+          },
+          {
+            "rule": "3.4.101",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "a",
+              "tam"
+            ]
+          },
+          {
+            "rule": "1.3.4",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "a",
+              "tam"
+            ]
+          },
+          {
+            "rule": "3.4.103",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "a",
+              "yAsu~w",
+              "tam"
+            ]
+          },
+          {
+            "rule": "1.3.2",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "a",
+              "yAsu~w",
+              "tam"
+            ]
+          },
+          {
+            "rule": "1.3.3",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "a",
+              "yAsu~w",
+              "tam"
+            ]
+          },
+          {
+            "rule": "1.3.9",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "a",
+              "yAs",
+              "tam"
+            ]
+          },
+          {
+            "rule": "3.4.107",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "a",
+              "yAs",
+              "stam"
+            ]
+          },
+          {
+            "rule": "1.2.4",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "a",
+              "yAs",
+              "stam"
+            ]
+          },
+          {
+            "rule": "1.4.13",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "a",
+              "yAs",
+              "stam"
+            ]
+          },
+          {
+            "rule": "7.2.79",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "a",
+              "yA",
+              "tam"
+            ]
+          },
+          {
+            "rule": "7.2.80",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "a",
+              "iy",
+              "tam"
+            ]
+          },
+          {
+            "rule": "6.1.66",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "a",
+              "i",
+              "tam"
+            ]
+          },
+          {
+            "rule": "7.3.32",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "i",
+              "a",
+              "i",
+              "tam"
+            ]
+          },
+          {
+            "rule": "7.3.84",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "e",
+              "a",
+              "i",
+              "tam"
+            ]
+          },
+          {
+            "rule": "1.4.14",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "e",
+              "a",
+              "i",
+              "tam"
+            ]
+          },
+          {
+            "rule": "6.1.78",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "ay",
+              "a",
+              "i",
+              "tam"
+            ]
+          },
+          {
+            "rule": "6.1.87",
+            "terms": [
+              "Ja",
+              "M",
+              "GAt",
+              "",
+              "ay",
+              "",
+              "e",
+              "tam"
+            ]
+          },
+          {
+            "rule": "8.4.54",
+            "terms": [
+              "ja",
+              "M",
+              "GAt",
+              "",
+              "ay",
+              "",
+              "e",
+              "tam"
+            ]
+          },
+          {
+            "rule": "8.4.58",
+            "terms": [
+              "ja",
+              "N",
+              "GAt",
+              "",
+              "ay",
+              "",
+              "e",
+              "tam"
+            ]
+          },
+          {
+            "rule": "8.4.68",
+            "terms": [
+              "ja",
+              "N",
+              "GAt",
+              "",
+              "ay",
+              "",
+              "e",
+              "tam"
+            ]
+          }
+        ]
+      }
+    ],
+    "direct_control_and_exceptions": [
+      {
+        "name": "ordinary_causal",
+        "forms": [
+          "GAtayate",
+          "GAtayati"
+        ],
+        "traces": [
+          {
+            "text": "GAtayate",
+            "history": [
+              {
+                "rule": "1.3.1",
+                "terms": [
+                  "ha\\na~"
+                ]
+              },
+              {
+                "rule": "1.3.2",
+                "terms": [
+                  "ha\\na~"
+                ]
+              },
+              {
+                "rule": "1.3.9",
+                "terms": [
+                  "han"
+                ]
+              },
+              {
+                "rule": "3.1.26",
+                "terms": [
+                  "han",
+                  "Ric"
+                ]
+              },
+              {
+                "rule": "3.1.32",
+                "terms": [
+                  "han",
+                  "Ric"
+                ]
+              },
+              {
+                "rule": "1.3.3",
+                "terms": [
+                  "han",
+                  "Ric"
+                ]
+              },
+              {
+                "rule": "1.3.7",
+                "terms": [
+                  "han",
+                  "Ric"
+                ]
+              },
+              {
+                "rule": "1.3.9",
+                "terms": [
+                  "han",
+                  "i"
+                ]
+              },
+              {
+                "rule": "3.4.114",
+                "terms": [
+                  "han",
+                  "i"
+                ]
+              },
+              {
+                "rule": "1.3.74",
+                "terms": [
+                  "han",
+                  "i"
+                ]
+              },
+              {
+                "rule": "1.4.13",
+                "terms": [
+                  "han",
+                  "i"
+                ]
+              },
+              {
+                "rule": "7.3.32",
+                "terms": [
+                  "hAt",
+                  "i"
+                ]
+              },
+              {
+                "rule": "7.3.54",
+                "terms": [
+                  "GAt",
+                  "i"
+                ]
+              },
+              {
+                "rule": "3.2.123",
+                "terms": [
+                  "GAt",
+                  "i",
+                  "la~w"
+                ]
+              },
+              {
+                "rule": "1.3.2",
+                "terms": [
+                  "GAt",
+                  "i",
+                  "la~w"
+                ]
+              },
+              {
+                "rule": "1.3.3",
+                "terms": [
+                  "GAt",
+                  "i",
+                  "la~w"
+                ]
+              },
+              {
+                "rule": "1.3.9",
+                "terms": [
+                  "GAt",
+                  "i",
+                  "l"
+                ]
+              },
+              {
+                "rule": "3.4.78",
+                "terms": [
+                  "GAt",
+                  "i",
+                  "ta"
+                ]
+              },
+              {
+                "rule": "3.4.113",
+                "terms": [
+                  "GAt",
+                  "i",
+                  "ta"
+                ]
+              },
+              {
+                "rule": "3.1.68",
+                "terms": [
+                  "GAt",
+                  "i",
+                  "Sap",
+                  "ta"
+                ]
+              },
+              {
+                "rule": "1.3.3",
+                "terms": [
+                  "GAt",
+                  "i",
+                  "Sap",
+                  "ta"
+                ]
+              },
+              {
+                "rule": "1.3.8",
+                "terms": [
+                  "GAt",
+                  "i",
+                  "Sap",
+                  "ta"
+                ]
+              },
+              {
+                "rule": "1.3.9",
+                "terms": [
+                  "GAt",
+                  "i",
+                  "a",
+                  "ta"
+                ]
+              },
+              {
+                "rule": "3.4.113",
+                "terms": [
+                  "GAt",
+                  "i",
+                  "a",
+                  "ta"
+                ]
+              },
+              {
+                "rule": "3.4.79",
+                "terms": [
+                  "GAt",
+                  "i",
+                  "a",
+                  "te"
+                ]
+              },
+              {
+                "rule": "1.2.4",
+                "terms": [
+                  "GAt",
+                  "i",
+                  "a",
+                  "te"
+                ]
+              },
+              {
+                "rule": "1.4.13",
+                "terms": [
+                  "GAt",
+                  "i",
+                  "a",
+                  "te"
+                ]
+              },
+              {
+                "rule": "7.3.32",
+                "terms": [
+                  "GAt",
+                  "i",
+                  "a",
+                  "te"
+                ]
+              },
+              {
+                "rule": "7.3.84",
+                "terms": [
+                  "GAt",
+                  "e",
+                  "a",
+                  "te"
+                ]
+              },
+              {
+                "rule": "1.4.14",
+                "terms": [
+                  "GAt",
+                  "e",
+                  "a",
+                  "te"
+                ]
+              },
+              {
+                "rule": "6.1.78",
+                "terms": [
+                  "GAt",
+                  "ay",
+                  "a",
+                  "te"
+                ]
+              },
+              {
+                "rule": "8.4.68",
+                "terms": [
+                  "GAt",
+                  "ay",
+                  "a",
+                  "te"
+                ]
+              }
+            ]
+          },
+          {
+            "text": "GAtayati",
+            "history": [
+              {
+                "rule": "1.3.1",
+                "terms": [
+                  "ha\\na~"
+                ]
+              },
+              {
+                "rule": "1.3.2",
+                "terms": [
+                  "ha\\na~"
+                ]
+              },
+              {
+                "rule": "1.3.9",
+                "terms": [
+                  "han"
+                ]
+              },
+              {
+                "rule": "3.1.26",
+                "terms": [
+                  "han",
+                  "Ric"
+                ]
+              },
+              {
+                "rule": "3.1.32",
+                "terms": [
+                  "han",
+                  "Ric"
+                ]
+              },
+              {
+                "rule": "1.3.3",
+                "terms": [
+                  "han",
+                  "Ric"
+                ]
+              },
+              {
+                "rule": "1.3.7",
+                "terms": [
+                  "han",
+                  "Ric"
+                ]
+              },
+              {
+                "rule": "1.3.9",
+                "terms": [
+                  "han",
+                  "i"
+                ]
+              },
+              {
+                "rule": "3.4.114",
+                "terms": [
+                  "han",
+                  "i"
+                ]
+              },
+              {
+                "rule": "1.3.78",
+                "terms": [
+                  "han",
+                  "i"
+                ]
+              },
+              {
+                "rule": "1.4.13",
+                "terms": [
+                  "han",
+                  "i"
+                ]
+              },
+              {
+                "rule": "7.3.32",
+                "terms": [
+                  "hAt",
+                  "i"
+                ]
+              },
+              {
+                "rule": "7.3.54",
+                "terms": [
+                  "GAt",
+                  "i"
+                ]
+              },
+              {
+                "rule": "3.2.123",
+                "terms": [
+                  "GAt",
+                  "i",
+                  "la~w"
+                ]
+              },
+              {
+                "rule": "1.3.2",
+                "terms": [
+                  "GAt",
+                  "i",
+                  "la~w"
+                ]
+              },
+              {
+                "rule": "1.3.3",
+                "terms": [
+                  "GAt",
+                  "i",
+                  "la~w"
+                ]
+              },
+              {
+                "rule": "1.3.9",
+                "terms": [
+                  "GAt",
+                  "i",
+                  "l"
+                ]
+              },
+              {
+                "rule": "3.4.78",
+                "terms": [
+                  "GAt",
+                  "i",
+                  "tip"
+                ]
+              },
+              {
+                "rule": "1.3.3",
+                "terms": [
+                  "GAt",
+                  "i",
+                  "tip"
+                ]
+              },
+              {
+                "rule": "1.3.9",
+                "terms": [
+                  "GAt",
+                  "i",
+                  "ti"
+                ]
+              },
+              {
+                "rule": "3.4.113",
+                "terms": [
+                  "GAt",
+                  "i",
+                  "ti"
+                ]
+              },
+              {
+                "rule": "3.1.68",
+                "terms": [
+                  "GAt",
+                  "i",
+                  "Sap",
+                  "ti"
+                ]
+              },
+              {
+                "rule": "1.3.3",
+                "terms": [
+                  "GAt",
+                  "i",
+                  "Sap",
+                  "ti"
+                ]
+              },
+              {
+                "rule": "1.3.8",
+                "terms": [
+                  "GAt",
+                  "i",
+                  "Sap",
+                  "ti"
+                ]
+              },
+              {
+                "rule": "1.3.9",
+                "terms": [
+                  "GAt",
+                  "i",
+                  "a",
+                  "ti"
+                ]
+              },
+              {
+                "rule": "3.4.113",
+                "terms": [
+                  "GAt",
+                  "i",
+                  "a",
+                  "ti"
+                ]
+              },
+              {
+                "rule": "1.4.13",
+                "terms": [
+                  "GAt",
+                  "i",
+                  "a",
+                  "ti"
+                ]
+              },
+              {
+                "rule": "7.3.32",
+                "terms": [
+                  "GAt",
+                  "i",
+                  "a",
+                  "ti"
+                ]
+              },
+              {
+                "rule": "7.3.84",
+                "terms": [
+                  "GAt",
+                  "e",
+                  "a",
+                  "ti"
+                ]
+              },
+              {
+                "rule": "1.4.14",
+                "terms": [
+                  "GAt",
+                  "e",
+                  "a",
+                  "ti"
+                ]
+              },
+              {
+                "rule": "6.1.78",
+                "terms": [
+                  "GAt",
+                  "ay",
+                  "a",
+                  "ti"
+                ]
+              },
+              {
+                "rule": "8.4.68",
+                "terms": [
+                  "GAt",
+                  "ay",
+                  "a",
+                  "ti"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Ral_exception",
+        "forms": [
+          "jaGAna"
+        ],
+        "traces": [
+          {
+            "text": "jaGAna",
+            "history": [
+              {
+                "rule": "1.3.1",
+                "terms": [
+                  "ha\\na~"
+                ]
+              },
+              {
+                "rule": "1.3.2",
+                "terms": [
+                  "ha\\na~"
+                ]
+              },
+              {
+                "rule": "1.3.9",
+                "terms": [
+                  "han"
+                ]
+              },
+              {
+                "rule": "3.2.115",
+                "terms": [
+                  "han",
+                  "li~w"
+                ]
+              },
+              {
+                "rule": "1.3.2",
+                "terms": [
+                  "han",
+                  "li~w"
+                ]
+              },
+              {
+                "rule": "1.3.3",
+                "terms": [
+                  "han",
+                  "li~w"
+                ]
+              },
+              {
+                "rule": "1.3.9",
+                "terms": [
+                  "han",
+                  "l"
+                ]
+              },
+              {
+                "rule": "1.3.78",
+                "terms": [
+                  "han",
+                  "l"
+                ]
+              },
+              {
+                "rule": "3.4.78",
+                "terms": [
+                  "han",
+                  "tip"
+                ]
+              },
+              {
+                "rule": "1.3.3",
+                "terms": [
+                  "han",
+                  "tip"
+                ]
+              },
+              {
+                "rule": "1.3.9",
+                "terms": [
+                  "han",
+                  "ti"
+                ]
+              },
+              {
+                "rule": "3.4.115",
+                "terms": [
+                  "han",
+                  "ti"
+                ]
+              },
+              {
+                "rule": "3.4.82",
+                "terms": [
+                  "han",
+                  "Ral"
+                ]
+              },
+              {
+                "rule": "1.3.3",
+                "terms": [
+                  "han",
+                  "Ral"
+                ]
+              },
+              {
+                "rule": "1.3.7",
+                "terms": [
+                  "han",
+                  "Ral"
+                ]
+              },
+              {
+                "rule": "1.3.9",
+                "terms": [
+                  "han",
+                  "a"
+                ]
+              },
+              {
+                "rule": "3.4.115",
+                "terms": [
+                  "han",
+                  "a"
+                ]
+              },
+              {
+                "rule": "6.1.8",
+                "terms": [
+                  "han",
+                  "han",
+                  "a"
+                ]
+              },
+              {
+                "rule": "6.1.4",
+                "terms": [
+                  "han",
+                  "han",
+                  "a"
+                ]
+              },
+              {
+                "rule": "6.1.5",
+                "terms": [
+                  "han",
+                  "han",
+                  "a"
+                ]
+              },
+              {
+                "rule": "1.4.13",
+                "terms": [
+                  "han",
+                  "han",
+                  "a"
+                ]
+              },
+              {
+                "rule": "7.2.116",
+                "terms": [
+                  "han",
+                  "hAn",
+                  "a"
+                ]
+              },
+              {
+                "rule": "7.3.55",
+                "terms": [
+                  "han",
+                  "GAn",
+                  "a"
+                ]
+              },
+              {
+                "rule": "7.4.60",
+                "terms": [
+                  "ha",
+                  "GAn",
+                  "a"
+                ]
+              },
+              {
+                "rule": "7.4.62",
+                "terms": [
+                  "Ja",
+                  "GAn",
+                  "a"
+                ]
+              },
+              {
+                "rule": "1.4.14",
+                "terms": [
+                  "Ja",
+                  "GAn",
+                  "a"
+                ]
+              },
+              {
+                "rule": "8.4.54",
+                "terms": [
+                  "ja",
+                  "GAn",
+                  "a"
+                ]
+              },
+              {
+                "rule": "8.4.68",
+                "terms": [
+                  "ja",
+                  "GAn",
+                  "a"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "ciR_exception",
+        "forms": [
+          "aGAni",
+          "avaDi"
+        ],
+        "traces": [
+          {
+            "text": "avaDi",
+            "history": [
+              {
+                "rule": "1.3.1",
+                "terms": [
+                  "ha\\na~"
+                ]
+              },
+              {
+                "rule": "1.3.2",
+                "terms": [
+                  "ha\\na~"
+                ]
+              },
+              {
+                "rule": "1.3.9",
+                "terms": [
+                  "han"
+                ]
+              },
+              {
+                "rule": "3.2.110",
+                "terms": [
+                  "han",
+                  "lu~N"
+                ]
+              },
+              {
+                "rule": "1.3.2",
+                "terms": [
+                  "han",
+                  "lu~N"
+                ]
+              },
+              {
+                "rule": "1.3.3",
+                "terms": [
+                  "han",
+                  "lu~N"
+                ]
+              },
+              {
+                "rule": "1.3.9",
+                "terms": [
+                  "han",
+                  "l"
+                ]
+              },
+              {
+                "rule": "1.3.13",
+                "terms": [
+                  "han",
+                  "l"
+                ]
+              },
+              {
+                "rule": "3.4.78",
+                "terms": [
+                  "han",
+                  "ta"
+                ]
+              },
+              {
+                "rule": "3.4.113",
+                "terms": [
+                  "han",
+                  "ta"
+                ]
+              },
+              {
+                "rule": "2.4.44",
+                "terms": [
+                  "vaDa",
+                  "ta"
+                ]
+              },
+              {
+                "rule": "3.1.43",
+                "terms": [
+                  "vaDa",
+                  "cli~",
+                  "ta"
+                ]
+              },
+              {
+                "rule": "3.1.66",
+                "terms": [
+                  "vaDa",
+                  "ciR",
+                  "ta"
+                ]
+              },
+              {
+                "rule": "1.3.3",
+                "terms": [
+                  "vaDa",
+                  "ciR",
+                  "ta"
+                ]
+              },
+              {
+                "rule": "1.3.7",
+                "terms": [
+                  "vaDa",
+                  "ciR",
+                  "ta"
+                ]
+              },
+              {
+                "rule": "1.3.9",
+                "terms": [
+                  "vaDa",
+                  "i",
+                  "ta"
+                ]
+              },
+              {
+                "rule": "3.4.114",
+                "terms": [
+                  "vaDa",
+                  "i",
+                  "ta"
+                ]
+              },
+              {
+                "rule": "1.2.4",
+                "terms": [
+                  "vaDa",
+                  "i",
+                  "ta"
+                ]
+              },
+              {
+                "rule": "1.4.13",
+                "terms": [
+                  "vaDa",
+                  "i",
+                  "ta"
+                ]
+              },
+              {
+                "rule": "6.4.71",
+                "terms": [
+                  "aw",
+                  "vaDa",
+                  "i",
+                  "ta"
+                ]
+              },
+              {
+                "rule": "1.3.3",
+                "terms": [
+                  "aw",
+                  "vaDa",
+                  "i",
+                  "ta"
+                ]
+              },
+              {
+                "rule": "1.3.9",
+                "terms": [
+                  "a",
+                  "vaDa",
+                  "i",
+                  "ta"
+                ]
+              },
+              {
+                "rule": "6.4.48",
+                "terms": [
+                  "a",
+                  "vaD",
+                  "i",
+                  "ta"
+                ]
+              },
+              {
+                "rule": "6.4.104",
+                "terms": [
+                  "a",
+                  "vaD",
+                  "i",
+                  ""
+                ]
+              },
+              {
+                "rule": "1.4.14",
+                "terms": [
+                  "a",
+                  "vaD",
+                  "i",
+                  ""
+                ]
+              },
+              {
+                "rule": "8.4.68",
+                "terms": [
+                  "a",
+                  "vaD",
+                  "i",
+                  ""
+                ]
+              }
+            ]
+          },
+          {
+            "text": "aGAni",
+            "history": [
+              {
+                "rule": "1.3.1",
+                "terms": [
+                  "ha\\na~"
+                ]
+              },
+              {
+                "rule": "1.3.2",
+                "terms": [
+                  "ha\\na~"
+                ]
+              },
+              {
+                "rule": "1.3.9",
+                "terms": [
+                  "han"
+                ]
+              },
+              {
+                "rule": "3.2.110",
+                "terms": [
+                  "han",
+                  "lu~N"
+                ]
+              },
+              {
+                "rule": "1.3.2",
+                "terms": [
+                  "han",
+                  "lu~N"
+                ]
+              },
+              {
+                "rule": "1.3.3",
+                "terms": [
+                  "han",
+                  "lu~N"
+                ]
+              },
+              {
+                "rule": "1.3.9",
+                "terms": [
+                  "han",
+                  "l"
+                ]
+              },
+              {
+                "rule": "1.3.13",
+                "terms": [
+                  "han",
+                  "l"
+                ]
+              },
+              {
+                "rule": "3.4.78",
+                "terms": [
+                  "han",
+                  "ta"
+                ]
+              },
+              {
+                "rule": "3.4.113",
+                "terms": [
+                  "han",
+                  "ta"
+                ]
+              },
+              {
+                "rule": "3.1.43",
+                "terms": [
+                  "han",
+                  "cli~",
+                  "ta"
+                ]
+              },
+              {
+                "rule": "3.1.66",
+                "terms": [
+                  "han",
+                  "ciR",
+                  "ta"
+                ]
+              },
+              {
+                "rule": "1.3.3",
+                "terms": [
+                  "han",
+                  "ciR",
+                  "ta"
+                ]
+              },
+              {
+                "rule": "1.3.7",
+                "terms": [
+                  "han",
+                  "ciR",
+                  "ta"
+                ]
+              },
+              {
+                "rule": "1.3.9",
+                "terms": [
+                  "han",
+                  "i",
+                  "ta"
+                ]
+              },
+              {
+                "rule": "3.4.114",
+                "terms": [
+                  "han",
+                  "i",
+                  "ta"
+                ]
+              },
+              {
+                "rule": "1.2.4",
+                "terms": [
+                  "han",
+                  "i",
+                  "ta"
+                ]
+              },
+              {
+                "rule": "1.4.13",
+                "terms": [
+                  "han",
+                  "i",
+                  "ta"
+                ]
+              },
+              {
+                "rule": "6.4.71",
+                "terms": [
+                  "aw",
+                  "han",
+                  "i",
+                  "ta"
+                ]
+              },
+              {
+                "rule": "1.3.3",
+                "terms": [
+                  "aw",
+                  "han",
+                  "i",
+                  "ta"
+                ]
+              },
+              {
+                "rule": "1.3.9",
+                "terms": [
+                  "a",
+                  "han",
+                  "i",
+                  "ta"
+                ]
+              },
+              {
+                "rule": "6.4.104",
+                "terms": [
+                  "a",
+                  "han",
+                  "i",
+                  ""
+                ]
+              },
+              {
+                "rule": "7.2.116",
+                "terms": [
+                  "a",
+                  "hAn",
+                  "i",
+                  ""
+                ]
+              },
+              {
+                "rule": "7.3.54",
+                "terms": [
+                  "a",
+                  "GAn",
+                  "i",
+                  ""
+                ]
+              },
+              {
+                "rule": "1.4.14",
+                "terms": [
+                  "a",
+                  "GAn",
+                  "i",
+                  ""
+                ]
+              },
+              {
+                "rule": "8.4.68",
+                "terms": [
+                  "a",
+                  "GAn",
+                  "i",
+                  ""
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "source_controls": [
+      {
+        "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.3.32.htm",
+        "work": "Kashika and Nyasa",
+        "direct_statement": "han final n becomes t before a root-prescribed ñit/ṇit suffix, except cin and nal; ghatayati is a direct example. The nominal varttraghna counterexample is outside this candidate recipe.",
+        "application": "Outer Ric is the relevant nit suffix. Neither exception is present in the candidate."
+      },
+      {
+        "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.2.116.htm",
+        "work": "Kashika",
+        "direct_statement": "Penultimate a receives vrddhi before a ñit/ṇit suffix.",
+        "application": "Supports the simultaneously logged han→hAt lengthening and n→t before Ric."
+      },
+      {
+        "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.3.54.htm",
+        "work": "Kashika and Nyasa",
+        "direct_statement": "han h receives a velar counterpart before the specified marked suffix or n; Nyasa explicitly says its root designation does not exclude yaNluk and points to7.3.55.",
+        "application": "Corroborates the gh result in this root-prescribed causal setting; no nominal hananiya detour."
+      },
+      {
+        "url": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.3.55.htm",
+        "work": "Kashika and Nyasa",
+        "direct_statement": "han h after its own reduplication becomes velar; the reduplication-triggering suffix must relate to han, excluding the nominal hananiya desiderative.",
+        "application": "The retained reduplication originated directly from han+yaNluk. The software logs hAt→GAt after Ric; timing of the log is not evidence of the nominal excluded case."
+      }
+    ],
+    "event_reading": "The first nontrivial7.3.32 log is [Ja,M,han,empty,i] → [Ja,M,hAt,empty,i], then7.3.55 yieldsGAt. Later7.3.32 logs leave the term arrays unchanged. The trace groups lengthening and n→t into one event rather than separately logging7.2.116.",
+    "minor_prose_correction": "The initial saved 5D control called han already lengthened before7.3.32. Its term arrays show both changes in that event; this is a trace-description correction, not a gold failure.",
+    "verdict": "No concrete new validity blocker found in this bounded rule/trace check. Direct controls plus explicit grammatical inference support the mechanism; the entire rare nested form is not separately printed."
+  },
+  "paid_calls": 0,
+  "model_answer_files_read": false,
+  "shared_files_modified": false,
+  "final_approval": false,
+  "benchmark_ready": false,
+  "limits": [
+    "Mechanical regeneration is not complete independent Sanskrit certification.",
+    "This input audit does not establish reference accuracy, completion or family-adjusted precision.",
+    "Exact dictionary citation/class defines the master split; etymological or broader lexical families may cross it.",
+    "Historical novelty means the recorded campaign inputs, not proof of absence from model pretraining.",
+    "Legacy analysis inspected every family before the master split. Current novelty is prospective and scoped to two campaign ledgers; no clean historical lexical-family holdout or existing learner-checkpoint claim.",
+    "Allocation replay verifies deterministic reproduction with the installed solver; it is not an independent formal proof of min-cost solver optimality."
+  ],
+  "revision01_delta": {
+    "old_tasks_sha256": "d639305f42598f3eee133865312399832653be98a7737b5f763e77832e4f063a",
+    "shared_ids": 1038,
+    "new_ids": 3762,
+    "removed_ids": 3762,
+    "shared_grammar_gold_and_prompt_unchanged": true,
+    "old_inputs_excluded_by_current_policy": 24,
+    "none_of_those_ids_present": true,
+    "new_recipe_rule_contexts": [
+      {
+        "recipe": "causative_of_intensive_luk",
+        "rule": "6.4.98",
+        "count": 3
+      },
+      {
+        "recipe": "causative_of_intensive_luk",
+        "rule": "7.3.32",
+        "count": 1
+      },
+      {
+        "recipe": "causative_of_intensive_luk",
+        "rule": "7.3.55",
+        "count": 1
+      },
+      {
+        "recipe": "causative_of_intensive_luk",
+        "rule": "8.4.55",
+        "count": 3
+      },
+      {
+        "recipe": "causative_of_intensive_luk",
+        "rule": "8.4.64",
+        "count": 1
+      }
+    ]
+  },
+  "concrete_blockers": [],
+  "source_or_trace_description_corrections": [
+    "7.3.32 event combines a→A with n→t; no already-lengthened term immediately precedes it."
+  ],
+  "updated_at": "2026-10-07T10:33:13.174352+00:00",
+  "allocation_replay": {
+    "completed_at": "2026-10-07T10:33:13.174352+00:00",
+    "all_929_family_cell_allocations_match": true,
+    "full_objective_json_matches_after_key_normalization": true,
+    "seed": "vp-five-d-candidate-4800-policy15-20261007-01",
+    "no_5d_status_or_candidate_files_written": true,
+    "method": "Replay frozen allocation function with status callback redirected to four_d progress. The occupied==expected assertion passed; the following raw Python objective equality raised because in-memory histogram keys are integers and JSON keys strings. Independently recomputed the full objective from the verified allocation/load counts with string keys and verified equality to the saved objective. No second allocation run or provider calls.",
+    "check_harness_note": "A Python/JSON key-type mismatch in the audit harness was resolved; no candidate reproducibility mismatch was found."
+  },
+  "allocation_replay_path": "benchmarks/parallel-search-20261006/four_d/candidate03-allocation-replay.json"
+}

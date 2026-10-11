@@ -1,0 +1,29 @@
+{
+  "created_at": "2026-10-07T19:14:18.537370+00:00",
+  "n": 200,
+  "control_n": 200,
+  "files": {
+    "tasks.json": "336146afc2a81d6b82e6c9f919498ce98d88c9cc9363a100a1c3aefe68e5c59f",
+    "controls.json": "7d7ecf2c3b6fb6a60d35840cc759a6613be0d8ed965af563c80c093f585d7862",
+    "prompts.jsonl": "574d37d102300b5146f2156052617810eed3876aae25212d57f92dd8b06db599",
+    "plan.json": "aab7268062066ed57e57e351bccac7a0a434b5233697b9f4736ed8db77228033",
+    "collision-audit.json": "75a4cf52841756ee9e01d56c8037119a5422b45b8a584a0513a6aaaa38d337c4",
+    "novelty-audit.json": "c03b15ccbf18dbf47c4fc10359402d9aa19cbbfc18a8f0a20a41504d19b1c056",
+    "inverse-index.json": "ee16696afffba7d729af37be329bfc0416e8e7e81a4ed559b4780a93ef2491d8",
+    "analysis-predeclaration.json": "ff155654a4aef5e5b6ebe08fb90c2b2758a6fba518b9610d305d3f667710c42d"
+  },
+  "dependencies": {
+    "benchmarks/parallel-search-20261006/oracle-policy-21.json": "e19f60de4fc58a43a72ee0a48320f0c11383a39eb21b45f2859361701158220c",
+    "data/finetune/task-data/vidyut_dhatupatha_5.tsv": "c6c494a6c534130b2d8e8f344d2f5e3ffbc64ed45b390e2a4e35e526f1cecd09",
+    "benchmarks/creation-campaign-20261006/family-split.json": "a1c46bb778bca8f89df468d65232698131a3c4b137393865cd3f6b121fc6077f",
+    "misc/vp_cartesian_task.py": "f5bfab6f3fc27b7c83bbd6987bede73501592a9568fda32a0371bd8e23b7febd",
+    "misc/vp_modification_prompt_v1.py": "4f300df8dc7bad7a55a4a786377b4adcc63c01ef9d3b3ff740010309661804a9",
+    "misc/vp_modification_task_v1.py": "28adae6b1d97706bcba41de2dc74527be1d999ed32f43bc08f56322ac878e1f7",
+    "benchmarks/parallel-search-20261007/modification-01/inverse-index.json": "ee16696afffba7d729af37be329bfc0416e8e7e81a4ed559b4780a93ef2491d8"
+  },
+  "generator_sha256": "cd4b1bd0a86bb5b4c0269f9a1b0159dfad170ff9bd828fad460aab603e0cfda6",
+  "validation": "All200modifications fully collision/regeneration checked;200controls pass shared validator; allpublicprompts independent of privatefields; exactpairedgold;200distinctfamilies",
+  "elapsed_seconds": 16.04028158300207,
+  "paid_calls": 0,
+  "benchmark_ready": false
+}

@@ -1,0 +1,1910 @@
+{
+  "status": "Source-backed prospective proposal; coordinator alone owns shared policy decisions.",
+  "predicate": {
+    "codes": [
+      "01.0504",
+      "06.0055",
+      "06.0056",
+      "06.0057",
+      "08.0006",
+      "08.0007"
+    ],
+    "first_operation_in": [
+      "yaN",
+      "yaNluk"
+    ],
+    "required_trace_rule": "7.4.85"
+  },
+  "rationale": "Direct printed intensive controls use rI augmentation; 7.4.90 and its rtvat extension require rI-family augmentation on these r-bearing bases. VP instead takes 7.4.85 nasal augmentation, which propagates through added Ric. Quarantine the uncertified intensive branch rather than guessing replacement gold.",
+  "preserves": [
+    "all ordinary 4D",
+    "single san",
+    "single Ric",
+    "other nasal-final roots",
+    "other r-bearing roots without this nasal-augment branch",
+    "08.0005 vowel-initial rnu"
+  ],
+  "source_tiers": {
+    "direct_printed_controls": [
+      "01.0504",
+      "08.0006",
+      "08.0007"
+    ],
+    "explicit_rule_inference": [
+      "06.0055",
+      "06.0056",
+      "06.0057"
+    ]
+  },
+  "development_impacts": {
+    "opus-four-d-pilot-01": {
+      "raw_affected": {
+        "n": 0,
+        "correct": 0,
+        "usable": 0,
+        "usable_wrong": 0,
+        "nonusable": 0,
+        "all_accuracy": null,
+        "usable_accuracy": null,
+        "bounds": null
+      },
+      "newly_affected": {
+        "n": 0,
+        "correct": 0,
+        "usable": 0,
+        "usable_wrong": 0,
+        "nonusable": 0,
+        "all_accuracy": null,
+        "usable_accuracy": null,
+        "bounds": null
+      },
+      "codes": {},
+      "currently_eligible": {
+        "n": 101,
+        "correct": 96,
+        "usable": 99,
+        "usable_wrong": 3,
+        "nonusable": 2,
+        "all_accuracy": 0.9504950495049505,
+        "usable_accuracy": 0.9696969696969697,
+        "bounds": [
+          0.9504950495049505,
+          0.9702970297029703
+        ]
+      },
+      "prospective_retained": {
+        "n": 101,
+        "correct": 96,
+        "usable": 99,
+        "usable_wrong": 3,
+        "nonusable": 2,
+        "all_accuracy": 0.9504950495049505,
+        "usable_accuracy": 0.9696969696969697,
+        "bounds": [
+          0.9504950495049505,
+          0.9702970297029703
+        ]
+      },
+      "affected_rows": [],
+      "results_sha256": "ea97a9928f7315a8230a726fd0aed755c063da54cd242a39d6dcfdad64742dca"
+    },
+    "opus-five-d-pilot-01": {
+      "raw_affected": {
+        "n": 1,
+        "correct": 0,
+        "usable": 1,
+        "usable_wrong": 1,
+        "nonusable": 0,
+        "all_accuracy": 0.0,
+        "usable_accuracy": 0.0,
+        "bounds": [
+          0.0,
+          0.0
+        ]
+      },
+      "newly_affected": {
+        "n": 1,
+        "correct": 0,
+        "usable": 1,
+        "usable_wrong": 1,
+        "nonusable": 0,
+        "all_accuracy": 0.0,
+        "usable_accuracy": 0.0,
+        "bounds": [
+          0.0,
+          0.0
+        ]
+      },
+      "codes": {
+        "08.0007": 1
+      },
+      "currently_eligible": {
+        "n": 112,
+        "correct": 93,
+        "usable": 107,
+        "usable_wrong": 14,
+        "nonusable": 5,
+        "all_accuracy": 0.8303571428571429,
+        "usable_accuracy": 0.8691588785046729,
+        "bounds": [
+          0.8303571428571429,
+          0.875
+        ]
+      },
+      "prospective_retained": {
+        "n": 111,
+        "correct": 93,
+        "usable": 106,
+        "usable_wrong": 13,
+        "nonusable": 5,
+        "all_accuracy": 0.8378378378378378,
+        "usable_accuracy": 0.8773584905660378,
+        "bounds": [
+          0.8378378378378378,
+          0.8828828828828829
+        ]
+      },
+      "affected_rows": [
+        {
+          "id": "cart5-0597987561dd042a7c6e8681",
+          "code": "08.0007",
+          "citation": "GfRu~^",
+          "gana": "Tanadi",
+          "recipe": [
+            "yaN"
+          ],
+          "morphology": {
+            "lakara": "AshirLin",
+            "prayoga": "Kartari",
+            "purusha": "Madhyama",
+            "vacana": "Dvi"
+          },
+          "gold_slp1": [
+            "jaMGfRizIyAsTAm",
+            "jaNGfRizIyAsTAm"
+          ],
+          "answer": "जरीघृणिषीयास्थाम्",
+          "is_correct": false,
+          "usable": true,
+          "prior_scope_issue": null,
+          "proposed_hold": true
+        }
+      ],
+      "results_sha256": "16d6ecc3c7a9c56e7d45874eb295eaf9a89298e88822db7a16a9dbd553a8ab8c"
+    },
+    "astra-five-d-pilot-01-pair": {
+      "raw_affected": {
+        "n": 1,
+        "correct": 0,
+        "usable": 1,
+        "usable_wrong": 1,
+        "nonusable": 0,
+        "all_accuracy": 0.0,
+        "usable_accuracy": 0.0,
+        "bounds": [
+          0.0,
+          0.0
+        ]
+      },
+      "newly_affected": {
+        "n": 1,
+        "correct": 0,
+        "usable": 1,
+        "usable_wrong": 1,
+        "nonusable": 0,
+        "all_accuracy": 0.0,
+        "usable_accuracy": 0.0,
+        "bounds": [
+          0.0,
+          0.0
+        ]
+      },
+      "codes": {
+        "08.0007": 1
+      },
+      "currently_eligible": {
+        "n": 112,
+        "correct": 72,
+        "usable": 106,
+        "usable_wrong": 34,
+        "nonusable": 6,
+        "all_accuracy": 0.6428571428571429,
+        "usable_accuracy": 0.6792452830188679,
+        "bounds": [
+          0.6428571428571429,
+          0.6964285714285714
+        ]
+      },
+      "prospective_retained": {
+        "n": 111,
+        "correct": 72,
+        "usable": 105,
+        "usable_wrong": 33,
+        "nonusable": 6,
+        "all_accuracy": 0.6486486486486487,
+        "usable_accuracy": 0.6857142857142857,
+        "bounds": [
+          0.6486486486486487,
+          0.7027027027027027
+        ]
+      },
+      "affected_rows": [
+        {
+          "id": "cart5-0597987561dd042a7c6e8681",
+          "code": "08.0007",
+          "citation": "GfRu~^",
+          "gana": "Tanadi",
+          "recipe": [
+            "yaN"
+          ],
+          "morphology": {
+            "lakara": "AshirLin",
+            "prayoga": "Kartari",
+            "purusha": "Madhyama",
+            "vacana": "Dvi"
+          },
+          "gold_slp1": [
+            "jaMGfRizIyAsTAm",
+            "jaNGfRizIyAsTAm"
+          ],
+          "answer": "जरीघृणिषीयास्थाम्",
+          "is_correct": false,
+          "usable": true,
+          "prior_scope_issue": null,
+          "proposed_hold": true
+        }
+      ],
+      "results_sha256": "8aa3ab51ddec7f5ef59252c766fc6c4035ba83cdefe71bdeb79b4375e47737a4"
+    },
+    "opus-five-d-pilot-02": {
+      "raw_affected": {
+        "n": 1,
+        "correct": 0,
+        "usable": 1,
+        "usable_wrong": 1,
+        "nonusable": 0,
+        "all_accuracy": 0.0,
+        "usable_accuracy": 0.0,
+        "bounds": [
+          0.0,
+          0.0
+        ]
+      },
+      "newly_affected": {
+        "n": 1,
+        "correct": 0,
+        "usable": 1,
+        "usable_wrong": 1,
+        "nonusable": 0,
+        "all_accuracy": 0.0,
+        "usable_accuracy": 0.0,
+        "bounds": [
+          0.0,
+          0.0
+        ]
+      },
+      "codes": {
+        "08.0007": 1
+      },
+      "currently_eligible": {
+        "n": 108,
+        "correct": 95,
+        "usable": 105,
+        "usable_wrong": 10,
+        "nonusable": 3,
+        "all_accuracy": 0.8796296296296297,
+        "usable_accuracy": 0.9047619047619048,
+        "bounds": [
+          0.8796296296296297,
+          0.9074074074074074
+        ]
+      },
+      "prospective_retained": {
+        "n": 107,
+        "correct": 95,
+        "usable": 104,
+        "usable_wrong": 9,
+        "nonusable": 3,
+        "all_accuracy": 0.8878504672897196,
+        "usable_accuracy": 0.9134615384615384,
+        "bounds": [
+          0.8878504672897196,
+          0.9158878504672897
+        ]
+      },
+      "affected_rows": [
+        {
+          "id": "cart5-9dc1672d8f4169c76cf95533",
+          "code": "08.0007",
+          "citation": "GfRu~^",
+          "gana": "Tanadi",
+          "recipe": [
+            "yaNluk"
+          ],
+          "morphology": {
+            "lakara": "Lan",
+            "prayoga": "Kartari",
+            "purusha": "Uttama",
+            "vacana": "Dvi"
+          },
+          "gold_slp1": [
+            "ajaMGfRva",
+            "ajaNGfRva"
+          ],
+          "answer": "अजर्घृण्व",
+          "is_correct": false,
+          "usable": true,
+          "prior_scope_issue": null,
+          "proposed_hold": true
+        }
+      ],
+      "results_sha256": "ab6c27539dbc0fbf54e4fece40eb61444af54a3a169ae5f9284adc4973c2f8b4"
+    },
+    "opus-four-d-pilot-02": {
+      "raw_affected": {
+        "n": 0,
+        "correct": 0,
+        "usable": 0,
+        "usable_wrong": 0,
+        "nonusable": 0,
+        "all_accuracy": null,
+        "usable_accuracy": null,
+        "bounds": null
+      },
+      "newly_affected": {
+        "n": 0,
+        "correct": 0,
+        "usable": 0,
+        "usable_wrong": 0,
+        "nonusable": 0,
+        "all_accuracy": null,
+        "usable_accuracy": null,
+        "bounds": null
+      },
+      "codes": {},
+      "currently_eligible": {
+        "n": 104,
+        "correct": 103,
+        "usable": 103,
+        "usable_wrong": 0,
+        "nonusable": 1,
+        "all_accuracy": 0.9903846153846154,
+        "usable_accuracy": 1.0,
+        "bounds": [
+          0.9903846153846154,
+          1.0
+        ]
+      },
+      "prospective_retained": {
+        "n": 104,
+        "correct": 103,
+        "usable": 103,
+        "usable_wrong": 0,
+        "nonusable": 1,
+        "all_accuracy": 0.9903846153846154,
+        "usable_accuracy": 1.0,
+        "bounds": [
+          0.9903846153846154,
+          1.0
+        ]
+      },
+      "affected_rows": [],
+      "results_sha256": "11c8420f9edc9e25e53f5a91110dbfb536e6b55c6e502f488c5404199f4d320f"
+    },
+    "opus-five-d-pilot-03": {
+      "raw_affected": {
+        "n": 2,
+        "correct": 0,
+        "usable": 1,
+        "usable_wrong": 1,
+        "nonusable": 1,
+        "all_accuracy": 0.0,
+        "usable_accuracy": 0.0,
+        "bounds": [
+          0.0,
+          0.5
+        ]
+      },
+      "newly_affected": {
+        "n": 2,
+        "correct": 0,
+        "usable": 1,
+        "usable_wrong": 1,
+        "nonusable": 1,
+        "all_accuracy": 0.0,
+        "usable_accuracy": 0.0,
+        "bounds": [
+          0.0,
+          0.5
+        ]
+      },
+      "codes": {
+        "08.0007": 1,
+        "06.0057": 1
+      },
+      "currently_eligible": {
+        "n": 168,
+        "correct": 131,
+        "usable": 159,
+        "usable_wrong": 28,
+        "nonusable": 9,
+        "all_accuracy": 0.7797619047619048,
+        "usable_accuracy": 0.8238993710691824,
+        "bounds": [
+          0.7797619047619048,
+          0.8333333333333334
+        ]
+      },
+      "prospective_retained": {
+        "n": 166,
+        "correct": 131,
+        "usable": 158,
+        "usable_wrong": 27,
+        "nonusable": 8,
+        "all_accuracy": 0.7891566265060241,
+        "usable_accuracy": 0.8291139240506329,
+        "bounds": [
+          0.7891566265060241,
+          0.8373493975903614
+        ]
+      },
+      "affected_rows": [
+        {
+          "id": "cart5-7ec17c59d57ee55767e85245",
+          "code": "08.0007",
+          "citation": "GfRu~^",
+          "gana": "Tanadi",
+          "recipe": [
+            "yaN",
+            "Ric"
+          ],
+          "morphology": {
+            "lakara": "VidhiLin",
+            "prayoga": "Karmani",
+            "purusha": "Prathama",
+            "vacana": "Dvi"
+          },
+          "gold_slp1": [
+            "jaMGfRyeyAtAm",
+            "jaNGfRyeyAtAm"
+          ],
+          "answer": "जरीघृण्येयाताम्",
+          "is_correct": false,
+          "usable": true,
+          "prior_scope_issue": null,
+          "proposed_hold": true
+        },
+        {
+          "id": "cart5-4e3c9963f93da14b9eae4267",
+          "code": "06.0057",
+          "citation": "mfRa~",
+          "gana": "Tudadi",
+          "recipe": [
+            "yaN",
+            "Ric"
+          ],
+          "morphology": {
+            "lakara": "VidhiLin",
+            "prayoga": "Kartari",
+            "purusha": "Uttama",
+            "vacana": "Eka"
+          },
+          "gold_slp1": [
+            "maMmfRayeya",
+            "maMmfRayeyam",
+            "mammfRayeya",
+            "mammfRayeyam"
+          ],
+          "answer": null,
+          "is_correct": false,
+          "usable": false,
+          "prior_scope_issue": null,
+          "proposed_hold": true
+        }
+      ],
+      "results_sha256": "c2af4ec42349327b5f682811df8e2a235500bb77db8205196371c24c577a1fe4"
+    },
+    "opus-four-d-pilot-03": {
+      "raw_affected": {
+        "n": 0,
+        "correct": 0,
+        "usable": 0,
+        "usable_wrong": 0,
+        "nonusable": 0,
+        "all_accuracy": null,
+        "usable_accuracy": null,
+        "bounds": null
+      },
+      "newly_affected": {
+        "n": 0,
+        "correct": 0,
+        "usable": 0,
+        "usable_wrong": 0,
+        "nonusable": 0,
+        "all_accuracy": null,
+        "usable_accuracy": null,
+        "bounds": null
+      },
+      "codes": {},
+      "currently_eligible": {
+        "n": 175,
+        "correct": 174,
+        "usable": 175,
+        "usable_wrong": 1,
+        "nonusable": 0,
+        "all_accuracy": 0.9942857142857143,
+        "usable_accuracy": 0.9942857142857143,
+        "bounds": [
+          0.9942857142857143,
+          0.9942857142857143
+        ]
+      },
+      "prospective_retained": {
+        "n": 175,
+        "correct": 174,
+        "usable": 175,
+        "usable_wrong": 1,
+        "nonusable": 0,
+        "all_accuracy": 0.9942857142857143,
+        "usable_accuracy": 0.9942857142857143,
+        "bounds": [
+          0.9942857142857143,
+          0.9942857142857143
+        ]
+      },
+      "affected_rows": [],
+      "results_sha256": "6e65d435820eceb2cb869916ca91c98d0857215d9377c67d95f940dee621b4ae"
+    },
+    "opus-four-d-pilot-04": {
+      "raw_affected": {
+        "n": 0,
+        "correct": 0,
+        "usable": 0,
+        "usable_wrong": 0,
+        "nonusable": 0,
+        "all_accuracy": null,
+        "usable_accuracy": null,
+        "bounds": null
+      },
+      "newly_affected": {
+        "n": 0,
+        "correct": 0,
+        "usable": 0,
+        "usable_wrong": 0,
+        "nonusable": 0,
+        "all_accuracy": null,
+        "usable_accuracy": null,
+        "bounds": null
+      },
+      "codes": {},
+      "currently_eligible": {
+        "n": 112,
+        "correct": 103,
+        "usable": 112,
+        "usable_wrong": 9,
+        "nonusable": 0,
+        "all_accuracy": 0.9196428571428571,
+        "usable_accuracy": 0.9196428571428571,
+        "bounds": [
+          0.9196428571428571,
+          0.9196428571428571
+        ]
+      },
+      "prospective_retained": {
+        "n": 112,
+        "correct": 103,
+        "usable": 112,
+        "usable_wrong": 9,
+        "nonusable": 0,
+        "all_accuracy": 0.9196428571428571,
+        "usable_accuracy": 0.9196428571428571,
+        "bounds": [
+          0.9196428571428571,
+          0.9196428571428571
+        ]
+      },
+      "affected_rows": [],
+      "results_sha256": "3ae10c8a211d77216188bd19a46ee330003200c18eaab35516d3a547b45475c0"
+    },
+    "opus-five-d-pilot-04": {
+      "raw_affected": {
+        "n": 4,
+        "correct": 0,
+        "usable": 4,
+        "usable_wrong": 4,
+        "nonusable": 0,
+        "all_accuracy": 0.0,
+        "usable_accuracy": 0.0,
+        "bounds": [
+          0.0,
+          0.0
+        ]
+      },
+      "newly_affected": {
+        "n": 4,
+        "correct": 0,
+        "usable": 4,
+        "usable_wrong": 4,
+        "nonusable": 0,
+        "all_accuracy": 0.0,
+        "usable_accuracy": 0.0,
+        "bounds": [
+          0.0,
+          0.0
+        ]
+      },
+      "codes": {
+        "08.0007": 2,
+        "06.0057": 2
+      },
+      "currently_eligible": {
+        "n": 467,
+        "correct": 395,
+        "usable": 466,
+        "usable_wrong": 71,
+        "nonusable": 1,
+        "all_accuracy": 0.8458244111349036,
+        "usable_accuracy": 0.8476394849785408,
+        "bounds": [
+          0.8458244111349036,
+          0.8479657387580299
+        ]
+      },
+      "prospective_retained": {
+        "n": 463,
+        "correct": 395,
+        "usable": 462,
+        "usable_wrong": 67,
+        "nonusable": 1,
+        "all_accuracy": 0.8531317494600432,
+        "usable_accuracy": 0.854978354978355,
+        "bounds": [
+          0.8531317494600432,
+          0.8552915766738661
+        ]
+      },
+      "affected_rows": [
+        {
+          "id": "cart5-c007c52bdf4cb8ab144ad87e",
+          "code": "08.0007",
+          "citation": "GfRu~^",
+          "gana": "Tanadi",
+          "recipe": [
+            "yaNluk",
+            "Ric"
+          ],
+          "morphology": {
+            "lakara": "Lun",
+            "prayoga": "Kartari",
+            "purusha": "Prathama",
+            "vacana": "Eka"
+          },
+          "gold_slp1": [
+            "ajaMGarRad",
+            "ajaMGarRat",
+            "ajaMGarRata",
+            "ajaNGarRad",
+            "ajaNGarRat",
+            "ajaNGarRata"
+          ],
+          "answer": "अजर्घर्णत्",
+          "is_correct": false,
+          "usable": true,
+          "prior_scope_issue": null,
+          "proposed_hold": true
+        },
+        {
+          "id": "cart5-0b2c4807ef3685d69e57c5b7",
+          "code": "06.0057",
+          "citation": "mfRa~",
+          "gana": "Tudadi",
+          "recipe": [
+            "yaNluk",
+            "Ric"
+          ],
+          "morphology": {
+            "lakara": "Lun",
+            "prayoga": "Kartari",
+            "purusha": "Prathama",
+            "vacana": "Eka"
+          },
+          "gold_slp1": [
+            "amaMmarRad",
+            "amaMmarRat",
+            "amaMmarRata",
+            "amammarRad",
+            "amammarRat",
+            "amammarRata"
+          ],
+          "answer": "अमर्मर्णत्",
+          "is_correct": false,
+          "usable": true,
+          "prior_scope_issue": null,
+          "proposed_hold": true
+        },
+        {
+          "id": "cart5-c661dcab1707ca4d2e15c8e5",
+          "code": "08.0007",
+          "citation": "GfRu~^",
+          "gana": "Tanadi",
+          "recipe": [
+            "yaN",
+            "Ric"
+          ],
+          "morphology": {
+            "lakara": "Lut",
+            "prayoga": "Kartari",
+            "purusha": "Prathama",
+            "vacana": "Eka"
+          },
+          "gold_slp1": [
+            "jaMGfRayitA",
+            "jaNGfRayitA"
+          ],
+          "answer": "जरीघृणयिता",
+          "is_correct": false,
+          "usable": true,
+          "prior_scope_issue": null,
+          "proposed_hold": true
+        },
+        {
+          "id": "cart5-925548bba9c8a0d32c396039",
+          "code": "06.0057",
+          "citation": "mfRa~",
+          "gana": "Tudadi",
+          "recipe": [
+            "yaN",
+            "Ric"
+          ],
+          "morphology": {
+            "lakara": "Lat",
+            "prayoga": "Kartari",
+            "purusha": "Prathama",
+            "vacana": "Bahu"
+          },
+          "gold_slp1": [
+            "maMmfRayante",
+            "maMmfRayanti",
+            "mammfRayante",
+            "mammfRayanti"
+          ],
+          "answer": "मरीमृणयन्ति",
+          "is_correct": false,
+          "usable": true,
+          "prior_scope_issue": null,
+          "proposed_hold": true
+        }
+      ],
+      "results_sha256": "0e587d8adb365a22bc16027ed87b36eef2141fb5eb712c8db62f49deb53f1a31"
+    },
+    "astra-five-d-pilot-04-pair": {
+      "raw_affected": {
+        "n": 4,
+        "correct": 0,
+        "usable": 3,
+        "usable_wrong": 3,
+        "nonusable": 1,
+        "all_accuracy": 0.0,
+        "usable_accuracy": 0.0,
+        "bounds": [
+          0.0,
+          0.25
+        ]
+      },
+      "newly_affected": {
+        "n": 4,
+        "correct": 0,
+        "usable": 3,
+        "usable_wrong": 3,
+        "nonusable": 1,
+        "all_accuracy": 0.0,
+        "usable_accuracy": 0.0,
+        "bounds": [
+          0.0,
+          0.25
+        ]
+      },
+      "codes": {
+        "08.0007": 2,
+        "06.0057": 2
+      },
+      "currently_eligible": {
+        "n": 467,
+        "correct": 303,
+        "usable": 417,
+        "usable_wrong": 115,
+        "nonusable": 50,
+        "all_accuracy": 0.6488222698072805,
+        "usable_accuracy": 0.7242206235011991,
+        "bounds": [
+          0.6466809421841542,
+          0.7537473233404711
+        ]
+      },
+      "prospective_retained": {
+        "n": 463,
+        "correct": 303,
+        "usable": 414,
+        "usable_wrong": 112,
+        "nonusable": 49,
+        "all_accuracy": 0.6544276457883369,
+        "usable_accuracy": 0.7294685990338164,
+        "bounds": [
+          0.652267818574514,
+          0.7580993520518359
+        ]
+      },
+      "affected_rows": [
+        {
+          "id": "cart5-c007c52bdf4cb8ab144ad87e",
+          "code": "08.0007",
+          "citation": "GfRu~^",
+          "gana": "Tanadi",
+          "recipe": [
+            "yaNluk",
+            "Ric"
+          ],
+          "morphology": {
+            "lakara": "Lun",
+            "prayoga": "Kartari",
+            "purusha": "Prathama",
+            "vacana": "Eka"
+          },
+          "gold_slp1": [
+            "ajaMGarRad",
+            "ajaMGarRat",
+            "ajaMGarRata",
+            "ajaNGarRad",
+            "ajaNGarRat",
+            "ajaNGarRata"
+          ],
+          "answer": null,
+          "is_correct": false,
+          "usable": false,
+          "prior_scope_issue": null,
+          "proposed_hold": true
+        },
+        {
+          "id": "cart5-0b2c4807ef3685d69e57c5b7",
+          "code": "06.0057",
+          "citation": "mfRa~",
+          "gana": "Tudadi",
+          "recipe": [
+            "yaNluk",
+            "Ric"
+          ],
+          "morphology": {
+            "lakara": "Lun",
+            "prayoga": "Kartari",
+            "purusha": "Prathama",
+            "vacana": "Eka"
+          },
+          "gold_slp1": [
+            "amaMmarRad",
+            "amaMmarRat",
+            "amaMmarRata",
+            "amammarRad",
+            "amammarRat",
+            "amammarRata"
+          ],
+          "answer": "अमरीमृणत्",
+          "is_correct": false,
+          "usable": true,
+          "prior_scope_issue": null,
+          "proposed_hold": true
+        },
+        {
+          "id": "cart5-c661dcab1707ca4d2e15c8e5",
+          "code": "08.0007",
+          "citation": "GfRu~^",
+          "gana": "Tanadi",
+          "recipe": [
+            "yaN",
+            "Ric"
+          ],
+          "morphology": {
+            "lakara": "Lut",
+            "prayoga": "Kartari",
+            "purusha": "Prathama",
+            "vacana": "Eka"
+          },
+          "gold_slp1": [
+            "jaMGfRayitA",
+            "jaNGfRayitA"
+          ],
+          "answer": "जरीघर्णयिता",
+          "is_correct": false,
+          "usable": true,
+          "prior_scope_issue": null,
+          "proposed_hold": true
+        },
+        {
+          "id": "cart5-925548bba9c8a0d32c396039",
+          "code": "06.0057",
+          "citation": "mfRa~",
+          "gana": "Tudadi",
+          "recipe": [
+            "yaN",
+            "Ric"
+          ],
+          "morphology": {
+            "lakara": "Lat",
+            "prayoga": "Kartari",
+            "purusha": "Prathama",
+            "vacana": "Bahu"
+          },
+          "gold_slp1": [
+            "maMmfRayante",
+            "maMmfRayanti",
+            "mammfRayante",
+            "mammfRayanti"
+          ],
+          "answer": "मरीमर्णयन्ति",
+          "is_correct": false,
+          "usable": true,
+          "prior_scope_issue": null,
+          "proposed_hold": true
+        }
+      ],
+      "results_sha256": "85178c7454df7de07e92f77c93c10febe85bd5821b2a48691d0cef7b32f4f294"
+    },
+    "opus-four-d-pilot-05": {
+      "raw_affected": {
+        "n": 0,
+        "correct": 0,
+        "usable": 0,
+        "usable_wrong": 0,
+        "nonusable": 0,
+        "all_accuracy": null,
+        "usable_accuracy": null,
+        "bounds": null
+      },
+      "newly_affected": {
+        "n": 0,
+        "correct": 0,
+        "usable": 0,
+        "usable_wrong": 0,
+        "nonusable": 0,
+        "all_accuracy": null,
+        "usable_accuracy": null,
+        "bounds": null
+      },
+      "codes": {},
+      "currently_eligible": {
+        "n": 52,
+        "correct": 43,
+        "usable": 52,
+        "usable_wrong": 9,
+        "nonusable": 0,
+        "all_accuracy": 0.8269230769230769,
+        "usable_accuracy": 0.8269230769230769,
+        "bounds": [
+          0.8269230769230769,
+          0.8269230769230769
+        ]
+      },
+      "prospective_retained": {
+        "n": 52,
+        "correct": 43,
+        "usable": 52,
+        "usable_wrong": 9,
+        "nonusable": 0,
+        "all_accuracy": 0.8269230769230769,
+        "usable_accuracy": 0.8269230769230769,
+        "bounds": [
+          0.8269230769230769,
+          0.8269230769230769
+        ]
+      },
+      "affected_rows": [],
+      "results_sha256": "ae83905a0d4167ed39204122077e048220c631417cf1e6dbace50aad56db903f"
+    },
+    "opus-five-d-pilot-05": {
+      "raw_affected": {
+        "n": 2,
+        "correct": 0,
+        "usable": 2,
+        "usable_wrong": 2,
+        "nonusable": 0,
+        "all_accuracy": 0.0,
+        "usable_accuracy": 0.0,
+        "bounds": [
+          0.0,
+          0.0
+        ]
+      },
+      "newly_affected": {
+        "n": 2,
+        "correct": 0,
+        "usable": 2,
+        "usable_wrong": 2,
+        "nonusable": 0,
+        "all_accuracy": 0.0,
+        "usable_accuracy": 0.0,
+        "bounds": [
+          0.0,
+          0.0
+        ]
+      },
+      "codes": {
+        "08.0007": 2
+      },
+      "currently_eligible": {
+        "n": 462,
+        "correct": 381,
+        "usable": 460,
+        "usable_wrong": 79,
+        "nonusable": 2,
+        "all_accuracy": 0.8246753246753247,
+        "usable_accuracy": 0.8282608695652174,
+        "bounds": [
+          0.8246753246753247,
+          0.829004329004329
+        ]
+      },
+      "prospective_retained": {
+        "n": 460,
+        "correct": 381,
+        "usable": 458,
+        "usable_wrong": 77,
+        "nonusable": 2,
+        "all_accuracy": 0.8282608695652174,
+        "usable_accuracy": 0.8318777292576419,
+        "bounds": [
+          0.8282608695652174,
+          0.8326086956521739
+        ]
+      },
+      "affected_rows": [
+        {
+          "id": "cart5-eac927d32e3f1c1df11cd71b",
+          "code": "08.0007",
+          "citation": "GfRu~^",
+          "gana": "Tanadi",
+          "recipe": [
+            "yaNluk",
+            "Ric"
+          ],
+          "morphology": {
+            "lakara": "Lan",
+            "prayoga": "Karmani",
+            "purusha": "Madhyama",
+            "vacana": "Dvi"
+          },
+          "gold_slp1": [
+            "ajaMGarRyeTAm",
+            "ajaNGarRyeTAm"
+          ],
+          "answer": "अजर्घर्ण्येथाम्",
+          "is_correct": false,
+          "usable": true,
+          "prior_scope_issue": null,
+          "proposed_hold": true
+        },
+        {
+          "id": "cart5-6fd4bc8ce848af659cc17eb3",
+          "code": "08.0007",
+          "citation": "GfRu~^",
+          "gana": "Tanadi",
+          "recipe": [
+            "yaNluk",
+            "Ric"
+          ],
+          "morphology": {
+            "lakara": "Lun",
+            "prayoga": "Kartari",
+            "purusha": "Prathama",
+            "vacana": "Bahu"
+          },
+          "gold_slp1": [
+            "ajaMGarRan",
+            "ajaMGarRanta",
+            "ajaNGarRan",
+            "ajaNGarRanta"
+          ],
+          "answer": "अजर्घर्णन्",
+          "is_correct": false,
+          "usable": true,
+          "prior_scope_issue": null,
+          "proposed_hold": true
+        }
+      ],
+      "results_sha256": "1e6a890cb00ecd500c8858cf573ec6536580c16426af5b1e2c44a1deaf0c81eb"
+    },
+    "opus-five-d-pilot-06": {
+      "raw_affected": {
+        "n": 4,
+        "correct": 0,
+        "usable": 4,
+        "usable_wrong": 4,
+        "nonusable": 0,
+        "all_accuracy": 0.0,
+        "usable_accuracy": 0.0,
+        "bounds": [
+          0.0,
+          0.0
+        ]
+      },
+      "newly_affected": {
+        "n": 4,
+        "correct": 0,
+        "usable": 4,
+        "usable_wrong": 4,
+        "nonusable": 0,
+        "all_accuracy": 0.0,
+        "usable_accuracy": 0.0,
+        "bounds": [
+          0.0,
+          0.0
+        ]
+      },
+      "codes": {
+        "06.0057": 2,
+        "08.0007": 2
+      },
+      "currently_eligible": {
+        "n": 594,
+        "correct": 474,
+        "usable": 590,
+        "usable_wrong": 116,
+        "nonusable": 4,
+        "all_accuracy": 0.797979797979798,
+        "usable_accuracy": 0.8033898305084746,
+        "bounds": [
+          0.797979797979798,
+          0.8047138047138047
+        ]
+      },
+      "prospective_retained": {
+        "n": 590,
+        "correct": 474,
+        "usable": 586,
+        "usable_wrong": 112,
+        "nonusable": 4,
+        "all_accuracy": 0.8033898305084746,
+        "usable_accuracy": 0.8088737201365188,
+        "bounds": [
+          0.8033898305084746,
+          0.8101694915254237
+        ]
+      },
+      "affected_rows": [
+        {
+          "id": "cart5-20d2a40990468312a9312b01",
+          "code": "06.0057",
+          "citation": "mfRa~",
+          "gana": "Tudadi",
+          "recipe": [
+            "yaN",
+            "Ric"
+          ],
+          "morphology": {
+            "lakara": "Lot",
+            "prayoga": "Kartari",
+            "purusha": "Madhyama",
+            "vacana": "Dvi"
+          },
+          "gold_slp1": [
+            "maMmfRayatam",
+            "maMmfRayeTAm",
+            "mammfRayatam",
+            "mammfRayeTAm"
+          ],
+          "answer": "मरीमर्णयतम्",
+          "is_correct": false,
+          "usable": true,
+          "prior_scope_issue": null,
+          "proposed_hold": true
+        },
+        {
+          "id": "cart5-f14f501a532ab84a0fd23582",
+          "code": "08.0007",
+          "citation": "GfRu~^",
+          "gana": "Tanadi",
+          "recipe": [
+            "yaN",
+            "Ric"
+          ],
+          "morphology": {
+            "lakara": "VidhiLin",
+            "prayoga": "Kartari",
+            "purusha": "Prathama",
+            "vacana": "Dvi"
+          },
+          "gold_slp1": [
+            "jaMGfRayetAm",
+            "jaMGfRayeyAtAm",
+            "jaNGfRayetAm",
+            "jaNGfRayeyAtAm"
+          ],
+          "answer": "जरीघृणयेताम्",
+          "is_correct": false,
+          "usable": true,
+          "prior_scope_issue": null,
+          "proposed_hold": true
+        },
+        {
+          "id": "cart5-5ef62a735fd119575b0d965e",
+          "code": "08.0007",
+          "citation": "GfRu~^",
+          "gana": "Tanadi",
+          "recipe": [
+            "yaNluk",
+            "Ric"
+          ],
+          "morphology": {
+            "lakara": "Lun",
+            "prayoga": "Kartari",
+            "purusha": "Uttama",
+            "vacana": "Dvi"
+          },
+          "gold_slp1": [
+            "ajaMGarRAva",
+            "ajaMGarRAvahi",
+            "ajaNGarRAva",
+            "ajaNGarRAvahi"
+          ],
+          "answer": "अजजर्घृणाव",
+          "is_correct": false,
+          "usable": true,
+          "prior_scope_issue": null,
+          "proposed_hold": true
+        },
+        {
+          "id": "cart5-57e40bea37300a82cac37d70",
+          "code": "06.0057",
+          "citation": "mfRa~",
+          "gana": "Tudadi",
+          "recipe": [
+            "yaNluk",
+            "Ric"
+          ],
+          "morphology": {
+            "lakara": "Lun",
+            "prayoga": "Kartari",
+            "purusha": "Prathama",
+            "vacana": "Dvi"
+          },
+          "gold_slp1": [
+            "amaMmarRatAm",
+            "amaMmarRetAm",
+            "amammarRatAm",
+            "amammarRetAm"
+          ],
+          "answer": "अमर्मर्णताम्",
+          "is_correct": false,
+          "usable": true,
+          "prior_scope_issue": null,
+          "proposed_hold": true
+        }
+      ],
+      "results_sha256": "dc90e5b917dd0ec500bbc82c26a1d84ffe03e9941c5ceed8df4ac4192742a938"
+    },
+    "opus-five-d-pilot-07-r1-a": {
+      "raw_affected": {
+        "n": 3,
+        "correct": 0,
+        "usable": 3,
+        "usable_wrong": 3,
+        "nonusable": 0,
+        "all_accuracy": 0.0,
+        "usable_accuracy": 0.0,
+        "bounds": [
+          0.0,
+          0.0
+        ]
+      },
+      "newly_affected": {
+        "n": 3,
+        "correct": 0,
+        "usable": 3,
+        "usable_wrong": 3,
+        "nonusable": 0,
+        "all_accuracy": 0.0,
+        "usable_accuracy": 0.0,
+        "bounds": [
+          0.0,
+          0.0
+        ]
+      },
+      "codes": {
+        "08.0007": 3
+      },
+      "currently_eligible": {
+        "n": 1200,
+        "correct": 923,
+        "usable": 1190,
+        "usable_wrong": 267,
+        "nonusable": 10,
+        "all_accuracy": 0.7691666666666667,
+        "usable_accuracy": 0.7756302521008404,
+        "bounds": [
+          0.7691666666666667,
+          0.7775
+        ]
+      },
+      "prospective_retained": {
+        "n": 1197,
+        "correct": 923,
+        "usable": 1187,
+        "usable_wrong": 264,
+        "nonusable": 10,
+        "all_accuracy": 0.77109440267335,
+        "usable_accuracy": 0.7775905644481887,
+        "bounds": [
+          0.77109440267335,
+          0.7794486215538847
+        ]
+      },
+      "affected_rows": [
+        {
+          "id": "cart5-663fa35a7fd5c4ab746781b6",
+          "code": "08.0007",
+          "citation": "GfRu~^",
+          "gana": "Tanadi",
+          "recipe": [
+            "yaN",
+            "Ric"
+          ],
+          "morphology": {
+            "lakara": "Lrt",
+            "prayoga": "Karmani",
+            "purusha": "Uttama",
+            "vacana": "Eka"
+          },
+          "gold_slp1": [
+            "jaMGfRayizye",
+            "jaMGfRizye",
+            "jaNGfRayizye",
+            "jaNGfRizye"
+          ],
+          "answer": "जरीघृणयिष्ये",
+          "is_correct": false,
+          "usable": true,
+          "prior_scope_issue": null,
+          "proposed_hold": true
+        },
+        {
+          "id": "cart5-8525e603ac772079f972afaa",
+          "code": "08.0007",
+          "citation": "GfRu~^",
+          "gana": "Tanadi",
+          "recipe": [
+            "yaN",
+            "Ric"
+          ],
+          "morphology": {
+            "lakara": "AshirLin",
+            "prayoga": "Kartari",
+            "purusha": "Uttama",
+            "vacana": "Dvi"
+          },
+          "gold_slp1": [
+            "jaMGfRayizIvahi",
+            "jaMGfRyAsva",
+            "jaNGfRayizIvahi",
+            "jaNGfRyAsva"
+          ],
+          "answer": "जरीघृण्याव",
+          "is_correct": false,
+          "usable": true,
+          "prior_scope_issue": null,
+          "proposed_hold": true
+        },
+        {
+          "id": "cart5-19a6cf3c0f27b8549aa9cfb4",
+          "code": "08.0007",
+          "citation": "GfRu~^",
+          "gana": "Tanadi",
+          "recipe": [
+            "yaNluk",
+            "Ric"
+          ],
+          "morphology": {
+            "lakara": "Lun",
+            "prayoga": "Kartari",
+            "purusha": "Madhyama",
+            "vacana": "Dvi"
+          },
+          "gold_slp1": [
+            "ajaMGarRatam",
+            "ajaMGarReTAm",
+            "ajaNGarRatam",
+            "ajaNGarReTAm"
+          ],
+          "answer": "अजर्घर्णतम्",
+          "is_correct": false,
+          "usable": true,
+          "prior_scope_issue": null,
+          "proposed_hold": true
+        }
+      ],
+      "results_sha256": "51e0bbe33a37b6b1b2988dd0533132e6cfa3c0420004b9eb8a2dd18bc45700a0"
+    },
+    "opus-five-d-pilot-07-r1-b": {
+      "raw_affected": {
+        "n": 9,
+        "correct": 0,
+        "usable": 9,
+        "usable_wrong": 9,
+        "nonusable": 0,
+        "all_accuracy": 0.0,
+        "usable_accuracy": 0.0,
+        "bounds": [
+          0.0,
+          0.0
+        ]
+      },
+      "newly_affected": {
+        "n": 9,
+        "correct": 0,
+        "usable": 9,
+        "usable_wrong": 9,
+        "nonusable": 0,
+        "all_accuracy": 0.0,
+        "usable_accuracy": 0.0,
+        "bounds": [
+          0.0,
+          0.0
+        ]
+      },
+      "codes": {
+        "06.0057": 4,
+        "08.0007": 5
+      },
+      "currently_eligible": {
+        "n": 1200,
+        "correct": 931,
+        "usable": 1191,
+        "usable_wrong": 260,
+        "nonusable": 9,
+        "all_accuracy": 0.7758333333333334,
+        "usable_accuracy": 0.781696053736356,
+        "bounds": [
+          0.7758333333333334,
+          0.7833333333333333
+        ]
+      },
+      "prospective_retained": {
+        "n": 1191,
+        "correct": 931,
+        "usable": 1182,
+        "usable_wrong": 251,
+        "nonusable": 9,
+        "all_accuracy": 0.781696053736356,
+        "usable_accuracy": 0.7876480541455161,
+        "bounds": [
+          0.781696053736356,
+          0.7892527287993283
+        ]
+      },
+      "affected_rows": [
+        {
+          "id": "cart5-c8b111548496a22c8631d0ad",
+          "code": "06.0057",
+          "citation": "mfRa~",
+          "gana": "Tudadi",
+          "recipe": [
+            "yaNluk",
+            "Ric"
+          ],
+          "morphology": {
+            "lakara": "VidhiLin",
+            "prayoga": "Kartari",
+            "purusha": "Prathama",
+            "vacana": "Bahu"
+          },
+          "gold_slp1": [
+            "maMmarRayeran",
+            "maMmarRayeyuH",
+            "mammarRayeran",
+            "mammarRayeyuH"
+          ],
+          "answer": "मर्मर्णयेयुः",
+          "is_correct": false,
+          "usable": true,
+          "prior_scope_issue": null,
+          "proposed_hold": true
+        },
+        {
+          "id": "cart5-02f75650a802c9ad35420805",
+          "code": "08.0007",
+          "citation": "GfRu~^",
+          "gana": "Tanadi",
+          "recipe": [
+            "yaNluk",
+            "Ric"
+          ],
+          "morphology": {
+            "lakara": "Lun",
+            "prayoga": "Kartari",
+            "purusha": "Madhyama",
+            "vacana": "Eka"
+          },
+          "gold_slp1": [
+            "ajaMGarRaH",
+            "ajaMGarRaTAH",
+            "ajaNGarRaH",
+            "ajaNGarRaTAH"
+          ],
+          "answer": "अजजर्घर्णः",
+          "is_correct": false,
+          "usable": true,
+          "prior_scope_issue": null,
+          "proposed_hold": true
+        },
+        {
+          "id": "cart5-2b07a80f24adf360f39b289e",
+          "code": "06.0057",
+          "citation": "mfRa~",
+          "gana": "Tudadi",
+          "recipe": [
+            "yaNluk",
+            "Ric"
+          ],
+          "morphology": {
+            "lakara": "Lun",
+            "prayoga": "Kartari",
+            "purusha": "Madhyama",
+            "vacana": "Dvi"
+          },
+          "gold_slp1": [
+            "amaMmarRatam",
+            "amaMmarReTAm",
+            "amammarRatam",
+            "amammarReTAm"
+          ],
+          "answer": "अममर्मर्णतम्",
+          "is_correct": false,
+          "usable": true,
+          "prior_scope_issue": null,
+          "proposed_hold": true
+        },
+        {
+          "id": "cart5-7b622e3c3874fad16330ed09",
+          "code": "08.0007",
+          "citation": "GfRu~^",
+          "gana": "Tanadi",
+          "recipe": [
+            "yaNluk",
+            "Ric"
+          ],
+          "morphology": {
+            "lakara": "Lun",
+            "prayoga": "Kartari",
+            "purusha": "Prathama",
+            "vacana": "Dvi"
+          },
+          "gold_slp1": [
+            "ajaMGarRatAm",
+            "ajaMGarRetAm",
+            "ajaNGarRatAm",
+            "ajaNGarRetAm"
+          ],
+          "answer": "अजर्घर्णताम्",
+          "is_correct": false,
+          "usable": true,
+          "prior_scope_issue": null,
+          "proposed_hold": true
+        },
+        {
+          "id": "cart5-e80eea3b8077b197b0728f91",
+          "code": "06.0057",
+          "citation": "mfRa~",
+          "gana": "Tudadi",
+          "recipe": [
+            "yaNluk",
+            "Ric"
+          ],
+          "morphology": {
+            "lakara": "Lun",
+            "prayoga": "Kartari",
+            "purusha": "Madhyama",
+            "vacana": "Eka"
+          },
+          "gold_slp1": [
+            "amaMmarRaH",
+            "amaMmarRaTAH",
+            "amammarRaH",
+            "amammarRaTAH"
+          ],
+          "answer": "अमर्मर्णः",
+          "is_correct": false,
+          "usable": true,
+          "prior_scope_issue": null,
+          "proposed_hold": true
+        },
+        {
+          "id": "cart5-95cc8ea1a26d7cb6b6015c7a",
+          "code": "06.0057",
+          "citation": "mfRa~",
+          "gana": "Tudadi",
+          "recipe": [
+            "yaNluk",
+            "Ric"
+          ],
+          "morphology": {
+            "lakara": "Lun",
+            "prayoga": "Kartari",
+            "purusha": "Uttama",
+            "vacana": "Dvi"
+          },
+          "gold_slp1": [
+            "amaMmarRAva",
+            "amaMmarRAvahi",
+            "amammarRAva",
+            "amammarRAvahi"
+          ],
+          "answer": "अममर्मर्णाव",
+          "is_correct": false,
+          "usable": true,
+          "prior_scope_issue": null,
+          "proposed_hold": true
+        },
+        {
+          "id": "cart5-2678e9ab2985e659cf601999",
+          "code": "08.0007",
+          "citation": "GfRu~^",
+          "gana": "Tanadi",
+          "recipe": [
+            "yaNluk",
+            "Ric"
+          ],
+          "morphology": {
+            "lakara": "Lun",
+            "prayoga": "Kartari",
+            "purusha": "Uttama",
+            "vacana": "Bahu"
+          },
+          "gold_slp1": [
+            "ajaMGarRAma",
+            "ajaMGarRAmahi",
+            "ajaNGarRAma",
+            "ajaNGarRAmahi"
+          ],
+          "answer": "अजर्घर्णाम",
+          "is_correct": false,
+          "usable": true,
+          "prior_scope_issue": null,
+          "proposed_hold": true
+        },
+        {
+          "id": "cart5-69e1ce8041e205287b2721e7",
+          "code": "08.0007",
+          "citation": "GfRu~^",
+          "gana": "Tanadi",
+          "recipe": [
+            "yaNluk",
+            "Ric"
+          ],
+          "morphology": {
+            "lakara": "Lut",
+            "prayoga": "Kartari",
+            "purusha": "Prathama",
+            "vacana": "Bahu"
+          },
+          "gold_slp1": [
+            "jaMGarRayitAraH",
+            "jaNGarRayitAraH"
+          ],
+          "answer": "जर्घर्णयितारः",
+          "is_correct": false,
+          "usable": true,
+          "prior_scope_issue": null,
+          "proposed_hold": true
+        },
+        {
+          "id": "cart5-3fb35fc04239f5ad8db9ff13",
+          "code": "08.0007",
+          "citation": "GfRu~^",
+          "gana": "Tanadi",
+          "recipe": [
+            "yaNluk",
+            "Ric"
+          ],
+          "morphology": {
+            "lakara": "Lun",
+            "prayoga": "Kartari",
+            "purusha": "Madhyama",
+            "vacana": "Bahu"
+          },
+          "gold_slp1": [
+            "ajaMGarRaDvam",
+            "ajaMGarRata",
+            "ajaNGarRaDvam",
+            "ajaNGarRata"
+          ],
+          "answer": "अजजर्घर्णत",
+          "is_correct": false,
+          "usable": true,
+          "prior_scope_issue": null,
+          "proposed_hold": true
+        }
+      ],
+      "results_sha256": "eb0f1f8a9f1403d0855dede6e9c6eec39d0a327b2bf3871f5874f9cc9722af2b"
+    },
+    "astra-five-d-cap-development-01": {
+      "raw_affected": {
+        "n": 1,
+        "correct": 0,
+        "usable": 1,
+        "usable_wrong": 1,
+        "nonusable": 0,
+        "all_accuracy": 0.0,
+        "usable_accuracy": 0.0,
+        "bounds": [
+          0.0,
+          0.0
+        ]
+      },
+      "newly_affected": {
+        "n": 1,
+        "correct": 0,
+        "usable": 1,
+        "usable_wrong": 1,
+        "nonusable": 0,
+        "all_accuracy": 0.0,
+        "usable_accuracy": 0.0,
+        "bounds": [
+          0.0,
+          0.0
+        ]
+      },
+      "codes": {
+        "08.0007": 1
+      },
+      "currently_eligible": {
+        "n": 60,
+        "correct": 44,
+        "usable": 60,
+        "usable_wrong": 16,
+        "nonusable": 0,
+        "all_accuracy": 0.7333333333333333,
+        "usable_accuracy": 0.7333333333333333,
+        "bounds": [
+          0.7333333333333333,
+          0.7333333333333333
+        ]
+      },
+      "prospective_retained": {
+        "n": 59,
+        "correct": 44,
+        "usable": 59,
+        "usable_wrong": 15,
+        "nonusable": 0,
+        "all_accuracy": 0.7457627118644068,
+        "usable_accuracy": 0.7457627118644068,
+        "bounds": [
+          0.7457627118644068,
+          0.7457627118644068
+        ]
+      },
+      "affected_rows": [
+        {
+          "id": "cart5-c007c52bdf4cb8ab144ad87e",
+          "code": "08.0007",
+          "citation": "GfRu~^",
+          "gana": "Tanadi",
+          "recipe": [
+            "yaNluk",
+            "Ric"
+          ],
+          "morphology": {
+            "lakara": "Lun",
+            "prayoga": "Kartari",
+            "purusha": "Prathama",
+            "vacana": "Eka"
+          },
+          "gold_slp1": [
+            "ajaMGarRad",
+            "ajaMGarRat",
+            "ajaMGarRata",
+            "ajaNGarRad",
+            "ajaNGarRat",
+            "ajaNGarRata"
+          ],
+          "answer": "अजरीघृणत्",
+          "is_correct": false,
+          "usable": true,
+          "prior_scope_issue": null,
+          "proposed_hold": true
+        }
+      ],
+      "results_sha256": "fa408edf66b0561578f88f291d049ec8360ab28bfc3967fc89ad1f518538d859"
+    }
+  },
+  "input_impacts": {
+    "benchmarks/parallel-search-20261006/five_d/candidate-4800/revision-04/tasks.json": {
+      "n": 4800,
+      "affected": 27,
+      "by_code": {
+        "06.0056": 6,
+        "08.0006": 8,
+        "06.0055": 6,
+        "01.0504": 7
+      },
+      "ids": [
+        "cart5-fa37bdf4806c3566d4ebda70",
+        "cart5-9d1fbf6ec3f6c8e384ce3ede",
+        "cart5-370f9293d9cc5b743b74cfa0",
+        "cart5-a3ef820cd73833f5e0451b62",
+        "cart5-56ec73b875bb9a3ad604c1a2",
+        "cart5-3785b6fe99827a6208fc88f5",
+        "cart5-33d82ad0610ed07f300e3e71",
+        "cart5-083bb60ed0ce96b2a5722d97",
+        "cart5-4f10741f8dca5117f0b00629",
+        "cart5-c7bd6f6b446a058416415dc6",
+        "cart5-a72cf2dc567d3e9003c4cc6a",
+        "cart5-427970a86d36510678754e97",
+        "cart5-50d7c55ed316120703a3c0da",
+        "cart5-4be0a7ac5671bbe439edc503",
+        "cart5-e1a74c1d11fa397bbd81a856",
+        "cart5-51f33607ad0639f3cc7372a2",
+        "cart5-b548413f4c53537f10648b20",
+        "cart5-cc9af30c9ee94267f52ab1bd",
+        "cart5-287a4cef3714a5d195394c73",
+        "cart5-25f3d79f30b0d13775d3afa8",
+        "cart5-d65adecaf8dc4d0e525191a1",
+        "cart5-31c7cefde8f240ee14bc15be",
+        "cart5-9191b88b9168d3889c391dbb",
+        "cart5-9fba997a7e0fb0e2c94032f5",
+        "cart5-98c8aeefc9ff1ad6b3d3f1b3",
+        "cart5-b4eda889e982f2c017ca2c9b",
+        "cart5-609da12353da6a44d68675f4"
+      ],
+      "sha256": "ef95605fd09227b61d197802454188cd9c095dbff16bbf18a68109970939a21a",
+      "candidate_model_answers_read": false
+    },
+    "benchmarks/parallel-search-20261006/five_d/astra-cap-development-01.tasks.json": {
+      "n": 60,
+      "affected": 1,
+      "by_code": {
+        "08.0007": 1
+      },
+      "ids": [
+        "cart5-c007c52bdf4cb8ab144ad87e"
+      ],
+      "sha256": "059ddf0aa50da7d3288202ca0b3955bfe08fb44e2b444bfd4df9692a0b26e261",
+      "candidate_model_answers_read": false
+    }
+  },
+  "pilot07_raw": {
+    "n": 2400,
+    "correct": 1854,
+    "usable": 2381,
+    "usable_wrong": 527,
+    "nonusable": 19,
+    "all_accuracy": 0.7725,
+    "usable_accuracy": 0.7786644267114657,
+    "bounds": [
+      0.7725,
+      0.7804166666666666
+    ]
+  },
+  "pilot07_newly_affected": {
+    "n": 12,
+    "correct": 0,
+    "usable": 12,
+    "usable_wrong": 12,
+    "nonusable": 0,
+    "all_accuracy": 0.0,
+    "usable_accuracy": 0.0,
+    "bounds": [
+      0.0,
+      0.0
+    ]
+  },
+  "pilot07_prospective_retained": {
+    "n": 2388,
+    "correct": 1854,
+    "usable": 2369,
+    "usable_wrong": 515,
+    "nonusable": 19,
+    "all_accuracy": 0.7763819095477387,
+    "usable_accuracy": 0.782608695652174,
+    "bounds": [
+      0.7763819095477387,
+      0.7843383584589615
+    ]
+  }
+}

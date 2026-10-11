@@ -1,0 +1,75 @@
+{
+  "created_at": "2026-10-07T12:07:41.954480+00:00",
+  "policy": "oracle-policy-20",
+  "adapter_sha256": "a7908917f2f5a711a29d116ce314467d807c8418581644b6ece27423c6753d08",
+  "original_primary_sha256": "6db3cebd9e01b2e5402aa6011677056023b9abd78238fa473c234f53f162eaa8",
+  "revised_primary_sha256": "2bdd6cf611d99545d773a10a99c960bda1f25b6a349e74ff6f90952cba3e8f26",
+  "original_subset_sha256": "2ba4c2bbe1181808349a1c985bbd25a9b67271c9747f101b5407ec6063835598",
+  "revised_subset_sha256": "b3100b1b483dde59bd2a5b9c205e703ffacb543613a6532fe36259e31f1d52fa",
+  "all_declared_quota_seed_cap_protocol_fields_unchanged": [
+    "recipe_counts",
+    "cell_counts",
+    "gana_counts",
+    "lakara_counts",
+    "prayoga_counts",
+    "person_counts",
+    "number_counts",
+    "person_number_counts",
+    "seed",
+    "maximum_tasks_per_family",
+    "maximum_Lun_per_family",
+    "maximum_each_other_lakara_per_family",
+    "prompt_version",
+    "max_output_tokens",
+    "effort",
+    "phase"
+  ],
+  "shared_primary_ids": 575,
+  "new_primary_ids": 1825,
+  "removed_primary_ids": 1825,
+  "shared_grammar_gold_and_prompt_unchanged": true,
+  "original_primary_policy20_exclusions": [
+    {
+      "id": "cart5-612597cfdc1080a1efe95514",
+      "code": "05.0015",
+      "cell": "causative_of_intensive|Lan|Kartari",
+      "reason": "Unresolved classical scope for Svadi pr/spr/smr: sources mark Vedic or predominantly Vedic"
+    },
+    {
+      "id": "cart5-1a9c1e6080115be9000bfbde",
+      "code": "05.0015",
+      "cell": "desiderative|Lun|Kartari",
+      "reason": "Unresolved classical scope for Svadi pr/spr/smr: sources mark Vedic or predominantly Vedic"
+    },
+    {
+      "id": "cart5-8da2c0b007cd2617d0a32491",
+      "code": "05.0015",
+      "cell": "causative_of_intensive_luk|Lrn|Kartari",
+      "reason": "Unresolved classical scope for Svadi pr/spr/smr: sources mark Vedic or predominantly Vedic"
+    }
+  ],
+  "original_subset_policy20_exclusions": 0,
+  "shared_subset_ids": 20,
+  "same_subset_selection_algorithm_and_seed": true,
+  "source_rule_delta_empty": true,
+  "reused_primary_evidence": [
+    {
+      "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/parallel-search-20261006/five_d/pilot-08/coordinator-source-review.json",
+      "sha256": "9024ebe6b2bd78adb273cbf55ffb214724e4b8888d10302c212e2ba925d7d87e"
+    },
+    {
+      "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/parallel-search-20261006/four_d/subset08-review/source-review.json",
+      "sha256": "983e3dc45ead6b2e1d1da30b5af43bb8da7d645e24c0d1499b74b44d52603b86"
+    },
+    {
+      "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/parallel-search-20261006/oracle-policy-20.json",
+      "sha256": "8fef37ef81c73ca4880dce6657f962700e7dac540a905ddee6a8ebad550c9509"
+    }
+  ],
+  "ledger_sha256_at_preexposure_check": "8feebbab1654c347bf090d640f55422a2d77a7889a3019521a4d695d42be2484",
+  "pilot08_registered_job_count": 0,
+  "no_pilot08_provider_exposure": true,
+  "source_scope": "Exact Svadi05.0013/0014/0015 are conservatively held for unresolved classical scope; chāndasa labels are qualified by Kshira chāndasa-prāya, not treated as proof of universal Vedic exclusivity. Classical homonyms preserved.",
+  "no_model_answers_used_for_membership": true,
+  "paid_calls": 0
+}

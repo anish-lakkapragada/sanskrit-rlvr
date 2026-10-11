@@ -1,0 +1,378 @@
+{
+  "created_at": "2026-10-07T19:11:59.844587+00:00",
+  "n": 200,
+  "unique_prompts": 200,
+  "unique_visible_tuples": 200,
+  "all_regenerated": true,
+  "all_gold_variants_preserved": true,
+  "source_controls_passed": 48,
+  "exact_four_coordinates": true,
+  "all_development_split": true,
+  "prior_visible_tuple_overlap": 0,
+  "policy21_exclusions_in_selected": 0,
+  "local_source_exclusions_in_selected": 0,
+  "unique_families": 109,
+  "family_histogram": {
+    "8": 13,
+    "1": 96
+  },
+  "max_family_load": 8,
+  "historical_inputs": [
+    {
+      "path": "benchmarks/full-tasks.json",
+      "sha256": "5689783fe462cddd1c360664736f1ae1e6ee38ef582d523c227a0e32734cfd3c"
+    },
+    {
+      "path": "benchmarks/creation-campaign-20261006/discovery-01.json",
+      "sha256": "3663dfae615fb17f921cb8e9e90998e99c4063c32881715e105ced01d3d2d673"
+    },
+    {
+      "path": "benchmarks/creation-campaign-20261006/discovery-02.json",
+      "sha256": "211bc90656f9670544dafe8de00a7129ee2bcbc59fc26b18caedbc33aed5e44f"
+    },
+    {
+      "path": "benchmarks/creation-campaign-20261006/discovery-03.json",
+      "sha256": "a010303447e4dc6174f7fe7a7faf88fd2653e2f63dbf0aad3a5fd66af2cb0d8c"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/astra-bench-calibration-01/tasks.json",
+      "sha256": "4675ca6bc1f5da9870b85d33f432e3ab86205a625237d41a2eb015aa1b0e1575"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/astra-composition-01/tasks.json",
+      "sha256": "7f2b05702eb31a4b5072b85054842dbfb50648f47c87055b9742838a017bda5b"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/astra-composition-02/tasks.json",
+      "sha256": "bb5ebfefd8f126d9a366784ca1a8581b28076b8430173c01214fd3f79b680685"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/astra-deep-creation-01/tasks.json",
+      "sha256": "a6a139271b146e0ad43ba68e1524ee33dce0b57b9cbc63be3934ecf9c2e79d44"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/astra-five-d-cap-development-01/tasks.json",
+      "sha256": "059ddf0aa50da7d3288202ca0b3955bfe08fb44e2b444bfd4df9692a0b26e261"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/astra-five-d-pilot-01-pair/tasks.json",
+      "sha256": "9d76cebce39099f781fe4673788933fd60f506c0145d1218b7540f7092e39302"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/astra-five-d-pilot-04-pair/tasks.json",
+      "sha256": "6d316087e9a9a91643adddf578a3260b7a6a103884148cd4654d180c5b638fff"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/astra-five-d-pilot-08-01/tasks.json",
+      "sha256": "26be4d31d312a93001f869cc52eaabfcdca37e099325d5ab5b2c15694efe62be"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/astra-five-d-pilot-08-02/tasks.json",
+      "sha256": "4ae548c73e13c792b0eea699937d329947bca282b389dac3fc412595cc7c6d66"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/astra-hard-calibration-02/tasks.json",
+      "sha256": "4c9c250aadbb485d4c12c2144448dcbdcef68b88d52b5e8648db3df5763b3b46"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/astra-independent-creation-01/tasks.json",
+      "sha256": "cda165d4e0b3d7a98f4b15042769523f63961a1ec55f217cfd80880c780a4304"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/astra-interaction-01/tasks.json",
+      "sha256": "d868974f2d1a9fa3e4328a518c46c43595a747a5efc053c939b289bdb76e800d"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/astra-pada-prefix-01/tasks.json",
+      "sha256": "529a9412549c496b2be8a4c1305456ca38ba56f7efc62d5efa2cdb3849b61686"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/astra-paradigm-01/tasks.json",
+      "sha256": "6f2cc650ed27b8427df28ed3128cd9085abc8a875da8399372550af71bcd030c"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-bench-calibration-01/tasks.json",
+      "sha256": "4675ca6bc1f5da9870b85d33f432e3ab86205a625237d41a2eb015aa1b0e1575"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-cartesian-wording-01-v1/tasks.json",
+      "sha256": "1e25cfdaff39e206922886e0a7817201727d595632b8db70e835a02363786f07"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-cartesian-wording-01-v2-verb/tasks.json",
+      "sha256": "3ba992840d2542eab0a289a6d0261f57e59ab6ff59528c3e465447898aae3721"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-cartesian-wording-01-v3-sanskrit/tasks.json",
+      "sha256": "d10828495ec91b48fb7a0f7e0b11f8ffff09271d5b201c128cb93ab0d4bc67c3"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-composition-01/tasks.json",
+      "sha256": "7f2b05702eb31a4b5072b85054842dbfb50648f47c87055b9742838a017bda5b"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-composition-02/tasks.json",
+      "sha256": "bb5ebfefd8f126d9a366784ca1a8581b28076b8430173c01214fd3f79b680685"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-contrast-01/tasks.json",
+      "sha256": "1280e3a1b06882c7b58f4b5c98623cbe91cfcd672615d9107a6b81e9d9045a23"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-contrast-dhatu-word-probe-03/tasks.json",
+      "sha256": "b677f4cb7639babfeccaf9f2e95c2d7d0afb0dc00a9643ad2392d0f608724fc2"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-contrast-line-format-probe-04/tasks.json",
+      "sha256": "376f8facf8dfeef64b3a7b3bbe00235cc5028a739cf68f112ed26b52d7100e8b"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-contrast-sanskrit-prompt-02/tasks.json",
+      "sha256": "3619b891671aa774ece9c0a5ab361b93ffbe533b9520250e1da1ed2f7572e155"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-contrast-template-probe-05/tasks.json",
+      "sha256": "637bf1d36fc1e48183dd72ff63108f131492ae7743c4cdce24bb46d921c94767"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-deep-benedictive-01/tasks.json",
+      "sha256": "7b4d085d4e7b9f8f3aeecacb3d4367c41ff2dc09ba9ca775aa9ce09c4e10ad34"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-deep-creation-01/tasks.json",
+      "sha256": "a6a139271b146e0ad43ba68e1524ee33dce0b57b9cbc63be3934ecf9c2e79d44"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-five-d-pilot-01/tasks.json",
+      "sha256": "46d5681bbff3a8c248a76f094a6acda6cc4795679b14da91a7bd93de1cc168fe"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-five-d-pilot-02/tasks.json",
+      "sha256": "6d12214b2c395e13028999febdc1af39dbad96f8f6df782dfad2316a02a45323"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-five-d-pilot-03/tasks.json",
+      "sha256": "289c85189445727240da123d0c2535d41781b7b88db35fe8a3e96314e804882d"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-five-d-pilot-04/tasks.json",
+      "sha256": "6d316087e9a9a91643adddf578a3260b7a6a103884148cd4654d180c5b638fff"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-five-d-pilot-05/tasks.json",
+      "sha256": "b5925538c69fc78fce68b91fac92d74e0100f2faf423468dece8907887f2d153"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-five-d-pilot-06/tasks.json",
+      "sha256": "a8b97c0baffb0d02adcb1a1c3eaaf38b1a0983d4479660a32164260a09b10a1c"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-five-d-pilot-07-a/tasks.json",
+      "sha256": "acba1b1a5c395d24da32486dbf55040db767bad8343ffabfe2463761cff004b2"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-five-d-pilot-07-b/tasks.json",
+      "sha256": "14f4d294c02e0a4a2cbf2f8fd75894e3d6a8bdd2f6831a585442c948f7589227"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-five-d-pilot-07-r1-a/tasks.json",
+      "sha256": "4dff226cea0127b6a8dde6340e1b6662e275402feed82d388f9df83ed09f3c9f"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-five-d-pilot-07-r1-b/tasks.json",
+      "sha256": "659c3bddc6f39b2d8f62264d214bfebd8219a5faa4f4390f19ea99d85d860178"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-five-d-pilot-08-01/tasks.json",
+      "sha256": "5fc0149130e48067fc7f628a844c04e7e22b066217ce066b6a76c23090d9181a"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-five-d-pilot-08-02/tasks.json",
+      "sha256": "51640d483d9f847e5143e8c71c9ca3a8a8f52bdefd2dba04473c1f0dd1e70d5d"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-five-d-pilot-08-03/tasks.json",
+      "sha256": "7a8d491cf8057d00c60e7110ea3a0560b92089eb86ea13c521567434f430193d"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-five-d-pilot-08-04/tasks.json",
+      "sha256": "6cbcc2afeca7fff1116a4bff9a06ad28174c9822ef62ee5e71bbf76ad318955a"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-five-d-pilot-08-05/tasks.json",
+      "sha256": "85fa35a59a882310acc30122449f0d3f6803378c766b2348264a245840e0b49e"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-five-d-pilot-08-06/tasks.json",
+      "sha256": "7cb02d67980a5789d95a7f5f9fdce6f39b2681a7108be5a6f3b6563c142656a5"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-four-d-pilot-01/tasks.json",
+      "sha256": "d3cf6b0562ce2fd8bd3376801459779c49f0ac9485f361b347f2f1f4b1a61c37"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-four-d-pilot-02/tasks.json",
+      "sha256": "9a0de5f7b3a98e8a06bef47b9ec07d49e18f51af5edd2ccdeaa877cb6792074e"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-four-d-pilot-03/tasks.json",
+      "sha256": "bd22abe7592b5bbe29ed9c3aab95ba3bfe25f007afb78cb76d7920e2471dc0ec"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-four-d-pilot-04/tasks.json",
+      "sha256": "f38bfd8c1f4abfa99fbef13ab5b2e8d59b9477010f6cf4d2de7e76c6ad181f79"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-four-d-pilot-05/tasks.json",
+      "sha256": "b3c26af96ef701f21837fb90edfdcbdfa1fdf8de03ae00c328efacd33ec61e97"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-four-d-pilot-06/tasks.json",
+      "sha256": "ed0d22a7bb2a68e220259ae1dd98ad19f8425e378301ee57d5bfd3d9480d0a7b"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-four-d-pilot-07/tasks.json",
+      "sha256": "93b994f50b4f8ea898de49020f36fd685056ea018091826897803f5054f2e68a"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-four-d-pilot-08/tasks.json",
+      "sha256": "b31d447fb6f47647b4b92cc366944e098c47b726a71bbbddf24575099488f820"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-hard-calibration-01/tasks.json",
+      "sha256": "ffc5a426003d4e557aa7314eb5ea1109fb3f505e96c59b8520fc02e1a83ef992"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-hard-calibration-02/tasks.json",
+      "sha256": "4c9c250aadbb485d4c12c2144448dcbdcef68b88d52b5e8648db3df5763b3b46"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-independent-creation-01/tasks.json",
+      "sha256": "cda165d4e0b3d7a98f4b15042769523f63961a1ec55f217cfd80880c780a4304"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-independent-sanskrit-probe-02/tasks.json",
+      "sha256": "0e497ca38ce3bfc88fe596ab976fa5aa36b991f69a8aa8158e71b7978096699a"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-interaction-01/tasks.json",
+      "sha256": "d868974f2d1a9fa3e4328a518c46c43595a747a5efc053c939b289bdb76e800d"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-krdanta-01/tasks.json",
+      "sha256": "aec036cf46f6d2d156d23ad0be048ef15a5bfce1822997b816f7fb95dab02b00"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-pada-prefix-01/tasks.json",
+      "sha256": "529a9412549c496b2be8a4c1305456ca38ba56f7efc62d5efa2cdb3849b61686"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-paradigm-01/tasks.json",
+      "sha256": "6f2cc650ed27b8427df28ed3128cd9085abc8a875da8399372550af71bcd030c"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-paradigm-dhatu-word-probe-03/tasks.json",
+      "sha256": "b633f1b8f026beaea6ac0b75600003477cdd2bcf96f41783b6ba34d491336e4e"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-paradigm-line-format-probe-04/tasks.json",
+      "sha256": "180dc482db8ecf9c7f4332151af4ad5bc8cd7a486f70f597d862111a7108dbdf"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-paradigm-sanskrit-prompt-02/tasks.json",
+      "sha256": "863b7a617c1d59d8f86a71e28ae273bfa2096b130371ca5d3033de0c0ad0db18"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-paradigm-template-probe-05/tasks.json",
+      "sha256": "41a347a635ff50605d74cb0ef58c62049367969f7c9786b77757a0f558d3dbd9"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-passive-01/tasks.json",
+      "sha256": "57098226efd575982f98461f1588cf9455421b053e00b7879fff804e6d1f2d16"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-prompt-probe-01/tasks.json",
+      "sha256": "b5e39a2b03641abdcdce616c23543d390666307277c974d0ba0e6ede179785c7"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-prompt-probe-02/tasks.json",
+      "sha256": "ed18d0e2b4c63a1f4cff90a15b938b46e477a5233376c41d0d38d43b61e41736"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-samasa-01/tasks.json",
+      "sha256": "f3d107190bed156bd97aaaca5d9fc2cb1abb374f5ec46de83c82f3b8788e1982"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-samasa-template-probe-02/tasks.json",
+      "sha256": "0ca93e39c761580fcb54754381b4b03ddaa6dfad031034d4865ec8181c193a82"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-samasa-template-probe-03/tasks.json",
+      "sha256": "5a7cccb10eb358d042f36e5eecdc8774a74b8aa9e13a3589ebf63020d412c77a"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-unadi-01/tasks.json",
+      "sha256": "56ef8179c386a6479549d16724c4e3e1785c096739a0f7dc16e7e4dcc3ce6d20"
+    },
+    {
+      "path": "benchmarks/iterative-goal-20261006/jobs/opus-unadi-sanskrit-probe-02/tasks.json",
+      "sha256": "b4313f1affcf26a3382d6c657acd2bba74cbd2e6cb5c0845f52cfe350b9fc197"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261006/four_d/pilot-01.questions.json",
+      "sha256": "d3cf6b0562ce2fd8bd3376801459779c49f0ac9485f361b347f2f1f4b1a61c37"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261006/four_d/coverage-05/frozen-dependencies/benchmarks/parallel-search-20261006/four_d/coverage-05/pilot-06.questions.json",
+      "sha256": "ed0d22a7bb2a68e220259ae1dd98ad19f8425e378301ee57d5bfd3d9480d0a7b"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261006/four_d/coverage-05/pilot-06.questions.json",
+      "sha256": "ed0d22a7bb2a68e220259ae1dd98ad19f8425e378301ee57d5bfd3d9480d0a7b"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261006/four_d/ordinary-tail-08/frozen-dependencies/benchmarks/parallel-search-20261006/four_d/ordinary-tail-08/panel.questions.json",
+      "sha256": "b31d447fb6f47647b4b92cc366944e098c47b726a71bbbddf24575099488f820"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261006/four_d/ordinary-tail-08/panel.questions.json",
+      "sha256": "b31d447fb6f47647b4b92cc366944e098c47b726a71bbbddf24575099488f820"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261006/four_d/pilot-02.questions.json",
+      "sha256": "9a0de5f7b3a98e8a06bef47b9ec07d49e18f51af5edd2ccdeaa877cb6792074e"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261006/four_d/pilot-03-r1.questions.json",
+      "sha256": "bd22abe7592b5bbe29ed9c3aab95ba3bfe25f007afb78cb76d7920e2471dc0ec"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261006/four_d/pilot-03.questions.json",
+      "sha256": "5ea4d5ce927a6b99872f5ae8a3e8dbfd213e16cd45fed0e59b7f345c2100440b"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261006/four_d/pilot-04.questions.json",
+      "sha256": "f38bfd8c1f4abfa99fbef13ab5b2e8d59b9477010f6cf4d2de7e76c6ad181f79"
+    },
+    {
+      "path": "benchmarks/parallel-search-20261006/four_d/pilot-05.questions.json",
+      "sha256": "b3c26af96ef701f21837fb90edfdcbdfa1fdf8de03ae00c328efacd33ec61e97"
+    }
+  ],
+  "candidate_counts": {
+    "short_adanta_non_aorist": 906,
+    "broad_non_curadi": 3753,
+    "other_adanta_aorist": 125
+  },
+  "excluded_during_generation": {
+    "historical_visible_tuple": 166,
+    "True": 9,
+    "Source-prohibited dentalization of the exact shvakka lexical entry": 3,
+    "Uncertified optional short-vowel alternatives to lexical lengthening": 2,
+    "Dictionary citation mismatch in PUSH_ADI aorist membership": 1,
+    "Uncertified semantic condition for rule 6.4.123": 4
+  },
+  "solver_status": "HighsModelStatus.kOptimal",
+  "full_independent_grammar_certification": false,
+  "benchmark_ready": false
+}

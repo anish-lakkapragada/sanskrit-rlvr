@@ -1,0 +1,129 @@
+{
+  "received_at": "2026-10-07T11:00:53.976983+00:00",
+  "status_code": 200,
+  "headers": [
+    [
+      "date",
+      "Wed, 07 Oct 2026 11:00:53 GMT"
+    ],
+    [
+      "content-type",
+      "application/json"
+    ],
+    [
+      "transfer-encoding",
+      "chunked"
+    ],
+    [
+      "connection",
+      "keep-alive"
+    ],
+    [
+      "server",
+      "cloudflare"
+    ],
+    [
+      "openai-version",
+      "2020-10-01"
+    ],
+    [
+      "openai-organization",
+      "user-sst2oimg1nujzsqjynvllpec"
+    ],
+    [
+      "openai-project",
+      "proj_0Zn0VkM7ExpBCNnlFfb4qcPj"
+    ],
+    [
+      "x-request-id",
+      "req_9a2d761d0b874e1e9cebb1554b53498d"
+    ],
+    [
+      "openai-processing-ms",
+      "23"
+    ],
+    [
+      "x-openai-proxy-wasm",
+      "v0.1"
+    ],
+    [
+      "access-control-expose-headers",
+      "X-Request-ID"
+    ],
+    [
+      "access-control-expose-headers",
+      "CF-Ray"
+    ],
+    [
+      "cf-cache-status",
+      "DYNAMIC"
+    ],
+    [
+      "set-cookie",
+      "__cf_bm=HMgPjZ_9sTXxoup5v7ILYLvtf7icVeOhFcOLTG.WulI-1791370853.8951242-1.0.1.1-y5oIZSawFUTDMAeuxyWXWuYnuOHhJfd6gp0vEaUfOrgmyUjdVU9SB524B4XW0N457_ZNMGKo6fbnzoVTQT59cINhss6d6BSSx.28qn2vADNM6lZQd0aFf3_e_UdCN9ES; HttpOnly; SameSite=None; Secure; Path=/; Domain=api.openai.com; Expires=Wed, 07 Oct 2026 11:30:53 GMT"
+    ],
+    [
+      "strict-transport-security",
+      "max-age=31536000; includeSubDomains; preload"
+    ],
+    [
+      "x-content-type-options",
+      "nosniff"
+    ],
+    [
+      "content-encoding",
+      "gzip"
+    ],
+    [
+      "cf-ray",
+      "a46c679cdac06cb7-SJC"
+    ],
+    [
+      "alt-svc",
+      "h3=\":443\"; ma=86400"
+    ]
+  ],
+  "body": {
+    "id": "batch_6ac6119d1494819088e6c16db483800d",
+    "object": "batch",
+    "endpoint": "/v1/responses",
+    "model": "gpt-6-astra",
+    "errors": null,
+    "input_file_id": "file-BjctE5vJM3UsdrY3h64rUg",
+    "completion_window": "24h",
+    "status": "completed",
+    "output_file_id": "file-AUuaVr659qFikt8Uu53VtA",
+    "error_file_id": null,
+    "created_at": 1791365533,
+    "in_progress_at": 1791365596,
+    "expires_at": 1791451933,
+    "finalizing_at": 1791370823,
+    "completed_at": 1791370826,
+    "failed_at": null,
+    "expired_at": null,
+    "cancelling_at": null,
+    "cancelled_at": null,
+    "request_counts": {
+      "total": 60,
+      "completed": 60,
+      "failed": 0
+    },
+    "usage": {
+      "input_tokens": 14355,
+      "output_tokens": 575156,
+      "total_tokens": 589511,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens_details": {
+        "reasoning_tokens": 574031
+      }
+    },
+    "metadata": {
+      "campaign": "iterative-goal-20261006",
+      "job": "astra-five-d-cap-development-01",
+      "tasks_digest": "3b5bb94dd86fc9aca5a2888f478c6c199a081950a8dbf2fa90a1769d810e3b66",
+      "retries": "0"
+    }
+  }
+}

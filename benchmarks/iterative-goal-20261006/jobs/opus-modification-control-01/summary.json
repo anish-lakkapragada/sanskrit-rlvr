@@ -1,0 +1,71 @@
+{
+  "id": "opus-modification-control-01",
+  "provider": "Anthropic",
+  "phase": "confirm_64k",
+  "n": 200,
+  "tasks_digest": "53a70302f9121bd96ad189f70aed76460c2bc1c8b1aa2a749fb435a801d12d53",
+  "requests_digest": "1f33b7837d8788ba61702a809341d46405372056d656d7cc7374f5d4deb05c15",
+  "created_at": "2026-10-07T19:23:01.936478+00:00",
+  "status": "ended",
+  "batch_id": "msgbatch_01NkUsYahBY2FP5g8bVF9Xo8",
+  "attempted_at": "2026-10-07T19:23:25.304457+00:00",
+  "reservation_micro": 131672000,
+  "input_file_id": null,
+  "transport": "batch",
+  "batch": {
+    "id": "msgbatch_01NkUsYahBY2FP5g8bVF9Xo8",
+    "type": "message_batch",
+    "processing_status": "ended",
+    "request_counts": {
+      "processing": 0,
+      "succeeded": 197,
+      "errored": 0,
+      "canceled": 3,
+      "expired": 0
+    },
+    "ended_at": "2026-10-07T22:24:08.938786+00:00",
+    "created_at": "2026-10-07T19:23:26.611721+00:00",
+    "expires_at": "2026-10-08T19:23:26.611721+00:00",
+    "archived_at": null,
+    "cancel_initiated_at": "2026-10-07T22:23:37.958030+00:00",
+    "results_url": "https://api.anthropic.com/v1/messages/batches/msgbatch_01NkUsYahBY2FP5g8bVF9Xo8/results"
+  },
+  "collected_at": "2026-10-07T22:24:30.466301+00:00",
+  "usage": {
+    "input_tokens": 60238,
+    "output_tokens": 82141,
+    "cache_read": 0,
+    "cache_write": 0
+  },
+  "summary": {
+    "task_count": 200,
+    "correct": 191,
+    "incorrect_or_no_answer": 6,
+    "unscored": 3,
+    "pass_at_1_all_tasks": 0.955,
+    "truncated": 0,
+    "statuses": {
+      "completed": 196,
+      "api_error": 3,
+      "refused": 1
+    }
+  },
+  "completed_answers": 196,
+  "completed_correct": 191,
+  "actual_cost_upper_micro": 941886,
+  "token_policy_violations": [],
+  "settled": true,
+  "billing_reconciliation": {
+    "job": "opus-modification-control-01",
+    "reconciled_at": "2026-10-07T22:27:24.825827+00:00",
+    "actual_cost_upper_micro": 941886,
+    "counts": {
+      "succeeded": 197,
+      "canceled": 3
+    },
+    "source": "https://platform.claude.com/docs/en/build-with-claude/batch-processing#retrieving-batch-results",
+    "source_checked_on": "2026-10-07",
+    "results_sha256": "aa883026529d46e89ea7bd77ead0b3d041a80fb7420e876eb7b8e4f7b2f9daf4",
+    "rule": "Complete terminal per-request receipts; successful token usage plus documented zero-billed non-success types."
+  }
+}

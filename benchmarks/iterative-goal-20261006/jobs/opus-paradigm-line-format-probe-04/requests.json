@@ -1,0 +1,802 @@
+[
+  {
+    "custom_id": "task-00000",
+    "params": {
+      "model": "claude-opus-5-5",
+      "max_tokens": 16384,
+      "messages": [
+        {
+          "role": "user",
+          "content": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested conjugated verb forms from the Sanskrit verbal base\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired Sanskrit grammatical suffixes (sanadi), tense/mood (lakara),\nvoice (prayoga), person (purusha), and number (vacana).\nEach Sanskrit grammatical term is glossed in parentheses in English.\n\nAll rows use the same derived Sanskrit verbal stem. Apply the sanadi suffixes\nin the listed order to the dhatu, then inflect separately for each row.\nInclude the listed upasarga (Sanskrit verbal prefixes), in order, with regular sandhi in every form.\nWrite ONLY the requested conjugated verb forms, in Devanagari script,\none form per line in the given order, inside one <answer></answer> block.\nIf several forms are valid, give exactly one per line.\nDo not number the answers or include any text outside the answer tags.\n\n=== Your task ===\n\ndhatu (Sanskrit verbal base): खषँ\ngana (verb class): Bhvadi (class 1)\nartha (traditional meaning): हिंसायाम्\nupasarga (Sanskrit verbal prefixes, in order): प्र + नि\nsanadi (Sanskrit grammatical suffixes, innermost first): यङ् (intensive), followed by णिच् (causative), followed by सन् (desiderative)\nprayoga (voice): Kartari (active)\ndhatu_pada (Sanskrit verb ending set): Parasmaipada (active endings)\n\nRequired forms:\n1. lakara (tense/mood): Lit (perfect); purusha (person): Uttama (first person); vacana (number): Dvi (dual)\n2. lakara (tense/mood): AshirLin (benedictive); purusha (person): Madhyama (second person); vacana (number): Eka (singular)\n"
+        }
+      ],
+      "thinking": {
+        "type": "adaptive",
+        "display": "summarized"
+      },
+      "output_config": {
+        "effort": "xhigh"
+      },
+      "tools": [],
+      "tool_choice": {
+        "type": "none"
+      },
+      "stream": false
+    }
+  },
+  {
+    "custom_id": "task-00001",
+    "params": {
+      "model": "claude-opus-5-5",
+      "max_tokens": 16384,
+      "messages": [
+        {
+          "role": "user",
+          "content": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested conjugated verb forms from the Sanskrit verbal base\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired Sanskrit grammatical suffixes (sanadi), tense/mood (lakara),\nvoice (prayoga), person (purusha), and number (vacana).\nEach Sanskrit grammatical term is glossed in parentheses in English.\n\nAll rows use the same derived Sanskrit verbal stem. Apply the sanadi suffixes\nin the listed order to the dhatu, then inflect separately for each row.\nInclude the listed upasarga (Sanskrit verbal prefixes), in order, with regular sandhi in every form.\nWrite ONLY the requested conjugated verb forms, in Devanagari script,\none form per line in the given order, inside one <answer></answer> block.\nIf several forms are valid, give exactly one per line.\nDo not number the answers or include any text outside the answer tags.\n\n=== Your task ===\n\ndhatu (Sanskrit verbal base): श्रिषुँ\ngana (verb class): Bhvadi (class 1)\nartha (traditional meaning): दाहे\nupasarga (Sanskrit verbal prefixes, in order): सम् + प्र\nsanadi (Sanskrit grammatical suffixes, innermost first): यङ् (intensive), followed by णिच् (causative), followed by सन् (desiderative)\nprayoga (voice): Kartari (active)\ndhatu_pada (Sanskrit verb ending set): Parasmaipada (active endings)\n\nRequired forms:\n1. lakara (tense/mood): Lit (perfect); purusha (person): Madhyama (second person); vacana (number): Bahu (plural)\n2. lakara (tense/mood): AshirLin (benedictive); purusha (person): Madhyama (second person); vacana (number): Bahu (plural)\n"
+        }
+      ],
+      "thinking": {
+        "type": "adaptive",
+        "display": "summarized"
+      },
+      "output_config": {
+        "effort": "xhigh"
+      },
+      "tools": [],
+      "tool_choice": {
+        "type": "none"
+      },
+      "stream": false
+    }
+  },
+  {
+    "custom_id": "task-00002",
+    "params": {
+      "model": "claude-opus-5-5",
+      "max_tokens": 16384,
+      "messages": [
+        {
+          "role": "user",
+          "content": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested conjugated verb forms from the Sanskrit verbal base\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired Sanskrit grammatical suffixes (sanadi), tense/mood (lakara),\nvoice (prayoga), person (purusha), and number (vacana).\nEach Sanskrit grammatical term is glossed in parentheses in English.\n\nAll rows use the same derived Sanskrit verbal stem. Apply the sanadi suffixes\nin the listed order to the dhatu, then inflect separately for each row.\nInclude the listed upasarga (Sanskrit verbal prefixes), in order, with regular sandhi in every form.\nWrite ONLY the requested conjugated verb forms, in Devanagari script,\none form per line in the given order, inside one <answer></answer> block.\nIf several forms are valid, give exactly one per line.\nDo not number the answers or include any text outside the answer tags.\n\n=== Your task ===\n\ndhatu (Sanskrit verbal base): दृ॒पँ\ngana (verb class): Divadi (class 4)\nartha (traditional meaning): हर्षमोहनयोः\nupasarga (Sanskrit verbal prefixes, in order): सम् + प्र\nsanadi (Sanskrit grammatical suffixes, innermost first): यङ् (intensive), followed by णिच् (causative), followed by सन् (desiderative)\nprayoga (voice): Kartari (active)\ndhatu_pada (Sanskrit verb ending set): Parasmaipada (active endings)\n\nRequired forms:\n1. lakara (tense/mood): Lit (perfect); purusha (person): Prathama (third person); vacana (number): Dvi (dual)\n2. lakara (tense/mood): AshirLin (benedictive); purusha (person): Prathama (third person); vacana (number): Eka (singular)\n"
+        }
+      ],
+      "thinking": {
+        "type": "adaptive",
+        "display": "summarized"
+      },
+      "output_config": {
+        "effort": "xhigh"
+      },
+      "tools": [],
+      "tool_choice": {
+        "type": "none"
+      },
+      "stream": false
+    }
+  },
+  {
+    "custom_id": "task-00003",
+    "params": {
+      "model": "claude-opus-5-5",
+      "max_tokens": 16384,
+      "messages": [
+        {
+          "role": "user",
+          "content": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested conjugated verb forms from the Sanskrit verbal base\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired Sanskrit grammatical suffixes (sanadi), tense/mood (lakara),\nvoice (prayoga), person (purusha), and number (vacana).\nEach Sanskrit grammatical term is glossed in parentheses in English.\n\nAll rows use the same derived Sanskrit verbal stem. Apply the sanadi suffixes\nin the listed order to the dhatu, then inflect separately for each row.\nInclude the listed upasarga (Sanskrit verbal prefixes), in order, with regular sandhi in every form.\nWrite ONLY the requested conjugated verb forms, in Devanagari script,\none form per line in the given order, inside one <answer></answer> block.\nIf several forms are valid, give exactly one per line.\nDo not number the answers or include any text outside the answer tags.\n\n=== Your task ===\n\ndhatu (Sanskrit verbal base): दु॒\ngana (verb class): Bhvadi (class 1)\nartha (traditional meaning): गतौ\nupasarga (Sanskrit verbal prefixes, in order): सम् + प्र\nsanadi (Sanskrit grammatical suffixes, innermost first): यङ् (intensive), followed by णिच् (causative), followed by सन् (desiderative)\nprayoga (voice): Kartari (active)\ndhatu_pada (Sanskrit verb ending set): Parasmaipada (active endings)\n\nRequired forms:\n1. lakara (tense/mood): Lit (perfect); purusha (person): Madhyama (second person); vacana (number): Eka (singular)\n2. lakara (tense/mood): AshirLin (benedictive); purusha (person): Uttama (first person); vacana (number): Eka (singular)\n"
+        }
+      ],
+      "thinking": {
+        "type": "adaptive",
+        "display": "summarized"
+      },
+      "output_config": {
+        "effort": "xhigh"
+      },
+      "tools": [],
+      "tool_choice": {
+        "type": "none"
+      },
+      "stream": false
+    }
+  },
+  {
+    "custom_id": "task-00004",
+    "params": {
+      "model": "claude-opus-5-5",
+      "max_tokens": 16384,
+      "messages": [
+        {
+          "role": "user",
+          "content": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested conjugated verb forms from the Sanskrit verbal base\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired Sanskrit grammatical suffixes (sanadi), tense/mood (lakara),\nvoice (prayoga), person (purusha), and number (vacana).\nEach Sanskrit grammatical term is glossed in parentheses in English.\n\nAll rows use the same derived Sanskrit verbal stem. Apply the sanadi suffixes\nin the listed order to the dhatu, then inflect separately for each row.\nInclude the listed upasarga (Sanskrit verbal prefixes), in order, with regular sandhi in every form.\nWrite ONLY the requested conjugated verb forms, in Devanagari script,\none form per line in the given order, inside one <answer></answer> block.\nIf several forms are valid, give exactly one per line.\nDo not number the answers or include any text outside the answer tags.\n\n=== Your task ===\n\ndhatu (Sanskrit verbal base): ऋ॒\ngana (verb class): Bhvadi (class 1)\nartha (traditional meaning): गतिप्रापणयोः\nupasarga (Sanskrit verbal prefixes, in order): सम् + प्र\nsanadi (Sanskrit grammatical suffixes, innermost first): यङ् (intensive), followed by णिच् (causative), followed by सन् (desiderative)\nprayoga (voice): Kartari (active)\ndhatu_pada (Sanskrit verb ending set): Parasmaipada (active endings)\n\nRequired forms:\n1. lakara (tense/mood): Lit (perfect); purusha (person): Uttama (first person); vacana (number): Bahu (plural)\n2. lakara (tense/mood): AshirLin (benedictive); purusha (person): Uttama (first person); vacana (number): Dvi (dual)\n"
+        }
+      ],
+      "thinking": {
+        "type": "adaptive",
+        "display": "summarized"
+      },
+      "output_config": {
+        "effort": "xhigh"
+      },
+      "tools": [],
+      "tool_choice": {
+        "type": "none"
+      },
+      "stream": false
+    }
+  },
+  {
+    "custom_id": "task-00005",
+    "params": {
+      "model": "claude-opus-5-5",
+      "max_tokens": 16384,
+      "messages": [
+        {
+          "role": "user",
+          "content": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested conjugated verb forms from the Sanskrit verbal base\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired Sanskrit grammatical suffixes (sanadi), tense/mood (lakara),\nvoice (prayoga), person (purusha), and number (vacana).\nEach Sanskrit grammatical term is glossed in parentheses in English.\n\nAll rows use the same derived Sanskrit verbal stem. Apply the sanadi suffixes\nin the listed order to the dhatu, then inflect separately for each row.\nInclude the listed upasarga (Sanskrit verbal prefixes), in order, with regular sandhi in every form.\nWrite ONLY the requested conjugated verb forms, in Devanagari script,\none form per line in the given order, inside one <answer></answer> block.\nIf several forms are valid, give exactly one per line.\nDo not number the answers or include any text outside the answer tags.\n\n=== Your task ===\n\ndhatu (Sanskrit verbal base): त्रखँ\ngana (verb class): Bhvadi (class 1)\nartha (traditional meaning): गतौ\nupasarga (Sanskrit verbal prefixes, in order): अभि + सम्\nsanadi (Sanskrit grammatical suffixes, innermost first): यङ् (intensive), followed by णिच् (causative), followed by सन् (desiderative)\nprayoga (voice): Kartari (active)\ndhatu_pada (Sanskrit verb ending set): Parasmaipada (active endings)\n\nRequired forms:\n1. lakara (tense/mood): Lit (perfect); purusha (person): Madhyama (second person); vacana (number): Eka (singular)\n2. lakara (tense/mood): AshirLin (benedictive); purusha (person): Madhyama (second person); vacana (number): Eka (singular)\n"
+        }
+      ],
+      "thinking": {
+        "type": "adaptive",
+        "display": "summarized"
+      },
+      "output_config": {
+        "effort": "xhigh"
+      },
+      "tools": [],
+      "tool_choice": {
+        "type": "none"
+      },
+      "stream": false
+    }
+  },
+  {
+    "custom_id": "task-00006",
+    "params": {
+      "model": "claude-opus-5-5",
+      "max_tokens": 16384,
+      "messages": [
+        {
+          "role": "user",
+          "content": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested conjugated verb forms from the Sanskrit verbal base\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired Sanskrit grammatical suffixes (sanadi), tense/mood (lakara),\nvoice (prayoga), person (purusha), and number (vacana).\nEach Sanskrit grammatical term is glossed in parentheses in English.\n\nAll rows use the same derived Sanskrit verbal stem. Apply the sanadi suffixes\nin the listed order to the dhatu, then inflect separately for each row.\nInclude the listed upasarga (Sanskrit verbal prefixes), in order, with regular sandhi in every form.\nWrite ONLY the requested conjugated verb forms, in Devanagari script,\none form per line in the given order, inside one <answer></answer> block.\nIf several forms are valid, give exactly one per line.\nDo not number the answers or include any text outside the answer tags.\n\n=== Your task ===\n\ndhatu (Sanskrit verbal base): ग्रहँ॑\ngana (verb class): Kryadi (class 9)\nartha (traditional meaning): उपादाने\nupasarga (Sanskrit verbal prefixes, in order): अभि + सम्\nsanadi (Sanskrit grammatical suffixes, innermost first): यङ् (intensive), followed by णिच् (causative), followed by सन् (desiderative)\nprayoga (voice): Kartari (active)\ndhatu_pada (Sanskrit verb ending set): Parasmaipada (active endings)\n\nRequired forms:\n1. lakara (tense/mood): Lit (perfect); purusha (person): Prathama (third person); vacana (number): Bahu (plural)\n2. lakara (tense/mood): AshirLin (benedictive); purusha (person): Madhyama (second person); vacana (number): Bahu (plural)\n"
+        }
+      ],
+      "thinking": {
+        "type": "adaptive",
+        "display": "summarized"
+      },
+      "output_config": {
+        "effort": "xhigh"
+      },
+      "tools": [],
+      "tool_choice": {
+        "type": "none"
+      },
+      "stream": false
+    }
+  },
+  {
+    "custom_id": "task-00007",
+    "params": {
+      "model": "claude-opus-5-5",
+      "max_tokens": 16384,
+      "messages": [
+        {
+          "role": "user",
+          "content": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested conjugated verb forms from the Sanskrit verbal base\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired Sanskrit grammatical suffixes (sanadi), tense/mood (lakara),\nvoice (prayoga), person (purusha), and number (vacana).\nEach Sanskrit grammatical term is glossed in parentheses in English.\n\nAll rows use the same derived Sanskrit verbal stem. Apply the sanadi suffixes\nin the listed order to the dhatu, then inflect separately for each row.\nInclude the listed upasarga (Sanskrit verbal prefixes), in order, with regular sandhi in every form.\nWrite ONLY the requested conjugated verb forms, in Devanagari script,\none form per line in the given order, inside one <answer></answer> block.\nIf several forms are valid, give exactly one per line.\nDo not number the answers or include any text outside the answer tags.\n\n=== Your task ===\n\ndhatu (Sanskrit verbal base): शाडृँ॒\ngana (verb class): Bhvadi (class 1)\nartha (traditional meaning): श्लाघायाम्\nupasarga (Sanskrit verbal prefixes, in order): प्र + नि\nsanadi (Sanskrit grammatical suffixes, innermost first): यङ् (intensive), followed by णिच् (causative), followed by सन् (desiderative)\nprayoga (voice): Kartari (active)\ndhatu_pada (Sanskrit verb ending set): Parasmaipada (active endings)\n\nRequired forms:\n1. lakara (tense/mood): Lit (perfect); purusha (person): Prathama (third person); vacana (number): Bahu (plural)\n2. lakara (tense/mood): AshirLin (benedictive); purusha (person): Madhyama (second person); vacana (number): Bahu (plural)\n"
+        }
+      ],
+      "thinking": {
+        "type": "adaptive",
+        "display": "summarized"
+      },
+      "output_config": {
+        "effort": "xhigh"
+      },
+      "tools": [],
+      "tool_choice": {
+        "type": "none"
+      },
+      "stream": false
+    }
+  },
+  {
+    "custom_id": "task-00008",
+    "params": {
+      "model": "claude-opus-5-5",
+      "max_tokens": 16384,
+      "messages": [
+        {
+          "role": "user",
+          "content": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested conjugated verb forms from the Sanskrit verbal base\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired Sanskrit grammatical suffixes (sanadi), tense/mood (lakara),\nvoice (prayoga), person (purusha), and number (vacana).\nEach Sanskrit grammatical term is glossed in parentheses in English.\n\nAll rows use the same derived Sanskrit verbal stem. Apply the sanadi suffixes\nin the listed order to the dhatu, then inflect separately for each row.\nInclude the listed upasarga (Sanskrit verbal prefixes), in order, with regular sandhi in every form.\nWrite ONLY the requested conjugated verb forms, in Devanagari script,\none form per line in the given order, inside one <answer></answer> block.\nIf several forms are valid, give exactly one per line.\nDo not number the answers or include any text outside the answer tags.\n\n=== Your task ===\n\ndhatu (Sanskrit verbal base): धिषँ\ngana (verb class): Juhotyadi (class 3)\nartha (traditional meaning): शब्दे\nupasarga (Sanskrit verbal prefixes, in order): अभि + सम्\nsanadi (Sanskrit grammatical suffixes, innermost first): यङ् (intensive), followed by णिच् (causative), followed by सन् (desiderative)\nprayoga (voice): Kartari (active)\ndhatu_pada (Sanskrit verb ending set): Parasmaipada (active endings)\n\nRequired forms:\n1. lakara (tense/mood): Lit (perfect); purusha (person): Madhyama (second person); vacana (number): Eka (singular)\n2. lakara (tense/mood): AshirLin (benedictive); purusha (person): Madhyama (second person); vacana (number): Eka (singular)\n"
+        }
+      ],
+      "thinking": {
+        "type": "adaptive",
+        "display": "summarized"
+      },
+      "output_config": {
+        "effort": "xhigh"
+      },
+      "tools": [],
+      "tool_choice": {
+        "type": "none"
+      },
+      "stream": false
+    }
+  },
+  {
+    "custom_id": "task-00009",
+    "params": {
+      "model": "claude-opus-5-5",
+      "max_tokens": 16384,
+      "messages": [
+        {
+          "role": "user",
+          "content": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested conjugated verb forms from the Sanskrit verbal base\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired Sanskrit grammatical suffixes (sanadi), tense/mood (lakara),\nvoice (prayoga), person (purusha), and number (vacana).\nEach Sanskrit grammatical term is glossed in parentheses in English.\n\nAll rows use the same derived Sanskrit verbal stem. Apply the sanadi suffixes\nin the listed order to the dhatu, then inflect separately for each row.\nInclude the listed upasarga (Sanskrit verbal prefixes), in order, with regular sandhi in every form.\nWrite ONLY the requested conjugated verb forms, in Devanagari script,\none form per line in the given order, inside one <answer></answer> block.\nIf several forms are valid, give exactly one per line.\nDo not number the answers or include any text outside the answer tags.\n\n=== Your task ===\n\ndhatu (Sanskrit verbal base): जूषँ\ngana (verb class): Bhvadi (class 1)\nartha (traditional meaning): हिंसायाम्\nupasarga (Sanskrit verbal prefixes, in order): सम् + प्र\nsanadi (Sanskrit grammatical suffixes, innermost first): यङ् (intensive), followed by णिच् (causative), followed by सन् (desiderative)\nprayoga (voice): Kartari (active)\ndhatu_pada (Sanskrit verb ending set): Parasmaipada (active endings)\n\nRequired forms:\n1. lakara (tense/mood): Lit (perfect); purusha (person): Madhyama (second person); vacana (number): Eka (singular)\n2. lakara (tense/mood): AshirLin (benedictive); purusha (person): Prathama (third person); vacana (number): Bahu (plural)\n"
+        }
+      ],
+      "thinking": {
+        "type": "adaptive",
+        "display": "summarized"
+      },
+      "output_config": {
+        "effort": "xhigh"
+      },
+      "tools": [],
+      "tool_choice": {
+        "type": "none"
+      },
+      "stream": false
+    }
+  },
+  {
+    "custom_id": "task-00010",
+    "params": {
+      "model": "claude-opus-5-5",
+      "max_tokens": 16384,
+      "messages": [
+        {
+          "role": "user",
+          "content": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested conjugated verb forms from the Sanskrit verbal base\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired Sanskrit grammatical suffixes (sanadi), tense/mood (lakara),\nvoice (prayoga), person (purusha), and number (vacana).\nEach Sanskrit grammatical term is glossed in parentheses in English.\n\nAll rows use the same derived Sanskrit verbal stem. Apply the sanadi suffixes\nin the listed order to the dhatu, then inflect separately for each row.\nInclude the listed upasarga (Sanskrit verbal prefixes), in order, with regular sandhi in every form.\nWrite ONLY the requested conjugated verb forms, in Devanagari script,\none form per line in the given order, inside one <answer></answer> block.\nIf several forms are valid, give exactly one per line.\nDo not number the answers or include any text outside the answer tags.\n\n=== Your task ===\n\ndhatu (Sanskrit verbal base): वर्चँ॒\ngana (verb class): Bhvadi (class 1)\nartha (traditional meaning): दीप्तौ\nupasarga (Sanskrit verbal prefixes, in order): अभि + सम्\nsanadi (Sanskrit grammatical suffixes, innermost first): यङ् (intensive), followed by णिच् (causative), followed by सन् (desiderative)\nprayoga (voice): Kartari (active)\ndhatu_pada (Sanskrit verb ending set): Parasmaipada (active endings)\n\nRequired forms:\n1. lakara (tense/mood): Lit (perfect); purusha (person): Uttama (first person); vacana (number): Dvi (dual)\n2. lakara (tense/mood): AshirLin (benedictive); purusha (person): Uttama (first person); vacana (number): Eka (singular)\n"
+        }
+      ],
+      "thinking": {
+        "type": "adaptive",
+        "display": "summarized"
+      },
+      "output_config": {
+        "effort": "xhigh"
+      },
+      "tools": [],
+      "tool_choice": {
+        "type": "none"
+      },
+      "stream": false
+    }
+  },
+  {
+    "custom_id": "task-00011",
+    "params": {
+      "model": "claude-opus-5-5",
+      "max_tokens": 16384,
+      "messages": [
+        {
+          "role": "user",
+          "content": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested conjugated verb forms from the Sanskrit verbal base\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired Sanskrit grammatical suffixes (sanadi), tense/mood (lakara),\nvoice (prayoga), person (purusha), and number (vacana).\nEach Sanskrit grammatical term is glossed in parentheses in English.\n\nAll rows use the same derived Sanskrit verbal stem. Apply the sanadi suffixes\nin the listed order to the dhatu, then inflect separately for each row.\nInclude the listed upasarga (Sanskrit verbal prefixes), in order, with regular sandhi in every form.\nWrite ONLY the requested conjugated verb forms, in Devanagari script,\none form per line in the given order, inside one <answer></answer> block.\nIf several forms are valid, give exactly one per line.\nDo not number the answers or include any text outside the answer tags.\n\n=== Your task ===\n\ndhatu (Sanskrit verbal base): य॒मँ\ngana (verb class): Bhvadi (class 1)\nartha (traditional meaning): उपरमे\nupasarga (Sanskrit verbal prefixes, in order): उप + नि\nsanadi (Sanskrit grammatical suffixes, innermost first): यङ् (intensive), followed by णिच् (causative), followed by सन् (desiderative)\nprayoga (voice): Kartari (active)\ndhatu_pada (Sanskrit verb ending set): Parasmaipada (active endings)\n\nRequired forms:\n1. lakara (tense/mood): Lit (perfect); purusha (person): Prathama (third person); vacana (number): Dvi (dual)\n2. lakara (tense/mood): AshirLin (benedictive); purusha (person): Prathama (third person); vacana (number): Eka (singular)\n"
+        }
+      ],
+      "thinking": {
+        "type": "adaptive",
+        "display": "summarized"
+      },
+      "output_config": {
+        "effort": "xhigh"
+      },
+      "tools": [],
+      "tool_choice": {
+        "type": "none"
+      },
+      "stream": false
+    }
+  },
+  {
+    "custom_id": "task-00012",
+    "params": {
+      "model": "claude-opus-5-5",
+      "max_tokens": 16384,
+      "messages": [
+        {
+          "role": "user",
+          "content": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested conjugated verb forms from the Sanskrit verbal base\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired Sanskrit grammatical suffixes (sanadi), tense/mood (lakara),\nvoice (prayoga), person (purusha), and number (vacana).\nEach Sanskrit grammatical term is glossed in parentheses in English.\n\nAll rows use the same derived Sanskrit verbal stem. Apply the sanadi suffixes\nin the listed order to the dhatu, then inflect separately for each row.\nInclude the listed upasarga (Sanskrit verbal prefixes), in order, with regular sandhi in every form.\nWrite ONLY the requested conjugated verb forms, in Devanagari script,\none form per line in the given order, inside one <answer></answer> block.\nIf several forms are valid, give exactly one per line.\nDo not number the answers or include any text outside the answer tags.\n\n=== Your task ===\n\ndhatu (Sanskrit verbal base): मुडिँ\ngana (verb class): Bhvadi (class 1)\nartha (traditional meaning): खण्डने\nupasarga (Sanskrit verbal prefixes, in order): प्र + नि\nsanadi (Sanskrit grammatical suffixes, innermost first): यङ् (intensive), followed by णिच् (causative), followed by सन् (desiderative)\nprayoga (voice): Kartari (active)\ndhatu_pada (Sanskrit verb ending set): Parasmaipada (active endings)\n\nRequired forms:\n1. lakara (tense/mood): Lit (perfect); purusha (person): Prathama (third person); vacana (number): Eka (singular)\n2. lakara (tense/mood): AshirLin (benedictive); purusha (person): Prathama (third person); vacana (number): Bahu (plural)\n"
+        }
+      ],
+      "thinking": {
+        "type": "adaptive",
+        "display": "summarized"
+      },
+      "output_config": {
+        "effort": "xhigh"
+      },
+      "tools": [],
+      "tool_choice": {
+        "type": "none"
+      },
+      "stream": false
+    }
+  },
+  {
+    "custom_id": "task-00013",
+    "params": {
+      "model": "claude-opus-5-5",
+      "max_tokens": 16384,
+      "messages": [
+        {
+          "role": "user",
+          "content": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested conjugated verb forms from the Sanskrit verbal base\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired Sanskrit grammatical suffixes (sanadi), tense/mood (lakara),\nvoice (prayoga), person (purusha), and number (vacana).\nEach Sanskrit grammatical term is glossed in parentheses in English.\n\nAll rows use the same derived Sanskrit verbal stem. Apply the sanadi suffixes\nin the listed order to the dhatu, then inflect separately for each row.\nInclude the listed upasarga (Sanskrit verbal prefixes), in order, with regular sandhi in every form.\nWrite ONLY the requested conjugated verb forms, in Devanagari script,\none form per line in the given order, inside one <answer></answer> block.\nIf several forms are valid, give exactly one per line.\nDo not number the answers or include any text outside the answer tags.\n\n=== Your task ===\n\ndhatu (Sanskrit verbal base): दृ॒\ngana (verb class): Svadi (class 5)\nartha (traditional meaning): हिंसायाम्\nupasarga (Sanskrit verbal prefixes, in order): उप + नि\nsanadi (Sanskrit grammatical suffixes, innermost first): यङ् (intensive), followed by णिच् (causative), followed by सन् (desiderative)\nprayoga (voice): Kartari (active)\ndhatu_pada (Sanskrit verb ending set): Parasmaipada (active endings)\n\nRequired forms:\n1. lakara (tense/mood): Lit (perfect); purusha (person): Uttama (first person); vacana (number): Eka (singular)\n2. lakara (tense/mood): AshirLin (benedictive); purusha (person): Madhyama (second person); vacana (number): Eka (singular)\n"
+        }
+      ],
+      "thinking": {
+        "type": "adaptive",
+        "display": "summarized"
+      },
+      "output_config": {
+        "effort": "xhigh"
+      },
+      "tools": [],
+      "tool_choice": {
+        "type": "none"
+      },
+      "stream": false
+    }
+  },
+  {
+    "custom_id": "task-00014",
+    "params": {
+      "model": "claude-opus-5-5",
+      "max_tokens": 16384,
+      "messages": [
+        {
+          "role": "user",
+          "content": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested conjugated verb forms from the Sanskrit verbal base\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired Sanskrit grammatical suffixes (sanadi), tense/mood (lakara),\nvoice (prayoga), person (purusha), and number (vacana).\nEach Sanskrit grammatical term is glossed in parentheses in English.\n\nAll rows use the same derived Sanskrit verbal stem. Apply the sanadi suffixes\nin the listed order to the dhatu, then inflect separately for each row.\nInclude the listed upasarga (Sanskrit verbal prefixes), in order, with regular sandhi in every form.\nWrite ONLY the requested conjugated verb forms, in Devanagari script,\none form per line in the given order, inside one <answer></answer> block.\nIf several forms are valid, give exactly one per line.\nDo not number the answers or include any text outside the answer tags.\n\n=== Your task ===\n\ndhatu (Sanskrit verbal base): जमुँ\ngana (verb class): Bhvadi (class 1)\nartha (traditional meaning): अदने\nupasarga (Sanskrit verbal prefixes, in order): प्र + नि\nsanadi (Sanskrit grammatical suffixes, innermost first): यङ् (intensive), followed by णिच् (causative), followed by सन् (desiderative)\nprayoga (voice): Kartari (active)\ndhatu_pada (Sanskrit verb ending set): Parasmaipada (active endings)\n\nRequired forms:\n1. lakara (tense/mood): Lit (perfect); purusha (person): Prathama (third person); vacana (number): Bahu (plural)\n2. lakara (tense/mood): AshirLin (benedictive); purusha (person): Uttama (first person); vacana (number): Bahu (plural)\n"
+        }
+      ],
+      "thinking": {
+        "type": "adaptive",
+        "display": "summarized"
+      },
+      "output_config": {
+        "effort": "xhigh"
+      },
+      "tools": [],
+      "tool_choice": {
+        "type": "none"
+      },
+      "stream": false
+    }
+  },
+  {
+    "custom_id": "task-00015",
+    "params": {
+      "model": "claude-opus-5-5",
+      "max_tokens": 16384,
+      "messages": [
+        {
+          "role": "user",
+          "content": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested conjugated verb forms from the Sanskrit verbal base\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired Sanskrit grammatical suffixes (sanadi), tense/mood (lakara),\nvoice (prayoga), person (purusha), and number (vacana).\nEach Sanskrit grammatical term is glossed in parentheses in English.\n\nAll rows use the same derived Sanskrit verbal stem. Apply the sanadi suffixes\nin the listed order to the dhatu, then inflect separately for each row.\nInclude the listed upasarga (Sanskrit verbal prefixes), in order, with regular sandhi in every form.\nWrite ONLY the requested conjugated verb forms, in Devanagari script,\none form per line in the given order, inside one <answer></answer> block.\nIf several forms are valid, give exactly one per line.\nDo not number the answers or include any text outside the answer tags.\n\n=== Your task ===\n\ndhatu (Sanskrit verbal base): कठँ\ngana (verb class): Bhvadi (class 1)\nartha (traditional meaning): कृच्छ्रजीवने\nupasarga (Sanskrit verbal prefixes, in order): उप + नि\nsanadi (Sanskrit grammatical suffixes, innermost first): यङ् (intensive), followed by णिच् (causative), followed by सन् (desiderative)\nprayoga (voice): Kartari (active)\ndhatu_pada (Sanskrit verb ending set): Parasmaipada (active endings)\n\nRequired forms:\n1. lakara (tense/mood): Lit (perfect); purusha (person): Madhyama (second person); vacana (number): Eka (singular)\n2. lakara (tense/mood): AshirLin (benedictive); purusha (person): Madhyama (second person); vacana (number): Eka (singular)\n"
+        }
+      ],
+      "thinking": {
+        "type": "adaptive",
+        "display": "summarized"
+      },
+      "output_config": {
+        "effort": "xhigh"
+      },
+      "tools": [],
+      "tool_choice": {
+        "type": "none"
+      },
+      "stream": false
+    }
+  },
+  {
+    "custom_id": "task-00016",
+    "params": {
+      "model": "claude-opus-5-5",
+      "max_tokens": 16384,
+      "messages": [
+        {
+          "role": "user",
+          "content": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested conjugated verb forms from the Sanskrit verbal base\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired Sanskrit grammatical suffixes (sanadi), tense/mood (lakara),\nvoice (prayoga), person (purusha), and number (vacana).\nEach Sanskrit grammatical term is glossed in parentheses in English.\n\nAll rows use the same derived Sanskrit verbal stem. Apply the sanadi suffixes\nin the listed order to the dhatu, then inflect separately for each row.\nInclude the listed upasarga (Sanskrit verbal prefixes), in order, with regular sandhi in every form.\nWrite ONLY the requested conjugated verb forms, in Devanagari script,\none form per line in the given order, inside one <answer></answer> block.\nIf several forms are valid, give exactly one per line.\nDo not number the answers or include any text outside the answer tags.\n\n=== Your task ===\n\ndhatu (Sanskrit verbal base): झटँ\ngana (verb class): Bhvadi (class 1)\nartha (traditional meaning): सङ्घाते\nupasarga (Sanskrit verbal prefixes, in order): अभि + सम्\nsanadi (Sanskrit grammatical suffixes, innermost first): यङ् (intensive), followed by णिच् (causative), followed by सन् (desiderative)\nprayoga (voice): Kartari (active)\ndhatu_pada (Sanskrit verb ending set): Parasmaipada (active endings)\n\nRequired forms:\n1. lakara (tense/mood): Lit (perfect); purusha (person): Uttama (first person); vacana (number): Dvi (dual)\n2. lakara (tense/mood): Lut (periphrastic future); purusha (person): Prathama (third person); vacana (number): Bahu (plural)\n3. lakara (tense/mood): AshirLin (benedictive); purusha (person): Uttama (first person); vacana (number): Dvi (dual)\n4. lakara (tense/mood): Lan (imperfect); purusha (person): Uttama (first person); vacana (number): Bahu (plural)\n"
+        }
+      ],
+      "thinking": {
+        "type": "adaptive",
+        "display": "summarized"
+      },
+      "output_config": {
+        "effort": "xhigh"
+      },
+      "tools": [],
+      "tool_choice": {
+        "type": "none"
+      },
+      "stream": false
+    }
+  },
+  {
+    "custom_id": "task-00017",
+    "params": {
+      "model": "claude-opus-5-5",
+      "max_tokens": 16384,
+      "messages": [
+        {
+          "role": "user",
+          "content": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested conjugated verb forms from the Sanskrit verbal base\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired Sanskrit grammatical suffixes (sanadi), tense/mood (lakara),\nvoice (prayoga), person (purusha), and number (vacana).\nEach Sanskrit grammatical term is glossed in parentheses in English.\n\nAll rows use the same derived Sanskrit verbal stem. Apply the sanadi suffixes\nin the listed order to the dhatu, then inflect separately for each row.\nInclude the listed upasarga (Sanskrit verbal prefixes), in order, with regular sandhi in every form.\nWrite ONLY the requested conjugated verb forms, in Devanagari script,\none form per line in the given order, inside one <answer></answer> block.\nIf several forms are valid, give exactly one per line.\nDo not number the answers or include any text outside the answer tags.\n\n=== Your task ===\n\ndhatu (Sanskrit verbal base): स्कुन्भुँ\ngana (verb class): Kryadi (class 9)\nartha (traditional meaning): रोधने धारणे च\nupasarga (Sanskrit verbal prefixes, in order): सम् + प्र\nsanadi (Sanskrit grammatical suffixes, innermost first): यङ् (intensive), followed by णिच् (causative), followed by सन् (desiderative)\nprayoga (voice): Kartari (active)\ndhatu_pada (Sanskrit verb ending set): Parasmaipada (active endings)\n\nRequired forms:\n1. lakara (tense/mood): Lit (perfect); purusha (person): Madhyama (second person); vacana (number): Eka (singular)\n2. lakara (tense/mood): Lut (periphrastic future); purusha (person): Madhyama (second person); vacana (number): Eka (singular)\n3. lakara (tense/mood): AshirLin (benedictive); purusha (person): Uttama (first person); vacana (number): Dvi (dual)\n4. lakara (tense/mood): Lan (imperfect); purusha (person): Prathama (third person); vacana (number): Eka (singular)\n"
+        }
+      ],
+      "thinking": {
+        "type": "adaptive",
+        "display": "summarized"
+      },
+      "output_config": {
+        "effort": "xhigh"
+      },
+      "tools": [],
+      "tool_choice": {
+        "type": "none"
+      },
+      "stream": false
+    }
+  },
+  {
+    "custom_id": "task-00018",
+    "params": {
+      "model": "claude-opus-5-5",
+      "max_tokens": 16384,
+      "messages": [
+        {
+          "role": "user",
+          "content": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested conjugated verb forms from the Sanskrit verbal base\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired Sanskrit grammatical suffixes (sanadi), tense/mood (lakara),\nvoice (prayoga), person (purusha), and number (vacana).\nEach Sanskrit grammatical term is glossed in parentheses in English.\n\nAll rows use the same derived Sanskrit verbal stem. Apply the sanadi suffixes\nin the listed order to the dhatu, then inflect separately for each row.\nInclude the listed upasarga (Sanskrit verbal prefixes), in order, with regular sandhi in every form.\nWrite ONLY the requested conjugated verb forms, in Devanagari script,\none form per line in the given order, inside one <answer></answer> block.\nIf several forms are valid, give exactly one per line.\nDo not number the answers or include any text outside the answer tags.\n\n=== Your task ===\n\ndhatu (Sanskrit verbal base): रु\ngana (verb class): Adadi (class 2)\nartha (traditional meaning): शब्दे\nupasarga (Sanskrit verbal prefixes, in order): उप + नि\nsanadi (Sanskrit grammatical suffixes, innermost first): यङ् (intensive), followed by णिच् (causative), followed by सन् (desiderative)\nprayoga (voice): Kartari (active)\ndhatu_pada (Sanskrit verb ending set): Parasmaipada (active endings)\n\nRequired forms:\n1. lakara (tense/mood): Lit (perfect); purusha (person): Uttama (first person); vacana (number): Bahu (plural)\n2. lakara (tense/mood): Lut (periphrastic future); purusha (person): Uttama (first person); vacana (number): Bahu (plural)\n3. lakara (tense/mood): AshirLin (benedictive); purusha (person): Prathama (third person); vacana (number): Bahu (plural)\n4. lakara (tense/mood): Lan (imperfect); purusha (person): Prathama (third person); vacana (number): Eka (singular)\n"
+        }
+      ],
+      "thinking": {
+        "type": "adaptive",
+        "display": "summarized"
+      },
+      "output_config": {
+        "effort": "xhigh"
+      },
+      "tools": [],
+      "tool_choice": {
+        "type": "none"
+      },
+      "stream": false
+    }
+  },
+  {
+    "custom_id": "task-00019",
+    "params": {
+      "model": "claude-opus-5-5",
+      "max_tokens": 16384,
+      "messages": [
+        {
+          "role": "user",
+          "content": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested conjugated verb forms from the Sanskrit verbal base\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired Sanskrit grammatical suffixes (sanadi), tense/mood (lakara),\nvoice (prayoga), person (purusha), and number (vacana).\nEach Sanskrit grammatical term is glossed in parentheses in English.\n\nAll rows use the same derived Sanskrit verbal stem. Apply the sanadi suffixes\nin the listed order to the dhatu, then inflect separately for each row.\nInclude the listed upasarga (Sanskrit verbal prefixes), in order, with regular sandhi in every form.\nWrite ONLY the requested conjugated verb forms, in Devanagari script,\none form per line in the given order, inside one <answer></answer> block.\nIf several forms are valid, give exactly one per line.\nDo not number the answers or include any text outside the answer tags.\n\n=== Your task ===\n\ndhatu (Sanskrit verbal base): शुकँ\ngana (verb class): Bhvadi (class 1)\nartha (traditional meaning): गतौ\nupasarga (Sanskrit verbal prefixes, in order): सम् + प्र\nsanadi (Sanskrit grammatical suffixes, innermost first): यङ् (intensive), followed by णिच् (causative), followed by सन् (desiderative)\nprayoga (voice): Kartari (active)\ndhatu_pada (Sanskrit verb ending set): Parasmaipada (active endings)\n\nRequired forms:\n1. lakara (tense/mood): Lit (perfect); purusha (person): Uttama (first person); vacana (number): Bahu (plural)\n2. lakara (tense/mood): Lut (periphrastic future); purusha (person): Uttama (first person); vacana (number): Dvi (dual)\n3. lakara (tense/mood): AshirLin (benedictive); purusha (person): Prathama (third person); vacana (number): Bahu (plural)\n4. lakara (tense/mood): Lan (imperfect); purusha (person): Madhyama (second person); vacana (number): Bahu (plural)\n"
+        }
+      ],
+      "thinking": {
+        "type": "adaptive",
+        "display": "summarized"
+      },
+      "output_config": {
+        "effort": "xhigh"
+      },
+      "tools": [],
+      "tool_choice": {
+        "type": "none"
+      },
+      "stream": false
+    }
+  },
+  {
+    "custom_id": "task-00020",
+    "params": {
+      "model": "claude-opus-5-5",
+      "max_tokens": 16384,
+      "messages": [
+        {
+          "role": "user",
+          "content": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested conjugated verb forms from the Sanskrit verbal base\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired Sanskrit grammatical suffixes (sanadi), tense/mood (lakara),\nvoice (prayoga), person (purusha), and number (vacana).\nEach Sanskrit grammatical term is glossed in parentheses in English.\n\nAll rows use the same derived Sanskrit verbal stem. Apply the sanadi suffixes\nin the listed order to the dhatu, then inflect separately for each row.\nInclude the listed upasarga (Sanskrit verbal prefixes), in order, with regular sandhi in every form.\nWrite ONLY the requested conjugated verb forms, in Devanagari script,\none form per line in the given order, inside one <answer></answer> block.\nIf several forms are valid, give exactly one per line.\nDo not number the answers or include any text outside the answer tags.\n\n=== Your task ===\n\ndhatu (Sanskrit verbal base): द्राहृँ॒\ngana (verb class): Bhvadi (class 1)\nartha (traditional meaning): निद्राक्षये निक्षेपे च\nupasarga (Sanskrit verbal prefixes, in order): प्र + नि\nsanadi (Sanskrit grammatical suffixes, innermost first): यङ् (intensive), followed by णिच् (causative), followed by सन् (desiderative)\nprayoga (voice): Kartari (active)\ndhatu_pada (Sanskrit verb ending set): Parasmaipada (active endings)\n\nRequired forms:\n1. lakara (tense/mood): Lit (perfect); purusha (person): Prathama (third person); vacana (number): Bahu (plural)\n2. lakara (tense/mood): Lut (periphrastic future); purusha (person): Uttama (first person); vacana (number): Bahu (plural)\n3. lakara (tense/mood): AshirLin (benedictive); purusha (person): Madhyama (second person); vacana (number): Eka (singular)\n4. lakara (tense/mood): Lan (imperfect); purusha (person): Prathama (third person); vacana (number): Bahu (plural)\n"
+        }
+      ],
+      "thinking": {
+        "type": "adaptive",
+        "display": "summarized"
+      },
+      "output_config": {
+        "effort": "xhigh"
+      },
+      "tools": [],
+      "tool_choice": {
+        "type": "none"
+      },
+      "stream": false
+    }
+  },
+  {
+    "custom_id": "task-00021",
+    "params": {
+      "model": "claude-opus-5-5",
+      "max_tokens": 16384,
+      "messages": [
+        {
+          "role": "user",
+          "content": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested conjugated verb forms from the Sanskrit verbal base\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired Sanskrit grammatical suffixes (sanadi), tense/mood (lakara),\nvoice (prayoga), person (purusha), and number (vacana).\nEach Sanskrit grammatical term is glossed in parentheses in English.\n\nAll rows use the same derived Sanskrit verbal stem. Apply the sanadi suffixes\nin the listed order to the dhatu, then inflect separately for each row.\nInclude the listed upasarga (Sanskrit verbal prefixes), in order, with regular sandhi in every form.\nWrite ONLY the requested conjugated verb forms, in Devanagari script,\none form per line in the given order, inside one <answer></answer> block.\nIf several forms are valid, give exactly one per line.\nDo not number the answers or include any text outside the answer tags.\n\n=== Your task ===\n\ndhatu (Sanskrit verbal base): क्नसुँ\ngana (verb class): Divadi (class 4)\nartha (traditional meaning): ह्वरणदीप्त्योः\nupasarga (Sanskrit verbal prefixes, in order): उप + नि\nsanadi (Sanskrit grammatical suffixes, innermost first): यङ् (intensive), followed by णिच् (causative), followed by सन् (desiderative)\nprayoga (voice): Kartari (active)\ndhatu_pada (Sanskrit verb ending set): Parasmaipada (active endings)\n\nRequired forms:\n1. lakara (tense/mood): Lit (perfect); purusha (person): Uttama (first person); vacana (number): Dvi (dual)\n2. lakara (tense/mood): Lut (periphrastic future); purusha (person): Prathama (third person); vacana (number): Dvi (dual)\n3. lakara (tense/mood): AshirLin (benedictive); purusha (person): Madhyama (second person); vacana (number): Dvi (dual)\n4. lakara (tense/mood): Lan (imperfect); purusha (person): Madhyama (second person); vacana (number): Dvi (dual)\n"
+        }
+      ],
+      "thinking": {
+        "type": "adaptive",
+        "display": "summarized"
+      },
+      "output_config": {
+        "effort": "xhigh"
+      },
+      "tools": [],
+      "tool_choice": {
+        "type": "none"
+      },
+      "stream": false
+    }
+  },
+  {
+    "custom_id": "task-00022",
+    "params": {
+      "model": "claude-opus-5-5",
+      "max_tokens": 16384,
+      "messages": [
+        {
+          "role": "user",
+          "content": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested conjugated verb forms from the Sanskrit verbal base\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired Sanskrit grammatical suffixes (sanadi), tense/mood (lakara),\nvoice (prayoga), person (purusha), and number (vacana).\nEach Sanskrit grammatical term is glossed in parentheses in English.\n\nAll rows use the same derived Sanskrit verbal stem. Apply the sanadi suffixes\nin the listed order to the dhatu, then inflect separately for each row.\nInclude the listed upasarga (Sanskrit verbal prefixes), in order, with regular sandhi in every form.\nWrite ONLY the requested conjugated verb forms, in Devanagari script,\none form per line in the given order, inside one <answer></answer> block.\nIf several forms are valid, give exactly one per line.\nDo not number the answers or include any text outside the answer tags.\n\n=== Your task ===\n\ndhatu (Sanskrit verbal base): मृडँ\ngana (verb class): Kryadi (class 9)\nartha (traditional meaning): क्षोदे सुखे च\nupasarga (Sanskrit verbal prefixes, in order): उप + नि\nsanadi (Sanskrit grammatical suffixes, innermost first): यङ् (intensive), followed by णिच् (causative), followed by सन् (desiderative)\nprayoga (voice): Kartari (active)\ndhatu_pada (Sanskrit verb ending set): Parasmaipada (active endings)\n\nRequired forms:\n1. lakara (tense/mood): Lit (perfect); purusha (person): Uttama (first person); vacana (number): Bahu (plural)\n2. lakara (tense/mood): Lut (periphrastic future); purusha (person): Madhyama (second person); vacana (number): Bahu (plural)\n3. lakara (tense/mood): AshirLin (benedictive); purusha (person): Prathama (third person); vacana (number): Dvi (dual)\n4. lakara (tense/mood): Lan (imperfect); purusha (person): Uttama (first person); vacana (number): Bahu (plural)\n"
+        }
+      ],
+      "thinking": {
+        "type": "adaptive",
+        "display": "summarized"
+      },
+      "output_config": {
+        "effort": "xhigh"
+      },
+      "tools": [],
+      "tool_choice": {
+        "type": "none"
+      },
+      "stream": false
+    }
+  },
+  {
+    "custom_id": "task-00023",
+    "params": {
+      "model": "claude-opus-5-5",
+      "max_tokens": 16384,
+      "messages": [
+        {
+          "role": "user",
+          "content": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested conjugated verb forms from the Sanskrit verbal base\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired Sanskrit grammatical suffixes (sanadi), tense/mood (lakara),\nvoice (prayoga), person (purusha), and number (vacana).\nEach Sanskrit grammatical term is glossed in parentheses in English.\n\nAll rows use the same derived Sanskrit verbal stem. Apply the sanadi suffixes\nin the listed order to the dhatu, then inflect separately for each row.\nInclude the listed upasarga (Sanskrit verbal prefixes), in order, with regular sandhi in every form.\nWrite ONLY the requested conjugated verb forms, in Devanagari script,\none form per line in the given order, inside one <answer></answer> block.\nIf several forms are valid, give exactly one per line.\nDo not number the answers or include any text outside the answer tags.\n\n=== Your task ===\n\ndhatu (Sanskrit verbal base): लघिँ॒\ngana (verb class): Bhvadi (class 1)\nartha (traditional meaning): गतौ भोजननिवृत्तौ च\nupasarga (Sanskrit verbal prefixes, in order): उप + नि\nsanadi (Sanskrit grammatical suffixes, innermost first): यङ् (intensive), followed by णिच् (causative), followed by सन् (desiderative)\nprayoga (voice): Kartari (active)\ndhatu_pada (Sanskrit verb ending set): Parasmaipada (active endings)\n\nRequired forms:\n1. lakara (tense/mood): Lit (perfect); purusha (person): Uttama (first person); vacana (number): Bahu (plural)\n2. lakara (tense/mood): Lut (periphrastic future); purusha (person): Uttama (first person); vacana (number): Bahu (plural)\n3. lakara (tense/mood): AshirLin (benedictive); purusha (person): Prathama (third person); vacana (number): Eka (singular)\n4. lakara (tense/mood): Lan (imperfect); purusha (person): Uttama (first person); vacana (number): Eka (singular)\n"
+        }
+      ],
+      "thinking": {
+        "type": "adaptive",
+        "display": "summarized"
+      },
+      "output_config": {
+        "effort": "xhigh"
+      },
+      "tools": [],
+      "tool_choice": {
+        "type": "none"
+      },
+      "stream": false
+    }
+  },
+  {
+    "custom_id": "task-00024",
+    "params": {
+      "model": "claude-opus-5-5",
+      "max_tokens": 16384,
+      "messages": [
+        {
+          "role": "user",
+          "content": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested conjugated verb forms from the Sanskrit verbal base\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired Sanskrit grammatical suffixes (sanadi), tense/mood (lakara),\nvoice (prayoga), person (purusha), and number (vacana).\nEach Sanskrit grammatical term is glossed in parentheses in English.\n\nAll rows use the same derived Sanskrit verbal stem. Apply the sanadi suffixes\nin the listed order to the dhatu, then inflect separately for each row.\nInclude the listed upasarga (Sanskrit verbal prefixes), in order, with regular sandhi in every form.\nWrite ONLY the requested conjugated verb forms, in Devanagari script,\none form per line in the given order, inside one <answer></answer> block.\nIf several forms are valid, give exactly one per line.\nDo not number the answers or include any text outside the answer tags.\n\n=== Your task ===\n\ndhatu (Sanskrit verbal base): थुडँ\ngana (verb class): Tudadi (class 6)\nartha (traditional meaning): संवरणे\nupasarga (Sanskrit verbal prefixes, in order): प्र + नि\nsanadi (Sanskrit grammatical suffixes, innermost first): यङ् (intensive), followed by णिच् (causative), followed by सन् (desiderative)\nprayoga (voice): Kartari (active)\ndhatu_pada (Sanskrit verb ending set): Parasmaipada (active endings)\n\nRequired forms:\n1. lakara (tense/mood): Lit (perfect); purusha (person): Prathama (third person); vacana (number): Eka (singular)\n2. lakara (tense/mood): Lut (periphrastic future); purusha (person): Uttama (first person); vacana (number): Eka (singular)\n3. lakara (tense/mood): AshirLin (benedictive); purusha (person): Madhyama (second person); vacana (number): Dvi (dual)\n4. lakara (tense/mood): Lan (imperfect); purusha (person): Madhyama (second person); vacana (number): Eka (singular)\n"
+        }
+      ],
+      "thinking": {
+        "type": "adaptive",
+        "display": "summarized"
+      },
+      "output_config": {
+        "effort": "xhigh"
+      },
+      "tools": [],
+      "tool_choice": {
+        "type": "none"
+      },
+      "stream": false
+    }
+  },
+  {
+    "custom_id": "task-00025",
+    "params": {
+      "model": "claude-opus-5-5",
+      "max_tokens": 16384,
+      "messages": [
+        {
+          "role": "user",
+          "content": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested conjugated verb forms from the Sanskrit verbal base\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired Sanskrit grammatical suffixes (sanadi), tense/mood (lakara),\nvoice (prayoga), person (purusha), and number (vacana).\nEach Sanskrit grammatical term is glossed in parentheses in English.\n\nAll rows use the same derived Sanskrit verbal stem. Apply the sanadi suffixes\nin the listed order to the dhatu, then inflect separately for each row.\nInclude the listed upasarga (Sanskrit verbal prefixes), in order, with regular sandhi in every form.\nWrite ONLY the requested conjugated verb forms, in Devanagari script,\none form per line in the given order, inside one <answer></answer> block.\nIf several forms are valid, give exactly one per line.\nDo not number the answers or include any text outside the answer tags.\n\n=== Your task ===\n\ndhatu (Sanskrit verbal base): यु॒जिँ॑र्\ngana (verb class): Rudhadi (class 7)\nartha (traditional meaning): योगे\nupasarga (Sanskrit verbal prefixes, in order): उप + नि\nsanadi (Sanskrit grammatical suffixes, innermost first): यङ् (intensive), followed by णिच् (causative), followed by सन् (desiderative)\nprayoga (voice): Kartari (active)\ndhatu_pada (Sanskrit verb ending set): Parasmaipada (active endings)\n\nRequired forms:\n1. lakara (tense/mood): Lit (perfect); purusha (person): Uttama (first person); vacana (number): Bahu (plural)\n2. lakara (tense/mood): Lut (periphrastic future); purusha (person): Uttama (first person); vacana (number): Dvi (dual)\n3. lakara (tense/mood): AshirLin (benedictive); purusha (person): Madhyama (second person); vacana (number): Eka (singular)\n4. lakara (tense/mood): Lan (imperfect); purusha (person): Madhyama (second person); vacana (number): Bahu (plural)\n"
+        }
+      ],
+      "thinking": {
+        "type": "adaptive",
+        "display": "summarized"
+      },
+      "output_config": {
+        "effort": "xhigh"
+      },
+      "tools": [],
+      "tool_choice": {
+        "type": "none"
+      },
+      "stream": false
+    }
+  },
+  {
+    "custom_id": "task-00026",
+    "params": {
+      "model": "claude-opus-5-5",
+      "max_tokens": 16384,
+      "messages": [
+        {
+          "role": "user",
+          "content": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested conjugated verb forms from the Sanskrit verbal base\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired Sanskrit grammatical suffixes (sanadi), tense/mood (lakara),\nvoice (prayoga), person (purusha), and number (vacana).\nEach Sanskrit grammatical term is glossed in parentheses in English.\n\nAll rows use the same derived Sanskrit verbal stem. Apply the sanadi suffixes\nin the listed order to the dhatu, then inflect separately for each row.\nInclude the listed upasarga (Sanskrit verbal prefixes), in order, with regular sandhi in every form.\nWrite ONLY the requested conjugated verb forms, in Devanagari script,\none form per line in the given order, inside one <answer></answer> block.\nIf several forms are valid, give exactly one per line.\nDo not number the answers or include any text outside the answer tags.\n\n=== Your task ===\n\ndhatu (Sanskrit verbal base): गुडँ\ngana (verb class): Tudadi (class 6)\nartha (traditional meaning): रक्षायाम्\nupasarga (Sanskrit verbal prefixes, in order): उप + नि\nsanadi (Sanskrit grammatical suffixes, innermost first): यङ् (intensive), followed by णिच् (causative), followed by सन् (desiderative)\nprayoga (voice): Kartari (active)\ndhatu_pada (Sanskrit verb ending set): Parasmaipada (active endings)\n\nRequired forms:\n1. lakara (tense/mood): Lit (perfect); purusha (person): Prathama (third person); vacana (number): Bahu (plural)\n2. lakara (tense/mood): Lut (periphrastic future); purusha (person): Madhyama (second person); vacana (number): Dvi (dual)\n3. lakara (tense/mood): AshirLin (benedictive); purusha (person): Uttama (first person); vacana (number): Bahu (plural)\n4. lakara (tense/mood): Lan (imperfect); purusha (person): Prathama (third person); vacana (number): Dvi (dual)\n"
+        }
+      ],
+      "thinking": {
+        "type": "adaptive",
+        "display": "summarized"
+      },
+      "output_config": {
+        "effort": "xhigh"
+      },
+      "tools": [],
+      "tool_choice": {
+        "type": "none"
+      },
+      "stream": false
+    }
+  },
+  {
+    "custom_id": "task-00027",
+    "params": {
+      "model": "claude-opus-5-5",
+      "max_tokens": 16384,
+      "messages": [
+        {
+          "role": "user",
+          "content": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested conjugated verb forms from the Sanskrit verbal base\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired Sanskrit grammatical suffixes (sanadi), tense/mood (lakara),\nvoice (prayoga), person (purusha), and number (vacana).\nEach Sanskrit grammatical term is glossed in parentheses in English.\n\nAll rows use the same derived Sanskrit verbal stem. Apply the sanadi suffixes\nin the listed order to the dhatu, then inflect separately for each row.\nInclude the listed upasarga (Sanskrit verbal prefixes), in order, with regular sandhi in every form.\nWrite ONLY the requested conjugated verb forms, in Devanagari script,\none form per line in the given order, inside one <answer></answer> block.\nIf several forms are valid, give exactly one per line.\nDo not number the answers or include any text outside the answer tags.\n\n=== Your task ===\n\ndhatu (Sanskrit verbal base): झषँ॑\ngana (verb class): Bhvadi (class 1)\nartha (traditional meaning): आदानसंवरणयोः\nupasarga (Sanskrit verbal prefixes, in order): प्र + नि\nsanadi (Sanskrit grammatical suffixes, innermost first): यङ् (intensive), followed by णिच् (causative), followed by सन् (desiderative)\nprayoga (voice): Kartari (active)\ndhatu_pada (Sanskrit verb ending set): Parasmaipada (active endings)\n\nRequired forms:\n1. lakara (tense/mood): Lit (perfect); purusha (person): Madhyama (second person); vacana (number): Eka (singular)\n2. lakara (tense/mood): Lut (periphrastic future); purusha (person): Uttama (first person); vacana (number): Eka (singular)\n3. lakara (tense/mood): AshirLin (benedictive); purusha (person): Madhyama (second person); vacana (number): Dvi (dual)\n4. lakara (tense/mood): Lan (imperfect); purusha (person): Madhyama (second person); vacana (number): Dvi (dual)\n"
+        }
+      ],
+      "thinking": {
+        "type": "adaptive",
+        "display": "summarized"
+      },
+      "output_config": {
+        "effort": "xhigh"
+      },
+      "tools": [],
+      "tool_choice": {
+        "type": "none"
+      },
+      "stream": false
+    }
+  },
+  {
+    "custom_id": "task-00028",
+    "params": {
+      "model": "claude-opus-5-5",
+      "max_tokens": 16384,
+      "messages": [
+        {
+          "role": "user",
+          "content": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested conjugated verb forms from the Sanskrit verbal base\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired Sanskrit grammatical suffixes (sanadi), tense/mood (lakara),\nvoice (prayoga), person (purusha), and number (vacana).\nEach Sanskrit grammatical term is glossed in parentheses in English.\n\nAll rows use the same derived Sanskrit verbal stem. Apply the sanadi suffixes\nin the listed order to the dhatu, then inflect separately for each row.\nInclude the listed upasarga (Sanskrit verbal prefixes), in order, with regular sandhi in every form.\nWrite ONLY the requested conjugated verb forms, in Devanagari script,\none form per line in the given order, inside one <answer></answer> block.\nIf several forms are valid, give exactly one per line.\nDo not number the answers or include any text outside the answer tags.\n\n=== Your task ===\n\ndhatu (Sanskrit verbal base): श्लोकृँ॒\ngana (verb class): Bhvadi (class 1)\nartha (traditional meaning): सङ्घाते\nupasarga (Sanskrit verbal prefixes, in order): उप + नि\nsanadi (Sanskrit grammatical suffixes, innermost first): यङ् (intensive), followed by णिच् (causative), followed by सन् (desiderative)\nprayoga (voice): Kartari (active)\ndhatu_pada (Sanskrit verb ending set): Parasmaipada (active endings)\n\nRequired forms:\n1. lakara (tense/mood): Lit (perfect); purusha (person): Madhyama (second person); vacana (number): Eka (singular)\n2. lakara (tense/mood): Lut (periphrastic future); purusha (person): Uttama (first person); vacana (number): Eka (singular)\n3. lakara (tense/mood): AshirLin (benedictive); purusha (person): Prathama (third person); vacana (number): Bahu (plural)\n4. lakara (tense/mood): Lan (imperfect); purusha (person): Uttama (first person); vacana (number): Bahu (plural)\n"
+        }
+      ],
+      "thinking": {
+        "type": "adaptive",
+        "display": "summarized"
+      },
+      "output_config": {
+        "effort": "xhigh"
+      },
+      "tools": [],
+      "tool_choice": {
+        "type": "none"
+      },
+      "stream": false
+    }
+  },
+  {
+    "custom_id": "task-00029",
+    "params": {
+      "model": "claude-opus-5-5",
+      "max_tokens": 16384,
+      "messages": [
+        {
+          "role": "user",
+          "content": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested conjugated verb forms from the Sanskrit verbal base\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired Sanskrit grammatical suffixes (sanadi), tense/mood (lakara),\nvoice (prayoga), person (purusha), and number (vacana).\nEach Sanskrit grammatical term is glossed in parentheses in English.\n\nAll rows use the same derived Sanskrit verbal stem. Apply the sanadi suffixes\nin the listed order to the dhatu, then inflect separately for each row.\nInclude the listed upasarga (Sanskrit verbal prefixes), in order, with regular sandhi in every form.\nWrite ONLY the requested conjugated verb forms, in Devanagari script,\none form per line in the given order, inside one <answer></answer> block.\nIf several forms are valid, give exactly one per line.\nDo not number the answers or include any text outside the answer tags.\n\n=== Your task ===\n\ndhatu (Sanskrit verbal base): चमुँ\ngana (verb class): Svadi (class 5)\nartha (traditional meaning): भक्षणे\nupasarga (Sanskrit verbal prefixes, in order): सम् + प्र\nsanadi (Sanskrit grammatical suffixes, innermost first): यङ् (intensive), followed by णिच् (causative), followed by सन् (desiderative)\nprayoga (voice): Kartari (active)\ndhatu_pada (Sanskrit verb ending set): Parasmaipada (active endings)\n\nRequired forms:\n1. lakara (tense/mood): Lit (perfect); purusha (person): Uttama (first person); vacana (number): Bahu (plural)\n2. lakara (tense/mood): Lut (periphrastic future); purusha (person): Prathama (third person); vacana (number): Bahu (plural)\n3. lakara (tense/mood): AshirLin (benedictive); purusha (person): Madhyama (second person); vacana (number): Dvi (dual)\n4. lakara (tense/mood): Lan (imperfect); purusha (person): Prathama (third person); vacana (number): Eka (singular)\n"
+        }
+      ],
+      "thinking": {
+        "type": "adaptive",
+        "display": "summarized"
+      },
+      "output_config": {
+        "effort": "xhigh"
+      },
+      "tools": [],
+      "tool_choice": {
+        "type": "none"
+      },
+      "stream": false
+    }
+  },
+  {
+    "custom_id": "task-00030",
+    "params": {
+      "model": "claude-opus-5-5",
+      "max_tokens": 16384,
+      "messages": [
+        {
+          "role": "user",
+          "content": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested conjugated verb forms from the Sanskrit verbal base\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired Sanskrit grammatical suffixes (sanadi), tense/mood (lakara),\nvoice (prayoga), person (purusha), and number (vacana).\nEach Sanskrit grammatical term is glossed in parentheses in English.\n\nAll rows use the same derived Sanskrit verbal stem. Apply the sanadi suffixes\nin the listed order to the dhatu, then inflect separately for each row.\nInclude the listed upasarga (Sanskrit verbal prefixes), in order, with regular sandhi in every form.\nWrite ONLY the requested conjugated verb forms, in Devanagari script,\none form per line in the given order, inside one <answer></answer> block.\nIf several forms are valid, give exactly one per line.\nDo not number the answers or include any text outside the answer tags.\n\n=== Your task ===\n\ndhatu (Sanskrit verbal base): भु॒जोँ\ngana (verb class): Tudadi (class 6)\nartha (traditional meaning): कौटिल्ये\nupasarga (Sanskrit verbal prefixes, in order): अभि + सम्\nsanadi (Sanskrit grammatical suffixes, innermost first): यङ् (intensive), followed by णिच् (causative), followed by सन् (desiderative)\nprayoga (voice): Kartari (active)\ndhatu_pada (Sanskrit verb ending set): Parasmaipada (active endings)\n\nRequired forms:\n1. lakara (tense/mood): Lit (perfect); purusha (person): Uttama (first person); vacana (number): Eka (singular)\n2. lakara (tense/mood): Lut (periphrastic future); purusha (person): Uttama (first person); vacana (number): Bahu (plural)\n3. lakara (tense/mood): AshirLin (benedictive); purusha (person): Prathama (third person); vacana (number): Dvi (dual)\n4. lakara (tense/mood): Lan (imperfect); purusha (person): Prathama (third person); vacana (number): Dvi (dual)\n"
+        }
+      ],
+      "thinking": {
+        "type": "adaptive",
+        "display": "summarized"
+      },
+      "output_config": {
+        "effort": "xhigh"
+      },
+      "tools": [],
+      "tool_choice": {
+        "type": "none"
+      },
+      "stream": false
+    }
+  },
+  {
+    "custom_id": "task-00031",
+    "params": {
+      "model": "claude-opus-5-5",
+      "max_tokens": 16384,
+      "messages": [
+        {
+          "role": "user",
+          "content": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested conjugated verb forms from the Sanskrit verbal base\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired Sanskrit grammatical suffixes (sanadi), tense/mood (lakara),\nvoice (prayoga), person (purusha), and number (vacana).\nEach Sanskrit grammatical term is glossed in parentheses in English.\n\nAll rows use the same derived Sanskrit verbal stem. Apply the sanadi suffixes\nin the listed order to the dhatu, then inflect separately for each row.\nInclude the listed upasarga (Sanskrit verbal prefixes), in order, with regular sandhi in every form.\nWrite ONLY the requested conjugated verb forms, in Devanagari script,\none form per line in the given order, inside one <answer></answer> block.\nIf several forms are valid, give exactly one per line.\nDo not number the answers or include any text outside the answer tags.\n\n=== Your task ===\n\ndhatu (Sanskrit verbal base): कशँ॒\ngana (verb class): Adadi (class 2)\nartha (traditional meaning): गतिशासनयोः\nupasarga (Sanskrit verbal prefixes, in order): सम् + प्र\nsanadi (Sanskrit grammatical suffixes, innermost first): यङ् (intensive), followed by णिच् (causative), followed by सन् (desiderative)\nprayoga (voice): Kartari (active)\ndhatu_pada (Sanskrit verb ending set): Parasmaipada (active endings)\n\nRequired forms:\n1. lakara (tense/mood): Lit (perfect); purusha (person): Prathama (third person); vacana (number): Bahu (plural)\n2. lakara (tense/mood): Lut (periphrastic future); purusha (person): Prathama (third person); vacana (number): Dvi (dual)\n3. lakara (tense/mood): AshirLin (benedictive); purusha (person): Uttama (first person); vacana (number): Bahu (plural)\n4. lakara (tense/mood): Lan (imperfect); purusha (person): Prathama (third person); vacana (number): Bahu (plural)\n"
+        }
+      ],
+      "thinking": {
+        "type": "adaptive",
+        "display": "summarized"
+      },
+      "output_config": {
+        "effort": "xhigh"
+      },
+      "tools": [],
+      "tool_choice": {
+        "type": "none"
+      },
+      "stream": false
+    }
+  }
+]

@@ -1,0 +1,109 @@
+{
+  "created_at": "2026-10-07T06:45:27.897066+00:00",
+  "policy": "Shared current entry_scope_issue/oracle_issue plus Bhvadi01.1088 finite exclusion; post-discovery diagnostic, no raw task or result edited.",
+  "results": {
+    "01": {
+      "raw_file_sha256": "ea97a9928f7315a8230a726fd0aed755c063da54cd242a39d6dcfdad64742dca",
+      "raw_n": 120,
+      "eligible_requested": 110,
+      "completed": 108,
+      "correct": 102,
+      "completed_accuracy": 0.9444444444444444,
+      "all_requested_accuracy": 0.9272727272727272,
+      "wilson_completed_95pct_iid": [
+        0.8840656320566886,
+        0.9742922703908161
+      ],
+      "refusals": 2,
+      "truncations": 0,
+      "cells": {
+        "other_athematic_perfect": {
+          "n": 6,
+          "correct": 6
+        },
+        "divadi_sigmatic_aorist": {
+          "n": 11,
+          "correct": 10
+        },
+        "dictionary_curadi_futures": {
+          "n": 10,
+          "correct": 10
+        },
+        "athematic_present_system": {
+          "n": 13,
+          "correct": 13
+        },
+        "aorist_consonant_changes": {
+          "n": 12,
+          "correct": 12
+        },
+        "internal_rv_lengthening": {
+          "n": 12,
+          "correct": 7
+        },
+        "primary_benedictive_stem_changes": {
+          "n": 12,
+          "correct": 12
+        },
+        "perfect_reduplication_changes": {
+          "n": 12,
+          "correct": 12
+        },
+        "transitive_curadi_nonpresent_passive": {
+          "n": 9,
+          "correct": 9
+        },
+        "svadi_perfect": {
+          "n": 11,
+          "correct": 11
+        }
+      },
+      "excluded_ids": [
+        "cart4-75107a129db7ba5b6a9461f6",
+        "cart4-0eb789323f8cef3790d58c45",
+        "cart4-bf0fe03f9fa1d50030d9d6c1",
+        "cart4-3122dbf024f5bdf0ca47a885",
+        "cart4-f3a3675f3e75354b35f8e0ef",
+        "cart4-97a84f0d6e568d30914e2853",
+        "cart4-250d98271b03007bef51ec95",
+        "cart4-7e40c875bab9c35c25d0c12c",
+        "cart4-8fa4ec7397814c0471411766",
+        "cart4-c4c37f9d9f69c319e6e02893"
+      ]
+    },
+    "02": {
+      "raw_file_sha256": "11c8420f9edc9e25e53f5a91110dbfb536e6b55c6e502f488c5404199f4d320f",
+      "raw_n": 108,
+      "eligible_requested": 106,
+      "completed": 105,
+      "correct": 105,
+      "completed_accuracy": 1.0,
+      "all_requested_accuracy": 0.9905660377358491,
+      "wilson_completed_95pct_iid": [
+        0.9647059230708901,
+        1.0
+      ],
+      "refusals": 1,
+      "truncations": 0,
+      "cells": {
+        "cross_gana_lexical_contrast": {
+          "n": 35,
+          "correct": 35
+        },
+        "akusmiya_licensed": {
+          "n": 35,
+          "correct": 35
+        },
+        "coordinate_matched_controls": {
+          "n": 35,
+          "correct": 35
+        }
+      },
+      "excluded_ids": [
+        "cart4-2991d493c31cdceacba2e5ea",
+        "cart4-9d271a3022ec82dbb8e5e911"
+      ]
+    }
+  },
+  "limitations": "Wilson intervals treat observations as independent; they are not family-adjusted release intervals or a claim about the full dictionary distribution."
+}

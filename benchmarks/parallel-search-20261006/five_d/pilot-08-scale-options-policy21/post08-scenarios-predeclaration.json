@@ -1,0 +1,49 @@
+{
+  "created_at": "2026-10-07T13:42:47.335663+00:00",
+  "status": "prospective_offline_analysis_only",
+  "sizes": [
+    3000,
+    3600,
+    4200,
+    4800
+  ],
+  "models": [
+    "opus_primary",
+    "astra_paired"
+  ],
+  "cell_fits": [
+    "coarse",
+    "fine"
+  ],
+  "prior_per_response_state": [
+    0,
+    0.5
+  ],
+  "correlation_fits": [
+    "coarse",
+    "fine"
+  ],
+  "correlation_scenarios": [
+    "point",
+    "marginal_upper95",
+    "common_rho_0_to_0.5_step0.1"
+  ],
+  "guard": "Require all8pilot08jobs settled and collected before aggregate/result reads; exact frozen aggregate and result fingerprints, no source exclusions.",
+  "analysis": "Same settings for every N/model; report unidentified support and incoherent covariance. No automatic N selection or qualification.",
+  "cost": "Original-pilot-composition standardized cost scenarios, including conditional whole-family bootstrap. Rounding at N3000/4200 is disclosed. No maximum-cost guarantee.",
+  "dependency_sha256": {
+    "misc/vp_5d_scale_after08.py": "5cd502aa112d5cf1187a39b2cd8876b1956a4f46b89104bfb75f928de3d08682",
+    "misc/test_vp_5d_scale_after08.py": "c365524a1d8aa159664b024e696d1c9134c507b3b73bf5e35f70fe428c879eaf",
+    "benchmarks/parallel-search-20261006/five_d/pilot-08-scale-options-policy21/N3000.allocation.json": "7b92b809352334bfd22668e2daacf84314e1890bcf7de421fa6991fa54f7cf37",
+    "benchmarks/parallel-search-20261006/five_d/pilot-08-scale-options-policy21/N3600.allocation.json": "5647a488c0b50ad9830d48e6cf4372bb8ebaffc5fe89238f4cd77ca2d4e82cd8",
+    "benchmarks/parallel-search-20261006/five_d/pilot-08-scale-options-policy21/N4200.allocation.json": "2600fec8a649e2a3a32cfe5c232e0faf30ad956bc778dd39d8e2b5e249db56eb",
+    "benchmarks/parallel-search-20261006/five_d/pilot-08-scale-policy21/N4800.allocation.json": "6b3dc36b2dfd8dc388a63653293e6e8d818fca8c84879a37997b35eec155e85b"
+  },
+  "synthetic_tests": {
+    "passed": 7,
+    "command": ".venv/bin/python -m unittest misc.test_vp_5d_scale_after08 -q"
+  },
+  "no_pilot08_outcomes_read": true,
+  "no_final_membership_selected": true,
+  "paid_calls": 0
+}

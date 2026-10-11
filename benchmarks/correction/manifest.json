@@ -1,0 +1,166 @@
+{
+  "version": "vp-correction-coordinate-v1",
+  "created_date": "2026-10-09",
+  "seed": "vp-correction-200-20261009",
+  "vidyut_version": "0.4.0",
+  "vp_settings": {
+    "log_steps": true,
+    "is_chandasi": false,
+    "use_svaras": false,
+    "nlp_mode": false
+  },
+  "source_inventory": "benchmarks/parallel-search-20261007/four_d-90/candidate-1800-v1/tasks.json",
+  "source_inventory_sha256": "695e7284d06a555aaabfcb7671d000db5622157984221c261b9500e86f72d38f",
+  "dictionary": "data/finetune/task-data/vidyut_dhatupatha_5.tsv",
+  "dictionary_sha256": "c6c494a6c534130b2d8e8f344d2f5e3ffbc64ed45b390e2a4e35e526f1cecd09",
+  "statistics": {
+    "tasks": 200,
+    "unique_dictionary_entries": 200,
+    "unique_citations": 200,
+    "max_tasks_per_dhatu": 1,
+    "gana": {
+      "Adadi": 27,
+      "Bhvadi": 27,
+      "Curadi": 27,
+      "Divadi": 27,
+      "Juhotyadi": 9,
+      "Kryadi": 28,
+      "Rudhadi": 13,
+      "Svadi": 10,
+      "Tanadi": 5,
+      "Tudadi": 27
+    },
+    "lakara": {
+      "AshirLin": 20,
+      "Lan": 20,
+      "Lat": 20,
+      "Lit": 20,
+      "Lot": 20,
+      "Lrn": 20,
+      "Lrt": 20,
+      "Lun": 20,
+      "Lut": 20,
+      "VidhiLin": 20
+    },
+    "prayoga": {
+      "Kartari": 200
+    },
+    "purusha": {
+      "Madhyama": 67,
+      "Prathama": 67,
+      "Uttama": 66
+    },
+    "vacana": {
+      "Bahu": 66,
+      "Dvi": 66,
+      "Eka": 68
+    },
+    "error_coordinate": {
+      "lakara": 66,
+      "purusha": 67,
+      "vacana": 67
+    },
+    "first_incorrect_step": {
+      "3": 45,
+      "4": 35,
+      "5": 86,
+      "6": 17,
+      "7": 14,
+      "9": 3
+    },
+    "accepted_answer_count": {
+      "1": 122,
+      "2": 63,
+      "3": 8,
+      "4": 6,
+      "6": 1
+    },
+    "target_coordinate_cells": 90,
+    "proposed_checkpoints": {
+      "min": 7,
+      "max": 22
+    },
+    "total_target_raw_paths": 323
+  },
+  "selection": {
+    "inventory_entries": 755,
+    "held_inventory_entries": [
+      {
+        "code": "01.0150",
+        "reason": "Previously identified accent/input repair: jabh"
+      },
+      {
+        "code": "01.0248",
+        "reason": "Previously identified accent/input repair: reb"
+      },
+      {
+        "code": "01.0253",
+        "reason": "Previously unresolved lexical identity: salr"
+      },
+      {
+        "code": "01.0922",
+        "reason": "Previously unresolved shra lexical identity"
+      },
+      {
+        "code": "01.0923",
+        "reason": "Previously unresolved lexical identity: jna"
+      },
+      {
+        "code": "01.0946",
+        "reason": "Previously identified accent/input repair: khund"
+      },
+      {
+        "code": "02.0048",
+        "reason": "Conservative hold on the other shra entry"
+      },
+      {
+        "code": "10.0481",
+        "reason": "Previously documented Cada source-reading discrepancy"
+      }
+    ],
+    "class_quotas": {
+      "Bhvadi": 27,
+      "Adadi": 27,
+      "Juhotyadi": 9,
+      "Divadi": 27,
+      "Svadi": 10,
+      "Tudadi": 27,
+      "Rudhadi": 13,
+      "Tanadi": 5,
+      "Kryadi": 28,
+      "Curadi": 27
+    },
+    "candidate_exclusion_counts": {
+      "No valid donor satisfying the prefix/suffix constraints": 18,
+      "Intermediate transliteration loses information: 'spfaS'": 1,
+      "Intermediate transliteration loses information: 'viac'": 2,
+      "Intermediate transliteration loses information: 'kfaz'": 1
+    }
+  },
+  "scope": "Ordinary 4D Kartari conjugation; one wrong tense, person, or number; VP-generated erroneous continuation",
+  "trace_contract": "All consecutive-distinct nonempty Devanagari term arrays in VP order, preserving technical markers; final word separate",
+  "first_error_definition": "First proposed checkpoint whose complete prefix is absent from every projected target path",
+  "gold_policy": "All complete target continuations sharing the valid observed prefix; no mixing branches",
+  "selection_policy": "One task per distinct dictionary entry and citation; capped balanced classes; input-seeded coordinates and donor selection; no model outcomes",
+  "status": "Generated mechanical-verification pilot; no frontier-model evaluation or difficulty claim",
+  "paid_api_calls": 0,
+  "provider_cost_usd": {
+    "Anthropic": 0,
+    "OpenAI": 0
+  },
+  "files": {
+    "tasks.json": "8e7f1aeae03e10a6d6be7da95d54cd0579a7f47e393312adf869b563c6cb7196",
+    "prompts.jsonl": "a9512a278fae4470abd1a5b5eb03e20700e0b284e09adcc282c8a743a4feab19",
+    "answers.jsonl": "68998ae16d69ab4df27341e73d654c40bf4d46dacaeb08fde7bd8a85a23d4a7f",
+    "oracle.jsonl": "1136c9b69a825288a66eaf9c063826107b11c8edad9460f0d110544598629255"
+  },
+  "generation_dependencies": {
+    "benchmarks/correction/core.py": "acc9841bc9265c12af3620a086f52ddc894714c00bd03058b812ce312d23c407",
+    "benchmarks/correction/generate.py": "5a745dc6e27b1334aa664d952abdc54751d9f35465f69bcad376bdd382d79af4",
+    "benchmarks/correction/prompt.txt": "bd9ea84ba705ebf03f51b1bcb026f3d81c41062025990305fa65e06f62469c3c",
+    "benchmarks/correction/scoring.py": "ff3191cfa7622d7e0e91902c2be2787fad725a74e0013d3203bcdfee4d1e46c5",
+    "misc/vp_cartesian_task.py": "f5bfab6f3fc27b7c83bbd6987bede73501592a9568fda32a0371bd8e23b7febd",
+    "misc/vp_campaign_candidates.py": "e8e8a049f637aebb1d7a2970102602dfa82dd13a6e393e558b5bb3804c63c0c1",
+    "finetune/prompts.py": "2f474c6a8a14b9445b1686c5f0b63ebf60f8d9fb061e67c6134ccdb4683a4a2e"
+  }
+}

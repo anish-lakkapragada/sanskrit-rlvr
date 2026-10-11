@@ -1,0 +1,96 @@
+{
+  "created_at": "2026-10-07T05:00:42.123850+00:00",
+  "objective": "Two diverse benchmarks targeting 79–81% strongest tested reference accuracy, in exact4D and5D formats.",
+  "agents": {
+    "four_d": "/root/vp_4d_overnight",
+    "five_d": "/root/vp_5d_overnight"
+  },
+  "model": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "shared_ledger": "../iterative-goal-20261006/ledger.json",
+  "provider_caps_usd": {
+    "Anthropic": 1000,
+    "OpenAI": 2000
+  },
+  "launch_spend_usd": {
+    "Anthropic": 142.26274,
+    "OpenAI": 589.15565
+  },
+  "planning_envelopes_usd_per_track": {
+    "Anthropic": 150,
+    "OpenAI": 100
+  },
+  "payments": "Coordinator only; existing shared lock and maximum-cost reservations; workers submit auditable experiment requests.",
+  "monitor": {
+    "pid": 74577,
+    "started_at": "2026-10-07T12:32:22.781171+00:00",
+    "url": "http://127.0.0.1:54974/",
+    "sound": "Glass.aiff",
+    "mode": "read-only status server; completion sounds; no paid submissions"
+  },
+  "status": "executing_fixed_pilot08_revision02",
+  "new_paid_requests": 6827,
+  "jobs": [
+    "opus-four-d-pilot-01",
+    "opus-five-d-pilot-01",
+    "astra-five-d-pilot-01-pair",
+    "opus-five-d-pilot-02",
+    "opus-four-d-pilot-02",
+    "opus-five-d-pilot-03",
+    "opus-four-d-pilot-03",
+    "opus-four-d-pilot-04",
+    "opus-five-d-pilot-04",
+    "astra-five-d-pilot-04-pair",
+    "opus-four-d-pilot-05",
+    "opus-five-d-pilot-05",
+    "opus-five-d-pilot-06",
+    "opus-five-d-pilot-07-r1-a",
+    "opus-five-d-pilot-07-r1-b",
+    "opus-four-d-pilot-06",
+    "opus-five-d-pilot-08-01",
+    "opus-five-d-pilot-08-02",
+    "opus-five-d-pilot-08-03",
+    "opus-five-d-pilot-08-04",
+    "opus-five-d-pilot-08-05",
+    "opus-five-d-pilot-08-06",
+    "astra-five-d-pilot-08-01",
+    "astra-five-d-pilot-08-02",
+    "opus-four-d-pilot-07",
+    "opus-four-d-pilot-08"
+  ],
+  "updated_at": "2026-10-07T13:24:25.654026+00:00",
+  "wording_diagnostic_jobs": [
+    "opus-cartesian-wording-01-v1",
+    "opus-cartesian-wording-01-v2-verb",
+    "opus-cartesian-wording-01-v3-sanskrit"
+  ],
+  "wording_diagnostic_requests": 108,
+  "count_note": "Snapshot of attempted primary research requests in jobs, across both providers; wording and output-cap diagnostics are counted separately. Prepared/unattempted stages do not count. None of these counts is unique benchmark N. Live ledger remains authoritative.",
+  "diagnostic_jobs": [
+    "astra-five-d-cap-development-01"
+  ],
+  "output_cap_diagnostic_requests": 60,
+  "fixed_confirmation_manifest": "five_d/pilot-07/revision-01/coordinator-execution.json",
+  "aggregate_watch": "five_d/pilot-07/revision-01/analysis-watch.json",
+  "active_paired_confirmation": "five_d/pilot-08/revision-02",
+  "paired_confirmation_manifests": [
+    "five_d/pilot-08/revision-02/coordinator-opus-execution.json",
+    "five_d/pilot-08/revision-02/coordinator-astra-execution.json"
+  ],
+  "paired_confirmation_planned_requests": 2640,
+  "paired_aggregate_watch": "five_d/pilot-08/revision-02/analysis-watch.json",
+  "paired_confirmation_attempted_requests": 1040,
+  "active_four_d_diagnostic": "four_d/ordinary-tail-08",
+  "four_d_diagnostic_job_id": "opus-four-d-pilot-06",
+  "request_count_snapshot_at": "2026-10-07T15:16:21.956317+00:00",
+  "planning_envelope_note": "Initial soft per-track estimates; superseded by the live cumulative ledger and explicit internal allocation decisions. These do not create separate provider caps.",
+  "active_four_d_diagnostic_job": "opus-four-d-pilot-08",
+  "request_counts_updated_at": "2026-10-07T15:16:21.956317+00:00",
+  "request_count_note": "Attempted primary requests in tracked run.jobs across explore/confirm/confirm_64k only; prepared unattempted excluded. Includes repeats across model pairs, not unique benchmarkN. Wording/cap diagnostics remain separate. Live ledger is authoritative.",
+  "active_four_d_diagnostics": [
+    {
+      "directory": "four_d/ordinary-tail-08",
+      "job": "opus-four-d-pilot-08"
+    }
+  ]
+}

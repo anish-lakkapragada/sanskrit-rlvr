@@ -1,0 +1,125 @@
+{
+  "received_at": "2026-10-07T00:38:09.791563+00:00",
+  "status_code": 200,
+  "headers": [
+    [
+      "date",
+      "Wed, 07 Oct 2026 00:38:09 GMT"
+    ],
+    [
+      "content-type",
+      "application/json"
+    ],
+    [
+      "transfer-encoding",
+      "chunked"
+    ],
+    [
+      "connection",
+      "keep-alive"
+    ],
+    [
+      "server",
+      "cloudflare"
+    ],
+    [
+      "openai-version",
+      "2020-10-01"
+    ],
+    [
+      "openai-organization",
+      "user-sst2oimg1nujzsqjynvllpec"
+    ],
+    [
+      "openai-project",
+      "proj_0Zn0VkM7ExpBCNnlFfb4qcPj"
+    ],
+    [
+      "x-request-id",
+      "req_140a1150c50d4e1aa06da0ce18d33c34"
+    ],
+    [
+      "openai-processing-ms",
+      "98"
+    ],
+    [
+      "x-openai-proxy-wasm",
+      "v0.1"
+    ],
+    [
+      "access-control-expose-headers",
+      "X-Request-ID"
+    ],
+    [
+      "access-control-expose-headers",
+      "CF-Ray"
+    ],
+    [
+      "cf-cache-status",
+      "DYNAMIC"
+    ],
+    [
+      "x-content-type-options",
+      "nosniff"
+    ],
+    [
+      "strict-transport-security",
+      "max-age=31536000; includeSubDomains; preload"
+    ],
+    [
+      "content-encoding",
+      "gzip"
+    ],
+    [
+      "cf-ray",
+      "a468d764abc62546-SJC"
+    ],
+    [
+      "alt-svc",
+      "h3=\":443\"; ma=86400"
+    ]
+  ],
+  "body": {
+    "id": "batch_6ac59471bd588190a914813813685ce8",
+    "object": "batch",
+    "endpoint": "/v1/responses",
+    "model": null,
+    "errors": null,
+    "input_file_id": "file-U23G6cHgQL9tC1npCWFMyY",
+    "completion_window": "24h",
+    "status": "validating",
+    "output_file_id": null,
+    "error_file_id": null,
+    "created_at": 1791333489,
+    "in_progress_at": null,
+    "expires_at": 1791419889,
+    "finalizing_at": null,
+    "completed_at": null,
+    "failed_at": null,
+    "expired_at": null,
+    "cancelling_at": null,
+    "cancelled_at": null,
+    "request_counts": {
+      "total": 0,
+      "completed": 0,
+      "failed": 0
+    },
+    "usage": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "total_tokens": 0,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "metadata": {
+      "campaign": "iterative-goal-20261006",
+      "job": "astra-hard-calibration-02",
+      "tasks_digest": "fe30b5b7ac9d8399f16c3d5e015427275b28dc51535089d8d5cfe79b712305b6",
+      "retries": "0"
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "created_at": "2026-10-06T23:42:29.461973+00:00",
+  "filename": "interaction-pilot-01.json",
+  "n": 200,
+  "seed": 20261010,
+  "cells": [
+    {
+      "construction": "causative_of_intensive",
+      "n": 100,
+      "lakaras": [
+        "Lun"
+      ],
+      "exclude_ganas": [
+        "Curadi"
+      ],
+      "exclude_rules": [
+        "7.4.94",
+        "7.4.79",
+        "7.4.80"
+      ]
+    },
+    {
+      "construction": "desiderative_of_causative_of_intensive",
+      "n": 100,
+      "lakaras": [
+        "Lut",
+        "Lit",
+        "AshirLin"
+      ],
+      "exclude_ganas": [
+        "Curadi"
+      ]
+    }
+  ],
+  "counts": {
+    "causative_of_intensive": 100,
+    "desiderative_of_causative_of_intensive": 100
+  },
+  "attempts": {
+    "causative_of_intensive": 199,
+    "desiderative_of_causative_of_intensive": 110
+  },
+  "split": "development",
+  "root_families": 180,
+  "max_per_family": 2,
+  "task_digest": "a23a6284659a08be03c5888ded133e0f371e77ea95f4125a5a118070ebc0b789",
+  "file_sha256": "d868974f2d1a9fa3e4328a518c46c43595a747a5efc053c939b289bdb76e800d",
+  "generator_sha256": "a89fc0bd9ad9fdd9de0a8f8919fb69e3f2e2747c51a96214df76c719c948094e",
+  "selection": "Uniform shuffled root visits within predeclared cells; grammatical validity and uniqueness only. No model-score filtering.",
+  "audit_status": "VP generation and transliteration checks; construction review remains required"
+}

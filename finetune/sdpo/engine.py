@@ -10,7 +10,7 @@ parameters are read-only here.
 """
 
 
-def build_engine(cfg, model_path: str):
+def build_engine(cfg, model_path: str, seed: int | None = None):
     import os
 
     # Keep the v1 EngineCore IN-PROCESS (same trick TRL colocate uses):
@@ -25,7 +25,7 @@ def build_engine(cfg, model_path: str):
         max_model_len=cfg.vllm.max_model_length,
         gpu_memory_utilization=cfg.vllm.gpu_memory_utilization,
         enforce_eager=False,  # cudagraphs ~3x decode speed; TRL colocate runs the same way
-        seed=cfg.seed,
+        seed=cfg.seed if seed is None else seed,  # per-rank offset under DDP
     )
 
 

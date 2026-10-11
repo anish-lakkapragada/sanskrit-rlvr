@@ -1,0 +1,137 @@
+ABC fairness review and a simpler post-training target
+
+Conclusion
+  The current ABC scores measure substantial task and prompt-format transfer,
+  not just whether Qwen3-4B learned the original conjugation task. C also has
+  identified meaning-template problems. A narrower forward-conjugation task
+  is a better first specialization target.
+
+  A 4B specialist outperforming a general model on a declared, bounded domain
+  is plausible. The current evidence does NOT establish that a little more
+  GRPO on the old data will beat the strongest model in report.html. The gap
+  on the original validation task is still about 35 percentage points.
+
+What “low A and C scores” means for Astra
+  A: 74.0625% pass@1; 88.0% pass@4.
+     360 of its 415 failed trials have the wrong number of analyses, 46 have
+     mismatched analyses, and 9 return an empty/invalid analysis array.
+     This is an exhaustive-set task: one correct interpretation is not enough.
+     On the 332 single-analysis questions pass@1 is 78.69%; on the 68 questions
+     with multiple analyses it is 51.47%. These are descriptive slices, not
+     permission to drop difficult questions.
+
+  C: 83.3125% pass@1; 91.0% pass@4.
+     The previously flagged 15 Janapada and 6 AsyaNivasa templates concern
+     mismatched semantic descriptions, not merely difficult suffix choices.
+     These 21 questions score 10.71% pass@1. On the other 379, pass@1 is 87.34%
+     and pass@4 is 94.72%. The flagged questions account for 75 of 267 failed
+     trials and 16 of 36 questions unsolved in four attempts.
+     This is a sensitivity analysis; the official score has not been changed.
+
+What happened to the local checkpoints
+  Official strict scores are zero for both SFT and GRPO-r3 in A, B and C.
+  A: all 1,600 responses per checkpoint fail JSON parsing. GRPO-r3 has 983
+     blank A responses. This is not a clean test of conjugation knowledge.
+  C: SFT has 1,595/1,600 invalid-format responses; GRPO-r3 has 1,585/1,600.
+
+  I rescored saved responses with an explicitly separate diagnostic parser:
+    A: extract one final JSON array, with no schema or content repair.
+    B/C: use the original VP one-answer-tag extractor, allowing surrounding
+         explanation; keep the exact same ABC accepted forms.
+
+                         SFT pass@1/@4        GRPO-r3 pass@1/@4
+    A                     0.00% / 0.00%        0.00% / 0.00%
+    B                     1.81% / 6.25%        3.06% / 10.00%
+    C                     0.25% / 1.00%        0.3125% / 1.25%
+
+  The extracted A arrays still violate the required schema. For C, relaxing
+  the wrapper only finds 5 correct GRPO-r3 answers in 1,600 trials. Formatting
+  is a confound, but fixing the parser alone does not solve the task.
+
+Why the comparison is difficult to interpret
+  - The trained task supplies a root and asks for a verb. A hides the root and
+    asks for all analyses; C starts from a nominal base and asks for taddhita
+    derivation. Neither is the original task with different sample IDs.
+  - Original v1 training explicitly requested <thinking> then <answer>.
+    The original vp_exact reward is 0.15 format + 0.85 exact answer; its format
+    component requires a thinking block. ABC requires answer-only output
+    (and JSON for A). This changes what instruction following is rewarded.
+  - The local checkpoints used 4,096 generated tokens and native thinking
+    disabled, while Astra used xHigh and a 65,536-token total output cap.
+    Native thinking disabled does not prevent ordinary generated reasoning.
+    Different budgets should be disclosed; they do not isolate model size.
+  - Model and tokenizer provenance checks passed. The independent CPU check
+    reproduced a high immediate-stop probability for one A prompt. That does
+    not substitute for rerunning familiar original prompts through the exact
+    served checkpoint as a control. A full causal serving/prompt ablation has
+    not been run, and these diagnostics should not be presented as one.
+
+What report.html actually supports
+  On the 636 original validation questions without citation+class overlap:
+    SFT 67%:             46.18% pass@1 estimate
+    GRPO-r3:             62.09% pass@1 estimate
+    Astra xHigh:         91.51% single-trial accuracy
+    Opus 5.5 xHigh:      97.48% single-trial accuracy
+
+  GRPO-r3 pass@4, estimated from its 16 saved samples per task, is 80.54% on
+  that same subset. Do not compare that directly to a competitor's pass@1.
+  The archived local pass@1 estimates average 16 samples; frontier runs have
+  one sample per question. Prompt versions and decoding also differ. These
+  are historical comparisons, not a freshly matched head-to-head experiment.
+
+  The full-pool GRPO result includes training tasks. The subset above is the
+  more useful comparison, though it has already been inspected and used in
+  development. It is not a pristine new final holdout.
+
+  The recorded SFT mixture contains 4,019 distinct morphology task IDs among
+  6,081 morphology records, mixed with 73,976 translation records. The mixture
+  label refers to token proportions, not row proportions. The GRPO training
+  file contains 5,844 prompts. Denser morphology coverage is a sensible next
+  experiment; there is no observed learning curve proving it will reach 98%.
+
+The new prototype
+  See ../../vp-simple-v1/README.txt and manifest.json.
+  20,000 train / 400 dev / 1,000 test, one forward verb per question.
+  Ordinary formation, active voice, ten lakaras, all persons and numbers.
+  Root, class and grammatical features are supplied. Reasoning is optional.
+  One exact accepted answer earns the whole reward; no thinking-format bonus.
+
+  Membership is determined by fixed hashes and quotas, never model scores.
+  Test/dev reserve whole tense categories within each chosen root family;
+  none of those cells appeared in the original task pool. Original validation
+  families are excluded from all new splits. The goal is new inflections for
+  familiar vocabulary, not a claim of wholly unseen-root generalization.
+
+  This simpler interface gives post-training a coherent target. It also gives
+  frontier models a coherent target, so it does not guarantee an easier win.
+  The initial release is a generated development prototype. Independent
+  linguistic validation of its reference keys is still required.
+
+Recommended training decision
+  First run a small original-prompt control with the exact served models.
+  Compare a morphology-focused SFT pilot with continuing GRPO-r3, using the
+  same new prompts and development questions. Include clean Qwen3-4B as a
+  control if practical. Choose by development performance, not checkpoint name.
+  Teach reliable answer production before spending heavily on exact-reward RL.
+  Preserve held-out cells when expanding training beyond the initial 20k rows.
+  A development result still near 60% would not support a near-term claim of
+  beating a 97–98% baseline. Reaching the high 80s/90s would make a larger
+  experiment more compelling, but still would not establish a final win.
+
+Sources and reproducibility
+  Quantitative diagnostics: fairness-review.json
+  Recompute: .venv/bin/python misc/abc_fairness_audit.py
+  Original comparison: benchmarks/report.html, generated 2026-10-06
+  Training: runs-final/grpo-r3-final/config.yml; finetune/rewards/vp.py;
+            prompts/v1/vp_task_eval.txt
+  C provenance: benchmarks/a-b-c/VP-Bench-ABC-Generation.md and JSONL records
+  No official raw output, answer key, prompt, score, or benchmark membership
+  was changed during this audit. No new paid inference or training was run.
+
+  Primary research context, not evidence of Sanskrit performance:
+  Qwen3 technical report: https://arxiv.org/abs/2505.09388
+  DeepSeek-R1 report: https://arxiv.org/abs/2501.12948
+  Both discuss staged post-training/distillation for smaller models. They
+  motivate testing a stronger supervised starting point rather than assuming
+  RL alone repairs a task the policy rarely solves; they do not predict this
+  checkpoint's accuracy on these Sanskrit questions.

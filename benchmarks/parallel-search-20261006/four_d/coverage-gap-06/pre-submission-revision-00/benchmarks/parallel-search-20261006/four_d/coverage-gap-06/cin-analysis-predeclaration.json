@@ -1,0 +1,44 @@
+{
+  "created_at": "2026-10-07T14:07:27.846376+00:00",
+  "job_id": "opus-four-d-pilot-07",
+  "provider": "Anthropic",
+  "phase": "confirm_64k",
+  "model": "claude-opus-5-5",
+  "effort": "xhigh",
+  "max_output_tokens": 65536,
+  "n": 46,
+  "families": 46,
+  "tasks_digest": "4e12c657f72893aecf8158a42bb1cfb654488aad033f2c224e7798d701360f9d",
+  "files": {
+    "cin-candidate-inputs.json": "93b994f50b4f8ea898de49020f36fd685056ea018091826897803f5054f2e68a",
+    "cin-discovery-design.json": "a73f9ab5bc8f41f59adecf29518f507d9ebcab69984d945458edd995d7b89918",
+    "cin-branches.json": "db2abca3e95bea9ee437eddca0ad6f7ae24e9f9586c550e424a1846d776ac884",
+    "cin-source-receipt.json": "cfd13c1d4d58de8bacd289d6d8f3f1f0f6ebbb5bea36b1c68d13e2bf8364796e",
+    "cin-source-audit.json": "46852d3e33f7d12ad886493c5c9a9e713f790eeb45d7c41a33215f006a88db7d",
+    "cin-novelty-audit.json": "4433eb9b2997355626e943f72aa9d5c14e5c0628630ef2827171716fb9d06504"
+  },
+  "dependencies": {
+    "misc/vp_4d_gap06_analyze.py": "378406da99294369fefa77a45183c8aeec987e064f2f9d2ae3c62ecaa9e2157d",
+    "misc/vp_cartesian_prompt_v1.py": "1cdf3930d2e6b5bf9994a0a5fd25918a2e038b6dfbbcc9a9bab1fb59ddbfcfff",
+    "misc/vp_goal_stats.py": "afa7cd2ff3e4e89994db5b682adc3141608110ec6cdefdb739884e27be3d0d95"
+  },
+  "completeness_gate": "Settle and collect the entire46-question named job before opening results; verify exact inputs, request protocol and scored metadata. No partial analysis, retries or score stopping.",
+  "estimands": "Report immutable all-request and usable accuracies separately, missing-response identification bounds, completion status and descriptive fixed gana/branch cells.",
+  "trigger": {
+    "minimum_usable": "N minus2",
+    "minimum_wrong_completed_families": 8,
+    "minimum_error_ganas": 3,
+    "minimum_error_source_branches": 2,
+    "meaning": "A distributed error signal warrants considering a later broad mixture/source review only. No final-target claim or individual-error selection; all N must settle before analysis."
+  },
+  "uncertainty": "One question per family: unstratified family sandwich equals the sample Bernoulli SE. Also report nominal Wilson95 intervals. No claimed randomized population inclusion probabilities or independence across morphologically related families. A zero empirical SE at all-success/all-failure is degeneracy, not certainty.",
+  "scope": "Keep all46 raw questions in the primary analysis. Any new source issue requires a separate symmetric audit over successes and failures; no outcome-driven item dropping.",
+  "limits": [
+    "All46 are Lun/Karmani/Prathama/Eka, with eight classes and no matched model controls.",
+    "At79% the nominal iidSE with46 questions is about6.0pp; this is discovery, not final calibration.",
+    "Only80test tuples/80families under this conservative predicate; no500+ orsub1pp claim.",
+    "Fresh exact tuples do not imply globally unseen lexical families. Older High/4096 evidence is a separate fidelity."
+  ],
+  "no_paid_calls": true,
+  "benchmark_ready": false
+}

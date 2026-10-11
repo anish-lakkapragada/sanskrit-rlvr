@@ -1,0 +1,33 @@
+{
+  "created_at": "2026-10-08T00:00:46.852266+00:00",
+  "scope": "Prospective bounded spelling policy for candidate1250v2; no paid-release registration or final qualification.",
+  "candidate_tasks_sha256": "e7800eb7093a7531dbd92b6965fdbfc90a5260d506b78d698fa586cc7319a1e5",
+  "public_prompts_sha256": "e59ae6559a77d6dbc3c2c76d7069273681e2a9ec7b5b8052db244491b28b3ccb",
+  "alias_policy_sha256": "b56b2660ddc23b33e6a55596ed49c37e05d2bc087d098b334e97e2f9187352e3",
+  "scorer_sha256": "3321da0a199c6693a553a05a9df415edf061de8fca17c527f7e910ddb6c4043d",
+  "independent_review_sha256": "1ba6e741984982c1e50a4803783c2a0237f5ad66f9630df1cdc370ca0e95d28b",
+  "canonical_forms": 2248,
+  "additional_task_specific_aliases": 2264,
+  "tasks_with_aliases": 829,
+  "flagged_residual_context_tasks": 53,
+  "primary_matching": "Same one-answer extractor and NFC normalization; exact per-item canonical plus predeclared whitelist membership.",
+  "scores_to_preserve": [
+    "unchanged canonical-only",
+    "frozen whitelist",
+    "separately labeled source-adjudicated"
+  ],
+  "mandatory_gate": "Independently adjudicate every usable parsed unrecognized answer before it contributes to a linguistic-error or advancement claim. Keep unresolved cases explicit; do not drop tasks. Apply established corrections symmetrically to every affected task/model, including recognized answers where implicated.",
+  "completion_policy": "Report all-request and usable-answer denominators, refusals, truncations, errors and unparsed outputs separately. No difficulty claim based only on missing or unusable answers.",
+  "execution_requirement": "Future execution manifest must pin this adoption plus tasks, prompts, source policy, scorer and all extraction/rule dependencies. Recheck before paid submission and full-panel analysis.",
+  "parent_verification": {
+    "canonical_and_alias_positives": 4512,
+    "unrecognized_to_review": 1250,
+    "unknown_id_rejected": true,
+    "changed_dependency_rejected": true
+  },
+  "full_paradigm_certification": false,
+  "precision_requirement_resolved": false,
+  "test_model_outputs_read": false,
+  "paid_calls": 0,
+  "benchmark_ready": false
+}

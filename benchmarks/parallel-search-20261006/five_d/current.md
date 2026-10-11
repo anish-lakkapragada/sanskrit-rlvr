@@ -1,0 +1,27 @@
+# Current five-coordinate benchmark research
+
+**Alternative N options are ready:** input-only witnesses at 3,000 / 3,600 / 4,200 questions preserve the recipe, voice and tense proportions with documented rounding. They cover 949 / 971 / 971 families; the 3,000 class quota leaves 22 Curadi families out. [Allocation comparisons and pair counts](pilot-08-scale-options-policy21/README.md). These are independently optimized aggregate options, not final membership or a choice of N.
+
+**Policy 21 scale feasibility is refreshed:** the unchanged 4,800-question composition reaches all 971 eligible test families with exact PN balance. Its objective remains 971 families / 1,291 repeated aorists / 27,646 squared loads. Supply loses 54 san-aorist tuples but no families; detailed pair weights change. [Current input-only witness](pilot-08-scale-policy21/README.md). No final task membership or N is approved.
+
+**Pilot 08 revision 02 confirmation is running; no final benchmark is qualified.** It contains 2,400 fresh exact development tuples from 670 families and 240 same-input Astra questions from 116 families. The common prospective ceiling is 65,536 tokens at xhigh. All six Opus 400 and two Astra 120 jobs must settle before the frozen analyzer reads outcomes.
+
+Policy 21 excludes single-san trace 7.4.7 where its ṇi-before-caN condition is absent. An input-only, deterministic two-tuple swap repairs the affected tṛp aorist while preserving all families, global and per-chunk grammar/PN quotas, subset pair support and all three optimal allocation objectives. Exactly 2 IDs change per panel; all original artifacts remain immutable. [Current preparation](pilot-08/revision-02/README.md), [handoff](pilot-08/revision-02/preflight-handoff.json), [repair proof](pilot-08/revision-02/minimal-repair-audit.json), [frozen analyzer declaration](pilot-08/revision-02/analysis-predeclaration.json).
+
+The approved mixture remains 56% yaN→Ric, 24% yaNluk→Ric, 20% san; 45% aorist, 55% across the other nine lakaras; 10% passive; all ten classes, with Curadi 145 and Bhvadi 1,535. Allocation covers 670 families, with 560 additional aorists and squared loads 9,994. Caps are eight total and five aorists per family, each other tense at most once. The subset retains 43 independent-family repeated-aorist pairs plus mixed and non-aorist controls. Its nonuniform family enrichment makes cost/completion calibration and covariance conditional diagnostics, not unbiased population estimates.
+
+All 2,400 and 240 forms regenerate under policy 21. Exact two-campaign novelty, prompt hashes, unchanged allocation, all eight partitions and five analyzer tests pass. There are no new contexts beyond the broad reviewed source inventory. [Updated census evidence](policy21-supply-mask-update.json) removes 90 development and 54 test san tuples but no eligible families. The policy 21 witness above supersedes the old allocation. Policy 20 statistical forecasts remain historical context; current confirmation evidence and a full candidate audit are required before final membership freeze.
+
+Earlier full 07 confirmation failed its target screen. The new confirmation uses an unchanged prospective 79–81% screen for all-request and usable Opus accuracy and both missing-response bounds. The paired 240 diagnostic informs reference ordering, cost, completion and covariance. Future final evaluation still requires both iid and family-sandwich SE below one percentage point for both models, with fixed N chosen before final answers. [Preserved forecast and funding discussion](current-policy20-historical.md).
+
+The [nonoperative 64k runner proposal](release64k-migration-proposal-01.md) separates fixed question membership from smaller payment stages, preserves legacy records and caps, and specifies reserve migration plus complete-cohort visibility checks. It is an implementation review, with no code or authorization changes.
+
+Hard cumulative caps remain $1,000 for Anthropic and $2,000 for OpenAI. Token tails, actual 64k behavior, family dependence and protected-reserve decisions can prevent completion. Final N, membership and funding remain unapproved.
+
+The task remains a cited dictionary verb entry, four grammatical coordinates and one ordered recipe from a finite menu, requesting one accepted Devanagari form. Sanskrit renderer v3 is unchanged. There are no prefixes, separately chosen pada, synthetic roots or nominal/multiple-answer tasks. All development families were previously exposed; legacy 6,687-item analysis inspected all dictionary families, including later reserved test families. Current exact-tuple novelty is not globally unseen-root evidence. RL families remain separate. No held-out model answers or paid calls were used by this worker.
+
+
+Operational preparation: [isolated common64k prototype](release64k-prototype-01/README.md) is ready for review with 53 offline checks and an exact patch. It is not installed and authorizes no evaluation, membership or reserve changes. Report/dashboard partial-score controls and legacy resume are included. See [handoff](release64k-prototype-01/handoff.json).
+
+
+Export/RL preparation: [isolated contract review](release-contract-review-02/README.md) passes 12 offline checks on four development inputs. It identifies the remaining frozen-prompt and binary-reward integration in the live trainer, and demonstrates separate public/private assets plus split/menu enforcement. No training or final membership is created.

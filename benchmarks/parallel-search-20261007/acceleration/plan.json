@@ -1,0 +1,224 @@
+{
+  "created_at": "2026-10-07T22:08:51.757235+00:00",
+  "authorization": "User requested faster execution within existing provider caps.",
+  "provider": "Anthropic",
+  "phase": "confirm_64k",
+  "transport": "direct",
+  "model": "claude-opus-5-5",
+  "effort": "xhigh",
+  "max_output_tokens": 65536,
+  "maximum_concurrency": 8,
+  "extra_cost_ceiling_micro": 100000000,
+  "pool_id": "simple-search-direct-20261007",
+  "sources": {
+    "four_d": {
+      "job": "opus-simple4d-90-01",
+      "tasks_digest": "73911558b399e33291533e26d26823d1f0d8eea3dea46a5db90c7e764decfaeb",
+      "requests_digest": "002a83b2dcb9becc473fb41a9475c037ca96c8e224e4134ff0491d4520d6dd67",
+      "status": "in_progress"
+    },
+    "modification": {
+      "job": "opus-modification-01",
+      "tasks_digest": "dc0e64cf29579ad1a24b81860e69c45e01a2e94b7703705778fa591cc3b89d79",
+      "requests_digest": "d436232381d0fd161fceef2001179583e028b764e01372d294cf08b5ce9b3e42",
+      "status": "in_progress"
+    },
+    "control": {
+      "job": "opus-modification-control-01",
+      "tasks_digest": "53a70302f9121bd96ad189f70aed76460c2bc1c8b1aa2a749fb435a801d12d53",
+      "requests_digest": "1f33b7837d8788ba61702a809341d46405372056d656d7cc7374f5d4deb05c15",
+      "status": "in_progress"
+    }
+  },
+  "stages": [
+    {
+      "id": "opus-fast-simple4d-01",
+      "arm": "four_d",
+      "start": 0,
+      "stop": 40,
+      "path": "benchmarks/parallel-search-20261007/acceleration/inputs/opus-fast-simple4d-01.json",
+      "sha256": "f6c610309282de10bbd5a4a3e2f4cc98253e63c67f0fafd42dd297b3ff36a955",
+      "tasks_digest": "ee55e5c0e056ab042ef743d68e143a89760daebc9a36ac1f35bc17182ff12d99",
+      "n": 40
+    },
+    {
+      "id": "opus-fast-modification-01",
+      "arm": "modification",
+      "start": 0,
+      "stop": 40,
+      "path": "benchmarks/parallel-search-20261007/acceleration/inputs/opus-fast-modification-01.json",
+      "sha256": "d0ee44470b0aa412fd0a6e0e5f492372bb01e9da70222ee2852dc33b9974ecc3",
+      "tasks_digest": "67ada11b1c4def2c8df5950bd7b03ba63a806a4608543ffb733bb2b283d7ecde",
+      "n": 40
+    },
+    {
+      "id": "opus-fast-control-01",
+      "arm": "control",
+      "start": 0,
+      "stop": 40,
+      "path": "benchmarks/parallel-search-20261007/acceleration/inputs/opus-fast-control-01.json",
+      "sha256": "313bd9c8cc55e03f0dbaa9f4eecac45f9dfa8d5deb81ce8c91472f257d02be88",
+      "tasks_digest": "77faaa7f1addc00087a4a9e943b1b2b9e9390eebc81a6dffc4460ff6d8588c0a",
+      "n": 40
+    },
+    {
+      "id": "opus-fast-simple4d-02",
+      "arm": "four_d",
+      "start": 40,
+      "stop": 80,
+      "path": "benchmarks/parallel-search-20261007/acceleration/inputs/opus-fast-simple4d-02.json",
+      "sha256": "38e57f22d68983e0840c1e11ae54aec0bfc6bba84a25579977c92666c1b3456a",
+      "tasks_digest": "f5485aebe80f70590dc3b87336064656f1710ccc739f67bd325e3bcb7c812f18",
+      "n": 40
+    },
+    {
+      "id": "opus-fast-modification-02",
+      "arm": "modification",
+      "start": 40,
+      "stop": 80,
+      "path": "benchmarks/parallel-search-20261007/acceleration/inputs/opus-fast-modification-02.json",
+      "sha256": "52334c47e089745bca7a48826213701118ea6f2ec6544c725f4ca5c6d67645c9",
+      "tasks_digest": "41adfc0d7e0d5d3cc08dbeb5a06f196b12168bb5dc4aeb3fbd9bb97bf9ee9f2c",
+      "n": 40
+    },
+    {
+      "id": "opus-fast-control-02",
+      "arm": "control",
+      "start": 40,
+      "stop": 80,
+      "path": "benchmarks/parallel-search-20261007/acceleration/inputs/opus-fast-control-02.json",
+      "sha256": "f42f6ece67c3a76071655a2e63532209f8da6d06f0bc9896aef440e3f002f8be",
+      "tasks_digest": "539595c08d68756be6455a0c313271bf1eb72f68f1068cb52bc9274a059241eb",
+      "n": 40
+    },
+    {
+      "id": "opus-fast-simple4d-03",
+      "arm": "four_d",
+      "start": 80,
+      "stop": 120,
+      "path": "benchmarks/parallel-search-20261007/acceleration/inputs/opus-fast-simple4d-03.json",
+      "sha256": "610be62c464da0362186552d90a15900ef924a5ceff5a4ef3c0d08ba4b453457",
+      "tasks_digest": "8141e153dde293126afa9c7891ce94d01e1c9d54f74835376837cfb27b5cccbd",
+      "n": 40
+    },
+    {
+      "id": "opus-fast-modification-03",
+      "arm": "modification",
+      "start": 80,
+      "stop": 120,
+      "path": "benchmarks/parallel-search-20261007/acceleration/inputs/opus-fast-modification-03.json",
+      "sha256": "f226e488ffba52f196be7835c58e6cc17a9ce1aed66e602753120a2ae2ef7921",
+      "tasks_digest": "9d8104d9638f2e1a954ec7f8372ca77b301e0e27886f8b64908c81fd7939e468",
+      "n": 40
+    },
+    {
+      "id": "opus-fast-control-03",
+      "arm": "control",
+      "start": 80,
+      "stop": 120,
+      "path": "benchmarks/parallel-search-20261007/acceleration/inputs/opus-fast-control-03.json",
+      "sha256": "0cab0a83db9f5fe549da287f66060eb071c9e26a1fc776040237e6c92334914d",
+      "tasks_digest": "16a12bd191048e93f86df6fd619fb4839a9a525cb81397c8b506a7ccaf52e901",
+      "n": 40
+    },
+    {
+      "id": "opus-fast-simple4d-04",
+      "arm": "four_d",
+      "start": 120,
+      "stop": 160,
+      "path": "benchmarks/parallel-search-20261007/acceleration/inputs/opus-fast-simple4d-04.json",
+      "sha256": "80b54ab20938c81924136d6aca4f319b34844fab9d2538ec87ef16c40de6a8e8",
+      "tasks_digest": "7a48ca9d68d2c9e65c623b1317e921544a37f26952aa06f845f029f287076f62",
+      "n": 40
+    },
+    {
+      "id": "opus-fast-modification-04",
+      "arm": "modification",
+      "start": 120,
+      "stop": 160,
+      "path": "benchmarks/parallel-search-20261007/acceleration/inputs/opus-fast-modification-04.json",
+      "sha256": "d5a25ca26eafd16130c440b7425e4cfaa2aa4baa7b72c7fe4b69a5bb90911a90",
+      "tasks_digest": "d202939cdf8c783aa86f3fadeb59cc99e44874fe53c89f6e37b43c484867b33b",
+      "n": 40
+    },
+    {
+      "id": "opus-fast-control-04",
+      "arm": "control",
+      "start": 120,
+      "stop": 160,
+      "path": "benchmarks/parallel-search-20261007/acceleration/inputs/opus-fast-control-04.json",
+      "sha256": "a72b8e788f2fc8028fe4c367614cb63c0c3805787bc4a091a7148d221aa992f1",
+      "tasks_digest": "00c2d70479928cb2356215da443ae464c1e982c67adbdc3132f2dcc643595273",
+      "n": 40
+    },
+    {
+      "id": "opus-fast-simple4d-05",
+      "arm": "four_d",
+      "start": 160,
+      "stop": 200,
+      "path": "benchmarks/parallel-search-20261007/acceleration/inputs/opus-fast-simple4d-05.json",
+      "sha256": "e13a55556d824ddc7dbd938d1d57582c1d90b25fca826b25a08e8b2252468a6a",
+      "tasks_digest": "e9995635eb93475e46c4a2aa55e9e7a43cc78438ace9dcba8f32c166f00d551b",
+      "n": 40
+    },
+    {
+      "id": "opus-fast-modification-05",
+      "arm": "modification",
+      "start": 160,
+      "stop": 200,
+      "path": "benchmarks/parallel-search-20261007/acceleration/inputs/opus-fast-modification-05.json",
+      "sha256": "a426fa3014e0662db29b0a97cad130155df8d85f233442d184797d6ee9be6a61",
+      "tasks_digest": "2b0f4d9ee85e70d16bfc084288dc08d925676af875b520a90b260b8ad71f08c1",
+      "n": 40
+    },
+    {
+      "id": "opus-fast-control-05",
+      "arm": "control",
+      "start": 160,
+      "stop": 200,
+      "path": "benchmarks/parallel-search-20261007/acceleration/inputs/opus-fast-control-05.json",
+      "sha256": "bce6f09478c278f88fdb3abc7e4ad3124b39ce80c52a2919cb2fa0a34037d3ba",
+      "tasks_digest": "2b3b8c076773e50865e9dbb2a30617f5e168e86be6472cc36337886013880d00",
+      "n": 40
+    }
+  ],
+  "primary_transport": "direct for all 600 frozen questions; original batches are archived separately",
+  "analysis": "Same frozen analysis functions. Full200 creation panel and full200+200paired panels only; no interim accuracy stopping.",
+  "cancellation": "After all direct questions are settled, request cancellation of any unfinished original batches. Retain their reservations until authoritative reconciliation.",
+  "stopping": "Stop on unknown submission, incomplete usage, changed dependencies, additional$100 ceiling or global cap. Never retry or claim partial completion as full.",
+  "old_reserve_allocation": {
+    "Anthropic": {
+      "hard_final": 1000,
+      "cap_check": 100,
+      "bench_final": 0
+    },
+    "OpenAI": {
+      "hard_final": 1000,
+      "cap_check": 100,
+      "bench_final": 1000
+    }
+  },
+  "new_reserve_allocation": {
+    "Anthropic": {
+      "hard_final": 1000,
+      "cap_check": 0,
+      "bench_final": 0
+    },
+    "OpenAI": {
+      "hard_final": 1000,
+      "cap_check": 100,
+      "bench_final": 1000
+    }
+  },
+  "dependencies": {
+    "misc/vp_simple_search_fast.py": "43896351c1dc7b9c518518113f286de15268b90cb065c00e734be3e001605705",
+    "misc/vp_goal.py": "c317278d15f3a05e3948e22678a346cc33a7274122f9ac5f66ed082e3373b65d",
+    "misc/vp_goal_validate.py": "a5461df5d85dfd34875ece368ede87e957b7a70a10021667eb5b4f03af06791d",
+    "misc/vp_simple_search_analyze.py": "cbbb64658f102f801c3095f16ecc74b673508e4ccba9763376433667cb85f0e7",
+    "misc/vp_simple_search_fast_analyze.py": "433f30acd8ce0d62a788ad0954c3aeabcd11d3dd7d149d560e041e0c13618a1e",
+    "benchmarks/parallel-search-20261007/acceleration/vp_goal.before.py": "b2d0907f69ac1e86af32cb138f40e5ab0225efadaa56857ddb780378aa0123c5",
+    "benchmarks/parallel-search-20261007/coordinator-registration.json": "84725448db8a64bc9eef281cbdc59035fa094bcbe70d9246a9420511050ed231",
+    "benchmarks/parallel-search-20261007/source-sensitivity-predeclaration.json": "afba5a4e88b28f9a9c713e052d1b282a00acd8b451d18ed208a001980644e57f"
+  },
+  "benchmark_ready": false
+}

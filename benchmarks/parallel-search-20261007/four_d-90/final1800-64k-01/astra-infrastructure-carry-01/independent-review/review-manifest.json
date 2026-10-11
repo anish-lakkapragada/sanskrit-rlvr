@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-10-08T01:48:47.715206+00:00",
+  "kind": "Pinned independent all-attempted mechanical review, not executed on real results",
+  "run_id": "original4d-final1800-64k-01",
+  "execution_plan_sha256": "69201de2ede7e2ee2168ff1180324875aa22d4c3e34c385e58894ba110ad4967",
+  "continuation_amendment_sha256": "b530990abfa4aec82f4462de2d38512a8bf4523f2c29b7adec225eae7b39a6e2",
+  "fixed_n_per_provider": 1800,
+  "expected_real_responses": 3599,
+  "acknowledged_failure": {
+    "index": 837,
+    "request_digest": "6a74664f38666843ba8294ea092df3c0fcb478a46fdd72dafb00f473dc2aa511",
+    "intent_sha256": "f5bb3b5dcf7e93684c8ad268695a449c369ca804e0136fb0bc4530b76a5f1219",
+    "error_sha256": "c5b03fdf7606ade5f79d1e638100f6e286412e8955d66cf0b3ee2bae54d3504a"
+  },
+  "review_files": {
+    "review.py": "ec857206ea358035f3bbb1b64206615c4a614f9a9cb3f5ea8b013b3557a7a125",
+    "test_review.py": "d98bcf61d3f0e851e8cbb2b5090359a0c21628b0e06fe03586539dea09a3b19a",
+    "README.md": "8015cb5e5559c3fcbb38898550b793eba2a04514ed5518a2bc74044a9946b8cb",
+    "preparation-test-receipt.json": "aebdbd583b677f20b950c5aa42b15287a3e35d5225fc9cd0f186ff8cd59ccd3b",
+    "../analysis-review.json": "47185790a14cb3d50b860d6aa36a27b11edf58f31797275c85d62af5b93fbab3",
+    "../analyze.py": "8d2f8cc7463ca55e19b6f953f148f4368e8758c6cff1be501b9b1169e1e33ab4",
+    "../test_analyze.py": "ab21190dbdb69c3af8bcdca224df26564bacb01ab38e6032c3d130d7117fe6d5"
+  },
+  "preserved_original_reviewer_sha256": "78870a1b03e17a5ebea4d452354e56e31bb607e9246bb1d7bdb8254eef7d3be3",
+  "read_gate": "All fixed1800 attempts, exact837 alone unknown, all1799 other OpenAI and1800Anthropic usages, no novel failures, complete matching additive analysis scalar header before any answer-bearing reads.",
+  "no_paid_calls_or_ledger_writes": true,
+  "benchmark_ready": false
+}

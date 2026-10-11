@@ -1,0 +1,959 @@
+{
+  "created_at": "2026-10-07T23:45:06.732064+00:00",
+  "scope": "Bounded source reading/classification clarification only; no model outcomes, paid calls, frozen-input or key changes.",
+  "source_snapshots": [
+    {
+      "id": "SK1938",
+      "path": "benchmarks/parallel-search-20261007/four_d-90/reading-clarification-sources/siddhanta-kaumudi-1938-scan-242.jpg",
+      "sha256": "68388a75bbd8176e1e0954ba8aaafbc627a065d79a5d57eb3d382b7448ff2181",
+      "url": "https://jainqq.org/explore/002377/242",
+      "evidence": "Printed p.238; visually checked short छदयति in the छद अपवारण alternative entry."
+    },
+    {
+      "id": "Kshira",
+      "path": "benchmarks/parallel-search-20261007/four_d-90/reading-clarification-sources/kshira-tarangini-scan-390.jpg",
+      "sha256": "2eae80168ce453d1e28742bd496764ea08431411b27ad9576a56e0e2ffa9f079",
+      "url": "https://jainqq.org/explore/002433/390",
+      "evidence": "Printed p.333, entry321; visually checked छदयति and contrast with छादयति for other entries."
+    },
+    {
+      "id": "Madhaviya_marga",
+      "path": "benchmarks/parallel-search-20261007/four_d-90/test-hard-family-sources/madhaviya-scan-600.jpg",
+      "sha256": "5170ff7d280611843f7d12b536bf541f0e0e7318d9207086d4c528a2ff16de03",
+      "url": "https://sanskritlibrary.org/Sanskrit/Vyakarana/Dhatupatha/mdhvscan/disp/index.php?page=600",
+      "evidence": "Printed p.546, entry69; separate मार्ग root reading and मार्गयति, with संस्कारगत्योः sense."
+    },
+    {
+      "id": "Madhaviya_chada",
+      "path": "benchmarks/parallel-search-20261007/four_d-90/test-hard-family-sources/madhaviya-scan-629.jpg",
+      "sha256": "46c14baa02385f0e0060d3fbcd7e77cce0fc7ca6d640324776503e8b7d112d63",
+      "url": "https://sanskritlibrary.org/Sanskrit/Vyakarana/Dhatupatha/mdhvscan/disp/index.php?page=629",
+      "evidence": "Printed p.575, entry319; छद अपवारणे alternative in the adanta section."
+    },
+    {
+      "id": "Madhaviya_index",
+      "path": "benchmarks/parallel-search-20261007/four_d-90/reading-clarification-sources/madhaviya-index.html",
+      "sha256": "d3de895fcbb69aaf0f98cbb116aa173393806490452972aa1b15cfe4204c317f",
+      "url": "https://sanskritlibrary.org/Sanskrit/Vyakarana/Dhatupatha.old/mdhvindx/disp/mdhv_index.html",
+      "evidence": "Scholarly index, not an independent primary commentary; distinguishes छद from छद् + marker अ and indexes मार्ग as मार्ग् + marker अ."
+    }
+  ],
+  "reviewed_input": {
+    "path": "benchmarks/parallel-search-20261007/four_d-90/candidate-1250-source-filtered/tasks.json",
+    "sha256": "d271d2a7ba9ad7b8b3caaf3f945cf7251c06f47aabfca41ec5c8e499481cf97b"
+  },
+  "prior_review_sha256": "4ecfcf8cdc9dec5e1233f51c8c651af8832c1f98ac1a197c77d167150bbbdac6",
+  "findings": {
+    "10.0481": {
+      "decision": "Retain under explicit literal-final-a adanta lexical declaration.",
+      "public_declaration": "Dhatu code10.0481 is literal-final-a छद (SLP1 Cada), Curadi, अपवारणे; the final अ is retained lexical material, not an anubandha. Follow the adanta reading attested in Kshiratarangini entry321 and the1938 Siddhantakaumudi printed p.238. This is distinct from10.0370 Cada~ and10.0062 Cadi~.",
+      "direct_evidence": "Both newly cached printed sources explicitly give short छदयति. The earlier Wikisource long-vowel transcription is not matched by the checked printed SK edition.",
+      "classification": "Directly source-supported lexeme/stem; remaining individual finite forms are rule-derived, not all independently attested.",
+      "known_lexically_licensed_missing_branch_demonstrated": false,
+      "do_not_add": "Do not add a blanket छादय- branch solely from the Wikisource transcription or another छद lexeme.",
+      "selected_tuple_count": 47,
+      "full_paradigm_certified": false
+    },
+    "10.0108": {
+      "decision": "Prospectively exclude uniformly from the other-adanta-aorist stratum; parent chose a separate candidate version with4replacements.",
+      "source_lexeme_supported": true,
+      "source_certified_adanta": false,
+      "reason": "Madhaviya p.546 supports a separate मार्ग root and मार्गयति for संस्कारगत्योः, but does not establish this as a literal-a adanta entry. Its scholarly index separates मार्ग् + marker अ. Engine spelling ending in a is insufficient to certify the grammatical sampling category.",
+      "classification": "Allocation-label/source-mapping issue; no concrete additional aorist answer branch established.",
+      "excluded_scope": {
+        "code": "10.0108",
+        "lakara": "Lun",
+        "sampling_cell": "other_adanta_aorist"
+      },
+      "not_claimed": "Not a finding that मार्ग is an invalid root, nor that all its current aorist answers are wrong.",
+      "marker_sensitivity_diagnostic": [
+        {
+          "purusha": "Prathama",
+          "vacana": "Eka",
+          "gold": {
+            "mArga": [
+              "amamArgad",
+              "amamArgat",
+              "amamArgata"
+            ],
+            "mArga~": [
+              "amamArgad",
+              "amamArgat",
+              "amamArgata"
+            ]
+          },
+          "equal": true
+        },
+        {
+          "purusha": "Prathama",
+          "vacana": "Dvi",
+          "gold": {
+            "mArga": [
+              "amamArgatAm",
+              "amamArgetAm"
+            ],
+            "mArga~": [
+              "amamArgatAm",
+              "amamArgetAm"
+            ]
+          },
+          "equal": true
+        },
+        {
+          "purusha": "Prathama",
+          "vacana": "Bahu",
+          "gold": {
+            "mArga": [
+              "amamArgan",
+              "amamArganta"
+            ],
+            "mArga~": [
+              "amamArgan",
+              "amamArganta"
+            ]
+          },
+          "equal": true
+        },
+        {
+          "purusha": "Madhyama",
+          "vacana": "Eka",
+          "gold": {
+            "mArga": [
+              "amamArgaH",
+              "amamArgaTAH"
+            ],
+            "mArga~": [
+              "amamArgaH",
+              "amamArgaTAH"
+            ]
+          },
+          "equal": true
+        },
+        {
+          "purusha": "Madhyama",
+          "vacana": "Dvi",
+          "gold": {
+            "mArga": [
+              "amamArgatam",
+              "amamArgeTAm"
+            ],
+            "mArga~": [
+              "amamArgatam",
+              "amamArgeTAm"
+            ]
+          },
+          "equal": true
+        },
+        {
+          "purusha": "Madhyama",
+          "vacana": "Bahu",
+          "gold": {
+            "mArga": [
+              "amamArgaDvam",
+              "amamArgata"
+            ],
+            "mArga~": [
+              "amamArgaDvam",
+              "amamArgata"
+            ]
+          },
+          "equal": true
+        },
+        {
+          "purusha": "Uttama",
+          "vacana": "Eka",
+          "gold": {
+            "mArga": [
+              "amamArgam",
+              "amamArge"
+            ],
+            "mArga~": [
+              "amamArgam",
+              "amamArge"
+            ]
+          },
+          "equal": true
+        },
+        {
+          "purusha": "Uttama",
+          "vacana": "Dvi",
+          "gold": {
+            "mArga": [
+              "amamArgAva",
+              "amamArgAvahi"
+            ],
+            "mArga~": [
+              "amamArgAva",
+              "amamArgAvahi"
+            ]
+          },
+          "equal": true
+        },
+        {
+          "purusha": "Uttama",
+          "vacana": "Bahu",
+          "gold": {
+            "mArga": [
+              "amamArgAma",
+              "amamArgAmahi"
+            ],
+            "mArga~": [
+              "amamArgAma",
+              "amamArgAmahi"
+            ]
+          },
+          "equal": true
+        }
+      ],
+      "diagnostic_limit": "This is a same-gana marker-only VP diagnostic, not source licensing and not the different dictionary entry10.0384 mArga~ / anvezaRe / Adhrshiya.",
+      "selected_tuple_count": 4
+    }
+  },
+  "affected_items": {
+    "10.0108": [
+      {
+        "id": "cart4-f7f2309da497511216496756",
+        "morphology": {
+          "lakara": "Lun",
+          "prayoga": "Kartari",
+          "purusha": "Madhyama",
+          "vacana": "Dvi"
+        },
+        "gold_slp1": [
+          "amamArgatam",
+          "amamArgeTAm"
+        ]
+      },
+      {
+        "id": "cart4-6dd1588a4b1640d80703ee34",
+        "morphology": {
+          "lakara": "Lun",
+          "prayoga": "Kartari",
+          "purusha": "Prathama",
+          "vacana": "Bahu"
+        },
+        "gold_slp1": [
+          "amamArgan",
+          "amamArganta"
+        ]
+      },
+      {
+        "id": "cart4-bdb23e2c7f64ec730712a631",
+        "morphology": {
+          "lakara": "Lun",
+          "prayoga": "Kartari",
+          "purusha": "Madhyama",
+          "vacana": "Eka"
+        },
+        "gold_slp1": [
+          "amamArgaH",
+          "amamArgaTAH"
+        ]
+      },
+      {
+        "id": "cart4-3d2d6f531518d162ce109512",
+        "morphology": {
+          "lakara": "Lun",
+          "prayoga": "Kartari",
+          "purusha": "Uttama",
+          "vacana": "Dvi"
+        },
+        "gold_slp1": [
+          "amamArgAva",
+          "amamArgAvahi"
+        ]
+      }
+    ],
+    "10.0481": [
+      {
+        "id": "cart4-4cafebf7d68ed33b06804134",
+        "morphology": {
+          "lakara": "Lut",
+          "prayoga": "Kartari",
+          "purusha": "Prathama",
+          "vacana": "Dvi"
+        },
+        "gold_slp1": [
+          "CadayitArO"
+        ]
+      },
+      {
+        "id": "cart4-3dd3334e1b0dd022ed2febb0",
+        "morphology": {
+          "lakara": "Lat",
+          "prayoga": "Kartari",
+          "purusha": "Madhyama",
+          "vacana": "Eka"
+        },
+        "gold_slp1": [
+          "Cadayase",
+          "Cadayasi"
+        ]
+      },
+      {
+        "id": "cart4-88cb83d1080b9c49c2c2563d",
+        "morphology": {
+          "lakara": "Lrt",
+          "prayoga": "Kartari",
+          "purusha": "Uttama",
+          "vacana": "Dvi"
+        },
+        "gold_slp1": [
+          "CadayizyAvaH",
+          "CadayizyAvahe"
+        ]
+      },
+      {
+        "id": "cart4-a419861aa4caff3eab8e5533",
+        "morphology": {
+          "lakara": "Lrn",
+          "prayoga": "Kartari",
+          "purusha": "Uttama",
+          "vacana": "Dvi"
+        },
+        "gold_slp1": [
+          "acCadayizyAva",
+          "acCadayizyAvahi"
+        ]
+      },
+      {
+        "id": "cart4-4a42b41fc95c541c17d6dc6d",
+        "morphology": {
+          "lakara": "Lut",
+          "prayoga": "Kartari",
+          "purusha": "Madhyama",
+          "vacana": "Dvi"
+        },
+        "gold_slp1": [
+          "CadayitAsATe",
+          "CadayitAsTaH"
+        ]
+      },
+      {
+        "id": "cart4-4615b25d379ed01cd2a10867",
+        "morphology": {
+          "lakara": "Lan",
+          "prayoga": "Kartari",
+          "purusha": "Prathama",
+          "vacana": "Bahu"
+        },
+        "gold_slp1": [
+          "acCadayan",
+          "acCadayanta"
+        ]
+      },
+      {
+        "id": "cart4-3bc4981d4aae4855bb3a6681",
+        "morphology": {
+          "lakara": "VidhiLin",
+          "prayoga": "Kartari",
+          "purusha": "Prathama",
+          "vacana": "Bahu"
+        },
+        "gold_slp1": [
+          "Cadayeran",
+          "CadayeyuH"
+        ]
+      },
+      {
+        "id": "cart4-c6629f552f6adfe0ca09a815",
+        "morphology": {
+          "lakara": "Lot",
+          "prayoga": "Kartari",
+          "purusha": "Uttama",
+          "vacana": "Dvi"
+        },
+        "gold_slp1": [
+          "CadayAva",
+          "CadayAvahE"
+        ]
+      },
+      {
+        "id": "cart4-83a2f4c55bffae45b4280c98",
+        "morphology": {
+          "lakara": "Lit",
+          "prayoga": "Kartari",
+          "purusha": "Prathama",
+          "vacana": "Dvi"
+        },
+        "gold_slp1": [
+          "CadayAYcakrAte",
+          "CadayAYcakratuH",
+          "CadayAmAsatuH",
+          "CadayAmbaBUvatuH"
+        ]
+      },
+      {
+        "id": "cart4-fe0f4a9d9d51450d086f50b8",
+        "morphology": {
+          "lakara": "Lrt",
+          "prayoga": "Kartari",
+          "purusha": "Madhyama",
+          "vacana": "Dvi"
+        },
+        "gold_slp1": [
+          "CadayizyaTaH",
+          "CadayizyeTe"
+        ]
+      },
+      {
+        "id": "cart4-dc37dbfc910b22cf12f6b34d",
+        "morphology": {
+          "lakara": "Lat",
+          "prayoga": "Kartari",
+          "purusha": "Uttama",
+          "vacana": "Eka"
+        },
+        "gold_slp1": [
+          "CadayAmi",
+          "Cadaye"
+        ]
+      },
+      {
+        "id": "cart4-55f7a0945190aea42e2614a2",
+        "morphology": {
+          "lakara": "AshirLin",
+          "prayoga": "Kartari",
+          "purusha": "Madhyama",
+          "vacana": "Dvi"
+        },
+        "gold_slp1": [
+          "CadayizIyAsTAm",
+          "CadyAstam"
+        ]
+      },
+      {
+        "id": "cart4-9a66a3030544f668ec093253",
+        "morphology": {
+          "lakara": "Lrn",
+          "prayoga": "Kartari",
+          "purusha": "Madhyama",
+          "vacana": "Bahu"
+        },
+        "gold_slp1": [
+          "acCadayizyaDvam",
+          "acCadayizyata"
+        ]
+      },
+      {
+        "id": "cart4-fca61342b8abe0fc70851cbf",
+        "morphology": {
+          "lakara": "Lot",
+          "prayoga": "Kartari",
+          "purusha": "Uttama",
+          "vacana": "Eka"
+        },
+        "gold_slp1": [
+          "CadayAni",
+          "CadayE"
+        ]
+      },
+      {
+        "id": "cart4-b42fba61cb76d2d04322cdc6",
+        "morphology": {
+          "lakara": "AshirLin",
+          "prayoga": "Kartari",
+          "purusha": "Uttama",
+          "vacana": "Eka"
+        },
+        "gold_slp1": [
+          "CadayizIya",
+          "CadyAsam"
+        ]
+      },
+      {
+        "id": "cart4-9f26823a9c0ee922297295c7",
+        "morphology": {
+          "lakara": "Lut",
+          "prayoga": "Kartari",
+          "purusha": "Madhyama",
+          "vacana": "Eka"
+        },
+        "gold_slp1": [
+          "CadayitAse",
+          "CadayitAsi"
+        ]
+      },
+      {
+        "id": "cart4-f9f9fe63f54c9f08d6ac9281",
+        "morphology": {
+          "lakara": "Lan",
+          "prayoga": "Kartari",
+          "purusha": "Prathama",
+          "vacana": "Eka"
+        },
+        "gold_slp1": [
+          "acCadayad",
+          "acCadayat",
+          "acCadayata"
+        ]
+      },
+      {
+        "id": "cart4-6b90459fefe26dab07693269",
+        "morphology": {
+          "lakara": "Lit",
+          "prayoga": "Kartari",
+          "purusha": "Prathama",
+          "vacana": "Bahu"
+        },
+        "gold_slp1": [
+          "CadayAYcakrire",
+          "CadayAYcakruH",
+          "CadayAmAsuH",
+          "CadayAmbaBUvuH"
+        ]
+      },
+      {
+        "id": "cart4-0c489486f0b755c7d25f904c",
+        "morphology": {
+          "lakara": "Lan",
+          "prayoga": "Kartari",
+          "purusha": "Uttama",
+          "vacana": "Eka"
+        },
+        "gold_slp1": [
+          "acCadayam",
+          "acCadaye"
+        ]
+      },
+      {
+        "id": "cart4-1d5ef4e2dfe96f6d61051170",
+        "morphology": {
+          "lakara": "AshirLin",
+          "prayoga": "Kartari",
+          "purusha": "Prathama",
+          "vacana": "Bahu"
+        },
+        "gold_slp1": [
+          "CadayizIran",
+          "CadyAsuH"
+        ]
+      },
+      {
+        "id": "cart4-f10498ab0cfdcbeb5bb06082",
+        "morphology": {
+          "lakara": "Lit",
+          "prayoga": "Kartari",
+          "purusha": "Madhyama",
+          "vacana": "Dvi"
+        },
+        "gold_slp1": [
+          "CadayAYcakrATe",
+          "CadayAYcakraTuH",
+          "CadayAmAsaTuH",
+          "CadayAmbaBUvaTuH"
+        ]
+      },
+      {
+        "id": "cart4-967ed8c0b82003d5a7f40bad",
+        "morphology": {
+          "lakara": "VidhiLin",
+          "prayoga": "Kartari",
+          "purusha": "Madhyama",
+          "vacana": "Dvi"
+        },
+        "gold_slp1": [
+          "Cadayetam",
+          "CadayeyATAm"
+        ]
+      },
+      {
+        "id": "cart4-04c53d655be58372e002fec2",
+        "morphology": {
+          "lakara": "Lat",
+          "prayoga": "Kartari",
+          "purusha": "Madhyama",
+          "vacana": "Bahu"
+        },
+        "gold_slp1": [
+          "CadayaDve",
+          "CadayaTa"
+        ]
+      },
+      {
+        "id": "cart4-6c412557eb19fe4d24a0ba57",
+        "morphology": {
+          "lakara": "Lit",
+          "prayoga": "Kartari",
+          "purusha": "Madhyama",
+          "vacana": "Eka"
+        },
+        "gold_slp1": [
+          "CadayAYcakarTa",
+          "CadayAYcakfze",
+          "CadayAmAsiTa",
+          "CadayAmbaBUviTa"
+        ]
+      },
+      {
+        "id": "cart4-782ba330eee6bc47c66095af",
+        "morphology": {
+          "lakara": "Lot",
+          "prayoga": "Kartari",
+          "purusha": "Prathama",
+          "vacana": "Bahu"
+        },
+        "gold_slp1": [
+          "CadayantAm",
+          "Cadayantu"
+        ]
+      },
+      {
+        "id": "cart4-a740bebb5b25edfec59e6152",
+        "morphology": {
+          "lakara": "Lut",
+          "prayoga": "Kartari",
+          "purusha": "Madhyama",
+          "vacana": "Bahu"
+        },
+        "gold_slp1": [
+          "CadayitADve",
+          "CadayitAsTa"
+        ]
+      },
+      {
+        "id": "cart4-73f3a159b5558d07f1353ed1",
+        "morphology": {
+          "lakara": "Lan",
+          "prayoga": "Kartari",
+          "purusha": "Madhyama",
+          "vacana": "Eka"
+        },
+        "gold_slp1": [
+          "acCadayaH",
+          "acCadayaTAH"
+        ]
+      },
+      {
+        "id": "cart4-23ad894d602fa58a638ddf93",
+        "morphology": {
+          "lakara": "Lan",
+          "prayoga": "Kartari",
+          "purusha": "Prathama",
+          "vacana": "Dvi"
+        },
+        "gold_slp1": [
+          "acCadayatAm",
+          "acCadayetAm"
+        ]
+      },
+      {
+        "id": "cart4-18790b201b24e90692ed0ca3",
+        "morphology": {
+          "lakara": "VidhiLin",
+          "prayoga": "Kartari",
+          "purusha": "Prathama",
+          "vacana": "Dvi"
+        },
+        "gold_slp1": [
+          "CadayetAm",
+          "CadayeyAtAm"
+        ]
+      },
+      {
+        "id": "cart4-4f4bcec5fcc588d2bf76cfac",
+        "morphology": {
+          "lakara": "Lat",
+          "prayoga": "Kartari",
+          "purusha": "Prathama",
+          "vacana": "Dvi"
+        },
+        "gold_slp1": [
+          "CadayataH",
+          "Cadayete"
+        ]
+      },
+      {
+        "id": "cart4-e21d9c54771a0aecc6dea3aa",
+        "morphology": {
+          "lakara": "Lot",
+          "prayoga": "Kartari",
+          "purusha": "Prathama",
+          "vacana": "Dvi"
+        },
+        "gold_slp1": [
+          "CadayatAm",
+          "CadayetAm"
+        ]
+      },
+      {
+        "id": "cart4-226343d1cf84f37c52eced4f",
+        "morphology": {
+          "lakara": "Lut",
+          "prayoga": "Kartari",
+          "purusha": "Uttama",
+          "vacana": "Dvi"
+        },
+        "gold_slp1": [
+          "CadayitAsvaH",
+          "CadayitAsvahe"
+        ]
+      },
+      {
+        "id": "cart4-92ccc4a2a4c0507b68d24fde",
+        "morphology": {
+          "lakara": "VidhiLin",
+          "prayoga": "Kartari",
+          "purusha": "Uttama",
+          "vacana": "Bahu"
+        },
+        "gold_slp1": [
+          "Cadayema",
+          "Cadayemahi"
+        ]
+      },
+      {
+        "id": "cart4-7061cc96e3f8f4bfa0ffde86",
+        "morphology": {
+          "lakara": "Lrn",
+          "prayoga": "Kartari",
+          "purusha": "Prathama",
+          "vacana": "Dvi"
+        },
+        "gold_slp1": [
+          "acCadayizyatAm",
+          "acCadayizyetAm"
+        ]
+      },
+      {
+        "id": "cart4-3d93592fa666cc404227cfef",
+        "morphology": {
+          "lakara": "AshirLin",
+          "prayoga": "Kartari",
+          "purusha": "Prathama",
+          "vacana": "Eka"
+        },
+        "gold_slp1": [
+          "CadayizIzwa",
+          "CadyAd",
+          "CadyAt"
+        ]
+      },
+      {
+        "id": "cart4-2bccbe711e8b79140e319d0a",
+        "morphology": {
+          "lakara": "Lrt",
+          "prayoga": "Kartari",
+          "purusha": "Uttama",
+          "vacana": "Bahu"
+        },
+        "gold_slp1": [
+          "CadayizyAmaH",
+          "CadayizyAmahe"
+        ]
+      },
+      {
+        "id": "cart4-213d3910094d00646729f8b1",
+        "morphology": {
+          "lakara": "AshirLin",
+          "prayoga": "Kartari",
+          "purusha": "Uttama",
+          "vacana": "Dvi"
+        },
+        "gold_slp1": [
+          "CadayizIvahi",
+          "CadyAsva"
+        ]
+      },
+      {
+        "id": "cart4-53f6a424c9ef53c9fb137152",
+        "morphology": {
+          "lakara": "VidhiLin",
+          "prayoga": "Kartari",
+          "purusha": "Prathama",
+          "vacana": "Eka"
+        },
+        "gold_slp1": [
+          "Cadayed",
+          "Cadayet",
+          "Cadayeta"
+        ]
+      },
+      {
+        "id": "cart4-3ecbd5019763c7558f83c2a9",
+        "morphology": {
+          "lakara": "Lit",
+          "prayoga": "Kartari",
+          "purusha": "Uttama",
+          "vacana": "Dvi"
+        },
+        "gold_slp1": [
+          "CadayAYcakfva",
+          "CadayAYcakfvahe",
+          "CadayAmAsiva",
+          "CadayAmbaBUviva"
+        ]
+      },
+      {
+        "id": "cart4-ddc2002f7c1ed644bfc50c8f",
+        "morphology": {
+          "lakara": "Lrn",
+          "prayoga": "Kartari",
+          "purusha": "Prathama",
+          "vacana": "Eka"
+        },
+        "gold_slp1": [
+          "acCadayizyad",
+          "acCadayizyat",
+          "acCadayizyata"
+        ]
+      },
+      {
+        "id": "cart4-36b25259adab7d21280c1d12",
+        "morphology": {
+          "lakara": "Lrn",
+          "prayoga": "Kartari",
+          "purusha": "Madhyama",
+          "vacana": "Dvi"
+        },
+        "gold_slp1": [
+          "acCadayizyatam",
+          "acCadayizyeTAm"
+        ]
+      },
+      {
+        "id": "cart4-b8d82c6255f58e62470eca14",
+        "morphology": {
+          "lakara": "Lot",
+          "prayoga": "Kartari",
+          "purusha": "Madhyama",
+          "vacana": "Bahu"
+        },
+        "gold_slp1": [
+          "CadayaDvam",
+          "Cadayata"
+        ]
+      },
+      {
+        "id": "cart4-55d4836994e928bd0e857d4e",
+        "morphology": {
+          "lakara": "Lrt",
+          "prayoga": "Kartari",
+          "purusha": "Madhyama",
+          "vacana": "Bahu"
+        },
+        "gold_slp1": [
+          "CadayizyaDve",
+          "CadayizyaTa"
+        ]
+      },
+      {
+        "id": "cart4-d8752fcfd681383675e1697f",
+        "morphology": {
+          "lakara": "Lat",
+          "prayoga": "Kartari",
+          "purusha": "Madhyama",
+          "vacana": "Dvi"
+        },
+        "gold_slp1": [
+          "CadayaTaH",
+          "CadayeTe"
+        ]
+      },
+      {
+        "id": "cart4-70d006b2be36e721b6a31cb5",
+        "morphology": {
+          "lakara": "Lot",
+          "prayoga": "Kartari",
+          "purusha": "Uttama",
+          "vacana": "Bahu"
+        },
+        "gold_slp1": [
+          "CadayAma",
+          "CadayAmahE"
+        ]
+      },
+      {
+        "id": "cart4-f3476e190ff8705955bf6db2",
+        "morphology": {
+          "lakara": "Lit",
+          "prayoga": "Kartari",
+          "purusha": "Prathama",
+          "vacana": "Eka"
+        },
+        "gold_slp1": [
+          "CadayAYcakAra",
+          "CadayAYcakre",
+          "CadayAmAsa",
+          "CadayAmbaBUva"
+        ]
+      },
+      {
+        "id": "cart4-741e3e25cad37088d0a3b3c0",
+        "morphology": {
+          "lakara": "Lrt",
+          "prayoga": "Kartari",
+          "purusha": "Madhyama",
+          "vacana": "Eka"
+        },
+        "gold_slp1": [
+          "Cadayizyase",
+          "Cadayizyasi"
+        ]
+      }
+    ]
+  },
+  "capacity_after_prospective_exclusion": {
+    "other_adanta_aorist": {
+      "families": 21,
+      "all_valid_kartari_lun_tuples": 189,
+      "fresh_at_scale_census": 188,
+      "fresh_per_family": {
+        "BAma|Curadi": 9,
+        "Cidra|Curadi": 9,
+        "anDa|Curadi": 8,
+        "anga|Curadi": 9,
+        "anka|Curadi": 9,
+        "ansa|Curadi": 9,
+        "citra|Curadi": 9,
+        "danqa|Curadi": 9,
+        "duHKa|Curadi": 9,
+        "garva|Curadi": 9,
+        "goma|Curadi": 9,
+        "grAma|Curadi": 9,
+        "kAla|Curadi": 9,
+        "katra|Curadi": 9,
+        "kumAra|Curadi": 9,
+        "sAma|Curadi": 9,
+        "sUtra|Curadi": 9,
+        "tIra|Curadi": 9,
+        "vAta|Curadi": 9,
+        "vela|Curadi": 9,
+        "vizka|Curadi": 9
+      },
+      "quota": 100,
+      "balanced_load_feasible": "16families x5 +5families x4 =100; every remaining family has at least8fresh tuples."
+    },
+    "short_adanta_non_aorist": {
+      "families": 14,
+      "all_valid_kartari_non_lun_tuples": 1134,
+      "fresh_at_scale_census": 1119,
+      "quota": 650,
+      "Cada_retained": true
+    },
+    "current_candidate_if_drop_only": {
+      "tuples": 1246,
+      "families": 535
+    },
+    "separate_rebalanced_candidate_expected": {
+      "tuples": 1250,
+      "families": 535,
+      "short_non_lun": 650,
+      "other_lun": 100,
+      "broad_non_curadi": 500,
+      "lun_percent": 12,
+      "replacement_validation": "Pending independent check of new version; no new files or identities created by this review."
+    }
+  },
+  "limitations": [
+    "No exhaustive all-editions comparison. A Wikisource transcription disagreement is not declared universally erroneous.",
+    "No full1250-form or full47-form source certification; retain the earlier review limitations.",
+    "Ordinary phonological/spelling variants require the candidate scoring policy to be separately audited; lexeme clarification does not prove gold-union completeness.",
+    "No claim that family-dependent standard error is below1percentage point.",
+    "Freshness capacity is from the cited scale census; a new version must recheck current task histories."
+  ],
+  "paid_calls": 0,
+  "model_outcomes_read": false,
+  "frozen_inputs_or_keys_changed": false,
+  "benchmark_ready": false
+}

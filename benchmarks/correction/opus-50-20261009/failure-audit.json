@@ -1,0 +1,2098 @@
+{
+  "created_at": "2026-10-09T07:32:42.585424+00:00",
+  "analysis_sha256": "c31eaca758153f789e63aad9a6d5ef140cbd7dfa0c5859a9f0c5c1a013cadad9",
+  "tasks_sha256": "eb85c55340f34364ea3e3337dd95f7028a8a2b9c7a3f2214ca17cf00bc58b432",
+  "failed_tasks_reviewed": 26,
+  "all_failed_task_gold_sets_regenerated": true,
+  "original_strict_score": {
+    "correct": 24,
+    "total": 50,
+    "accuracy": 0.48
+  },
+  "category_counts": {
+    "term_boundaries_only": 3,
+    "operation_order": 6,
+    "mixed_requires_review": 5,
+    "technical_notation_only": 4,
+    "omitted_checkpoints_only": 5,
+    "notation_and_boundaries": 2,
+    "notation_and_omissions": 1
+  },
+  "representation_notation_or_omissions_only": 15,
+  "ordering_dominated": 6,
+  "mixed_requires_further_grammatical_review": 5,
+  "interpretation": "Most failures reflect exact VP trace reproduction. This does not establish that 52% of conjugations or first-error diagnoses were wrong; all 50 were correct on those two diagnostics.",
+  "limits": "Structural review, not expert certification of alternative Sanskrit derivations. Omitted mandatory steps, technical markers, and rule order can matter. No adjusted accuracy or replacement gold set is asserted.",
+  "branch_scope": "VP enumerates its implemented optional-rule branches; this is not enumeration of every linguistically defensible derivation order or notation.",
+  "sources": [
+    "https://vidyut.readthedocs.io/en/latest/prakriya.html",
+    "https://github.com/ambuda-org/vidyut/blob/main/vidyut-prakriya/src/core/prakriya_stack.rs",
+    "https://github.com/ambuda-org/vidyut/blob/main/vidyut-prakriya/src/args/tin.rs"
+  ],
+  "results": [
+    {
+      "task_number": 8,
+      "task_id": "correction-762ab99e1e3730168f4bacc3",
+      "category": "term_boundaries_only",
+      "note": "Mechanically established structural difference; not an assertion that the original format requirements were satisfied.",
+      "mechanical_matches": {
+        "term_boundaries_only": 0,
+        "notation_and_boundaries": 0
+      },
+      "gold_regenerated": true,
+      "first_error_correct": true,
+      "final_word_correct": true,
+      "strict_pass_unchanged": false,
+      "original_differences": [
+        {
+          "field": "corrected_steps[9]",
+          "expected": {
+            "step": 14,
+            "terms": [
+              "व्रुड्",
+              "एय्",
+              "अम्"
+            ]
+          },
+          "actual": {
+            "step": 14,
+            "terms": [
+              "व्रुड्",
+              "ए",
+              "य्",
+              "अम्"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "task_number": 12,
+      "task_id": "correction-0d9f7c64fca91c9f368ef8fe",
+      "category": "operation_order",
+      "note": "Auxiliary reduplication is performed before the main stem's i→e→ay changes; both paths rejoin.",
+      "mechanical_matches": {},
+      "gold_regenerated": true,
+      "first_error_correct": true,
+      "final_word_correct": true,
+      "strict_pass_unchanged": false,
+      "original_differences": [
+        {
+          "field": "corrected_steps[2]",
+          "expected": {
+            "step": 11,
+            "terms": [
+              "अन्ग्",
+              "ए",
+              "आम्",
+              "कृ",
+              "से"
+            ]
+          },
+          "actual": {
+            "step": 11,
+            "terms": [
+              "अन्ग्",
+              "इ",
+              "आम्",
+              "कृ",
+              "कृ",
+              "से"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[3]",
+          "expected": {
+            "step": 12,
+            "terms": [
+              "अन्ग्",
+              "अय्",
+              "आम्",
+              "कृ",
+              "से"
+            ]
+          },
+          "actual": {
+            "step": 12,
+            "terms": [
+              "अन्ग्",
+              "ए",
+              "आम्",
+              "कृ",
+              "कृ",
+              "से"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "task_number": 15,
+      "task_id": "correction-3da3730492017c612bad2f9d",
+      "category": "term_boundaries_only",
+      "note": "Mechanically established structural difference; not an assertion that the original format requirements were satisfied.",
+      "mechanical_matches": {
+        "term_boundaries_only": 0,
+        "notation_and_boundaries": 0
+      },
+      "gold_regenerated": true,
+      "first_error_correct": true,
+      "final_word_correct": true,
+      "strict_pass_unchanged": false,
+      "original_differences": [
+        {
+          "field": "corrected_steps[7]",
+          "expected": {
+            "step": 12,
+            "terms": [
+              "खिद्",
+              "य्",
+              "एताम्"
+            ]
+          },
+          "actual": {
+            "step": 12,
+            "terms": [
+              "खिद्",
+              "ये",
+              "ताम्"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "task_number": 18,
+      "task_id": "correction-1dd82334bdb225b3794be28b",
+      "category": "mixed_requires_review",
+      "note": "Missing marker in cli; augment insertion, causative removal, and reduplication occur in another order, with a different initial reduplicant boundary.",
+      "mechanical_matches": {},
+      "gold_regenerated": true,
+      "first_error_correct": true,
+      "final_word_correct": true,
+      "strict_pass_unchanged": false,
+      "original_differences": [
+        {
+          "field": "corrected_steps[4]",
+          "expected": {
+            "step": 9,
+            "terms": [
+              "साम्",
+              "इ",
+              "च्लिँ",
+              "महि"
+            ]
+          },
+          "actual": {
+            "step": 9,
+            "terms": [
+              "साम्",
+              "इ",
+              "च्लि",
+              "महि"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[7]",
+          "expected": {
+            "step": 12,
+            "terms": [
+              "साम",
+              "साम्",
+              "इ",
+              "अ",
+              "महि"
+            ]
+          },
+          "actual": {
+            "step": 12,
+            "terms": [
+              "अट्",
+              "साम्",
+              "इ",
+              "अ",
+              "महि"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[8]",
+          "expected": {
+            "step": 13,
+            "terms": [
+              "अट्",
+              "साम",
+              "साम्",
+              "इ",
+              "अ",
+              "महि"
+            ]
+          },
+          "actual": {
+            "step": 13,
+            "terms": [
+              "अ",
+              "साम्",
+              "इ",
+              "अ",
+              "महि"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[9]",
+          "expected": {
+            "step": 14,
+            "terms": [
+              "अ",
+              "साम",
+              "साम्",
+              "इ",
+              "अ",
+              "महि"
+            ]
+          },
+          "actual": {
+            "step": 14,
+            "terms": [
+              "अ",
+              "साम्",
+              "अ",
+              "महि"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[10]",
+          "expected": {
+            "step": 15,
+            "terms": [
+              "अ",
+              "साम",
+              "साम्",
+              "अ",
+              "महि"
+            ]
+          },
+          "actual": {
+            "step": 15,
+            "terms": [
+              "अ",
+              "साम्",
+              "साम्",
+              "अ",
+              "महि"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "task_number": 33,
+      "task_id": "correction-1312f4eab21f10be6383fbfd",
+      "category": "technical_notation_only",
+      "note": "Mechanically established structural difference; not an assertion that the original format requirements were satisfied.",
+      "mechanical_matches": {
+        "technical_notation_only": 1,
+        "notation_and_boundaries": 1,
+        "notation_and_omissions": 1
+      },
+      "gold_regenerated": true,
+      "first_error_correct": true,
+      "final_word_correct": true,
+      "strict_pass_unchanged": false,
+      "original_differences": [
+        {
+          "field": "corrected_steps[1]",
+          "expected": {
+            "step": 6,
+            "terms": [
+              "वात्",
+              "इ",
+              "ल"
+            ]
+          },
+          "actual": {
+            "step": 6,
+            "terms": [
+              "वात्",
+              "इ",
+              "ल्"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "task_number": 37,
+      "task_id": "correction-070fb81d70a85d58241c8f70",
+      "category": "operation_order",
+      "note": "Opus has go→gu→ju; VP has go→jo→ju. The differing checkpoint reflects the order of vowel and consonant changes.",
+      "mechanical_matches": {},
+      "gold_regenerated": true,
+      "first_error_correct": true,
+      "final_word_correct": true,
+      "strict_pass_unchanged": false,
+      "original_differences": [
+        {
+          "field": "corrected_steps[7]",
+          "expected": {
+            "step": 10,
+            "terms": [
+              "जो",
+              "गोष्ट्",
+              "ए"
+            ]
+          },
+          "actual": {
+            "step": 10,
+            "terms": [
+              "गु",
+              "गोष्ट्",
+              "ए"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "task_number": 39,
+      "task_id": "correction-3d5fc23517ca4a72a72705ec",
+      "category": "omitted_checkpoints_only",
+      "note": "Mechanically established structural difference; not an assertion that the original format requirements were satisfied.",
+      "mechanical_matches": {
+        "omitted_checkpoints_only": 0,
+        "notation_and_omissions": 0
+      },
+      "gold_regenerated": true,
+      "first_error_correct": true,
+      "final_word_correct": true,
+      "strict_pass_unchanged": false,
+      "original_differences": [
+        {
+          "field": "corrected_steps[5]",
+          "expected": {
+            "step": 10,
+            "terms": [
+              "वॄ",
+              "ना",
+              "सीय्",
+              "आस्ताम्"
+            ]
+          },
+          "actual": {
+            "step": 10,
+            "terms": [
+              "वॄ",
+              "ना",
+              "ईय्",
+              "आताम्"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[6]",
+          "expected": {
+            "step": 11,
+            "terms": [
+              "वॄ",
+              "ना",
+              "ईय्",
+              "आताम्"
+            ]
+          },
+          "actual": {
+            "step": 11,
+            "terms": [
+              "वृ",
+              "ना",
+              "ईय्",
+              "आताम्"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[7]",
+          "expected": {
+            "step": 12,
+            "terms": [
+              "वृ",
+              "ना",
+              "ईय्",
+              "आताम्"
+            ]
+          },
+          "actual": {
+            "step": 12,
+            "terms": [
+              "वृ",
+              "न्",
+              "ईय्",
+              "आताम्"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[8]",
+          "expected": {
+            "step": 13,
+            "terms": [
+              "वृ",
+              "न्",
+              "ईय्",
+              "आताम्"
+            ]
+          },
+          "actual": {
+            "step": 13,
+            "terms": [
+              "वृ",
+              "ण्",
+              "ईय्",
+              "आताम्"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[9]",
+          "expected": {
+            "step": 14,
+            "terms": [
+              "वृ",
+              "ण्",
+              "ईय्",
+              "आताम्"
+            ]
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "task_number": 50,
+      "task_id": "correction-4fafd3f0d5e825cb93f8bece",
+      "category": "omitted_checkpoints_only",
+      "note": "Mechanically established structural difference; not an assertion that the original format requirements were satisfied.",
+      "mechanical_matches": {
+        "omitted_checkpoints_only": 0,
+        "notation_and_omissions": 0
+      },
+      "gold_regenerated": true,
+      "first_error_correct": true,
+      "final_word_correct": true,
+      "strict_pass_unchanged": false,
+      "original_differences": [
+        {
+          "field": "corrected_steps[5]",
+          "expected": {
+            "step": 9,
+            "terms": [
+              "पा",
+              "ंति"
+            ]
+          },
+          "actual": null
+        },
+        {
+          "field": "corrected_steps[6]",
+          "expected": {
+            "step": 10,
+            "terms": [
+              "पा",
+              "न्ति"
+            ]
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "task_number": 61,
+      "task_id": "correction-9ee552fbeca3c2fd14a918c7",
+      "category": "operation_order",
+      "note": "The ending vas→va occurs before adding/processing the aat augment; the paths rejoin.",
+      "mechanical_matches": {},
+      "gold_regenerated": true,
+      "first_error_correct": true,
+      "final_word_correct": true,
+      "strict_pass_unchanged": false,
+      "original_differences": [
+        {
+          "field": "corrected_steps[3]",
+          "expected": {
+            "step": 7,
+            "terms": [
+              "भॄ",
+              "ना",
+              "आट्",
+              "वस्"
+            ]
+          },
+          "actual": {
+            "step": 7,
+            "terms": [
+              "भॄ",
+              "ना",
+              "व"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[4]",
+          "expected": {
+            "step": 8,
+            "terms": [
+              "भॄ",
+              "ना",
+              "आ",
+              "वस्"
+            ]
+          },
+          "actual": {
+            "step": 8,
+            "terms": [
+              "भॄ",
+              "ना",
+              "आट्",
+              "व"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "task_number": 69,
+      "task_id": "correction-0305ba74db6231fd734dee5b",
+      "category": "omitted_checkpoints_only",
+      "note": "Mechanically established structural difference; not an assertion that the original format requirements were satisfied.",
+      "mechanical_matches": {
+        "omitted_checkpoints_only": 0,
+        "notation_and_omissions": 0
+      },
+      "gold_regenerated": true,
+      "first_error_correct": true,
+      "final_word_correct": true,
+      "strict_pass_unchanged": false,
+      "original_differences": [
+        {
+          "field": "corrected_steps[10]",
+          "expected": {
+            "step": 14,
+            "terms": [
+              "अ",
+              "नभ्",
+              "इ",
+              "स्य",
+              "द्"
+            ]
+          },
+          "actual": {
+            "step": 14,
+            "terms": [
+              "अ",
+              "नभ्",
+              "इ",
+              "ष्य",
+              "त्"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[11]",
+          "expected": {
+            "step": 15,
+            "terms": [
+              "अ",
+              "नभ्",
+              "इ",
+              "ष्य",
+              "द्"
+            ]
+          },
+          "actual": null
+        },
+        {
+          "field": "corrected_steps[12]",
+          "expected": {
+            "step": 16,
+            "terms": [
+              "अ",
+              "नभ्",
+              "इ",
+              "ष्य",
+              "त्"
+            ]
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "task_number": 72,
+      "task_id": "correction-0d02a86b59b7e036879cfef2",
+      "category": "technical_notation_only",
+      "note": "Mechanically established structural difference; not an assertion that the original format requirements were satisfied.",
+      "mechanical_matches": {
+        "technical_notation_only": 0,
+        "notation_and_boundaries": 0,
+        "notation_and_omissions": 0
+      },
+      "gold_regenerated": true,
+      "first_error_correct": true,
+      "final_word_correct": true,
+      "strict_pass_unchanged": false,
+      "original_differences": [
+        {
+          "field": "corrected_steps[0]",
+          "expected": {
+            "step": 5,
+            "terms": [
+              "निन्ज्",
+              "लङ्"
+            ]
+          },
+          "actual": {
+            "step": 5,
+            "terms": [
+              "निन्ज्",
+              "लँङ्"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[1]",
+          "expected": {
+            "step": 6,
+            "terms": [
+              "निन्ज्",
+              "ल"
+            ]
+          },
+          "actual": {
+            "step": 6,
+            "terms": [
+              "निन्ज्",
+              "ल्"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "task_number": 85,
+      "task_id": "correction-03a8c0ef6f9a21beb1777029",
+      "category": "mixed_requires_review",
+      "note": "The sut augment is represented as a separate term rather than fused with the ending; some marker-removal and sibilant steps are compressed.",
+      "mechanical_matches": {},
+      "gold_regenerated": true,
+      "first_error_correct": true,
+      "final_word_correct": true,
+      "strict_pass_unchanged": false,
+      "original_differences": [
+        {
+          "field": "corrected_steps[3]",
+          "expected": {
+            "step": 8,
+            "terms": [
+              "अश्",
+              "सीय्",
+              "स्थास्"
+            ]
+          },
+          "actual": {
+            "step": 8,
+            "terms": [
+              "अश्",
+              "सीय्",
+              "सुँट्",
+              "थास्"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[4]",
+          "expected": {
+            "step": 9,
+            "terms": [
+              "अश्",
+              "सी",
+              "स्थास्"
+            ]
+          },
+          "actual": {
+            "step": 9,
+            "terms": [
+              "अश्",
+              "सीय्",
+              "स्",
+              "थास्"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[5]",
+          "expected": {
+            "step": 10,
+            "terms": [
+              "अष्",
+              "सी",
+              "स्थास्"
+            ]
+          },
+          "actual": {
+            "step": 10,
+            "terms": [
+              "अश्",
+              "सी",
+              "स्",
+              "थास्"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[6]",
+          "expected": {
+            "step": 11,
+            "terms": [
+              "अक्",
+              "सी",
+              "स्थास्"
+            ]
+          },
+          "actual": {
+            "step": 11,
+            "terms": [
+              "अष्",
+              "सी",
+              "स्",
+              "थास्"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[7]",
+          "expected": {
+            "step": 12,
+            "terms": [
+              "अक्",
+              "सी",
+              "स्थारुँ"
+            ]
+          },
+          "actual": {
+            "step": 12,
+            "terms": [
+              "अक्",
+              "सी",
+              "स्",
+              "थास्"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[8]",
+          "expected": {
+            "step": 13,
+            "terms": [
+              "अक्",
+              "सी",
+              "स्थार्"
+            ]
+          },
+          "actual": {
+            "step": 13,
+            "terms": [
+              "अक्",
+              "सी",
+              "स्",
+              "थारुँ"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[9]",
+          "expected": {
+            "step": 14,
+            "terms": [
+              "अक्",
+              "सी",
+              "स्थाः"
+            ]
+          },
+          "actual": {
+            "step": 14,
+            "terms": [
+              "अक्",
+              "सी",
+              "स्",
+              "थाः"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[10]",
+          "expected": {
+            "step": 15,
+            "terms": [
+              "अक्",
+              "सी",
+              "ष्थाः"
+            ]
+          },
+          "actual": {
+            "step": 15,
+            "terms": [
+              "अक्",
+              "षी",
+              "ष्",
+              "थाः"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[11]",
+          "expected": {
+            "step": 16,
+            "terms": [
+              "अक्",
+              "षी",
+              "ष्थाः"
+            ]
+          },
+          "actual": {
+            "step": 16,
+            "terms": [
+              "अक्",
+              "षी",
+              "ष्",
+              "ठाः"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[12]",
+          "expected": {
+            "step": 17,
+            "terms": [
+              "अक्",
+              "षी",
+              "ष्ठाः"
+            ]
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "task_number": 86,
+      "task_id": "correction-0b7fa37b2691939d08ab76da",
+      "category": "notation_and_boundaries",
+      "note": "Mechanically established structural difference; not an assertion that the original format requirements were satisfied.",
+      "mechanical_matches": {
+        "notation_and_boundaries": 1
+      },
+      "gold_regenerated": true,
+      "first_error_correct": true,
+      "final_word_correct": true,
+      "strict_pass_unchanged": false,
+      "original_differences": [
+        {
+          "field": "corrected_steps[7]",
+          "expected": {
+            "step": 12,
+            "terms": [
+              "अन्ध्",
+              "इ",
+              "अ",
+              "यासुँट्",
+              "उस्"
+            ]
+          },
+          "actual": {
+            "step": 12,
+            "terms": [
+              "अन्ध्",
+              "इ",
+              "अ",
+              "यासुट्",
+              "उस्"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[13]",
+          "expected": {
+            "step": 18,
+            "terms": [
+              "अन्ध्",
+              "अय्",
+              "एय्",
+              "उस्"
+            ]
+          },
+          "actual": {
+            "step": 18,
+            "terms": [
+              "अन्ध्",
+              "अय्",
+              "ए",
+              "य्",
+              "उस्"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[14]",
+          "expected": {
+            "step": 19,
+            "terms": [
+              "अन्ध्",
+              "अय्",
+              "एय्",
+              "उरुँ"
+            ]
+          },
+          "actual": {
+            "step": 19,
+            "terms": [
+              "अन्ध्",
+              "अय्",
+              "ए",
+              "य्",
+              "उरुँ"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[15]",
+          "expected": {
+            "step": 20,
+            "terms": [
+              "अन्ध्",
+              "अय्",
+              "एय्",
+              "उर्"
+            ]
+          },
+          "actual": {
+            "step": 20,
+            "terms": [
+              "अन्ध्",
+              "अय्",
+              "ए",
+              "य्",
+              "उर्"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[16]",
+          "expected": {
+            "step": 21,
+            "terms": [
+              "अन्ध्",
+              "अय्",
+              "एय्",
+              "उः"
+            ]
+          },
+          "actual": {
+            "step": 21,
+            "terms": [
+              "अन्ध्",
+              "अय्",
+              "ए",
+              "य्",
+              "उः"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[17]",
+          "expected": {
+            "step": 22,
+            "terms": [
+              "अंध्",
+              "अय्",
+              "एय्",
+              "उः"
+            ]
+          },
+          "actual": {
+            "step": 22,
+            "terms": [
+              "अंध्",
+              "अय्",
+              "ए",
+              "य्",
+              "उः"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[18]",
+          "expected": {
+            "step": 23,
+            "terms": [
+              "अन्ध्",
+              "अय्",
+              "एय्",
+              "उः"
+            ]
+          },
+          "actual": {
+            "step": 23,
+            "terms": [
+              "अन्ध्",
+              "अय्",
+              "ए",
+              "य्",
+              "उः"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "task_number": 92,
+      "task_id": "correction-163b372a878de9460c0ab1af",
+      "category": "operation_order",
+      "note": "Reduplicant changes hu→jhu→ju precede stem hu→ho→hav in the response; VP interleaves them differently.",
+      "mechanical_matches": {},
+      "gold_regenerated": true,
+      "first_error_correct": true,
+      "final_word_correct": true,
+      "strict_pass_unchanged": false,
+      "original_differences": [
+        {
+          "field": "corrected_steps[7]",
+          "expected": {
+            "step": 11,
+            "terms": [
+              "हु",
+              "हो",
+              "आ",
+              "म"
+            ]
+          },
+          "actual": {
+            "step": 11,
+            "terms": [
+              "झु",
+              "हु",
+              "आ",
+              "म"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[8]",
+          "expected": {
+            "step": 12,
+            "terms": [
+              "झु",
+              "हो",
+              "आ",
+              "म"
+            ]
+          },
+          "actual": {
+            "step": 12,
+            "terms": [
+              "जु",
+              "हु",
+              "आ",
+              "म"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[9]",
+          "expected": {
+            "step": 13,
+            "terms": [
+              "झु",
+              "हव्",
+              "आ",
+              "म"
+            ]
+          },
+          "actual": {
+            "step": 13,
+            "terms": [
+              "जु",
+              "हो",
+              "आ",
+              "म"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "task_number": 110,
+      "task_id": "correction-35dc26b16a57df4db714bc64",
+      "category": "omitted_checkpoints_only",
+      "note": "Mechanically established structural difference; not an assertion that the original format requirements were satisfied.",
+      "mechanical_matches": {
+        "omitted_checkpoints_only": 0,
+        "notation_and_omissions": 0
+      },
+      "gold_regenerated": true,
+      "first_error_correct": true,
+      "final_word_correct": true,
+      "strict_pass_unchanged": false,
+      "original_differences": [
+        {
+          "field": "corrected_steps[7]",
+          "expected": {
+            "step": 12,
+            "terms": [
+              "अ",
+              "युस्",
+              "य",
+              "द्"
+            ]
+          },
+          "actual": null
+        },
+        {
+          "field": "corrected_steps[8]",
+          "expected": {
+            "step": 13,
+            "terms": [
+              "अ",
+              "युस्",
+              "य",
+              "त्"
+            ]
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "task_number": 126,
+      "task_id": "correction-011e8a945a9a3d3daff29107",
+      "category": "mixed_requires_review",
+      "note": "The response substitutes vocalic ऌ for the sequence लृ: ऌँट् (SLP1 x~w) instead of लृँट् (lf~w). It also reorders sibilant/ending operations and omits an r state.",
+      "mechanical_matches": {},
+      "gold_regenerated": true,
+      "first_error_correct": true,
+      "final_word_correct": true,
+      "strict_pass_unchanged": false,
+      "original_differences": [
+        {
+          "field": "corrected_steps[0]",
+          "expected": {
+            "step": 3,
+            "terms": [
+              "तृण्",
+              "लृँट्"
+            ]
+          },
+          "actual": {
+            "step": 3,
+            "terms": [
+              "तृण्",
+              "ऌँट्"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[7]",
+          "expected": {
+            "step": 10,
+            "terms": [
+              "तर्ण्",
+              "इ",
+              "स्य",
+              "तरुँ"
+            ]
+          },
+          "actual": {
+            "step": 10,
+            "terms": [
+              "तर्ण्",
+              "इ",
+              "ष्य",
+              "तस्"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[8]",
+          "expected": {
+            "step": 11,
+            "terms": [
+              "तर्ण्",
+              "इ",
+              "स्य",
+              "तर्"
+            ]
+          },
+          "actual": {
+            "step": 11,
+            "terms": [
+              "तर्ण्",
+              "इ",
+              "ष्य",
+              "तरुँ"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[9]",
+          "expected": {
+            "step": 12,
+            "terms": [
+              "तर्ण्",
+              "इ",
+              "स्य",
+              "तः"
+            ]
+          },
+          "actual": {
+            "step": 12,
+            "terms": [
+              "तर्ण्",
+              "इ",
+              "ष्य",
+              "तः"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[10]",
+          "expected": {
+            "step": 13,
+            "terms": [
+              "तर्ण्",
+              "इ",
+              "ष्य",
+              "तः"
+            ]
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "task_number": 134,
+      "task_id": "correction-3f70679fc221a5a49500f653",
+      "category": "term_boundaries_only",
+      "note": "Mechanically established structural difference; not an assertion that the original format requirements were satisfied.",
+      "mechanical_matches": {
+        "term_boundaries_only": 0,
+        "notation_and_boundaries": 0
+      },
+      "gold_regenerated": true,
+      "first_error_correct": true,
+      "final_word_correct": true,
+      "strict_pass_unchanged": false,
+      "original_differences": [
+        {
+          "field": "corrected_steps[7]",
+          "expected": {
+            "step": 12,
+            "terms": [
+              "भाष्",
+              "एथाम्"
+            ]
+          },
+          "actual": {
+            "step": 12,
+            "terms": [
+              "भाष्",
+              "ए",
+              "थाम्"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "task_number": 151,
+      "task_id": "correction-161306cd2b223ec4545cf154",
+      "category": "operation_order",
+      "note": "Nasal assimilation and s→sh occur before final s→ru→r→visarga; VP records these operations in another order.",
+      "mechanical_matches": {},
+      "gold_regenerated": true,
+      "first_error_correct": true,
+      "final_word_correct": true,
+      "strict_pass_unchanged": false,
+      "original_differences": [
+        {
+          "field": "corrected_steps[11]",
+          "expected": {
+            "step": 18,
+            "terms": [
+              "आन्क्",
+              "अय्",
+              "इ",
+              "स्य",
+              "रुँ"
+            ]
+          },
+          "actual": {
+            "step": 18,
+            "terms": [
+              "आंक्",
+              "अय्",
+              "इ",
+              "स्य",
+              "स्"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[12]",
+          "expected": {
+            "step": 19,
+            "terms": [
+              "आन्क्",
+              "अय्",
+              "इ",
+              "स्य",
+              "र्"
+            ]
+          },
+          "actual": {
+            "step": 19,
+            "terms": [
+              "आंक्",
+              "अय्",
+              "इ",
+              "ष्य",
+              "स्"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[13]",
+          "expected": {
+            "step": 20,
+            "terms": [
+              "आन्क्",
+              "अय्",
+              "इ",
+              "स्य",
+              "ः"
+            ]
+          },
+          "actual": {
+            "step": 20,
+            "terms": [
+              "आङ्क्",
+              "अय्",
+              "इ",
+              "ष्य",
+              "स्"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[14]",
+          "expected": {
+            "step": 21,
+            "terms": [
+              "आंक्",
+              "अय्",
+              "इ",
+              "स्य",
+              "ः"
+            ]
+          },
+          "actual": {
+            "step": 21,
+            "terms": [
+              "आङ्क्",
+              "अय्",
+              "इ",
+              "ष्य",
+              "रुँ"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[15]",
+          "expected": {
+            "step": 22,
+            "terms": [
+              "आंक्",
+              "अय्",
+              "इ",
+              "ष्य",
+              "ः"
+            ]
+          },
+          "actual": {
+            "step": 22,
+            "terms": [
+              "आङ्क्",
+              "अय्",
+              "इ",
+              "ष्य",
+              "र्"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "task_number": 155,
+      "task_id": "correction-1a56f843799ac149eefa5e9a",
+      "category": "notation_and_boundaries",
+      "note": "Mechanically established structural difference; not an assertion that the original format requirements were satisfied.",
+      "mechanical_matches": {
+        "notation_and_boundaries": 0
+      },
+      "gold_regenerated": true,
+      "first_error_correct": true,
+      "final_word_correct": true,
+      "strict_pass_unchanged": false,
+      "original_differences": [
+        {
+          "field": "corrected_steps[0]",
+          "expected": {
+            "step": 3,
+            "terms": [
+              "म्रक्ष्",
+              "लिँङ्"
+            ]
+          },
+          "actual": {
+            "step": 3,
+            "terms": [
+              "म्रक्ष्",
+              "लिङ्"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[11]",
+          "expected": {
+            "step": 14,
+            "terms": [
+              "म्रक्ष्",
+              "एय्",
+              "उस्"
+            ]
+          },
+          "actual": {
+            "step": 14,
+            "terms": [
+              "म्रक्ष्",
+              "ए",
+              "य्",
+              "उस्"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[12]",
+          "expected": {
+            "step": 15,
+            "terms": [
+              "म्रक्ष्",
+              "एय्",
+              "उरुँ"
+            ]
+          },
+          "actual": {
+            "step": 15,
+            "terms": [
+              "म्रक्ष्",
+              "ए",
+              "य्",
+              "उरुँ"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[13]",
+          "expected": {
+            "step": 16,
+            "terms": [
+              "म्रक्ष्",
+              "एय्",
+              "उर्"
+            ]
+          },
+          "actual": {
+            "step": 16,
+            "terms": [
+              "म्रक्ष्",
+              "ए",
+              "य्",
+              "उर्"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[14]",
+          "expected": {
+            "step": 17,
+            "terms": [
+              "म्रक्ष्",
+              "एय्",
+              "उः"
+            ]
+          },
+          "actual": {
+            "step": 17,
+            "terms": [
+              "म्रक्ष्",
+              "ए",
+              "य्",
+              "उः"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "task_number": 156,
+      "task_id": "correction-27d47eb1b2ce350f0d2927f0",
+      "category": "operation_order",
+      "note": "Vowel lengthening precedes final-ending processing, and one intermediate r checkpoint is omitted.",
+      "mechanical_matches": {},
+      "gold_regenerated": true,
+      "first_error_correct": true,
+      "final_word_correct": true,
+      "strict_pass_unchanged": false,
+      "original_differences": [
+        {
+          "field": "corrected_steps[6]",
+          "expected": {
+            "step": 10,
+            "terms": [
+              "धिर्",
+              "यास्",
+              "उरुँ"
+            ]
+          },
+          "actual": {
+            "step": 10,
+            "terms": [
+              "धीर्",
+              "यास्",
+              "उस्"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[7]",
+          "expected": {
+            "step": 11,
+            "terms": [
+              "धिर्",
+              "यास्",
+              "उर्"
+            ]
+          },
+          "actual": {
+            "step": 11,
+            "terms": [
+              "धीर्",
+              "यास्",
+              "उरुँ"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[8]",
+          "expected": {
+            "step": 12,
+            "terms": [
+              "धीर्",
+              "यास्",
+              "उर्"
+            ]
+          },
+          "actual": {
+            "step": 12,
+            "terms": [
+              "धीर्",
+              "यास्",
+              "उः"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[9]",
+          "expected": {
+            "step": 13,
+            "terms": [
+              "धीर्",
+              "यास्",
+              "उः"
+            ]
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "task_number": 161,
+      "task_id": "correction-0d381c7fb05585cd52ec10f2",
+      "category": "mixed_requires_review",
+      "note": "Omits mip→mi, changes reduplication/deaspiration order, and represents the tuk augment separately. Needs grammatical review beyond string matching.",
+      "mechanical_matches": {},
+      "gold_regenerated": true,
+      "first_error_correct": true,
+      "final_word_correct": true,
+      "strict_pass_unchanged": false,
+      "original_differences": [
+        {
+          "field": "corrected_steps[3]",
+          "expected": {
+            "step": 6,
+            "terms": [
+              "छुड्",
+              "मि"
+            ]
+          },
+          "actual": {
+            "step": 6,
+            "terms": [
+              "छुड्",
+              "णल्"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[4]",
+          "expected": {
+            "step": 7,
+            "terms": [
+              "छुड्",
+              "णल्"
+            ]
+          },
+          "actual": {
+            "step": 7,
+            "terms": [
+              "छुड्",
+              "अ"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[5]",
+          "expected": {
+            "step": 8,
+            "terms": [
+              "छुड्",
+              "अ"
+            ]
+          },
+          "actual": {
+            "step": 8,
+            "terms": [
+              "छुड्",
+              "छुड्",
+              "अ"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[6]",
+          "expected": {
+            "step": 9,
+            "terms": [
+              "छुड्",
+              "छुड्",
+              "अ"
+            ]
+          },
+          "actual": {
+            "step": 9,
+            "terms": [
+              "छु",
+              "छुड्",
+              "अ"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[7]",
+          "expected": {
+            "step": 10,
+            "terms": [
+              "छुड्",
+              "छोड्",
+              "अ"
+            ]
+          },
+          "actual": {
+            "step": 10,
+            "terms": [
+              "चु",
+              "छुड्",
+              "अ"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[8]",
+          "expected": {
+            "step": 11,
+            "terms": [
+              "छु",
+              "छोड्",
+              "अ"
+            ]
+          },
+          "actual": {
+            "step": 11,
+            "terms": [
+              "चु",
+              "छोड्",
+              "अ"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[9]",
+          "expected": {
+            "step": 12,
+            "terms": [
+              "छु",
+              "त्छोड्",
+              "अ"
+            ]
+          },
+          "actual": {
+            "step": 12,
+            "terms": [
+              "चु",
+              "तुक्",
+              "छोड्",
+              "अ"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[10]",
+          "expected": {
+            "step": 13,
+            "terms": [
+              "छु",
+              "च्छोड्",
+              "अ"
+            ]
+          },
+          "actual": {
+            "step": 13,
+            "terms": [
+              "चु",
+              "त्",
+              "छोड्",
+              "अ"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[11]",
+          "expected": {
+            "step": 14,
+            "terms": [
+              "चु",
+              "च्छोड्",
+              "अ"
+            ]
+          },
+          "actual": {
+            "step": 14,
+            "terms": [
+              "चु",
+              "च्",
+              "छोड्",
+              "अ"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "task_number": 163,
+      "task_id": "correction-13ca84115ed8567cec81f6a2",
+      "category": "technical_notation_only",
+      "note": "Mechanically established structural difference; not an assertion that the original format requirements were satisfied.",
+      "mechanical_matches": {
+        "technical_notation_only": 0,
+        "notation_and_boundaries": 0,
+        "notation_and_omissions": 0
+      },
+      "gold_regenerated": true,
+      "first_error_correct": true,
+      "final_word_correct": true,
+      "strict_pass_unchanged": false,
+      "original_differences": [
+        {
+          "field": "corrected_steps[0]",
+          "expected": {
+            "step": 4,
+            "terms": [
+              "मन्ग्",
+              "लङ्"
+            ]
+          },
+          "actual": {
+            "step": 4,
+            "terms": [
+              "मन्ग्",
+              "लँङ्"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[1]",
+          "expected": {
+            "step": 5,
+            "terms": [
+              "मन्ग्",
+              "ल"
+            ]
+          },
+          "actual": {
+            "step": 5,
+            "terms": [
+              "मन्ग्",
+              "ल्"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "task_number": 179,
+      "task_id": "correction-05b33212879babbdf0eeaf13",
+      "category": "notation_and_omissions",
+      "note": "Mechanically established structural difference; not an assertion that the original format requirements were satisfied.",
+      "mechanical_matches": {
+        "notation_and_omissions": 2
+      },
+      "gold_regenerated": true,
+      "first_error_correct": true,
+      "final_word_correct": true,
+      "strict_pass_unchanged": false,
+      "original_differences": [
+        {
+          "field": "corrected_steps[0]",
+          "expected": {
+            "step": 3,
+            "terms": [
+              "स्कु",
+              "लँट्"
+            ]
+          },
+          "actual": {
+            "step": 3,
+            "terms": [
+              "स्कु",
+              "लट्"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[1]",
+          "expected": {
+            "step": 4,
+            "terms": [
+              "स्कु",
+              "ल्"
+            ]
+          },
+          "actual": {
+            "step": 4,
+            "terms": [
+              "स्कु",
+              "ल"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[7]",
+          "expected": {
+            "step": 10,
+            "terms": [
+              "स्कु",
+              "न्",
+              "अंति"
+            ]
+          },
+          "actual": null
+        },
+        {
+          "field": "corrected_steps[8]",
+          "expected": {
+            "step": 11,
+            "terms": [
+              "स्कु",
+              "न्",
+              "अन्ति"
+            ]
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "task_number": 196,
+      "task_id": "correction-1f7ff4db798cd0aed5341a44",
+      "category": "technical_notation_only",
+      "note": "Mechanically established structural difference; not an assertion that the original format requirements were satisfied.",
+      "mechanical_matches": {
+        "technical_notation_only": 0,
+        "notation_and_boundaries": 0,
+        "notation_and_omissions": 0
+      },
+      "gold_regenerated": true,
+      "first_error_correct": true,
+      "final_word_correct": true,
+      "strict_pass_unchanged": false,
+      "original_differences": [
+        {
+          "field": "corrected_steps[0]",
+          "expected": {
+            "step": 3,
+            "terms": [
+              "ब्रू",
+              "लङ्"
+            ]
+          },
+          "actual": {
+            "step": 3,
+            "terms": [
+              "ब्रू",
+              "लँङ्"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[1]",
+          "expected": {
+            "step": 4,
+            "terms": [
+              "ब्रू",
+              "ल"
+            ]
+          },
+          "actual": {
+            "step": 4,
+            "terms": [
+              "ब्रू",
+              "ल्"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "task_number": 198,
+      "task_id": "correction-f0b47bec2fc78f8730fcb749",
+      "category": "omitted_checkpoints_only",
+      "note": "Mechanically established structural difference; not an assertion that the original format requirements were satisfied.",
+      "mechanical_matches": {
+        "omitted_checkpoints_only": 0,
+        "notation_and_omissions": 0
+      },
+      "gold_regenerated": true,
+      "first_error_correct": true,
+      "final_word_correct": true,
+      "strict_pass_unchanged": false,
+      "original_differences": [
+        {
+          "field": "corrected_steps[5]",
+          "expected": {
+            "step": 10,
+            "terms": [
+              "त",
+              "त्रस्",
+              "अतुर्"
+            ]
+          },
+          "actual": {
+            "step": 10,
+            "terms": [
+              "त",
+              "त्रस्",
+              "अतुः"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[6]",
+          "expected": {
+            "step": 11,
+            "terms": [
+              "त",
+              "त्रस्",
+              "अतुः"
+            ]
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "task_number": 199,
+      "task_id": "correction-1720aa1704e4a9d695a8754f",
+      "category": "mixed_requires_review",
+      "note": "Reduplicant krsh→karsh→ka→ca differs from VP krsh→kr→cr→ca. Alternate rule order/analysis needs independent grammatical adjudication.",
+      "mechanical_matches": {},
+      "gold_regenerated": true,
+      "first_error_correct": true,
+      "final_word_correct": true,
+      "strict_pass_unchanged": false,
+      "original_differences": [
+        {
+          "field": "corrected_steps[7]",
+          "expected": {
+            "step": 10,
+            "terms": [
+              "कृ",
+              "कृष्",
+              "इ",
+              "म"
+            ]
+          },
+          "actual": {
+            "step": 10,
+            "terms": [
+              "कर्ष्",
+              "कृष्",
+              "इ",
+              "म"
+            ]
+          }
+        },
+        {
+          "field": "corrected_steps[8]",
+          "expected": {
+            "step": 11,
+            "terms": [
+              "चृ",
+              "कृष्",
+              "इ",
+              "म"
+            ]
+          },
+          "actual": {
+            "step": 11,
+            "terms": [
+              "क",
+              "कृष्",
+              "इ",
+              "म"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

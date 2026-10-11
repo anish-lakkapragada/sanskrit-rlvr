@@ -1,0 +1,132 @@
+{
+  "scope": "Prospective methodological note; illustrative counts only, no final outcomes accessed.",
+  "final_scores_read": false,
+  "paid_calls": 0,
+  "ledger_mutations": 0,
+  "qualification_changed": false,
+  "fixed_n": 1800,
+  "joint_coverage_at_least": 0.95,
+  "reference_models": 2,
+  "sufficient_known_correct_for_strict_sd_below_one_pp": 1434,
+  "sufficient_known_correct_fraction": 0.7966666666666666,
+  "illustrations": {
+    "if_Opus_repeated_87.5_percent_development_rate": {
+      "n": 1800,
+      "known_correct": 1575,
+      "observed_known_correct_fraction": 0.875,
+      "per_reference_alpha": 0.025,
+      "joint_alpha": 0.05,
+      "references": 2,
+      "expected_accuracy_lower_bound": 0.842989240289336,
+      "hoeffding_margin": 0.03201075971066403,
+      "fixed_panel_repeat_sd_upper": 0.00857510547540392,
+      "interpretation": "Conditional bound under independent calls and stable per-question probabilities; not new-root sampling uncertainty."
+    },
+    "if_Astra_repeated_80.5_percent_development_rate": {
+      "n": 1800,
+      "known_correct": 1449,
+      "observed_known_correct_fraction": 0.805,
+      "per_reference_alpha": 0.025,
+      "joint_alpha": 0.05,
+      "references": 2,
+      "expected_accuracy_lower_bound": 0.772989240289336,
+      "hoeffding_margin": 0.03201075971066403,
+      "fixed_panel_repeat_sd_upper": 0.009873558254422408,
+      "interpretation": "Conditional bound under independent calls and stable per-question probabilities; not new-root sampling uncertainty."
+    }
+  },
+  "exact_small_distribution_checks": [
+    {
+      "probabilities": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "first_item_hidden": false,
+      "mean_lower_bound_noncoverage": 0.0,
+      "repeat_sd_upper_bound_noncoverage": 0.0
+    },
+    {
+      "probabilities": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "first_item_hidden": true,
+      "mean_lower_bound_noncoverage": 0.0,
+      "repeat_sd_upper_bound_noncoverage": 0.0
+    },
+    {
+      "probabilities": [
+        0.1,
+        0.4,
+        0.7,
+        0.95
+      ],
+      "first_item_hidden": false,
+      "mean_lower_bound_noncoverage": 0.026600000000000002,
+      "repeat_sd_upper_bound_noncoverage": 0.0
+    },
+    {
+      "probabilities": [
+        0.1,
+        0.4,
+        0.7,
+        0.95
+      ],
+      "first_item_hidden": true,
+      "mean_lower_bound_noncoverage": 0.0,
+      "repeat_sd_upper_bound_noncoverage": 0.0
+    },
+    {
+      "probabilities": [
+        0.8,
+        0.8,
+        0.8,
+        0.8
+      ],
+      "first_item_hidden": false,
+      "mean_lower_bound_noncoverage": 0.0,
+      "repeat_sd_upper_bound_noncoverage": 0.0
+    },
+    {
+      "probabilities": [
+        0.8,
+        0.8,
+        0.8,
+        0.8
+      ],
+      "first_item_hidden": true,
+      "mean_lower_bound_noncoverage": 0.0,
+      "repeat_sd_upper_bound_noncoverage": 0.0
+    },
+    {
+      "probabilities": [
+        0.02,
+        0.1,
+        0.5,
+        0.7,
+        0.9,
+        0.99
+      ],
+      "first_item_hidden": false,
+      "mean_lower_bound_noncoverage": 0.0006237,
+      "repeat_sd_upper_bound_noncoverage": 0.0
+    },
+    {
+      "probabilities": [
+        0.02,
+        0.1,
+        0.5,
+        0.7,
+        0.9,
+        0.99
+      ],
+      "first_item_hidden": true,
+      "mean_lower_bound_noncoverage": 0.0,
+      "repeat_sd_upper_bound_noncoverage": 0.0
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+# Independent review: exact HTTP502 carry exception
+
+**Pass for the bounded continuation driver; no remaining concrete blocker.** An actual drained checkpoint still needs separate review before activation. This is not a replay approval, source/scoring change or final qualification.
+
+Reviewed `continue.py` SHA: `2281153aa28c7d9f623fbd1a22a80ad0603f12dff1648c91d2035d33d0a9614c`. Tests SHA: `0f80204e37e155e4c5de57e40843f72fd34372e9f183d5bdaa1a7014d9c9df29`. [The JSON review](independent-review.json) pins those bytes, the original execution plan and exact index837 request/intent/error fingerprints. All 44 original dependencies remain unchanged.
+
+The original accounts, request order and bodies, model, xhigh/65,536-token protocol, $100/$225 pools, $1,000/$2,000 lifetime caps and protected reserves remain intact. Only the exact archived index837 HTTP502 is allowed to remain unresolved. Its full $3.2918 reservation and original operational failure remain present. Any later failure is recorded separately, stops admissions and cannot expand the allowlist.
+
+The driver permits **31 live OpenAI requests plus the one held unknown**, preserving the maximum 32 unresolved reservations. Both pool and lifetime arithmetic include the held maximum. It uses the original identity/settlement checks and mirrors the original admission arithmetic with this one explicit exception. A fresh request still requires exact unseen-suffix membership, a full reservation, an exclusive durable intent, unchanged dependencies and the same coordinator/financial locks. Network calls occur outside the financial lock; SDK retries remain zero.
+
+The initially identified prior-binding gap is fixed: prepare verifies the existing adopted amendment through the previous Guard, checks its durable ledger record and unchanged older prefix, then binds the next checkpoint. It also requires the reviewer-pinned error, intent and request fingerprints rather than accepting an arbitrary new502. The new amendment is appended and fsynced before any new paid admission; prior artifacts remain immutable.
+
+**Eight author tests and three independent tests passed**, using temporary ledgers and a fake SDK only. They cover 31 simultaneous calls, one retained hold, exact lifetime and pool boundaries, full failure preservation, no replay, idempotent settled-suffix restart, no additional unknowns, prior-chain tampering, exact failure fingerprints, durable intent/accounting before network and refusal after a novel error. The original accounting/analyzer correctly remains incomplete at the end because837 has no validated terminal usage.
+
+The separate `complete_attempted_pending_paired_analysis` state means all original questions were attempted, with1799 genuine OpenAI terminal-usage records and one infrastructure hole. It must not be presented as satisfying the untouched original complete-terminal-usage gate. Any additive analyzer must wait for all other fixed records, preserve the full1800 denominator, label837 infrastructure-missing, and report usable statistics and missing-answer bounds separately. One hole alone widens that bound by0.05556 percentage points; other nonusable responses and source adjudication remain separate concerns.
+
+No paid calls, live-process actions, ledger changes or final-answer/score reads were made by this reviewer. Completion of the remaining suffix is still conditional on service availability and the unchanged financial limits.

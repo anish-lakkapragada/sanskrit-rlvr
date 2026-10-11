@@ -1,0 +1,80 @@
+{
+  "created_at": "2026-10-07T05:00:58.401183+00:00",
+  "seed": 2026100605,
+  "filename": "pilot-01.tasks.json",
+  "n": 120,
+  "split": "development",
+  "recipes": {
+    "causative": {
+      "sanadi": [
+        "Ric"
+      ],
+      "n": 10
+    },
+    "desiderative": {
+      "sanadi": [
+        "san"
+      ],
+      "n": 10
+    },
+    "intensive": {
+      "sanadi": [
+        "yaN"
+      ],
+      "n": 20
+    },
+    "intensive_luk": {
+      "sanadi": [
+        "yaNluk"
+      ],
+      "n": 20
+    },
+    "causative_of_intensive": {
+      "sanadi": [
+        "yaN",
+        "Ric"
+      ],
+      "n": 30
+    },
+    "desiderative_of_causative_of_intensive": {
+      "sanadi": [
+        "yaN",
+        "Ric",
+        "san"
+      ],
+      "n": 30
+    }
+  },
+  "root_families": 120,
+  "max_per_family": 1,
+  "gana_quotas": {
+    "Bhvadi": 48,
+    "Adadi": 10,
+    "Juhotyadi": 5,
+    "Divadi": 12,
+    "Svadi": 8,
+    "Tudadi": 16,
+    "Rudhadi": 6,
+    "Tanadi": 2,
+    "Kryadi": 8,
+    "Curadi": 5
+  },
+  "attempts_at_class_slot_assignment": 1,
+  "rejections_during_sampling": {
+    "unresolved_nested_rule_context": 8,
+    "intensive_requires_consonant_initial_single_vowel_base": 15
+  },
+  "prior_tuple_signatures": 607,
+  "file_sha256": "46d5681bbff3a8c248a76f094a6acda6cc4795679b14da91a7bd93de1cc168fe",
+  "generator_sha256": "b37162eea5e744327cad7f9ea9364761a1e5eb18b0c3333a96b95142bac52506",
+  "family_split_sha256": "a1c46bb778bca8f89df468d65232698131a3c4b137393865cd3f6b121fc6077f",
+  "dhatupatha_sha256": "c6c494a6c534130b2d8e8f344d2f5e3ffbc64ed45b390e2a4e35e526f1cecd09",
+  "shared_adapter_sha256": "0d37fb3d417be71d035251b98d6499d515567500aa165d74c94849ed9335394b",
+  "prompt_renderer_sha256": "1cdf3930d2e6b5bf9994a0a5fd25918a2e038b6dfbbcc9a9bab1fb59ddbfcfff",
+  "selection": "All pilot membership chosen without reference-model answers; rejected class-slot assignments use grammatical supply alone.",
+  "test_and_training_policy": "Existing root-family assignments preserved. Novelty checks consult development input coordinates only; no model results or held-out answers are inspected.",
+  "initial_generation_script_sha256": "5162e57f845538eb773d8d6b8be5aa07daaad4945d753be1868bd62a91a83ce7",
+  "audit_fix_note": "After task selection, corrected a prompt-substring assertion to match the unchanged v2 wording and narrowed novelty-file traversal; task membership and generated fields were not changed.",
+  "validated_shared_adapter_sha256": "a73bb50e37f33d1837443d60ee8fa035fc4480ce2b006c4dcd82992855f2e945",
+  "shared_adapter_note": "The coordinator strengthened validation after generation. The recorded generation hash is preserved; all tasks also pass the strengthened adapter with unchanged generated fields."
+}

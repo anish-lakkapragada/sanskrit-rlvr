@@ -1,0 +1,432 @@
+{
+  "created_at": "2026-10-07T07:40:54.492256+00:00",
+  "raw_results": "benchmarks/iterative-goal-20261006/jobs/opus-four-d-pilot-04/results.json",
+  "raw_results_sha256": "3ae10c8a211d77216188bd19a46ee330003200c18eaab35516d3a547b45475c0",
+  "questions_sha256": "f38bfd8c1f4abfa99fbef13ab5b2e8d59b9477010f6cf4d2de7e76c6ad181f79",
+  "shared_policy": "oracle-policy-10.json",
+  "raw": {
+    "n": 112,
+    "correct": 103,
+    "accuracy": 0.9196428571428571,
+    "families": 75,
+    "error_families": 9,
+    "wilson95_iid_only": [
+      0.8543044472628597,
+      0.9571494221630995
+    ]
+  },
+  "completed": 112,
+  "refusals": 0,
+  "truncations": 0,
+  "shared_policy_exclusions": 0,
+  "disagreements": [
+    {
+      "id": "cart4-7b5d2d64b4fe9898c4de2a52",
+      "code": "10.0392",
+      "dhatu": {
+        "code": "10.0392",
+        "aupadeshika": "SaWa",
+        "gana": "Curadi",
+        "artha": "samyagavaBAzaRe"
+      },
+      "morphology": {
+        "lakara": "Lat",
+        "prayoga": "Kartari",
+        "purusha": "Prathama",
+        "vacana": "Dvi"
+      },
+      "model_answer": "शाठयतः",
+      "gold_devanagari": [
+        "शठयतः",
+        "शठयेते"
+      ],
+      "gold_slp1": [
+        "SaWayataH",
+        "SaWayete"
+      ],
+      "classification": "source-supported model disagreement",
+      "source_audit_level": "Direct lexical/stem control plus explicit rule inference for the requested ending; not a printed exact-form proof for every question.",
+      "reason": "Primary Dhatupradipa directly gives SaWayati; adanta a-deletion blocks strengthening. Dual endings are ordinary rule inference. Model incorrectly lengthens the stem vowel.",
+      "source_urls": [
+        "https://sa.wikisource.org/wiki/सिद्धान्तकौमुदी/प्रकरण‌५१-६०",
+        "https://jainqq.org/booktext/Dhatupradip/004319"
+      ],
+      "shared_policy_change_proposed": false
+    },
+    {
+      "id": "cart4-9d4de6bf69b09056e497e661",
+      "code": "10.0488",
+      "dhatu": {
+        "code": "10.0488",
+        "aupadeshika": "vasa",
+        "gana": "Curadi",
+        "artha": "nivAse"
+      },
+      "morphology": {
+        "lakara": "Lun",
+        "prayoga": "Kartari",
+        "purusha": "Prathama",
+        "vacana": "Dvi"
+      },
+      "model_answer": "अवीवसताम्",
+      "gold_devanagari": [
+        "अववसताम्",
+        "अववसेताम्"
+      ],
+      "gold_slp1": [
+        "avavasatAm",
+        "avavasetAm"
+      ],
+      "classification": "source-supported model disagreement",
+      "source_audit_level": "Direct lexical/stem control plus explicit rule inference for the requested ending; not a printed exact-form proof for every question.",
+      "reason": "Primary Dhatupradipa lists adanta vasa nivase and vasayati. Aorist follows the explicitly stated aglopi prohibition on san-like reduplication and lengthening, as in acakaTat and avavAtat. Model incorrectly applies the ordinary vi/vI reduplication pattern.",
+      "source_urls": [
+        "https://sa.wikisource.org/wiki/सिद्धान्तकौमुदी/प्रकरण‌५१-६०",
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.4.93.htm",
+        "https://jainqq.org/explore/004319/163"
+      ],
+      "shared_policy_change_proposed": false
+    },
+    {
+      "id": "cart4-175d7b1d37adafa76605ca9a",
+      "code": "10.0419",
+      "dhatu": {
+        "code": "10.0419",
+        "aupadeshika": "SIla",
+        "gana": "Curadi",
+        "artha": "upaDAraRe"
+      },
+      "morphology": {
+        "lakara": "Lun",
+        "prayoga": "Kartari",
+        "purusha": "Madhyama",
+        "vacana": "Bahu"
+      },
+      "model_answer": "अशीशिलत",
+      "gold_devanagari": [
+        "अशिशीलध्वम्",
+        "अशिशीलत"
+      ],
+      "gold_slp1": [
+        "aSiSIlaDvam",
+        "aSiSIlata"
+      ],
+      "classification": "source-supported model disagreement",
+      "source_audit_level": "Direct lexical/stem control plus explicit rule inference for the requested ending; not a printed exact-form proof for every question.",
+      "reason": "Primary subgroup explicitly lists SIla upadharane. Aorist preserves long root I and short reduplicative i: 7.4.2 prohibits root-vowel shortening in aglopi, and 7.4.93 does not license san-like lengthening. Model swaps the vowel lengths.",
+      "source_urls": [
+        "https://sa.wikisource.org/wiki/सिद्धान्तकौमुदी/प्रकरण‌५१-६०",
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.4.2.htm",
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.4.93.htm"
+      ],
+      "shared_policy_change_proposed": false
+    },
+    {
+      "id": "cart4-bd1ded34ba6982f013a41ee5",
+      "code": "10.0408",
+      "dhatu": {
+        "code": "10.0408",
+        "aupadeshika": "kfpa",
+        "gana": "Curadi",
+        "artha": "dOrbalye"
+      },
+      "morphology": {
+        "lakara": "Lut",
+        "prayoga": "Kartari",
+        "purusha": "Uttama",
+        "vacana": "Bahu"
+      },
+      "model_answer": "कल्पयितास्मः",
+      "gold_devanagari": [
+        "कृपयितास्मः",
+        "कृपयितास्महे"
+      ],
+      "gold_slp1": [
+        "kfpayitAsmaH",
+        "kfpayitAsmahe"
+      ],
+      "classification": "source-supported model disagreement",
+      "source_audit_level": "Direct lexical/stem control plus explicit rule inference for the requested ending; not a printed exact-form proof for every question.",
+      "reason": "Primary subgroup directly gives kfpayati for this adanta kfpa meaning weakness. The model imports kalp from a different root analysis; the ordinary future periphrastic ending does not license it.",
+      "source_urls": [
+        "https://sa.wikisource.org/wiki/सिद्धान्तकौमुदी/प्रकरण‌५१-६०",
+        "https://www.jainqq.org/pagetext/Balmanorama/020099/303"
+      ],
+      "shared_policy_change_proposed": false
+    },
+    {
+      "id": "cart4-470eb8b677cfc2e35265c97b",
+      "code": "06.0137",
+      "dhatu": {
+        "code": "06.0137",
+        "aupadeshika": "kUN",
+        "gana": "Tudadi",
+        "artha": "Sabde"
+      },
+      "morphology": {
+        "lakara": "AshirLin",
+        "prayoga": "Kartari",
+        "purusha": "Madhyama",
+        "vacana": "Bahu"
+      },
+      "model_answer": "कविषीध्वम्",
+      "gold_devanagari": [
+        "कुविषीध्वम्",
+        "कुविषीढ्वम्"
+      ],
+      "gold_slp1": [
+        "kuvizIDvam",
+        "kuvizIQvam"
+      ],
+      "classification": "source-supported model disagreement",
+      "source_audit_level": "Direct lexical/stem control plus explicit rule inference for the requested ending; not a printed exact-form proof for every question.",
+      "reason": "Siddhantakaumudi/Balamanorama explicitly preserve the long kuN lexical variant inside Kutadi and give kuvita, akuvizta. Kutadi ngit substitution blocks guna; uvanga plus iT yields kuvi, not kavi. Optional dh/retroflex dh both remain accepted.",
+      "source_urls": [
+        "https://www.jainqq.org/pagetext/Balmanorama/020099/264",
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/1/1.2.1.htm",
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/6/6.4.77.htm",
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/8/8.3.79.htm"
+      ],
+      "shared_policy_change_proposed": false
+    },
+    {
+      "id": "cart4-fecfccff5b0aed57c6830bcd",
+      "code": "10.0432",
+      "dhatu": {
+        "code": "10.0432",
+        "aupadeshika": "kUwa",
+        "gana": "Curadi",
+        "artha": "paritApe paridAhe ca"
+      },
+      "morphology": {
+        "lakara": "Lun",
+        "prayoga": "Kartari",
+        "purusha": "Uttama",
+        "vacana": "Bahu"
+      },
+      "model_answer": "अचूकुटाम",
+      "gold_devanagari": [
+        "अचुकूटाम",
+        "अचुकूटामहि"
+      ],
+      "gold_slp1": [
+        "acukUwAma",
+        "acukUwAmahi"
+      ],
+      "classification": "source-supported model disagreement",
+      "source_audit_level": "Direct lexical/stem control plus explicit rule inference for the requested ending; not a printed exact-form proof for every question.",
+      "reason": "Primary subgroup directly lists kUwa with this meaning and kUwayati. The aglopi aorist keeps long root U and short reduplicative u. Model instead applies ordinary shortening and reduplicative lengthening.",
+      "source_urls": [
+        "https://sa.wikisource.org/wiki/सिद्धान्तकौमुदी/प्रकरण‌५१-६०",
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.4.2.htm",
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.4.93.htm"
+      ],
+      "shared_policy_change_proposed": false
+    },
+    {
+      "id": "cart4-6da86226d65ebbd112bdb83d",
+      "code": "10.0401",
+      "dhatu": {
+        "code": "10.0401",
+        "aupadeshika": "paza",
+        "gana": "Curadi",
+        "artha": "gatO"
+      },
+      "morphology": {
+        "lakara": "Lrt",
+        "prayoga": "Kartari",
+        "purusha": "Madhyama",
+        "vacana": "Bahu"
+      },
+      "model_answer": "पाषयिष्यथ",
+      "gold_devanagari": [
+        "पषयिष्यध्वे",
+        "पषयिष्यथ"
+      ],
+      "gold_slp1": [
+        "pazayizyaDve",
+        "pazayizyaTa"
+      ],
+      "classification": "source-supported model disagreement",
+      "source_audit_level": "Direct lexical/stem control plus explicit rule inference for the requested ending; not a printed exact-form proof for every question.",
+      "reason": "Primary source expressly licenses unprefixed paza and gives pazayati. Future stem retains short a under adanta conditioning. Model incorrectly strengthens it.",
+      "source_urls": [
+        "https://sa.wikisource.org/wiki/सिद्धान्तकौमुदी/प्रकरण‌५१-६०"
+      ],
+      "shared_policy_change_proposed": false
+    },
+    {
+      "id": "cart4-e12cb7393114e252d65f5dbd",
+      "code": "10.0461",
+      "dhatu": {
+        "code": "10.0461",
+        "aupadeshika": "vawa",
+        "gana": "Curadi",
+        "artha": "viBAjane"
+      },
+      "morphology": {
+        "lakara": "Lun",
+        "prayoga": "Kartari",
+        "purusha": "Madhyama",
+        "vacana": "Dvi"
+      },
+      "model_answer": "अवीवटतम्",
+      "gold_devanagari": [
+        "अववटतम्",
+        "अववटेथाम्"
+      ],
+      "gold_slp1": [
+        "avavawatam",
+        "avavaweTAm"
+      ],
+      "classification": "source-supported model disagreement",
+      "source_audit_level": "Direct lexical/stem control plus explicit rule inference for the requested ending; not a printed exact-form proof for every question.",
+      "reason": "Dhatupradipa explicitly lists adanta vawa vibhajane and vawayati; alternative vawi/laji citations are separately identified. General aglopi aorist inference gives avavawa-. The visible vawa citation does not license the model vi/vI pattern.",
+      "source_urls": [
+        "https://jainqq.org/booktext/Dhatupradip/004319",
+        "https://sa.wikisource.org/wiki/सिद्धान्तकौमुदी/प्रकरण‌५१-६०",
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.4.93.htm"
+      ],
+      "shared_policy_change_proposed": false
+    },
+    {
+      "id": "cart4-56ede5e8ff2ec56bf7df3e0b",
+      "code": "10.0482",
+      "dhatu": {
+        "code": "10.0482",
+        "aupadeshika": "lABa",
+        "gana": "Curadi",
+        "artha": "preraRe"
+      },
+      "morphology": {
+        "lakara": "Lun",
+        "prayoga": "Kartari",
+        "purusha": "Uttama",
+        "vacana": "Bahu"
+      },
+      "model_answer": "अलीलभाम",
+      "gold_devanagari": [
+        "अललाभाम",
+        "अललाभामहि"
+      ],
+      "gold_slp1": [
+        "alalABAma",
+        "alalABAmahi"
+      ],
+      "classification": "source-supported model disagreement",
+      "source_audit_level": "Direct lexical/stem control plus explicit rule inference for the requested ending; not a printed exact-form proof for every question.",
+      "reason": "Kshiratarangini explicitly prints lABa prerane, lABayati and alalABat, contrasting Bhvadi laB and its ordinary causal aorist. First-person plural endings are ordinary rule inference. The model selects the wrong reduplicative/shortened stem.",
+      "source_urls": [
+        "https://jainqq.org/booktext/Kshir_Tarangini/002433",
+        "https://jainqq.org/explore/004319/163",
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.4.2.htm",
+        "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.4.93.htm"
+      ],
+      "shared_policy_change_proposed": false
+    }
+  ],
+  "mechanism_metrics": {
+    "adanta_curadi": {
+      "n": 64,
+      "correct": 56,
+      "accuracy": 0.875,
+      "families": 27,
+      "error_families": 8,
+      "wilson95_iid_only": [
+        0.772254381788704,
+        0.9352775733666943
+      ]
+    },
+    "adanta_non_aorist": {
+      "n": 40,
+      "correct": 37,
+      "accuracy": 0.925,
+      "families": 23,
+      "error_families": 3,
+      "wilson95_iid_only": [
+        0.8013576647568991,
+        0.9741639742254112
+      ]
+    },
+    "posthoc_other_stem_non_aorist": {
+      "n": 23,
+      "correct": 23,
+      "accuracy": 1.0,
+      "families": 13,
+      "error_families": 0,
+      "wilson95_iid_only": [
+        0.8568833815495799,
+        0.9999999999999999
+      ]
+    },
+    "posthoc_short_penultimate_non_aorist": {
+      "n": 17,
+      "correct": 14,
+      "accuracy": 0.8235294117647058,
+      "families": 10,
+      "error_families": 3,
+      "wilson95_iid_only": [
+        0.5897054143116658,
+        0.9380887336237884
+      ]
+    },
+    "nonpresent_dhvam": {
+      "n": 48,
+      "correct": 47,
+      "accuracy": 0.9791666666666666,
+      "families": 48,
+      "error_families": 1,
+      "wilson95_iid_only": [
+        0.8910078200474851,
+        0.9963128890224893
+      ]
+    },
+    "adanta_aorist": {
+      "n": 24,
+      "correct": 19,
+      "accuracy": 0.7916666666666666,
+      "families": 17,
+      "error_families": 5,
+      "wilson95_iid_only": [
+        0.5952954674681193,
+        0.9075517464714794
+      ]
+    },
+    "posthoc_other_stem_aorist": {
+      "n": 13,
+      "correct": 10,
+      "accuracy": 0.7692307692307693,
+      "families": 9,
+      "error_families": 3,
+      "wilson95_iid_only": [
+        0.4974362405327324,
+        0.9182047128150121
+      ]
+    },
+    "posthoc_short_penultimate_aorist": {
+      "n": 11,
+      "correct": 9,
+      "accuracy": 0.8181818181818182,
+      "families": 8,
+      "error_families": 2,
+      "wilson95_iid_only": [
+        0.5230194380391643,
+        0.9486323102539135
+      ]
+    }
+  },
+  "fixed_trigger_outcomes": {
+    "adanta_curadi": "Met: 8 supported disagreements across 8 families, versus required 8 across6.",
+    "nonpresent_dhvam": "Not met: 1 supported disagreement versus required6."
+  },
+  "posthoc_disclosure": "The short-penultimate split is motivated by original-vowel conditioning but its pilot04 accuracy was inspected after outcomes. It is exploratory, not independent validation. Fresh tasks must be frozen before further responses, and no final item may be chosen by its own failure.",
+  "conclusion": "Adanta Curadi supports a bounded fresh-tuple confirmation. The broad cell remains87.5%, and its scarce one-class supply does not establish a diverse79–81% benchmark. Dhvam is disconfirmed as a broad hardness route at this setting.",
+  "limits": [
+    "All nine mismatches have source-backed stem or rule explanations; this does not claim full independent certification of every accepted gold variant.",
+    "Small post-hoc strata, adaptive mechanism discovery and shared root families make iid intervals optimistic for generalization.",
+    "The current corpus has no independently tested source-clean second mechanism near80%."
+  ],
+  "no_held_out_model_answers": true,
+  "worker_paid_calls": 0,
+  "benchmark_ready": false
+}

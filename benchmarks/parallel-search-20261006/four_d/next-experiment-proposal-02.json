@@ -1,0 +1,44 @@
+{
+  "created_at": "2026-10-07T05:27:11.325876+00:00",
+  "track": "four_d",
+  "status": "proposal_only_not_submittable",
+  "purpose": "Test lexical Atmanepada restrictions across fresh grammatical coordinates, without adding a pada coordinate.",
+  "hypothesis": "The model may generalize Curadi as ubhayapada and overlook the dictionary Akusmiya subgroup restriction.",
+  "development_evidence": {
+    "pilot_akusmiya_questions": 2,
+    "correct": 0,
+    "qualification": "Extremely low support; exact lexical variants need independent audit before generating questions."
+  },
+  "grammar_supply_families": {
+    "development": 17,
+    "test": 18,
+    "rl_train": 10
+  },
+  "suggested_n": 60,
+  "suggested_design": {
+    "akusmiya_fresh_questions": 36,
+    "non_akusmiya_curadi_controls": 12,
+    "other_gana_controls": 12,
+    "max_tasks_per_akusmiya_family": 3,
+    "minimum_lakaras": 8,
+    "kartari_only": true,
+    "person_number_balance": "approximately equal; fixed before evaluation",
+    "input_scope": "exact original four-coordinate prompt; no separate pada, prefixes or sanadi"
+  },
+  "questions_path": null,
+  "needed_before_request": [
+    "Directly audit exact Akusmiya dictionary variants and visible citation/gana/artha identity",
+    "Generate fresh development tuples, excluding all exposed task identities",
+    "Regenerate complete variant sets and freeze questions/seed",
+    "Coordinator review under cumulative budget lock"
+  ],
+  "suggested_provider": "Anthropic",
+  "model": "claude-opus-5-5",
+  "effort": "xhigh",
+  "max_output_tokens": 16384,
+  "maximum_reservation_if_60_questions_usd": 10.0104,
+  "parent_submission_authorized_here": false,
+  "worker_paid_calls": 0,
+  "final_sampling_weights_changed": false,
+  "limits": "This is a focused mechanism test, not a diverse release candidate or evidence of 79–81% strongest-reference accuracy."
+}

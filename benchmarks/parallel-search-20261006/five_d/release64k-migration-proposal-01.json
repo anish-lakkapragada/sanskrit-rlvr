@@ -1,0 +1,915 @@
+{
+  "created_at": "2026-10-07T12:50:25.632426+00:00",
+  "status": "nonoperative_migration_proposal",
+  "scope": "Possible common 64k five_d release at scenario N=4800; no final membership, authorization, shared edit or paid call.",
+  "precondition": "Do not change any running pilot 08 dependency. Implement only after all eight jobs settle, the coordinator releases the full aggregate, source validity/accuracy/precision/cost support advancement, and fixed N/protocol/reserve decisions are explicitly documented.",
+  "budget_snapshot_path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/parallel-search-20261006/five_d/release64k-operational-budget-snapshot.json",
+  "budget_snapshot_sha256": "aa61a3cfd62b52b809874f39cefc017c26016dd1c2ffcf4155cceeff81e48654",
+  "actual_snapshot": {
+    "Anthropic": {
+      "historical_spend_usd": 23.072126,
+      "settled_lifetime_usd": 246.194768,
+      "outstanding_max_reservations_usd": 263.344,
+      "committed_usd": 509.538768,
+      "remaining_after_commitments_usd": 490.461232,
+      "protected_remaining_usd": 295.14,
+      "free_after_commitments_and_protection_usd": 195.321232,
+      "attempted_question_counts_by_phase": {
+        "explore": 4014,
+        "confirm": 5612,
+        "confirm_64k": 400,
+        "bench_final": 0,
+        "hard_final": 0,
+        "cap_check": 0,
+        "cap_check_development": 0,
+        "bench_extension": 0,
+        "hard_extension": 0
+      },
+      "confirmation_registered_questions": 10412,
+      "confirmation_unattempted_registered_questions": 4400
+    },
+    "OpenAI": {
+      "historical_spend_usd": 0.0,
+      "settled_lifetime_usd": 727.47815,
+      "outstanding_max_reservations_usd": 197.508,
+      "committed_usd": 924.98615,
+      "remaining_after_commitments_usd": 1075.01385,
+      "protected_remaining_usd": 962.5,
+      "free_after_commitments_and_protection_usd": 112.51385,
+      "attempted_question_counts_by_phase": {
+        "explore": 1759,
+        "confirm": 1280,
+        "confirm_64k": 120,
+        "bench_final": 0,
+        "hard_final": 0,
+        "cap_check": 0,
+        "cap_check_development": 60,
+        "bench_extension": 0,
+        "hard_extension": 0
+      },
+      "confirmation_registered_questions": 1520,
+      "confirmation_unattempted_registered_questions": 120
+    }
+  },
+  "no_pilot08_outcomes_read": true,
+  "phase_aliases": {
+    "hard_final_64k": {
+      "canonical_allowance": "hard_final",
+      "effort": "xhigh",
+      "max_output_tokens": 65536,
+      "shared_n_per_provider": 1000
+    },
+    "hard_extension_64k": {
+      "canonical_allowance": "hard_extension",
+      "effort": "xhigh",
+      "max_output_tokens": 65536,
+      "shared_n_per_provider": 5000
+    }
+  },
+  "legacy_protocols_unchanged": true,
+  "minimum_input_reservation_tokens": 1500,
+  "maximum_counted_input_tokens": 1300,
+  "worst_reservation_usd": {
+    "Anthropic": {
+      "1": 0.65836,
+      "5": 3.2918,
+      "10": 6.5836,
+      "50": 32.918,
+      "100": 65.836,
+      "200": 131.672,
+      "500": 329.18,
+      "1000": 658.36,
+      "4800": 3160.128
+    },
+    "OpenAI": {
+      "1": 1.6459,
+      "5": 8.2295,
+      "10": 16.459,
+      "50": 82.295,
+      "100": 164.59,
+      "200": 329.18,
+      "500": 822.95,
+      "1000": 1645.9,
+      "4800": 7900.32
+    }
+  },
+  "example_transport": {
+    "fixed_n_scenario": 4800,
+    "core_n": 1000,
+    "extension_n": 3800,
+    "stage_count_per_provider": 70,
+    "total_provider_jobs": 140,
+    "schedule_blocks": [
+      {
+        "phase": "core",
+        "chunks": 5,
+        "n_each": 200
+      },
+      {
+        "phase": "extension",
+        "chunks": 10,
+        "n_each": 200
+      },
+      {
+        "phase": "extension",
+        "chunks": 10,
+        "n_each": 100
+      },
+      {
+        "phase": "extension",
+        "chunks": 10,
+        "n_each": 50
+      },
+      {
+        "phase": "extension",
+        "chunks": 25,
+        "n_each": 10
+      },
+      {
+        "phase": "extension",
+        "chunks": 10,
+        "n_each": 5
+      }
+    ],
+    "stages": [
+      {
+        "index": 1,
+        "phase": "hard_final_64k",
+        "n": 200,
+        "ordered_positions": [
+          0,
+          200
+        ]
+      },
+      {
+        "index": 2,
+        "phase": "hard_final_64k",
+        "n": 200,
+        "ordered_positions": [
+          200,
+          400
+        ]
+      },
+      {
+        "index": 3,
+        "phase": "hard_final_64k",
+        "n": 200,
+        "ordered_positions": [
+          400,
+          600
+        ]
+      },
+      {
+        "index": 4,
+        "phase": "hard_final_64k",
+        "n": 200,
+        "ordered_positions": [
+          600,
+          800
+        ]
+      },
+      {
+        "index": 5,
+        "phase": "hard_final_64k",
+        "n": 200,
+        "ordered_positions": [
+          800,
+          1000
+        ]
+      },
+      {
+        "index": 6,
+        "phase": "hard_extension_64k",
+        "n": 200,
+        "ordered_positions": [
+          1000,
+          1200
+        ]
+      },
+      {
+        "index": 7,
+        "phase": "hard_extension_64k",
+        "n": 200,
+        "ordered_positions": [
+          1200,
+          1400
+        ]
+      },
+      {
+        "index": 8,
+        "phase": "hard_extension_64k",
+        "n": 200,
+        "ordered_positions": [
+          1400,
+          1600
+        ]
+      },
+      {
+        "index": 9,
+        "phase": "hard_extension_64k",
+        "n": 200,
+        "ordered_positions": [
+          1600,
+          1800
+        ]
+      },
+      {
+        "index": 10,
+        "phase": "hard_extension_64k",
+        "n": 200,
+        "ordered_positions": [
+          1800,
+          2000
+        ]
+      },
+      {
+        "index": 11,
+        "phase": "hard_extension_64k",
+        "n": 200,
+        "ordered_positions": [
+          2000,
+          2200
+        ]
+      },
+      {
+        "index": 12,
+        "phase": "hard_extension_64k",
+        "n": 200,
+        "ordered_positions": [
+          2200,
+          2400
+        ]
+      },
+      {
+        "index": 13,
+        "phase": "hard_extension_64k",
+        "n": 200,
+        "ordered_positions": [
+          2400,
+          2600
+        ]
+      },
+      {
+        "index": 14,
+        "phase": "hard_extension_64k",
+        "n": 200,
+        "ordered_positions": [
+          2600,
+          2800
+        ]
+      },
+      {
+        "index": 15,
+        "phase": "hard_extension_64k",
+        "n": 200,
+        "ordered_positions": [
+          2800,
+          3000
+        ]
+      },
+      {
+        "index": 16,
+        "phase": "hard_extension_64k",
+        "n": 100,
+        "ordered_positions": [
+          3000,
+          3100
+        ]
+      },
+      {
+        "index": 17,
+        "phase": "hard_extension_64k",
+        "n": 100,
+        "ordered_positions": [
+          3100,
+          3200
+        ]
+      },
+      {
+        "index": 18,
+        "phase": "hard_extension_64k",
+        "n": 100,
+        "ordered_positions": [
+          3200,
+          3300
+        ]
+      },
+      {
+        "index": 19,
+        "phase": "hard_extension_64k",
+        "n": 100,
+        "ordered_positions": [
+          3300,
+          3400
+        ]
+      },
+      {
+        "index": 20,
+        "phase": "hard_extension_64k",
+        "n": 100,
+        "ordered_positions": [
+          3400,
+          3500
+        ]
+      },
+      {
+        "index": 21,
+        "phase": "hard_extension_64k",
+        "n": 100,
+        "ordered_positions": [
+          3500,
+          3600
+        ]
+      },
+      {
+        "index": 22,
+        "phase": "hard_extension_64k",
+        "n": 100,
+        "ordered_positions": [
+          3600,
+          3700
+        ]
+      },
+      {
+        "index": 23,
+        "phase": "hard_extension_64k",
+        "n": 100,
+        "ordered_positions": [
+          3700,
+          3800
+        ]
+      },
+      {
+        "index": 24,
+        "phase": "hard_extension_64k",
+        "n": 100,
+        "ordered_positions": [
+          3800,
+          3900
+        ]
+      },
+      {
+        "index": 25,
+        "phase": "hard_extension_64k",
+        "n": 100,
+        "ordered_positions": [
+          3900,
+          4000
+        ]
+      },
+      {
+        "index": 26,
+        "phase": "hard_extension_64k",
+        "n": 50,
+        "ordered_positions": [
+          4000,
+          4050
+        ]
+      },
+      {
+        "index": 27,
+        "phase": "hard_extension_64k",
+        "n": 50,
+        "ordered_positions": [
+          4050,
+          4100
+        ]
+      },
+      {
+        "index": 28,
+        "phase": "hard_extension_64k",
+        "n": 50,
+        "ordered_positions": [
+          4100,
+          4150
+        ]
+      },
+      {
+        "index": 29,
+        "phase": "hard_extension_64k",
+        "n": 50,
+        "ordered_positions": [
+          4150,
+          4200
+        ]
+      },
+      {
+        "index": 30,
+        "phase": "hard_extension_64k",
+        "n": 50,
+        "ordered_positions": [
+          4200,
+          4250
+        ]
+      },
+      {
+        "index": 31,
+        "phase": "hard_extension_64k",
+        "n": 50,
+        "ordered_positions": [
+          4250,
+          4300
+        ]
+      },
+      {
+        "index": 32,
+        "phase": "hard_extension_64k",
+        "n": 50,
+        "ordered_positions": [
+          4300,
+          4350
+        ]
+      },
+      {
+        "index": 33,
+        "phase": "hard_extension_64k",
+        "n": 50,
+        "ordered_positions": [
+          4350,
+          4400
+        ]
+      },
+      {
+        "index": 34,
+        "phase": "hard_extension_64k",
+        "n": 50,
+        "ordered_positions": [
+          4400,
+          4450
+        ]
+      },
+      {
+        "index": 35,
+        "phase": "hard_extension_64k",
+        "n": 50,
+        "ordered_positions": [
+          4450,
+          4500
+        ]
+      },
+      {
+        "index": 36,
+        "phase": "hard_extension_64k",
+        "n": 10,
+        "ordered_positions": [
+          4500,
+          4510
+        ]
+      },
+      {
+        "index": 37,
+        "phase": "hard_extension_64k",
+        "n": 10,
+        "ordered_positions": [
+          4510,
+          4520
+        ]
+      },
+      {
+        "index": 38,
+        "phase": "hard_extension_64k",
+        "n": 10,
+        "ordered_positions": [
+          4520,
+          4530
+        ]
+      },
+      {
+        "index": 39,
+        "phase": "hard_extension_64k",
+        "n": 10,
+        "ordered_positions": [
+          4530,
+          4540
+        ]
+      },
+      {
+        "index": 40,
+        "phase": "hard_extension_64k",
+        "n": 10,
+        "ordered_positions": [
+          4540,
+          4550
+        ]
+      },
+      {
+        "index": 41,
+        "phase": "hard_extension_64k",
+        "n": 10,
+        "ordered_positions": [
+          4550,
+          4560
+        ]
+      },
+      {
+        "index": 42,
+        "phase": "hard_extension_64k",
+        "n": 10,
+        "ordered_positions": [
+          4560,
+          4570
+        ]
+      },
+      {
+        "index": 43,
+        "phase": "hard_extension_64k",
+        "n": 10,
+        "ordered_positions": [
+          4570,
+          4580
+        ]
+      },
+      {
+        "index": 44,
+        "phase": "hard_extension_64k",
+        "n": 10,
+        "ordered_positions": [
+          4580,
+          4590
+        ]
+      },
+      {
+        "index": 45,
+        "phase": "hard_extension_64k",
+        "n": 10,
+        "ordered_positions": [
+          4590,
+          4600
+        ]
+      },
+      {
+        "index": 46,
+        "phase": "hard_extension_64k",
+        "n": 10,
+        "ordered_positions": [
+          4600,
+          4610
+        ]
+      },
+      {
+        "index": 47,
+        "phase": "hard_extension_64k",
+        "n": 10,
+        "ordered_positions": [
+          4610,
+          4620
+        ]
+      },
+      {
+        "index": 48,
+        "phase": "hard_extension_64k",
+        "n": 10,
+        "ordered_positions": [
+          4620,
+          4630
+        ]
+      },
+      {
+        "index": 49,
+        "phase": "hard_extension_64k",
+        "n": 10,
+        "ordered_positions": [
+          4630,
+          4640
+        ]
+      },
+      {
+        "index": 50,
+        "phase": "hard_extension_64k",
+        "n": 10,
+        "ordered_positions": [
+          4640,
+          4650
+        ]
+      },
+      {
+        "index": 51,
+        "phase": "hard_extension_64k",
+        "n": 10,
+        "ordered_positions": [
+          4650,
+          4660
+        ]
+      },
+      {
+        "index": 52,
+        "phase": "hard_extension_64k",
+        "n": 10,
+        "ordered_positions": [
+          4660,
+          4670
+        ]
+      },
+      {
+        "index": 53,
+        "phase": "hard_extension_64k",
+        "n": 10,
+        "ordered_positions": [
+          4670,
+          4680
+        ]
+      },
+      {
+        "index": 54,
+        "phase": "hard_extension_64k",
+        "n": 10,
+        "ordered_positions": [
+          4680,
+          4690
+        ]
+      },
+      {
+        "index": 55,
+        "phase": "hard_extension_64k",
+        "n": 10,
+        "ordered_positions": [
+          4690,
+          4700
+        ]
+      },
+      {
+        "index": 56,
+        "phase": "hard_extension_64k",
+        "n": 10,
+        "ordered_positions": [
+          4700,
+          4710
+        ]
+      },
+      {
+        "index": 57,
+        "phase": "hard_extension_64k",
+        "n": 10,
+        "ordered_positions": [
+          4710,
+          4720
+        ]
+      },
+      {
+        "index": 58,
+        "phase": "hard_extension_64k",
+        "n": 10,
+        "ordered_positions": [
+          4720,
+          4730
+        ]
+      },
+      {
+        "index": 59,
+        "phase": "hard_extension_64k",
+        "n": 10,
+        "ordered_positions": [
+          4730,
+          4740
+        ]
+      },
+      {
+        "index": 60,
+        "phase": "hard_extension_64k",
+        "n": 10,
+        "ordered_positions": [
+          4740,
+          4750
+        ]
+      },
+      {
+        "index": 61,
+        "phase": "hard_extension_64k",
+        "n": 5,
+        "ordered_positions": [
+          4750,
+          4755
+        ]
+      },
+      {
+        "index": 62,
+        "phase": "hard_extension_64k",
+        "n": 5,
+        "ordered_positions": [
+          4755,
+          4760
+        ]
+      },
+      {
+        "index": 63,
+        "phase": "hard_extension_64k",
+        "n": 5,
+        "ordered_positions": [
+          4760,
+          4765
+        ]
+      },
+      {
+        "index": 64,
+        "phase": "hard_extension_64k",
+        "n": 5,
+        "ordered_positions": [
+          4765,
+          4770
+        ]
+      },
+      {
+        "index": 65,
+        "phase": "hard_extension_64k",
+        "n": 5,
+        "ordered_positions": [
+          4770,
+          4775
+        ]
+      },
+      {
+        "index": 66,
+        "phase": "hard_extension_64k",
+        "n": 5,
+        "ordered_positions": [
+          4775,
+          4780
+        ]
+      },
+      {
+        "index": 67,
+        "phase": "hard_extension_64k",
+        "n": 5,
+        "ordered_positions": [
+          4780,
+          4785
+        ]
+      },
+      {
+        "index": 68,
+        "phase": "hard_extension_64k",
+        "n": 5,
+        "ordered_positions": [
+          4785,
+          4790
+        ]
+      },
+      {
+        "index": 69,
+        "phase": "hard_extension_64k",
+        "n": 5,
+        "ordered_positions": [
+          4790,
+          4795
+        ]
+      },
+      {
+        "index": 70,
+        "phase": "hard_extension_64k",
+        "n": 5,
+        "ordered_positions": [
+          4795,
+          4800
+        ]
+      }
+    ],
+    "status": "Illustrative only; stage sizes frozen with any future actual membership before answers. No membership or finalNapproved.",
+    "taper_rationale": "200-question early chunks, then100,50,10and5 reduce late maximum-reservation requirements. More transport jobs can increase wall time; bounded restart windows must preserve job IDs and membership.",
+    "concurrency": "Existing release executor may have several pending stages per provider if maximum reservations fit. Preserve financial limits or predeclare a stricter in-flight bound; never use scores. Extensions wait for the full provider core."
+  },
+  "planning_reserve_option": {
+    "proposed_canonical_question_allocation": {
+      "Anthropic": {
+        "bench_final": 0,
+        "hard_final": 0,
+        "cap_check": 100
+      },
+      "OpenAI": {
+        "bench_final": 0,
+        "hard_final": 0,
+        "cap_check": 100
+      }
+    },
+    "effects_at_snapshot": {
+      "Anthropic": {
+        "previous_protected_usd": 295.14,
+        "proposed_sensitivity_only_protected_usd": 128.3,
+        "released_planning_reserve_usd": 166.83999999999997,
+        "cash_refund_usd": 0,
+        "hard_cap_usd": 1000.0
+      },
+      "OpenAI": {
+        "previous_protected_usd": 962.5,
+        "proposed_sensitivity_only_protected_usd": 128.3,
+        "released_planning_reserve_usd": 834.2,
+        "cash_refund_usd": 0,
+        "hard_cap_usd": 2000.0
+      }
+    },
+    "reason": "Once a64k5D release is actually approved, retire obsolete16kcore planning reserves rather than double-protecting incompatible protocols. Every submitted64kchunk still receives its full worst-case reservation. Retain unused shared sensitivity protection by default.",
+    "not_authorized_now": true,
+    "no_cap_or_phase_allowance_increase": true,
+    "optional_sensitivity_floor_release": {
+      "Anthropic_cap_check_floor": 0,
+      "OpenAI_cap_check_floor": 60,
+      "additional_release_usd_each": 128.3,
+      "condition": "Only if coordinator prospectively retires unused sensitivity protection with a written rationale;100question sensitivity allowance stays unchanged and prior60OpenAI costs are not refunded.",
+      "not_default": true
+    },
+    "other_track_caveat": "Releasing OpenAI4D reserve requires an explicit plan for the other requested benchmark; do not treat obsolete reserve retirement as completion of that objective."
+  },
+  "funding_rules": {
+    "actual_gate": "committed_settled_plus_full_outstanding + next_chunk_n*r64 + other_protected_remaining <= unchanged_provider_cap",
+    "r64": "(1500*input_rate +65536*output_rate)/1e6",
+    "conditional_last_chunk": "If post-evaluation headroom excluding other protections isH and assumed mean cost isc, a finalk-question chunk requires k*(r64-c)<=H. This identity is conditional, not an estimate from08answers.",
+    "no_guarantee": "All4800outputs at ceiling would cost$3160.128Anthropic/$7900.32OpenAI before historical spending. Financial staging cannot guarantee completion; it safely reuses settled savings and stops incomplete if caps bind.",
+    "refresh": "Recompute from actual settled08totals before final authorization; current snapshot still has pending maximum reservations and unsubmitted08work."
+  },
+  "minimal_changes": [
+    {
+      "module": "misc/vp_goal.py",
+      "change": "Add hard_final_64k and hard_extension_64k aliases with xhigh/65536; keep every old PHASES tuple unchanged. Use canonical allowance cohorts shared with hard_final1000 and hard_extension5000. Add aliases to FINAL_PHASES/test-split/replay/release-gate checks. Preserve all old request hashes and posted records."
+    },
+    {
+      "module": "misc/vp_goal.py",
+      "change": "Make extension settlement check require the complete1000-question core of the same frozen release and protocol for that provider, not an unrelated old16k core. Preserve per-provider barrier; an optional stricter both-provider barrier must be declared in advance."
+    },
+    {
+      "module": "misc/vp_cartesian_release.py",
+      "change": "Add an explicit protocol selector defaulting to legacy16k, and an explicit immutable stage-size vector. Audit exact1000core prefix across multiple smaller chunks, then3800extension; preserve exact ordered metadata-identical union and same stage files for both providers."
+    },
+    {
+      "module": "misc/vp_cartesian_release_run.py",
+      "change": "Accept the explicit protocol mapping in partition audit. Revalidate frozen dependencies and authorization before every new paid action. Preserve worst-case budget decisions, durable reservation before POST, unknown-submission halt and idempotent resume. Existing financial bounded pipelining may remain; it is not strictly one in-flight batch per provider."
+    },
+    {
+      "module": "misc/vp_cartesian_final_analyze.py + misc/vp_cartesian_visibility.py",
+      "change": "Add a manifest-derived all-stages/both-providers settled-and-collected guard before opening any result file. Existing final analyzer currently reads settled partial stages and labels them incomplete; proposed blind protocol should suppress those interim metrics."
+    },
+    {
+      "module": "misc/vp_goal.py status/finish_job + report/monitor readers",
+      "change": "Reuse release-cohort visibility for final-stage summaries and collector stdout. Expose counts, cost, settlement and errors only until the full fixed cohort is complete. Raw results remain preserved for eventual full analysis."
+    },
+    {
+      "module": "coordinator-owned ledger/release registration",
+      "change": "After all pilot 08 jobs finish and evidence supports release, atomically register new phase policy, documented internal-reserve allocation and exact release manifest/digests under lock. Keep provider caps and historical phase tuples, request bodies, results and ledger records unchanged. Do not install any gate now."
+    }
+  ],
+  "regression_checks": [
+    {
+      "case": "Historical request immutability",
+      "check": "Old16k and128k phases render byte-identical requests; new aliases alone use65536. Existing requests_digest and collected usage checks remain valid."
+    },
+    {
+      "case": "Shared phase ceilings",
+      "check": "999attempted old/new core questions plus1passes and plus2fails;4999extensions plus2fails. Alternating aliases cannot mint another1000/5000allowance; confirm and confirm_64k still share20000."
+    },
+    {
+      "case": "Core barrier",
+      "check": "Five200core chunks:999or one uncollected/unknown core question blocks extensions. All1000settled for the same release/protocol permits that provider; another release or16k record cannot satisfy it."
+    },
+    {
+      "case": "Exact fixed partition",
+      "check": "Example70stages sum4800 with first1000core. Omission, duplicate, metadata/gold change, mixed token protocol, crossed core boundary and phase drift fail. Both provider schedules reference identical ordered stages."
+    },
+    {
+      "case": "Financial arithmetic and reserve migration",
+      "check": "One64k1000OpenAI chunk fails on the real-budget fixture; permitted smaller stages obey integer micro-dollar limits. Documented reserve reduction changes only planning floors. Cap changes, negative floors or undocumented reallocation fail."
+    },
+    {
+      "case": "No cash from uncertainty",
+      "check": "Unknown POST or missing usage retains full reservation and attempted allowance. Only terminal settled usage frees savings. Simultaneous contenders recheck under lock and cannot oversubscribe."
+    },
+    {
+      "case": "Taper and incomplete funding",
+      "check": "A fixed late5-question stage may fit when a50-question stage would not; the executor never changesN, reorders tasks, reduces output cap or drops an unfunded stage. Report incomplete if even the predeclared next stage cannot fit."
+    },
+    {
+      "case": "Replay across aliases/providers",
+      "check": "Same-provider old/new final aliases reject any previously attempted task, includingunknownPOST; another provider may run the paired input. Sensitivity requests remain a separate shared100question pool."
+    },
+    {
+      "case": "Blind analysis boundary",
+      "check": "Mock result-file reads and assert none occur until all140provider stages settle. Progress/collector output has no correctness/usable-score summaries while incomplete. Complete cohort uses unchanged iid/sandwich/bounds/bootstrap estimands."
+    },
+    {
+      "case": "Resume and fingerprint protection",
+      "check": "STOP/deadline resume with the same manifest,prefix,IDs only polls submitted jobs and submits never-attempted stages. Changed source/prompt/policy/partition hash blocks the next paid action. No SDK or operator replay ofunknownPOST."
+    }
+  ],
+  "existing_test_suites": [
+    "misc/test_vp_goal.py",
+    "misc/test_vp_cartesian_release.py",
+    "misc/test_vp_cartesian_release_run.py",
+    "misc/test_vp_cartesian_final_analyze.py",
+    "misc/test_vp_cartesian_confirm_run.py"
+  ],
+  "verification_performed": [
+    "Read source code and tests.",
+    "Integer arithmetic confirms70stages/4800questions/1000core/3800extension and both-provider maximum reservations.",
+    "No proposed implementation or new regression tests executed."
+  ],
+  "source_sha256": {
+    "misc/vp_goal.py": "0f29fea7cddbfb691642cad3ca966cdaafef89f7abc21eb0732489d45b0ec500",
+    "misc/vp_cartesian_release.py": "48e5421472493f16e4d8fc98df654e4d6c19b9cc272e26361819d8757c49ed5d",
+    "misc/vp_cartesian_release_run.py": "e677abd4ee6cfe70d01ef5ecd03f68874fe41ca56d79df9a18b663b804616edd",
+    "misc/vp_cartesian_final_analyze.py": "c799424553a8d557328d4b1d2c7ec0984969bd923f2a11dda28946138800b37d",
+    "misc/vp_cartesian_visibility.py": "5347504654b6b3842104953f4c62424152bde56fb2c69a5cab2b4c4b42fbcc65"
+  },
+  "final_n": null,
+  "final_membership_approved": false,
+  "shared_files_changed": false,
+  "ledger_changed": false,
+  "paid_calls": 0,
+  "registered_count_caveat": "Registered and unattempted counts include preserved revoked preparations; they are not active pending payment obligations. Outstanding maximum reservations describe attempted, unsettled payments only."
+}

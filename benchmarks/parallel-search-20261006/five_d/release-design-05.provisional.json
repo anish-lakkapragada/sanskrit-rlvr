@@ -1,0 +1,55 @@
+{
+  "created_at": "2026-10-07T10:43:58.824237+00:00",
+  "track": "five_d",
+  "status": "unevaluated_candidate_pending_source_cap_and_funding_decisions",
+  "candidate_n": 4800,
+  "fixed_n": null,
+  "final_n_approved": false,
+  "final_membership_approved": false,
+  "candidate_directory": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/parallel-search-20261006/five_d/candidate-4800/revision-03",
+  "candidate_tasks_sha256": "2d15b6a62718d6ea0531686fc1eb4a1d91223f3d6baf705108f8088bc37dd031",
+  "point_accuracy_target": [
+    0.79,
+    0.81
+  ],
+  "precision_standard_error_lt": 0.01,
+  "precision_rule": "Both iid and family-sandwich SE below .01 for both references, all-request and usable, with family/bootstrap sensitivities.",
+  "composition": {
+    "Lun_fraction": 0.45,
+    "passive_fraction": 0.1,
+    "recipe_counts": [
+      3200,
+      1280,
+      320
+    ],
+    "lakaras": 10,
+    "classes": 10
+  },
+  "allocation": {
+    "objective": [
+      "max_families",
+      "min_repeated_lakaras",
+      "min_squared_family_loads"
+    ],
+    "families": 929,
+    "max_family": 8,
+    "max_Lun": 5,
+    "max_other_lakara": 1,
+    "aorist_families": 586,
+    "repeated_Lun_assignments": 1574
+  },
+  "policy": "oracle-policy-17",
+  "pending_source_review": "āyādi intrinsic suffix optionality before added san; preserve candidate revision03 while parent resolves a narrow missing-branch gate.",
+  "cost_assessment": "candidate-4800/revision-03/cost-variance-assessment.json",
+  "open_questions": [
+    "Resolve pending narrow source predicate and revalidate any affected immutable revisions.",
+    "Settle cap diagnostic and select reference output cap before final protocol freeze.",
+    "Assess pilot07 fixed2400 confirmation without interim score steering.",
+    "Decide whether conservative Astra covariance uncertainty makes sub1pp plausible at an affordable fixed N.",
+    "Document reserve reallocation and cap safeguards using settled actual costs.",
+    "Only then approve final fixed N/membership/protocol; use1000 core then bounded500 transport chunks without score stopping."
+  ],
+  "legacy_exposure_caveat": "Legacy6687 analysis inspected all dictionary families. New campaign exact-input novelty is not globally unseen-root validation.",
+  "paid_calls": 0,
+  "benchmark_ready": false
+}

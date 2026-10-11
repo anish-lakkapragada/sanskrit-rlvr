@@ -1,0 +1,102 @@
+{
+  "analyzer_module": "misc.vp_5d_analyze_08_r2",
+  "created_at": "2026-10-07T12:22:25.152299+00:00",
+  "fixed_primary_n": 2400,
+  "fixed_paired_n": 240,
+  "phase": "confirm_64k",
+  "effort": "xhigh",
+  "max_output_tokens": 65536,
+  "common_provider_ceiling": true,
+  "expected_jobs": [
+    {
+      "id": "opus-five-d-pilot-08-01",
+      "n": 400,
+      "provider": "Anthropic",
+      "tasks_digest": "e04a69f7b2a863b6a6abbf9591683455d9d7752bc9815596de593da1eb7c4bfc"
+    },
+    {
+      "id": "opus-five-d-pilot-08-02",
+      "n": 400,
+      "provider": "Anthropic",
+      "tasks_digest": "54cf7bb72bcba000b06dc5a00ab070b23c5c8a4a35f42b4db622c541aa54f13d"
+    },
+    {
+      "id": "opus-five-d-pilot-08-03",
+      "n": 400,
+      "provider": "Anthropic",
+      "tasks_digest": "a7a60c315ccdd37bb20fc2dc6ba67f84be7453cb502cc14ea4c52c7d2e8ab410"
+    },
+    {
+      "id": "opus-five-d-pilot-08-04",
+      "n": 400,
+      "provider": "Anthropic",
+      "tasks_digest": "a82a2069f347ce870f632b309fc7caf2e6577e2db30bd5b919ef2d310ec3ccf1"
+    },
+    {
+      "id": "opus-five-d-pilot-08-05",
+      "n": 400,
+      "provider": "Anthropic",
+      "tasks_digest": "3e1408212f0dddbecf1c719a6c8e697cf58fbebaee5e0cc5ce5a9c66a25c26f8"
+    },
+    {
+      "id": "opus-five-d-pilot-08-06",
+      "n": 400,
+      "provider": "Anthropic",
+      "tasks_digest": "baa979fedc68e3b22d6fba05145c6ec02d6834bf82a7e4b8e6f8afdacb234dd2"
+    },
+    {
+      "id": "astra-five-d-pilot-08-01",
+      "n": 120,
+      "provider": "OpenAI",
+      "tasks_digest": "b1e4aab3be6712ad80c5b79d1a29c9e53a89f1f8b701925fec2447e3bf42c351"
+    },
+    {
+      "id": "astra-five-d-pilot-08-02",
+      "n": 120,
+      "provider": "OpenAI",
+      "tasks_digest": "ec39ae8e993de8b587cba5130be9afa0697514053bccc99ed1790da1466917c0"
+    }
+  ],
+  "frozen_files": {
+    "tasks.json": "ac65bcb38167dd5bdaf1450d8f736aeebbe3c72a37b70570e5052c67d7783571",
+    "plan.json": "e3ff1a3faebfeef1c46316d48566c4d7aa4bcba2dca82aec1c8f53d87fab1b9f",
+    "manifest.json": "4c9a632e243e4cb14ba57bfbbda148bdad76381c987ff16aa4118346a5e9dff8",
+    "transport-plan.json": "7ea9fa669c6a9f5a1b547f18a502367547e3779b7e82bfefbc182dbd5d506844",
+    "analysis-exposure-groups.json": "b4b63690faadc14da8e81004e5cdad11354e2fa800e23063fc2c9ec65d6fec73",
+    "source-rule-delta-audit.json": "b3d87cb4d23964987297919c53dc481eac7758c2c29b18111f83558450c0802d",
+    "astra-subset/tasks.json": "14800153bdee04179d690e775de8b37bc595834a5692f3e7a81acc0f8125fd77",
+    "astra-subset/plan.json": "d557cc99872c790183ed57394c538c2f365ac17c17a71eb3115392ed8c2e6f8e",
+    "astra-subset/manifest.json": "b86a4f7f73f4ffe1eb2be1f9b3bbb614ed332dde8504746594cc677186edeef7",
+    "astra-subset/transport-plan.json": "0e1a1a514adb9ff5d38a3432623c7fae6a0d13811911e0a7c2aaeeef80b132af",
+    "astra-subset/audit.json": "22305aed2b4d4a6cf80cd5e5ecf12f78de7c4514b97b6601d2896253221bd6dc"
+  },
+  "analysis_dependencies": {
+    "misc/vp_5d_analyze_08_r2.py": "c8c6f70e7cd1788a55bc35d23362d4593124dca915ed6a0a72700fdcf9d30535",
+    "misc/vp_cartesian_visibility.py": "5347504654b6b3842104953f4c62424152bde56fb2c69a5cab2b4c4b42fbcc65",
+    "misc/vp_5d_analyze_07.py": "0a478ac8a005d94dd327ba3d4929381908a81b01b691a73114debbd8ae2d1c1f",
+    "misc/vp_5d_dependence_06.py": "1c9b8c8bea695f634bf88ec89c84ef4686e12819f614653536cf61057e0f5181",
+    "misc/vp_5d_dependence_05.py": "735550c6f648bbc9c1c7efbb835e4e245355a5429253f9d98890c497272b7390",
+    "misc/vp_5d_metrics.py": "5dff098189c50f009e1c424e8950d6309cdd5fd95701caea711af5abdda8315a",
+    "misc/vp_5d_cap_protocol_01.py": "79df9776bbf7759ad5b2847b3d8081c4d079962b346c532968f485362ae8c83f",
+    "misc/vp_cartesian_final_analyze.py": "c799424553a8d557328d4b1d2c7ec0984969bd923f2a11dda28946138800b37d",
+    "misc/vp_cartesian_analyze.py": "b905142522d127f61725d1dfa165da39bafdf5d860a5ff92b915ea468d17676b",
+    "misc/vp_goal_stats.py": "afa7cd2ff3e4e89994db5b682adc3141608110ec6cdefdb739884e27be3d0d95"
+  },
+  "bootstrap_repetitions": 20000,
+  "bootstrap_seed": 202610071208,
+  "completed_predicate": "Canonical status completed AND parsed answer non-null AND not truncated; missing families remain in ratio-influence denominator.",
+  "primary": "Full frozen2400Opus; all-request, usable, missing-response bounds, iid and family sandwich SE, whole-family and class-stratified bootstrap. Paired240raw and calibrated diagnostics are reported separately and never substituted for this primary screen.",
+  "hold": "Require all8namedjobs settled and collected before reading any result file. Exact metadata, unique IDs, disjoint partitions and paired identity required. No interim analysis, score-based stopping or replacement.",
+  "advancement_rule": "Analyze advancement only after all2400 primary requests AND the preselected240 paired Astra requests settle. The Opus2400 point screen is primary; paired240 is a deliberately family-enriched diagnostic and is not a population qualification. Advance this unchanged mixture toward separately approved final evaluation only if audited all-request and usable Opus point estimates and worst/best missing-response bounds are all within79–81%, with retained-scope validity resolved. Otherwise preserve this failed screen and do not claim target attainment. This is development confirmation, not a final qualification or independent-family replication. No interim score-based stopping, provider replay or answer-based replacement.",
+  "numerical_screen": "Primary all-request and usable accuracies AND both missing-response bounds all in[.79,.81] without rounding, all results present, no infrastructure-unscored rows. Source validity remains independently reviewed; no automatic qualification. Paired reference reversal or material unmodeled completion requires coordinator review.",
+  "current_scope": "Preserve full frozen2400/240raw; uniformly apply current shared entry/oracle predicates to both provider outcomes and report IDs/reasons and supplemental scores. No silent relabeling or membership change.",
+  "paired_estimands": "Exact-question Opus/Astra all-request difference, usable ratio difference, completion difference; resample entire shared families jointly with replacement, retaining zero-completion families. Report transition tables and raw cohort statistics. Intentional family enrichment means these are conditional diagnostic comparisons, not unbiased population accuracy.",
+  "covariance": "Both references: raw plus coarse and exact joint-centered family-equal symmetric pair correlation, full-family bootstrap conditional on fitted means. Report repeatedLun, mixed and differentnonLun, support by unordered recipe pair.43Lunpair families identify only nested recipe pairs; san-involving repeatedLun remains unobserved. Coarse/fine differences and bootstrap limits show sensitivity; do not choose estimator to pass.",
+  "cost": "Raw paid cost and token distributions plus prespecified coarse recipe×Lun/nonLun×voice and full42joint-cell calibrated means to the frozen2400 proportions. Entire-family multiplier bootstrap with refitted within-cell ratios; report invalid empty-cell replicates and unknown excluded-cell mass, and label conditional/unidentified extrapolation. No class-raked tiny-sample cost claim. Multiply by prospective4800 only as scenario, not funding authorization.",
+  "precision": "Report both iid and family sandwichSE for both providers. Finalqualification, if later approved, keeps bothSE<.01 for bothreferences and fixedmembership/N decided before finalanswers. This developmentpanel is not required to pass finalSEgate.",
+  "exposure": "All671developmentfamilies reused. Legacy6687analysis inspected all dictionaryfamilies including later testreserve. Current exacttuple novelty and newcampaignfamilyseparation are not never-exposed-root claims.",
+  "selection_caveats": "All42parent joint cells and all10classes supported, rounding exact240 quotas; Curadi includes3Lun and11non-Lun. Selection enriches pairable roots and caps3: it is not a uniform probability sample. Marginal weights cannot remove within-cell family-selection differences; report raw plus prespecified coarse/joint calibrated descriptive cost/completion, never claim design-unbiased accuracy or covariance.",
+  "benchmark_ready": false,
+  "final_membership_approved": false,
+  "paid_calls": 0
+}

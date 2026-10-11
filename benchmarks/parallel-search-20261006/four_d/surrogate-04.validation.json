@@ -1,0 +1,2342 @@
+{
+  "created_at": "2026-10-07T09:01:37.725801+00:00",
+  "design_sha256": "1136992a13800a0e8fdae0eb7c1981971d1a82b1cc5b7aa03e252bfebfca0e6e",
+  "results_sha256": "ccc45ae2190f81264fdc0bec6b3bfe3c90be53de97cc1c94580bfafb64f82b08",
+  "fold_audit_sha256": "51e177b0bb9b418e44527af29506a521cc59686f718d202e3e0c2ed063925f56",
+  "fold_checks_passed": 180,
+  "exact_family_and_broader_root_overlap": 0,
+  "rule_support_constraints_passed": true,
+  "conditional_ranking": [
+    {
+      "scope": "all",
+      "seed": 2026100704,
+      "training_fidelity": "xhigh",
+      "method": "intercept",
+      "within_fold_pair_weighted_auc": 0.5,
+      "folds": [
+        {
+          "fold": 0,
+          "errors": 1,
+          "n": 113,
+          "conditional_auc": 0.5,
+          "unique_predicted_scores": 1,
+          "rule": [],
+          "fallback": false
+        },
+        {
+          "fold": 1,
+          "errors": 10,
+          "n": 101,
+          "conditional_auc": 0.5,
+          "unique_predicted_scores": 1,
+          "rule": [],
+          "fallback": false
+        },
+        {
+          "fold": 2,
+          "errors": 1,
+          "n": 100,
+          "conditional_auc": 0.5,
+          "unique_predicted_scores": 1,
+          "rule": [],
+          "fallback": false
+        },
+        {
+          "fold": 3,
+          "errors": 2,
+          "n": 116,
+          "conditional_auc": 0.5,
+          "unique_predicted_scores": 1,
+          "rule": [],
+          "fallback": false
+        },
+        {
+          "fold": 4,
+          "errors": 5,
+          "n": 105,
+          "conditional_auc": 0.5,
+          "unique_predicted_scores": 1,
+          "rule": [],
+          "fallback": false
+        }
+      ]
+    },
+    {
+      "scope": "all",
+      "seed": 2026100704,
+      "training_fidelity": "xhigh",
+      "method": "known_adanta",
+      "within_fold_pair_weighted_auc": 0.8201730665224446,
+      "folds": [
+        {
+          "fold": 0,
+          "errors": 1,
+          "n": 113,
+          "conditional_auc": 0.9375,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "known_adanta"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 1,
+          "errors": 10,
+          "n": 101,
+          "conditional_auc": 0.7851648351648352,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "known_adanta"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 2,
+          "errors": 1,
+          "n": 100,
+          "conditional_auc": 0.46464646464646464,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "known_adanta"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 3,
+          "errors": 2,
+          "n": 116,
+          "conditional_auc": 0.8596491228070176,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "known_adanta"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 4,
+          "errors": 5,
+          "n": 105,
+          "conditional_auc": 0.91,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "known_adanta"
+          ],
+          "fallback": false
+        }
+      ]
+    },
+    {
+      "scope": "all",
+      "seed": 2026100704,
+      "training_fidelity": "xhigh",
+      "method": "input",
+      "within_fold_pair_weighted_auc": 0.8077339102217415,
+      "folds": [
+        {
+          "fold": 0,
+          "errors": 1,
+          "n": 113,
+          "conditional_auc": 0.8616071428571429,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "anudatta=0",
+            "final_class=vowel"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 1,
+          "errors": 10,
+          "n": 101,
+          "conditional_auc": 0.7851648351648352,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "anudatta=0",
+            "final_class=vowel"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 2,
+          "errors": 1,
+          "n": 100,
+          "conditional_auc": 0.46464646464646464,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "base_length=medium",
+            "literal_final_a=1"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 3,
+          "errors": 2,
+          "n": 116,
+          "conditional_auc": 0.8289473684210527,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "anudatta=0",
+            "final_class=vowel"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 4,
+          "errors": 5,
+          "n": 105,
+          "conditional_auc": 0.895,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "anudatta=0",
+            "final_class=vowel"
+          ],
+          "fallback": false
+        }
+      ]
+    },
+    {
+      "scope": "all",
+      "seed": 2026100704,
+      "training_fidelity": "xhigh",
+      "method": "input_trace",
+      "within_fold_pair_weighted_auc": 0.8077339102217415,
+      "folds": [
+        {
+          "fold": 0,
+          "errors": 1,
+          "n": 113,
+          "conditional_auc": 0.8616071428571429,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "anudatta=0",
+            "final_class=vowel"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 1,
+          "errors": 10,
+          "n": 101,
+          "conditional_auc": 0.7851648351648352,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "anudatta=0",
+            "final_class=vowel"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 2,
+          "errors": 1,
+          "n": 100,
+          "conditional_auc": 0.46464646464646464,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "base_length=medium",
+            "literal_final_a=1"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 3,
+          "errors": 2,
+          "n": 116,
+          "conditional_auc": 0.8289473684210527,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "anudatta=0",
+            "final_class=vowel"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 4,
+          "errors": 5,
+          "n": 105,
+          "conditional_auc": 0.895,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "anudatta=0",
+            "final_class=vowel"
+          ],
+          "fallback": false
+        }
+      ]
+    },
+    {
+      "scope": "all",
+      "seed": 2026100704,
+      "training_fidelity": "high_transfer",
+      "method": "input",
+      "within_fold_pair_weighted_auc": 0.7460789616008653,
+      "folds": [
+        {
+          "fold": 0,
+          "errors": 1,
+          "n": 113,
+          "conditional_auc": 0.9508928571428571,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "has_r=0",
+            "literal_final_a=1"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 1,
+          "errors": 10,
+          "n": 101,
+          "conditional_auc": 0.6505494505494506,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "final_class=vowel",
+            "lakara=Lun"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 2,
+          "errors": 1,
+          "n": 100,
+          "conditional_auc": 0.42424242424242425,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "citation_length=medium",
+            "nasal_marker=0"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 3,
+          "errors": 2,
+          "n": 116,
+          "conditional_auc": 0.8070175438596491,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "citation_length=medium",
+            "nasal_marker=0"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 4,
+          "errors": 5,
+          "n": 105,
+          "conditional_auc": 0.91,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "citation_length=medium",
+            "nasal_marker=0"
+          ],
+          "fallback": false
+        }
+      ]
+    },
+    {
+      "scope": "all",
+      "seed": 2026100704,
+      "training_fidelity": "high_transfer",
+      "method": "input_trace",
+      "within_fold_pair_weighted_auc": 0.6552190373174689,
+      "folds": [
+        {
+          "fold": 0,
+          "errors": 1,
+          "n": 113,
+          "conditional_auc": 0.8883928571428571,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "nasal_marker=0",
+            "trace=3.4.114"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 1,
+          "errors": 10,
+          "n": 101,
+          "conditional_auc": 0.4835164835164835,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "literal_final_a=0",
+            "trace=8.3.78"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 2,
+          "errors": 1,
+          "n": 100,
+          "conditional_auc": 0.41414141414141414,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "nasal_marker=0",
+            "trace=3.4.114"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 3,
+          "errors": 2,
+          "n": 116,
+          "conditional_auc": 0.8157894736842105,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "nasal_marker=0",
+            "trace=3.4.114"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 4,
+          "errors": 5,
+          "n": 105,
+          "conditional_auc": 0.89,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "nasal_marker=0",
+            "trace=3.4.114"
+          ],
+          "fallback": false
+        }
+      ]
+    },
+    {
+      "scope": "all",
+      "seed": 2026101704,
+      "training_fidelity": "xhigh",
+      "method": "intercept",
+      "within_fold_pair_weighted_auc": 0.5,
+      "folds": [
+        {
+          "fold": 0,
+          "errors": 3,
+          "n": 95,
+          "conditional_auc": 0.5,
+          "unique_predicted_scores": 1,
+          "rule": [],
+          "fallback": false
+        },
+        {
+          "fold": 1,
+          "errors": 3,
+          "n": 107,
+          "conditional_auc": 0.5,
+          "unique_predicted_scores": 1,
+          "rule": [],
+          "fallback": false
+        },
+        {
+          "fold": 2,
+          "errors": 8,
+          "n": 118,
+          "conditional_auc": 0.5,
+          "unique_predicted_scores": 1,
+          "rule": [],
+          "fallback": false
+        },
+        {
+          "fold": 3,
+          "errors": 5,
+          "n": 112,
+          "conditional_auc": 0.5,
+          "unique_predicted_scores": 1,
+          "rule": [],
+          "fallback": false
+        },
+        {
+          "fold": 4,
+          "errors": 0,
+          "n": 103,
+          "conditional_auc": null,
+          "unique_predicted_scores": 1,
+          "rule": [],
+          "fallback": false
+        }
+      ]
+    },
+    {
+      "scope": "all",
+      "seed": 2026101704,
+      "training_fidelity": "xhigh",
+      "method": "known_adanta",
+      "within_fold_pair_weighted_auc": 0.8452321517723415,
+      "folds": [
+        {
+          "fold": 0,
+          "errors": 3,
+          "n": 95,
+          "conditional_auc": 0.7137681159420289,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "known_adanta"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 1,
+          "errors": 3,
+          "n": 107,
+          "conditional_auc": 0.9038461538461539,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "known_adanta"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 2,
+          "errors": 8,
+          "n": 118,
+          "conditional_auc": 0.8636363636363636,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "known_adanta"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 3,
+          "errors": 5,
+          "n": 112,
+          "conditional_auc": 0.8485981308411215,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "known_adanta"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 4,
+          "errors": 0,
+          "n": 103,
+          "conditional_auc": null,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "known_adanta"
+          ],
+          "fallback": false
+        }
+      ]
+    },
+    {
+      "scope": "all",
+      "seed": 2026101704,
+      "training_fidelity": "xhigh",
+      "method": "input",
+      "within_fold_pair_weighted_auc": 0.8232651023464803,
+      "folds": [
+        {
+          "fold": 0,
+          "errors": 3,
+          "n": 95,
+          "conditional_auc": 0.7083333333333334,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "anudatta=0",
+            "final_class=vowel"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 1,
+          "errors": 3,
+          "n": 107,
+          "conditional_auc": 0.8701923076923077,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "anudatta=0",
+            "final_class=vowel"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 2,
+          "errors": 8,
+          "n": 118,
+          "conditional_auc": 0.8272727272727273,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "anudatta=0",
+            "final_class=vowel"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 3,
+          "errors": 5,
+          "n": 112,
+          "conditional_auc": 0.8485981308411215,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "base_length=medium",
+            "literal_final_a=1"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 4,
+          "errors": 0,
+          "n": 103,
+          "conditional_auc": null,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "anudatta=0",
+            "final_class=vowel"
+          ],
+          "fallback": false
+        }
+      ]
+    },
+    {
+      "scope": "all",
+      "seed": 2026101704,
+      "training_fidelity": "xhigh",
+      "method": "input_trace",
+      "within_fold_pair_weighted_auc": 0.8232651023464803,
+      "folds": [
+        {
+          "fold": 0,
+          "errors": 3,
+          "n": 95,
+          "conditional_auc": 0.7083333333333334,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "anudatta=0",
+            "final_class=vowel"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 1,
+          "errors": 3,
+          "n": 107,
+          "conditional_auc": 0.8701923076923077,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "anudatta=0",
+            "final_class=vowel"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 2,
+          "errors": 8,
+          "n": 118,
+          "conditional_auc": 0.8272727272727273,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "anudatta=0",
+            "final_class=vowel"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 3,
+          "errors": 5,
+          "n": 112,
+          "conditional_auc": 0.8485981308411215,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "base_length=medium",
+            "literal_final_a=1"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 4,
+          "errors": 0,
+          "n": 103,
+          "conditional_auc": null,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "anudatta=0",
+            "final_class=vowel"
+          ],
+          "fallback": false
+        }
+      ]
+    },
+    {
+      "scope": "all",
+      "seed": 2026101704,
+      "training_fidelity": "high_transfer",
+      "method": "input",
+      "within_fold_pair_weighted_auc": 0.8292561158262606,
+      "folds": [
+        {
+          "fold": 0,
+          "errors": 3,
+          "n": 95,
+          "conditional_auc": 0.6865942028985508,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "citation_length=medium",
+            "final_class=vowel"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 1,
+          "errors": 3,
+          "n": 107,
+          "conditional_auc": 0.8701923076923077,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "citation_length=medium",
+            "nasal_marker=0"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 2,
+          "errors": 8,
+          "n": 118,
+          "conditional_auc": 0.8363636363636363,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "citation_length=medium",
+            "nasal_marker=0"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 3,
+          "errors": 5,
+          "n": 112,
+          "conditional_auc": 0.8672897196261682,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "has_r=0",
+            "literal_final_a=1"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 4,
+          "errors": 0,
+          "n": 103,
+          "conditional_auc": null,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "citation_length=medium",
+            "nasal_marker=0"
+          ],
+          "fallback": false
+        }
+      ]
+    },
+    {
+      "scope": "all",
+      "seed": 2026101704,
+      "training_fidelity": "high_transfer",
+      "method": "input_trace",
+      "within_fold_pair_weighted_auc": 0.6782326510234647,
+      "folds": [
+        {
+          "fold": 0,
+          "errors": 3,
+          "n": 95,
+          "conditional_auc": 0.6920289855072463,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "final_class=vowel",
+            "trace=3.4.114"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 1,
+          "errors": 3,
+          "n": 107,
+          "conditional_auc": 0.8701923076923077,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "nasal_marker=0",
+            "trace=3.4.114"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 2,
+          "errors": 8,
+          "n": 118,
+          "conditional_auc": 0.4909090909090909,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "trace=7.3.84",
+            "trace=8.2.25"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 3,
+          "errors": 5,
+          "n": 112,
+          "conditional_auc": 0.8672897196261682,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "has_r=0",
+            "literal_final_a=1"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 4,
+          "errors": 0,
+          "n": 103,
+          "conditional_auc": null,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "nasal_marker=0",
+            "trace=3.4.114"
+          ],
+          "fallback": false
+        }
+      ]
+    },
+    {
+      "scope": "all",
+      "seed": 2026102704,
+      "training_fidelity": "xhigh",
+      "method": "intercept",
+      "within_fold_pair_weighted_auc": 0.5,
+      "folds": [
+        {
+          "fold": 0,
+          "errors": 5,
+          "n": 115,
+          "conditional_auc": 0.5,
+          "unique_predicted_scores": 1,
+          "rule": [],
+          "fallback": false
+        },
+        {
+          "fold": 1,
+          "errors": 4,
+          "n": 94,
+          "conditional_auc": 0.5,
+          "unique_predicted_scores": 1,
+          "rule": [],
+          "fallback": false
+        },
+        {
+          "fold": 2,
+          "errors": 6,
+          "n": 109,
+          "conditional_auc": 0.5,
+          "unique_predicted_scores": 1,
+          "rule": [],
+          "fallback": false
+        },
+        {
+          "fold": 3,
+          "errors": 4,
+          "n": 112,
+          "conditional_auc": 0.5,
+          "unique_predicted_scores": 1,
+          "rule": [],
+          "fallback": false
+        },
+        {
+          "fold": 4,
+          "errors": 0,
+          "n": 105,
+          "conditional_auc": null,
+          "unique_predicted_scores": 1,
+          "rule": [],
+          "fallback": false
+        }
+      ]
+    },
+    {
+      "scope": "all",
+      "seed": 2026102704,
+      "training_fidelity": "xhigh",
+      "method": "known_adanta",
+      "within_fold_pair_weighted_auc": 0.8298469387755102,
+      "folds": [
+        {
+          "fold": 0,
+          "errors": 5,
+          "n": 115,
+          "conditional_auc": 0.8636363636363636,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "known_adanta"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 1,
+          "errors": 4,
+          "n": 94,
+          "conditional_auc": 0.9,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "known_adanta"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 2,
+          "errors": 6,
+          "n": 109,
+          "conditional_auc": 0.7661812297734628,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "known_adanta"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 3,
+          "errors": 4,
+          "n": 112,
+          "conditional_auc": 0.8194444444444444,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "known_adanta"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 4,
+          "errors": 0,
+          "n": 105,
+          "conditional_auc": null,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "known_adanta"
+          ],
+          "fallback": false
+        }
+      ]
+    },
+    {
+      "scope": "all",
+      "seed": 2026102704,
+      "training_fidelity": "xhigh",
+      "method": "input",
+      "within_fold_pair_weighted_auc": 0.8048469387755102,
+      "folds": [
+        {
+          "fold": 0,
+          "errors": 5,
+          "n": 115,
+          "conditional_auc": 0.8181818181818182,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "anudatta=0",
+            "final_class=vowel"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 1,
+          "errors": 4,
+          "n": 94,
+          "conditional_auc": 0.8944444444444445,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "anudatta=0",
+            "final_class=vowel"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 2,
+          "errors": 6,
+          "n": 109,
+          "conditional_auc": 0.7661812297734628,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "has_r=0",
+            "literal_final_a=1"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 3,
+          "errors": 4,
+          "n": 112,
+          "conditional_auc": 0.7685185185185185,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "anudatta=0",
+            "final_class=vowel"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 4,
+          "errors": 0,
+          "n": 105,
+          "conditional_auc": null,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "anudatta=0",
+            "final_class=vowel"
+          ],
+          "fallback": false
+        }
+      ]
+    },
+    {
+      "scope": "all",
+      "seed": 2026102704,
+      "training_fidelity": "xhigh",
+      "method": "input_trace",
+      "within_fold_pair_weighted_auc": 0.8048469387755102,
+      "folds": [
+        {
+          "fold": 0,
+          "errors": 5,
+          "n": 115,
+          "conditional_auc": 0.8181818181818182,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "anudatta=0",
+            "final_class=vowel"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 1,
+          "errors": 4,
+          "n": 94,
+          "conditional_auc": 0.8944444444444445,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "anudatta=0",
+            "final_class=vowel"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 2,
+          "errors": 6,
+          "n": 109,
+          "conditional_auc": 0.7661812297734628,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "has_r=0",
+            "literal_final_a=1"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 3,
+          "errors": 4,
+          "n": 112,
+          "conditional_auc": 0.7685185185185185,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "anudatta=0",
+            "final_class=vowel"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 4,
+          "errors": 0,
+          "n": 105,
+          "conditional_auc": null,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "anudatta=0",
+            "final_class=vowel"
+          ],
+          "fallback": false
+        }
+      ]
+    },
+    {
+      "scope": "all",
+      "seed": 2026102704,
+      "training_fidelity": "high_transfer",
+      "method": "input",
+      "within_fold_pair_weighted_auc": 0.815561224489796,
+      "folds": [
+        {
+          "fold": 0,
+          "errors": 5,
+          "n": 115,
+          "conditional_auc": 0.8818181818181818,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "base_length=medium",
+            "literal_final_a=1"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 1,
+          "errors": 4,
+          "n": 94,
+          "conditional_auc": 0.8722222222222222,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "citation_length=medium",
+            "nasal_marker=0"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 2,
+          "errors": 6,
+          "n": 109,
+          "conditional_auc": 0.7564724919093851,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "citation_length=medium",
+            "final_class=vowel"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 3,
+          "errors": 4,
+          "n": 112,
+          "conditional_auc": 0.7685185185185185,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "has_r=0",
+            "nasal_marker=0"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 4,
+          "errors": 0,
+          "n": 105,
+          "conditional_auc": null,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "citation_length=medium",
+            "nasal_marker=0"
+          ],
+          "fallback": false
+        }
+      ]
+    },
+    {
+      "scope": "all",
+      "seed": 2026102704,
+      "training_fidelity": "high_transfer",
+      "method": "input_trace",
+      "within_fold_pair_weighted_auc": 0.7941326530612245,
+      "folds": [
+        {
+          "fold": 0,
+          "errors": 5,
+          "n": 115,
+          "conditional_auc": 0.8090909090909091,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "nasal_marker=0",
+            "trace=3.4.114"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 1,
+          "errors": 4,
+          "n": 94,
+          "conditional_auc": 0.8888888888888888,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "nasal_marker=0",
+            "trace=3.4.114"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 2,
+          "errors": 6,
+          "n": 109,
+          "conditional_auc": 0.7370550161812298,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "nasal_marker=0",
+            "trace=3.4.114"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 3,
+          "errors": 4,
+          "n": 112,
+          "conditional_auc": 0.7777777777777778,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "nasal_marker=0",
+            "trace=3.4.114"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 4,
+          "errors": 0,
+          "n": 105,
+          "conditional_auc": null,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "nasal_marker=0",
+            "trace=3.4.114"
+          ],
+          "fallback": false
+        }
+      ]
+    },
+    {
+      "scope": "without_known_adanta",
+      "seed": 2026100704,
+      "training_fidelity": "xhigh",
+      "method": "intercept",
+      "within_fold_pair_weighted_auc": 0.5,
+      "folds": [
+        {
+          "fold": 0,
+          "errors": 0,
+          "n": 98,
+          "conditional_auc": null,
+          "unique_predicted_scores": 1,
+          "rule": [],
+          "fallback": false
+        },
+        {
+          "fold": 1,
+          "errors": 1,
+          "n": 62,
+          "conditional_auc": 0.5,
+          "unique_predicted_scores": 1,
+          "rule": [],
+          "fallback": false
+        },
+        {
+          "fold": 2,
+          "errors": 1,
+          "n": 93,
+          "conditional_auc": 0.5,
+          "unique_predicted_scores": 1,
+          "rule": [],
+          "fallback": false
+        },
+        {
+          "fold": 3,
+          "errors": 0,
+          "n": 82,
+          "conditional_auc": null,
+          "unique_predicted_scores": 1,
+          "rule": [],
+          "fallback": false
+        },
+        {
+          "fold": 4,
+          "errors": 0,
+          "n": 82,
+          "conditional_auc": null,
+          "unique_predicted_scores": 1,
+          "rule": [],
+          "fallback": false
+        }
+      ]
+    },
+    {
+      "scope": "without_known_adanta",
+      "seed": 2026100704,
+      "training_fidelity": "xhigh",
+      "method": "known_adanta",
+      "within_fold_pair_weighted_auc": 0.5,
+      "folds": [
+        {
+          "fold": 0,
+          "errors": 0,
+          "n": 98,
+          "conditional_auc": null,
+          "unique_predicted_scores": 1,
+          "rule": [
+            "known_adanta"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 1,
+          "errors": 1,
+          "n": 62,
+          "conditional_auc": 0.5,
+          "unique_predicted_scores": 1,
+          "rule": [
+            "known_adanta"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 2,
+          "errors": 1,
+          "n": 93,
+          "conditional_auc": 0.5,
+          "unique_predicted_scores": 1,
+          "rule": [
+            "known_adanta"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 3,
+          "errors": 0,
+          "n": 82,
+          "conditional_auc": null,
+          "unique_predicted_scores": 1,
+          "rule": [
+            "known_adanta"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 4,
+          "errors": 0,
+          "n": 82,
+          "conditional_auc": null,
+          "unique_predicted_scores": 1,
+          "rule": [
+            "known_adanta"
+          ],
+          "fallback": false
+        }
+      ]
+    },
+    {
+      "scope": "without_known_adanta",
+      "seed": 2026100704,
+      "training_fidelity": "xhigh",
+      "method": "input",
+      "within_fold_pair_weighted_auc": 0.5,
+      "folds": [
+        {
+          "fold": 0,
+          "errors": 0,
+          "n": 98,
+          "conditional_auc": null,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "anudatta=0",
+            "vacana=Bahu"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 1,
+          "errors": 1,
+          "n": 62,
+          "conditional_auc": 0.5,
+          "unique_predicted_scores": 1,
+          "rule": [],
+          "fallback": true
+        },
+        {
+          "fold": 2,
+          "errors": 1,
+          "n": 93,
+          "conditional_auc": 0.5,
+          "unique_predicted_scores": 1,
+          "rule": [],
+          "fallback": true
+        },
+        {
+          "fold": 3,
+          "errors": 0,
+          "n": 82,
+          "conditional_auc": null,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "anudatta=0",
+            "vacana=Bahu"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 4,
+          "errors": 0,
+          "n": 82,
+          "conditional_auc": null,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "anudatta=0",
+            "vacana=Bahu"
+          ],
+          "fallback": false
+        }
+      ]
+    },
+    {
+      "scope": "without_known_adanta",
+      "seed": 2026100704,
+      "training_fidelity": "xhigh",
+      "method": "input_trace",
+      "within_fold_pair_weighted_auc": 0.5,
+      "folds": [
+        {
+          "fold": 0,
+          "errors": 0,
+          "n": 98,
+          "conditional_auc": null,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "anudatta=0",
+            "trace=8.3.59"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 1,
+          "errors": 1,
+          "n": 62,
+          "conditional_auc": 0.5,
+          "unique_predicted_scores": 1,
+          "rule": [],
+          "fallback": true
+        },
+        {
+          "fold": 2,
+          "errors": 1,
+          "n": 93,
+          "conditional_auc": 0.5,
+          "unique_predicted_scores": 1,
+          "rule": [],
+          "fallback": true
+        },
+        {
+          "fold": 3,
+          "errors": 0,
+          "n": 82,
+          "conditional_auc": null,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "trace=8.3.59",
+            "vacana=Bahu"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 4,
+          "errors": 0,
+          "n": 82,
+          "conditional_auc": null,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "anudatta=0",
+            "trace=8.3.59"
+          ],
+          "fallback": false
+        }
+      ]
+    },
+    {
+      "scope": "without_known_adanta",
+      "seed": 2026100704,
+      "training_fidelity": "high_transfer",
+      "method": "input",
+      "within_fold_pair_weighted_auc": 0.4738562091503268,
+      "folds": [
+        {
+          "fold": 0,
+          "errors": 0,
+          "n": 98,
+          "conditional_auc": null,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "base_length=short",
+            "has_v=0"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 1,
+          "errors": 1,
+          "n": 62,
+          "conditional_auc": 0.5,
+          "unique_predicted_scores": 1,
+          "rule": [
+            "lakara=Lun",
+            "nasal_marker=0"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 2,
+          "errors": 1,
+          "n": 93,
+          "conditional_auc": 0.45652173913043476,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "initial_class=stop",
+            "lakara=Lun"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 3,
+          "errors": 0,
+          "n": 82,
+          "conditional_auc": null,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "initial_class=stop",
+            "lakara=Lun"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 4,
+          "errors": 0,
+          "n": 82,
+          "conditional_auc": null,
+          "unique_predicted_scores": 1,
+          "rule": [
+            "lakara=Lun",
+            "nasal_marker=0"
+          ],
+          "fallback": false
+        }
+      ]
+    },
+    {
+      "scope": "without_known_adanta",
+      "seed": 2026100704,
+      "training_fidelity": "high_transfer",
+      "method": "input_trace",
+      "within_fold_pair_weighted_auc": 0.4869281045751634,
+      "folds": [
+        {
+          "fold": 0,
+          "errors": 0,
+          "n": 98,
+          "conditional_auc": null,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "base_length=short",
+            "trace=1.3.4"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 1,
+          "errors": 1,
+          "n": 62,
+          "conditional_auc": 0.47540983606557374,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "multiple_vowels=0",
+            "trace=8.3.78"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 2,
+          "errors": 1,
+          "n": 93,
+          "conditional_auc": 0.4945652173913043,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "trace=7.3.84",
+            "trace=8.2.25"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 3,
+          "errors": 0,
+          "n": 82,
+          "conditional_auc": null,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "trace=6.4.71",
+            "trace=7.3.84"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 4,
+          "errors": 0,
+          "n": 82,
+          "conditional_auc": null,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "trace=7.3.84",
+            "trace=8.2.25"
+          ],
+          "fallback": false
+        }
+      ]
+    },
+    {
+      "scope": "without_known_adanta",
+      "seed": 2026101704,
+      "training_fidelity": "xhigh",
+      "method": "intercept",
+      "within_fold_pair_weighted_auc": 0.5,
+      "folds": [
+        {
+          "fold": 0,
+          "errors": 1,
+          "n": 71,
+          "conditional_auc": 0.5,
+          "unique_predicted_scores": 1,
+          "rule": [],
+          "fallback": false
+        },
+        {
+          "fold": 1,
+          "errors": 0,
+          "n": 84,
+          "conditional_auc": null,
+          "unique_predicted_scores": 1,
+          "rule": [],
+          "fallback": false
+        },
+        {
+          "fold": 2,
+          "errors": 0,
+          "n": 80,
+          "conditional_auc": null,
+          "unique_predicted_scores": 1,
+          "rule": [],
+          "fallback": false
+        },
+        {
+          "fold": 3,
+          "errors": 1,
+          "n": 97,
+          "conditional_auc": 0.5,
+          "unique_predicted_scores": 1,
+          "rule": [],
+          "fallback": false
+        },
+        {
+          "fold": 4,
+          "errors": 0,
+          "n": 85,
+          "conditional_auc": null,
+          "unique_predicted_scores": 1,
+          "rule": [],
+          "fallback": false
+        }
+      ]
+    },
+    {
+      "scope": "without_known_adanta",
+      "seed": 2026101704,
+      "training_fidelity": "xhigh",
+      "method": "known_adanta",
+      "within_fold_pair_weighted_auc": 0.5,
+      "folds": [
+        {
+          "fold": 0,
+          "errors": 1,
+          "n": 71,
+          "conditional_auc": 0.5,
+          "unique_predicted_scores": 1,
+          "rule": [
+            "known_adanta"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 1,
+          "errors": 0,
+          "n": 84,
+          "conditional_auc": null,
+          "unique_predicted_scores": 1,
+          "rule": [
+            "known_adanta"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 2,
+          "errors": 0,
+          "n": 80,
+          "conditional_auc": null,
+          "unique_predicted_scores": 1,
+          "rule": [
+            "known_adanta"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 3,
+          "errors": 1,
+          "n": 97,
+          "conditional_auc": 0.5,
+          "unique_predicted_scores": 1,
+          "rule": [
+            "known_adanta"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 4,
+          "errors": 0,
+          "n": 85,
+          "conditional_auc": null,
+          "unique_predicted_scores": 1,
+          "rule": [
+            "known_adanta"
+          ],
+          "fallback": false
+        }
+      ]
+    },
+    {
+      "scope": "without_known_adanta",
+      "seed": 2026101704,
+      "training_fidelity": "xhigh",
+      "method": "input",
+      "within_fold_pair_weighted_auc": 0.5,
+      "folds": [
+        {
+          "fold": 0,
+          "errors": 1,
+          "n": 71,
+          "conditional_auc": 0.5,
+          "unique_predicted_scores": 1,
+          "rule": [],
+          "fallback": true
+        },
+        {
+          "fold": 1,
+          "errors": 0,
+          "n": 84,
+          "conditional_auc": null,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "anudatta=0",
+            "vacana=Bahu"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 2,
+          "errors": 0,
+          "n": 80,
+          "conditional_auc": null,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "anudatta=0",
+            "vacana=Bahu"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 3,
+          "errors": 1,
+          "n": 97,
+          "conditional_auc": 0.5,
+          "unique_predicted_scores": 1,
+          "rule": [],
+          "fallback": true
+        },
+        {
+          "fold": 4,
+          "errors": 0,
+          "n": 85,
+          "conditional_auc": null,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "anudatta=0",
+            "vacana=Bahu"
+          ],
+          "fallback": false
+        }
+      ]
+    },
+    {
+      "scope": "without_known_adanta",
+      "seed": 2026101704,
+      "training_fidelity": "xhigh",
+      "method": "input_trace",
+      "within_fold_pair_weighted_auc": 0.5,
+      "folds": [
+        {
+          "fold": 0,
+          "errors": 1,
+          "n": 71,
+          "conditional_auc": 0.5,
+          "unique_predicted_scores": 1,
+          "rule": [],
+          "fallback": true
+        },
+        {
+          "fold": 1,
+          "errors": 0,
+          "n": 84,
+          "conditional_auc": null,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "trace=8.3.59",
+            "vacana=Bahu"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 2,
+          "errors": 0,
+          "n": 80,
+          "conditional_auc": null,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "trace=8.3.59",
+            "vacana=Bahu"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 3,
+          "errors": 1,
+          "n": 97,
+          "conditional_auc": 0.5,
+          "unique_predicted_scores": 1,
+          "rule": [],
+          "fallback": true
+        },
+        {
+          "fold": 4,
+          "errors": 0,
+          "n": 85,
+          "conditional_auc": null,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "anudatta=0",
+            "trace=8.3.59"
+          ],
+          "fallback": false
+        }
+      ]
+    },
+    {
+      "scope": "without_known_adanta",
+      "seed": 2026101704,
+      "training_fidelity": "high_transfer",
+      "method": "input",
+      "within_fold_pair_weighted_auc": 0.46686746987951805,
+      "folds": [
+        {
+          "fold": 0,
+          "errors": 1,
+          "n": 71,
+          "conditional_auc": 0.4928571428571429,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "final_class=vowel",
+            "lakara=Lun"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 1,
+          "errors": 0,
+          "n": 84,
+          "conditional_auc": null,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "initial_class=stop",
+            "lakara=Lun"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 2,
+          "errors": 0,
+          "n": 80,
+          "conditional_auc": null,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "initial_class=stop",
+            "lakara=Lun"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 3,
+          "errors": 1,
+          "n": 97,
+          "conditional_auc": 0.4479166666666667,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "final_class=stop",
+            "lakara=Lit"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 4,
+          "errors": 0,
+          "n": 85,
+          "conditional_auc": null,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "initial_class=stop",
+            "nasal_marker=0"
+          ],
+          "fallback": false
+        }
+      ]
+    },
+    {
+      "scope": "without_known_adanta",
+      "seed": 2026101704,
+      "training_fidelity": "high_transfer",
+      "method": "input_trace",
+      "within_fold_pair_weighted_auc": 0.49096385542168675,
+      "folds": [
+        {
+          "fold": 0,
+          "errors": 1,
+          "n": 71,
+          "conditional_auc": 0.5,
+          "unique_predicted_scores": 1,
+          "rule": [
+            "lakara=Lun",
+            "trace=7.3.84"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 1,
+          "errors": 0,
+          "n": 84,
+          "conditional_auc": null,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "initial_class=stop",
+            "trace=3.1.44"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 2,
+          "errors": 0,
+          "n": 80,
+          "conditional_auc": null,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "trace=7.3.84",
+            "trace=8.2.25"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 3,
+          "errors": 1,
+          "n": 97,
+          "conditional_auc": 0.484375,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "gana=Bhvadi",
+            "trace=7.4.70"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 4,
+          "errors": 0,
+          "n": 85,
+          "conditional_auc": null,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "trace=7.3.84",
+            "trace=8.2.25"
+          ],
+          "fallback": false
+        }
+      ]
+    },
+    {
+      "scope": "without_known_adanta",
+      "seed": 2026102704,
+      "training_fidelity": "xhigh",
+      "method": "intercept",
+      "within_fold_pair_weighted_auc": 0.5,
+      "folds": [
+        {
+          "fold": 0,
+          "errors": 0,
+          "n": 80,
+          "conditional_auc": null,
+          "unique_predicted_scores": 1,
+          "rule": [],
+          "fallback": false
+        },
+        {
+          "fold": 1,
+          "errors": 0,
+          "n": 72,
+          "conditional_auc": null,
+          "unique_predicted_scores": 1,
+          "rule": [],
+          "fallback": false
+        },
+        {
+          "fold": 2,
+          "errors": 1,
+          "n": 73,
+          "conditional_auc": 0.5,
+          "unique_predicted_scores": 1,
+          "rule": [],
+          "fallback": false
+        },
+        {
+          "fold": 3,
+          "errors": 1,
+          "n": 97,
+          "conditional_auc": 0.5,
+          "unique_predicted_scores": 1,
+          "rule": [],
+          "fallback": false
+        },
+        {
+          "fold": 4,
+          "errors": 0,
+          "n": 95,
+          "conditional_auc": null,
+          "unique_predicted_scores": 1,
+          "rule": [],
+          "fallback": false
+        }
+      ]
+    },
+    {
+      "scope": "without_known_adanta",
+      "seed": 2026102704,
+      "training_fidelity": "xhigh",
+      "method": "known_adanta",
+      "within_fold_pair_weighted_auc": 0.5,
+      "folds": [
+        {
+          "fold": 0,
+          "errors": 0,
+          "n": 80,
+          "conditional_auc": null,
+          "unique_predicted_scores": 1,
+          "rule": [
+            "known_adanta"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 1,
+          "errors": 0,
+          "n": 72,
+          "conditional_auc": null,
+          "unique_predicted_scores": 1,
+          "rule": [
+            "known_adanta"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 2,
+          "errors": 1,
+          "n": 73,
+          "conditional_auc": 0.5,
+          "unique_predicted_scores": 1,
+          "rule": [
+            "known_adanta"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 3,
+          "errors": 1,
+          "n": 97,
+          "conditional_auc": 0.5,
+          "unique_predicted_scores": 1,
+          "rule": [
+            "known_adanta"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 4,
+          "errors": 0,
+          "n": 95,
+          "conditional_auc": null,
+          "unique_predicted_scores": 1,
+          "rule": [
+            "known_adanta"
+          ],
+          "fallback": false
+        }
+      ]
+    },
+    {
+      "scope": "without_known_adanta",
+      "seed": 2026102704,
+      "training_fidelity": "xhigh",
+      "method": "input",
+      "within_fold_pair_weighted_auc": 0.5,
+      "folds": [
+        {
+          "fold": 0,
+          "errors": 0,
+          "n": 80,
+          "conditional_auc": null,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "anudatta=0",
+            "vacana=Bahu"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 1,
+          "errors": 0,
+          "n": 72,
+          "conditional_auc": null,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "initial_class=stop",
+            "purusha=Madhyama"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 2,
+          "errors": 1,
+          "n": 73,
+          "conditional_auc": 0.5,
+          "unique_predicted_scores": 1,
+          "rule": [],
+          "fallback": true
+        },
+        {
+          "fold": 3,
+          "errors": 1,
+          "n": 97,
+          "conditional_auc": 0.5,
+          "unique_predicted_scores": 1,
+          "rule": [],
+          "fallback": true
+        },
+        {
+          "fold": 4,
+          "errors": 0,
+          "n": 95,
+          "conditional_auc": null,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "anudatta=0",
+            "vacana=Bahu"
+          ],
+          "fallback": false
+        }
+      ]
+    },
+    {
+      "scope": "without_known_adanta",
+      "seed": 2026102704,
+      "training_fidelity": "xhigh",
+      "method": "input_trace",
+      "within_fold_pair_weighted_auc": 0.5,
+      "folds": [
+        {
+          "fold": 0,
+          "errors": 0,
+          "n": 80,
+          "conditional_auc": null,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "anudatta=0",
+            "trace=8.3.59"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 1,
+          "errors": 0,
+          "n": 72,
+          "conditional_auc": null,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "purusha=Madhyama",
+            "trace=8.3.59"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 2,
+          "errors": 1,
+          "n": 73,
+          "conditional_auc": 0.5,
+          "unique_predicted_scores": 1,
+          "rule": [],
+          "fallback": true
+        },
+        {
+          "fold": 3,
+          "errors": 1,
+          "n": 97,
+          "conditional_auc": 0.5,
+          "unique_predicted_scores": 1,
+          "rule": [],
+          "fallback": true
+        },
+        {
+          "fold": 4,
+          "errors": 0,
+          "n": 95,
+          "conditional_auc": null,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "anudatta=0",
+            "trace=8.3.59"
+          ],
+          "fallback": false
+        }
+      ]
+    },
+    {
+      "scope": "without_known_adanta",
+      "seed": 2026102704,
+      "training_fidelity": "high_transfer",
+      "method": "input",
+      "within_fold_pair_weighted_auc": 0.4583333333333333,
+      "folds": [
+        {
+          "fold": 0,
+          "errors": 0,
+          "n": 80,
+          "conditional_auc": null,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "has_r=1",
+            "lakara=Lit"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 1,
+          "errors": 0,
+          "n": 72,
+          "conditional_auc": null,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "initial_class=stop",
+            "lakara=Lun"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 2,
+          "errors": 1,
+          "n": 73,
+          "conditional_auc": 0.4722222222222222,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "initial_class=stop",
+            "lakara=Lun"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 3,
+          "errors": 1,
+          "n": 97,
+          "conditional_auc": 0.4479166666666667,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "final_class=vowel",
+            "initial_class=stop"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 4,
+          "errors": 0,
+          "n": 95,
+          "conditional_auc": null,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "initial_class=stop",
+            "lakara=Lun"
+          ],
+          "fallback": false
+        }
+      ]
+    },
+    {
+      "scope": "without_known_adanta",
+      "seed": 2026102704,
+      "training_fidelity": "high_transfer",
+      "method": "input_trace",
+      "within_fold_pair_weighted_auc": 0.4880952380952381,
+      "folds": [
+        {
+          "fold": 0,
+          "errors": 0,
+          "n": 80,
+          "conditional_auc": null,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "base_length=short",
+            "trace=7.2.10"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 1,
+          "errors": 0,
+          "n": 72,
+          "conditional_auc": null,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "multiple_vowels=0",
+            "trace=8.3.78"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 2,
+          "errors": 1,
+          "n": 73,
+          "conditional_auc": 0.4722222222222222,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "trace=7.2.10",
+            "trace=7.3.84"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 3,
+          "errors": 1,
+          "n": 97,
+          "conditional_auc": 0.5,
+          "unique_predicted_scores": 1,
+          "rule": [
+            "lakara=Lun",
+            "trace=7.3.84"
+          ],
+          "fallback": false
+        },
+        {
+          "fold": 4,
+          "errors": 0,
+          "n": 95,
+          "conditional_auc": null,
+          "unique_predicted_scores": 2,
+          "rule": [
+            "trace=7.3.84",
+            "trace=8.2.25"
+          ],
+          "fallback": false
+        }
+      ]
+    }
+  ],
+  "metric_caution": "Pooled out-of-fold AUC compares predictions from differently fitted fold models. With only two residual errors, this can appear above chance even when predictions are constant within every error-containing validation fold. Report within-fold AUC alongside pooled AUC; an all-success bootstrap [1,1] is a degenerate conditional resample, not certainty of perfect population performance.",
+  "no_held_out_answers": true,
+  "benchmark_ready": false
+}

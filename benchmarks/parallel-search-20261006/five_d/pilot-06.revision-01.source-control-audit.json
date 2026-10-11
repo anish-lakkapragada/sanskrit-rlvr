@@ -1,0 +1,94 @@
+{
+  "created_at": "2026-10-07T08:42:03.627427+00:00",
+  "policy": "oracle-policy-14",
+  "shared_adapter_sha256": "6bada37b2096282a5ec4645ad2792320f2ce6482f87d7835630b29e58c9389df",
+  "prior_source_audit_sha256": "4a7f2acc270088d1863eb79c68afb82e94acc3db62d836f855e5dc78df0f042f",
+  "direct_checks": [
+    {
+      "code": "04.0098",
+      "sanadi": [
+        "yaNluk",
+        "Ric"
+      ],
+      "morphology": {
+        "lakara": "Lun",
+        "prayoga": "Karmani",
+        "purusha": "Prathama",
+        "vacana": "Eka"
+      },
+      "expected": "aSaMSAmi",
+      "actual": [
+        "aSaMSAmi",
+        "aSaMSami"
+      ],
+      "passed": true,
+      "source": "https://sa.wikisource.org/wiki/शब्दकौस्तुभः/अध्यायः_१-पादः_१/आह्निकम्_८",
+      "note": "Direct Paninian example explicitly attributed to intensive-luk followed by nic.",
+      "evidence_level": "direct source example; membership only, not exhaustive alternatives",
+      "actual_current_gold": [
+        "aSaMSAmi",
+        "aSaMSami"
+      ],
+      "current_passed": true,
+      "excluded_from_candidate": true
+    },
+    {
+      "code": "02.0059",
+      "sanadi": [
+        "yaN",
+        "Ric"
+      ],
+      "morphology": {
+        "lakara": "Lat",
+        "prayoga": "Kartari",
+        "purusha": "Uttama",
+        "vacana": "Eka"
+      },
+      "expected": "vevidayAmi",
+      "actual": [
+        "vevidayAmi",
+        "vevidaye"
+      ],
+      "passed": true,
+      "source": "https://en.wikisource.org/wiki/Sanskrit_Grammar_(Whitney)/Chapter_XIV#1025",
+      "note": "Direct ordinary-intensive causative control from the earlier audited source panel.",
+      "evidence_level": "direct source example; membership only, not exhaustive alternatives",
+      "actual_current_gold": [
+        "vevidayAmi",
+        "vevidaye"
+      ],
+      "current_passed": true,
+      "excluded_from_candidate": true
+    },
+    {
+      "code": "08.0010",
+      "sanadi": [
+        "san"
+      ],
+      "morphology": {
+        "lakara": "Lat",
+        "prayoga": "Kartari",
+        "purusha": "Prathama",
+        "vacana": "Eka"
+      },
+      "expected": "cikIrzati",
+      "actual": [
+        "cikIrzate",
+        "cikIrzati"
+      ],
+      "passed": true,
+      "source": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/3/3.1.7.htm",
+      "note": "Direct simple desiderative control.",
+      "evidence_level": "direct source example; membership only, not exhaustive alternatives",
+      "actual_current_gold": [
+        "cikIrzate",
+        "cikIrzati"
+      ],
+      "current_passed": true,
+      "excluded_from_candidate": true
+    }
+  ],
+  "all_passed": true,
+  "limits": "Independent printed examples verify one licensed output per recipe. They do not certify every alternative or every rare derived full form. Current scope gates and item disagreement audits remain necessary.",
+  "no_paid_calls": true
+}

@@ -1,0 +1,174 @@
+{
+  "created_at": "2026-10-08T00:31:53.063833+00:00",
+  "reviewer": "independent modification/5D agent",
+  "passed": true,
+  "policy_sha256": "06ee42905da5f8397e2d73f6fa1aa6ef67a2e35b961f5052aa0afac649ff90c3",
+  "scorer_sha256": "3726b6c567ffa054d718abbb873512d0b9e2f4cc59b6790e4a5fb884f5829d58",
+  "tasks_sha256": "695e7284d06a555aaabfcb7671d000db5622157984221c261b9500e86f72d38f",
+  "decision": "bounded_adoption_recommended_with_mandatory_source_adjudication",
+  "blockers": [],
+  "benchmark_ready": false,
+  "evaluation_authorized": false,
+  "checks": {
+    "retained1250_alias_items_unchanged": 1250,
+    "transfer_dependency_hashes": 6,
+    "proposal_hashes": 4,
+    "source_snapshot_hashes": 8,
+    "saved_verification_hashes": 7,
+    "exact_approved_builder_items": 1800,
+    "exact_reconstructed_task_maps": 1800,
+    "accepted_canonical_forms_devanagari": 3224,
+    "accepted_aliases_devanagari": 3289,
+    "unlisted_changes_routed_to_review": 1800,
+    "final_n_retroflex_mutations_not_accepted": 90,
+    "triple_final_stop_mutations_not_accepted": 226,
+    "unknown_id_rejected": 1,
+    "cross_task_form_not_accepted": 1,
+    "public_prompt_and_private_field_isolation": 1800,
+    "malformed_answer_cases": 6,
+    "multiple_forms_in_one_tag_pending_review": 1,
+    "existing_whitespace_normalization": 1,
+    "policy_hash_tamper_rejected": 1,
+    "task_hash_tamper_rejected": 1,
+    "extraction_dependency_tamper_rejected": 1,
+    "representative_control_membership": 13
+  },
+  "tense_coverage": {
+    "AshirLin": {
+      "tasks": 176,
+      "canonical_forms": 307,
+      "tasks_with_aliases": 162,
+      "aliases": 474,
+      "unresolved_tasks": 12
+    },
+    "Lan": {
+      "tasks": 176,
+      "canonical_forms": 293,
+      "tasks_with_aliases": 97,
+      "aliases": 226,
+      "unresolved_tasks": 10
+    },
+    "Lat": {
+      "tasks": 176,
+      "canonical_forms": 277,
+      "tasks_with_aliases": 51,
+      "aliases": 70,
+      "unresolved_tasks": 4
+    },
+    "Lit": {
+      "tasks": 176,
+      "canonical_forms": 497,
+      "tasks_with_aliases": 138,
+      "aliases": 595,
+      "unresolved_tasks": 6
+    },
+    "Lot": {
+      "tasks": 176,
+      "canonical_forms": 339,
+      "tasks_with_aliases": 79,
+      "aliases": 154,
+      "unresolved_tasks": 5
+    },
+    "Lrn": {
+      "tasks": 176,
+      "canonical_forms": 291,
+      "tasks_with_aliases": 173,
+      "aliases": 637,
+      "unresolved_tasks": 17
+    },
+    "Lrt": {
+      "tasks": 176,
+      "canonical_forms": 272,
+      "tasks_with_aliases": 174,
+      "aliases": 416,
+      "unresolved_tasks": 6
+    },
+    "Lun": {
+      "tasks": 216,
+      "canonical_forms": 402,
+      "tasks_with_aliases": 155,
+      "aliases": 430,
+      "unresolved_tasks": 10
+    },
+    "Lut": {
+      "tasks": 176,
+      "canonical_forms": 256,
+      "tasks_with_aliases": 104,
+      "aliases": 199,
+      "unresolved_tasks": 4
+    },
+    "VidhiLin": {
+      "tasks": 176,
+      "canonical_forms": 290,
+      "tasks_with_aliases": 60,
+      "aliases": 88,
+      "unresolved_tasks": 5
+    }
+  },
+  "periphrastic_perfect": {
+    "tasks": 104,
+    "canonical_forms": 412,
+    "tasks_with_aliases": 104,
+    "aliases": 550,
+    "example": {
+      "id": "cart4-36079aa3159bdd2b3ea4d236",
+      "canonical": [
+        "kaTayAYcakAra",
+        "kaTayAYcakara",
+        "kaTayAYcakre",
+        "kaTayAmAsa",
+        "kaTayAmbaBUva"
+      ],
+      "aliases": [
+        "kaTayAYYcakAra",
+        "kaTayAYYcakara",
+        "kaTayAYYcakkre",
+        "kaTayAYYcakre",
+        "kaTayAYcakkre",
+        "kaTayAmmbaBUva"
+      ]
+    },
+    "limitation": "Generic phonological transfer on the joined canonical string; not exhaustive alternative segmentation, auxiliary, lexical or spelling certification."
+  },
+  "conditions": [
+    "Every parsed unrecognized usable answer needs independent source adjudication before a linguistic error or advancement claim.",
+    "Execution layer must separately classify refusal/truncation/unparsed responses; scorer does not infer transport usability.",
+    "Preserve canonical, predeclared-whitelist and later adjudicated scores, full membership and unresolved counts; any new correction must apply symmetrically.",
+    "Instantiate the hash-checking scorer under a frozen execution/analysis manifest; do not treat this proposal as an installed runner change."
+  ],
+  "limitations": [
+    "79 tasks have explicitly flagged residual cluster contexts; this is not an exhaustive list of possible missing forms.",
+    "All surface unions are preserved but not every lexical paradigm is independently source-certified.",
+    "No periphrastic spelling segmentation alternatives or new phonological rules were added."
+  ],
+  "source_reading": [
+    "8.4.46 postvocalic r/h context, excluding duplicated r/h",
+    "8.4.47 simple postvocalic cluster and pause",
+    "8.4.49 sibilant-before-vowel prohibition",
+    "8.4.53 and 8.4.55 first-copy deaspiration",
+    "8.4.56 singleton/doubled final stop alternatives"
+  ],
+  "model_outputs_read": false,
+  "paid_calls": 0,
+  "protected_files_unchanged": true,
+  "protected_hashes": {
+    "benchmarks/parallel-search-20261007/four_d-90/candidate-1800-v1/supply.json": "e30e2ec730890c87876af90a47eaedb1d62bb809d6752a27d66a280a1a351c7e",
+    "benchmarks/parallel-search-20261007/four_d-90/candidate-1800-v1/source-policy.json": "e5c48ee7b54006f138d97d3c7cd9a90c76896c9954e3278568e17c5f2cb59284",
+    "benchmarks/parallel-search-20261007/four_d-90/candidate-1800-v1/independent-input-review.json": "ca0a2660f4577e1587b3715cf2ce241c3a8f893303dff0200eed7a0ac662bd44",
+    "benchmarks/parallel-search-20261007/four_d-90/candidate-1800-v1/public-prompts.json": "187fa86a4b840f121ea443158654eda866fe78126efd0fe6f6b820986e742f81",
+    "benchmarks/parallel-search-20261007/four_d-90/candidate-1800-v1/manifest.json": "67653e28fcceb6291b805953432fe511889660a23e5b071c80a4ee43d65fb1c2",
+    "benchmarks/parallel-search-20261007/four_d-90/candidate-1800-v1/tasks.json": "695e7284d06a555aaabfcb7671d000db5622157984221c261b9500e86f72d38f",
+    "benchmarks/parallel-search-20261007/four_d-90/candidate-1800-v1/membership-audit.json": "aaace614ea49cf5888c2d94c6092da41e11e8466fa2db58c05f6c8839ca7f78d",
+    "benchmarks/parallel-search-20261007/four_d-90/candidate-1800-v1/spelling-policy-proposal/controls.json": "1a2df59326772cad671f36dd70dc0f1b24a8e8139dc209fcb7a797ef2daa6290",
+    "benchmarks/parallel-search-20261007/four_d-90/candidate-1800-v1/spelling-policy-proposal/alias-policy.json": "06ee42905da5f8397e2d73f6fa1aa6ef67a2e35b961f5052aa0afac649ff90c3",
+    "benchmarks/parallel-search-20261007/four_d-90/candidate-1800-v1/spelling-policy-proposal/README.md": "5d542912dcea02c3129b1ebd681cfb872058a38d628eb5a10b99928e4269a90a",
+    "benchmarks/parallel-search-20261007/four_d-90/candidate-1800-v1/spelling-policy-proposal/transfer-review.json": "e5f78c9f77c04fb9e93d52500e41010584976852fad82ecc485f8044430c584b",
+    "benchmarks/parallel-search-20261007/four_d-90/candidate-1800-v1/spelling-policy-proposal/verification-receipt.json": "9f7b543b47b44c12f73bb64c1fa423a1d0f5d9607ff2a077b3f84974ba14c5fd",
+    "benchmarks/parallel-search-20261007/four_d-90/candidate-1800-v1/spelling-policy-proposal/unresolved-contexts.json": "a988c89ab8c0102eb66b59fe80756212648b7c4210e4a3da806de3979068a93e",
+    "benchmarks/parallel-search-20261007/four_d-90/candidate-1800-v1/spelling-policy-proposal/verify.py": "efdbe004c1e448f7edc4108653fda134423e022b36441966ae22c7efcf034e44",
+    "benchmarks/parallel-search-20261007/four_d-90/candidate-1800-v1/spelling-policy-proposal/prepare.py": "f22bbe4b2d9cd55260d9b1f7e4cfd413be209b396fadd958142f5db53cfcc838",
+    "benchmarks/parallel-search-20261007/four_d-90/candidate-1800-v1/spelling-policy-proposal/retained-alias-audit.json": "60b12778622ae8462da246271dc7c6fed205d2afedfd5be1273259d7146fb45a",
+    "benchmarks/parallel-search-20261007/four_d-90/candidate-1800-v1/spelling-policy-proposal/scorer.py": "3726b6c567ffa054d718abbb873512d0b9e2f4cc59b6790e4a5fb884f5829d58"
+  },
+  "reviewer_script_sha256": "1c19c3b0e9d3311223c5eac68839af587a65b0ccef3cd68f40fbc98a84e81b09"
+}

@@ -1,0 +1,887 @@
+{
+  "updated_at": "2026-10-09T22:58:58.333977+00:00",
+  "state": "complete_pending_independent_review",
+  "n": 96,
+  "benchmark_ready": false,
+  "received": 96,
+  "settled": 96,
+  "cost_upper_usd": 0.722716,
+  "committed_usd": 0.722716,
+  "execution": {
+    "updated_at": "2026-10-08T00:09:18.998323+00:00",
+    "state": "complete",
+    "n": 96,
+    "cost_upper_usd": 0.722716
+  },
+  "primary": {
+    "statistics": {
+      "fixed_n": 96,
+      "result_rows": 96,
+      "all_results_present": true,
+      "unscored_results": 0,
+      "statuses": {
+        "completed": 96
+      },
+      "truncated": 0,
+      "root_families": 96,
+      "families_per_class": {
+        "Adadi": 3,
+        "Bhvadi": 48,
+        "Curadi": 11,
+        "Divadi": 11,
+        "Juhotyadi": 1,
+        "Kryadi": 6,
+        "Rudhadi": 1,
+        "Svadi": 1,
+        "Tanadi": 1,
+        "Tudadi": 13
+      },
+      "all_request": {
+        "n": 96,
+        "correct": 96,
+        "accuracy": 1.0,
+        "iid_standard_error": 0.0,
+        "iid_wilson_95_interval": [
+          0.9615244121423243,
+          1.0
+        ],
+        "root_cluster_sandwich_standard_error": 0.0,
+        "family_bootstrap": {
+          "standard_error": 0.0,
+          "percentile_95_interval": [
+            1.0,
+            1.0
+          ],
+          "valid_repetitions": 20000
+        },
+        "class_stratified_family_bootstrap": {
+          "standard_error": 0.0,
+          "percentile_95_interval": [
+            1.0,
+            1.0
+          ],
+          "valid_repetitions": 20000
+        }
+      },
+      "completed_answer": {
+        "n": 96,
+        "correct": 96,
+        "accuracy": 1.0,
+        "iid_standard_error": 0.0,
+        "iid_wilson_95_interval": [
+          0.9615244121423243,
+          1.0
+        ],
+        "root_cluster_sandwich_standard_error": 0.0,
+        "family_bootstrap": {
+          "standard_error": 0.0,
+          "percentile_95_interval": [
+            1.0,
+            1.0
+          ],
+          "valid_repetitions": 20000
+        },
+        "class_stratified_family_bootstrap": {
+          "standard_error": 0.0,
+          "percentile_95_interval": [
+            1.0,
+            1.0
+          ],
+          "valid_repetitions": 20000
+        }
+      },
+      "missing_answer_accuracy_bounds": [
+        1.0,
+        1.0
+      ],
+      "bootstrap_repetitions": 20000,
+      "bootstrap_seed": 2026100719
+    },
+    "groups": {
+      "cell::future_ending_lopa": {
+        "n": 24,
+        "correct": 24,
+        "all_request_accuracy": 1.0,
+        "completed": 24,
+        "completed_correct": 24,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 24
+        },
+        "truncated": 0,
+        "families": 24
+      },
+      "cell::ling_plural_jus": {
+        "n": 24,
+        "correct": 24,
+        "all_request_accuracy": 1.0,
+        "completed": 24,
+        "completed_correct": 24,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 24
+        },
+        "truncated": 0,
+        "families": 24
+      },
+      "cell::secondary_plural_cluster": {
+        "n": 24,
+        "correct": 24,
+        "all_request_accuracy": 1.0,
+        "completed": 24,
+        "completed_correct": 24,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 24
+        },
+        "truncated": 0,
+        "families": 24
+      },
+      "cell::sigmatic_aprkta_repair": {
+        "n": 24,
+        "correct": 24,
+        "all_request_accuracy": 1.0,
+        "completed": 24,
+        "completed_correct": 24,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 24
+        },
+        "truncated": 0,
+        "families": 24
+      },
+      "gana::Adadi": {
+        "n": 3,
+        "correct": 3,
+        "all_request_accuracy": 1.0,
+        "completed": 3,
+        "completed_correct": 3,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 3
+        },
+        "truncated": 0,
+        "families": 3
+      },
+      "gana::Bhvadi": {
+        "n": 48,
+        "correct": 48,
+        "all_request_accuracy": 1.0,
+        "completed": 48,
+        "completed_correct": 48,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 48
+        },
+        "truncated": 0,
+        "families": 48
+      },
+      "gana::Curadi": {
+        "n": 11,
+        "correct": 11,
+        "all_request_accuracy": 1.0,
+        "completed": 11,
+        "completed_correct": 11,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 11
+        },
+        "truncated": 0,
+        "families": 11
+      },
+      "gana::Divadi": {
+        "n": 11,
+        "correct": 11,
+        "all_request_accuracy": 1.0,
+        "completed": 11,
+        "completed_correct": 11,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 11
+        },
+        "truncated": 0,
+        "families": 11
+      },
+      "gana::Juhotyadi": {
+        "n": 1,
+        "correct": 1,
+        "all_request_accuracy": 1.0,
+        "completed": 1,
+        "completed_correct": 1,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 1
+        },
+        "truncated": 0,
+        "families": 1
+      },
+      "gana::Kryadi": {
+        "n": 6,
+        "correct": 6,
+        "all_request_accuracy": 1.0,
+        "completed": 6,
+        "completed_correct": 6,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 6
+        },
+        "truncated": 0,
+        "families": 6
+      },
+      "gana::Rudhadi": {
+        "n": 1,
+        "correct": 1,
+        "all_request_accuracy": 1.0,
+        "completed": 1,
+        "completed_correct": 1,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 1
+        },
+        "truncated": 0,
+        "families": 1
+      },
+      "gana::Svadi": {
+        "n": 1,
+        "correct": 1,
+        "all_request_accuracy": 1.0,
+        "completed": 1,
+        "completed_correct": 1,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 1
+        },
+        "truncated": 0,
+        "families": 1
+      },
+      "gana::Tanadi": {
+        "n": 1,
+        "correct": 1,
+        "all_request_accuracy": 1.0,
+        "completed": 1,
+        "completed_correct": 1,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 1
+        },
+        "truncated": 0,
+        "families": 1
+      },
+      "gana::Tudadi": {
+        "n": 13,
+        "correct": 13,
+        "all_request_accuracy": 1.0,
+        "completed": 13,
+        "completed_correct": 13,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 13
+        },
+        "truncated": 0,
+        "families": 13
+      },
+      "target_lakara::AshirLin": {
+        "n": 12,
+        "correct": 12,
+        "all_request_accuracy": 1.0,
+        "completed": 12,
+        "completed_correct": 12,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 12
+        },
+        "truncated": 0,
+        "families": 12
+      },
+      "target_lakara::Lan": {
+        "n": 12,
+        "correct": 12,
+        "all_request_accuracy": 1.0,
+        "completed": 12,
+        "completed_correct": 12,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 12
+        },
+        "truncated": 0,
+        "families": 12
+      },
+      "target_lakara::Lrn": {
+        "n": 12,
+        "correct": 12,
+        "all_request_accuracy": 1.0,
+        "completed": 12,
+        "completed_correct": 12,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 12
+        },
+        "truncated": 0,
+        "families": 12
+      },
+      "target_lakara::Lun": {
+        "n": 24,
+        "correct": 24,
+        "all_request_accuracy": 1.0,
+        "completed": 24,
+        "completed_correct": 24,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 24
+        },
+        "truncated": 0,
+        "families": 24
+      },
+      "target_lakara::Lut": {
+        "n": 24,
+        "correct": 24,
+        "all_request_accuracy": 1.0,
+        "completed": 24,
+        "completed_correct": 24,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 24
+        },
+        "truncated": 0,
+        "families": 24
+      },
+      "target_lakara::VidhiLin": {
+        "n": 12,
+        "correct": 12,
+        "all_request_accuracy": 1.0,
+        "completed": 12,
+        "completed_correct": 12,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 12
+        },
+        "truncated": 0,
+        "families": 12
+      }
+    },
+    "wrong_completed_families": 0,
+    "numerical_discovery_signal": false,
+    "source_review_required": true,
+    "benchmark_ready": false
+  },
+  "canonical": {
+    "statistics": {
+      "fixed_n": 96,
+      "result_rows": 96,
+      "all_results_present": true,
+      "unscored_results": 0,
+      "statuses": {
+        "completed": 96
+      },
+      "truncated": 0,
+      "root_families": 96,
+      "families_per_class": {
+        "Adadi": 3,
+        "Bhvadi": 48,
+        "Curadi": 11,
+        "Divadi": 11,
+        "Juhotyadi": 1,
+        "Kryadi": 6,
+        "Rudhadi": 1,
+        "Svadi": 1,
+        "Tanadi": 1,
+        "Tudadi": 13
+      },
+      "all_request": {
+        "n": 96,
+        "correct": 96,
+        "accuracy": 1.0,
+        "iid_standard_error": 0.0,
+        "iid_wilson_95_interval": [
+          0.9615244121423243,
+          1.0
+        ],
+        "root_cluster_sandwich_standard_error": 0.0,
+        "family_bootstrap": {
+          "standard_error": 0.0,
+          "percentile_95_interval": [
+            1.0,
+            1.0
+          ],
+          "valid_repetitions": 20000
+        },
+        "class_stratified_family_bootstrap": {
+          "standard_error": 0.0,
+          "percentile_95_interval": [
+            1.0,
+            1.0
+          ],
+          "valid_repetitions": 20000
+        }
+      },
+      "completed_answer": {
+        "n": 96,
+        "correct": 96,
+        "accuracy": 1.0,
+        "iid_standard_error": 0.0,
+        "iid_wilson_95_interval": [
+          0.9615244121423243,
+          1.0
+        ],
+        "root_cluster_sandwich_standard_error": 0.0,
+        "family_bootstrap": {
+          "standard_error": 0.0,
+          "percentile_95_interval": [
+            1.0,
+            1.0
+          ],
+          "valid_repetitions": 20000
+        },
+        "class_stratified_family_bootstrap": {
+          "standard_error": 0.0,
+          "percentile_95_interval": [
+            1.0,
+            1.0
+          ],
+          "valid_repetitions": 20000
+        }
+      },
+      "missing_answer_accuracy_bounds": [
+        1.0,
+        1.0
+      ],
+      "bootstrap_repetitions": 20000,
+      "bootstrap_seed": 2026100719
+    },
+    "groups": {
+      "cell::future_ending_lopa": {
+        "n": 24,
+        "correct": 24,
+        "all_request_accuracy": 1.0,
+        "completed": 24,
+        "completed_correct": 24,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 24
+        },
+        "truncated": 0,
+        "families": 24
+      },
+      "cell::ling_plural_jus": {
+        "n": 24,
+        "correct": 24,
+        "all_request_accuracy": 1.0,
+        "completed": 24,
+        "completed_correct": 24,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 24
+        },
+        "truncated": 0,
+        "families": 24
+      },
+      "cell::secondary_plural_cluster": {
+        "n": 24,
+        "correct": 24,
+        "all_request_accuracy": 1.0,
+        "completed": 24,
+        "completed_correct": 24,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 24
+        },
+        "truncated": 0,
+        "families": 24
+      },
+      "cell::sigmatic_aprkta_repair": {
+        "n": 24,
+        "correct": 24,
+        "all_request_accuracy": 1.0,
+        "completed": 24,
+        "completed_correct": 24,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 24
+        },
+        "truncated": 0,
+        "families": 24
+      },
+      "gana::Adadi": {
+        "n": 3,
+        "correct": 3,
+        "all_request_accuracy": 1.0,
+        "completed": 3,
+        "completed_correct": 3,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 3
+        },
+        "truncated": 0,
+        "families": 3
+      },
+      "gana::Bhvadi": {
+        "n": 48,
+        "correct": 48,
+        "all_request_accuracy": 1.0,
+        "completed": 48,
+        "completed_correct": 48,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 48
+        },
+        "truncated": 0,
+        "families": 48
+      },
+      "gana::Curadi": {
+        "n": 11,
+        "correct": 11,
+        "all_request_accuracy": 1.0,
+        "completed": 11,
+        "completed_correct": 11,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 11
+        },
+        "truncated": 0,
+        "families": 11
+      },
+      "gana::Divadi": {
+        "n": 11,
+        "correct": 11,
+        "all_request_accuracy": 1.0,
+        "completed": 11,
+        "completed_correct": 11,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 11
+        },
+        "truncated": 0,
+        "families": 11
+      },
+      "gana::Juhotyadi": {
+        "n": 1,
+        "correct": 1,
+        "all_request_accuracy": 1.0,
+        "completed": 1,
+        "completed_correct": 1,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 1
+        },
+        "truncated": 0,
+        "families": 1
+      },
+      "gana::Kryadi": {
+        "n": 6,
+        "correct": 6,
+        "all_request_accuracy": 1.0,
+        "completed": 6,
+        "completed_correct": 6,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 6
+        },
+        "truncated": 0,
+        "families": 6
+      },
+      "gana::Rudhadi": {
+        "n": 1,
+        "correct": 1,
+        "all_request_accuracy": 1.0,
+        "completed": 1,
+        "completed_correct": 1,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 1
+        },
+        "truncated": 0,
+        "families": 1
+      },
+      "gana::Svadi": {
+        "n": 1,
+        "correct": 1,
+        "all_request_accuracy": 1.0,
+        "completed": 1,
+        "completed_correct": 1,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 1
+        },
+        "truncated": 0,
+        "families": 1
+      },
+      "gana::Tanadi": {
+        "n": 1,
+        "correct": 1,
+        "all_request_accuracy": 1.0,
+        "completed": 1,
+        "completed_correct": 1,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 1
+        },
+        "truncated": 0,
+        "families": 1
+      },
+      "gana::Tudadi": {
+        "n": 13,
+        "correct": 13,
+        "all_request_accuracy": 1.0,
+        "completed": 13,
+        "completed_correct": 13,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 13
+        },
+        "truncated": 0,
+        "families": 13
+      },
+      "target_lakara::AshirLin": {
+        "n": 12,
+        "correct": 12,
+        "all_request_accuracy": 1.0,
+        "completed": 12,
+        "completed_correct": 12,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 12
+        },
+        "truncated": 0,
+        "families": 12
+      },
+      "target_lakara::Lan": {
+        "n": 12,
+        "correct": 12,
+        "all_request_accuracy": 1.0,
+        "completed": 12,
+        "completed_correct": 12,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 12
+        },
+        "truncated": 0,
+        "families": 12
+      },
+      "target_lakara::Lrn": {
+        "n": 12,
+        "correct": 12,
+        "all_request_accuracy": 1.0,
+        "completed": 12,
+        "completed_correct": 12,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 12
+        },
+        "truncated": 0,
+        "families": 12
+      },
+      "target_lakara::Lun": {
+        "n": 24,
+        "correct": 24,
+        "all_request_accuracy": 1.0,
+        "completed": 24,
+        "completed_correct": 24,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 24
+        },
+        "truncated": 0,
+        "families": 24
+      },
+      "target_lakara::Lut": {
+        "n": 24,
+        "correct": 24,
+        "all_request_accuracy": 1.0,
+        "completed": 24,
+        "completed_correct": 24,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 24
+        },
+        "truncated": 0,
+        "families": 24
+      },
+      "target_lakara::VidhiLin": {
+        "n": 12,
+        "correct": 12,
+        "all_request_accuracy": 1.0,
+        "completed": 12,
+        "completed_correct": 12,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 12
+        },
+        "truncated": 0,
+        "families": 12
+      }
+    },
+    "wrong_completed_families": 0,
+    "numerical_discovery_signal": false,
+    "source_review_required": true,
+    "benchmark_ready": false
+  },
+  "spelling_alias_changes": [],
+  "raw_error_coverage": {
+    "families": 0,
+    "classes": 0,
+    "cells": 0
+  },
+  "numerical_gate_before_source_adjudication": false,
+  "source_supported_gate_passed": false,
+  "independent_miss_review_required": true
+}

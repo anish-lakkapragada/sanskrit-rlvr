@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A beginner’s guide to the original VP task and benchmarks A, B, C</title>
+</head>
+<body>
+<header>
+  <h1>A beginner’s guide to the original VP task and benchmarks A, B, C</h1>
+  <p>This guide assumes no Sanskrit grammar knowledge. It explains the grammatical labels, where the questions and answers come from, what makes generation reproducible, and what pass@1 and pass@4 mean.</p>
+  <p>Based on <a href="VP-Bench-ABC-Generation.md">VP-Bench-ABC-Generation.md</a>, the actual A/B/C task files, and the original dataset generator and prompt renderer. The generation document describes the ABC-400 v1 release dated 10 October 2026.</p>
+</header>
+
+<nav aria-label="Contents">
+  <h2>Contents</h2>
+  <ol>
+    <li><a href="#big-picture">The big picture</a></li>
+    <li><a href="#coordinates">The four coordinates: a reference you can keep returning to</a></li>
+    <li><a href="#vocabulary">Roots, stems, classes, endings, and writing systems</a></li>
+    <li><a href="#original">How the original VP task was generated</a></li>
+    <li><a href="#determinism">What “deterministically generated” means</a></li>
+    <li><a href="#task-a">A: work backward from a verb</a></li>
+    <li><a href="#task-b">B: turn a word derived from a verb into a finite verb</a></li>
+    <li><a href="#task-c">C: derive a nominal stem from a requested meaning</a></li>
+    <li><a href="#scoring">Correctness, pass@1, and pass@4</a></li>
+    <li><a href="#reproduction">Reproduction, limits, and documentation links</a></li>
+  </ol>
+</nav>
+
+<main>
+<section id="big-picture">
+  <h2>1. The big picture</h2>
+  <p><strong>Morphology means how words are formed and how their forms change.</strong> In English, “walk,” “walks,” “walked,” and “walking” are related forms. Sanskrit has many more grammatical choices and more changes inside the word.</p>
+  <p><strong>VP means Vidyut-prakriya.</strong> It is software that implements rules of Pāṇinian Sanskrit grammar. You give it structured grammatical inputs; it returns derived words and can record the rules used. A <em>prakriyā</em> is a derivation: the sequence of grammatical steps that produces a word. See the official <a href="https://vidyut.readthedocs.io/en/latest/prakriya.html">word-generation tutorial</a>.</p>
+  <p>The benchmark builder uses VP to construct questions and reference answers. The person or model answering the questions sees only the prompt. An <strong>answer key</strong>, also called <strong>gold</strong>, is the stored reference used to check the answer.</p>
+  <table>
+    <caption>The direction of each task</caption>
+    <thead><tr><th scope="col">Task</th><th scope="col">Given</th><th scope="col">Requested</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Original VP</th><td>A verb root and four grammatical coordinates</td><td>One matching conjugated verb</td></tr>
+      <tr><th scope="row">A</th><td>A conjugated verb</td><td>All compatible root-and-grammar analyses</td></tr>
+      <tr><th scope="row">B</th><td>An inflected word derived from a verb, plus source and target features</td><td>One matching finite verb</td></tr>
+      <tr><th scope="row">C</th><td>A nominal base and a requested meaning</td><td>One new nominal stem with that meaning</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="coordinates">
+  <h2>2. The four coordinates</h2>
+  <p><strong>Remember: tense/mood, voice, person, number.</strong> “4D” means four grammatical choices, not four spatial dimensions. A coordinate is simply one setting selected from each list.</p>
+  <table>
+    <caption>The original four-dimensional input</caption>
+    <thead><tr><th scope="col">Coordinate</th><th scope="col">Question it answers</th><th scope="col">Example</th></tr></thead>
+    <tbody>
+      <tr><th scope="row"><a href="https://vidyut.readthedocs.io/en/latest/api.html#vidyut.prakriya.Lakara">Lakāra</a>: tense/mood</th><td>When is the action, or what kind of statement is it?</td><td>Present, past, future, command, wish</td></tr>
+      <tr><th scope="row"><a href="https://vidyut.readthedocs.io/en/latest/api.html#vidyut.prakriya.Prayoga">Prayoga</a>: voice/construction</th><td>How is the action presented?</td><td>Active, passive, or impersonal</td></tr>
+      <tr><th scope="row"><a href="https://vidyut.readthedocs.io/en/latest/api.html#vidyut.prakriya.Purusha">Puruṣa</a>: person</th><td>Is the verb associated with the speaker, the addressee, or someone/something else?</td><td>I/we, you, he/she/it/they</td></tr>
+      <tr><th scope="row"><a href="https://vidyut.readthedocs.io/en/latest/api.html#vidyut.prakriya.Vacana">Vacana</a>: number</th><td>How many?</td><td>One, exactly two, or more than two</td></tr>
+    </tbody>
+  </table>
+  <p>For example, <code>(Lat, Kartari, Prathama, Eka)</code> means <strong>present + active + third person + singular</strong>. With the root <em>bhū</em> (“be/become”), VP produces <span lang="sa">भवति</span> (<em>bhavati</em>): approximately “he/she/it is or becomes.” This is a sanity-check example in the original generator.</p>
+
+  <h3>Lakāra: the ten tense/mood choices</h3>
+  <p>A mood distinguishes, for example, a statement from a command or wish. The English descriptions below are memory aids; Sanskrit and English tense systems do not correspond perfectly.</p>
+  <table>
+    <thead><tr><th scope="col">VP identifier</th><th scope="col">Name</th><th scope="col">Beginner’s cue</th></tr></thead>
+    <tbody>
+      <tr><td><code>Lat</code></td><td>Present</td><td>“does / is doing”</td></tr>
+      <tr><td><code>Lit</code></td><td>Perfect</td><td>A past-tense formation, traditionally associated with unwitnessed past events</td></tr>
+      <tr><td><code>Lut</code></td><td>Periphrastic future</td><td>One particular way of forming a future</td></tr>
+      <tr><td><code>Lrt</code></td><td>Simple future</td><td>“will do”</td></tr>
+      <tr><td><code>Lot</code></td><td>Imperative</td><td>“do!” or “let them do”</td></tr>
+      <tr><td><code>Lan</code></td><td>Imperfect</td><td>A past-tense formation; do not equate it automatically with English “was doing”</td></tr>
+      <tr><td><code>VidhiLin</code></td><td>Optative</td><td>“might / should do,” a possibility or prescription</td></tr>
+      <tr><td><code>AshirLin</code></td><td>Benedictive</td><td>“may you …,” a wish or blessing</td></tr>
+      <tr><td><code>Lun</code></td><td>Aorist</td><td>A general past-tense formation</td></tr>
+      <tr><td><code>Lrn</code></td><td>Conditional</td><td>“would have …,” a counterfactual</td></tr>
+    </tbody>
+  </table>
+  <p><code>Let</code>, the Vedic subjunctive, is excluded. You do not need to memorize Sanskrit spellings of these labels to understand the benchmark.</p>
+
+  <h3>Prayoga: active, passive, impersonal</h3>
+  <ul>
+    <li><code>Kartari</code>: active construction. English analogy: “The child reads the book.”</li>
+    <li><code>Karmani</code>: passive construction. English analogy: “The book is read by the child.”</li>
+    <li><code>Bhave</code>: impersonal construction, focusing on the occurrence of an action. A rough English paraphrase is “There is walking,” rather than a verb agreeing with a named walker. The grammar restricts which person/number combinations are possible.</li>
+  </ul>
+  <p>The original task samples all three. A and B use <strong>kartari only</strong>.</p>
+
+  <h3>Person and number: two easy places to get confused</h3>
+  <table>
+    <thead><tr><th scope="col">VP person identifier</th><th scope="col">English person number</th><th scope="col">Meaning</th></tr></thead>
+    <tbody>
+      <tr><td><code>Uttama</code></td><td>1</td><td>The speaker: I or we</td></tr>
+      <tr><td><code>Madhyama</code></td><td>2</td><td>The addressee: you</td></tr>
+      <tr><td><code>Prathama</code></td><td>3</td><td>Someone/something else: he, she, it, they</td></tr>
+    </tbody>
+  </table>
+  <p><strong><code>Prathama</code> means third person in these verb records.</strong> A/B use English person numbers directly. Separately, number is <code>Eka</code> = singular (one), <code>Dvi</code> = dual (exactly two), and <code>Bahu</code> = plural (more than two). “First person dual” means “we two”; “second person dual” means “you two.”</p>
+  <p>The original grid has <strong>10 × 3 × 3 × 3 = 270 possible coordinate combinations per dictionary entry</strong>. Some produce no valid form. The original released dataset samples three successful combinations per entry; it does not contain the entire grid.</p>
+</section>
+
+<section id="vocabulary">
+  <h2>3. The other words you need</h2>
+  <dl>
+    <dt><strong>Dhātu: verb root</strong></dt>
+    <dd><p>The lexical starting point for a verb, such as <em>bhū</em>, “be/become.” The <strong>Dhātupāṭha</strong> is the traditional root list used by the dataset. A dictionary entry is more specific than just a spelling: entries can differ in class or meaning.</p></dd>
+    <dt><strong>Gaṇa: verb class</strong></dt>
+    <dd><p>A group of roots with shared conjugation behavior. There are ten classes in this dictionary. <code>Bhvadi</code> means class 1; <code>Curadi</code> means class 10. The class is dictionary information, not one of the four sampled coordinates. An <strong>antargaṇa</strong> is a subclass carrying additional grammatical information.</p></dd>
+    <dt><strong>Aupadeśika form and anubandhas: dictionary notation and its markers</strong></dt>
+    <dd><p>The dictionary’s technical citation can contain markers that guide grammatical rules and disappear from the final word. They are instructions encoded in the citation, not characters to copy blindly into the answer. The original prompt includes this technical citation. A asks for the root with these markers removed.</p></dd>
+    <dt><strong>Artha: meaning</strong></dt>
+    <dd><p>In the original task it is the dictionary’s traditional meaning gloss for a root. In C it is a requested semantic relation, such as “born in X.” These have different sources and roles.</p></dd>
+    <dt><strong>Tiṅanta: finite/conjugated verb</strong></dt>
+    <dd><p>A verb form carrying the relevant tense/mood, person, and number, such as “they go.” This is what the original task and B request, and what A supplies.</p></dd>
+    <dt><strong>Prātipadika: nominal stem</strong></dt>
+    <dd><p>A noun/adjective base before its case-and-number ending is added. C requests this stem. An inflected nominal, called a <strong>subanta</strong>, has those grammatical endings; B supplies such a word.</p></dd>
+    <dt><strong>Inflection versus derivation</strong></dt>
+    <dd><p>Inflection changes a word to fit its grammatical use: English “walk” → “walked.” Derivation builds a related word: English “teach” → “teacher.” These are analogies, not Sanskrit rules. B combines derivation and nominal inflection; C asks for a derived stem.</p></dd>
+    <dt><strong>Pada: the verb’s ending family</strong></dt>
+    <dd><p>In A’s answer, <code>P</code> means <em>parasmaipada</em> and <code>A</code> means <em>ātmanepada</em>. Think of these as two families of conjugation endings. <strong>Pada and prayoga are separate.</strong> An active/kartari verb can use either ending family when licensed. Ātmanepada does not simply mean “passive.” The original task leaves pada unspecified and lets VP determine the permitted forms.</p></dd>
+    <dt><strong>Prefix, suffix, and formation</strong></dt>
+    <dd><p>A prefix is added before a base; a suffix is associated with its end. Sanskrit derivation can also change sounds inside the base. A <strong>sanādi</strong> operation makes a derived verbal formation, such as a causative or desiderative; see the table in A below. “Preserve dictionary-required prefixes” means keep prefixes that belong to the dictionary entry, without inventing extra ones.</p></dd>
+  </dl>
+
+  <h3>Three writing systems, one Sanskrit form</h3>
+  <ul>
+    <li><strong>Devanagari:</strong> <span lang="sa">भवति</span>.</li>
+    <li><strong>IAST:</strong> <em>bhavati</em>; Latin letters with marks such as ā, ṛ, and ś where needed.</li>
+    <li><strong>SLP1:</strong> <code>Bavati</code>; an ASCII encoding used by VP, where capital letters have specific sound values.</li>
+  </ul>
+  <p>Transliteration changes the writing system, not the word’s meaning. VP works internally with SLP1; <a href="https://vidyut.readthedocs.io/en/latest/lipi.html">vidyut-lipi</a> converts the forms for display. Vowel length matters: <em>a</em> and <em>ā</em> are different sounds. The current A/B/C prompts permit Devanagari, IAST, or SLP1.</p>
+  <p><strong>“Unaccented” means omitting traditional pitch-accent marks.</strong> It does not mean removing the letters’ distinguishing marks or vowel length: ā, ṛ, and ś still matter. “Classical, non-Vedic” fixes the grammatical scope and excludes the additional constructions specific to Vedic Sanskrit.</p>
+</section>
+
+<section id="original">
+  <h2>4. How the original VP task was generated</h2>
+  <p>The original question supplies the root, its class and dictionary meaning, and the four coordinates. The answer is <strong>one form licensed by that complete request</strong>.</p>
+  <p>Sources: <a href="../../misc/data/generate_dataset.py">dataset generator</a>, <a href="../../data/finetune/task-data/vidyut_dhatupatha_5.tsv">dictionary TSV</a>, <a href="../../data/finetune/task-data/metadata.json">recorded generation metadata</a>, <a href="../../finetune/prompts.py">prompt renderer</a>, and <a href="../../prompts/v1/vp_task_eval.txt">v1 prompt template</a>.</p>
+
+  <h3>The construction steps</h3>
+  <ol>
+    <li><strong>Load the dictionary.</strong> VP’s official loader reads 2,229 usable entries, preserving technical root notation and applying subclass information. The entry code identifies the class and position in the dictionary.</li>
+    <li><strong>Choose grammatical coordinates.</strong> A pseudorandom generator initialized with seed <code>42</code> selects a lakāra, prayoga, person, and number for each entry. Exclude <code>Let</code>.</li>
+    <li><strong>Ask VP for the forms.</strong> Reject duplicate coordinate tuples for that entry and attempts producing no forms. The code allows up to 25 attempts per requested slot.</li>
+    <li><strong>Keep three successful tasks per entry.</strong> Store all distinct output spellings, sorted, as the accepted SLP1 set. Transliterate that set into Devanagari. In the recorded build every entry filled all three slots.</li>
+    <li><strong>Split by dictionary-entry code.</strong> Shuffle the sorted codes using seed <code>43</code>; put 223 codes into validation and the rest into training. This gives <strong>6,018 training tasks + 669 validation tasks = 6,687</strong>. Different dictionary codes can still represent related or identically spelled roots; this is not a guarantee of complete lexical separation.</li>
+    <li><strong>Render a fixed prompt.</strong> The renderer inserts the stored fields into a text template and looks up English labels in fixed tables. The answer set stays outside the solver’s prompt.</li>
+  </ol>
+  <p>No extra causative/desiderative/intensive operation is sampled as an additional axis here. VP still applies whatever formation is inherent in the dictionary entry and its grammatical rules.</p>
+
+  <h3>Where every part of the original prompt comes from</h3>
+  <table>
+    <thead><tr><th scope="col">Prompt part</th><th scope="col">Source</th></tr></thead>
+    <tbody>
+      <tr><td>Root citation</td><td>TSV <code>dhatu</code> → <code>dhatu.aupadeshika</code>, transliterated for display</td></tr>
+      <tr><td>Verb class</td><td>Dictionary code/loader → <code>dhatu.gana</code>; English “class 1,” etc. comes from a lookup table</td></tr>
+      <tr><td>Traditional meaning</td><td>TSV <code>artha</code> → <code>dhatu.artha</code>, transliterated; this is not a newly generated English explanation</td></tr>
+      <tr><td>Tense/mood, voice, person, number</td><td>The seeded choices stored in <code>morphology</code></td></tr>
+      <tr><td>English descriptions such as “third person”</td><td>Fixed mappings in <code>finetune/prompts.py</code></td></tr>
+      <tr><td>Instructions and output tags</td><td>A fixed prompt template</td></tr>
+      <tr><td>Accepted answer, kept out of the prompt</td><td>VP derivation outputs → <code>gold_slp1</code> and <code>gold_devanagari</code></td></tr>
+    </tbody>
+  </table>
+  <p>The dictionary meaning helps identify the entry in the prompt. In this generator, that gloss string is not a separate argument to the finite-verb derivation call: the loaded root object and grammatical coordinates drive the call.</p>
+
+  <h3>A real stored example</h3>
+  <p>The first record in <a href="../../data/finetune/task-data/finetune.json">finetune.json</a> is:</p>
+  <pre><code>Dictionary entry: 01.0001
+Root:             BU = bhū = भू
+Class:            Bhvadi = class 1
+Dictionary gloss: sattAyAm
+Coordinates:      Lit + Kartari + Uttama + Dvi
+Plain English:    perfect + active + first person + dual
+Accepted form:    baBUviva = babhūviva = बभूविव</code></pre>
+  <p>Read the grammatical request as a past/perfect form of “be/become” for <strong>“we two.”</strong> The root and meaning came from the dictionary; the four settings came from seeded sampling; the final word came from VP.</p>
+</section>
+
+<section id="determinism">
+  <h2>5. What “deterministically generated” means</h2>
+  <p><strong>With the same inputs, software versions, settings, and selection rules, the build produces the same task content and answer sets.</strong> There are three separate pieces:</p>
+  <ol>
+    <li><strong>Grammar generation:</strong> VP applies its rules to a structured request. Optional grammatical rules can produce several valid outputs. That is branching over alternatives, not randomly inventing an answer.</li>
+    <li><strong>Question selection:</strong> the original dataset uses fixed pseudorandom seeds. The ABC release uses fixed hash ordering and fixed quotas. Both methods make selection repeatable.</li>
+    <li><strong>Prompt wording:</strong> a fixed template inserts fields and fixed English glosses. The pipeline does not ask an LLM to improvise each question.</li>
+  </ol>
+  <p>A seed is a fixed starting value for a repeatable sequence. A hash is a stable fingerprint calculated from bytes. Conceptually, the ABC selector calculates a SHA-256 fingerprint from the fixed selection inputs, orders candidates by it, and walks that order while applying quotas and exclusions. It does not choose items by looking at model scores.</p>
+  <p>The ABC release pins VP commit <code>8da2f90bee3ce1c07505fa432fc3729e3f7e02ea</code>, uses <code>vidyut==0.4.0</code> for transliteration and earlier candidate work, and fixes the release selection seed to <code>vp-abc-400-v1-2026-10-10</code>. It also freezes the candidate inputs, dictionary, root groups, semantic templates, and engine results.</p>
+  <p><strong>The fixed candidate pools matter.</strong> The supported ABC rebuild starts from bundled candidate inputs. A and B reuse earlier pools; C uses upstream test assertions. Replacing those inputs with a fresh random sample would produce a different benchmark even with the same final selection seed.</p>
+  <p>A <strong>candidate</strong> is a possible question before final selection. A <strong>frozen</strong> input is a saved, fixed version of the data. <strong>Normalization</strong> means treating specifically declared spelling variants as equivalent during comparison; it does not allow arbitrary spelling changes.</p>
+  <p>People still chose the task types, quotas, wording, and exclusions. Determinism describes how those choices are executed. It does not prove that every linguistic judgment or English description is correct. Also, the original generator writes a fresh <code>generated_at</code> timestamp: its task content can repeat even though that metadata field changes. The ABC release document separately reports byte-identical repeat builds.</p>
+</section>
+
+<section id="task-a">
+  <h2>6. Task A: work backward from a verb</h2>
+  <p><strong>“Here is a conjugated word. Tell me every way it can be analyzed within this scope.”</strong> This reverses the original task. The root and grammatical features are hidden. The requested answer has five fields: root, lakāra, person, number, and pada. Prayoga is already fixed to kartari, so it is not a field the solver needs to guess.</p>
+
+  <h3>The five underlying formations</h3>
+  <table>
+    <thead><tr><th scope="col">Formation</th><th scope="col">Rough idea</th></tr></thead>
+    <tbody>
+      <tr><td>Ordinary / <code>base</code></td><td>The dictionary formation without adding one of the four operations below</td></tr>
+      <tr><td>Causative / ṇic</td><td>Often “cause someone to do X”</td></tr>
+      <tr><td>Desiderative / san</td><td>Often “want to do X”</td></tr>
+      <tr><td>Intensive / yaṅ</td><td>An intensified or repeated action formation</td></tr>
+      <tr><td>Intensive with yaṅ deleted / yaṅ-luk</td><td>A related intensive formation in which yaṅ is deleted; other effects of the formation can remain</td></tr>
+    </tbody>
+  </table>
+  <p>These are additional derivational choices, separate from the four original coordinates. Their meanings are broad guides, not complete rules. The solver does <strong>not</strong> return the formation label in A.</p>
+
+  <h3>How A is generated</h3>
+  <ol>
+    <li>Start with <strong>800 frozen candidate finite forms</strong>, each with a known generating root, formation, and features.</li>
+    <li>Run the bounded forward search: <strong>2,229 dictionary entries × 5 formations × 10 lakāras × 3 persons × 3 numbers × 2 padas = 2,006,100 requests</strong>. Kartari is fixed. A request may produce zero, one, or several words.</li>
+    <li>Whenever an output matches a candidate word under the release’s normalization, record its analysis. This is how a forward generator is used for inverse analysis: generate possibilities, then match the observed word.</li>
+    <li>Merge equivalent dictionary identities and formation paths when all five answer fields coincide. Preserve genuinely different analyses.</li>
+    <li>In fixed hash order, select <strong>eight questions per generating formation × lakāra cell</strong>. Reserve every compatible root group so it cannot occur in another selected A question.</li>
+    <li>Insert the surface word into a fixed prompt. Store the complete accepted analysis set separately.</li>
+  </ol>
+  <p>Thus <strong>5 × 10 × 8 = 400 questions</strong>. There are 80 per generating formation and 40 per generating lakāra. These quotas describe the original generating path, even when a word has other valid interpretations. The release has 332 questions with one scored analysis and 68 with multiple analyses.</p>
+  <p>The search retains dictionary-required prefixes, allows no extra prefixes or further stacking of derivational operations, and does not omit the past augment. An <strong>augment</strong> is an added element used in forming certain verb forms. “All analyses” means all analyses in this declared search scope.</p>
+
+  <h3>Where A’s prompt information comes from</h3>
+  <table>
+    <thead><tr><th scope="col">Part</th><th scope="col">Source</th></tr></thead>
+    <tbody>
+      <tr><td>Displayed finite word</td><td>A candidate’s VP output: <code>source_slp1</code>, transliterated into <code>source_devanagari</code> and <code>source_iast</code></td></tr>
+      <tr><td>Scope, grammatical labels, JSON instructions</td><td>Fixed prompt template and release specification</td></tr>
+      <tr><td>Hidden generating root and features</td><td><code>provenance.generating_code</code>, <code>generating_operation</code>, and <code>generating_features</code></td></tr>
+      <tr><td>Hidden full answer set</td><td>Search results in <code>raw_vp_analyses</code>, consolidated into <code>accepted_analyses</code></td></tr>
+    </tbody>
+  </table>
+
+  <h3>Real example: A0207</h3>
+  <p>Given <span lang="sa">क्षीणीतात्</span> (<em>kṣīṇītāt</em>), the key contains two analyses:</p>
+  <pre><code>root: क्षी (kṣī), imperative, second person, singular, P
+root: क्षी (kṣī), imperative, third person,  singular, P</code></pre>
+  <p>The stored generating path used third person. The broader search found second person too. <strong>Both must be returned</strong>; one alone is incomplete. See <a href="VP-Bench-A-400.jsonl">the A records</a>.</p>
+</section>
+
+<section id="task-b">
+  <h2>7. Task B: from a deverbal nominal to a finite verb</h2>
+  <p><strong>“Here is a noun-like or adjective-like word made from a verb. Recover a compatible underlying verb and conjugate it as requested.”</strong> “Deverbal” simply means “derived from a verb.” An English analogy is working from “teacher” back to “teach,” then producing “they will teach.” Sanskrit B questions also supply the source’s nominal grammar.</p>
+  <p>The underlying root and ordinary/causative/desiderative formation are hidden. The solver must preserve that formation and any required prefixes. The source and target have separate features: a plural source nominal does not force a plural target unless the target request says so.</p>
+
+  <h3>What the nominal features mean</h3>
+  <ul>
+    <li><strong>Kṛt suffix:</strong> which kind of verb-derived stem was formed.</li>
+    <li><strong>Gender / liṅga:</strong> grammatical masculine, feminine, or neuter; it need not describe biological sex. B uses masculine sources only.</li>
+    <li><strong>Case / vibhakti:</strong> the grammatical role represented by a nominal ending.</li>
+    <li><strong>Number / vacana:</strong> singular, dual, or plural, just as above.</li>
+  </ul>
+  <table>
+    <caption>The seven source suffix types in B</caption>
+    <thead><tr><th scope="col">VP identifier</th><th scope="col">Beginner’s explanation</th></tr></thead>
+    <tbody>
+      <tr><td><code>kta</code></td><td>Past participle, broadly a completed-action form such as “done”; its exact grammatical use depends on the verb</td></tr>
+      <tr><td><code>ktavatu</code></td><td>Past active participle: roughly “having done”</td></tr>
+      <tr><td><code>tfc</code> (tṛc)</td><td>Agent noun: roughly “one who does,” like English “doer”</td></tr>
+      <tr><td><code>anIyar</code></td><td>Gerundive: roughly “to be done / needing to be done”</td></tr>
+      <tr><td><code>tavyat</code></td><td>Another gerundive formation</td></tr>
+      <tr><td><code>Satf</code> (śatṛ)</td><td>Present active participle in the parasmaipada formation</td></tr>
+      <tr><td><code>SAnac</code> (śānac)</td><td>Present middle participle; B uses its kartari formation</td></tr>
+    </tbody>
+  </table>
+  <p>Suffix identifiers are technical labels, not strings to append unchanged to a word. See the <a href="https://vidyut.readthedocs.io/en/latest/api.html#vidyut.prakriya.Krt">Kṛt API</a>.</p>
+  <table>
+    <caption>The eight case choices represented in B</caption>
+    <thead><tr><th scope="col">Name</th><th scope="col">VP identifier</th><th scope="col">Typical English cue</th></tr></thead>
+    <tbody>
+      <tr><td>Nominative</td><td><code>Prathama</code></td><td>Subject</td></tr>
+      <tr><td>Accusative</td><td><code>Dvitiya</code></td><td>Direct object</td></tr>
+      <tr><td>Instrumental</td><td><code>Trtiya</code></td><td>By / with / using</td></tr>
+      <tr><td>Dative</td><td><code>Caturthi</code></td><td>To / for a recipient</td></tr>
+      <tr><td>Ablative</td><td><code>Panchami</code></td><td>From</td></tr>
+      <tr><td>Genitive</td><td><code>Sasthi</code></td><td>Of</td></tr>
+      <tr><td>Locative</td><td><code>Saptami</code></td><td>In / on / at</td></tr>
+      <tr><td>Vocative</td><td><code>Sambodhana</code></td><td>Direct address: “O …!”</td></tr>
+    </tbody>
+  </table>
+  <p>These are common functions, not exhaustive definitions. VP treats the vocative as an eighth API choice; traditionally it is an address use of the first case. Also notice the overloaded label: <code>Prathama</code> means nominative when it is a <em>case</em>, but third person when it is a <em>person</em>. The field tells you which meaning applies.</p>
+
+  <h3>How B is generated</h3>
+  <ol>
+    <li>Start with <strong>840 frozen paired requests</strong>. Each pair generates a nominal and a finite verb from the same underlying root and formation. During pool construction, the nonempty output sets had to match between Python VP 0.4.0 and the pinned Rust engine.</li>
+    <li>Display the nominal as the source. If several nominal variants exist, choose the displayed one by fixed hash.</li>
+    <li>Search all dictionary entries under ordinary, causative, and desiderative formations, using the given source suffix, masculine gender, case, and number. Keep every source analysis that reproduces the displayed word.</li>
+    <li>For every compatible source analysis, generate the requested finite target. Combine and deduplicate the target forms. Any permitted pada and optional variant can enter the key.</li>
+    <li>Select <strong>40 questions per target lakāra</strong>, cycling through the ten lakāras. Follow fixed hash order within each group and reserve all compatible source root groups.</li>
+    <li>Render the prompt from the chosen source, its features, the target features, and fixed instructions.</li>
+  </ol>
+  <p>The result is 400 questions: 141 generated through ordinary formations, 125 causative, and 134 desiderative. All seven suffixes, eight cases, and three source numbers are represented; they are not equally frequent in the final subset.</p>
+  <p>A fixed consistency check excludes certain paths when “derive the nominal and inflect it together” disagrees with “derive the stem, then inflect it separately.” It applies to the documented regular a-stem cases for <code>kta</code>, <code>anIyar</code>, <code>tavyat</code>, and <code>SAnac</code>. It is a software-consistency guard, not independent proof of Sanskrit correctness.</p>
+
+  <h3>Where B’s prompt information comes from</h3>
+  <table>
+    <thead><tr><th scope="col">Part</th><th scope="col">Source</th></tr></thead>
+    <tbody>
+      <tr><td>Displayed nominal</td><td>The selected VP nominal output → <code>source_slp1</code> and its Devanagari/IAST transliterations</td></tr>
+      <tr><td>Suffix, gender, case, source number</td><td>The frozen source request → <code>source_features</code>, displayed through fixed labels</td></tr>
+      <tr><td>Requested tense/mood, person, target number</td><td>The frozen paired finite request → <code>target_features</code>; kartari is fixed</td></tr>
+      <tr><td>Preservation rules and answer instructions</td><td>Fixed prompt template and scope</td></tr>
+      <tr><td>Hidden roots and derivations</td><td><code>provenance</code> and <code>compatible_source_analyses</code></td></tr>
+      <tr><td>Hidden accepted targets</td><td>Union over compatible target derivations → <code>accepted_slp1</code>, <code>accepted_iast</code>, and <code>accepted_devanagari</code></td></tr>
+    </tbody>
+  </table>
+
+  <h3>Real example: B0072</h3>
+  <p>Source: <span lang="sa">स्तृतान्</span> (<em>stṛtān</em>). The prompt identifies it as a <code>kta</code> past participle, masculine, accusative, plural. The requested target is optative, kartari, second person, plural.</p>
+  <p>Two accepted targets are <span lang="sa">स्तृणुयात</span> (<em>stṛṇuyāta</em>) and <span lang="sa">स्तृण्वीध्वम्</span> (<em>stṛṇvīdhvam</em>). Either one is sufficient. For example:</p>
+  <pre><code>&lt;answer&gt;स्तृणुयात&lt;/answer&gt;</code></pre>
+  <p>The key accepts targets from any compatible source analysis, not just the original generating root. This matters because different derivations can produce the same source word. See <a href="VP-Bench-B-400.jsonl">the B records</a>.</p>
+</section>
+
+<section id="task-c">
+  <h2>8. Task C: derive a nominal stem from a meaning</h2>
+  <p><strong>“Here is a nominal base and a relationship I want to express. Choose a suitable suffix and give me the resulting stem.”</strong> A <em>taddhita</em> suffix forms a new nominal from a nominal base. This differs from B’s kṛt suffixes, which derive nominal stems from verbs.</p>
+  <p>The root-and-four-coordinate setup does not apply here. C supplies a <strong>nominal base + semantic relation</strong>. It hides the suffix and asks for a stem, without adding case, gender, or number endings.</p>
+
+  <h3>Where the base and meaning originate</h3>
+  <p>C starts from <strong>positive assertions in VP’s upstream tests</strong>. A test assertion is a concrete check: “With these inputs, the engine should return these forms.” These are existing test cases, not words selected from an unrestricted dictionary or English phrases invented separately for each question.</p>
+  <p>An eligible assertion must already pass, produce a nonempty taddhita result, specify an explicit semantic category, use a basic non-indeclinable nominal base, and have no output filter. It must use classical, unaccented settings with NLP mode off and no forced optional-rule choices. An <strong>indeclinable</strong> is a word that does not take the usual inflectional endings.</p>
+  <p>Five whole meaning categories are excluded: miscellaneous unspecified meaning, adverbial direction/place/time, repetition counting, manner, and a formation requiring combination with a verb. These exclusions keep the task focused on nominal stems.</p>
+
+  <h3>How C is generated</h3>
+  <ol>
+    <li>Filter the upstream assertions using those fixed rules. This leaves <strong>672 eligible nominal-base identities</strong>.</li>
+    <li>Hash-order the identities and select 400 distinct bases. For each base, hash-select one supported combination of base flags and semantic category. The final set spans <strong>99 semantic categories</strong>.</li>
+    <li>For each base–meaning pair, ask the pinned engine about <strong>all 175 taddhita suffix values</strong>. Preserve the base’s metadata flags and the requested semantic category.</li>
+    <li>Exclude <code>bahuc</code> outputs globally. At this engine revision that path can produce a “bahu + base” form even when the requested meaning does not license it. The exclusion applies to every C question.</li>
+    <li>Combine the successful remaining outputs and remove duplicates. Confirm that the original source test’s expected forms remain under their corresponding suffix.</li>
+    <li>Look up the semantic category in a <strong>fixed category-to-English glossary</strong>. Insert that text and the transliterated base into the fixed prompt.</li>
+  </ol>
+  <p>The suffix used in the original test is not necessarily the only accepted suffix. Several suffixes can also produce the same surface word. There are 306 C questions with one accepted surface stem and 94 with multiple stems.</p>
+
+  <h3>Where C’s prompt information comes from</h3>
+  <table>
+    <thead><tr><th scope="col">Part</th><th scope="col">Source</th></tr></thead>
+    <tbody>
+      <tr><td>Nominal base, called X in the prompt</td><td>An eligible upstream test’s base → <code>base_slp1</code>, then <code>base_devanagari</code> and <code>base_iast</code></td></tr>
+      <tr><td>Requested English meaning</td><td>Test argument <code>artha</code> → <code>semantic_category</code> → fixed glossary text stored as <code>meaning</code></td></tr>
+      <tr><td>Instructions to choose a suffix and omit case endings</td><td>Fixed C prompt template</td></tr>
+      <tr><td>Hidden base metadata</td><td><code>provenance.base_request</code>, including <code>is_avyaya</code> and <code>is_nyap</code>; these preserve the engine’s base classification</td></tr>
+      <tr><td>Hidden accepted stems</td><td>The guarded suffix enumeration → <code>answers_by_suffix</code> and the three <code>accepted_*</code> lists</td></tr>
+      <tr><td>Evidence for the starting pair</td><td><code>provenance.source_assertions</code>: test name, exact arguments, expected forms, generated forms, and settings</td></tr>
+    </tbody>
+  </table>
+  <p>The English meaning is a description of a stored semantic category. VP receives the category identifier, not an English sentence to interpret. A mistake in that fixed English glossary can therefore produce a misleading prompt even when the engine result is perfectly reproducible.</p>
+
+  <h3>Real example: C0026</h3>
+  <p>The base is <span lang="sa">अश्व</span> (<em>aśva</em>, “horse”). The prompt requests: “A distance that X can travel in one day.” The accepted stem is <span lang="sa">आश्वीन</span> (<em>āśvīna</em>):</p>
+  <pre><code>Source test:       kashika_5_2::sutra_5_2_19
+Stored base:       aSva
+Meaning category:  EkahaGama
+English template:  A distance that X can travel in one day.
+Accepted path:     KaY → ASvIna
+Displayed answer:  &lt;answer&gt;आश्वीन&lt;/answer&gt;</code></pre>
+  <p>The suffix identifier <code>KaY</code> is hidden from the solver. The requested result is the derived stem, not a sentence, an explanation, or an inflected case form. See <a href="VP-Bench-C-400.jsonl">the C records</a> and the <a href="https://vidyut.readthedocs.io/en/latest/api.html#vidyut.prakriya.Taddhita">taddhita API</a>.</p>
+</section>
+
+<section id="scoring">
+  <h2>9. Correctness, pass@1, and pass@4</h2>
+  <p><strong>First define what counts as one correct response.</strong> Then count how often responses meet that definition.</p>
+  <ul>
+    <li><strong>Original VP:</strong> return one form in the accepted set.</li>
+    <li><strong>A:</strong> return the complete accepted set of analyses. Ordering does not matter. Missing a required analysis or adding a wrong one makes the whole response incorrect.</li>
+    <li><strong>B and C:</strong> return one accepted form. The singular <code>answer</code> field is an example; the complete accepted lists determine the alternatives.</li>
+  </ul>
+  <p>A trial is one fresh answer to the same prompt. For four trials, the prompt and answer key remain fixed; the solver produces four separately sampled responses. A later trial is not shown the earlier answers or grader feedback. This is separate from the deterministic generation of the benchmark itself.</p>
+
+  <h3>Pass@1: how often is one attempt correct?</h3>
+  <p>With four sampled answers per question, estimate pass@1 by averaging their correctness. A question with two correct answers out of four contributes <strong>2/4 = 50%</strong>. Averaging across questions estimates the chance that a single sampled attempt succeeds.</p>
+  <p>For 400 questions with four trials each:</p>
+  <pre><code>pass@1 = total correct responses / 1,600 responses</code></pre>
+  <p>Here, “@1” describes the one-attempt success metric. It does not mean discarding trials 2–4 and looking only at the first saved response.</p>
+
+  <h3>Pass@4: did at least one of four attempts succeed?</h3>
+  <p>A question contributes 1 if any of its four responses is correct, and 0 if all four are wrong.</p>
+  <pre><code>pass@4 = questions with at least one correct response / 400 questions</code></pre>
+  <p>Pass@4 uses the answer key to identify whether a success exists. It is not majority voting and does not mean the solver can reliably choose its correct answer afterward. For A, <strong>one trial must contain the whole correct analysis set</strong>; pieces from different trials cannot be combined into a success.</p>
+
+  <table>
+    <caption>Made-up example to explain the arithmetic, not evaluation results</caption>
+    <thead><tr><th scope="col">Question</th><th scope="col">Four trial outcomes</th><th scope="col">Pass@1 contribution</th><th scope="col">Pass@4 contribution</th></tr></thead>
+    <tbody>
+      <tr><td>Example 1</td><td>Wrong, right, wrong, right</td><td>50%</td><td>100%</td></tr>
+      <tr><td>Example 2</td><td>Wrong, wrong, wrong, wrong</td><td>0%</td><td>0%</td></tr>
+      <tr><td>Example 3</td><td>Right, right, right, right</td><td>100%</td><td>100%</td></tr>
+      <tr><td>Average</td><td>6 correct responses out of 12; 2 questions solved out of 3</td><td>50%</td><td>66.7%</td></tr>
+    </tbody>
+  </table>
+  <p>When each question has exactly four completed trials, these direct counts are sufficient. You do not need to calculate <code>1 − (1 − pass@1)^4</code>; that is not how the observed pass@4 is computed, and an overall pass@1 cannot capture differences in question difficulty.</p>
+
+  <h3>The grading contract is part of the metric</h3>
+  <p>Formatting, accepted spellings, and treatment of incomplete responses must be fixed before scoring. Under strict prompt-format grading, A needs a JSON array and B/C need exactly one <code>&lt;answer&gt;…&lt;/answer&gt;</code> block without extra explanation. A response that violates those requirements can fail even if it contains a relevant form somewhere inside.</p>
+  <p>The current local prompt files allow three scripts: Devanagari, IAST, and SLP1. The generation document also describes a packaged grader with Harvard-Kyoto support and broader spelling normalization. Those are different contracts. To reproduce a score, use the exact declared prompt files and grader; do not silently transfer normalization rules from one to the other.</p>
+  <p>An API request that never returns an answer is missing data, not automatically a grammatical error. Likewise, a generation token limit can cut off a response. Record these conditions separately so pass@k can be interpreted correctly.</p>
+</section>
+
+<section id="reproduction">
+  <h2>10. Reproduction, limits, and documentation</h2>
+
+  <h3>What is kept unique?</h3>
+  <p>The ABC release groups 2,229 dictionary entries into 1,532 root identities using marker-free aliases. A and B reserve <em>all</em> roots compatible with a selected source, not only its generating root. A reserves 435 groups; B reserves 453. This uniqueness is within each family: A and B can overlap with each other. C instead has one question per selected nominal-base identity.</p>
+
+  <h3>What reproduction establishes</h3>
+  <p>The release document reports repeated identical builds, fresh engine results matching the frozen candidate records, and positive and negative grader checks. These verify that the software and stored answers agree. They do not independently prove that VP covers every possible Sanskrit analysis or that every English meaning template is faithful. Completeness is bounded by the dictionary, engine version, search scope, normalization, and exclusions.</p>
+  <p>C is especially shaped by which examples exist in VP’s tests; its 99 meanings are not uniformly balanced. Its meaning glossary deserves linguistic checking as well as software checking.</p>
+
+  <h3>Files that make the ABC build reproducible</h3>
+  <p>The following paths refer to the <strong>extracted release package described in the generation document</strong>. They are not all present beside this HTML file.</p>
+  <table>
+    <thead><tr><th scope="col">Packaged path</th><th scope="col">Purpose</th></tr></thead>
+    <tbody>
+      <tr><td><code>specification.json</code></td><td>Scope, selection seed, and exclusions</td></tr>
+      <tr><td><code>inputs/</code> and <code>oracle/</code></td><td>Frozen candidate requests and their engine outputs; “oracle” means the reference-answer generator</td></tr>
+      <tr><td><code>scripts/build.py</code></td><td>Final selection, prompt rendering, and answer-key assembly</td></tr>
+      <tr><td><code>scripts/meaning_glossary.txt</code></td><td>The fixed English descriptions used by C</td></tr>
+      <tr><td><code>rust/global_analysis.rs</code></td><td>A’s exhaustive finite-form search</td></tr>
+      <tr><td><code>rust/abc_conversion.rs</code></td><td>B’s source inversion and target generation</td></tr>
+      <tr><td><code>rust/abc_taddhita.rs</code></td><td>C’s suffix enumeration</td></tr>
+      <tr><td><code>provenance/</code></td><td>Historical code for assembling the earlier candidate pools</td></tr>
+      <tr><td><code>coverage.json</code> and <code>verification.json</code></td><td>Counts and recorded checks</td></tr>
+    </tbody>
+  </table>
+  <details>
+    <summary>Rebuild commands from the generation document</summary>
+    <p>Run inside the extracted <code>VP-Bench-ABC-400</code> package. The first route reuses the frozen engine results:</p>
+    <pre><code>python -m pip install vidyut==0.4.0
+python scripts/build.py
+python scripts/verify.py</code></pre>
+    <p>To recompute the engine outputs first, use Rust/Cargo through the oracle runner:</p>
+    <pre><code>python scripts/run_oracles.py
+python scripts/build.py
+python scripts/verify.py</code></pre>
+    <p>The documented oracle runner supports <code>--offline</code> when dependencies are already cached. Neither route needs model calls. The historical candidate-construction scripts may assume the original project layout; the supported self-contained rebuild begins with the packaged fixed inputs.</p>
+  </details>
+
+  <h3>Vidyut documentation: where to read next</h3>
+  <ul>
+    <li><a href="https://vidyut.readthedocs.io/en/latest/prakriya.html">Word-generation tutorial</a>: the best starting point, including grammatical terms and a worked <em>bhavati</em> derivation.</li>
+    <li><a href="https://vidyut.readthedocs.io/en/latest/api.html#vidyut.prakriya.Vyakarana">Vyākaraṇa API</a>: the engine interface and its settings.</li>
+    <li><a href="https://vidyut.readthedocs.io/en/latest/api.html#vidyut.prakriya.Data">Data loader</a>, <a href="https://vidyut.readthedocs.io/en/latest/api.html#vidyut.prakriya.Dhatu">Dhātu</a>, and <a href="https://vidyut.readthedocs.io/en/latest/api.html#vidyut.prakriya.Gana">Gaṇa</a>: dictionary inputs and root identity.</li>
+    <li>The four coordinates: <a href="https://vidyut.readthedocs.io/en/latest/api.html#vidyut.prakriya.Lakara">Lakāra</a>, <a href="https://vidyut.readthedocs.io/en/latest/api.html#vidyut.prakriya.Prayoga">Prayoga</a>, <a href="https://vidyut.readthedocs.io/en/latest/api.html#vidyut.prakriya.Purusha">Puruṣa</a>, and <a href="https://vidyut.readthedocs.io/en/latest/api.html#vidyut.prakriya.Vacana">Vacana</a>.</li>
+    <li><a href="https://vidyut.readthedocs.io/en/latest/api.html#vidyut.prakriya.Sanadi">Sanādi</a>: derived verbal formations used in A/B.</li>
+    <li><a href="https://vidyut.readthedocs.io/en/latest/api.html#vidyut.prakriya.Pratipadika">Prātipadika</a>, <a href="https://vidyut.readthedocs.io/en/latest/api.html#vidyut.prakriya.Krt">Kṛt</a>, <a href="https://vidyut.readthedocs.io/en/latest/api.html#vidyut.prakriya.Linga">Liṅga</a>, and <a href="https://vidyut.readthedocs.io/en/latest/api.html#vidyut.prakriya.Vibhakti">Vibhakti</a>: stems and nominal grammar for B.</li>
+    <li><a href="https://vidyut.readthedocs.io/en/latest/api.html#vidyut.prakriya.Taddhita">Taddhita</a>: nominal derivation used in C.</li>
+    <li><a href="https://vidyut.readthedocs.io/en/latest/lipi.html">Transliteration tutorial</a>: how the same Sanskrit form is written in different schemes.</li>
+  </ul>
+  <p>The official documentation links explain the APIs. Exact reproduction of this release requires the pinned source and packaged inputs, since current documentation and newer engine versions may differ.</p>
+  <p><a href="#coordinates">Return to the four-coordinate reference</a> · <a href="#big-picture">Return to the task comparison</a></p>
+</section>
+</main>
+</body>
+</html>

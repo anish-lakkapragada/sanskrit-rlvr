@@ -1,0 +1,1984 @@
+{
+  "updated_at": "2026-10-07T03:58:54.793252+00:00",
+  "comparisons": [
+    {
+      "source_job": "opus-contrast-01",
+      "target_job": "opus-contrast-sanskrit-prompt-02",
+      "n": 120,
+      "source_transport": "batch",
+      "target_transport": "batch",
+      "transport_confound": false,
+      "source_panel_n": 120,
+      "semantic_identity_verified": true,
+      "unique_new_tasks": 0,
+      "source_tasks_digest": "66033a503b8f68943e0a987dadd6f2609db069374352305a481b6e480fc77053",
+      "target_tasks_digest": "b01954a9a20b5fd2bcdb23473b98c7eb6ae4f167c9baa823e8a760d2469778d5",
+      "status": "collected",
+      "source_summary": {
+        "n": 120,
+        "completed": 27,
+        "completion_fraction": 0.225,
+        "correct_all": 16,
+        "completed_exact_correct": 16,
+        "completed_exact_accuracy": 0.5925925925925926,
+        "completed_spelling_tolerant_correct": 16,
+        "completed_spelling_tolerant_accuracy": 0.5925925925925926,
+        "nasal_spelling_only_errors": 0,
+        "root_families": 120,
+        "paradigm_diagnostics": {
+          "n_paradigms": 120,
+          "n_forms": 360,
+          "correct_forms": 47,
+          "per_form_accuracy": 0.13055555555555556,
+          "format_valid": 27,
+          "n_completed_valid_format": 27,
+          "task_accuracy_given_completed_valid_format": 0.5925925925925926,
+          "per_form_accuracy_given_completed_valid_format": 0.6714285714285714,
+          "per_form_spelling_tolerant_accuracy": 0.13055555555555556,
+          "task_spelling_tolerant_accuracy_given_completed_valid_format": 0.5925925925925926,
+          "metric": "Headline: all specified forms correct in the versioned answer format. Secondary: individual forms correct; missing/invalid output counts wrong."
+        }
+      },
+      "target_summary": {
+        "n": 120,
+        "completed": 33,
+        "completion_fraction": 0.275,
+        "correct_all": 19,
+        "completed_exact_correct": 19,
+        "completed_exact_accuracy": 0.5757575757575758,
+        "completed_spelling_tolerant_correct": 20,
+        "completed_spelling_tolerant_accuracy": 0.6060606060606061,
+        "nasal_spelling_only_errors": 1,
+        "root_families": 120,
+        "paradigm_diagnostics": {
+          "n_paradigms": 120,
+          "n_forms": 360,
+          "correct_forms": 63,
+          "per_form_accuracy": 0.175,
+          "format_valid": 33,
+          "n_completed_valid_format": 33,
+          "task_accuracy_given_completed_valid_format": 0.5757575757575758,
+          "per_form_accuracy_given_completed_valid_format": 0.6702127659574468,
+          "per_form_spelling_tolerant_accuracy": 0.18055555555555555,
+          "task_spelling_tolerant_accuracy_given_completed_valid_format": 0.6060606060606061,
+          "metric": "Headline: all specified forms correct in the versioned answer format. Secondary: individual forms correct; missing/invalid output counts wrong."
+        }
+      },
+      "source_statuses": {
+        "refused": 93,
+        "completed": 27
+      },
+      "target_statuses": {
+        "refused": 86,
+        "completed": 33,
+        "incomplete": 1
+      },
+      "status_transitions": {
+        "refused -> refused": 75,
+        "refused -> completed": 17,
+        "completed -> completed": 16,
+        "completed -> refused": 11,
+        "refused -> incomplete": 1
+      },
+      "correctness_transitions": {
+        "False -> False": 91,
+        "False -> True": 13,
+        "True -> False": 10,
+        "True -> True": 6
+      },
+      "target_usage_cost_upper_usd": 2.644928,
+      "cells": {
+        "contrast_2": {
+          "source": {
+            "n": 60,
+            "completed": 19,
+            "completion_fraction": 0.31666666666666665,
+            "correct_all": 9,
+            "completed_exact_correct": 9,
+            "completed_exact_accuracy": 0.47368421052631576,
+            "completed_spelling_tolerant_correct": 9,
+            "completed_spelling_tolerant_accuracy": 0.47368421052631576,
+            "nasal_spelling_only_errors": 0,
+            "root_families": 60,
+            "paradigm_diagnostics": {
+              "n_paradigms": 60,
+              "n_forms": 120,
+              "correct_forms": 18,
+              "per_form_accuracy": 0.15,
+              "format_valid": 19,
+              "n_completed_valid_format": 19,
+              "task_accuracy_given_completed_valid_format": 0.47368421052631576,
+              "per_form_accuracy_given_completed_valid_format": 0.47368421052631576,
+              "per_form_spelling_tolerant_accuracy": 0.15,
+              "task_spelling_tolerant_accuracy_given_completed_valid_format": 0.47368421052631576,
+              "metric": "Headline: all specified forms correct in the versioned answer format. Secondary: individual forms correct; missing/invalid output counts wrong."
+            }
+          },
+          "target": {
+            "n": 60,
+            "completed": 19,
+            "completion_fraction": 0.31666666666666665,
+            "correct_all": 10,
+            "completed_exact_correct": 10,
+            "completed_exact_accuracy": 0.5263157894736842,
+            "completed_spelling_tolerant_correct": 11,
+            "completed_spelling_tolerant_accuracy": 0.5789473684210527,
+            "nasal_spelling_only_errors": 1,
+            "root_families": 60,
+            "paradigm_diagnostics": {
+              "n_paradigms": 60,
+              "n_forms": 120,
+              "correct_forms": 21,
+              "per_form_accuracy": 0.175,
+              "format_valid": 19,
+              "n_completed_valid_format": 19,
+              "task_accuracy_given_completed_valid_format": 0.5263157894736842,
+              "per_form_accuracy_given_completed_valid_format": 0.5526315789473685,
+              "per_form_spelling_tolerant_accuracy": 0.18333333333333332,
+              "task_spelling_tolerant_accuracy_given_completed_valid_format": 0.5789473684210527,
+              "metric": "Headline: all specified forms correct in the versioned answer format. Secondary: individual forms correct; missing/invalid output counts wrong."
+            }
+          }
+        },
+        "contrast_4": {
+          "source": {
+            "n": 60,
+            "completed": 8,
+            "completion_fraction": 0.13333333333333333,
+            "correct_all": 7,
+            "completed_exact_correct": 7,
+            "completed_exact_accuracy": 0.875,
+            "completed_spelling_tolerant_correct": 7,
+            "completed_spelling_tolerant_accuracy": 0.875,
+            "nasal_spelling_only_errors": 0,
+            "root_families": 60,
+            "paradigm_diagnostics": {
+              "n_paradigms": 60,
+              "n_forms": 240,
+              "correct_forms": 29,
+              "per_form_accuracy": 0.12083333333333333,
+              "format_valid": 8,
+              "n_completed_valid_format": 8,
+              "task_accuracy_given_completed_valid_format": 0.875,
+              "per_form_accuracy_given_completed_valid_format": 0.90625,
+              "per_form_spelling_tolerant_accuracy": 0.12083333333333333,
+              "task_spelling_tolerant_accuracy_given_completed_valid_format": 0.875,
+              "metric": "Headline: all specified forms correct in the versioned answer format. Secondary: individual forms correct; missing/invalid output counts wrong."
+            }
+          },
+          "target": {
+            "n": 60,
+            "completed": 14,
+            "completion_fraction": 0.23333333333333334,
+            "correct_all": 9,
+            "completed_exact_correct": 9,
+            "completed_exact_accuracy": 0.6428571428571429,
+            "completed_spelling_tolerant_correct": 9,
+            "completed_spelling_tolerant_accuracy": 0.6428571428571429,
+            "nasal_spelling_only_errors": 0,
+            "root_families": 60,
+            "paradigm_diagnostics": {
+              "n_paradigms": 60,
+              "n_forms": 240,
+              "correct_forms": 42,
+              "per_form_accuracy": 0.175,
+              "format_valid": 14,
+              "n_completed_valid_format": 14,
+              "task_accuracy_given_completed_valid_format": 0.6428571428571429,
+              "per_form_accuracy_given_completed_valid_format": 0.75,
+              "per_form_spelling_tolerant_accuracy": 0.17916666666666667,
+              "task_spelling_tolerant_accuracy_given_completed_valid_format": 0.6428571428571429,
+              "metric": "Headline: all specified forms correct in the versioned answer format. Secondary: individual forms correct; missing/invalid output counts wrong."
+            }
+          }
+        }
+      }
+    },
+    {
+      "source_job": "opus-paradigm-01",
+      "target_job": "opus-paradigm-sanskrit-prompt-02",
+      "n": 160,
+      "source_transport": "batch",
+      "target_transport": "batch",
+      "transport_confound": false,
+      "source_panel_n": 160,
+      "semantic_identity_verified": true,
+      "unique_new_tasks": 0,
+      "source_tasks_digest": "b977afa288c4155015c270b5a53fba270600080a2b0781478e49b59b75910fb8",
+      "target_tasks_digest": "f36f37774765c44df10fa54284bd6826f85ca10929323025fc559d841cd3ae9e",
+      "status": "collected",
+      "source_summary": {
+        "n": 160,
+        "completed": 113,
+        "completion_fraction": 0.70625,
+        "correct_all": 74,
+        "completed_exact_correct": 74,
+        "completed_exact_accuracy": 0.6548672566371682,
+        "completed_spelling_tolerant_correct": 77,
+        "completed_spelling_tolerant_accuracy": 0.6814159292035398,
+        "nasal_spelling_only_errors": 3,
+        "root_families": 160,
+        "paradigm_diagnostics": {
+          "n_paradigms": 160,
+          "n_forms": 480,
+          "correct_forms": 227,
+          "per_form_accuracy": 0.47291666666666665,
+          "format_valid": 113,
+          "n_completed_valid_format": 113,
+          "task_accuracy_given_completed_valid_format": 0.6548672566371682,
+          "per_form_accuracy_given_completed_valid_format": 0.6796407185628742,
+          "per_form_spelling_tolerant_accuracy": 0.4791666666666667,
+          "task_spelling_tolerant_accuracy_given_completed_valid_format": 0.6814159292035398,
+          "metric": "Headline: all specified forms correct in the versioned answer format. Secondary: individual forms correct; missing/invalid output counts wrong."
+        }
+      },
+      "target_summary": {
+        "n": 160,
+        "completed": 67,
+        "completion_fraction": 0.41875,
+        "correct_all": 41,
+        "completed_exact_correct": 41,
+        "completed_exact_accuracy": 0.6119402985074627,
+        "completed_spelling_tolerant_correct": 44,
+        "completed_spelling_tolerant_accuracy": 0.6567164179104478,
+        "nasal_spelling_only_errors": 3,
+        "root_families": 160,
+        "paradigm_diagnostics": {
+          "n_paradigms": 160,
+          "n_forms": 480,
+          "correct_forms": 125,
+          "per_form_accuracy": 0.2604166666666667,
+          "format_valid": 67,
+          "n_completed_valid_format": 67,
+          "task_accuracy_given_completed_valid_format": 0.6119402985074627,
+          "per_form_accuracy_given_completed_valid_format": 0.625,
+          "per_form_spelling_tolerant_accuracy": 0.26666666666666666,
+          "task_spelling_tolerant_accuracy_given_completed_valid_format": 0.6567164179104478,
+          "metric": "Headline: all specified forms correct in the versioned answer format. Secondary: individual forms correct; missing/invalid output counts wrong."
+        }
+      },
+      "source_statuses": {
+        "completed": 113,
+        "refused": 47
+      },
+      "target_statuses": {
+        "refused": 93,
+        "completed": 67
+      },
+      "status_transitions": {
+        "completed -> refused": 60,
+        "completed -> completed": 53,
+        "refused -> refused": 33,
+        "refused -> completed": 14
+      },
+      "correctness_transitions": {
+        "False -> False": 70,
+        "True -> False": 49,
+        "False -> True": 16,
+        "True -> True": 25
+      },
+      "target_usage_cost_upper_usd": 3.140402,
+      "cells": {
+        "paradigm_2": {
+          "source": {
+            "n": 80,
+            "completed": 59,
+            "completion_fraction": 0.7375,
+            "correct_all": 37,
+            "completed_exact_correct": 37,
+            "completed_exact_accuracy": 0.6271186440677966,
+            "completed_spelling_tolerant_correct": 39,
+            "completed_spelling_tolerant_accuracy": 0.6610169491525424,
+            "nasal_spelling_only_errors": 2,
+            "root_families": 80,
+            "paradigm_diagnostics": {
+              "n_paradigms": 80,
+              "n_forms": 160,
+              "correct_forms": 76,
+              "per_form_accuracy": 0.475,
+              "format_valid": 59,
+              "n_completed_valid_format": 59,
+              "task_accuracy_given_completed_valid_format": 0.6271186440677966,
+              "per_form_accuracy_given_completed_valid_format": 0.6440677966101694,
+              "per_form_spelling_tolerant_accuracy": 0.4875,
+              "task_spelling_tolerant_accuracy_given_completed_valid_format": 0.6610169491525424,
+              "metric": "Headline: all specified forms correct in the versioned answer format. Secondary: individual forms correct; missing/invalid output counts wrong."
+            }
+          },
+          "target": {
+            "n": 80,
+            "completed": 34,
+            "completion_fraction": 0.425,
+            "correct_all": 24,
+            "completed_exact_correct": 24,
+            "completed_exact_accuracy": 0.7058823529411765,
+            "completed_spelling_tolerant_correct": 24,
+            "completed_spelling_tolerant_accuracy": 0.7058823529411765,
+            "nasal_spelling_only_errors": 0,
+            "root_families": 80,
+            "paradigm_diagnostics": {
+              "n_paradigms": 80,
+              "n_forms": 160,
+              "correct_forms": 48,
+              "per_form_accuracy": 0.3,
+              "format_valid": 34,
+              "n_completed_valid_format": 34,
+              "task_accuracy_given_completed_valid_format": 0.7058823529411765,
+              "per_form_accuracy_given_completed_valid_format": 0.7058823529411765,
+              "per_form_spelling_tolerant_accuracy": 0.3,
+              "task_spelling_tolerant_accuracy_given_completed_valid_format": 0.7058823529411765,
+              "metric": "Headline: all specified forms correct in the versioned answer format. Secondary: individual forms correct; missing/invalid output counts wrong."
+            }
+          }
+        },
+        "paradigm_4": {
+          "source": {
+            "n": 80,
+            "completed": 54,
+            "completion_fraction": 0.675,
+            "correct_all": 37,
+            "completed_exact_correct": 37,
+            "completed_exact_accuracy": 0.6851851851851852,
+            "completed_spelling_tolerant_correct": 38,
+            "completed_spelling_tolerant_accuracy": 0.7037037037037037,
+            "nasal_spelling_only_errors": 1,
+            "root_families": 80,
+            "paradigm_diagnostics": {
+              "n_paradigms": 80,
+              "n_forms": 320,
+              "correct_forms": 151,
+              "per_form_accuracy": 0.471875,
+              "format_valid": 54,
+              "n_completed_valid_format": 54,
+              "task_accuracy_given_completed_valid_format": 0.6851851851851852,
+              "per_form_accuracy_given_completed_valid_format": 0.6990740740740741,
+              "per_form_spelling_tolerant_accuracy": 0.475,
+              "task_spelling_tolerant_accuracy_given_completed_valid_format": 0.7037037037037037,
+              "metric": "Headline: all specified forms correct in the versioned answer format. Secondary: individual forms correct; missing/invalid output counts wrong."
+            }
+          },
+          "target": {
+            "n": 80,
+            "completed": 33,
+            "completion_fraction": 0.4125,
+            "correct_all": 17,
+            "completed_exact_correct": 17,
+            "completed_exact_accuracy": 0.5151515151515151,
+            "completed_spelling_tolerant_correct": 20,
+            "completed_spelling_tolerant_accuracy": 0.6060606060606061,
+            "nasal_spelling_only_errors": 3,
+            "root_families": 80,
+            "paradigm_diagnostics": {
+              "n_paradigms": 80,
+              "n_forms": 320,
+              "correct_forms": 77,
+              "per_form_accuracy": 0.240625,
+              "format_valid": 33,
+              "n_completed_valid_format": 33,
+              "task_accuracy_given_completed_valid_format": 0.5151515151515151,
+              "per_form_accuracy_given_completed_valid_format": 0.5833333333333334,
+              "per_form_spelling_tolerant_accuracy": 0.25,
+              "task_spelling_tolerant_accuracy_given_completed_valid_format": 0.6060606060606061,
+              "metric": "Headline: all specified forms correct in the versioned answer format. Secondary: individual forms correct; missing/invalid output counts wrong."
+            }
+          }
+        }
+      }
+    },
+    {
+      "source_job": "opus-contrast-sanskrit-prompt-02",
+      "target_job": "opus-contrast-dhatu-word-probe-03",
+      "n": 32,
+      "source_transport": "batch",
+      "target_transport": "batch",
+      "transport_confound": false,
+      "source_panel_n": 120,
+      "semantic_identity_verified": true,
+      "unique_new_tasks": 0,
+      "source_tasks_digest": "b01954a9a20b5fd2bcdb23473b98c7eb6ae4f167c9baa823e8a760d2469778d5",
+      "target_tasks_digest": "ee05ddb4700ee7c40b911eeb5136397b84c4601f09eff325c7b584fbe6c2a5b4",
+      "status": "collected",
+      "source_summary": {
+        "n": 32,
+        "completed": 8,
+        "completion_fraction": 0.25,
+        "correct_all": 5,
+        "completed_exact_correct": 5,
+        "completed_exact_accuracy": 0.625,
+        "completed_spelling_tolerant_correct": 5,
+        "completed_spelling_tolerant_accuracy": 0.625,
+        "nasal_spelling_only_errors": 0,
+        "root_families": 32,
+        "paradigm_diagnostics": {
+          "n_paradigms": 32,
+          "n_forms": 96,
+          "correct_forms": 18,
+          "per_form_accuracy": 0.1875,
+          "format_valid": 8,
+          "n_completed_valid_format": 8,
+          "task_accuracy_given_completed_valid_format": 0.625,
+          "per_form_accuracy_given_completed_valid_format": 0.6923076923076923,
+          "per_form_spelling_tolerant_accuracy": 0.1875,
+          "task_spelling_tolerant_accuracy_given_completed_valid_format": 0.625,
+          "metric": "Headline: all specified forms correct in the versioned answer format. Secondary: individual forms correct; missing/invalid output counts wrong."
+        }
+      },
+      "target_summary": {
+        "n": 32,
+        "completed": 12,
+        "completion_fraction": 0.375,
+        "correct_all": 8,
+        "completed_exact_correct": 8,
+        "completed_exact_accuracy": 0.6666666666666666,
+        "completed_spelling_tolerant_correct": 9,
+        "completed_spelling_tolerant_accuracy": 0.75,
+        "nasal_spelling_only_errors": 1,
+        "root_families": 32,
+        "paradigm_diagnostics": {
+          "n_paradigms": 32,
+          "n_forms": 96,
+          "correct_forms": 30,
+          "per_form_accuracy": 0.3125,
+          "format_valid": 12,
+          "n_completed_valid_format": 12,
+          "task_accuracy_given_completed_valid_format": 0.6666666666666666,
+          "per_form_accuracy_given_completed_valid_format": 0.8333333333333334,
+          "per_form_spelling_tolerant_accuracy": 0.3229166666666667,
+          "task_spelling_tolerant_accuracy_given_completed_valid_format": 0.75,
+          "metric": "Headline: all specified forms correct in the versioned answer format. Secondary: individual forms correct; missing/invalid output counts wrong."
+        }
+      },
+      "source_statuses": {
+        "completed": 8,
+        "refused": 24
+      },
+      "target_statuses": {
+        "refused": 20,
+        "completed": 12
+      },
+      "status_transitions": {
+        "completed -> refused": 3,
+        "completed -> completed": 5,
+        "refused -> refused": 17,
+        "refused -> completed": 7
+      },
+      "correctness_transitions": {
+        "True -> False": 4,
+        "False -> False": 20,
+        "False -> True": 7,
+        "True -> True": 1
+      },
+      "target_usage_cost_upper_usd": 0.858792,
+      "cells": {
+        "contrast_2": {
+          "source": {
+            "n": 16,
+            "completed": 3,
+            "completion_fraction": 0.1875,
+            "correct_all": 2,
+            "completed_exact_correct": 2,
+            "completed_exact_accuracy": 0.6666666666666666,
+            "completed_spelling_tolerant_correct": 2,
+            "completed_spelling_tolerant_accuracy": 0.6666666666666666,
+            "nasal_spelling_only_errors": 0,
+            "root_families": 16,
+            "paradigm_diagnostics": {
+              "n_paradigms": 16,
+              "n_forms": 32,
+              "correct_forms": 4,
+              "per_form_accuracy": 0.125,
+              "format_valid": 3,
+              "n_completed_valid_format": 3,
+              "task_accuracy_given_completed_valid_format": 0.6666666666666666,
+              "per_form_accuracy_given_completed_valid_format": 0.6666666666666666,
+              "per_form_spelling_tolerant_accuracy": 0.125,
+              "task_spelling_tolerant_accuracy_given_completed_valid_format": 0.6666666666666666,
+              "metric": "Headline: all specified forms correct in the versioned answer format. Secondary: individual forms correct; missing/invalid output counts wrong."
+            }
+          },
+          "target": {
+            "n": 16,
+            "completed": 6,
+            "completion_fraction": 0.375,
+            "correct_all": 3,
+            "completed_exact_correct": 3,
+            "completed_exact_accuracy": 0.5,
+            "completed_spelling_tolerant_correct": 4,
+            "completed_spelling_tolerant_accuracy": 0.6666666666666666,
+            "nasal_spelling_only_errors": 1,
+            "root_families": 16,
+            "paradigm_diagnostics": {
+              "n_paradigms": 16,
+              "n_forms": 32,
+              "correct_forms": 7,
+              "per_form_accuracy": 0.21875,
+              "format_valid": 6,
+              "n_completed_valid_format": 6,
+              "task_accuracy_given_completed_valid_format": 0.5,
+              "per_form_accuracy_given_completed_valid_format": 0.5833333333333334,
+              "per_form_spelling_tolerant_accuracy": 0.25,
+              "task_spelling_tolerant_accuracy_given_completed_valid_format": 0.6666666666666666,
+              "metric": "Headline: all specified forms correct in the versioned answer format. Secondary: individual forms correct; missing/invalid output counts wrong."
+            }
+          }
+        },
+        "contrast_4": {
+          "source": {
+            "n": 16,
+            "completed": 5,
+            "completion_fraction": 0.3125,
+            "correct_all": 3,
+            "completed_exact_correct": 3,
+            "completed_exact_accuracy": 0.6,
+            "completed_spelling_tolerant_correct": 3,
+            "completed_spelling_tolerant_accuracy": 0.6,
+            "nasal_spelling_only_errors": 0,
+            "root_families": 16,
+            "paradigm_diagnostics": {
+              "n_paradigms": 16,
+              "n_forms": 64,
+              "correct_forms": 14,
+              "per_form_accuracy": 0.21875,
+              "format_valid": 5,
+              "n_completed_valid_format": 5,
+              "task_accuracy_given_completed_valid_format": 0.6,
+              "per_form_accuracy_given_completed_valid_format": 0.7,
+              "per_form_spelling_tolerant_accuracy": 0.21875,
+              "task_spelling_tolerant_accuracy_given_completed_valid_format": 0.6,
+              "metric": "Headline: all specified forms correct in the versioned answer format. Secondary: individual forms correct; missing/invalid output counts wrong."
+            }
+          },
+          "target": {
+            "n": 16,
+            "completed": 6,
+            "completion_fraction": 0.375,
+            "correct_all": 5,
+            "completed_exact_correct": 5,
+            "completed_exact_accuracy": 0.8333333333333334,
+            "completed_spelling_tolerant_correct": 5,
+            "completed_spelling_tolerant_accuracy": 0.8333333333333334,
+            "nasal_spelling_only_errors": 0,
+            "root_families": 16,
+            "paradigm_diagnostics": {
+              "n_paradigms": 16,
+              "n_forms": 64,
+              "correct_forms": 23,
+              "per_form_accuracy": 0.359375,
+              "format_valid": 6,
+              "n_completed_valid_format": 6,
+              "task_accuracy_given_completed_valid_format": 0.8333333333333334,
+              "per_form_accuracy_given_completed_valid_format": 0.9583333333333334,
+              "per_form_spelling_tolerant_accuracy": 0.359375,
+              "task_spelling_tolerant_accuracy_given_completed_valid_format": 0.8333333333333334,
+              "metric": "Headline: all specified forms correct in the versioned answer format. Secondary: individual forms correct; missing/invalid output counts wrong."
+            }
+          }
+        }
+      }
+    },
+    {
+      "source_job": "opus-paradigm-sanskrit-prompt-02",
+      "target_job": "opus-paradigm-dhatu-word-probe-03",
+      "n": 32,
+      "source_transport": "batch",
+      "target_transport": "batch",
+      "transport_confound": false,
+      "source_panel_n": 160,
+      "semantic_identity_verified": true,
+      "unique_new_tasks": 0,
+      "source_tasks_digest": "f36f37774765c44df10fa54284bd6826f85ca10929323025fc559d841cd3ae9e",
+      "target_tasks_digest": "a55dbaf79aecc03275d16fba486bea630a91d84d9d8fb1d21ed22c9917806512",
+      "status": "collected",
+      "source_summary": {
+        "n": 32,
+        "completed": 12,
+        "completion_fraction": 0.375,
+        "correct_all": 5,
+        "completed_exact_correct": 5,
+        "completed_exact_accuracy": 0.4166666666666667,
+        "completed_spelling_tolerant_correct": 6,
+        "completed_spelling_tolerant_accuracy": 0.5,
+        "nasal_spelling_only_errors": 1,
+        "root_families": 32,
+        "paradigm_diagnostics": {
+          "n_paradigms": 32,
+          "n_forms": 96,
+          "correct_forms": 19,
+          "per_form_accuracy": 0.19791666666666666,
+          "format_valid": 12,
+          "n_completed_valid_format": 12,
+          "task_accuracy_given_completed_valid_format": 0.4166666666666667,
+          "per_form_accuracy_given_completed_valid_format": 0.5,
+          "per_form_spelling_tolerant_accuracy": 0.20833333333333334,
+          "task_spelling_tolerant_accuracy_given_completed_valid_format": 0.5,
+          "metric": "Headline: all specified forms correct in the versioned answer format. Secondary: individual forms correct; missing/invalid output counts wrong."
+        }
+      },
+      "target_summary": {
+        "n": 32,
+        "completed": 10,
+        "completion_fraction": 0.3125,
+        "correct_all": 4,
+        "completed_exact_correct": 4,
+        "completed_exact_accuracy": 0.4,
+        "completed_spelling_tolerant_correct": 4,
+        "completed_spelling_tolerant_accuracy": 0.4,
+        "nasal_spelling_only_errors": 0,
+        "root_families": 32,
+        "paradigm_diagnostics": {
+          "n_paradigms": 32,
+          "n_forms": 96,
+          "correct_forms": 10,
+          "per_form_accuracy": 0.10416666666666667,
+          "format_valid": 10,
+          "n_completed_valid_format": 10,
+          "task_accuracy_given_completed_valid_format": 0.4,
+          "per_form_accuracy_given_completed_valid_format": 0.38461538461538464,
+          "per_form_spelling_tolerant_accuracy": 0.10416666666666667,
+          "task_spelling_tolerant_accuracy_given_completed_valid_format": 0.4,
+          "metric": "Headline: all specified forms correct in the versioned answer format. Secondary: individual forms correct; missing/invalid output counts wrong."
+        }
+      },
+      "source_statuses": {
+        "refused": 20,
+        "completed": 12
+      },
+      "target_statuses": {
+        "refused": 22,
+        "completed": 10
+      },
+      "status_transitions": {
+        "refused -> refused": 18,
+        "refused -> completed": 2,
+        "completed -> completed": 8,
+        "completed -> refused": 4
+      },
+      "correctness_transitions": {
+        "False -> False": 26,
+        "False -> True": 1,
+        "True -> True": 3,
+        "True -> False": 2
+      },
+      "target_usage_cost_upper_usd": 0.614898,
+      "cells": {
+        "paradigm_2": {
+          "source": {
+            "n": 16,
+            "completed": 5,
+            "completion_fraction": 0.3125,
+            "correct_all": 2,
+            "completed_exact_correct": 2,
+            "completed_exact_accuracy": 0.4,
+            "completed_spelling_tolerant_correct": 2,
+            "completed_spelling_tolerant_accuracy": 0.4,
+            "nasal_spelling_only_errors": 0,
+            "root_families": 16,
+            "paradigm_diagnostics": {
+              "n_paradigms": 16,
+              "n_forms": 32,
+              "correct_forms": 4,
+              "per_form_accuracy": 0.125,
+              "format_valid": 5,
+              "n_completed_valid_format": 5,
+              "task_accuracy_given_completed_valid_format": 0.4,
+              "per_form_accuracy_given_completed_valid_format": 0.4,
+              "per_form_spelling_tolerant_accuracy": 0.125,
+              "task_spelling_tolerant_accuracy_given_completed_valid_format": 0.4,
+              "metric": "Headline: all specified forms correct in the versioned answer format. Secondary: individual forms correct; missing/invalid output counts wrong."
+            }
+          },
+          "target": {
+            "n": 16,
+            "completed": 7,
+            "completion_fraction": 0.4375,
+            "correct_all": 3,
+            "completed_exact_correct": 3,
+            "completed_exact_accuracy": 0.42857142857142855,
+            "completed_spelling_tolerant_correct": 3,
+            "completed_spelling_tolerant_accuracy": 0.42857142857142855,
+            "nasal_spelling_only_errors": 0,
+            "root_families": 16,
+            "paradigm_diagnostics": {
+              "n_paradigms": 16,
+              "n_forms": 32,
+              "correct_forms": 6,
+              "per_form_accuracy": 0.1875,
+              "format_valid": 7,
+              "n_completed_valid_format": 7,
+              "task_accuracy_given_completed_valid_format": 0.42857142857142855,
+              "per_form_accuracy_given_completed_valid_format": 0.42857142857142855,
+              "per_form_spelling_tolerant_accuracy": 0.1875,
+              "task_spelling_tolerant_accuracy_given_completed_valid_format": 0.42857142857142855,
+              "metric": "Headline: all specified forms correct in the versioned answer format. Secondary: individual forms correct; missing/invalid output counts wrong."
+            }
+          }
+        },
+        "paradigm_4": {
+          "source": {
+            "n": 16,
+            "completed": 7,
+            "completion_fraction": 0.4375,
+            "correct_all": 3,
+            "completed_exact_correct": 3,
+            "completed_exact_accuracy": 0.42857142857142855,
+            "completed_spelling_tolerant_correct": 4,
+            "completed_spelling_tolerant_accuracy": 0.5714285714285714,
+            "nasal_spelling_only_errors": 1,
+            "root_families": 16,
+            "paradigm_diagnostics": {
+              "n_paradigms": 16,
+              "n_forms": 64,
+              "correct_forms": 15,
+              "per_form_accuracy": 0.234375,
+              "format_valid": 7,
+              "n_completed_valid_format": 7,
+              "task_accuracy_given_completed_valid_format": 0.42857142857142855,
+              "per_form_accuracy_given_completed_valid_format": 0.5357142857142857,
+              "per_form_spelling_tolerant_accuracy": 0.25,
+              "task_spelling_tolerant_accuracy_given_completed_valid_format": 0.5714285714285714,
+              "metric": "Headline: all specified forms correct in the versioned answer format. Secondary: individual forms correct; missing/invalid output counts wrong."
+            }
+          },
+          "target": {
+            "n": 16,
+            "completed": 3,
+            "completion_fraction": 0.1875,
+            "correct_all": 1,
+            "completed_exact_correct": 1,
+            "completed_exact_accuracy": 0.3333333333333333,
+            "completed_spelling_tolerant_correct": 1,
+            "completed_spelling_tolerant_accuracy": 0.3333333333333333,
+            "nasal_spelling_only_errors": 0,
+            "root_families": 16,
+            "paradigm_diagnostics": {
+              "n_paradigms": 16,
+              "n_forms": 64,
+              "correct_forms": 4,
+              "per_form_accuracy": 0.0625,
+              "format_valid": 3,
+              "n_completed_valid_format": 3,
+              "task_accuracy_given_completed_valid_format": 0.3333333333333333,
+              "per_form_accuracy_given_completed_valid_format": 0.3333333333333333,
+              "per_form_spelling_tolerant_accuracy": 0.0625,
+              "task_spelling_tolerant_accuracy_given_completed_valid_format": 0.3333333333333333,
+              "metric": "Headline: all specified forms correct in the versioned answer format. Secondary: individual forms correct; missing/invalid output counts wrong."
+            }
+          }
+        }
+      }
+    },
+    {
+      "source_job": "opus-contrast-dhatu-word-probe-03",
+      "target_job": "opus-contrast-line-format-probe-04",
+      "n": 32,
+      "source_transport": "batch",
+      "target_transport": "batch",
+      "transport_confound": false,
+      "source_panel_n": 32,
+      "semantic_identity_verified": true,
+      "unique_new_tasks": 0,
+      "source_tasks_digest": "ee05ddb4700ee7c40b911eeb5136397b84c4601f09eff325c7b584fbe6c2a5b4",
+      "target_tasks_digest": "30ac0e6ac114820e251b70e1e0f5cf1a144e31ef9c4e9216a2d4022aaf01d624",
+      "status": "collected",
+      "source_summary": {
+        "n": 32,
+        "completed": 12,
+        "completion_fraction": 0.375,
+        "correct_all": 8,
+        "completed_exact_correct": 8,
+        "completed_exact_accuracy": 0.6666666666666666,
+        "completed_spelling_tolerant_correct": 9,
+        "completed_spelling_tolerant_accuracy": 0.75,
+        "nasal_spelling_only_errors": 1,
+        "root_families": 32,
+        "paradigm_diagnostics": {
+          "n_paradigms": 32,
+          "n_forms": 96,
+          "correct_forms": 30,
+          "per_form_accuracy": 0.3125,
+          "format_valid": 12,
+          "n_completed_valid_format": 12,
+          "task_accuracy_given_completed_valid_format": 0.6666666666666666,
+          "per_form_accuracy_given_completed_valid_format": 0.8333333333333334,
+          "per_form_spelling_tolerant_accuracy": 0.3229166666666667,
+          "task_spelling_tolerant_accuracy_given_completed_valid_format": 0.75,
+          "metric": "Headline: all specified forms correct in the versioned answer format. Secondary: individual forms correct; missing/invalid output counts wrong."
+        }
+      },
+      "target_summary": {
+        "n": 32,
+        "completed": 2,
+        "completion_fraction": 0.0625,
+        "correct_all": 1,
+        "completed_exact_correct": 1,
+        "completed_exact_accuracy": 0.5,
+        "completed_spelling_tolerant_correct": 1,
+        "completed_spelling_tolerant_accuracy": 0.5,
+        "nasal_spelling_only_errors": 0,
+        "root_families": 32,
+        "paradigm_diagnostics": {
+          "n_paradigms": 32,
+          "n_forms": 96,
+          "correct_forms": 7,
+          "per_form_accuracy": 0.07291666666666667,
+          "format_valid": 2,
+          "n_completed_valid_format": 2,
+          "task_accuracy_given_completed_valid_format": 0.5,
+          "per_form_accuracy_given_completed_valid_format": 0.875,
+          "per_form_spelling_tolerant_accuracy": 0.07291666666666667,
+          "task_spelling_tolerant_accuracy_given_completed_valid_format": 0.5,
+          "metric": "Headline: all specified forms correct in the versioned answer format. Secondary: individual forms correct; missing/invalid output counts wrong."
+        }
+      },
+      "source_statuses": {
+        "refused": 20,
+        "completed": 12
+      },
+      "target_statuses": {
+        "refused": 30,
+        "completed": 2
+      },
+      "status_transitions": {
+        "refused -> refused": 19,
+        "completed -> refused": 11,
+        "refused -> completed": 1,
+        "completed -> completed": 1
+      },
+      "correctness_transitions": {
+        "False -> False": 23,
+        "True -> False": 8,
+        "False -> True": 1
+      },
+      "target_usage_cost_upper_usd": 0.250186,
+      "cells": {
+        "contrast_2": {
+          "source": {
+            "n": 16,
+            "completed": 6,
+            "completion_fraction": 0.375,
+            "correct_all": 3,
+            "completed_exact_correct": 3,
+            "completed_exact_accuracy": 0.5,
+            "completed_spelling_tolerant_correct": 4,
+            "completed_spelling_tolerant_accuracy": 0.6666666666666666,
+            "nasal_spelling_only_errors": 1,
+            "root_families": 16,
+            "paradigm_diagnostics": {
+              "n_paradigms": 16,
+              "n_forms": 32,
+              "correct_forms": 7,
+              "per_form_accuracy": 0.21875,
+              "format_valid": 6,
+              "n_completed_valid_format": 6,
+              "task_accuracy_given_completed_valid_format": 0.5,
+              "per_form_accuracy_given_completed_valid_format": 0.5833333333333334,
+              "per_form_spelling_tolerant_accuracy": 0.25,
+              "task_spelling_tolerant_accuracy_given_completed_valid_format": 0.6666666666666666,
+              "metric": "Headline: all specified forms correct in the versioned answer format. Secondary: individual forms correct; missing/invalid output counts wrong."
+            }
+          },
+          "target": {
+            "n": 16,
+            "completed": 0,
+            "completion_fraction": 0.0,
+            "correct_all": 0,
+            "completed_exact_correct": 0,
+            "completed_exact_accuracy": null,
+            "completed_spelling_tolerant_correct": 0,
+            "completed_spelling_tolerant_accuracy": null,
+            "nasal_spelling_only_errors": 0,
+            "root_families": 16,
+            "paradigm_diagnostics": {
+              "n_paradigms": 16,
+              "n_forms": 32,
+              "correct_forms": 0,
+              "per_form_accuracy": 0.0,
+              "format_valid": 0,
+              "n_completed_valid_format": 0,
+              "task_accuracy_given_completed_valid_format": null,
+              "per_form_accuracy_given_completed_valid_format": null,
+              "per_form_spelling_tolerant_accuracy": 0.0,
+              "task_spelling_tolerant_accuracy_given_completed_valid_format": null,
+              "metric": "Headline: all specified forms correct in the versioned answer format. Secondary: individual forms correct; missing/invalid output counts wrong."
+            }
+          }
+        },
+        "contrast_4": {
+          "source": {
+            "n": 16,
+            "completed": 6,
+            "completion_fraction": 0.375,
+            "correct_all": 5,
+            "completed_exact_correct": 5,
+            "completed_exact_accuracy": 0.8333333333333334,
+            "completed_spelling_tolerant_correct": 5,
+            "completed_spelling_tolerant_accuracy": 0.8333333333333334,
+            "nasal_spelling_only_errors": 0,
+            "root_families": 16,
+            "paradigm_diagnostics": {
+              "n_paradigms": 16,
+              "n_forms": 64,
+              "correct_forms": 23,
+              "per_form_accuracy": 0.359375,
+              "format_valid": 6,
+              "n_completed_valid_format": 6,
+              "task_accuracy_given_completed_valid_format": 0.8333333333333334,
+              "per_form_accuracy_given_completed_valid_format": 0.9583333333333334,
+              "per_form_spelling_tolerant_accuracy": 0.359375,
+              "task_spelling_tolerant_accuracy_given_completed_valid_format": 0.8333333333333334,
+              "metric": "Headline: all specified forms correct in the versioned answer format. Secondary: individual forms correct; missing/invalid output counts wrong."
+            }
+          },
+          "target": {
+            "n": 16,
+            "completed": 2,
+            "completion_fraction": 0.125,
+            "correct_all": 1,
+            "completed_exact_correct": 1,
+            "completed_exact_accuracy": 0.5,
+            "completed_spelling_tolerant_correct": 1,
+            "completed_spelling_tolerant_accuracy": 0.5,
+            "nasal_spelling_only_errors": 0,
+            "root_families": 16,
+            "paradigm_diagnostics": {
+              "n_paradigms": 16,
+              "n_forms": 64,
+              "correct_forms": 7,
+              "per_form_accuracy": 0.109375,
+              "format_valid": 2,
+              "n_completed_valid_format": 2,
+              "task_accuracy_given_completed_valid_format": 0.5,
+              "per_form_accuracy_given_completed_valid_format": 0.875,
+              "per_form_spelling_tolerant_accuracy": 0.109375,
+              "task_spelling_tolerant_accuracy_given_completed_valid_format": 0.5,
+              "metric": "Headline: all specified forms correct in the versioned answer format. Secondary: individual forms correct; missing/invalid output counts wrong."
+            }
+          }
+        }
+      }
+    },
+    {
+      "source_job": "opus-paradigm-dhatu-word-probe-03",
+      "target_job": "opus-paradigm-line-format-probe-04",
+      "n": 32,
+      "source_transport": "batch",
+      "target_transport": "batch",
+      "transport_confound": false,
+      "source_panel_n": 32,
+      "semantic_identity_verified": true,
+      "unique_new_tasks": 0,
+      "source_tasks_digest": "a55dbaf79aecc03275d16fba486bea630a91d84d9d8fb1d21ed22c9917806512",
+      "target_tasks_digest": "70a40f71f4667f0d1cfb0b46c7b14764a5d0ab18509e0e51c3058f2445828623",
+      "status": "collected",
+      "source_summary": {
+        "n": 32,
+        "completed": 10,
+        "completion_fraction": 0.3125,
+        "correct_all": 4,
+        "completed_exact_correct": 4,
+        "completed_exact_accuracy": 0.4,
+        "completed_spelling_tolerant_correct": 4,
+        "completed_spelling_tolerant_accuracy": 0.4,
+        "nasal_spelling_only_errors": 0,
+        "root_families": 32,
+        "paradigm_diagnostics": {
+          "n_paradigms": 32,
+          "n_forms": 96,
+          "correct_forms": 10,
+          "per_form_accuracy": 0.10416666666666667,
+          "format_valid": 10,
+          "n_completed_valid_format": 10,
+          "task_accuracy_given_completed_valid_format": 0.4,
+          "per_form_accuracy_given_completed_valid_format": 0.38461538461538464,
+          "per_form_spelling_tolerant_accuracy": 0.10416666666666667,
+          "task_spelling_tolerant_accuracy_given_completed_valid_format": 0.4,
+          "metric": "Headline: all specified forms correct in the versioned answer format. Secondary: individual forms correct; missing/invalid output counts wrong."
+        }
+      },
+      "target_summary": {
+        "n": 32,
+        "completed": 1,
+        "completion_fraction": 0.03125,
+        "correct_all": 0,
+        "completed_exact_correct": 0,
+        "completed_exact_accuracy": 0.0,
+        "completed_spelling_tolerant_correct": 0,
+        "completed_spelling_tolerant_accuracy": 0.0,
+        "nasal_spelling_only_errors": 0,
+        "root_families": 32,
+        "paradigm_diagnostics": {
+          "n_paradigms": 32,
+          "n_forms": 96,
+          "correct_forms": 0,
+          "per_form_accuracy": 0.0,
+          "format_valid": 1,
+          "n_completed_valid_format": 1,
+          "task_accuracy_given_completed_valid_format": 0.0,
+          "per_form_accuracy_given_completed_valid_format": 0.0,
+          "per_form_spelling_tolerant_accuracy": 0.0,
+          "task_spelling_tolerant_accuracy_given_completed_valid_format": 0.0,
+          "metric": "Headline: all specified forms correct in the versioned answer format. Secondary: individual forms correct; missing/invalid output counts wrong."
+        }
+      },
+      "source_statuses": {
+        "refused": 22,
+        "completed": 10
+      },
+      "target_statuses": {
+        "refused": 31,
+        "completed": 1
+      },
+      "status_transitions": {
+        "refused -> refused": 22,
+        "completed -> refused": 9,
+        "completed -> completed": 1
+      },
+      "correctness_transitions": {
+        "False -> False": 28,
+        "True -> False": 4
+      },
+      "target_usage_cost_upper_usd": 0.079692,
+      "cells": {
+        "paradigm_2": {
+          "source": {
+            "n": 16,
+            "completed": 7,
+            "completion_fraction": 0.4375,
+            "correct_all": 3,
+            "completed_exact_correct": 3,
+            "completed_exact_accuracy": 0.42857142857142855,
+            "completed_spelling_tolerant_correct": 3,
+            "completed_spelling_tolerant_accuracy": 0.42857142857142855,
+            "nasal_spelling_only_errors": 0,
+            "root_families": 16,
+            "paradigm_diagnostics": {
+              "n_paradigms": 16,
+              "n_forms": 32,
+              "correct_forms": 6,
+              "per_form_accuracy": 0.1875,
+              "format_valid": 7,
+              "n_completed_valid_format": 7,
+              "task_accuracy_given_completed_valid_format": 0.42857142857142855,
+              "per_form_accuracy_given_completed_valid_format": 0.42857142857142855,
+              "per_form_spelling_tolerant_accuracy": 0.1875,
+              "task_spelling_tolerant_accuracy_given_completed_valid_format": 0.42857142857142855,
+              "metric": "Headline: all specified forms correct in the versioned answer format. Secondary: individual forms correct; missing/invalid output counts wrong."
+            }
+          },
+          "target": {
+            "n": 16,
+            "completed": 1,
+            "completion_fraction": 0.0625,
+            "correct_all": 0,
+            "completed_exact_correct": 0,
+            "completed_exact_accuracy": 0.0,
+            "completed_spelling_tolerant_correct": 0,
+            "completed_spelling_tolerant_accuracy": 0.0,
+            "nasal_spelling_only_errors": 0,
+            "root_families": 16,
+            "paradigm_diagnostics": {
+              "n_paradigms": 16,
+              "n_forms": 32,
+              "correct_forms": 0,
+              "per_form_accuracy": 0.0,
+              "format_valid": 1,
+              "n_completed_valid_format": 1,
+              "task_accuracy_given_completed_valid_format": 0.0,
+              "per_form_accuracy_given_completed_valid_format": 0.0,
+              "per_form_spelling_tolerant_accuracy": 0.0,
+              "task_spelling_tolerant_accuracy_given_completed_valid_format": 0.0,
+              "metric": "Headline: all specified forms correct in the versioned answer format. Secondary: individual forms correct; missing/invalid output counts wrong."
+            }
+          }
+        },
+        "paradigm_4": {
+          "source": {
+            "n": 16,
+            "completed": 3,
+            "completion_fraction": 0.1875,
+            "correct_all": 1,
+            "completed_exact_correct": 1,
+            "completed_exact_accuracy": 0.3333333333333333,
+            "completed_spelling_tolerant_correct": 1,
+            "completed_spelling_tolerant_accuracy": 0.3333333333333333,
+            "nasal_spelling_only_errors": 0,
+            "root_families": 16,
+            "paradigm_diagnostics": {
+              "n_paradigms": 16,
+              "n_forms": 64,
+              "correct_forms": 4,
+              "per_form_accuracy": 0.0625,
+              "format_valid": 3,
+              "n_completed_valid_format": 3,
+              "task_accuracy_given_completed_valid_format": 0.3333333333333333,
+              "per_form_accuracy_given_completed_valid_format": 0.3333333333333333,
+              "per_form_spelling_tolerant_accuracy": 0.0625,
+              "task_spelling_tolerant_accuracy_given_completed_valid_format": 0.3333333333333333,
+              "metric": "Headline: all specified forms correct in the versioned answer format. Secondary: individual forms correct; missing/invalid output counts wrong."
+            }
+          },
+          "target": {
+            "n": 16,
+            "completed": 0,
+            "completion_fraction": 0.0,
+            "correct_all": 0,
+            "completed_exact_correct": 0,
+            "completed_exact_accuracy": null,
+            "completed_spelling_tolerant_correct": 0,
+            "completed_spelling_tolerant_accuracy": null,
+            "nasal_spelling_only_errors": 0,
+            "root_families": 16,
+            "paradigm_diagnostics": {
+              "n_paradigms": 16,
+              "n_forms": 64,
+              "correct_forms": 0,
+              "per_form_accuracy": 0.0,
+              "format_valid": 0,
+              "n_completed_valid_format": 0,
+              "task_accuracy_given_completed_valid_format": null,
+              "per_form_accuracy_given_completed_valid_format": null,
+              "per_form_spelling_tolerant_accuracy": 0.0,
+              "task_spelling_tolerant_accuracy_given_completed_valid_format": null,
+              "metric": "Headline: all specified forms correct in the versioned answer format. Secondary: individual forms correct; missing/invalid output counts wrong."
+            }
+          }
+        }
+      }
+    },
+    {
+      "source_job": "opus-contrast-line-format-probe-04",
+      "target_job": "opus-contrast-template-probe-05",
+      "n": 32,
+      "source_transport": "batch",
+      "target_transport": "batch",
+      "transport_confound": false,
+      "source_panel_n": 32,
+      "semantic_identity_verified": true,
+      "unique_new_tasks": 0,
+      "source_tasks_digest": "30ac0e6ac114820e251b70e1e0f5cf1a144e31ef9c4e9216a2d4022aaf01d624",
+      "target_tasks_digest": "49b89bc913c3e767ca43e3fa2142a6db62e1763beeede24f76f062ad67355fda",
+      "status": "collected",
+      "source_summary": {
+        "n": 32,
+        "completed": 2,
+        "completion_fraction": 0.0625,
+        "correct_all": 1,
+        "completed_exact_correct": 1,
+        "completed_exact_accuracy": 0.5,
+        "completed_spelling_tolerant_correct": 1,
+        "completed_spelling_tolerant_accuracy": 0.5,
+        "nasal_spelling_only_errors": 0,
+        "root_families": 32,
+        "paradigm_diagnostics": {
+          "n_paradigms": 32,
+          "n_forms": 96,
+          "correct_forms": 7,
+          "per_form_accuracy": 0.07291666666666667,
+          "format_valid": 2,
+          "n_completed_valid_format": 2,
+          "task_accuracy_given_completed_valid_format": 0.5,
+          "per_form_accuracy_given_completed_valid_format": 0.875,
+          "per_form_spelling_tolerant_accuracy": 0.07291666666666667,
+          "task_spelling_tolerant_accuracy_given_completed_valid_format": 0.5,
+          "metric": "Headline: all specified forms correct in the versioned answer format. Secondary: individual forms correct; missing/invalid output counts wrong."
+        }
+      },
+      "target_summary": {
+        "n": 32,
+        "completed": 27,
+        "completion_fraction": 0.84375,
+        "correct_all": 15,
+        "completed_exact_correct": 15,
+        "completed_exact_accuracy": 0.5555555555555556,
+        "completed_spelling_tolerant_correct": 16,
+        "completed_spelling_tolerant_accuracy": 0.5925925925925926,
+        "nasal_spelling_only_errors": 1,
+        "root_families": 32,
+        "paradigm_diagnostics": {
+          "n_paradigms": 32,
+          "n_forms": 96,
+          "correct_forms": 59,
+          "per_form_accuracy": 0.6145833333333334,
+          "format_valid": 27,
+          "n_completed_valid_format": 27,
+          "task_accuracy_given_completed_valid_format": 0.5555555555555556,
+          "per_form_accuracy_given_completed_valid_format": 0.7195121951219512,
+          "per_form_spelling_tolerant_accuracy": 0.6354166666666666,
+          "task_spelling_tolerant_accuracy_given_completed_valid_format": 0.5925925925925926,
+          "metric": "Headline: all specified forms correct in the versioned answer format. Secondary: individual forms correct; missing/invalid output counts wrong."
+        }
+      },
+      "source_statuses": {
+        "refused": 30,
+        "completed": 2
+      },
+      "target_statuses": {
+        "completed": 27,
+        "refused": 4,
+        "incomplete": 1
+      },
+      "status_transitions": {
+        "refused -> completed": 25,
+        "refused -> refused": 4,
+        "completed -> completed": 2,
+        "refused -> incomplete": 1
+      },
+      "correctness_transitions": {
+        "False -> False": 17,
+        "False -> True": 14,
+        "True -> True": 1
+      },
+      "target_usage_cost_upper_usd": 2.229442,
+      "cells": {
+        "contrast_2": {
+          "source": {
+            "n": 16,
+            "completed": 0,
+            "completion_fraction": 0.0,
+            "correct_all": 0,
+            "completed_exact_correct": 0,
+            "completed_exact_accuracy": null,
+            "completed_spelling_tolerant_correct": 0,
+            "completed_spelling_tolerant_accuracy": null,
+            "nasal_spelling_only_errors": 0,
+            "root_families": 16,
+            "paradigm_diagnostics": {
+              "n_paradigms": 16,
+              "n_forms": 32,
+              "correct_forms": 0,
+              "per_form_accuracy": 0.0,
+              "format_valid": 0,
+              "n_completed_valid_format": 0,
+              "task_accuracy_given_completed_valid_format": null,
+              "per_form_accuracy_given_completed_valid_format": null,
+              "per_form_spelling_tolerant_accuracy": 0.0,
+              "task_spelling_tolerant_accuracy_given_completed_valid_format": null,
+              "metric": "Headline: all specified forms correct in the versioned answer format. Secondary: individual forms correct; missing/invalid output counts wrong."
+            }
+          },
+          "target": {
+            "n": 16,
+            "completed": 13,
+            "completion_fraction": 0.8125,
+            "correct_all": 5,
+            "completed_exact_correct": 5,
+            "completed_exact_accuracy": 0.38461538461538464,
+            "completed_spelling_tolerant_correct": 6,
+            "completed_spelling_tolerant_accuracy": 0.46153846153846156,
+            "nasal_spelling_only_errors": 1,
+            "root_families": 16,
+            "paradigm_diagnostics": {
+              "n_paradigms": 16,
+              "n_forms": 32,
+              "correct_forms": 12,
+              "per_form_accuracy": 0.375,
+              "format_valid": 13,
+              "n_completed_valid_format": 13,
+              "task_accuracy_given_completed_valid_format": 0.38461538461538464,
+              "per_form_accuracy_given_completed_valid_format": 0.46153846153846156,
+              "per_form_spelling_tolerant_accuracy": 0.40625,
+              "task_spelling_tolerant_accuracy_given_completed_valid_format": 0.46153846153846156,
+              "metric": "Headline: all specified forms correct in the versioned answer format. Secondary: individual forms correct; missing/invalid output counts wrong."
+            }
+          }
+        },
+        "contrast_4": {
+          "source": {
+            "n": 16,
+            "completed": 2,
+            "completion_fraction": 0.125,
+            "correct_all": 1,
+            "completed_exact_correct": 1,
+            "completed_exact_accuracy": 0.5,
+            "completed_spelling_tolerant_correct": 1,
+            "completed_spelling_tolerant_accuracy": 0.5,
+            "nasal_spelling_only_errors": 0,
+            "root_families": 16,
+            "paradigm_diagnostics": {
+              "n_paradigms": 16,
+              "n_forms": 64,
+              "correct_forms": 7,
+              "per_form_accuracy": 0.109375,
+              "format_valid": 2,
+              "n_completed_valid_format": 2,
+              "task_accuracy_given_completed_valid_format": 0.5,
+              "per_form_accuracy_given_completed_valid_format": 0.875,
+              "per_form_spelling_tolerant_accuracy": 0.109375,
+              "task_spelling_tolerant_accuracy_given_completed_valid_format": 0.5,
+              "metric": "Headline: all specified forms correct in the versioned answer format. Secondary: individual forms correct; missing/invalid output counts wrong."
+            }
+          },
+          "target": {
+            "n": 16,
+            "completed": 14,
+            "completion_fraction": 0.875,
+            "correct_all": 10,
+            "completed_exact_correct": 10,
+            "completed_exact_accuracy": 0.7142857142857143,
+            "completed_spelling_tolerant_correct": 10,
+            "completed_spelling_tolerant_accuracy": 0.7142857142857143,
+            "nasal_spelling_only_errors": 0,
+            "root_families": 16,
+            "paradigm_diagnostics": {
+              "n_paradigms": 16,
+              "n_forms": 64,
+              "correct_forms": 47,
+              "per_form_accuracy": 0.734375,
+              "format_valid": 14,
+              "n_completed_valid_format": 14,
+              "task_accuracy_given_completed_valid_format": 0.7142857142857143,
+              "per_form_accuracy_given_completed_valid_format": 0.8392857142857143,
+              "per_form_spelling_tolerant_accuracy": 0.75,
+              "task_spelling_tolerant_accuracy_given_completed_valid_format": 0.7142857142857143,
+              "metric": "Headline: all specified forms correct in the versioned answer format. Secondary: individual forms correct; missing/invalid output counts wrong."
+            }
+          }
+        }
+      }
+    },
+    {
+      "source_job": "opus-paradigm-line-format-probe-04",
+      "target_job": "opus-paradigm-template-probe-05",
+      "n": 32,
+      "source_transport": "batch",
+      "target_transport": "batch",
+      "transport_confound": false,
+      "source_panel_n": 32,
+      "semantic_identity_verified": true,
+      "unique_new_tasks": 0,
+      "source_tasks_digest": "70a40f71f4667f0d1cfb0b46c7b14764a5d0ab18509e0e51c3058f2445828623",
+      "target_tasks_digest": "5c491f4e5a28f09f57c58652fac3441a6ba97963e2e41a75372b68699b275b45",
+      "status": "collected",
+      "source_summary": {
+        "n": 32,
+        "completed": 1,
+        "completion_fraction": 0.03125,
+        "correct_all": 0,
+        "completed_exact_correct": 0,
+        "completed_exact_accuracy": 0.0,
+        "completed_spelling_tolerant_correct": 0,
+        "completed_spelling_tolerant_accuracy": 0.0,
+        "nasal_spelling_only_errors": 0,
+        "root_families": 32,
+        "paradigm_diagnostics": {
+          "n_paradigms": 32,
+          "n_forms": 96,
+          "correct_forms": 0,
+          "per_form_accuracy": 0.0,
+          "format_valid": 1,
+          "n_completed_valid_format": 1,
+          "task_accuracy_given_completed_valid_format": 0.0,
+          "per_form_accuracy_given_completed_valid_format": 0.0,
+          "per_form_spelling_tolerant_accuracy": 0.0,
+          "task_spelling_tolerant_accuracy_given_completed_valid_format": 0.0,
+          "metric": "Headline: all specified forms correct in the versioned answer format. Secondary: individual forms correct; missing/invalid output counts wrong."
+        }
+      },
+      "target_summary": {
+        "n": 32,
+        "completed": 30,
+        "completion_fraction": 0.9375,
+        "correct_all": 17,
+        "completed_exact_correct": 17,
+        "completed_exact_accuracy": 0.5666666666666667,
+        "completed_spelling_tolerant_correct": 17,
+        "completed_spelling_tolerant_accuracy": 0.5666666666666667,
+        "nasal_spelling_only_errors": 0,
+        "root_families": 32,
+        "paradigm_diagnostics": {
+          "n_paradigms": 32,
+          "n_forms": 96,
+          "correct_forms": 50,
+          "per_form_accuracy": 0.5208333333333334,
+          "format_valid": 30,
+          "n_completed_valid_format": 30,
+          "task_accuracy_given_completed_valid_format": 0.5666666666666667,
+          "per_form_accuracy_given_completed_valid_format": 0.5555555555555556,
+          "per_form_spelling_tolerant_accuracy": 0.5208333333333334,
+          "task_spelling_tolerant_accuracy_given_completed_valid_format": 0.5666666666666667,
+          "metric": "Headline: all specified forms correct in the versioned answer format. Secondary: individual forms correct; missing/invalid output counts wrong."
+        }
+      },
+      "source_statuses": {
+        "refused": 31,
+        "completed": 1
+      },
+      "target_statuses": {
+        "refused": 1,
+        "completed": 30,
+        "incomplete": 1
+      },
+      "status_transitions": {
+        "refused -> refused": 1,
+        "refused -> completed": 29,
+        "completed -> completed": 1,
+        "refused -> incomplete": 1
+      },
+      "correctness_transitions": {
+        "False -> False": 15,
+        "False -> True": 17
+      },
+      "target_usage_cost_upper_usd": 1.537126,
+      "cells": {
+        "paradigm_2": {
+          "source": {
+            "n": 16,
+            "completed": 1,
+            "completion_fraction": 0.0625,
+            "correct_all": 0,
+            "completed_exact_correct": 0,
+            "completed_exact_accuracy": 0.0,
+            "completed_spelling_tolerant_correct": 0,
+            "completed_spelling_tolerant_accuracy": 0.0,
+            "nasal_spelling_only_errors": 0,
+            "root_families": 16,
+            "paradigm_diagnostics": {
+              "n_paradigms": 16,
+              "n_forms": 32,
+              "correct_forms": 0,
+              "per_form_accuracy": 0.0,
+              "format_valid": 1,
+              "n_completed_valid_format": 1,
+              "task_accuracy_given_completed_valid_format": 0.0,
+              "per_form_accuracy_given_completed_valid_format": 0.0,
+              "per_form_spelling_tolerant_accuracy": 0.0,
+              "task_spelling_tolerant_accuracy_given_completed_valid_format": 0.0,
+              "metric": "Headline: all specified forms correct in the versioned answer format. Secondary: individual forms correct; missing/invalid output counts wrong."
+            }
+          },
+          "target": {
+            "n": 16,
+            "completed": 15,
+            "completion_fraction": 0.9375,
+            "correct_all": 9,
+            "completed_exact_correct": 9,
+            "completed_exact_accuracy": 0.6,
+            "completed_spelling_tolerant_correct": 9,
+            "completed_spelling_tolerant_accuracy": 0.6,
+            "nasal_spelling_only_errors": 0,
+            "root_families": 16,
+            "paradigm_diagnostics": {
+              "n_paradigms": 16,
+              "n_forms": 32,
+              "correct_forms": 18,
+              "per_form_accuracy": 0.5625,
+              "format_valid": 15,
+              "n_completed_valid_format": 15,
+              "task_accuracy_given_completed_valid_format": 0.6,
+              "per_form_accuracy_given_completed_valid_format": 0.6,
+              "per_form_spelling_tolerant_accuracy": 0.5625,
+              "task_spelling_tolerant_accuracy_given_completed_valid_format": 0.6,
+              "metric": "Headline: all specified forms correct in the versioned answer format. Secondary: individual forms correct; missing/invalid output counts wrong."
+            }
+          }
+        },
+        "paradigm_4": {
+          "source": {
+            "n": 16,
+            "completed": 0,
+            "completion_fraction": 0.0,
+            "correct_all": 0,
+            "completed_exact_correct": 0,
+            "completed_exact_accuracy": null,
+            "completed_spelling_tolerant_correct": 0,
+            "completed_spelling_tolerant_accuracy": null,
+            "nasal_spelling_only_errors": 0,
+            "root_families": 16,
+            "paradigm_diagnostics": {
+              "n_paradigms": 16,
+              "n_forms": 64,
+              "correct_forms": 0,
+              "per_form_accuracy": 0.0,
+              "format_valid": 0,
+              "n_completed_valid_format": 0,
+              "task_accuracy_given_completed_valid_format": null,
+              "per_form_accuracy_given_completed_valid_format": null,
+              "per_form_spelling_tolerant_accuracy": 0.0,
+              "task_spelling_tolerant_accuracy_given_completed_valid_format": null,
+              "metric": "Headline: all specified forms correct in the versioned answer format. Secondary: individual forms correct; missing/invalid output counts wrong."
+            }
+          },
+          "target": {
+            "n": 16,
+            "completed": 15,
+            "completion_fraction": 0.9375,
+            "correct_all": 8,
+            "completed_exact_correct": 8,
+            "completed_exact_accuracy": 0.5333333333333333,
+            "completed_spelling_tolerant_correct": 8,
+            "completed_spelling_tolerant_accuracy": 0.5333333333333333,
+            "nasal_spelling_only_errors": 0,
+            "root_families": 16,
+            "paradigm_diagnostics": {
+              "n_paradigms": 16,
+              "n_forms": 64,
+              "correct_forms": 32,
+              "per_form_accuracy": 0.5,
+              "format_valid": 15,
+              "n_completed_valid_format": 15,
+              "task_accuracy_given_completed_valid_format": 0.5333333333333333,
+              "per_form_accuracy_given_completed_valid_format": 0.5333333333333333,
+              "per_form_spelling_tolerant_accuracy": 0.5,
+              "task_spelling_tolerant_accuracy_given_completed_valid_format": 0.5333333333333333,
+              "metric": "Headline: all specified forms correct in the versioned answer format. Secondary: individual forms correct; missing/invalid output counts wrong."
+            }
+          }
+        }
+      }
+    },
+    {
+      "source_job": "opus-samasa-01",
+      "target_job": "opus-samasa-template-probe-03",
+      "n": 32,
+      "source_transport": "batch",
+      "target_transport": "batch",
+      "transport_confound": false,
+      "source_panel_n": 64,
+      "semantic_identity_verified": true,
+      "unique_new_tasks": 0,
+      "source_tasks_digest": "838aca39ad6b54a914db4a6875c311e6827249baddc3159ab27625bccb088d2b",
+      "target_tasks_digest": "714d2ff08625c5083f266beed64c66909d241fb538b9ebed0d931c5446882c85",
+      "status": "collected",
+      "source_summary": {
+        "n": 32,
+        "completed": 1,
+        "completion_fraction": 0.03125,
+        "correct_all": 1,
+        "completed_exact_correct": 1,
+        "completed_exact_accuracy": 1.0,
+        "completed_spelling_tolerant_correct": 1,
+        "completed_spelling_tolerant_accuracy": 1.0,
+        "nasal_spelling_only_errors": 0,
+        "root_families": 96,
+        "compound_note": "Each creation set or compound is one scored task. Distinct dhatu families are counted across every constituent. A root-set identifier alone does not justify a cluster-uncertainty estimate when sets overlap."
+      },
+      "target_summary": {
+        "n": 32,
+        "completed": 1,
+        "completion_fraction": 0.03125,
+        "correct_all": 0,
+        "completed_exact_correct": 0,
+        "completed_exact_accuracy": 0.0,
+        "completed_spelling_tolerant_correct": 0,
+        "completed_spelling_tolerant_accuracy": 0.0,
+        "nasal_spelling_only_errors": 0,
+        "root_families": 96,
+        "compound_note": "Each creation set or compound is one scored task. Distinct dhatu families are counted across every constituent. A root-set identifier alone does not justify a cluster-uncertainty estimate when sets overlap."
+      },
+      "source_statuses": {
+        "refused": 31,
+        "completed": 1
+      },
+      "target_statuses": {
+        "refused": 31,
+        "completed": 1
+      },
+      "status_transitions": {
+        "refused -> refused": 30,
+        "refused -> completed": 1,
+        "completed -> refused": 1
+      },
+      "correctness_transitions": {
+        "False -> False": 31,
+        "True -> False": 1
+      },
+      "target_usage_cost_upper_usd": 0.188178,
+      "cells": {
+        "samasa_2_ric_san_ric_san": {
+          "source": {
+            "n": 8,
+            "completed": 0,
+            "completion_fraction": 0.0,
+            "correct_all": 0,
+            "completed_exact_correct": 0,
+            "completed_exact_accuracy": null,
+            "completed_spelling_tolerant_correct": 0,
+            "completed_spelling_tolerant_accuracy": null,
+            "nasal_spelling_only_errors": 0,
+            "root_families": 16,
+            "compound_note": "Each creation set or compound is one scored task. Distinct dhatu families are counted across every constituent. A root-set identifier alone does not justify a cluster-uncertainty estimate when sets overlap."
+          },
+          "target": {
+            "n": 8,
+            "completed": 0,
+            "completion_fraction": 0.0,
+            "correct_all": 0,
+            "completed_exact_correct": 0,
+            "completed_exact_accuracy": null,
+            "completed_spelling_tolerant_correct": 0,
+            "completed_spelling_tolerant_accuracy": null,
+            "nasal_spelling_only_errors": 0,
+            "root_families": 16,
+            "compound_note": "Each creation set or compound is one scored task. Distinct dhatu families are counted across every constituent. A root-set identifier alone does not justify a cluster-uncertainty estimate when sets overlap."
+          }
+        },
+        "samasa_2_ric_san_ric_san_ric_san": {
+          "source": {
+            "n": 8,
+            "completed": 0,
+            "completion_fraction": 0.0,
+            "correct_all": 0,
+            "completed_exact_correct": 0,
+            "completed_exact_accuracy": null,
+            "completed_spelling_tolerant_correct": 0,
+            "completed_spelling_tolerant_accuracy": null,
+            "nasal_spelling_only_errors": 0,
+            "root_families": 16,
+            "compound_note": "Each creation set or compound is one scored task. Distinct dhatu families are counted across every constituent. A root-set identifier alone does not justify a cluster-uncertainty estimate when sets overlap."
+          },
+          "target": {
+            "n": 8,
+            "completed": 0,
+            "completion_fraction": 0.0,
+            "correct_all": 0,
+            "completed_exact_correct": 0,
+            "completed_exact_accuracy": null,
+            "completed_spelling_tolerant_correct": 0,
+            "completed_spelling_tolerant_accuracy": null,
+            "nasal_spelling_only_errors": 0,
+            "root_families": 16,
+            "compound_note": "Each creation set or compound is one scored task. Distinct dhatu families are counted across every constituent. A root-set identifier alone does not justify a cluster-uncertainty estimate when sets overlap."
+          }
+        },
+        "samasa_4_ric_san_ric_san": {
+          "source": {
+            "n": 8,
+            "completed": 0,
+            "completion_fraction": 0.0,
+            "correct_all": 0,
+            "completed_exact_correct": 0,
+            "completed_exact_accuracy": null,
+            "completed_spelling_tolerant_correct": 0,
+            "completed_spelling_tolerant_accuracy": null,
+            "nasal_spelling_only_errors": 0,
+            "root_families": 32,
+            "compound_note": "Each creation set or compound is one scored task. Distinct dhatu families are counted across every constituent. A root-set identifier alone does not justify a cluster-uncertainty estimate when sets overlap."
+          },
+          "target": {
+            "n": 8,
+            "completed": 0,
+            "completion_fraction": 0.0,
+            "correct_all": 0,
+            "completed_exact_correct": 0,
+            "completed_exact_accuracy": null,
+            "completed_spelling_tolerant_correct": 0,
+            "completed_spelling_tolerant_accuracy": null,
+            "nasal_spelling_only_errors": 0,
+            "root_families": 32,
+            "compound_note": "Each creation set or compound is one scored task. Distinct dhatu families are counted across every constituent. A root-set identifier alone does not justify a cluster-uncertainty estimate when sets overlap."
+          }
+        },
+        "samasa_4_ric_san_ric_san_ric_san": {
+          "source": {
+            "n": 8,
+            "completed": 1,
+            "completion_fraction": 0.125,
+            "correct_all": 1,
+            "completed_exact_correct": 1,
+            "completed_exact_accuracy": 1.0,
+            "completed_spelling_tolerant_correct": 1,
+            "completed_spelling_tolerant_accuracy": 1.0,
+            "nasal_spelling_only_errors": 0,
+            "root_families": 32,
+            "compound_note": "Each creation set or compound is one scored task. Distinct dhatu families are counted across every constituent. A root-set identifier alone does not justify a cluster-uncertainty estimate when sets overlap."
+          },
+          "target": {
+            "n": 8,
+            "completed": 1,
+            "completion_fraction": 0.125,
+            "correct_all": 0,
+            "completed_exact_correct": 0,
+            "completed_exact_accuracy": 0.0,
+            "completed_spelling_tolerant_correct": 0,
+            "completed_spelling_tolerant_accuracy": 0.0,
+            "nasal_spelling_only_errors": 0,
+            "root_families": 32,
+            "compound_note": "Each creation set or compound is one scored task. Distinct dhatu families are counted across every constituent. A root-set identifier alone does not justify a cluster-uncertainty estimate when sets overlap."
+          }
+        }
+      }
+    },
+    {
+      "source_job": "opus-unadi-01",
+      "target_job": "opus-unadi-sanskrit-probe-02",
+      "n": 32,
+      "source_transport": "batch",
+      "target_transport": "direct",
+      "transport_confound": true,
+      "source_panel_n": 64,
+      "semantic_identity_verified": true,
+      "unique_new_tasks": 0,
+      "source_tasks_digest": "e40b82f9e2ba93ab066163ceffd04dfea5b9882d3f2e8c1d051372b2fd63ed1e",
+      "target_tasks_digest": "c583e9b4555bb1b3cf809563b19bd47ad289355d18714dc242207ad905bcfea1",
+      "status": "collected",
+      "source_summary": {
+        "n": 32,
+        "completed": 17,
+        "completion_fraction": 0.53125,
+        "correct_all": 15,
+        "completed_exact_correct": 15,
+        "completed_exact_accuracy": 0.8823529411764706,
+        "completed_spelling_tolerant_correct": 15,
+        "completed_spelling_tolerant_accuracy": 0.8823529411764706,
+        "nasal_spelling_only_errors": 0,
+        "root_families": 32
+      },
+      "target_summary": {
+        "n": 32,
+        "completed": 32,
+        "completion_fraction": 1.0,
+        "correct_all": 27,
+        "completed_exact_correct": 27,
+        "completed_exact_accuracy": 0.84375,
+        "completed_spelling_tolerant_correct": 27,
+        "completed_spelling_tolerant_accuracy": 0.84375,
+        "nasal_spelling_only_errors": 0,
+        "root_families": 32
+      },
+      "source_statuses": {
+        "completed": 17,
+        "refused": 15
+      },
+      "target_statuses": {
+        "completed": 32
+      },
+      "status_transitions": {
+        "completed -> completed": 17,
+        "refused -> completed": 15
+      },
+      "correctness_transitions": {
+        "True -> True": 14,
+        "False -> True": 13,
+        "False -> False": 4,
+        "True -> False": 1
+      },
+      "target_usage_cost_upper_usd": 0.4138,
+      "cells": {
+        "unadi_nominal_stem": {
+          "source": {
+            "n": 32,
+            "completed": 17,
+            "completion_fraction": 0.53125,
+            "correct_all": 15,
+            "completed_exact_correct": 15,
+            "completed_exact_accuracy": 0.8823529411764706,
+            "completed_spelling_tolerant_correct": 15,
+            "completed_spelling_tolerant_accuracy": 0.8823529411764706,
+            "nasal_spelling_only_errors": 0,
+            "root_families": 32
+          },
+          "target": {
+            "n": 32,
+            "completed": 32,
+            "completion_fraction": 1.0,
+            "correct_all": 27,
+            "completed_exact_correct": 27,
+            "completed_exact_accuracy": 0.84375,
+            "completed_spelling_tolerant_correct": 27,
+            "completed_spelling_tolerant_accuracy": 0.84375,
+            "nasal_spelling_only_errors": 0,
+            "root_families": 32
+          }
+        }
+      }
+    },
+    {
+      "source_job": "opus-independent-creation-01",
+      "target_job": "opus-independent-sanskrit-probe-02",
+      "n": 32,
+      "source_transport": "batch",
+      "target_transport": "direct",
+      "transport_confound": true,
+      "source_panel_n": 64,
+      "semantic_identity_verified": true,
+      "unique_new_tasks": 0,
+      "source_tasks_digest": "5dd41a6106086509ce09e76189796b6b7c94f3b6d550d750d7415c8720640279",
+      "target_tasks_digest": "b87cd01839c7c31ef92b6868e2aa5c8322de121b96d46713fc3994a3d42b166d",
+      "status": "collected",
+      "source_summary": {
+        "n": 32,
+        "completed": 20,
+        "completion_fraction": 0.625,
+        "correct_all": 14,
+        "completed_exact_correct": 14,
+        "completed_exact_accuracy": 0.7,
+        "completed_spelling_tolerant_correct": 14,
+        "completed_spelling_tolerant_accuracy": 0.7,
+        "nasal_spelling_only_errors": 0,
+        "root_families": 96,
+        "compound_note": "Each creation set or compound is one scored task. Distinct dhatu families are counted across every constituent. A root-set identifier alone does not justify a cluster-uncertainty estimate when sets overlap.",
+        "paradigm_diagnostics": {
+          "n_paradigms": 32,
+          "n_forms": 96,
+          "correct_forms": 49,
+          "per_form_accuracy": 0.5104166666666666,
+          "format_valid": 20,
+          "n_completed_valid_format": 20,
+          "task_accuracy_given_completed_valid_format": 0.7,
+          "per_form_accuracy_given_completed_valid_format": 0.7903225806451613,
+          "per_form_spelling_tolerant_accuracy": 0.5104166666666666,
+          "task_spelling_tolerant_accuracy_given_completed_valid_format": 0.7,
+          "metric": "Headline: all specified forms correct in the versioned answer format. Secondary: individual forms correct; missing/invalid output counts wrong."
+        }
+      },
+      "target_summary": {
+        "n": 32,
+        "completed": 29,
+        "completion_fraction": 0.90625,
+        "correct_all": 25,
+        "completed_exact_correct": 25,
+        "completed_exact_accuracy": 0.8620689655172413,
+        "completed_spelling_tolerant_correct": 25,
+        "completed_spelling_tolerant_accuracy": 0.8620689655172413,
+        "nasal_spelling_only_errors": 0,
+        "root_families": 96,
+        "compound_note": "Each creation set or compound is one scored task. Distinct dhatu families are counted across every constituent. A root-set identifier alone does not justify a cluster-uncertainty estimate when sets overlap.",
+        "paradigm_diagnostics": {
+          "n_paradigms": 32,
+          "n_forms": 96,
+          "correct_forms": 78,
+          "per_form_accuracy": 0.8125,
+          "format_valid": 29,
+          "n_completed_valid_format": 29,
+          "task_accuracy_given_completed_valid_format": 0.8620689655172413,
+          "per_form_accuracy_given_completed_valid_format": 0.9069767441860465,
+          "per_form_spelling_tolerant_accuracy": 0.8125,
+          "task_spelling_tolerant_accuracy_given_completed_valid_format": 0.8620689655172413,
+          "metric": "Headline: all specified forms correct in the versioned answer format. Secondary: individual forms correct; missing/invalid output counts wrong."
+        }
+      },
+      "source_statuses": {
+        "completed": 20,
+        "refused": 12
+      },
+      "target_statuses": {
+        "completed": 29,
+        "incomplete": 3
+      },
+      "status_transitions": {
+        "completed -> completed": 20,
+        "refused -> completed": 9,
+        "refused -> incomplete": 3
+      },
+      "correctness_transitions": {
+        "True -> True": 12,
+        "False -> False": 5,
+        "False -> True": 13,
+        "True -> False": 2
+      },
+      "target_usage_cost_upper_usd": 6.706808,
+      "cells": {
+        "independent_creation_2": {
+          "source": {
+            "n": 16,
+            "completed": 9,
+            "completion_fraction": 0.5625,
+            "correct_all": 6,
+            "completed_exact_correct": 6,
+            "completed_exact_accuracy": 0.6666666666666666,
+            "completed_spelling_tolerant_correct": 6,
+            "completed_spelling_tolerant_accuracy": 0.6666666666666666,
+            "nasal_spelling_only_errors": 0,
+            "root_families": 32,
+            "compound_note": "Each creation set or compound is one scored task. Distinct dhatu families are counted across every constituent. A root-set identifier alone does not justify a cluster-uncertainty estimate when sets overlap.",
+            "paradigm_diagnostics": {
+              "n_paradigms": 16,
+              "n_forms": 32,
+              "correct_forms": 15,
+              "per_form_accuracy": 0.46875,
+              "format_valid": 9,
+              "n_completed_valid_format": 9,
+              "task_accuracy_given_completed_valid_format": 0.6666666666666666,
+              "per_form_accuracy_given_completed_valid_format": 0.8333333333333334,
+              "per_form_spelling_tolerant_accuracy": 0.46875,
+              "task_spelling_tolerant_accuracy_given_completed_valid_format": 0.6666666666666666,
+              "metric": "Headline: all specified forms correct in the versioned answer format. Secondary: individual forms correct; missing/invalid output counts wrong."
+            }
+          },
+          "target": {
+            "n": 16,
+            "completed": 15,
+            "completion_fraction": 0.9375,
+            "correct_all": 13,
+            "completed_exact_correct": 13,
+            "completed_exact_accuracy": 0.8666666666666667,
+            "completed_spelling_tolerant_correct": 13,
+            "completed_spelling_tolerant_accuracy": 0.8666666666666667,
+            "nasal_spelling_only_errors": 0,
+            "root_families": 32,
+            "compound_note": "Each creation set or compound is one scored task. Distinct dhatu families are counted across every constituent. A root-set identifier alone does not justify a cluster-uncertainty estimate when sets overlap.",
+            "paradigm_diagnostics": {
+              "n_paradigms": 16,
+              "n_forms": 32,
+              "correct_forms": 27,
+              "per_form_accuracy": 0.84375,
+              "format_valid": 15,
+              "n_completed_valid_format": 15,
+              "task_accuracy_given_completed_valid_format": 0.8666666666666667,
+              "per_form_accuracy_given_completed_valid_format": 0.9,
+              "per_form_spelling_tolerant_accuracy": 0.84375,
+              "task_spelling_tolerant_accuracy_given_completed_valid_format": 0.8666666666666667,
+              "metric": "Headline: all specified forms correct in the versioned answer format. Secondary: individual forms correct; missing/invalid output counts wrong."
+            }
+          }
+        },
+        "independent_creation_4": {
+          "source": {
+            "n": 16,
+            "completed": 11,
+            "completion_fraction": 0.6875,
+            "correct_all": 8,
+            "completed_exact_correct": 8,
+            "completed_exact_accuracy": 0.7272727272727273,
+            "completed_spelling_tolerant_correct": 8,
+            "completed_spelling_tolerant_accuracy": 0.7272727272727273,
+            "nasal_spelling_only_errors": 0,
+            "root_families": 64,
+            "compound_note": "Each creation set or compound is one scored task. Distinct dhatu families are counted across every constituent. A root-set identifier alone does not justify a cluster-uncertainty estimate when sets overlap.",
+            "paradigm_diagnostics": {
+              "n_paradigms": 16,
+              "n_forms": 64,
+              "correct_forms": 34,
+              "per_form_accuracy": 0.53125,
+              "format_valid": 11,
+              "n_completed_valid_format": 11,
+              "task_accuracy_given_completed_valid_format": 0.7272727272727273,
+              "per_form_accuracy_given_completed_valid_format": 0.7727272727272727,
+              "per_form_spelling_tolerant_accuracy": 0.53125,
+              "task_spelling_tolerant_accuracy_given_completed_valid_format": 0.7272727272727273,
+              "metric": "Headline: all specified forms correct in the versioned answer format. Secondary: individual forms correct; missing/invalid output counts wrong."
+            }
+          },
+          "target": {
+            "n": 16,
+            "completed": 14,
+            "completion_fraction": 0.875,
+            "correct_all": 12,
+            "completed_exact_correct": 12,
+            "completed_exact_accuracy": 0.8571428571428571,
+            "completed_spelling_tolerant_correct": 12,
+            "completed_spelling_tolerant_accuracy": 0.8571428571428571,
+            "nasal_spelling_only_errors": 0,
+            "root_families": 64,
+            "compound_note": "Each creation set or compound is one scored task. Distinct dhatu families are counted across every constituent. A root-set identifier alone does not justify a cluster-uncertainty estimate when sets overlap.",
+            "paradigm_diagnostics": {
+              "n_paradigms": 16,
+              "n_forms": 64,
+              "correct_forms": 51,
+              "per_form_accuracy": 0.796875,
+              "format_valid": 14,
+              "n_completed_valid_format": 14,
+              "task_accuracy_given_completed_valid_format": 0.8571428571428571,
+              "per_form_accuracy_given_completed_valid_format": 0.9107142857142857,
+              "per_form_spelling_tolerant_accuracy": 0.796875,
+              "task_spelling_tolerant_accuracy_given_completed_valid_format": 0.8571428571428571,
+              "metric": "Headline: all specified forms correct in the versioned answer format. Secondary: individual forms correct; missing/invalid output counts wrong."
+            }
+          }
+        }
+      }
+    }
+  ],
+  "selection": "v2 reruns complete panels; v3 takes 16 random items per size; v4 and v5 rerun all v3 items. No correctness/refusal filtering.",
+  "interpretation": "v2 changes contextual wording; v3 substitutes verbal base for verbal root; v4 changes answer format to ordered lines; v5 extends the established single-form template with per-form fields. Repeated exposures do not add unique tasks. Fresh calibration is required before final selection."
+}

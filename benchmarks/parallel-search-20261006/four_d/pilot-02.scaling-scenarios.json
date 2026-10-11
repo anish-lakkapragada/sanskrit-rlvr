@@ -1,0 +1,77 @@
+{
+  "created_at": "2026-10-07T06:12:15.503629+00:00",
+  "status": "scenario_only_not_infeasibility_proof",
+  "inputs": {
+    "internal_lengthening": {
+      "errors": 5,
+      "usable_n": 12,
+      "test_families": 9
+    },
+    "divadi_aorist": {
+      "errors": 1,
+      "usable_n": 11
+    },
+    "all_other_clean_pilot_cells": {
+      "observed_errors": 0
+    },
+    "akusmiya_source_supported_test_family_upper_bound": 17
+  },
+  "cases": [
+    {
+      "n": 1000,
+      "family_maximum_diagnostic": 3,
+      "maximum_errors_from_old_cells_at_plugin_rates": 33.97727272727273,
+      "old_cells_optimistic_plugin_accuracy_floor": 0.9660227272727273,
+      "hypothetical_additional_akusmiya_errors_if_all_wrong": 51,
+      "optimistic_accuracy_floor_with_hypothetical_all_wrong_akusmiya": 0.9150227272727273
+    },
+    {
+      "n": 1601,
+      "family_maximum_diagnostic": 5,
+      "maximum_errors_from_old_cells_at_plugin_rates": 55.11363636363637,
+      "old_cells_optimistic_plugin_accuracy_floor": 0.9655754925898586,
+      "hypothetical_additional_akusmiya_errors_if_all_wrong": 85,
+      "optimistic_accuracy_floor_with_hypothetical_all_wrong_akusmiya": 0.9124836749758674
+    },
+    {
+      "n": 1000,
+      "family_maximum_diagnostic": 6,
+      "maximum_errors_from_old_cells_at_plugin_rates": 45.22727272727273,
+      "old_cells_optimistic_plugin_accuracy_floor": 0.9547727272727273,
+      "hypothetical_additional_akusmiya_errors_if_all_wrong": 102,
+      "optimistic_accuracy_floor_with_hypothetical_all_wrong_akusmiya": 0.8527727272727272
+    },
+    {
+      "n": 1601,
+      "family_maximum_diagnostic": 6,
+      "maximum_errors_from_old_cells_at_plugin_rates": 58.86363636363637,
+      "old_cells_optimistic_plugin_accuracy_floor": 0.9632332065186531,
+      "hypothetical_additional_akusmiya_errors_if_all_wrong": 102,
+      "optimistic_accuracy_floor_with_hypothetical_all_wrong_akusmiya": 0.8995230253818636
+    },
+    {
+      "n": 1000,
+      "family_maximum_diagnostic": 10,
+      "maximum_errors_from_old_cells_at_plugin_rates": 60.22727272727273,
+      "old_cells_optimistic_plugin_accuracy_floor": 0.9397727272727273,
+      "hypothetical_additional_akusmiya_errors_if_all_wrong": 170,
+      "optimistic_accuracy_floor_with_hypothetical_all_wrong_akusmiya": 0.7697727272727273
+    },
+    {
+      "n": 1601,
+      "family_maximum_diagnostic": 10,
+      "maximum_errors_from_old_cells_at_plugin_rates": 73.86363636363637,
+      "old_cells_optimistic_plugin_accuracy_floor": 0.9538640622338311,
+      "hypothetical_additional_akusmiya_errors_if_all_wrong": 170,
+      "optimistic_accuracy_floor_with_hypothetical_all_wrong_akusmiya": 0.8476804270058487
+    }
+  ],
+  "old_cells_without_family_cap_plugin_accuracy_floor": 0.8731060606060606,
+  "limits": [
+    "Rates come from small, post-discovery development subsets; sampling uncertainty is large and zero observed errors does not imply zero true error.",
+    "Independent per-cell capacities ignore overlap and some diversity constraints, making these optimistic scenarios rather than attainable compositions.",
+    "No 79–81% impossibility claim is justified by this calculation.",
+    "The family maxima are diagnostics, not user-mandated ceilings. Larger root repetition changes both composition and uncertainty.",
+    "All-wrong Akusmiya is an intentionally extreme hypothetical. Its two prior scored errors were on unverified lexical readings and cannot estimate the licensed subgroup."
+  ]
+}

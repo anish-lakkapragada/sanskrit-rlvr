@@ -1,0 +1,56 @@
+{
+  "created_at": "2026-10-08T00:35:55.089014+00:00",
+  "passed": true,
+  "scope": "Bounded independent source review and synthetic execution/analysis tests of the versioned continuous64k driver. Not an execution-plan review or spending authorization.",
+  "blockers": [],
+  "executor_sha256": "5915a193ad58b60b1f30ad59be35e7a6fb0379fe99f828778a60c478ef10b3f4",
+  "analyzer_sha256": "9a04da1a4b609aa6a910ab5738f1e7564d1b7d884308f9c671a2aa0c51bc112d",
+  "test_receipt_sha256": "d30d761796dce73236cf30f927b33016c04fbb8c86f938581a563f91c269d909",
+  "tests_run": 28,
+  "all_tests_passed": true,
+  "invariants_checked": [
+    "Each request reserves its entire input/output maximum atomically in the existing lifetime ledger before any POST.",
+    "Incomplete aggregate liability equals known settled costs plus full unknown reservations; rejected high-usage receipts retain the larger observed liability.",
+    "Legacy committed/protected calculations see all liabilities; provider hard caps and planning reserves remain enforced.",
+    "The ledger ownership fence prevents overlapping legacy submissions; batch_id=None prevents legacy collection.",
+    "One process flock and at most32 combined workers; shared ledger lock is absent during network calls.",
+    "Exact index-prefix and request digests prevent replay; uncertain outcomes stop admission, drain existing requests and retain reservations.",
+    "Restart cannot resubmit unknown or completed requests; previous final task membership is rejected across versioned and legacy final jobs.",
+    "Task, public prompt, source policy, independent input review, scorer adoption, spelling review and frozen code hashes are verified before execution; frozen plan/dependency hashes are checked again before each POST.",
+    "Test split and full canonical keys regenerate at registration. All final questions have the original4D shape and same model-visible prompt under both provider adapters.",
+    "Paired analysis reads no response text or scorer until both exact fixed cohorts have terminal validated usage.",
+    "Final analysis binds raw receipt bytes and paid request intents; canonical and predeclared finite-spelling rows are retained separately.",
+    "Every usable unrecognized answer remains pending source adjudication; iid and family precision are separate and benchmark_ready stays false."
+  ],
+  "live_ledger_unchanged": true,
+  "live_ledger_sha256": "8b11a2d7959c2dde0e7886112ec8a45dbbfc14302c06a048ef31890eeac2b60c",
+  "financial_snapshot_usd": {
+    "Anthropic": {
+      "committed": 311.430394,
+      "protected": 166.84,
+      "headroom_after_protection": 521.729606,
+      "max_per_request": 1.31672
+    },
+    "OpenAI": {
+      "committed": 801.1305,
+      "protected": 962.5,
+      "headroom_after_protection": 236.3695,
+      "max_per_request": 3.2918
+    }
+  },
+  "operational_limits": [
+    "No concrete execution plan, counting receipts, spending-pool allocation, scorer/source adoption or reserve-reallocation document was approved by this code review. Those remain separately hash-bound gates.",
+    "The new fixed-cohort final phase explicitly replaces legacy core/extension staging for its own runs; legacy16k phase records stay unchanged. It must not be registered as a development job.",
+    "Conservative reservations bound each admission, not the cost of completing all1800 questions in advance. Exhausted headroom returns an incomplete evaluation without score-based stopping or dropping questions.",
+    "Transport/unknown-usage failures intentionally need reconciliation; no automatic paid retry or unknown-reservation release is supplied.",
+    "Generic legacy dashboards do not assemble scores for this new phase; use its usage-only execution status and full-paired analysis. The existing spending fence needs explicit coordinator handling after completion.",
+    "The finite spelling policy is incomplete by design.79candidate tasks flag remaining cluster contexts; full paradigm/source certification and subsequent symmetric adjudication remain separate."
+  ],
+  "candidate_input_review_sha256": "ca0a2660f4577e1587b3715cf2ce241c3a8f893303dff0200eed7a0ac662bd44",
+  "candidate_spelling_review_sha256": "47fc49e5df4b022930eb88da7997b6ba91307ce41f0bc47221754f04b91e911f",
+  "model_responses_read": false,
+  "paid_calls": 0,
+  "shared_source_changes": false,
+  "execution_authorized": false,
+  "benchmark_ready": false
+}

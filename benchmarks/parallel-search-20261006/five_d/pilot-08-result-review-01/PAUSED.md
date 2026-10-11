@@ -1,0 +1,1 @@
+User superseded this review on 2026-10-07 before source closure. Frozen and raw files were not modified. Existing triage and full regeneration artifacts are preserved. Open finding: rC/rcC accepted spelling coverage under 8.4.46, 8.4.55 and 8.4.65; no shared predicate or score changes. Do not interpret this unfinished review as certification.

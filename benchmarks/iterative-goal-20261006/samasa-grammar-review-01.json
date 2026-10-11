@@ -1,0 +1,77 @@
+{
+  "created_at": "2026-10-07T02:44:13.485178+00:00",
+  "purpose": "One-word creation that combines several independent verbal derivatives and compound sandhi. Test64 tasks:2/4 participants crossed with4/6 sanadi suffixes,16 each.",
+  "controls": [
+    {
+      "stems": [
+        "plakza",
+        "nyagroDa"
+      ],
+      "expected": "plakzanyagroDO",
+      "returned": [
+        "plakzanyagroDO"
+      ],
+      "passed": true,
+      "source": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/2/2.2.29.htm"
+    },
+    {
+      "stems": [
+        "Dava",
+        "Kadira",
+        "palASa"
+      ],
+      "expected": "DavaKadirapalASAH",
+      "returned": [
+        "DavaKadirapalASAH"
+      ],
+      "passed": true,
+      "source": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/2/2.2.29.htm"
+    },
+    {
+      "stems": [
+        "hari",
+        "hara"
+      ],
+      "expected": "hariharO",
+      "returned": [
+        "hariharO"
+      ],
+      "passed": true,
+      "source": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/2/2.2.32.htm"
+    },
+    {
+      "stems": [
+        "Siva",
+        "keSava"
+      ],
+      "expected": "SivakeSavO",
+      "returned": [
+        "SivakeSavO"
+      ],
+      "passed": true,
+      "source": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/2/2.2.34.htm"
+    }
+  ],
+  "scope": "Itaretara-dvandva of distinct, equally ranked male participants acting together; masculine cases2–7;2 participants dual,4 plural;Satf present active participles used substantivally. No prefixes,no yaN,no Curadi.",
+  "ordering": "Each candidate cohort has the same syllable-weight sequence across all VP-derived member-stem variants. All members end in Satf consonantal t,so ghi/ajadyadanta priorities do not apply. Listed order is fixed;4-member ordering permits additional flexibility,not required for answers here.",
+  "grammar_sources": [
+    "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/2/2.2.29.htm",
+    "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/2/2.2.34.htm",
+    "https://en.wikisource.org/wiki/Sanskrit_Grammar_(Whitney)/Chapter_XIV"
+  ],
+  "scope_limits": [
+    "Novel formal derivation exercises,not claims of attested compound vocabulary.",
+    "The elementary compound controls do not independently certify every deeply derived member. Nested sanadi licensing follows the separate deep-construction review.",
+    "Python0.4.0 does not expose samasa;use separately pinned Rust VP0.2.0 at the recorded revision. Do not silently pool oracle versions.",
+    "192 distinct development dhatu families,each present in one task only. No test-family calls."
+  ],
+  "mechanical_audit": "samasa-pilot-01.audit.json",
+  "stage": "Opus first;pair Astra only if completion and difficulty are promising and the cumulative cap allows it.",
+  "cross_version_member_check": {
+    "artifact": "samasa-member-version-check-01.json",
+    "matching": 191,
+    "n": 192,
+    "unresolved": "aga~|Bhvadi, Ghatadi has initial vowel-length disagreement across engine versions. Treat it as an oracle review case; do not select it for hardness.",
+    "next_panel_exclusion": "Exclude aga~|Bhvadi from new compound panels until adjudicated, regardless of model answer."
+  }
+}

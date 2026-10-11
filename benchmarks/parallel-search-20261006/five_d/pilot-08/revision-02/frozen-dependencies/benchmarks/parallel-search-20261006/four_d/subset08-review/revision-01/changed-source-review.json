@@ -1,0 +1,56 @@
+{
+  "created_at": "2026-10-07T12:16:43.022243+00:00",
+  "assigned_contexts": [
+    [
+      "causative_of_intensive_luk",
+      "8.4.64"
+    ],
+    [
+      "desiderative",
+      "7.4.52"
+    ],
+    [
+      "desiderative",
+      "7.4.7"
+    ],
+    [
+      "desiderative",
+      "8.3.78"
+    ],
+    [
+      "causative_of_intensive",
+      "8.4.64"
+    ]
+  ],
+  "source_urls": {
+    "7.4.7": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.4.7.htm",
+    "7.4.52": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/7/7.4.52.htm",
+    "8.3.78": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/8/8.3.78.htm",
+    "8.4.64": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/8/8.4.64.htm",
+    "3.1.48": "https://sanskritdocuments.org/learning_tools/ashtadhyayi/vyakhya/3/3.1.48.htm"
+  },
+  "disposition": "One concrete caN-condition failure; parent adopted conservative policy21 SAN+7.4.7 hold. Three other unique rules have matching trace conditions.",
+  "predicate": "task.get('derivation', {}).get('sanadi') == ['san'] and '7.4.7' in task['campaign']['trace_rule_ids']",
+  "policy_path": "benchmarks/parallel-search-20261006/oracle-policy-21.json",
+  "policy_sha256": "e19f60de4fc58a43a72ee0a48320f0c11383a39eb21b45f2859361701158220c",
+  "evidence_files": {
+    "changed-source-controls.json": "f39ee87510c0ac783af83e045e0be22ea27c2fe18e67ad33bd5bc8e51d086183",
+    "rule747-positive-negative-controls.json": "ea96633685fa169f0058b29f8acac5decc06881f68e07142279c7a5fa850f98c",
+    "rule747-input-inventory.json": "6e2f6ee3b39273a4150b1b3a3e3abbde7e54cd87d72c415031a69a45fc034f29",
+    "membership-audit.json": "f828c86e6627ca14d04b1ec0c9752deb424098cb5be3a9073efa7ab6297b90da"
+  },
+  "cause": "Rule7.4.7 optional r branch appears during internal Ric construction before SAN and remains in final sic-aorist without caN.",
+  "preserved_contexts": [
+    "Ordinary Curadi4D aorists with genuine caN",
+    "ordinary Ric",
+    "SAN without7.4.7"
+  ],
+  "no_model_answers_read": true,
+  "no_paid_calls": true,
+  "no_shared_policy_edits": true,
+  "reproduction": {
+    "command": ".venv/bin/python -m misc.vp_4d_rule747_controls",
+    "script_sha256": "cea781642563e0985ee0be62914c2b2996bae4342be295c279a5291bbf62df5b",
+    "result": "12 frozen controls exactly reproduced; every ordinary rule7.4.7 branch has caN; every SAN rule7.4.7 branch lacks caN and has3.1.44 sic."
+  }
+}

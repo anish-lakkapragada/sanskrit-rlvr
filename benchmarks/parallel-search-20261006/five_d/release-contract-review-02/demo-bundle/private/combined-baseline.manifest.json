@@ -1,0 +1,49 @@
+{
+  "created_at": "2026-10-07T14:47:48.815429+00:00",
+  "status": "unreleased_research_export",
+  "n": 4,
+  "split": "development",
+  "audit": {
+    "created_at": "2026-10-07T14:47:48.814351+00:00",
+    "passed_mechanical_checks": true,
+    "n": 4,
+    "split": "development",
+    "task_digest": "f7d84aa5d794cefb95ab08facee9eb203f129bf165cd428d57911a427eb78549",
+    "root_families": 4,
+    "maximum_tasks_per_root": 1,
+    "cells": {
+      "ordinary_conjugation": 1,
+      "causative_of_intensive": 1,
+      "causative_of_intensive_luk": 1,
+      "desiderative": 1
+    },
+    "validator_sha256": "f5a35e5a930fc253c7f006a1080204277dc84284f96f2c55dfe42cd07fda5b1c",
+    "family_definition": "Exact Dhatupatha citation including markers, plus gana; not an etymological lemma split.",
+    "scope": "Full regeneration, semantic fields, all accepted gold variants, prompt identity, split membership and declared sampling exclusions.",
+    "limits": "Does not independently certify Sanskrit correctness, empirical difficulty, contamination absence or benchmark sampling precision."
+  },
+  "source_tasks_sha256": "68ec6f50dd82bf4f8135ed9631454ead0a2dab5bb2fe68b709a98636f87c8b3a",
+  "jsonl_sha256": "af7a577448239a18976574e4ea9805a373b1f2ae28fcf395d8159c790b1b0156",
+  "exporter_sha256": "57bad031466fc23e9c44dd3be9d7d7eed04106464dc5ef30f5b72c7ccaedfd25",
+  "dependency_sha256": {
+    "finetune/prompts.py": "2f474c6a8a14b9445b1686c5f0b63ebf60f8d9fb061e67c6134ccdb4683a4a2e",
+    "prompts/v2/vp_task_eval.txt": "a784e3a1cf0e5f5d8b56c018d166ad78fa62d8af489291ef96d8f6fea70239cd",
+    "misc/vp_compositional.py": "67369b9bd95f63d63e7a47751b6c066ecc09db5715237fb0b4d795e36234bba4",
+    "misc/vp_finite_pada.py": "b92665b8160af97f9d65f2262ce48f64438689a1c3808d55ebc5db54419d3128",
+    "misc/vp_goal_tasks.py": "3439d9f824a118f0c91cfe1f88ba69388be7f6d14e52fdeed23bd77345139b36",
+    "misc/vp_goal_grammar.py": "773f84094932adab27731d27ec87997c0cf34ab9ce2964629dfac1f65362cd9b",
+    "misc/vp_goal_validate.py": "f5a35e5a930fc253c7f006a1080204277dc84284f96f2c55dfe42cd07fda5b1c",
+    "misc/vp_cartesian_task.py": "f5bfab6f3fc27b7c83bbd6987bede73501592a9568fda32a0371bd8e23b7febd",
+    "misc/vp_sanskrit_prompt_v1.py": "a2a459d6863c9beb16b9759629d3ef76df50d28ebc595fb53fcbd56d01261468",
+    "data/finetune/task-data/vidyut_dhatupatha_5.tsv": "c6c494a6c534130b2d8e8f344d2f5e3ffbc64ed45b390e2a4e35e526f1cecd09",
+    "benchmarks/creation-campaign-20261006/family-split.json": "a1c46bb778bca8f89df468d65232698131a3c4b137393865cd3f6b121fc6077f"
+  },
+  "prompt_renderer_sha256": {
+    "cartesian-4d-v1": "1cdf3930d2e6b5bf9994a0a5fd25918a2e038b6dfbbcc9a9bab1fb59ddbfcfff",
+    "cartesian-5d-v3-sanskrit": "e20b90b81f621890bbdb5376ff436eb4d19d7801fc87e9f45d30bcf0f2bd487e"
+  },
+  "reward": "Use task_reward(completion, task): a one-form task accepts any gold variant; a paradigm requires a valid row-keyed JSON object with every requested form correct. Binary 0/1; no thinking-block requirement.",
+  "model_input": "Use only messages (or prompt). Keep gold fields and task metadata in the verifier, not the input.",
+  "training_integration": "The legacy root-only VP prompt renderer omits these operations. Consume the exported prompts directly; no training configuration has been changed or launched.",
+  "limits": "Exact citation-plus-gana split, not an etymological lemma split. Existing checkpoints are not certified clean. This export does not certify final benchmark difficulty or every generated key."
+}

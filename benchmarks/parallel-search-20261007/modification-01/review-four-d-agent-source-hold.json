@@ -1,0 +1,37 @@
+{
+  "created_at": "2026-10-07T19:27:41.617745+00:00",
+  "review_kind": "input_only_prior_local_hold",
+  "model_outputs_read": false,
+  "tasks_sha256": "336146afc2a81d6b82e6c9f919498ce98d88c9cc9363a100a1c3aefe68e5c59f",
+  "controls_sha256": "7d7ecf2c3b6fb6a60d35840cc759a6613be0d8ed965af563c80c093f585d7862",
+  "prior_source_audit": "benchmarks/parallel-search-20261006/four_d/pilot-04.source-audit.json",
+  "prior_source_audit_sha256": "56e7db08e785bc1faa61baa02b3a2855b390d48616c23689abfb432d7f998545",
+  "raw_membership_changed": false,
+  "raw_score_must_remain_200_denominator": true,
+  "disposition": "Unresolved full variant union; symmetry applies to both arms in a clearly labeled supplementary sensitivity analysis. This is a known uncertainty, not a proven engine defect or proven model error.",
+  "pairs": [
+    {
+      "modification_id": "modify-d1458faf3ae7726d35c89d87",
+      "control_id": "cart4-9b2114dbe9911b19a0e671cd",
+      "code": "10.0400",
+      "source_form": "अपपतावहि",
+      "source_morphology": {
+        "lakara": "Lun",
+        "prayoga": "Kartari",
+        "purusha": "Uttama",
+        "vacana": "Dvi"
+      },
+      "target_morphology": {
+        "lakara": "Lut",
+        "prayoga": "Kartari",
+        "purusha": "Uttama",
+        "vacana": "Dvi"
+      },
+      "source_reason": "Primary source reports competing adanta/non-adanta and nic analyses; pilot04 did not certify their full variant union.",
+      "source_urls": [
+        "https://sa.wikisource.org/wiki/सिद्धान्तकौमुदी/प्रकरण‌५१-६०"
+      ],
+      "supplementary_hold_both_arms": true
+    }
+  ]
+}

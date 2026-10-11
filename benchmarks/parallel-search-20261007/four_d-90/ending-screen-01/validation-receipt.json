@@ -1,0 +1,14 @@
+{
+  "created_at": "2026-10-07T23:25:46.354402+00:00",
+  "tests_passed": 10,
+  "alias_contract_tests": 5,
+  "transport_billing_tests": 5,
+  "command": "PYTHONPATH=.:benchmarks/parallel-search-20261007/four_d-90/ending-screen-01 .venv/bin/python -m unittest discover -s benchmarks/parallel-search-20261007/four_d-90/ending-screen-01 -p 'test_*.py' -v",
+  "independent_alias_review": {
+    "canonical_positive_checks": 124,
+    "alias_positive_checks": 172,
+    "adversarial_negative_checks": 320
+  },
+  "no_provider_calls": true,
+  "no_real_ledger_writes": true
+}

@@ -1,0 +1,7 @@
+# Independent jñā / śūṭh follow-up
+
+**1122 śūṭh: resolve as rejected.** Puruṣakāra p.69 explicitly records **शूठ** as Kṣīrasvāmin’s reading. The independently viewed Kṣīrataraṅgiṇī scan116, printed59, footnote6 repeats that report. The public prompt explicitly gives long-ū **शूठँ**, so the short-root answer **शोठिता** is not licensed by laghūpadha-guṇa7.3.86. Preserve canonical **शूठिता**; there is no source reason here to invalidate a canonical success or add the neighboring short-root answer.
+
+**372 jñā: recommend an exact public-identity hold.** The independently viewed SK1938 scan200, printed196, treats the ghaṭādi listing as a mit prescription on **jānāti**; Nyāsa6.4.92 explicitly identifies the underlying Kryādi jñā. The frozen public input instead presents a separate ordinary Bhvādi jñā. A mapped Kryādi interpretation licenses **जज्ञिव / जज्ञिवहे**, so this evidence does not establish that canonical **जज्ञिव** is ungrammatical. It establishes an unresolved public class/lexical-identity problem. Do not silently map the class or certify the model answer as wrong. Any source hold must apply to both providers, including canonical successes.
+
+An input-only scan finds exactly one selected task for each code01.0923 and01.0396. The JSON binds their exact citations, coordinates, prompt hashes, source hashes and mechanical contrast controls. No raw grade, key, input, or accounting was changed. The adjacent śrā placeholder is under Sagan’s separate review.

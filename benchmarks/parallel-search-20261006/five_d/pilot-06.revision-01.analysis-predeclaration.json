@@ -1,0 +1,114 @@
+{
+  "created_at": "2026-10-07T08:41:31.400203+00:00",
+  "task_sha256": "a8b97c0baffb0d02adcb1a1c3eaaf38b1a0983d4479660a32164260a09b10a1c",
+  "family_bootstrap_seed": 202610070906,
+  "family_bootstrap_replicates": 10000,
+  "primary": "Fixed600-question distribution: unweighted all-request and completion-conditioned scores in parallel; worst/best missing-response bounds.",
+  "original_mix_comparator": {
+    "target": "Pilot04 original recipe×tense×voice cells under v3",
+    "per_question_fixed_weights": {
+      "causative_of_intensive|Lun|Kartari": 0.6666666666666666,
+      "causative_of_intensive|Lat|Kartari": 0.8928571428571429,
+      "causative_of_intensive|Lat|Karmani": 2.272727272727273,
+      "causative_of_intensive|VidhiLin|Kartari": 0.8928571428571429,
+      "causative_of_intensive|VidhiLin|Karmani": 2.272727272727273,
+      "causative_of_intensive|Lit|Kartari": 1.3125,
+      "causative_of_intensive|Lut|Kartari": 0.9166666666666665,
+      "causative_of_intensive|Lut|Karmani": 2.5,
+      "causative_of_intensive|Lrt|Kartari": 0.9166666666666665,
+      "causative_of_intensive|Lrt|Karmani": 2.5,
+      "causative_of_intensive|Lot|Kartari": 0.982142857142857,
+      "causative_of_intensive|Lot|Karmani": 2.0833333333333335,
+      "causative_of_intensive|Lan|Kartari": 0.8333333333333334,
+      "causative_of_intensive|Lan|Karmani": 2.0833333333333335,
+      "causative_of_intensive|AshirLin|Kartari": 1.1904761904761905,
+      "causative_of_intensive|Lrn|Kartari": 1.25,
+      "causative_of_intensive_luk|Lun|Kartari": 0.6597222222222222,
+      "causative_of_intensive_luk|Lat|Kartari": 0.8333333333333334,
+      "causative_of_intensive_luk|Lat|Karmani": 2.5,
+      "causative_of_intensive_luk|VidhiLin|Kartari": 0.8333333333333334,
+      "causative_of_intensive_luk|VidhiLin|Karmani": 2.5,
+      "causative_of_intensive_luk|Lit|Kartari": 1.25,
+      "causative_of_intensive_luk|Lut|Kartari": 0.8333333333333334,
+      "causative_of_intensive_luk|Lut|Karmani": 2.5,
+      "causative_of_intensive_luk|Lrt|Kartari": 0.8333333333333334,
+      "causative_of_intensive_luk|Lrt|Karmani": 2.5,
+      "causative_of_intensive_luk|Lot|Kartari": 0.8333333333333334,
+      "causative_of_intensive_luk|Lot|Karmani": 2.5,
+      "causative_of_intensive_luk|Lan|Kartari": 1.0416666666666667,
+      "causative_of_intensive_luk|Lan|Karmani": 2.5,
+      "causative_of_intensive_luk|AshirLin|Kartari": 1.40625,
+      "causative_of_intensive_luk|Lrn|Kartari": 1.25,
+      "desiderative|Lun|Kartari": 0.6944444444444444,
+      "desiderative|Lat|Kartari": 1.25,
+      "desiderative|VidhiLin|Kartari": 1.25,
+      "desiderative|Lit|Kartari": 1.25,
+      "desiderative|Lut|Kartari": 1.25,
+      "desiderative|Lrt|Kartari": 1.25,
+      "desiderative|Lot|Kartari": 1.25,
+      "desiderative|Lan|Kartari": 1.25,
+      "desiderative|AshirLin|Kartari": 1.25,
+      "desiderative|Lrn|Kartari": 1.25
+    },
+    "warning": "The80.51% pooled completed forecast standardizes recipe×lakara×voice only. It DOES NOT adjust for changed class proportions, changed aorist-eligible family composition or historical family exposure; no class-invariance or randomized-comparability claim is made."
+  },
+  "prespecified_groups": [
+    "recipe",
+    "lakara",
+    "voice",
+    "gana",
+    "recipe by aorist/non-aorist",
+    "recipe by voice",
+    "recipe by lakara by voice"
+  ],
+  "decision_rule": "Keep this600-question panel unchanged after evaluation. Advance this grammar mixture as a candidate for an independent larger final evaluation only if audited all-request and completed Opus point estimates are both within79–81%, the worst/best missing-response bounds stay within79–81%, and disagreement audit leaves no unresolved validity issue in the retained scope. Otherwise do not claim target attainment; any further development uses a separately frozen grammar-defined plan and fresh tuples. No accuracy-based trimming, replacement, stopping, or reweighting can make this600-question panel qualify. Point-estimate passage is developmental and does not certify population accuracy or precision. Astra pairing is coordinator-controlled after the current pair settles and this mixture is promising.",
+  "uncertainty": "Family sandwich and10000 seeded whole-family bootstrap replicates, preserving both questions per family and zero-completion families. Also iid SE and class-stratified bootstrap sensitivity.600 is calibration and cannot establish sub1pp precision. Future final qualification must check both iid and family sandwich SE<.01 for both references.",
+  "no_questionwise_error_selection": true,
+  "benchmark_ready": false,
+  "oracle_policy": "oracle-policy-14",
+  "source_driven_revision": {
+    "created_at": "2026-10-07T08:41:31.396146+00:00",
+    "policy": "oracle-policy-14",
+    "original_task_sha256": "9151b8f4b9cf0d00014a869a5947a6f457b659ee80735c4c9b3dcceb673eef6f",
+    "revised_task_sha256": "a8b97c0baffb0d02adcb1a1c3eaaf38b1a0983d4479660a32164260a09b10a1c",
+    "replaced": [
+      {
+        "old_id": "cart5-2b8c7c8844df4c89a566438f",
+        "new_id": "cart5-cad7838bb86addb3fb231e1c",
+        "old_code": "01.0288",
+        "new_code": "01.0814",
+        "morphology": {
+          "lakara": "Lun",
+          "prayoga": "Kartari",
+          "purusha": "Uttama",
+          "vacana": "Eka"
+        },
+        "recipe": "causative_of_intensive_luk"
+      },
+      {
+        "old_id": "cart5-29e4eef7a8ff577a4c4aa282",
+        "new_id": "cart5-697ca425c48b9d90aaa1ceee",
+        "old_code": "01.0288",
+        "new_code": "01.0814",
+        "morphology": {
+          "lakara": "Lat",
+          "prayoga": "Kartari",
+          "purusha": "Madhyama",
+          "vacana": "Bahu"
+        },
+        "recipe": "causative_of_intensive"
+      }
+    ],
+    "unchanged_normalized_tuples": 598,
+    "seed": 202610070907,
+    "source_evidence": "pilot-06.luk-broader-source-review.json",
+    "candidate_rejections": {
+      "intensive_requires_consonant_initial_single_vowel_base": 20,
+      "traditional_nonusage_roch_shobh": 1,
+      "Unresolved rule interaction in nested intensive recipe": 3,
+      "Uncertified lexical mit transfer after non-am intensive-luk derivation": 1
+    },
+    "all_grammar_margins_unchanged": true,
+    "no_answers_used": true
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "received_at": "2026-10-06T21:39:21.323113+00:00",
+  "status_code": 200,
+  "headers": [
+    [
+      "date",
+      "Tue, 06 Oct 2026 21:39:21 GMT"
+    ],
+    [
+      "content-type",
+      "application/json"
+    ],
+    [
+      "transfer-encoding",
+      "chunked"
+    ],
+    [
+      "connection",
+      "keep-alive"
+    ],
+    [
+      "request-id",
+      "req_011Cfmi1Z3djXFiQHX4BVJdv"
+    ],
+    [
+      "strict-transport-security",
+      "max-age=31536000; includeSubDomains; preload"
+    ],
+    [
+      "anthropic-organization-id",
+      "0fde81a3-cf55-4b28-b7f3-29dce6450c62"
+    ],
+    [
+      "anthropic-workspace-id",
+      "wrkspc_01QuG1nXaXYnVUe6riiRe421"
+    ],
+    [
+      "server",
+      "cloudflare"
+    ],
+    [
+      "vary",
+      "Accept-Encoding"
+    ],
+    [
+      "content-security-policy",
+      "default-src 'none'; frame-ancestors 'none'"
+    ],
+    [
+      "server-timing",
+      "x-originResponse;dur=230"
+    ],
+    [
+      "cf-cache-status",
+      "DYNAMIC"
+    ],
+    [
+      "x-robots-tag",
+      "none"
+    ],
+    [
+      "content-encoding",
+      "gzip"
+    ],
+    [
+      "cf-ray",
+      "a467d1788f259657-SJC"
+    ]
+  ],
+  "body": {
+    "type": "model",
+    "id": "claude-opus-5-5",
+    "display_name": "Claude Opus 5.5",
+    "created_at": "2026-09-21T16:24:00Z",
+    "line": "opus",
+    "max_input_tokens": 1000000,
+    "max_tokens": 128000,
+    "capabilities": {
+      "batch": {
+        "supported": true
+      },
+      "citations": {
+        "supported": true
+      },
+      "code_execution": {
+        "supported": true
+      },
+      "context_management": {
+        "supported": true,
+        "clear_tool_uses_20250919": {
+          "supported": true
+        },
+        "clear_thinking_20251015": {
+          "supported": true
+        },
+        "compact_20260112": {
+          "supported": true
+        }
+      },
+      "effort": {
+        "supported": true,
+        "low": {
+          "supported": true
+        },
+        "medium": {
+          "supported": true
+        },
+        "high": {
+          "supported": true
+        },
+        "xhigh": {
+          "supported": true
+        },
+        "max": {
+          "supported": true
+        }
+      },
+      "image_input": {
+        "supported": true
+      },
+      "pdf_input": {
+        "supported": true
+      },
+      "structured_outputs": {
+        "supported": true
+      },
+      "thinking": {
+        "supported": true,
+        "types": {
+          "enabled": {
+            "supported": false
+          },
+          "adaptive": {
+            "supported": true
+          },
+          "disabled": {
+            "supported": false
+          }
+        }
+      }
+    }
+  }
+}

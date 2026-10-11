@@ -1,0 +1,45 @@
+{
+  "created_at": "2026-10-08T00:21:42.943012+00:00",
+  "decision": "aggregate_external_accounting_compatible_conditional_on_own_release_gates_and_legacy_submission_fence",
+  "implementation_review_pending": true,
+  "paid_calls": 0,
+  "ledger_or_frozen_source_mutations": false,
+  "synthetic_copy_checks": [
+    {
+      "provider": "Anthropic",
+      "baseline_micro": 311430394,
+      "protected_micro": 166840000,
+      "per_request_max_micro": 1316720,
+      "aggregate_liability_transitions_pass": true,
+      "legacy_collector_ignores_batch_id_none": true,
+      "phase_not_in_legacy_final_replay_guard": true
+    },
+    {
+      "provider": "OpenAI",
+      "baseline_micro": 801130500,
+      "protected_micro": 962500000,
+      "per_request_max_micro": 3291800,
+      "aggregate_liability_transitions_pass": true,
+      "legacy_collector_ignores_batch_id_none": true,
+      "phase_not_in_legacy_final_replay_guard": true
+    }
+  ],
+  "required_phase": "continuous_final_64k_v1",
+  "batch_id_always": null,
+  "liability_formula": "validated actuals + full maxima of every admitted request without validated terminal usage",
+  "phase_policy_must_remain_unchanged": true,
+  "old_pools_authorize_new_final_work": false,
+  "core_extension_enforced_by_new_driver": true,
+  "partial_scores_in_shared_ledger_forbidden": true,
+  "memo_sha256": "4e2f725940e19a1bf9a1e25134a7701754408dc8156f9eb2ec55236fd09ea409",
+  "inspected_source_hashes": {
+    "misc/vp_goal.py": "c317278d15f3a05e3948e22678a346cc33a7274122f9ac5f66ed082e3373b65d",
+    "misc/vp_goal_watch.py": "b21276c8cc47899fbb278477d17646401beeee98293fbd619cd11edd7321234f",
+    "misc/vp_goal_validate.py": "a5461df5d85dfd34875ece368ede87e957b7a70a10021667eb5b4f03af06791d",
+    "misc/vp_goal_analyze.py": "8eaeaee7646b5f5c6a0c1a9ef51e09515015ba7355f4c50dbad6222736ea7ac5",
+    "misc/vp_cartesian_analyze.py": "b905142522d127f61725d1dfa165da39bafdf5d860a5ff92b915ea468d17676b",
+    "misc/vp_parallel_monitor.py": "67c819ca3aa0067391688b0eac154a7c064401973e410bb1ba06edbddf29c4ea",
+    "misc/benchmark_forward.py": "1b9a921361c7b3051c7b28b060c76f0fece767cd121c9eea3409d385be4ed6b2",
+    "misc/vp_cartesian_visibility.py": "5347504654b6b3842104953f4c62424152bde56fb2c69a5cab2b4c4b42fbcc65"
+  }
+}

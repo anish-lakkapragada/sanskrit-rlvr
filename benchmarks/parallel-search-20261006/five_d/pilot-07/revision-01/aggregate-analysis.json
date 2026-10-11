@@ -1,0 +1,2727 @@
+{
+  "created_at": "2026-10-07T11:15:04.592378+00:00",
+  "panel": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/parallel-search-20261006/five_d/pilot-07/revision-01",
+  "fixed_n": 2400,
+  "analysis_predeclaration_sha256": "ac1f54b3ce256933699bea5581fe87ed0c1c5d0378f77e3981caf622a0dcb718",
+  "result_sources": [
+    {
+      "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-five-d-pilot-07-r1-a/results.json",
+      "sha256": "51e0bbe33a37b6b1b2988dd0533132e6cfa3c0420004b9eb8a2dd18bc45700a0"
+    },
+    {
+      "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-five-d-pilot-07-r1-b/results.json",
+      "sha256": "eb0f1f8a9f1403d0855dede6e9c6eec39d0a327b2bf3871f5874f9cc9722af2b"
+    }
+  ],
+  "current_scope_adapter_sha256": "71ac0dba20b386afa5832f4b66f7881ff76def4a53d33656d63bdcf21cc66902",
+  "raw": {
+    "statistics": {
+      "fixed_n": 2400,
+      "result_rows": 2400,
+      "all_results_present": true,
+      "unscored_results": 0,
+      "statuses": {
+        "completed": 2382,
+        "refused": 16,
+        "incomplete": 2
+      },
+      "truncated": 2,
+      "root_families": 606,
+      "families_per_class": {
+        "Adadi": 18,
+        "Bhvadi": 369,
+        "Curadi": 80,
+        "Divadi": 33,
+        "Juhotyadi": 2,
+        "Kryadi": 26,
+        "Rudhadi": 10,
+        "Svadi": 9,
+        "Tanadi": 2,
+        "Tudadi": 57
+      },
+      "all_request": {
+        "n": 2400,
+        "correct": 1854,
+        "accuracy": 0.7725,
+        "iid_standard_error": 0.008557252041397402,
+        "iid_wilson_95_interval": [
+          0.7553003752413785,
+          0.7888286875137394
+        ],
+        "root_cluster_sandwich_standard_error": 0.010921568112232365,
+        "family_bootstrap": {
+          "standard_error": 0.010876227680746642,
+          "percentile_95_interval": [
+            0.7511675312359805,
+            0.7935843121423032
+          ],
+          "valid_repetitions": 20000
+        },
+        "class_stratified_family_bootstrap": {
+          "standard_error": 0.010684457381475498,
+          "percentile_95_interval": [
+            0.7513580712134771,
+            0.7931893949550258
+          ],
+          "valid_repetitions": 20000
+        }
+      },
+      "completed_answer": {
+        "n": 2381,
+        "correct": 1854,
+        "accuracy": 0.7786644267114657,
+        "iid_standard_error": 0.00850787458660151,
+        "iid_wilson_95_interval": [
+          0.7615478216336469,
+          0.7948832967083674
+        ],
+        "root_cluster_sandwich_standard_error": 0.010758745416525889,
+        "family_bootstrap": {
+          "standard_error": 0.010711484021320985,
+          "percentile_95_interval": [
+            0.7576906474857945,
+            0.7995762711864407
+          ],
+          "valid_repetitions": 20000
+        },
+        "class_stratified_family_bootstrap": {
+          "standard_error": 0.010497571136199561,
+          "percentile_95_interval": [
+            0.7578900383189259,
+            0.7989130434782609
+          ],
+          "valid_repetitions": 20000
+        }
+      },
+      "missing_answer_accuracy_bounds": [
+        0.7725,
+        0.7804166666666666
+      ],
+      "bootstrap_repetitions": 20000,
+      "bootstrap_seed": 202610071107
+    },
+    "numerical_screen": false,
+    "strata": {
+      "gana::Adadi": {
+        "n": 88,
+        "correct": 69,
+        "all_request_accuracy": 0.7840909090909091,
+        "completed": 88,
+        "completed_correct": 69,
+        "completed_accuracy": 0.7840909090909091,
+        "completed_response_bounds_on_all_questions": [
+          0.7840909090909091,
+          0.7840909090909091
+        ],
+        "statuses": {
+          "completed": 88
+        },
+        "truncated": 0,
+        "families": 18
+      },
+      "gana::Bhvadi": {
+        "n": 1600,
+        "correct": 1220,
+        "all_request_accuracy": 0.7625,
+        "completed": 1585,
+        "completed_correct": 1220,
+        "completed_accuracy": 0.7697160883280757,
+        "completed_response_bounds_on_all_questions": [
+          0.7625,
+          0.771875
+        ],
+        "statuses": {
+          "completed": 1585,
+          "refused": 14,
+          "incomplete": 1
+        },
+        "truncated": 1,
+        "families": 369
+      },
+      "gana::Curadi": {
+        "n": 80,
+        "correct": 77,
+        "all_request_accuracy": 0.9625,
+        "completed": 79,
+        "completed_correct": 77,
+        "completed_accuracy": 0.9746835443037974,
+        "completed_response_bounds_on_all_questions": [
+          0.9625,
+          0.975
+        ],
+        "statuses": {
+          "completed": 79,
+          "refused": 1
+        },
+        "truncated": 0,
+        "families": 80
+      },
+      "gana::Divadi": {
+        "n": 168,
+        "correct": 131,
+        "all_request_accuracy": 0.7797619047619048,
+        "completed": 167,
+        "completed_correct": 131,
+        "completed_accuracy": 0.7844311377245509,
+        "completed_response_bounds_on_all_questions": [
+          0.7797619047619048,
+          0.7857142857142857
+        ],
+        "statuses": {
+          "completed": 167,
+          "incomplete": 1
+        },
+        "truncated": 1,
+        "families": 33
+      },
+      "gana::Juhotyadi": {
+        "n": 16,
+        "correct": 15,
+        "all_request_accuracy": 0.9375,
+        "completed": 16,
+        "completed_correct": 15,
+        "completed_accuracy": 0.9375,
+        "completed_response_bounds_on_all_questions": [
+          0.9375,
+          0.9375
+        ],
+        "statuses": {
+          "completed": 16
+        },
+        "truncated": 0,
+        "families": 2
+      },
+      "gana::Kryadi": {
+        "n": 112,
+        "correct": 78,
+        "all_request_accuracy": 0.6964285714285714,
+        "completed": 112,
+        "completed_correct": 78,
+        "completed_accuracy": 0.6964285714285714,
+        "completed_response_bounds_on_all_questions": [
+          0.6964285714285714,
+          0.6964285714285714
+        ],
+        "statuses": {
+          "completed": 112
+        },
+        "truncated": 0,
+        "families": 26
+      },
+      "gana::Rudhadi": {
+        "n": 48,
+        "correct": 44,
+        "all_request_accuracy": 0.9166666666666666,
+        "completed": 48,
+        "completed_correct": 44,
+        "completed_accuracy": 0.9166666666666666,
+        "completed_response_bounds_on_all_questions": [
+          0.9166666666666666,
+          0.9166666666666666
+        ],
+        "statuses": {
+          "completed": 48
+        },
+        "truncated": 0,
+        "families": 10
+      },
+      "gana::Svadi": {
+        "n": 32,
+        "correct": 27,
+        "all_request_accuracy": 0.84375,
+        "completed": 31,
+        "completed_correct": 27,
+        "completed_accuracy": 0.8709677419354839,
+        "completed_response_bounds_on_all_questions": [
+          0.84375,
+          0.875
+        ],
+        "statuses": {
+          "completed": 32
+        },
+        "truncated": 0,
+        "families": 9
+      },
+      "gana::Tanadi": {
+        "n": 16,
+        "correct": 7,
+        "all_request_accuracy": 0.4375,
+        "completed": 16,
+        "completed_correct": 7,
+        "completed_accuracy": 0.4375,
+        "completed_response_bounds_on_all_questions": [
+          0.4375,
+          0.4375
+        ],
+        "statuses": {
+          "completed": 16
+        },
+        "truncated": 0,
+        "families": 2
+      },
+      "gana::Tudadi": {
+        "n": 240,
+        "correct": 186,
+        "all_request_accuracy": 0.775,
+        "completed": 239,
+        "completed_correct": 186,
+        "completed_accuracy": 0.7782426778242678,
+        "completed_response_bounds_on_all_questions": [
+          0.775,
+          0.7791666666666667
+        ],
+        "statuses": {
+          "completed": 239,
+          "refused": 1
+        },
+        "truncated": 0,
+        "families": 57
+      },
+      "lakara::AshirLin": {
+        "n": 124,
+        "correct": 114,
+        "all_request_accuracy": 0.9193548387096774,
+        "completed": 124,
+        "completed_correct": 114,
+        "completed_accuracy": 0.9193548387096774,
+        "completed_response_bounds_on_all_questions": [
+          0.9193548387096774,
+          0.9193548387096774
+        ],
+        "statuses": {
+          "completed": 124
+        },
+        "truncated": 0,
+        "families": 124
+      },
+      "lakara::Lan": {
+        "n": 124,
+        "correct": 115,
+        "all_request_accuracy": 0.9274193548387096,
+        "completed": 124,
+        "completed_correct": 115,
+        "completed_accuracy": 0.9274193548387096,
+        "completed_response_bounds_on_all_questions": [
+          0.9274193548387096,
+          0.9274193548387096
+        ],
+        "statuses": {
+          "completed": 124
+        },
+        "truncated": 0,
+        "families": 124
+      },
+      "lakara::Lat": {
+        "n": 236,
+        "correct": 223,
+        "all_request_accuracy": 0.9449152542372882,
+        "completed": 235,
+        "completed_correct": 223,
+        "completed_accuracy": 0.948936170212766,
+        "completed_response_bounds_on_all_questions": [
+          0.9449152542372882,
+          0.9491525423728814
+        ],
+        "statuses": {
+          "completed": 235,
+          "refused": 1
+        },
+        "truncated": 0,
+        "families": 236
+      },
+      "lakara::Lit": {
+        "n": 120,
+        "correct": 108,
+        "all_request_accuracy": 0.9,
+        "completed": 118,
+        "completed_correct": 108,
+        "completed_accuracy": 0.9152542372881356,
+        "completed_response_bounds_on_all_questions": [
+          0.9,
+          0.9166666666666666
+        ],
+        "statuses": {
+          "completed": 118,
+          "incomplete": 1,
+          "refused": 1
+        },
+        "truncated": 1,
+        "families": 120
+      },
+      "lakara::Lot": {
+        "n": 120,
+        "correct": 103,
+        "all_request_accuracy": 0.8583333333333333,
+        "completed": 118,
+        "completed_correct": 103,
+        "completed_accuracy": 0.8728813559322034,
+        "completed_response_bounds_on_all_questions": [
+          0.8583333333333333,
+          0.875
+        ],
+        "statuses": {
+          "completed": 119,
+          "refused": 1
+        },
+        "truncated": 0,
+        "families": 120
+      },
+      "lakara::Lrn": {
+        "n": 120,
+        "correct": 104,
+        "all_request_accuracy": 0.8666666666666667,
+        "completed": 120,
+        "completed_correct": 104,
+        "completed_accuracy": 0.8666666666666667,
+        "completed_response_bounds_on_all_questions": [
+          0.8666666666666667,
+          0.8666666666666667
+        ],
+        "statuses": {
+          "completed": 120
+        },
+        "truncated": 0,
+        "families": 120
+      },
+      "lakara::Lrt": {
+        "n": 120,
+        "correct": 105,
+        "all_request_accuracy": 0.875,
+        "completed": 120,
+        "completed_correct": 105,
+        "completed_accuracy": 0.875,
+        "completed_response_bounds_on_all_questions": [
+          0.875,
+          0.875
+        ],
+        "statuses": {
+          "completed": 120
+        },
+        "truncated": 0,
+        "families": 120
+      },
+      "lakara::Lun": {
+        "n": 1080,
+        "correct": 654,
+        "all_request_accuracy": 0.6055555555555555,
+        "completed": 1066,
+        "completed_correct": 654,
+        "completed_accuracy": 0.6135084427767354,
+        "completed_response_bounds_on_all_questions": [
+          0.6055555555555555,
+          0.6185185185185185
+        ],
+        "statuses": {
+          "completed": 1066,
+          "refused": 13,
+          "incomplete": 1
+        },
+        "truncated": 1,
+        "families": 382
+      },
+      "lakara::Lut": {
+        "n": 120,
+        "correct": 107,
+        "all_request_accuracy": 0.8916666666666667,
+        "completed": 120,
+        "completed_correct": 107,
+        "completed_accuracy": 0.8916666666666667,
+        "completed_response_bounds_on_all_questions": [
+          0.8916666666666667,
+          0.8916666666666667
+        ],
+        "statuses": {
+          "completed": 120
+        },
+        "truncated": 0,
+        "families": 120
+      },
+      "lakara::VidhiLin": {
+        "n": 236,
+        "correct": 221,
+        "all_request_accuracy": 0.9364406779661016,
+        "completed": 236,
+        "completed_correct": 221,
+        "completed_accuracy": 0.9364406779661016,
+        "completed_response_bounds_on_all_questions": [
+          0.9364406779661016,
+          0.9364406779661016
+        ],
+        "statuses": {
+          "completed": 236
+        },
+        "truncated": 0,
+        "families": 236
+      },
+      "recipe::causative_of_intensive": {
+        "n": 1600,
+        "correct": 1229,
+        "all_request_accuracy": 0.768125,
+        "completed": 1585,
+        "completed_correct": 1229,
+        "completed_accuracy": 0.7753943217665615,
+        "completed_response_bounds_on_all_questions": [
+          0.768125,
+          0.7775
+        ],
+        "statuses": {
+          "completed": 1586,
+          "refused": 12,
+          "incomplete": 2
+        },
+        "truncated": 2,
+        "families": 472
+      },
+      "recipe::causative_of_intensive_luk": {
+        "n": 640,
+        "correct": 474,
+        "all_request_accuracy": 0.740625,
+        "completed": 638,
+        "completed_correct": 474,
+        "completed_accuracy": 0.7429467084639498,
+        "completed_response_bounds_on_all_questions": [
+          0.740625,
+          0.74375
+        ],
+        "statuses": {
+          "completed": 638,
+          "refused": 2
+        },
+        "truncated": 0,
+        "families": 303
+      },
+      "recipe::desiderative": {
+        "n": 160,
+        "correct": 151,
+        "all_request_accuracy": 0.94375,
+        "completed": 158,
+        "completed_correct": 151,
+        "completed_accuracy": 0.9556962025316456,
+        "completed_response_bounds_on_all_questions": [
+          0.94375,
+          0.95625
+        ],
+        "statuses": {
+          "completed": 158,
+          "refused": 2
+        },
+        "truncated": 0,
+        "families": 120
+      },
+      "recipe_lakara_voice::causative_of_intensive_luk|AshirLin|Kartari": {
+        "n": 32,
+        "correct": 30,
+        "all_request_accuracy": 0.9375,
+        "completed": 32,
+        "completed_correct": 30,
+        "completed_accuracy": 0.9375,
+        "completed_response_bounds_on_all_questions": [
+          0.9375,
+          0.9375
+        ],
+        "statuses": {
+          "completed": 32
+        },
+        "truncated": 0,
+        "families": 32
+      },
+      "recipe_lakara_voice::causative_of_intensive_luk|Lan|Karmani": {
+        "n": 8,
+        "correct": 8,
+        "all_request_accuracy": 1.0,
+        "completed": 8,
+        "completed_correct": 8,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 8
+        },
+        "truncated": 0,
+        "families": 8
+      },
+      "recipe_lakara_voice::causative_of_intensive_luk|Lan|Kartari": {
+        "n": 24,
+        "correct": 23,
+        "all_request_accuracy": 0.9583333333333334,
+        "completed": 24,
+        "completed_correct": 23,
+        "completed_accuracy": 0.9583333333333334,
+        "completed_response_bounds_on_all_questions": [
+          0.9583333333333334,
+          0.9583333333333334
+        ],
+        "statuses": {
+          "completed": 24
+        },
+        "truncated": 0,
+        "families": 24
+      },
+      "recipe_lakara_voice::causative_of_intensive_luk|Lat|Karmani": {
+        "n": 16,
+        "correct": 16,
+        "all_request_accuracy": 1.0,
+        "completed": 16,
+        "completed_correct": 16,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 16
+        },
+        "truncated": 0,
+        "families": 16
+      },
+      "recipe_lakara_voice::causative_of_intensive_luk|Lat|Kartari": {
+        "n": 48,
+        "correct": 47,
+        "all_request_accuracy": 0.9791666666666666,
+        "completed": 48,
+        "completed_correct": 47,
+        "completed_accuracy": 0.9791666666666666,
+        "completed_response_bounds_on_all_questions": [
+          0.9791666666666666,
+          0.9791666666666666
+        ],
+        "statuses": {
+          "completed": 48
+        },
+        "truncated": 0,
+        "families": 48
+      },
+      "recipe_lakara_voice::causative_of_intensive_luk|Lit|Kartari": {
+        "n": 32,
+        "correct": 32,
+        "all_request_accuracy": 1.0,
+        "completed": 32,
+        "completed_correct": 32,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 32
+        },
+        "truncated": 0,
+        "families": 32
+      },
+      "recipe_lakara_voice::causative_of_intensive_luk|Lot|Karmani": {
+        "n": 8,
+        "correct": 8,
+        "all_request_accuracy": 1.0,
+        "completed": 8,
+        "completed_correct": 8,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 8
+        },
+        "truncated": 0,
+        "families": 8
+      },
+      "recipe_lakara_voice::causative_of_intensive_luk|Lot|Kartari": {
+        "n": 24,
+        "correct": 19,
+        "all_request_accuracy": 0.7916666666666666,
+        "completed": 24,
+        "completed_correct": 19,
+        "completed_accuracy": 0.7916666666666666,
+        "completed_response_bounds_on_all_questions": [
+          0.7916666666666666,
+          0.7916666666666666
+        ],
+        "statuses": {
+          "completed": 24
+        },
+        "truncated": 0,
+        "families": 24
+      },
+      "recipe_lakara_voice::causative_of_intensive_luk|Lrn|Kartari": {
+        "n": 32,
+        "correct": 30,
+        "all_request_accuracy": 0.9375,
+        "completed": 32,
+        "completed_correct": 30,
+        "completed_accuracy": 0.9375,
+        "completed_response_bounds_on_all_questions": [
+          0.9375,
+          0.9375
+        ],
+        "statuses": {
+          "completed": 32
+        },
+        "truncated": 0,
+        "families": 32
+      },
+      "recipe_lakara_voice::causative_of_intensive_luk|Lrt|Karmani": {
+        "n": 8,
+        "correct": 7,
+        "all_request_accuracy": 0.875,
+        "completed": 8,
+        "completed_correct": 7,
+        "completed_accuracy": 0.875,
+        "completed_response_bounds_on_all_questions": [
+          0.875,
+          0.875
+        ],
+        "statuses": {
+          "completed": 8
+        },
+        "truncated": 0,
+        "families": 8
+      },
+      "recipe_lakara_voice::causative_of_intensive_luk|Lrt|Kartari": {
+        "n": 24,
+        "correct": 23,
+        "all_request_accuracy": 0.9583333333333334,
+        "completed": 24,
+        "completed_correct": 23,
+        "completed_accuracy": 0.9583333333333334,
+        "completed_response_bounds_on_all_questions": [
+          0.9583333333333334,
+          0.9583333333333334
+        ],
+        "statuses": {
+          "completed": 24
+        },
+        "truncated": 0,
+        "families": 24
+      },
+      "recipe_lakara_voice::causative_of_intensive_luk|Lun|Kartari": {
+        "n": 288,
+        "correct": 141,
+        "all_request_accuracy": 0.4895833333333333,
+        "completed": 286,
+        "completed_correct": 141,
+        "completed_accuracy": 0.493006993006993,
+        "completed_response_bounds_on_all_questions": [
+          0.4895833333333333,
+          0.4965277777777778
+        ],
+        "statuses": {
+          "completed": 286,
+          "refused": 2
+        },
+        "truncated": 0,
+        "families": 106
+      },
+      "recipe_lakara_voice::causative_of_intensive_luk|Lut|Karmani": {
+        "n": 8,
+        "correct": 8,
+        "all_request_accuracy": 1.0,
+        "completed": 8,
+        "completed_correct": 8,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 8
+        },
+        "truncated": 0,
+        "families": 8
+      },
+      "recipe_lakara_voice::causative_of_intensive_luk|Lut|Kartari": {
+        "n": 24,
+        "correct": 22,
+        "all_request_accuracy": 0.9166666666666666,
+        "completed": 24,
+        "completed_correct": 22,
+        "completed_accuracy": 0.9166666666666666,
+        "completed_response_bounds_on_all_questions": [
+          0.9166666666666666,
+          0.9166666666666666
+        ],
+        "statuses": {
+          "completed": 24
+        },
+        "truncated": 0,
+        "families": 24
+      },
+      "recipe_lakara_voice::causative_of_intensive_luk|VidhiLin|Karmani": {
+        "n": 16,
+        "correct": 15,
+        "all_request_accuracy": 0.9375,
+        "completed": 16,
+        "completed_correct": 15,
+        "completed_accuracy": 0.9375,
+        "completed_response_bounds_on_all_questions": [
+          0.9375,
+          0.9375
+        ],
+        "statuses": {
+          "completed": 16
+        },
+        "truncated": 0,
+        "families": 16
+      },
+      "recipe_lakara_voice::causative_of_intensive_luk|VidhiLin|Kartari": {
+        "n": 48,
+        "correct": 45,
+        "all_request_accuracy": 0.9375,
+        "completed": 48,
+        "completed_correct": 45,
+        "completed_accuracy": 0.9375,
+        "completed_response_bounds_on_all_questions": [
+          0.9375,
+          0.9375
+        ],
+        "statuses": {
+          "completed": 48
+        },
+        "truncated": 0,
+        "families": 48
+      },
+      "recipe_lakara_voice::causative_of_intensive|AshirLin|Kartari": {
+        "n": 84,
+        "correct": 76,
+        "all_request_accuracy": 0.9047619047619048,
+        "completed": 84,
+        "completed_correct": 76,
+        "completed_accuracy": 0.9047619047619048,
+        "completed_response_bounds_on_all_questions": [
+          0.9047619047619048,
+          0.9047619047619048
+        ],
+        "statuses": {
+          "completed": 84
+        },
+        "truncated": 0,
+        "families": 84
+      },
+      "recipe_lakara_voice::causative_of_intensive|Lan|Karmani": {
+        "n": 24,
+        "correct": 22,
+        "all_request_accuracy": 0.9166666666666666,
+        "completed": 24,
+        "completed_correct": 22,
+        "completed_accuracy": 0.9166666666666666,
+        "completed_response_bounds_on_all_questions": [
+          0.9166666666666666,
+          0.9166666666666666
+        ],
+        "statuses": {
+          "completed": 24
+        },
+        "truncated": 0,
+        "families": 24
+      },
+      "recipe_lakara_voice::causative_of_intensive|Lan|Kartari": {
+        "n": 60,
+        "correct": 55,
+        "all_request_accuracy": 0.9166666666666666,
+        "completed": 60,
+        "completed_correct": 55,
+        "completed_accuracy": 0.9166666666666666,
+        "completed_response_bounds_on_all_questions": [
+          0.9166666666666666,
+          0.9166666666666666
+        ],
+        "statuses": {
+          "completed": 60
+        },
+        "truncated": 0,
+        "families": 60
+      },
+      "recipe_lakara_voice::causative_of_intensive|Lat|Karmani": {
+        "n": 44,
+        "correct": 43,
+        "all_request_accuracy": 0.9772727272727273,
+        "completed": 44,
+        "completed_correct": 43,
+        "completed_accuracy": 0.9772727272727273,
+        "completed_response_bounds_on_all_questions": [
+          0.9772727272727273,
+          0.9772727272727273
+        ],
+        "statuses": {
+          "completed": 44
+        },
+        "truncated": 0,
+        "families": 44
+      },
+      "recipe_lakara_voice::causative_of_intensive|Lat|Kartari": {
+        "n": 112,
+        "correct": 101,
+        "all_request_accuracy": 0.9017857142857143,
+        "completed": 111,
+        "completed_correct": 101,
+        "completed_accuracy": 0.9099099099099099,
+        "completed_response_bounds_on_all_questions": [
+          0.9017857142857143,
+          0.9107142857142857
+        ],
+        "statuses": {
+          "completed": 111,
+          "refused": 1
+        },
+        "truncated": 0,
+        "families": 112
+      },
+      "recipe_lakara_voice::causative_of_intensive|Lit|Kartari": {
+        "n": 80,
+        "correct": 68,
+        "all_request_accuracy": 0.85,
+        "completed": 78,
+        "completed_correct": 68,
+        "completed_accuracy": 0.8717948717948718,
+        "completed_response_bounds_on_all_questions": [
+          0.85,
+          0.875
+        ],
+        "statuses": {
+          "completed": 78,
+          "incomplete": 1,
+          "refused": 1
+        },
+        "truncated": 1,
+        "families": 80
+      },
+      "recipe_lakara_voice::causative_of_intensive|Lot|Karmani": {
+        "n": 24,
+        "correct": 22,
+        "all_request_accuracy": 0.9166666666666666,
+        "completed": 24,
+        "completed_correct": 22,
+        "completed_accuracy": 0.9166666666666666,
+        "completed_response_bounds_on_all_questions": [
+          0.9166666666666666,
+          0.9166666666666666
+        ],
+        "statuses": {
+          "completed": 24
+        },
+        "truncated": 0,
+        "families": 24
+      },
+      "recipe_lakara_voice::causative_of_intensive|Lot|Kartari": {
+        "n": 56,
+        "correct": 48,
+        "all_request_accuracy": 0.8571428571428571,
+        "completed": 55,
+        "completed_correct": 48,
+        "completed_accuracy": 0.8727272727272727,
+        "completed_response_bounds_on_all_questions": [
+          0.8571428571428571,
+          0.875
+        ],
+        "statuses": {
+          "completed": 56
+        },
+        "truncated": 0,
+        "families": 56
+      },
+      "recipe_lakara_voice::causative_of_intensive|Lrn|Kartari": {
+        "n": 80,
+        "correct": 66,
+        "all_request_accuracy": 0.825,
+        "completed": 80,
+        "completed_correct": 66,
+        "completed_accuracy": 0.825,
+        "completed_response_bounds_on_all_questions": [
+          0.825,
+          0.825
+        ],
+        "statuses": {
+          "completed": 80
+        },
+        "truncated": 0,
+        "families": 80
+      },
+      "recipe_lakara_voice::causative_of_intensive|Lrt|Karmani": {
+        "n": 20,
+        "correct": 17,
+        "all_request_accuracy": 0.85,
+        "completed": 20,
+        "completed_correct": 17,
+        "completed_accuracy": 0.85,
+        "completed_response_bounds_on_all_questions": [
+          0.85,
+          0.85
+        ],
+        "statuses": {
+          "completed": 20
+        },
+        "truncated": 0,
+        "families": 20
+      },
+      "recipe_lakara_voice::causative_of_intensive|Lrt|Kartari": {
+        "n": 60,
+        "correct": 50,
+        "all_request_accuracy": 0.8333333333333334,
+        "completed": 60,
+        "completed_correct": 50,
+        "completed_accuracy": 0.8333333333333334,
+        "completed_response_bounds_on_all_questions": [
+          0.8333333333333334,
+          0.8333333333333334
+        ],
+        "statuses": {
+          "completed": 60
+        },
+        "truncated": 0,
+        "families": 60
+      },
+      "recipe_lakara_voice::causative_of_intensive|Lun|Kartari": {
+        "n": 720,
+        "correct": 445,
+        "all_request_accuracy": 0.6180555555555556,
+        "completed": 709,
+        "completed_correct": 445,
+        "completed_accuracy": 0.6276445698166432,
+        "completed_response_bounds_on_all_questions": [
+          0.6180555555555556,
+          0.6333333333333333
+        ],
+        "statuses": {
+          "completed": 709,
+          "refused": 10,
+          "incomplete": 1
+        },
+        "truncated": 1,
+        "families": 235
+      },
+      "recipe_lakara_voice::causative_of_intensive|Lut|Karmani": {
+        "n": 20,
+        "correct": 17,
+        "all_request_accuracy": 0.85,
+        "completed": 20,
+        "completed_correct": 17,
+        "completed_accuracy": 0.85,
+        "completed_response_bounds_on_all_questions": [
+          0.85,
+          0.85
+        ],
+        "statuses": {
+          "completed": 20
+        },
+        "truncated": 0,
+        "families": 20
+      },
+      "recipe_lakara_voice::causative_of_intensive|Lut|Kartari": {
+        "n": 60,
+        "correct": 52,
+        "all_request_accuracy": 0.8666666666666667,
+        "completed": 60,
+        "completed_correct": 52,
+        "completed_accuracy": 0.8666666666666667,
+        "completed_response_bounds_on_all_questions": [
+          0.8666666666666667,
+          0.8666666666666667
+        ],
+        "statuses": {
+          "completed": 60
+        },
+        "truncated": 0,
+        "families": 60
+      },
+      "recipe_lakara_voice::causative_of_intensive|VidhiLin|Karmani": {
+        "n": 44,
+        "correct": 42,
+        "all_request_accuracy": 0.9545454545454546,
+        "completed": 44,
+        "completed_correct": 42,
+        "completed_accuracy": 0.9545454545454546,
+        "completed_response_bounds_on_all_questions": [
+          0.9545454545454546,
+          0.9545454545454546
+        ],
+        "statuses": {
+          "completed": 44
+        },
+        "truncated": 0,
+        "families": 44
+      },
+      "recipe_lakara_voice::causative_of_intensive|VidhiLin|Kartari": {
+        "n": 112,
+        "correct": 105,
+        "all_request_accuracy": 0.9375,
+        "completed": 112,
+        "completed_correct": 105,
+        "completed_accuracy": 0.9375,
+        "completed_response_bounds_on_all_questions": [
+          0.9375,
+          0.9375
+        ],
+        "statuses": {
+          "completed": 112
+        },
+        "truncated": 0,
+        "families": 112
+      },
+      "recipe_lakara_voice::desiderative|AshirLin|Kartari": {
+        "n": 8,
+        "correct": 8,
+        "all_request_accuracy": 1.0,
+        "completed": 8,
+        "completed_correct": 8,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 8
+        },
+        "truncated": 0,
+        "families": 8
+      },
+      "recipe_lakara_voice::desiderative|Lan|Kartari": {
+        "n": 8,
+        "correct": 7,
+        "all_request_accuracy": 0.875,
+        "completed": 8,
+        "completed_correct": 7,
+        "completed_accuracy": 0.875,
+        "completed_response_bounds_on_all_questions": [
+          0.875,
+          0.875
+        ],
+        "statuses": {
+          "completed": 8
+        },
+        "truncated": 0,
+        "families": 8
+      },
+      "recipe_lakara_voice::desiderative|Lat|Kartari": {
+        "n": 16,
+        "correct": 16,
+        "all_request_accuracy": 1.0,
+        "completed": 16,
+        "completed_correct": 16,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 16
+        },
+        "truncated": 0,
+        "families": 16
+      },
+      "recipe_lakara_voice::desiderative|Lit|Kartari": {
+        "n": 8,
+        "correct": 8,
+        "all_request_accuracy": 1.0,
+        "completed": 8,
+        "completed_correct": 8,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 8
+        },
+        "truncated": 0,
+        "families": 8
+      },
+      "recipe_lakara_voice::desiderative|Lot|Kartari": {
+        "n": 8,
+        "correct": 6,
+        "all_request_accuracy": 0.75,
+        "completed": 7,
+        "completed_correct": 6,
+        "completed_accuracy": 0.8571428571428571,
+        "completed_response_bounds_on_all_questions": [
+          0.75,
+          0.875
+        ],
+        "statuses": {
+          "completed": 7,
+          "refused": 1
+        },
+        "truncated": 0,
+        "families": 8
+      },
+      "recipe_lakara_voice::desiderative|Lrn|Kartari": {
+        "n": 8,
+        "correct": 8,
+        "all_request_accuracy": 1.0,
+        "completed": 8,
+        "completed_correct": 8,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 8
+        },
+        "truncated": 0,
+        "families": 8
+      },
+      "recipe_lakara_voice::desiderative|Lrt|Kartari": {
+        "n": 8,
+        "correct": 8,
+        "all_request_accuracy": 1.0,
+        "completed": 8,
+        "completed_correct": 8,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 8
+        },
+        "truncated": 0,
+        "families": 8
+      },
+      "recipe_lakara_voice::desiderative|Lun|Kartari": {
+        "n": 72,
+        "correct": 68,
+        "all_request_accuracy": 0.9444444444444444,
+        "completed": 71,
+        "completed_correct": 68,
+        "completed_accuracy": 0.9577464788732394,
+        "completed_response_bounds_on_all_questions": [
+          0.9444444444444444,
+          0.9583333333333334
+        ],
+        "statuses": {
+          "completed": 71,
+          "refused": 1
+        },
+        "truncated": 0,
+        "families": 72
+      },
+      "recipe_lakara_voice::desiderative|Lut|Kartari": {
+        "n": 8,
+        "correct": 8,
+        "all_request_accuracy": 1.0,
+        "completed": 8,
+        "completed_correct": 8,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 8
+        },
+        "truncated": 0,
+        "families": 8
+      },
+      "recipe_lakara_voice::desiderative|VidhiLin|Kartari": {
+        "n": 16,
+        "correct": 14,
+        "all_request_accuracy": 0.875,
+        "completed": 16,
+        "completed_correct": 14,
+        "completed_accuracy": 0.875,
+        "completed_response_bounds_on_all_questions": [
+          0.875,
+          0.875
+        ],
+        "statuses": {
+          "completed": 16
+        },
+        "truncated": 0,
+        "families": 16
+      },
+      "same_recipe_exposure::new_recipe_for_exposed_family": {
+        "n": 501,
+        "correct": 426,
+        "all_request_accuracy": 0.8502994011976048,
+        "completed": 499,
+        "completed_correct": 426,
+        "completed_accuracy": 0.8537074148296593,
+        "completed_response_bounds_on_all_questions": [
+          0.8502994011976048,
+          0.8542914171656687
+        ],
+        "statuses": {
+          "completed": 499,
+          "refused": 2
+        },
+        "truncated": 0,
+        "families": 251
+      },
+      "same_recipe_exposure::previously_exposed": {
+        "n": 1899,
+        "correct": 1428,
+        "all_request_accuracy": 0.7519747235387045,
+        "completed": 1882,
+        "completed_correct": 1428,
+        "completed_accuracy": 0.7587672688629118,
+        "completed_response_bounds_on_all_questions": [
+          0.7519747235387045,
+          0.760926803580832
+        ],
+        "statuses": {
+          "completed": 1883,
+          "refused": 14,
+          "incomplete": 2
+        },
+        "truncated": 2,
+        "families": 483
+      },
+      "voice::Karmani": {
+        "n": 240,
+        "correct": 225,
+        "all_request_accuracy": 0.9375,
+        "completed": 240,
+        "completed_correct": 225,
+        "completed_accuracy": 0.9375,
+        "completed_response_bounds_on_all_questions": [
+          0.9375,
+          0.9375
+        ],
+        "statuses": {
+          "completed": 240
+        },
+        "truncated": 0,
+        "families": 187
+      },
+      "voice::Kartari": {
+        "n": 2160,
+        "correct": 1629,
+        "all_request_accuracy": 0.7541666666666667,
+        "completed": 2141,
+        "completed_correct": 1629,
+        "completed_accuracy": 0.760859411489958,
+        "completed_response_bounds_on_all_questions": [
+          0.7541666666666667,
+          0.762962962962963
+        ],
+        "statuses": {
+          "completed": 2142,
+          "refused": 16,
+          "incomplete": 2
+        },
+        "truncated": 2,
+        "families": 606
+      }
+    },
+    "family_load_histogram": {
+      "4": 221,
+      "5": 242,
+      "1": 80,
+      "6": 19,
+      "8": 4,
+      "2": 40
+    },
+    "family_aorist_load_histogram": {
+      "0": 224,
+      "4": 70,
+      "3": 96,
+      "1": 94,
+      "5": 58,
+      "2": 64
+    },
+    "pair_diagnostics": {
+      "both_non_Lun": {
+        "all_pairs": 1484,
+        "jointly_usable_pairs": 1475,
+        "all/11": 1218,
+        "usable/11": 1218,
+        "all/10": 87,
+        "usable/10": 83,
+        "all/01": 133,
+        "usable/01": 128,
+        "all/00": 46,
+        "usable/00": 46
+      },
+      "both_Lun": {
+        "all_pairs": 1352,
+        "jointly_usable_pairs": 1323,
+        "all/11": 515,
+        "usable/11": 515,
+        "all/01": 286,
+        "usable/01": 283,
+        "all/00": 288,
+        "usable/00": 266,
+        "all/10": 263,
+        "usable/10": 259
+      },
+      "mixed_Lun_other": {
+        "all_pairs": 1347,
+        "jointly_usable_pairs": 1331,
+        "all/11": 758,
+        "usable/11": 758,
+        "all/10": 269,
+        "usable/10": 264,
+        "all/01": 265,
+        "usable/01": 258,
+        "all/00": 55,
+        "usable/00": 51
+      }
+    },
+    "caveat": "Pair tables overlap within families and are descriptive; they are not additional independent samples."
+  },
+  "current_scope_supplement": {
+    "statistics": {
+      "fixed_n": 2400,
+      "result_rows": 2400,
+      "all_results_present": true,
+      "unscored_results": 0,
+      "statuses": {
+        "completed": 2382,
+        "refused": 16,
+        "incomplete": 2
+      },
+      "truncated": 2,
+      "root_families": 606,
+      "families_per_class": {
+        "Adadi": 18,
+        "Bhvadi": 369,
+        "Curadi": 80,
+        "Divadi": 33,
+        "Juhotyadi": 2,
+        "Kryadi": 26,
+        "Rudhadi": 10,
+        "Svadi": 9,
+        "Tanadi": 2,
+        "Tudadi": 57
+      },
+      "all_request": {
+        "n": 2400,
+        "correct": 1854,
+        "accuracy": 0.7725,
+        "iid_standard_error": 0.008557252041397402,
+        "iid_wilson_95_interval": [
+          0.7553003752413785,
+          0.7888286875137394
+        ],
+        "root_cluster_sandwich_standard_error": 0.010921568112232365,
+        "family_bootstrap": {
+          "standard_error": 0.010876227680746642,
+          "percentile_95_interval": [
+            0.7511675312359805,
+            0.7935843121423032
+          ],
+          "valid_repetitions": 20000
+        },
+        "class_stratified_family_bootstrap": {
+          "standard_error": 0.010684457381475498,
+          "percentile_95_interval": [
+            0.7513580712134771,
+            0.7931893949550258
+          ],
+          "valid_repetitions": 20000
+        }
+      },
+      "completed_answer": {
+        "n": 2381,
+        "correct": 1854,
+        "accuracy": 0.7786644267114657,
+        "iid_standard_error": 0.00850787458660151,
+        "iid_wilson_95_interval": [
+          0.7615478216336469,
+          0.7948832967083674
+        ],
+        "root_cluster_sandwich_standard_error": 0.010758745416525889,
+        "family_bootstrap": {
+          "standard_error": 0.010711484021320985,
+          "percentile_95_interval": [
+            0.7576906474857945,
+            0.7995762711864407
+          ],
+          "valid_repetitions": 20000
+        },
+        "class_stratified_family_bootstrap": {
+          "standard_error": 0.010497571136199561,
+          "percentile_95_interval": [
+            0.7578900383189259,
+            0.7989130434782609
+          ],
+          "valid_repetitions": 20000
+        }
+      },
+      "missing_answer_accuracy_bounds": [
+        0.7725,
+        0.7804166666666666
+      ],
+      "bootstrap_repetitions": 20000,
+      "bootstrap_seed": 202610071107
+    },
+    "numerical_screen": false,
+    "strata": {
+      "gana::Adadi": {
+        "n": 88,
+        "correct": 69,
+        "all_request_accuracy": 0.7840909090909091,
+        "completed": 88,
+        "completed_correct": 69,
+        "completed_accuracy": 0.7840909090909091,
+        "completed_response_bounds_on_all_questions": [
+          0.7840909090909091,
+          0.7840909090909091
+        ],
+        "statuses": {
+          "completed": 88
+        },
+        "truncated": 0,
+        "families": 18
+      },
+      "gana::Bhvadi": {
+        "n": 1600,
+        "correct": 1220,
+        "all_request_accuracy": 0.7625,
+        "completed": 1585,
+        "completed_correct": 1220,
+        "completed_accuracy": 0.7697160883280757,
+        "completed_response_bounds_on_all_questions": [
+          0.7625,
+          0.771875
+        ],
+        "statuses": {
+          "completed": 1585,
+          "refused": 14,
+          "incomplete": 1
+        },
+        "truncated": 1,
+        "families": 369
+      },
+      "gana::Curadi": {
+        "n": 80,
+        "correct": 77,
+        "all_request_accuracy": 0.9625,
+        "completed": 79,
+        "completed_correct": 77,
+        "completed_accuracy": 0.9746835443037974,
+        "completed_response_bounds_on_all_questions": [
+          0.9625,
+          0.975
+        ],
+        "statuses": {
+          "completed": 79,
+          "refused": 1
+        },
+        "truncated": 0,
+        "families": 80
+      },
+      "gana::Divadi": {
+        "n": 168,
+        "correct": 131,
+        "all_request_accuracy": 0.7797619047619048,
+        "completed": 167,
+        "completed_correct": 131,
+        "completed_accuracy": 0.7844311377245509,
+        "completed_response_bounds_on_all_questions": [
+          0.7797619047619048,
+          0.7857142857142857
+        ],
+        "statuses": {
+          "completed": 167,
+          "incomplete": 1
+        },
+        "truncated": 1,
+        "families": 33
+      },
+      "gana::Juhotyadi": {
+        "n": 16,
+        "correct": 15,
+        "all_request_accuracy": 0.9375,
+        "completed": 16,
+        "completed_correct": 15,
+        "completed_accuracy": 0.9375,
+        "completed_response_bounds_on_all_questions": [
+          0.9375,
+          0.9375
+        ],
+        "statuses": {
+          "completed": 16
+        },
+        "truncated": 0,
+        "families": 2
+      },
+      "gana::Kryadi": {
+        "n": 112,
+        "correct": 78,
+        "all_request_accuracy": 0.6964285714285714,
+        "completed": 112,
+        "completed_correct": 78,
+        "completed_accuracy": 0.6964285714285714,
+        "completed_response_bounds_on_all_questions": [
+          0.6964285714285714,
+          0.6964285714285714
+        ],
+        "statuses": {
+          "completed": 112
+        },
+        "truncated": 0,
+        "families": 26
+      },
+      "gana::Rudhadi": {
+        "n": 48,
+        "correct": 44,
+        "all_request_accuracy": 0.9166666666666666,
+        "completed": 48,
+        "completed_correct": 44,
+        "completed_accuracy": 0.9166666666666666,
+        "completed_response_bounds_on_all_questions": [
+          0.9166666666666666,
+          0.9166666666666666
+        ],
+        "statuses": {
+          "completed": 48
+        },
+        "truncated": 0,
+        "families": 10
+      },
+      "gana::Svadi": {
+        "n": 32,
+        "correct": 27,
+        "all_request_accuracy": 0.84375,
+        "completed": 31,
+        "completed_correct": 27,
+        "completed_accuracy": 0.8709677419354839,
+        "completed_response_bounds_on_all_questions": [
+          0.84375,
+          0.875
+        ],
+        "statuses": {
+          "completed": 32
+        },
+        "truncated": 0,
+        "families": 9
+      },
+      "gana::Tanadi": {
+        "n": 16,
+        "correct": 7,
+        "all_request_accuracy": 0.4375,
+        "completed": 16,
+        "completed_correct": 7,
+        "completed_accuracy": 0.4375,
+        "completed_response_bounds_on_all_questions": [
+          0.4375,
+          0.4375
+        ],
+        "statuses": {
+          "completed": 16
+        },
+        "truncated": 0,
+        "families": 2
+      },
+      "gana::Tudadi": {
+        "n": 240,
+        "correct": 186,
+        "all_request_accuracy": 0.775,
+        "completed": 239,
+        "completed_correct": 186,
+        "completed_accuracy": 0.7782426778242678,
+        "completed_response_bounds_on_all_questions": [
+          0.775,
+          0.7791666666666667
+        ],
+        "statuses": {
+          "completed": 239,
+          "refused": 1
+        },
+        "truncated": 0,
+        "families": 57
+      },
+      "lakara::AshirLin": {
+        "n": 124,
+        "correct": 114,
+        "all_request_accuracy": 0.9193548387096774,
+        "completed": 124,
+        "completed_correct": 114,
+        "completed_accuracy": 0.9193548387096774,
+        "completed_response_bounds_on_all_questions": [
+          0.9193548387096774,
+          0.9193548387096774
+        ],
+        "statuses": {
+          "completed": 124
+        },
+        "truncated": 0,
+        "families": 124
+      },
+      "lakara::Lan": {
+        "n": 124,
+        "correct": 115,
+        "all_request_accuracy": 0.9274193548387096,
+        "completed": 124,
+        "completed_correct": 115,
+        "completed_accuracy": 0.9274193548387096,
+        "completed_response_bounds_on_all_questions": [
+          0.9274193548387096,
+          0.9274193548387096
+        ],
+        "statuses": {
+          "completed": 124
+        },
+        "truncated": 0,
+        "families": 124
+      },
+      "lakara::Lat": {
+        "n": 236,
+        "correct": 223,
+        "all_request_accuracy": 0.9449152542372882,
+        "completed": 235,
+        "completed_correct": 223,
+        "completed_accuracy": 0.948936170212766,
+        "completed_response_bounds_on_all_questions": [
+          0.9449152542372882,
+          0.9491525423728814
+        ],
+        "statuses": {
+          "completed": 235,
+          "refused": 1
+        },
+        "truncated": 0,
+        "families": 236
+      },
+      "lakara::Lit": {
+        "n": 120,
+        "correct": 108,
+        "all_request_accuracy": 0.9,
+        "completed": 118,
+        "completed_correct": 108,
+        "completed_accuracy": 0.9152542372881356,
+        "completed_response_bounds_on_all_questions": [
+          0.9,
+          0.9166666666666666
+        ],
+        "statuses": {
+          "completed": 118,
+          "incomplete": 1,
+          "refused": 1
+        },
+        "truncated": 1,
+        "families": 120
+      },
+      "lakara::Lot": {
+        "n": 120,
+        "correct": 103,
+        "all_request_accuracy": 0.8583333333333333,
+        "completed": 118,
+        "completed_correct": 103,
+        "completed_accuracy": 0.8728813559322034,
+        "completed_response_bounds_on_all_questions": [
+          0.8583333333333333,
+          0.875
+        ],
+        "statuses": {
+          "completed": 119,
+          "refused": 1
+        },
+        "truncated": 0,
+        "families": 120
+      },
+      "lakara::Lrn": {
+        "n": 120,
+        "correct": 104,
+        "all_request_accuracy": 0.8666666666666667,
+        "completed": 120,
+        "completed_correct": 104,
+        "completed_accuracy": 0.8666666666666667,
+        "completed_response_bounds_on_all_questions": [
+          0.8666666666666667,
+          0.8666666666666667
+        ],
+        "statuses": {
+          "completed": 120
+        },
+        "truncated": 0,
+        "families": 120
+      },
+      "lakara::Lrt": {
+        "n": 120,
+        "correct": 105,
+        "all_request_accuracy": 0.875,
+        "completed": 120,
+        "completed_correct": 105,
+        "completed_accuracy": 0.875,
+        "completed_response_bounds_on_all_questions": [
+          0.875,
+          0.875
+        ],
+        "statuses": {
+          "completed": 120
+        },
+        "truncated": 0,
+        "families": 120
+      },
+      "lakara::Lun": {
+        "n": 1080,
+        "correct": 654,
+        "all_request_accuracy": 0.6055555555555555,
+        "completed": 1066,
+        "completed_correct": 654,
+        "completed_accuracy": 0.6135084427767354,
+        "completed_response_bounds_on_all_questions": [
+          0.6055555555555555,
+          0.6185185185185185
+        ],
+        "statuses": {
+          "completed": 1066,
+          "refused": 13,
+          "incomplete": 1
+        },
+        "truncated": 1,
+        "families": 382
+      },
+      "lakara::Lut": {
+        "n": 120,
+        "correct": 107,
+        "all_request_accuracy": 0.8916666666666667,
+        "completed": 120,
+        "completed_correct": 107,
+        "completed_accuracy": 0.8916666666666667,
+        "completed_response_bounds_on_all_questions": [
+          0.8916666666666667,
+          0.8916666666666667
+        ],
+        "statuses": {
+          "completed": 120
+        },
+        "truncated": 0,
+        "families": 120
+      },
+      "lakara::VidhiLin": {
+        "n": 236,
+        "correct": 221,
+        "all_request_accuracy": 0.9364406779661016,
+        "completed": 236,
+        "completed_correct": 221,
+        "completed_accuracy": 0.9364406779661016,
+        "completed_response_bounds_on_all_questions": [
+          0.9364406779661016,
+          0.9364406779661016
+        ],
+        "statuses": {
+          "completed": 236
+        },
+        "truncated": 0,
+        "families": 236
+      },
+      "recipe::causative_of_intensive": {
+        "n": 1600,
+        "correct": 1229,
+        "all_request_accuracy": 0.768125,
+        "completed": 1585,
+        "completed_correct": 1229,
+        "completed_accuracy": 0.7753943217665615,
+        "completed_response_bounds_on_all_questions": [
+          0.768125,
+          0.7775
+        ],
+        "statuses": {
+          "completed": 1586,
+          "refused": 12,
+          "incomplete": 2
+        },
+        "truncated": 2,
+        "families": 472
+      },
+      "recipe::causative_of_intensive_luk": {
+        "n": 640,
+        "correct": 474,
+        "all_request_accuracy": 0.740625,
+        "completed": 638,
+        "completed_correct": 474,
+        "completed_accuracy": 0.7429467084639498,
+        "completed_response_bounds_on_all_questions": [
+          0.740625,
+          0.74375
+        ],
+        "statuses": {
+          "completed": 638,
+          "refused": 2
+        },
+        "truncated": 0,
+        "families": 303
+      },
+      "recipe::desiderative": {
+        "n": 160,
+        "correct": 151,
+        "all_request_accuracy": 0.94375,
+        "completed": 158,
+        "completed_correct": 151,
+        "completed_accuracy": 0.9556962025316456,
+        "completed_response_bounds_on_all_questions": [
+          0.94375,
+          0.95625
+        ],
+        "statuses": {
+          "completed": 158,
+          "refused": 2
+        },
+        "truncated": 0,
+        "families": 120
+      },
+      "recipe_lakara_voice::causative_of_intensive_luk|AshirLin|Kartari": {
+        "n": 32,
+        "correct": 30,
+        "all_request_accuracy": 0.9375,
+        "completed": 32,
+        "completed_correct": 30,
+        "completed_accuracy": 0.9375,
+        "completed_response_bounds_on_all_questions": [
+          0.9375,
+          0.9375
+        ],
+        "statuses": {
+          "completed": 32
+        },
+        "truncated": 0,
+        "families": 32
+      },
+      "recipe_lakara_voice::causative_of_intensive_luk|Lan|Karmani": {
+        "n": 8,
+        "correct": 8,
+        "all_request_accuracy": 1.0,
+        "completed": 8,
+        "completed_correct": 8,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 8
+        },
+        "truncated": 0,
+        "families": 8
+      },
+      "recipe_lakara_voice::causative_of_intensive_luk|Lan|Kartari": {
+        "n": 24,
+        "correct": 23,
+        "all_request_accuracy": 0.9583333333333334,
+        "completed": 24,
+        "completed_correct": 23,
+        "completed_accuracy": 0.9583333333333334,
+        "completed_response_bounds_on_all_questions": [
+          0.9583333333333334,
+          0.9583333333333334
+        ],
+        "statuses": {
+          "completed": 24
+        },
+        "truncated": 0,
+        "families": 24
+      },
+      "recipe_lakara_voice::causative_of_intensive_luk|Lat|Karmani": {
+        "n": 16,
+        "correct": 16,
+        "all_request_accuracy": 1.0,
+        "completed": 16,
+        "completed_correct": 16,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 16
+        },
+        "truncated": 0,
+        "families": 16
+      },
+      "recipe_lakara_voice::causative_of_intensive_luk|Lat|Kartari": {
+        "n": 48,
+        "correct": 47,
+        "all_request_accuracy": 0.9791666666666666,
+        "completed": 48,
+        "completed_correct": 47,
+        "completed_accuracy": 0.9791666666666666,
+        "completed_response_bounds_on_all_questions": [
+          0.9791666666666666,
+          0.9791666666666666
+        ],
+        "statuses": {
+          "completed": 48
+        },
+        "truncated": 0,
+        "families": 48
+      },
+      "recipe_lakara_voice::causative_of_intensive_luk|Lit|Kartari": {
+        "n": 32,
+        "correct": 32,
+        "all_request_accuracy": 1.0,
+        "completed": 32,
+        "completed_correct": 32,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 32
+        },
+        "truncated": 0,
+        "families": 32
+      },
+      "recipe_lakara_voice::causative_of_intensive_luk|Lot|Karmani": {
+        "n": 8,
+        "correct": 8,
+        "all_request_accuracy": 1.0,
+        "completed": 8,
+        "completed_correct": 8,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 8
+        },
+        "truncated": 0,
+        "families": 8
+      },
+      "recipe_lakara_voice::causative_of_intensive_luk|Lot|Kartari": {
+        "n": 24,
+        "correct": 19,
+        "all_request_accuracy": 0.7916666666666666,
+        "completed": 24,
+        "completed_correct": 19,
+        "completed_accuracy": 0.7916666666666666,
+        "completed_response_bounds_on_all_questions": [
+          0.7916666666666666,
+          0.7916666666666666
+        ],
+        "statuses": {
+          "completed": 24
+        },
+        "truncated": 0,
+        "families": 24
+      },
+      "recipe_lakara_voice::causative_of_intensive_luk|Lrn|Kartari": {
+        "n": 32,
+        "correct": 30,
+        "all_request_accuracy": 0.9375,
+        "completed": 32,
+        "completed_correct": 30,
+        "completed_accuracy": 0.9375,
+        "completed_response_bounds_on_all_questions": [
+          0.9375,
+          0.9375
+        ],
+        "statuses": {
+          "completed": 32
+        },
+        "truncated": 0,
+        "families": 32
+      },
+      "recipe_lakara_voice::causative_of_intensive_luk|Lrt|Karmani": {
+        "n": 8,
+        "correct": 7,
+        "all_request_accuracy": 0.875,
+        "completed": 8,
+        "completed_correct": 7,
+        "completed_accuracy": 0.875,
+        "completed_response_bounds_on_all_questions": [
+          0.875,
+          0.875
+        ],
+        "statuses": {
+          "completed": 8
+        },
+        "truncated": 0,
+        "families": 8
+      },
+      "recipe_lakara_voice::causative_of_intensive_luk|Lrt|Kartari": {
+        "n": 24,
+        "correct": 23,
+        "all_request_accuracy": 0.9583333333333334,
+        "completed": 24,
+        "completed_correct": 23,
+        "completed_accuracy": 0.9583333333333334,
+        "completed_response_bounds_on_all_questions": [
+          0.9583333333333334,
+          0.9583333333333334
+        ],
+        "statuses": {
+          "completed": 24
+        },
+        "truncated": 0,
+        "families": 24
+      },
+      "recipe_lakara_voice::causative_of_intensive_luk|Lun|Kartari": {
+        "n": 288,
+        "correct": 141,
+        "all_request_accuracy": 0.4895833333333333,
+        "completed": 286,
+        "completed_correct": 141,
+        "completed_accuracy": 0.493006993006993,
+        "completed_response_bounds_on_all_questions": [
+          0.4895833333333333,
+          0.4965277777777778
+        ],
+        "statuses": {
+          "completed": 286,
+          "refused": 2
+        },
+        "truncated": 0,
+        "families": 106
+      },
+      "recipe_lakara_voice::causative_of_intensive_luk|Lut|Karmani": {
+        "n": 8,
+        "correct": 8,
+        "all_request_accuracy": 1.0,
+        "completed": 8,
+        "completed_correct": 8,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 8
+        },
+        "truncated": 0,
+        "families": 8
+      },
+      "recipe_lakara_voice::causative_of_intensive_luk|Lut|Kartari": {
+        "n": 24,
+        "correct": 22,
+        "all_request_accuracy": 0.9166666666666666,
+        "completed": 24,
+        "completed_correct": 22,
+        "completed_accuracy": 0.9166666666666666,
+        "completed_response_bounds_on_all_questions": [
+          0.9166666666666666,
+          0.9166666666666666
+        ],
+        "statuses": {
+          "completed": 24
+        },
+        "truncated": 0,
+        "families": 24
+      },
+      "recipe_lakara_voice::causative_of_intensive_luk|VidhiLin|Karmani": {
+        "n": 16,
+        "correct": 15,
+        "all_request_accuracy": 0.9375,
+        "completed": 16,
+        "completed_correct": 15,
+        "completed_accuracy": 0.9375,
+        "completed_response_bounds_on_all_questions": [
+          0.9375,
+          0.9375
+        ],
+        "statuses": {
+          "completed": 16
+        },
+        "truncated": 0,
+        "families": 16
+      },
+      "recipe_lakara_voice::causative_of_intensive_luk|VidhiLin|Kartari": {
+        "n": 48,
+        "correct": 45,
+        "all_request_accuracy": 0.9375,
+        "completed": 48,
+        "completed_correct": 45,
+        "completed_accuracy": 0.9375,
+        "completed_response_bounds_on_all_questions": [
+          0.9375,
+          0.9375
+        ],
+        "statuses": {
+          "completed": 48
+        },
+        "truncated": 0,
+        "families": 48
+      },
+      "recipe_lakara_voice::causative_of_intensive|AshirLin|Kartari": {
+        "n": 84,
+        "correct": 76,
+        "all_request_accuracy": 0.9047619047619048,
+        "completed": 84,
+        "completed_correct": 76,
+        "completed_accuracy": 0.9047619047619048,
+        "completed_response_bounds_on_all_questions": [
+          0.9047619047619048,
+          0.9047619047619048
+        ],
+        "statuses": {
+          "completed": 84
+        },
+        "truncated": 0,
+        "families": 84
+      },
+      "recipe_lakara_voice::causative_of_intensive|Lan|Karmani": {
+        "n": 24,
+        "correct": 22,
+        "all_request_accuracy": 0.9166666666666666,
+        "completed": 24,
+        "completed_correct": 22,
+        "completed_accuracy": 0.9166666666666666,
+        "completed_response_bounds_on_all_questions": [
+          0.9166666666666666,
+          0.9166666666666666
+        ],
+        "statuses": {
+          "completed": 24
+        },
+        "truncated": 0,
+        "families": 24
+      },
+      "recipe_lakara_voice::causative_of_intensive|Lan|Kartari": {
+        "n": 60,
+        "correct": 55,
+        "all_request_accuracy": 0.9166666666666666,
+        "completed": 60,
+        "completed_correct": 55,
+        "completed_accuracy": 0.9166666666666666,
+        "completed_response_bounds_on_all_questions": [
+          0.9166666666666666,
+          0.9166666666666666
+        ],
+        "statuses": {
+          "completed": 60
+        },
+        "truncated": 0,
+        "families": 60
+      },
+      "recipe_lakara_voice::causative_of_intensive|Lat|Karmani": {
+        "n": 44,
+        "correct": 43,
+        "all_request_accuracy": 0.9772727272727273,
+        "completed": 44,
+        "completed_correct": 43,
+        "completed_accuracy": 0.9772727272727273,
+        "completed_response_bounds_on_all_questions": [
+          0.9772727272727273,
+          0.9772727272727273
+        ],
+        "statuses": {
+          "completed": 44
+        },
+        "truncated": 0,
+        "families": 44
+      },
+      "recipe_lakara_voice::causative_of_intensive|Lat|Kartari": {
+        "n": 112,
+        "correct": 101,
+        "all_request_accuracy": 0.9017857142857143,
+        "completed": 111,
+        "completed_correct": 101,
+        "completed_accuracy": 0.9099099099099099,
+        "completed_response_bounds_on_all_questions": [
+          0.9017857142857143,
+          0.9107142857142857
+        ],
+        "statuses": {
+          "completed": 111,
+          "refused": 1
+        },
+        "truncated": 0,
+        "families": 112
+      },
+      "recipe_lakara_voice::causative_of_intensive|Lit|Kartari": {
+        "n": 80,
+        "correct": 68,
+        "all_request_accuracy": 0.85,
+        "completed": 78,
+        "completed_correct": 68,
+        "completed_accuracy": 0.8717948717948718,
+        "completed_response_bounds_on_all_questions": [
+          0.85,
+          0.875
+        ],
+        "statuses": {
+          "completed": 78,
+          "incomplete": 1,
+          "refused": 1
+        },
+        "truncated": 1,
+        "families": 80
+      },
+      "recipe_lakara_voice::causative_of_intensive|Lot|Karmani": {
+        "n": 24,
+        "correct": 22,
+        "all_request_accuracy": 0.9166666666666666,
+        "completed": 24,
+        "completed_correct": 22,
+        "completed_accuracy": 0.9166666666666666,
+        "completed_response_bounds_on_all_questions": [
+          0.9166666666666666,
+          0.9166666666666666
+        ],
+        "statuses": {
+          "completed": 24
+        },
+        "truncated": 0,
+        "families": 24
+      },
+      "recipe_lakara_voice::causative_of_intensive|Lot|Kartari": {
+        "n": 56,
+        "correct": 48,
+        "all_request_accuracy": 0.8571428571428571,
+        "completed": 55,
+        "completed_correct": 48,
+        "completed_accuracy": 0.8727272727272727,
+        "completed_response_bounds_on_all_questions": [
+          0.8571428571428571,
+          0.875
+        ],
+        "statuses": {
+          "completed": 56
+        },
+        "truncated": 0,
+        "families": 56
+      },
+      "recipe_lakara_voice::causative_of_intensive|Lrn|Kartari": {
+        "n": 80,
+        "correct": 66,
+        "all_request_accuracy": 0.825,
+        "completed": 80,
+        "completed_correct": 66,
+        "completed_accuracy": 0.825,
+        "completed_response_bounds_on_all_questions": [
+          0.825,
+          0.825
+        ],
+        "statuses": {
+          "completed": 80
+        },
+        "truncated": 0,
+        "families": 80
+      },
+      "recipe_lakara_voice::causative_of_intensive|Lrt|Karmani": {
+        "n": 20,
+        "correct": 17,
+        "all_request_accuracy": 0.85,
+        "completed": 20,
+        "completed_correct": 17,
+        "completed_accuracy": 0.85,
+        "completed_response_bounds_on_all_questions": [
+          0.85,
+          0.85
+        ],
+        "statuses": {
+          "completed": 20
+        },
+        "truncated": 0,
+        "families": 20
+      },
+      "recipe_lakara_voice::causative_of_intensive|Lrt|Kartari": {
+        "n": 60,
+        "correct": 50,
+        "all_request_accuracy": 0.8333333333333334,
+        "completed": 60,
+        "completed_correct": 50,
+        "completed_accuracy": 0.8333333333333334,
+        "completed_response_bounds_on_all_questions": [
+          0.8333333333333334,
+          0.8333333333333334
+        ],
+        "statuses": {
+          "completed": 60
+        },
+        "truncated": 0,
+        "families": 60
+      },
+      "recipe_lakara_voice::causative_of_intensive|Lun|Kartari": {
+        "n": 720,
+        "correct": 445,
+        "all_request_accuracy": 0.6180555555555556,
+        "completed": 709,
+        "completed_correct": 445,
+        "completed_accuracy": 0.6276445698166432,
+        "completed_response_bounds_on_all_questions": [
+          0.6180555555555556,
+          0.6333333333333333
+        ],
+        "statuses": {
+          "completed": 709,
+          "refused": 10,
+          "incomplete": 1
+        },
+        "truncated": 1,
+        "families": 235
+      },
+      "recipe_lakara_voice::causative_of_intensive|Lut|Karmani": {
+        "n": 20,
+        "correct": 17,
+        "all_request_accuracy": 0.85,
+        "completed": 20,
+        "completed_correct": 17,
+        "completed_accuracy": 0.85,
+        "completed_response_bounds_on_all_questions": [
+          0.85,
+          0.85
+        ],
+        "statuses": {
+          "completed": 20
+        },
+        "truncated": 0,
+        "families": 20
+      },
+      "recipe_lakara_voice::causative_of_intensive|Lut|Kartari": {
+        "n": 60,
+        "correct": 52,
+        "all_request_accuracy": 0.8666666666666667,
+        "completed": 60,
+        "completed_correct": 52,
+        "completed_accuracy": 0.8666666666666667,
+        "completed_response_bounds_on_all_questions": [
+          0.8666666666666667,
+          0.8666666666666667
+        ],
+        "statuses": {
+          "completed": 60
+        },
+        "truncated": 0,
+        "families": 60
+      },
+      "recipe_lakara_voice::causative_of_intensive|VidhiLin|Karmani": {
+        "n": 44,
+        "correct": 42,
+        "all_request_accuracy": 0.9545454545454546,
+        "completed": 44,
+        "completed_correct": 42,
+        "completed_accuracy": 0.9545454545454546,
+        "completed_response_bounds_on_all_questions": [
+          0.9545454545454546,
+          0.9545454545454546
+        ],
+        "statuses": {
+          "completed": 44
+        },
+        "truncated": 0,
+        "families": 44
+      },
+      "recipe_lakara_voice::causative_of_intensive|VidhiLin|Kartari": {
+        "n": 112,
+        "correct": 105,
+        "all_request_accuracy": 0.9375,
+        "completed": 112,
+        "completed_correct": 105,
+        "completed_accuracy": 0.9375,
+        "completed_response_bounds_on_all_questions": [
+          0.9375,
+          0.9375
+        ],
+        "statuses": {
+          "completed": 112
+        },
+        "truncated": 0,
+        "families": 112
+      },
+      "recipe_lakara_voice::desiderative|AshirLin|Kartari": {
+        "n": 8,
+        "correct": 8,
+        "all_request_accuracy": 1.0,
+        "completed": 8,
+        "completed_correct": 8,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 8
+        },
+        "truncated": 0,
+        "families": 8
+      },
+      "recipe_lakara_voice::desiderative|Lan|Kartari": {
+        "n": 8,
+        "correct": 7,
+        "all_request_accuracy": 0.875,
+        "completed": 8,
+        "completed_correct": 7,
+        "completed_accuracy": 0.875,
+        "completed_response_bounds_on_all_questions": [
+          0.875,
+          0.875
+        ],
+        "statuses": {
+          "completed": 8
+        },
+        "truncated": 0,
+        "families": 8
+      },
+      "recipe_lakara_voice::desiderative|Lat|Kartari": {
+        "n": 16,
+        "correct": 16,
+        "all_request_accuracy": 1.0,
+        "completed": 16,
+        "completed_correct": 16,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 16
+        },
+        "truncated": 0,
+        "families": 16
+      },
+      "recipe_lakara_voice::desiderative|Lit|Kartari": {
+        "n": 8,
+        "correct": 8,
+        "all_request_accuracy": 1.0,
+        "completed": 8,
+        "completed_correct": 8,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 8
+        },
+        "truncated": 0,
+        "families": 8
+      },
+      "recipe_lakara_voice::desiderative|Lot|Kartari": {
+        "n": 8,
+        "correct": 6,
+        "all_request_accuracy": 0.75,
+        "completed": 7,
+        "completed_correct": 6,
+        "completed_accuracy": 0.8571428571428571,
+        "completed_response_bounds_on_all_questions": [
+          0.75,
+          0.875
+        ],
+        "statuses": {
+          "completed": 7,
+          "refused": 1
+        },
+        "truncated": 0,
+        "families": 8
+      },
+      "recipe_lakara_voice::desiderative|Lrn|Kartari": {
+        "n": 8,
+        "correct": 8,
+        "all_request_accuracy": 1.0,
+        "completed": 8,
+        "completed_correct": 8,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 8
+        },
+        "truncated": 0,
+        "families": 8
+      },
+      "recipe_lakara_voice::desiderative|Lrt|Kartari": {
+        "n": 8,
+        "correct": 8,
+        "all_request_accuracy": 1.0,
+        "completed": 8,
+        "completed_correct": 8,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 8
+        },
+        "truncated": 0,
+        "families": 8
+      },
+      "recipe_lakara_voice::desiderative|Lun|Kartari": {
+        "n": 72,
+        "correct": 68,
+        "all_request_accuracy": 0.9444444444444444,
+        "completed": 71,
+        "completed_correct": 68,
+        "completed_accuracy": 0.9577464788732394,
+        "completed_response_bounds_on_all_questions": [
+          0.9444444444444444,
+          0.9583333333333334
+        ],
+        "statuses": {
+          "completed": 71,
+          "refused": 1
+        },
+        "truncated": 0,
+        "families": 72
+      },
+      "recipe_lakara_voice::desiderative|Lut|Kartari": {
+        "n": 8,
+        "correct": 8,
+        "all_request_accuracy": 1.0,
+        "completed": 8,
+        "completed_correct": 8,
+        "completed_accuracy": 1.0,
+        "completed_response_bounds_on_all_questions": [
+          1.0,
+          1.0
+        ],
+        "statuses": {
+          "completed": 8
+        },
+        "truncated": 0,
+        "families": 8
+      },
+      "recipe_lakara_voice::desiderative|VidhiLin|Kartari": {
+        "n": 16,
+        "correct": 14,
+        "all_request_accuracy": 0.875,
+        "completed": 16,
+        "completed_correct": 14,
+        "completed_accuracy": 0.875,
+        "completed_response_bounds_on_all_questions": [
+          0.875,
+          0.875
+        ],
+        "statuses": {
+          "completed": 16
+        },
+        "truncated": 0,
+        "families": 16
+      },
+      "same_recipe_exposure::new_recipe_for_exposed_family": {
+        "n": 501,
+        "correct": 426,
+        "all_request_accuracy": 0.8502994011976048,
+        "completed": 499,
+        "completed_correct": 426,
+        "completed_accuracy": 0.8537074148296593,
+        "completed_response_bounds_on_all_questions": [
+          0.8502994011976048,
+          0.8542914171656687
+        ],
+        "statuses": {
+          "completed": 499,
+          "refused": 2
+        },
+        "truncated": 0,
+        "families": 251
+      },
+      "same_recipe_exposure::previously_exposed": {
+        "n": 1899,
+        "correct": 1428,
+        "all_request_accuracy": 0.7519747235387045,
+        "completed": 1882,
+        "completed_correct": 1428,
+        "completed_accuracy": 0.7587672688629118,
+        "completed_response_bounds_on_all_questions": [
+          0.7519747235387045,
+          0.760926803580832
+        ],
+        "statuses": {
+          "completed": 1883,
+          "refused": 14,
+          "incomplete": 2
+        },
+        "truncated": 2,
+        "families": 483
+      },
+      "voice::Karmani": {
+        "n": 240,
+        "correct": 225,
+        "all_request_accuracy": 0.9375,
+        "completed": 240,
+        "completed_correct": 225,
+        "completed_accuracy": 0.9375,
+        "completed_response_bounds_on_all_questions": [
+          0.9375,
+          0.9375
+        ],
+        "statuses": {
+          "completed": 240
+        },
+        "truncated": 0,
+        "families": 187
+      },
+      "voice::Kartari": {
+        "n": 2160,
+        "correct": 1629,
+        "all_request_accuracy": 0.7541666666666667,
+        "completed": 2141,
+        "completed_correct": 1629,
+        "completed_accuracy": 0.760859411489958,
+        "completed_response_bounds_on_all_questions": [
+          0.7541666666666667,
+          0.762962962962963
+        ],
+        "statuses": {
+          "completed": 2142,
+          "refused": 16,
+          "incomplete": 2
+        },
+        "truncated": 2,
+        "families": 606
+      }
+    },
+    "family_load_histogram": {
+      "4": 221,
+      "5": 242,
+      "1": 80,
+      "6": 19,
+      "8": 4,
+      "2": 40
+    },
+    "family_aorist_load_histogram": {
+      "0": 224,
+      "4": 70,
+      "3": 96,
+      "1": 94,
+      "5": 58,
+      "2": 64
+    },
+    "pair_diagnostics": {
+      "both_non_Lun": {
+        "all_pairs": 1484,
+        "jointly_usable_pairs": 1475,
+        "all/11": 1218,
+        "usable/11": 1218,
+        "all/10": 87,
+        "usable/10": 83,
+        "all/01": 133,
+        "usable/01": 128,
+        "all/00": 46,
+        "usable/00": 46
+      },
+      "both_Lun": {
+        "all_pairs": 1352,
+        "jointly_usable_pairs": 1323,
+        "all/11": 515,
+        "usable/11": 515,
+        "all/01": 286,
+        "usable/01": 283,
+        "all/00": 288,
+        "usable/00": 266,
+        "all/10": 263,
+        "usable/10": 259
+      },
+      "mixed_Lun_other": {
+        "all_pairs": 1347,
+        "jointly_usable_pairs": 1331,
+        "all/11": 758,
+        "usable/11": 758,
+        "all/10": 269,
+        "usable/10": 264,
+        "all/01": 265,
+        "usable/01": 258,
+        "all/00": 55,
+        "usable/00": 51
+      }
+    },
+    "caveat": "Pair tables overlap within families and are descriptive; they are not additional independent samples."
+  },
+  "scope_exclusions": [],
+  "original_raw_records_changed": false,
+  "all_chunks_present": true,
+  "advancement": {
+    "raw_numerical_screen": false,
+    "current_scope_numerical_screen": false,
+    "validity_review_required": true,
+    "authorized": false,
+    "explanation": "No automatic advancement or benchmark qualification; audit disagreements and missing responses, then coordinator resolves retained-scope validity."
+  },
+  "benchmark_ready": false,
+  "limitations": [
+    "Fixed development mixture was chosen adaptively from earlier panels; intervals omit selection and oracle uncertainty.",
+    "Fresh exact tuples reuse previously exposed development families. Exposure subgroup differences are observational and can be composition-confounded.",
+    "Legacy6687 analysis inspected all dictionary families. New campaign reserved-family separation is not a never-seen-lexical-root claim.",
+    "Opus-only family dependence cannot identify Astra repeated-aorist covariance or final output-cap effects.",
+    "Repeated forms, imbalance and few families in some classes limit resampling interpretations; no estimator choice changes the final precision gate."
+  ]
+}

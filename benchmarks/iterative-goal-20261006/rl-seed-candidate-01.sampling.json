@@ -1,0 +1,89 @@
+{
+  "created_at": "2026-10-07T00:14:47.306409+00:00",
+  "filename": "rl-seed-candidate-01.json",
+  "n": 1000,
+  "seed": 20261012,
+  "cells": [
+    {
+      "label": "candidate_aorist_training",
+      "construction": "causative_of_intensive",
+      "n": 500,
+      "lakaras": [
+        "Lun"
+      ],
+      "exclude_ganas": [
+        "Curadi"
+      ],
+      "exclude_rules": [
+        "7.4.79",
+        "7.4.80",
+        "7.4.94"
+      ],
+      "dhatu_padas": [
+        "Parasmaipada"
+      ],
+      "prefixes": [
+        [
+          "pra"
+        ],
+        [
+          "sam"
+        ],
+        [
+          "ni"
+        ],
+        [
+          "vi"
+        ],
+        [
+          "upa"
+        ],
+        [
+          "sam",
+          "pra"
+        ],
+        [
+          "pra",
+          "ni"
+        ],
+        [
+          "upa",
+          "ni"
+        ],
+        [
+          "abhi",
+          "sam"
+        ]
+      ]
+    },
+    {
+      "label": "candidate_triple_training",
+      "construction": "desiderative_of_causative_of_intensive",
+      "n": 500,
+      "lakaras": [
+        "Lit",
+        "Lut",
+        "AshirLin"
+      ],
+      "exclude_ganas": [
+        "Curadi"
+      ]
+    }
+  ],
+  "counts": {
+    "causative_of_intensive": 500,
+    "desiderative_of_causative_of_intensive": 500
+  },
+  "attempts": {
+    "causative_of_intensive": 998,
+    "desiderative_of_causative_of_intensive": 545
+  },
+  "split": "rl_train",
+  "root_families": 327,
+  "max_per_family": 5,
+  "task_digest": "b15cbfdeda844ea04e207c1b655df3f9348e42ad162a56c43d738a7c7be06f13",
+  "file_sha256": "9f0ae35f3a4ff180e8381ccbb8cf491a17baf9566cf811aca907cd0ced594bba",
+  "generator_sha256": "f9c704c0a456b06f5400c128c84edd58edc1fb64850430fe6c8e686d2f45c940",
+  "selection": "Uniform shuffled root visits within predeclared cells; grammatical validity and uniqueness only. No model-score filtering.",
+  "audit_status": "VP generation and transliteration checks; construction review remains required"
+}

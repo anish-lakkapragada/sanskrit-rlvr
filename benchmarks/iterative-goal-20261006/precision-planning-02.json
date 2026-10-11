@@ -1,0 +1,143 @@
+{
+  "created_at": "2026-10-07T01:25:31.542772+00:00",
+  "status": "pre-final_planning_not_a_precision_claim",
+  "measured_development": {
+    "opus-bench-calibration-01": {
+      "n_unique": 300,
+      "root_families": 259,
+      "correct": 182,
+      "accuracy": 0.6066666666666667,
+      "iid_standard_error": 0.028202968060248683,
+      "iid_wilson_95_interval": [
+        0.5503752712846574,
+        0.6602608948541061
+      ],
+      "iid_wilson_95_one_sided_upper": 0.6519051093654231,
+      "root_cluster_bootstrap_standard_error": 0.02743628523056961,
+      "root_cluster_bootstrap_95_interval": [
+        0.5525423728813559,
+        0.6600660066006601
+      ],
+      "estimated_design_effect": 0.9463700491635151,
+      "bootstrap_seed": 20261011,
+      "bootstrap_repetitions": 20000,
+      "iid_n_for_strictly_below_one_percentage_point_se_at_observed_p": 2387,
+      "iid_worst_case_n_for_strictly_below_one_percentage_point_se": 2501,
+      "limitations": [
+        "This estimates sampling uncertainty over tasks/families, not stochastic run-to-run variability.",
+        "An observed SE below 1pp is not a guarantee for other models or generator distributions.",
+        "Cluster intervals can degenerate when every family has the same result; inspect the Wilson interval too.",
+        "The design effect cannot be assumed stable when increasing forms per root or changing task mixtures.",
+        "Exploratory construction selection requires separate frozen validation; these intervals do not correct for selection."
+      ]
+    },
+    "opus-hard-calibration-02": {
+      "n_unique": 500,
+      "root_families": 272,
+      "correct": 252,
+      "accuracy": 0.504,
+      "iid_standard_error": 0.022359964221796064,
+      "iid_wilson_95_interval": [
+        0.460312154390353,
+        0.5476268508859545
+      ],
+      "iid_wilson_95_one_sided_upper": 0.5406582418991427,
+      "root_cluster_bootstrap_standard_error": 0.023884069601437487,
+      "root_cluster_bootstrap_95_interval": [
+        0.45742574257425744,
+        0.5508130081300813
+      ],
+      "estimated_design_effect": 1.140970583569969,
+      "bootstrap_seed": 20261011,
+      "bootstrap_repetitions": 20000,
+      "iid_n_for_strictly_below_one_percentage_point_se_at_observed_p": 2500,
+      "iid_worst_case_n_for_strictly_below_one_percentage_point_se": 2501,
+      "limitations": [
+        "This estimates sampling uncertainty over tasks/families, not stochastic run-to-run variability.",
+        "An observed SE below 1pp is not a guarantee for other models or generator distributions.",
+        "Cluster intervals can degenerate when every family has the same result; inspect the Wilson interval too.",
+        "The design effect cannot be assumed stable when increasing forms per root or changing task mixtures.",
+        "Exploratory construction selection requires separate frozen validation; these intervals do not correct for selection."
+      ]
+    },
+    "opus-deep-creation-01": {
+      "n_unique": 200,
+      "root_families": 168,
+      "correct": 120,
+      "accuracy": 0.6,
+      "iid_standard_error": 0.034641016151377546,
+      "iid_wilson_95_interval": [
+        0.53083672039262,
+        0.6653942143319266
+      ],
+      "iid_wilson_95_one_sided_upper": 0.6552788867532937,
+      "root_cluster_bootstrap_standard_error": 0.03359477759493846,
+      "root_cluster_bootstrap_95_interval": [
+        0.5333333333333333,
+        0.6650246305418719
+      ],
+      "estimated_design_effect": 0.9405075680444824,
+      "bootstrap_seed": 20261011,
+      "bootstrap_repetitions": 20000,
+      "iid_n_for_strictly_below_one_percentage_point_se_at_observed_p": 2401,
+      "iid_worst_case_n_for_strictly_below_one_percentage_point_se": 2501,
+      "limitations": [
+        "This estimates sampling uncertainty over tasks/families, not stochastic run-to-run variability.",
+        "An observed SE below 1pp is not a guarantee for other models or generator distributions.",
+        "Cluster intervals can degenerate when every family has the same result; inspect the Wilson interval too.",
+        "The design effect cannot be assumed stable when increasing forms per root or changing task mixtures.",
+        "Exploratory construction selection requires separate frozen validation; these intervals do not correct for selection."
+      ]
+    },
+    "astra-composition-02": {
+      "n_unique": 480,
+      "root_families": 350,
+      "correct": 362,
+      "accuracy": 0.7541666666666667,
+      "iid_standard_error": 0.019653207199862844,
+      "iid_wilson_95_interval": [
+        0.713729317580423,
+        0.7905681037168774
+      ],
+      "iid_wilson_95_one_sided_upper": 0.7850094636949384,
+      "root_cluster_bootstrap_standard_error": 0.02136734104607614,
+      "root_cluster_bootstrap_95_interval": [
+        0.7112970711297071,
+        0.7952069716775599
+      ],
+      "estimated_design_effect": 1.1820452388717786,
+      "bootstrap_seed": 20261011,
+      "bootstrap_repetitions": 20000,
+      "iid_n_for_strictly_below_one_percentage_point_se_at_observed_p": 1854,
+      "iid_worst_case_n_for_strictly_below_one_percentage_point_se": 2501,
+      "limitations": [
+        "This estimates sampling uncertainty over tasks/families, not stochastic run-to-run variability.",
+        "An observed SE below 1pp is not a guarantee for other models or generator distributions.",
+        "Cluster intervals can degenerate when every family has the same result; inspect the Wilson interval too.",
+        "The design effect cannot be assumed stable when increasing forms per root or changing task mixtures.",
+        "Exploratory construction selection requires separate frozen validation; these intervals do not correct for selection."
+      ]
+    }
+  },
+  "requirements": {
+    "unique_tasks_each_tier": 1000,
+    "minimum_each_tier": 500,
+    "requested_standard_error": 0.01
+  },
+  "implications": [
+    "At a 60% success rate, independent Bernoulli sampling requires at least 2401 unique tasks for SE strictly below 1pp; at 50%, at least 2501.",
+    "Current root-cluster design effects range from about 0.94 to 1.18 in these panels. They are estimates for these panels and cannot safely be carried over to larger repeated-root or paradigm samples.",
+    "A two/four-form paradigm is one scored unit. Component counts do not increase the N of all-forms-correct accuracy.",
+    "The existing split contains 1000 held-out citation+gana families. An initial design reserved half for a second release; use more of these unqueried families before final freeze if the precision calculation requires it.",
+    "Freeze recipe, membership, total planned N or a valid stopping rule, and metric before final responses. Size extensions cannot select harder final tasks."
+  ],
+  "financial_feasibility": {
+    "2501_tasks_per_tier_at_full_16384_cap_usd": {
+      "Anthropic": 834.53368,
+      "OpenAI": 2086.3342
+    },
+    "interpretation": "OpenAI cannot reserve 5002 maximum-length calls plus discovery within $2000. Verified savings can fund sequential fixed-membership chunks, but no guarantee is made that all chunks fit. No pending/unknown reservation may be released from an assumed average.",
+    "illustrative_only": "At 8000 output and 600 input tokens per request, 5002 batch calls cost about $406.16 Anthropic / $1015.41 OpenAI before discovery and sensitivity. These are scenarios, not observed totals or authorization ceilings."
+  },
+  "release_gate": "Report IID and root-cluster uncertainty. Do not claim <1pp on the basis of N=1000, repeated completions, component-form counts, or a favorable unvalidated design effect."
+}

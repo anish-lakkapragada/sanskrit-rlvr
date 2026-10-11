@@ -1,0 +1,132 @@
+{
+  "created_at": "2026-10-06T21:46:46.968972+00:00",
+  "passed_for_discovery": true,
+  "certified_for_final_release": false,
+  "verified_generated_discovery_tasks": 6000,
+  "reference_examples": [
+    {
+      "root": "BU",
+      "coordinates": [
+        "Lat",
+        "Kartari",
+        "Prathama",
+        "Eka"
+      ],
+      "expected_form": "Bavati",
+      "actual_forms": [
+        "Bavati"
+      ]
+    },
+    {
+      "root": "BU",
+      "coordinates": [
+        "Lit",
+        "Kartari",
+        "Prathama",
+        "Eka"
+      ],
+      "expected_form": "baBUva",
+      "actual_forms": [
+        "baBUva"
+      ]
+    },
+    {
+      "root": "BU",
+      "coordinates": [
+        "Lit",
+        "Kartari",
+        "Prathama",
+        "Dvi"
+      ],
+      "expected_form": "baBUvatuH",
+      "actual_forms": [
+        "baBUvatuH"
+      ]
+    },
+    {
+      "root": "BU",
+      "coordinates": [
+        "Lit",
+        "Kartari",
+        "Prathama",
+        "Bahu"
+      ],
+      "expected_form": "baBUvuH",
+      "actual_forms": [
+        "baBUvuH"
+      ]
+    },
+    {
+      "root": "ACi~",
+      "coordinates": [
+        "Lat",
+        "Kartari",
+        "Prathama",
+        "Eka"
+      ],
+      "expected_form": "AYCati",
+      "actual_forms": [
+        "AYCati"
+      ]
+    },
+    {
+      "root": "ACi~",
+      "coordinates": [
+        "Lit",
+        "Kartari",
+        "Prathama",
+        "Eka"
+      ],
+      "expected_form": "AYCa",
+      "actual_forms": [
+        "AYCa",
+        "AnAYCa"
+      ]
+    },
+    {
+      "root": "hurCA~",
+      "coordinates": [
+        "Lat",
+        "Kartari",
+        "Prathama",
+        "Eka"
+      ],
+      "expected_form": "hUrCati",
+      "actual_forms": [
+        "hUrCati"
+      ]
+    },
+    {
+      "root": "murCA~",
+      "coordinates": [
+        "Lat",
+        "Kartari",
+        "Prathama",
+        "Eka"
+      ],
+      "expected_form": "mUrCati",
+      "actual_forms": [
+        "mUrCati"
+      ]
+    }
+  ],
+  "reference_source": "https://github.com/ambuda-org/vidyut/tree/8da2f90bee3ce1c07505fa432fc3729e3f7e02ea/vidyut-prakriya/tests/integration",
+  "source_files": [
+    "kaumudi_43.rs",
+    "kashika_7_4.rs"
+  ],
+  "checks": [
+    "All new discovery gold sets independently regenerated from frozen source table",
+    "All known impersonal audit classes excluded",
+    "No repeated legacy IDs or reserved-family tasks",
+    "Nasal-only spelling and absent-answer historical signals excluded from lead enrichment",
+    "Eight basic forms match upstream grammar regression examples"
+  ],
+  "limitations": [
+    "Reference examples are regression checks from the same project, not an independent grammatical oracle",
+    "Passive semantic applicability and discovered error rules require construction-level review before calibration and release",
+    "Legacy report has already exposed held-out families; prior exposure is disclosed",
+    "Existing RL checkpoints require a fresh split and are not certified uncontaminated"
+  ],
+  "quarantine_rule": "Reject unresolved keys or orthographic-only difficulty before construction calibration; no final tiers have been assigned."
+}

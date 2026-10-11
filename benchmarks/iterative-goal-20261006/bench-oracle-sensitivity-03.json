@@ -1,0 +1,113 @@
+{
+  "created_at": "2026-10-07T03:25:42.049559+00:00",
+  "purpose": "Conservative sensitivity analysis of the existing300-task Bench candidate, applying grammatical exclusions equally to both providers regardless of response. Not a newly calibrated or certified recipe.",
+  "excluded_rules": [
+    "7.4.79",
+    "7.4.80",
+    "7.4.94",
+    "7.4.95",
+    "8.3.61"
+  ],
+  "models": {
+    "opus-bench-calibration-01": {
+      "raw": {
+        "n": 300,
+        "completed": 283,
+        "completion_fraction": 0.9433333333333334,
+        "correct_all": 182,
+        "completed_exact_correct": 182,
+        "completed_exact_accuracy": 0.6431095406360424,
+        "completed_spelling_tolerant_correct": 184,
+        "completed_spelling_tolerant_accuracy": 0.6501766784452296,
+        "nasal_spelling_only_errors": 2,
+        "root_families": 259
+      },
+      "retained": {
+        "n": 279,
+        "completed": 264,
+        "completion_fraction": 0.946236559139785,
+        "correct_all": 182,
+        "completed_exact_correct": 182,
+        "completed_exact_accuracy": 0.6893939393939394,
+        "completed_spelling_tolerant_correct": 184,
+        "completed_spelling_tolerant_accuracy": 0.696969696969697,
+        "nasal_spelling_only_errors": 2,
+        "root_families": 239
+      },
+      "excluded": [
+        "comp-6fd640567022bdbd95515b97",
+        "comp-bf511fb1fd3e7087799ec039",
+        "comp-ef77934609008485100744b7",
+        "comp-3240259c018a82572136c5c9",
+        "comp-3bfacdbe0c3173994b66c374",
+        "comp-3ba0e42f731e4e3e0776dc75",
+        "comp-74656e0415ccaae74832ba76",
+        "comp-42ca726c5cd98e8f610c2287",
+        "comp-8df8d7e9349a97d95f8a4f73",
+        "comp-b5cc36fa3cb1b0be2f7387c5",
+        "comp-cb068f7c640927c6f1cdc766",
+        "comp-61c09bac579808c3154a0a53",
+        "comp-b2c8aaded958e656cb8501bc",
+        "comp-403e28093860bb6e4ab87e04",
+        "comp-25c401eab236f635162fdaf5",
+        "comp-38181c2a9ca824269d9e9482",
+        "comp-20b56f50bd73678a46633bf1",
+        "comp-66af6613d16271fa63fb5b55",
+        "comp-02f9ca34420900e0f757467a",
+        "comp-efbb7d052c6bb2ccbfbd6aa9",
+        "comp-4a224c2b440a85e171578954"
+      ],
+      "upper_if_all_uncompleted_correct": 0.7060931899641577
+    },
+    "astra-bench-calibration-01": {
+      "raw": {
+        "n": 300,
+        "completed": 255,
+        "completion_fraction": 0.85,
+        "correct_all": 166,
+        "completed_exact_correct": 166,
+        "completed_exact_accuracy": 0.6509803921568628,
+        "completed_spelling_tolerant_correct": 166,
+        "completed_spelling_tolerant_accuracy": 0.6509803921568628,
+        "nasal_spelling_only_errors": 0,
+        "root_families": 259
+      },
+      "retained": {
+        "n": 279,
+        "completed": 238,
+        "completion_fraction": 0.8530465949820788,
+        "correct_all": 166,
+        "completed_exact_correct": 166,
+        "completed_exact_accuracy": 0.6974789915966386,
+        "completed_spelling_tolerant_correct": 166,
+        "completed_spelling_tolerant_accuracy": 0.6974789915966386,
+        "nasal_spelling_only_errors": 0,
+        "root_families": 239
+      },
+      "excluded": [
+        "comp-6fd640567022bdbd95515b97",
+        "comp-bf511fb1fd3e7087799ec039",
+        "comp-ef77934609008485100744b7",
+        "comp-3240259c018a82572136c5c9",
+        "comp-3bfacdbe0c3173994b66c374",
+        "comp-3ba0e42f731e4e3e0776dc75",
+        "comp-74656e0415ccaae74832ba76",
+        "comp-42ca726c5cd98e8f610c2287",
+        "comp-8df8d7e9349a97d95f8a4f73",
+        "comp-b5cc36fa3cb1b0be2f7387c5",
+        "comp-cb068f7c640927c6f1cdc766",
+        "comp-61c09bac579808c3154a0a53",
+        "comp-b2c8aaded958e656cb8501bc",
+        "comp-403e28093860bb6e4ab87e04",
+        "comp-25c401eab236f635162fdaf5",
+        "comp-38181c2a9ca824269d9e9482",
+        "comp-20b56f50bd73678a46633bf1",
+        "comp-66af6613d16271fa63fb5b55",
+        "comp-02f9ca34420900e0f757467a",
+        "comp-efbb7d052c6bb2ccbfbd6aa9",
+        "comp-4a224c2b440a85e171578954"
+      ],
+      "upper_if_all_uncompleted_correct": 0.7419354838709677
+    }
+  }
+}

@@ -1,0 +1,2644 @@
+{
+  "created_at": "2026-10-07T11:15:53.679447+00:00",
+  "policy": "oracle-policy-18",
+  "sources": {
+    "high": {
+      "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/astra-five-d-cap-development-01/results.json",
+      "sha256": "fa408edf66b0561578f88f291d049ec8360ab28bfc3967fc89ad1f518538d859",
+      "raw_n": 60,
+      "current_n": 60
+    },
+    "baseline": {
+      "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/astra-five-d-pilot-04-pair/results.json",
+      "sha256": "85178c7454df7de07e92f77c93c10febe85bd5821b2a48691d0cef7b32f4f294",
+      "raw_n": 480,
+      "current_n": 467
+    },
+    "opus04": {
+      "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-five-d-pilot-04/results.json",
+      "sha256": "0e587d8adb365a22bc16027ed87b36eef2141fb5eb712c8db62f49deb53f1a31",
+      "raw_n": 480,
+      "current_n": 467
+    },
+    "opus06": {
+      "path": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/iterative-goal-20261006/jobs/opus-five-d-pilot-06/results.json",
+      "sha256": "dc90e5b917dd0ec500bbc82c26a1d84ffe03e9941c5ceed8df4ac4192742a938",
+      "raw_n": 600,
+      "current_n": 594
+    }
+  },
+  "candidate_tasks_sha256": "ef95605fd09227b61d197802454188cd9c095dbff16bbf18a68109970939a21a",
+  "candidate_plan_sha256": "adff692d3ee00aeac317e1592de1ba55df9afe5685eb8bfd34b435c0963e99f5",
+  "assessment_script_sha256": "b2eacbc3e052886a5ac1f92892f9328007e8fc059456d5c749cfdd5913e9345e",
+  "source_scope": {
+    "all60_highcap_questions_current_scope": true,
+    "highcap_unique_families": 60,
+    "current_baseline_n": 467,
+    "candidate_families": 929,
+    "exact_candidate_cells": 42,
+    "observed_diagnostic_exact_cells": 26,
+    "candidate_questions_in_unobserved_exact_cells": 552,
+    "class_adjustment": false
+  },
+  "raw_diagnostic": {
+    "high": {
+      "requests": 60,
+      "completed": 60,
+      "correct": 44,
+      "completed_correct": 44,
+      "statuses": {
+        "completed": 60
+      },
+      "completed_accuracy": 0.7333333333333333,
+      "all_request_accuracy": 0.7333333333333333,
+      "completed_wilson_95": [
+        0.6099128690331636,
+        0.8286735999671945
+      ],
+      "missing_response_bounds": [
+        0.7333333333333333,
+        0.7333333333333333
+      ],
+      "truncations": 0,
+      "families": 60
+    },
+    "baseline_same_inputs": {
+      "requests": 60,
+      "completed": 50,
+      "correct": 40,
+      "completed_correct": 40,
+      "statuses": {
+        "completed": 50,
+        "incomplete": 10
+      },
+      "completed_accuracy": 0.8,
+      "all_request_accuracy": 0.6666666666666666,
+      "completed_wilson_95": [
+        0.6696289406777459,
+        0.887562499842239
+      ],
+      "missing_response_bounds": [
+        0.6666666666666666,
+        0.8333333333333334
+      ],
+      "truncations": 10,
+      "families": 60
+    },
+    "observed_high_output_tokens": {
+      "n": 60,
+      "mean": 9585.933333333332,
+      "sd": 5309.966962987868,
+      "quantiles": {
+        "0": 1203.0,
+        "0.25": 4110.0,
+        "0.5": 10174.0,
+        "0.75": 13868.5,
+        "0.9": 16354.900000000001,
+        "0.95": 17564.199999999997,
+        "0.99": 19788.169999999995,
+        "1": 20577.0
+      }
+    },
+    "observed_high_cost": {
+      "n": 60,
+      "mean": 0.24084458333333328,
+      "sd": 0.13274830461521261,
+      "quantiles": {
+        "0": 0.03127,
+        "0.25": 0.10394375,
+        "0.5": 0.2555375,
+        "0.75": 0.34793874999999996,
+        "0.9": 0.41007400000000005,
+        "0.95": 0.44029949999999995,
+        "0.99": 0.49589104999999983,
+        "1": 0.5156
+      }
+    },
+    "high_outputs_exceeding16384": 6,
+    "one_sided95_missing_probability_upper_after_zero_of60": 0.04870291331009746,
+    "total_high_cost": 14.450675000000002
+  },
+  "standardized_diagnostic": {
+    "method": "Exact candidate joint quotas aggregated to eight recipe×aorist/other×voice strata; no correction for within-non-Lun tense or class composition.",
+    "all_high_accuracy": 0.7304232804232803,
+    "high_accuracy_bootstrap": {
+      "mean": 0.7311095291005291,
+      "standard_error": 0.05184212723153592,
+      "percentile95": [
+        0.6296818783068783,
+        0.830609126984127
+      ],
+      "one_sided95_upper": 0.8147089947089946
+    },
+    "baseline_recorded_all": 0.661137566137566,
+    "baseline_usable": 0.7944748219735502,
+    "baseline_completion": 0.8321693121693121,
+    "strata": {
+      "causative_of_intensive_luk|other|Kartari": {
+        "n": 7,
+        "candidate_n": 576,
+        "weight": 0.12,
+        "high_cost_mean": 0.07930928571428572,
+        "baseline_cost_mean": 0.09687357142857143,
+        "paired_cost_difference": -0.017564285714285716,
+        "high_correct": 7,
+        "high_output_tokens": {
+          "n": 7,
+          "mean": 3123.8571428571427,
+          "sd": 1345.9570855679153,
+          "quantiles": {
+            "0": 1336.0,
+            "0.25": 2052.5,
+            "0.5": 3500.0,
+            "0.75": 3931.5,
+            "0.9": 4521.8,
+            "0.95": 4792.4,
+            "0.99": 5008.879999999999,
+            "1": 5063.0
+          }
+        }
+      },
+      "causative_of_intensive|Lun|Kartari": {
+        "n": 18,
+        "candidate_n": 1440,
+        "weight": 0.3,
+        "high_cost_mean": 0.3293008333333333,
+        "baseline_cost_mean": 0.33052166666666666,
+        "paired_cost_difference": -0.0012208333333333346,
+        "high_correct": 14,
+        "high_output_tokens": {
+          "n": 18,
+          "mean": 13124.166666666666,
+          "sd": 3191.3559399249275,
+          "quantiles": {
+            "0": 7029.0,
+            "0.25": 10620.75,
+            "0.5": 12755.0,
+            "0.75": 14994.5,
+            "0.9": 17586.8,
+            "0.95": 18367.899999999998,
+            "0.99": 19065.579999999998,
+            "1": 19240.0
+          }
+        }
+      },
+      "causative_of_intensive_luk|other|Karmani": {
+        "n": 2,
+        "candidate_n": 128,
+        "weight": 0.02666666666666667,
+        "high_cost_mean": 0.0477475,
+        "baseline_cost_mean": 0.10176,
+        "paired_cost_difference": -0.0540125,
+        "high_correct": 2,
+        "high_output_tokens": {
+          "n": 2,
+          "mean": 1862.0,
+          "sd": 931.9667376038697,
+          "quantiles": {
+            "0": 1203.0,
+            "0.25": 1532.5,
+            "0.5": 1862.0,
+            "0.75": 2191.5,
+            "0.9": 2389.2,
+            "0.95": 2455.1,
+            "0.99": 2507.82,
+            "1": 2521.0
+          }
+        }
+      },
+      "causative_of_intensive|other|Kartari": {
+        "n": 18,
+        "candidate_n": 1408,
+        "weight": 0.29333333333333333,
+        "high_cost_mean": 0.22502972222222223,
+        "baseline_cost_mean": 0.20940888888888887,
+        "paired_cost_difference": 0.015620833333333327,
+        "high_correct": 13,
+        "high_output_tokens": {
+          "n": 18,
+          "mean": 8953.333333333334,
+          "sd": 4927.073442306533,
+          "quantiles": {
+            "0": 2936.0,
+            "0.25": 4371.25,
+            "0.5": 9434.5,
+            "0.75": 11911.0,
+            "0.9": 14289.7,
+            "0.95": 15868.849999999991,
+            "0.99": 19635.36999999999,
+            "1": 20577.0
+          }
+        }
+      },
+      "causative_of_intensive_luk|Lun|Kartari": {
+        "n": 7,
+        "candidate_n": 576,
+        "weight": 0.12,
+        "high_cost_mean": 0.375875,
+        "baseline_cost_mean": 0.3479,
+        "paired_cost_difference": 0.027975,
+        "high_correct": 4,
+        "high_output_tokens": {
+          "n": 7,
+          "mean": 14986.857142857143,
+          "sd": 2186.586794418143,
+          "quantiles": {
+            "0": 11413.0,
+            "0.25": 13787.0,
+            "0.5": 14922.0,
+            "0.75": 16734.5,
+            "0.9": 17337.4,
+            "0.95": 17433.7,
+            "0.99": 17510.74,
+            "1": 17530.0
+          }
+        }
+      },
+      "desiderative|Lun|Kartari": {
+        "n": 2,
+        "candidate_n": 144,
+        "weight": 0.03,
+        "high_cost_mean": 0.2293825,
+        "baseline_cost_mean": 0.2178575,
+        "paired_cost_difference": 0.01152499999999998,
+        "high_correct": 1,
+        "high_output_tokens": {
+          "n": 2,
+          "mean": 9129.0,
+          "sd": 890.9545442950499,
+          "quantiles": {
+            "0": 8499.0,
+            "0.25": 8814.0,
+            "0.5": 9129.0,
+            "0.75": 9444.0,
+            "0.9": 9633.0,
+            "0.95": 9696.0,
+            "0.99": 9746.4,
+            "1": 9759.0
+          }
+        }
+      },
+      "causative_of_intensive|other|Karmani": {
+        "n": 4,
+        "candidate_n": 352,
+        "weight": 0.07333333333333333,
+        "high_cost_mean": 0.161255,
+        "baseline_cost_mean": 0.20879875,
+        "paired_cost_difference": -0.047543749999999996,
+        "high_correct": 1,
+        "high_output_tokens": {
+          "n": 4,
+          "mean": 6402.5,
+          "sd": 2745.437245078945,
+          "quantiles": {
+            "0": 2606.0,
+            "0.25": 5492.75,
+            "0.5": 6979.5,
+            "0.75": 7889.25,
+            "0.9": 8582.7,
+            "0.95": 8813.849999999999,
+            "0.99": 8998.77,
+            "1": 9045.0
+          }
+        }
+      },
+      "desiderative|other|Kartari": {
+        "n": 2,
+        "candidate_n": 176,
+        "weight": 0.03666666666666667,
+        "high_cost_mean": 0.0435775,
+        "baseline_cost_mean": 0.0603525,
+        "paired_cost_difference": -0.016775,
+        "high_correct": 2,
+        "high_output_tokens": {
+          "n": 2,
+          "mean": 1697.0,
+          "sd": 308.2985565973347,
+          "quantiles": {
+            "0": 1479.0,
+            "0.25": 1588.0,
+            "0.5": 1697.0,
+            "0.75": 1806.0,
+            "0.9": 1871.4,
+            "0.95": 1893.2,
+            "0.99": 1910.64,
+            "1": 1915.0
+          }
+        }
+      }
+    }
+  },
+  "cost_forecast": {
+    "primary": "Direct coarse standardization; anchored fine-baseline correction is sensitivity, not a choice made to pass funding.",
+    "fine_baseline_16k_point_mean": 0.24034355795451387,
+    "coarse_paired_cap_cost_increment": 0.00026893849206348916,
+    "anchored_family_influence_se": 0.01328326677683641,
+    "funding": {
+      "direct_coarse": {
+        "mean_per_task": 0.24099903280423277,
+        "projected_final_cost": 1156.7953574603173,
+        "projected_lifetime": 1884.2735074603174,
+        "point_headroom": 115.7264925396828,
+        "mean_uncertainty": {
+          "mean": 0.24092551418527114,
+          "standard_error": 0.010537724963129878,
+          "percentile95": [
+            0.22054365664351852,
+            0.2618436176818783
+          ],
+          "one_sided95_upper": 0.2584569512301587
+        },
+        "mean_only_lifetime95": [
+          1786.0877018888891,
+          1984.3275148730158
+        ],
+        "largest_n_at_point_mean": 5280,
+        "largest_n_at_one_sided95_mean": 4923,
+        "predictive_sensitivity": [
+          {
+            "assumed_within_family_cost_rho": 0,
+            "conditional_final_total_cost_sd": 5.891498480201502,
+            "bootstrap_plus_predictive_total_cost95": [
+              1058.863180287922,
+              1257.4796975078984
+            ],
+            "conditional_fraction_over_remaining_budget": 0.0127
+          },
+          {
+            "assumed_within_family_cost_rho": 0.2,
+            "conditional_final_total_cost_sd": 8.264897987876617,
+            "bootstrap_plus_predictive_total_cost95": [
+              1057.0834371776325,
+              1258.804610361092
+            ],
+            "conditional_fraction_over_remaining_budget": 0.0129
+          },
+          {
+            "assumed_within_family_cost_rho": 0.4,
+            "conditional_final_total_cost_sd": 10.094915708305706,
+            "bootstrap_plus_predictive_total_cost95": [
+              1057.1616813352396,
+              1258.7034726445274
+            ],
+            "conditional_fraction_over_remaining_budget": 0.013
+          }
+        ]
+      },
+      "fine_baseline_plus_coarse_paired_increment": {
+        "mean_per_task": 0.24061249644657737,
+        "projected_final_cost": 1154.9399829435713,
+        "projected_lifetime": 1882.4181329435714,
+        "point_headroom": 117.58186705642879,
+        "mean_uncertainty": {
+          "mean": 0.2406394318280225,
+          "standard_error": 0.013240767905734493,
+          "percentile95": [
+            0.2148928722594261,
+            0.26679612621317633
+          ],
+          "one_sided95_upper": 0.26264540517518453
+        },
+        "mean_only_lifetime95": [
+          1758.9639368452454,
+          2008.0995558232466
+        ],
+        "largest_n_at_point_mean": 5288,
+        "largest_n_at_one_sided95_mean": 4845,
+        "predictive_sensitivity": [
+          {
+            "assumed_within_family_cost_rho": 0,
+            "conditional_final_total_cost_sd": 5.891498480201502,
+            "bootstrap_plus_predictive_total_cost95": [
+              1031.0388750309592,
+              1281.5202959700928
+            ],
+            "conditional_fraction_over_remaining_budget": 0.03445
+          },
+          {
+            "assumed_within_family_cost_rho": 0.2,
+            "conditional_final_total_cost_sd": 8.264897987876617,
+            "bootstrap_plus_predictive_total_cost95": [
+              1029.3347321901504,
+              1282.8165882778303
+            ],
+            "conditional_fraction_over_remaining_budget": 0.0355
+          },
+          {
+            "assumed_within_family_cost_rho": 0.4,
+            "conditional_final_total_cost_sd": 10.094915708305706,
+            "bootstrap_plus_predictive_total_cost95": [
+              1029.6761141156185,
+              1282.3302920774759
+            ],
+            "conditional_fraction_over_remaining_budget": 0.0349
+          }
+        ]
+      }
+    },
+    "remaining_openai": 1272.52185,
+    "maximum4800_average_cost_for_cap": 0.26510871875,
+    "openai_settled": 727.47815,
+    "anthropic_settled": 188.615334,
+    "bootstrap_repetitions": 20000,
+    "bootstrap_seed": 202610071122,
+    "unobserved_tail_sensitivity": [
+      {
+        "output_tokens": 32000,
+        "task_cost": 0.80119625,
+        "extra_tail_fraction_exhausting_point_headroom": 0.04303785382307934,
+        "mixtures": [
+          {
+            "tail_fraction": 0.005,
+            "projected_final_cost": 1170.2400906730156,
+            "projected_lifetime": 1897.7182406730158
+          },
+          {
+            "tail_fraction": 0.01,
+            "projected_final_cost": 1183.6848238857142,
+            "projected_lifetime": 1911.162973885714
+          },
+          {
+            "tail_fraction": 0.02,
+            "projected_final_cost": 1210.5742903111109,
+            "projected_lifetime": 1938.0524403111108
+          },
+          {
+            "tail_fraction": 0.05,
+            "projected_final_cost": 1291.2426895873016,
+            "projected_lifetime": 2018.7208395873017
+          }
+        ]
+      },
+      {
+        "output_tokens": 64000,
+        "task_cost": 1.60119625,
+        "extra_tail_fraction_exhausting_point_headroom": 0.01772513988484161,
+        "mixtures": [
+          {
+            "tail_fraction": 0.005,
+            "projected_final_cost": 1189.4400906730157,
+            "projected_lifetime": 1916.9182406730156
+          },
+          {
+            "tail_fraction": 0.01,
+            "projected_final_cost": 1222.084823885714,
+            "projected_lifetime": 1949.5629738857142
+          },
+          {
+            "tail_fraction": 0.02,
+            "projected_final_cost": 1287.374290311111,
+            "projected_lifetime": 2014.852440311111
+          },
+          {
+            "tail_fraction": 0.05,
+            "projected_final_cost": 1483.2426895873014,
+            "projected_lifetime": 2210.7208395873013
+          }
+        ]
+      },
+      {
+        "output_tokens": 128000,
+        "task_cost": 3.20119625,
+        "extra_tail_fraction_exhausting_point_headroom": 0.008144621515659242,
+        "mixtures": [
+          {
+            "tail_fraction": 0.005,
+            "projected_final_cost": 1227.8400906730155,
+            "projected_lifetime": 1955.3182406730157
+          },
+          {
+            "tail_fraction": 0.01,
+            "projected_final_cost": 1298.884823885714,
+            "projected_lifetime": 2026.362973885714
+          },
+          {
+            "tail_fraction": 0.02,
+            "projected_final_cost": 1440.9742903111112,
+            "projected_lifetime": 2168.4524403111113
+          },
+          {
+            "tail_fraction": 0.05,
+            "projected_final_cost": 1867.2426895873014,
+            "projected_lifetime": 2594.7208395873013
+          }
+        ]
+      }
+    ],
+    "coarse_moment_predictive_independent_variance_sum": 34.70975434221661,
+    "coarse_moment_predictive_family_covariance_coefficient": 167.99392203895167
+  },
+  "precision_scenarios": {
+    "empirical_completion1.0": {
+      "moment_estimator": "empirical coarse correctness proportions",
+      "coarse_cells": 8,
+      "minimum_cell_n": 2,
+      "assumed_completion": 1.0,
+      "projected_all_accuracy": 0.7304232804232805,
+      "projected_usable_accuracy": 0.7304232804232805,
+      "iid_all_se_pp": 0.640483397909628,
+      "iid_usable_se_pp": 0.640483397909628,
+      "expected_missing_response_bounds": [
+        0.7304232804232805,
+        0.7304232804232806
+      ],
+      "estimates": {
+        "recorded_all_correct": {
+          "independent_variance_sum": 774.4192491811539,
+          "allocation_mean_squared_sum": 221.89823773130672,
+          "pair_covariance_coefficients": {
+            "different_non_Lun": 871.7807033627515,
+            "one_Lun": 1278.7900602195105,
+            "both_Lun": 1445.5194144700292
+          },
+          "common_rho_scenarios": [
+            {
+              "assumed_common_rho": 0,
+              "expected_sandwich_se_pp": 0.6579479043453864
+            },
+            {
+              "assumed_common_rho": 0.05,
+              "expected_sandwich_se_pp": 0.7148564130345904
+            },
+            {
+              "assumed_common_rho": 0.1,
+              "expected_sandwich_se_pp": 0.767557123399214
+            },
+            {
+              "assumed_common_rho": 0.15,
+              "expected_sandwich_se_pp": 0.8168648505750945
+            },
+            {
+              "assumed_common_rho": 0.2,
+              "expected_sandwich_se_pp": 0.8633611240548573
+            },
+            {
+              "assumed_common_rho": 0.25,
+              "expected_sandwich_se_pp": 0.9074781964066475
+            },
+            {
+              "assumed_common_rho": 0.3,
+              "expected_sandwich_se_pp": 0.9495477467603496
+            },
+            {
+              "assumed_common_rho": 0.4,
+              "expected_sandwich_se_pp": 1.0285375132808952
+            }
+          ],
+          "pair_type_scenarios": [
+            {
+              "repeated_Lun_rho": 0,
+              "mixed_rho": 0,
+              "non_Lun_rho": 0,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.6579479043453865
+            },
+            {
+              "repeated_Lun_rho": 0.1,
+              "mixed_rho": 0,
+              "non_Lun_rho": 0,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.7040615101214048
+            },
+            {
+              "repeated_Lun_rho": 0.2,
+              "mixed_rho": 0,
+              "non_Lun_rho": 0,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.7473351157522174
+            },
+            {
+              "repeated_Lun_rho": 0.3,
+              "mixed_rho": 0,
+              "non_Lun_rho": 0,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.7882366018133942
+            },
+            {
+              "repeated_Lun_rho": 0.4,
+              "mixed_rho": 0,
+              "non_Lun_rho": 0,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.8271179514677907
+            },
+            {
+              "repeated_Lun_rho": 0.5,
+              "mixed_rho": 0,
+              "non_Lun_rho": 0,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.864251856140455
+            },
+            {
+              "repeated_Lun_rho": 0,
+              "mixed_rho": 0.15,
+              "non_Lun_rho": 0.1,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.7443911589605334
+            },
+            {
+              "repeated_Lun_rho": 0.1,
+              "mixed_rho": 0.15,
+              "non_Lun_rho": 0.1,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.7854459642397773
+            },
+            {
+              "repeated_Lun_rho": 0.2,
+              "mixed_rho": 0.15,
+              "non_Lun_rho": 0.1,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.8244589304158823
+            },
+            {
+              "repeated_Lun_rho": 0.3,
+              "mixed_rho": 0.15,
+              "non_Lun_rho": 0.1,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.8617074289713694
+            },
+            {
+              "repeated_Lun_rho": 0.4,
+              "mixed_rho": 0.15,
+              "non_Lun_rho": 0.1,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.897411198028192
+            },
+            {
+              "repeated_Lun_rho": 0.5,
+              "mixed_rho": 0.15,
+              "non_Lun_rho": 0.1,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.9317478325965358
+            },
+            {
+              "repeated_Lun_rho": 0,
+              "mixed_rho": 0.3,
+              "non_Lun_rho": 0.17,
+              "positive_semidefinite_for_all_cap8_5_blocks": false,
+              "expected_sandwich_se_pp": 0.8148480882879948
+            },
+            {
+              "repeated_Lun_rho": 0.1,
+              "mixed_rho": 0.3,
+              "non_Lun_rho": 0.17,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.8525166110924448
+            },
+            {
+              "repeated_Lun_rho": 0.2,
+              "mixed_rho": 0.3,
+              "non_Lun_rho": 0.17,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.8885897463905907
+            },
+            {
+              "repeated_Lun_rho": 0.3,
+              "mixed_rho": 0.3,
+              "non_Lun_rho": 0.17,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.9232545166921422
+            },
+            {
+              "repeated_Lun_rho": 0.4,
+              "mixed_rho": 0.3,
+              "non_Lun_rho": 0.17,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.9566640307832152
+            },
+            {
+              "repeated_Lun_rho": 0.5,
+              "mixed_rho": 0.3,
+              "non_Lun_rho": 0.17,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.9889455156864485
+            },
+            {
+              "repeated_Lun_rho": 0,
+              "mixed_rho": 0.45,
+              "non_Lun_rho": 0.3,
+              "positive_semidefinite_for_all_cap8_5_blocks": false,
+              "expected_sandwich_se_pp": 0.8925041753128367
+            },
+            {
+              "repeated_Lun_rho": 0.1,
+              "mixed_rho": 0.45,
+              "non_Lun_rho": 0.3,
+              "positive_semidefinite_for_all_cap8_5_blocks": false,
+              "expected_sandwich_se_pp": 0.9270225823316247
+            },
+            {
+              "repeated_Lun_rho": 0.2,
+              "mixed_rho": 0.45,
+              "non_Lun_rho": 0.3,
+              "positive_semidefinite_for_all_cap8_5_blocks": false,
+              "expected_sandwich_se_pp": 0.9603010118471923
+            },
+            {
+              "repeated_Lun_rho": 0.3,
+              "mixed_rho": 0.45,
+              "non_Lun_rho": 0.3,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.9924642051765334
+            },
+            {
+              "repeated_Lun_rho": 0.4,
+              "mixed_rho": 0.45,
+              "non_Lun_rho": 0.3,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 1.0236172936008043
+            },
+            {
+              "repeated_Lun_rho": 0.5,
+              "mixed_rho": 0.45,
+              "non_Lun_rho": 0.3,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 1.0538498607299727
+            }
+          ],
+          "maximum_common_rho_for_expected_sub1pp": 0.3629504162435549
+        },
+        "completed_ratio_influence": {
+          "independent_variance_sum": 774.4192491811539,
+          "allocation_mean_squared_sum": 221.89823773130672,
+          "pair_covariance_coefficients": {
+            "different_non_Lun": 871.7807033627515,
+            "one_Lun": 1278.7900602195105,
+            "both_Lun": 1445.5194144700292
+          },
+          "common_rho_scenarios": [
+            {
+              "assumed_common_rho": 0,
+              "expected_sandwich_se_pp": 0.6579479043453864
+            },
+            {
+              "assumed_common_rho": 0.05,
+              "expected_sandwich_se_pp": 0.7148564130345904
+            },
+            {
+              "assumed_common_rho": 0.1,
+              "expected_sandwich_se_pp": 0.767557123399214
+            },
+            {
+              "assumed_common_rho": 0.15,
+              "expected_sandwich_se_pp": 0.8168648505750945
+            },
+            {
+              "assumed_common_rho": 0.2,
+              "expected_sandwich_se_pp": 0.8633611240548573
+            },
+            {
+              "assumed_common_rho": 0.25,
+              "expected_sandwich_se_pp": 0.9074781964066475
+            },
+            {
+              "assumed_common_rho": 0.3,
+              "expected_sandwich_se_pp": 0.9495477467603496
+            },
+            {
+              "assumed_common_rho": 0.4,
+              "expected_sandwich_se_pp": 1.0285375132808952
+            }
+          ],
+          "pair_type_scenarios": [
+            {
+              "repeated_Lun_rho": 0,
+              "mixed_rho": 0,
+              "non_Lun_rho": 0,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.6579479043453865
+            },
+            {
+              "repeated_Lun_rho": 0.1,
+              "mixed_rho": 0,
+              "non_Lun_rho": 0,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.7040615101214048
+            },
+            {
+              "repeated_Lun_rho": 0.2,
+              "mixed_rho": 0,
+              "non_Lun_rho": 0,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.7473351157522174
+            },
+            {
+              "repeated_Lun_rho": 0.3,
+              "mixed_rho": 0,
+              "non_Lun_rho": 0,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.7882366018133942
+            },
+            {
+              "repeated_Lun_rho": 0.4,
+              "mixed_rho": 0,
+              "non_Lun_rho": 0,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.8271179514677907
+            },
+            {
+              "repeated_Lun_rho": 0.5,
+              "mixed_rho": 0,
+              "non_Lun_rho": 0,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.864251856140455
+            },
+            {
+              "repeated_Lun_rho": 0,
+              "mixed_rho": 0.15,
+              "non_Lun_rho": 0.1,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.7443911589605334
+            },
+            {
+              "repeated_Lun_rho": 0.1,
+              "mixed_rho": 0.15,
+              "non_Lun_rho": 0.1,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.7854459642397773
+            },
+            {
+              "repeated_Lun_rho": 0.2,
+              "mixed_rho": 0.15,
+              "non_Lun_rho": 0.1,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.8244589304158823
+            },
+            {
+              "repeated_Lun_rho": 0.3,
+              "mixed_rho": 0.15,
+              "non_Lun_rho": 0.1,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.8617074289713694
+            },
+            {
+              "repeated_Lun_rho": 0.4,
+              "mixed_rho": 0.15,
+              "non_Lun_rho": 0.1,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.897411198028192
+            },
+            {
+              "repeated_Lun_rho": 0.5,
+              "mixed_rho": 0.15,
+              "non_Lun_rho": 0.1,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.9317478325965358
+            },
+            {
+              "repeated_Lun_rho": 0,
+              "mixed_rho": 0.3,
+              "non_Lun_rho": 0.17,
+              "positive_semidefinite_for_all_cap8_5_blocks": false,
+              "expected_sandwich_se_pp": 0.8148480882879948
+            },
+            {
+              "repeated_Lun_rho": 0.1,
+              "mixed_rho": 0.3,
+              "non_Lun_rho": 0.17,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.8525166110924448
+            },
+            {
+              "repeated_Lun_rho": 0.2,
+              "mixed_rho": 0.3,
+              "non_Lun_rho": 0.17,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.8885897463905907
+            },
+            {
+              "repeated_Lun_rho": 0.3,
+              "mixed_rho": 0.3,
+              "non_Lun_rho": 0.17,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.9232545166921422
+            },
+            {
+              "repeated_Lun_rho": 0.4,
+              "mixed_rho": 0.3,
+              "non_Lun_rho": 0.17,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.9566640307832152
+            },
+            {
+              "repeated_Lun_rho": 0.5,
+              "mixed_rho": 0.3,
+              "non_Lun_rho": 0.17,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.9889455156864485
+            },
+            {
+              "repeated_Lun_rho": 0,
+              "mixed_rho": 0.45,
+              "non_Lun_rho": 0.3,
+              "positive_semidefinite_for_all_cap8_5_blocks": false,
+              "expected_sandwich_se_pp": 0.8925041753128367
+            },
+            {
+              "repeated_Lun_rho": 0.1,
+              "mixed_rho": 0.45,
+              "non_Lun_rho": 0.3,
+              "positive_semidefinite_for_all_cap8_5_blocks": false,
+              "expected_sandwich_se_pp": 0.9270225823316247
+            },
+            {
+              "repeated_Lun_rho": 0.2,
+              "mixed_rho": 0.45,
+              "non_Lun_rho": 0.3,
+              "positive_semidefinite_for_all_cap8_5_blocks": false,
+              "expected_sandwich_se_pp": 0.9603010118471923
+            },
+            {
+              "repeated_Lun_rho": 0.3,
+              "mixed_rho": 0.45,
+              "non_Lun_rho": 0.3,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.9924642051765334
+            },
+            {
+              "repeated_Lun_rho": 0.4,
+              "mixed_rho": 0.45,
+              "non_Lun_rho": 0.3,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 1.0236172936008043
+            },
+            {
+              "repeated_Lun_rho": 0.5,
+              "mixed_rho": 0.45,
+              "non_Lun_rho": 0.3,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 1.0538498607299727
+            }
+          ],
+          "maximum_common_rho_for_expected_sub1pp": 0.3629504162435549
+        }
+      }
+    },
+    "empirical_completion0.95": {
+      "moment_estimator": "empirical coarse correctness proportions",
+      "coarse_cells": 8,
+      "minimum_cell_n": 2,
+      "assumed_completion": 0.95,
+      "projected_all_accuracy": 0.6939021164021165,
+      "projected_usable_accuracy": 0.7304232804232805,
+      "iid_all_se_pp": 0.6652098184889675,
+      "iid_usable_se_pp": 0.6571221011252202,
+      "expected_missing_response_bounds": [
+        0.6939021164021165,
+        0.7439021164021165
+      ],
+      "estimates": {
+        "recorded_all_correct": {
+          "independent_variance_sum": 865.4498803224991,
+          "allocation_mean_squared_sum": 200.2631595525043,
+          "pair_covariance_coefficients": {
+            "different_non_Lun": 1348.8398939029287,
+            "one_Lun": 1543.156680590111,
+            "both_Lun": 1562.3445472197816
+          },
+          "common_rho_scenarios": [
+            {
+              "assumed_common_rho": 0,
+              "expected_sandwich_se_pp": 0.6804759356034955
+            },
+            {
+              "assumed_common_rho": 0.05,
+              "expected_sandwich_se_pp": 0.748209230864805
+            },
+            {
+              "assumed_common_rho": 0.1,
+              "expected_sandwich_se_pp": 0.8103003192441388
+            },
+            {
+              "assumed_common_rho": 0.15,
+              "expected_sandwich_se_pp": 0.8679609216911808
+            },
+            {
+              "assumed_common_rho": 0.2,
+              "expected_sandwich_se_pp": 0.9220226221730432
+            },
+            {
+              "assumed_common_rho": 0.25,
+              "expected_sandwich_se_pp": 0.9730854381886028
+            },
+            {
+              "assumed_common_rho": 0.3,
+              "expected_sandwich_se_pp": 1.0215991504648756
+            },
+            {
+              "assumed_common_rho": 0.4,
+              "expected_sandwich_se_pp": 1.1122966927318703
+            }
+          ],
+          "pair_type_scenarios": [
+            {
+              "repeated_Lun_rho": 0,
+              "mixed_rho": 0,
+              "non_Lun_rho": 0,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.6804759356034955
+            },
+            {
+              "repeated_Lun_rho": 0.1,
+              "mixed_rho": 0,
+              "non_Lun_rho": 0,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.728649890792465
+            },
+            {
+              "repeated_Lun_rho": 0.2,
+              "mixed_rho": 0,
+              "non_Lun_rho": 0,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.7738306195597908
+            },
+            {
+              "repeated_Lun_rho": 0.3,
+              "mixed_rho": 0,
+              "non_Lun_rho": 0,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.8165151512278925
+            },
+            {
+              "repeated_Lun_rho": 0.4,
+              "mixed_rho": 0,
+              "non_Lun_rho": 0,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.8570765173548549
+            },
+            {
+              "repeated_Lun_rho": 0.5,
+              "mixed_rho": 0,
+              "non_Lun_rho": 0,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.8958031709128661
+            },
+            {
+              "repeated_Lun_rho": 0,
+              "mixed_rho": 0.15,
+              "non_Lun_rho": 0.1,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.788814409790258
+            },
+            {
+              "repeated_Lun_rho": 0.1,
+              "mixed_rho": 0.15,
+              "non_Lun_rho": 0.1,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.8307294008936794
+            },
+            {
+              "repeated_Lun_rho": 0.2,
+              "mixed_rho": 0.15,
+              "non_Lun_rho": 0.1,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.8706287968621244
+            },
+            {
+              "repeated_Lun_rho": 0.3,
+              "mixed_rho": 0.15,
+              "non_Lun_rho": 0.1,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.9087781172222452
+            },
+            {
+              "repeated_Lun_rho": 0.4,
+              "mixed_rho": 0.15,
+              "non_Lun_rho": 0.1,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.9453892482773576
+            },
+            {
+              "repeated_Lun_rho": 0.5,
+              "mixed_rho": 0.15,
+              "non_Lun_rho": 0.1,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.9806344860215991
+            },
+            {
+              "repeated_Lun_rho": 0,
+              "mixed_rho": 0.3,
+              "non_Lun_rho": 0.17,
+              "positive_semidefinite_for_all_cap8_5_blocks": false,
+              "expected_sandwich_se_pp": 0.8739719115227214
+            },
+            {
+              "repeated_Lun_rho": 0.1,
+              "mixed_rho": 0.3,
+              "non_Lun_rho": 0.17,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.9119813959435239
+            },
+            {
+              "repeated_Lun_rho": 0.2,
+              "mixed_rho": 0.3,
+              "non_Lun_rho": 0.17,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.9484688877150987
+            },
+            {
+              "repeated_Lun_rho": 0.3,
+              "mixed_rho": 0.3,
+              "non_Lun_rho": 0.17,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.9836037796694029
+            },
+            {
+              "repeated_Lun_rho": 0.4,
+              "mixed_rho": 0.3,
+              "non_Lun_rho": 0.17,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 1.0175261961229078
+            },
+            {
+              "repeated_Lun_rho": 0.5,
+              "mixed_rho": 0.3,
+              "non_Lun_rho": 0.17,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 1.0503536186507727
+            },
+            {
+              "repeated_Lun_rho": 0,
+              "mixed_rho": 0.45,
+              "non_Lun_rho": 0.3,
+              "positive_semidefinite_for_all_cap8_5_blocks": false,
+              "expected_sandwich_se_pp": 0.9698399462835886
+            },
+            {
+              "repeated_Lun_rho": 0.1,
+              "mixed_rho": 0.45,
+              "non_Lun_rho": 0.3,
+              "positive_semidefinite_for_all_cap8_5_blocks": false,
+              "expected_sandwich_se_pp": 1.0042274074251174
+            },
+            {
+              "repeated_Lun_rho": 0.2,
+              "mixed_rho": 0.45,
+              "non_Lun_rho": 0.3,
+              "positive_semidefinite_for_all_cap8_5_blocks": false,
+              "expected_sandwich_se_pp": 1.037475710674805
+            },
+            {
+              "repeated_Lun_rho": 0.3,
+              "mixed_rho": 0.45,
+              "non_Lun_rho": 0.3,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 1.0696910837511033
+            },
+            {
+              "repeated_Lun_rho": 0.4,
+              "mixed_rho": 0.45,
+              "non_Lun_rho": 0.3,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 1.1009642042650742
+            },
+            {
+              "repeated_Lun_rho": 0.5,
+              "mixed_rho": 0.45,
+              "non_Lun_rho": 0.3,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 1.131373211407026
+            }
+          ],
+          "maximum_common_rho_for_expected_sub1pp": 0.27743875923353
+        },
+        "completed_ratio_influence": {
+          "independent_variance_sum": 824.1636984878426,
+          "allocation_mean_squared_sum": 221.89823773130672,
+          "pair_covariance_coefficients": {
+            "different_non_Lun": 1041.1740366158058,
+            "one_Lun": 1403.9881289339462,
+            "both_Lun": 1524.9410902946825
+          },
+          "common_rho_scenarios": [
+            {
+              "assumed_common_rho": 0,
+              "expected_sandwich_se_pp": 0.6741729623898642
+            },
+            {
+              "assumed_common_rho": 0.05,
+              "expected_sandwich_se_pp": 0.7353630254725402
+            },
+            {
+              "assumed_common_rho": 0.1,
+              "expected_sandwich_se_pp": 0.7918386042917651
+            },
+            {
+              "assumed_common_rho": 0.15,
+              "expected_sandwich_se_pp": 0.8445460148868936
+            },
+            {
+              "assumed_common_rho": 0.2,
+              "expected_sandwich_se_pp": 0.8941518703642777
+            },
+            {
+              "assumed_common_rho": 0.25,
+              "expected_sandwich_se_pp": 0.9411467278222553
+            },
+            {
+              "assumed_common_rho": 0.3,
+              "expected_sandwich_se_pp": 0.9859040314884308
+            },
+            {
+              "assumed_common_rho": 0.4,
+              "expected_sandwich_se_pp": 1.0698158492630152
+            }
+          ],
+          "pair_type_scenarios": [
+            {
+              "repeated_Lun_rho": 0,
+              "mixed_rho": 0,
+              "non_Lun_rho": 0,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.6741729623898642
+            },
+            {
+              "repeated_Lun_rho": 0.1,
+              "mixed_rho": 0,
+              "non_Lun_rho": 0,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.7216420056623958
+            },
+            {
+              "repeated_Lun_rho": 0.2,
+              "mixed_rho": 0,
+              "non_Lun_rho": 0,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.7661756883739951
+            },
+            {
+              "repeated_Lun_rho": 0.3,
+              "mixed_rho": 0,
+              "non_Lun_rho": 0,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.8082593560078873
+            },
+            {
+              "repeated_Lun_rho": 0.4,
+              "mixed_rho": 0,
+              "non_Lun_rho": 0,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.8482577365949603
+            },
+            {
+              "repeated_Lun_rho": 0.5,
+              "mixed_rho": 0,
+              "non_Lun_rho": 0,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.8864531509403781
+            },
+            {
+              "repeated_Lun_rho": 0,
+              "mixed_rho": 0.15,
+              "non_Lun_rho": 0.1,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.7689289297043809
+            },
+            {
+              "repeated_Lun_rho": 0.1,
+              "mixed_rho": 0.15,
+              "non_Lun_rho": 0.1,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.8108697182995828
+            },
+            {
+              "repeated_Lun_rho": 0.2,
+              "mixed_rho": 0.15,
+              "non_Lun_rho": 0.1,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.8507453797548152
+            },
+            {
+              "repeated_Lun_rho": 0.3,
+              "mixed_rho": 0.15,
+              "non_Lun_rho": 0.1,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.8888339002834469
+            },
+            {
+              "repeated_Lun_rho": 0.4,
+              "mixed_rho": 0.15,
+              "non_Lun_rho": 0.1,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.9253559873972849
+            },
+            {
+              "repeated_Lun_rho": 0.5,
+              "mixed_rho": 0.15,
+              "non_Lun_rho": 0.1,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.9604903458811672
+            },
+            {
+              "repeated_Lun_rho": 0,
+              "mixed_rho": 0.3,
+              "non_Lun_rho": 0.17,
+              "positive_semidefinite_for_all_cap8_5_blocks": false,
+              "expected_sandwich_se_pp": 0.8452352644483944
+            },
+            {
+              "repeated_Lun_rho": 0.1,
+              "mixed_rho": 0.3,
+              "non_Lun_rho": 0.17,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.8835613467021217
+            },
+            {
+              "repeated_Lun_rho": 0.2,
+              "mixed_rho": 0.3,
+              "non_Lun_rho": 0.17,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.9202927004518654
+            },
+            {
+              "repeated_Lun_rho": 0.3,
+              "mixed_rho": 0.3,
+              "non_Lun_rho": 0.17,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.9556132353750166
+            },
+            {
+              "repeated_Lun_rho": 0.4,
+              "mixed_rho": 0.3,
+              "non_Lun_rho": 0.17,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.9896740153923548
+            },
+            {
+              "repeated_Lun_rho": 0.5,
+              "mixed_rho": 0.3,
+              "non_Lun_rho": 0.17,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 1.0226009279585788
+            },
+            {
+              "repeated_Lun_rho": 0,
+              "mixed_rho": 0.45,
+              "non_Lun_rho": 0.3,
+              "positive_semidefinite_for_all_cap8_5_blocks": false,
+              "expected_sandwich_se_pp": 0.9299122164881607
+            },
+            {
+              "repeated_Lun_rho": 0.1,
+              "mixed_rho": 0.45,
+              "non_Lun_rho": 0.3,
+              "positive_semidefinite_for_all_cap8_5_blocks": false,
+              "expected_sandwich_se_pp": 0.9648806825161563
+            },
+            {
+              "repeated_Lun_rho": 0.2,
+              "mixed_rho": 0.45,
+              "non_Lun_rho": 0.3,
+              "positive_semidefinite_for_all_cap8_5_blocks": false,
+              "expected_sandwich_se_pp": 0.9986254215729555
+            },
+            {
+              "repeated_Lun_rho": 0.3,
+              "mixed_rho": 0.45,
+              "non_Lun_rho": 0.3,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 1.0312665677363362
+            },
+            {
+              "repeated_Lun_rho": 0.4,
+              "mixed_rho": 0.45,
+              "non_Lun_rho": 0.3,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 1.0629057977307317
+            },
+            {
+              "repeated_Lun_rho": 0.5,
+              "mixed_rho": 0.45,
+              "non_Lun_rho": 0.3,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 1.0936300727250157
+            }
+          ],
+          "maximum_common_rho_for_expected_sub1pp": 0.3162280416305484
+        }
+      }
+    },
+    "smoothed_completion1.0": {
+      "moment_estimator": "Jeffreys Beta(.5,.5) per coarse correctness cell",
+      "coarse_cells": 8,
+      "minimum_cell_n": 2,
+      "assumed_completion": 1.0,
+      "projected_all_accuracy": 0.7071461988304096,
+      "projected_usable_accuracy": 0.7071461988304096,
+      "iid_all_se_pp": 0.6568397386826822,
+      "iid_usable_se_pp": 0.6568397386826822,
+      "expected_missing_response_bounds": [
+        0.7071461988304096,
+        0.7071461988304097
+      ],
+      "estimates": {
+        "recorded_all_correct": {
+          "independent_variance_sum": 877.514798399507,
+          "allocation_mean_squared_sum": 160.63014116232347,
+          "pair_covariance_coefficients": {
+            "different_non_Lun": 1458.2160225005882,
+            "one_Lun": 1543.837873641841,
+            "both_Lun": 1491.3643506343965
+          },
+          "common_rho_scenarios": [
+            {
+              "assumed_common_rho": 0,
+              "expected_sandwich_se_pp": 0.6716169175607172
+            },
+            {
+              "assumed_common_rho": 0.05,
+              "expected_sandwich_se_pp": 0.7407346217643931
+            },
+            {
+              "assumed_common_rho": 0.1,
+              "expected_sandwich_se_pp": 0.8039317606657403
+            },
+            {
+              "assumed_common_rho": 0.15,
+              "expected_sandwich_se_pp": 0.8625107371701506
+            },
+            {
+              "assumed_common_rho": 0.2,
+              "expected_sandwich_se_pp": 0.9173566741788473
+            },
+            {
+              "assumed_common_rho": 0.25,
+              "expected_sandwich_se_pp": 0.9691035876453841
+            },
+            {
+              "assumed_common_rho": 0.3,
+              "expected_sandwich_se_pp": 1.0182240713682984
+            },
+            {
+              "assumed_common_rho": 0.4,
+              "expected_sandwich_se_pp": 1.1099627252152173
+            }
+          ],
+          "pair_type_scenarios": [
+            {
+              "repeated_Lun_rho": 0,
+              "mixed_rho": 0,
+              "non_Lun_rho": 0,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.6716169175607173
+            },
+            {
+              "repeated_Lun_rho": 0.1,
+              "mixed_rho": 0,
+              "non_Lun_rho": 0,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.718239786499403
+            },
+            {
+              "repeated_Lun_rho": 0.2,
+              "mixed_rho": 0,
+              "non_Lun_rho": 0,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.7620154183923424
+            },
+            {
+              "repeated_Lun_rho": 0.3,
+              "mixed_rho": 0,
+              "non_Lun_rho": 0,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.8034093631671251
+            },
+            {
+              "repeated_Lun_rho": 0.4,
+              "mixed_rho": 0,
+              "non_Lun_rho": 0,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.8427726335029835
+            },
+            {
+              "repeated_Lun_rho": 0.5,
+              "mixed_rho": 0,
+              "non_Lun_rho": 0,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.8803776568828304
+            },
+            {
+              "repeated_Lun_rho": 0,
+              "mixed_rho": 0.15,
+              "non_Lun_rho": 0.1,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.7842491299053447
+            },
+            {
+              "repeated_Lun_rho": 0.1,
+              "mixed_rho": 0.15,
+              "non_Lun_rho": 0.1,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.8245276251977487
+            },
+            {
+              "repeated_Lun_rho": 0.2,
+              "mixed_rho": 0.15,
+              "non_Lun_rho": 0.1,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.8629281034195071
+            },
+            {
+              "repeated_Lun_rho": 0.3,
+              "mixed_rho": 0.15,
+              "non_Lun_rho": 0.1,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.8996910684385705
+            },
+            {
+              "repeated_Lun_rho": 0.4,
+              "mixed_rho": 0.15,
+              "non_Lun_rho": 0.1,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.935009692776008
+            },
+            {
+              "repeated_Lun_rho": 0.5,
+              "mixed_rho": 0.15,
+              "non_Lun_rho": 0.1,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.9690419147498386
+            },
+            {
+              "repeated_Lun_rho": 0,
+              "mixed_rho": 0.3,
+              "non_Lun_rho": 0.17,
+              "positive_semidefinite_for_all_cap8_5_blocks": false,
+              "expected_sandwich_se_pp": 0.8717892310852271
+            },
+            {
+              "repeated_Lun_rho": 0.1,
+              "mixed_rho": 0.3,
+              "non_Lun_rho": 0.17,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.908193575397404
+            },
+            {
+              "repeated_Lun_rho": 0.2,
+              "mixed_rho": 0.3,
+              "non_Lun_rho": 0.17,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.943193870500688
+            },
+            {
+              "repeated_Lun_rho": 0.3,
+              "mixed_rho": 0.3,
+              "non_Lun_rho": 0.17,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.9769410342016641
+            },
+            {
+              "repeated_Lun_rho": 0.4,
+              "mixed_rho": 0.3,
+              "non_Lun_rho": 0.17,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 1.0095607417406671
+            },
+            {
+              "repeated_Lun_rho": 0.5,
+              "mixed_rho": 0.3,
+              "non_Lun_rho": 0.17,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 1.0411589687559313
+            },
+            {
+              "repeated_Lun_rho": 0,
+              "mixed_rho": 0.45,
+              "non_Lun_rho": 0.3,
+              "positive_semidefinite_for_all_cap8_5_blocks": false,
+              "expected_sandwich_se_pp": 0.9710826562988097
+            },
+            {
+              "repeated_Lun_rho": 0.1,
+              "mixed_rho": 0.45,
+              "non_Lun_rho": 0.3,
+              "positive_semidefinite_for_all_cap8_5_blocks": false,
+              "expected_sandwich_se_pp": 1.003892739450436
+            },
+            {
+              "repeated_Lun_rho": 0.2,
+              "mixed_rho": 0.45,
+              "non_Lun_rho": 0.3,
+              "positive_semidefinite_for_all_cap8_5_blocks": false,
+              "expected_sandwich_se_pp": 1.0356639123182045
+            },
+            {
+              "repeated_Lun_rho": 0.3,
+              "mixed_rho": 0.45,
+              "non_Lun_rho": 0.3,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 1.0664890277143961
+            },
+            {
+              "repeated_Lun_rho": 0.4,
+              "mixed_rho": 0.45,
+              "non_Lun_rho": 0.3,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 1.096447879833851
+            },
+            {
+              "repeated_Lun_rho": 0.5,
+              "mixed_rho": 0.45,
+              "non_Lun_rho": 0.3,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 1.1256096393284378
+            }
+          ],
+          "maximum_common_rho_for_expected_sub1pp": 0.28116122402589605
+        },
+        "completed_ratio_influence": {
+          "independent_variance_sum": 877.514798399507,
+          "allocation_mean_squared_sum": 160.63014116232347,
+          "pair_covariance_coefficients": {
+            "different_non_Lun": 1458.2160225005882,
+            "one_Lun": 1543.837873641841,
+            "both_Lun": 1491.3643506343965
+          },
+          "common_rho_scenarios": [
+            {
+              "assumed_common_rho": 0,
+              "expected_sandwich_se_pp": 0.6716169175607172
+            },
+            {
+              "assumed_common_rho": 0.05,
+              "expected_sandwich_se_pp": 0.7407346217643931
+            },
+            {
+              "assumed_common_rho": 0.1,
+              "expected_sandwich_se_pp": 0.8039317606657403
+            },
+            {
+              "assumed_common_rho": 0.15,
+              "expected_sandwich_se_pp": 0.8625107371701506
+            },
+            {
+              "assumed_common_rho": 0.2,
+              "expected_sandwich_se_pp": 0.9173566741788473
+            },
+            {
+              "assumed_common_rho": 0.25,
+              "expected_sandwich_se_pp": 0.9691035876453841
+            },
+            {
+              "assumed_common_rho": 0.3,
+              "expected_sandwich_se_pp": 1.0182240713682984
+            },
+            {
+              "assumed_common_rho": 0.4,
+              "expected_sandwich_se_pp": 1.1099627252152173
+            }
+          ],
+          "pair_type_scenarios": [
+            {
+              "repeated_Lun_rho": 0,
+              "mixed_rho": 0,
+              "non_Lun_rho": 0,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.6716169175607173
+            },
+            {
+              "repeated_Lun_rho": 0.1,
+              "mixed_rho": 0,
+              "non_Lun_rho": 0,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.718239786499403
+            },
+            {
+              "repeated_Lun_rho": 0.2,
+              "mixed_rho": 0,
+              "non_Lun_rho": 0,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.7620154183923424
+            },
+            {
+              "repeated_Lun_rho": 0.3,
+              "mixed_rho": 0,
+              "non_Lun_rho": 0,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.8034093631671251
+            },
+            {
+              "repeated_Lun_rho": 0.4,
+              "mixed_rho": 0,
+              "non_Lun_rho": 0,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.8427726335029835
+            },
+            {
+              "repeated_Lun_rho": 0.5,
+              "mixed_rho": 0,
+              "non_Lun_rho": 0,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.8803776568828304
+            },
+            {
+              "repeated_Lun_rho": 0,
+              "mixed_rho": 0.15,
+              "non_Lun_rho": 0.1,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.7842491299053447
+            },
+            {
+              "repeated_Lun_rho": 0.1,
+              "mixed_rho": 0.15,
+              "non_Lun_rho": 0.1,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.8245276251977487
+            },
+            {
+              "repeated_Lun_rho": 0.2,
+              "mixed_rho": 0.15,
+              "non_Lun_rho": 0.1,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.8629281034195071
+            },
+            {
+              "repeated_Lun_rho": 0.3,
+              "mixed_rho": 0.15,
+              "non_Lun_rho": 0.1,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.8996910684385705
+            },
+            {
+              "repeated_Lun_rho": 0.4,
+              "mixed_rho": 0.15,
+              "non_Lun_rho": 0.1,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.935009692776008
+            },
+            {
+              "repeated_Lun_rho": 0.5,
+              "mixed_rho": 0.15,
+              "non_Lun_rho": 0.1,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.9690419147498386
+            },
+            {
+              "repeated_Lun_rho": 0,
+              "mixed_rho": 0.3,
+              "non_Lun_rho": 0.17,
+              "positive_semidefinite_for_all_cap8_5_blocks": false,
+              "expected_sandwich_se_pp": 0.8717892310852271
+            },
+            {
+              "repeated_Lun_rho": 0.1,
+              "mixed_rho": 0.3,
+              "non_Lun_rho": 0.17,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.908193575397404
+            },
+            {
+              "repeated_Lun_rho": 0.2,
+              "mixed_rho": 0.3,
+              "non_Lun_rho": 0.17,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.943193870500688
+            },
+            {
+              "repeated_Lun_rho": 0.3,
+              "mixed_rho": 0.3,
+              "non_Lun_rho": 0.17,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.9769410342016641
+            },
+            {
+              "repeated_Lun_rho": 0.4,
+              "mixed_rho": 0.3,
+              "non_Lun_rho": 0.17,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 1.0095607417406671
+            },
+            {
+              "repeated_Lun_rho": 0.5,
+              "mixed_rho": 0.3,
+              "non_Lun_rho": 0.17,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 1.0411589687559313
+            },
+            {
+              "repeated_Lun_rho": 0,
+              "mixed_rho": 0.45,
+              "non_Lun_rho": 0.3,
+              "positive_semidefinite_for_all_cap8_5_blocks": false,
+              "expected_sandwich_se_pp": 0.9710826562988097
+            },
+            {
+              "repeated_Lun_rho": 0.1,
+              "mixed_rho": 0.45,
+              "non_Lun_rho": 0.3,
+              "positive_semidefinite_for_all_cap8_5_blocks": false,
+              "expected_sandwich_se_pp": 1.003892739450436
+            },
+            {
+              "repeated_Lun_rho": 0.2,
+              "mixed_rho": 0.45,
+              "non_Lun_rho": 0.3,
+              "positive_semidefinite_for_all_cap8_5_blocks": false,
+              "expected_sandwich_se_pp": 1.0356639123182045
+            },
+            {
+              "repeated_Lun_rho": 0.3,
+              "mixed_rho": 0.45,
+              "non_Lun_rho": 0.3,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 1.0664890277143961
+            },
+            {
+              "repeated_Lun_rho": 0.4,
+              "mixed_rho": 0.45,
+              "non_Lun_rho": 0.3,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 1.096447879833851
+            },
+            {
+              "repeated_Lun_rho": 0.5,
+              "mixed_rho": 0.45,
+              "non_Lun_rho": 0.3,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 1.1256096393284378
+            }
+          ],
+          "maximum_common_rho_for_expected_sub1pp": 0.28116122402589605
+        }
+      }
+    },
+    "smoothed_completion0.95": {
+      "moment_estimator": "Jeffreys Beta(.5,.5) per coarse correctness cell",
+      "coarse_cells": 8,
+      "minimum_cell_n": 2,
+      "assumed_completion": 0.95,
+      "projected_all_accuracy": 0.6717888888888891,
+      "projected_usable_accuracy": 0.7071461988304096,
+      "iid_all_se_pp": 0.6777545303769662,
+      "iid_usable_se_pp": 0.6739033526777014,
+      "expected_missing_response_bounds": [
+        0.6717888888888891,
+        0.721788888888889
+      ],
+      "estimates": {
+        "recorded_all_correct": {
+          "independent_variance_sum": 953.1864388888896,
+          "allocation_mean_squared_sum": 144.9687023989969,
+          "pair_covariance_coefficients": {
+            "different_non_Lun": 1664.7538959944,
+            "one_Lun": 1681.0159796918624,
+            "both_Lun": 1598.9298286831727
+          },
+          "common_rho_scenarios": [
+            {
+              "assumed_common_rho": 0,
+              "expected_sandwich_se_pp": 0.6907557059953189
+            },
+            {
+              "assumed_common_rho": 0.05,
+              "expected_sandwich_se_pp": 0.7645691132730711
+            },
+            {
+              "assumed_common_rho": 0.1,
+              "expected_sandwich_se_pp": 0.8318584089718929
+            },
+            {
+              "assumed_common_rho": 0.15,
+              "expected_sandwich_se_pp": 0.8940978113066421
+            },
+            {
+              "assumed_common_rho": 0.2,
+              "expected_sandwich_se_pp": 0.9522779950147995
+            },
+            {
+              "assumed_common_rho": 0.25,
+              "expected_sandwich_se_pp": 1.007102707471033
+            },
+            {
+              "assumed_common_rho": 0.3,
+              "expected_sandwich_se_pp": 1.0590931720115866
+            },
+            {
+              "assumed_common_rho": 0.4,
+              "expected_sandwich_se_pp": 1.1560810154196468
+            }
+          ],
+          "pair_type_scenarios": [
+            {
+              "repeated_Lun_rho": 0,
+              "mixed_rho": 0,
+              "non_Lun_rho": 0,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.6907557059953189
+            },
+            {
+              "repeated_Lun_rho": 0.1,
+              "mixed_rho": 0,
+              "non_Lun_rho": 0,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.7393349874887587
+            },
+            {
+              "repeated_Lun_rho": 0.2,
+              "mixed_rho": 0,
+              "non_Lun_rho": 0,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.7849133723443079
+            },
+            {
+              "repeated_Lun_rho": 0.3,
+              "mixed_rho": 0,
+              "non_Lun_rho": 0,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.8279865822855015
+            },
+            {
+              "repeated_Lun_rho": 0.4,
+              "mixed_rho": 0,
+              "non_Lun_rho": 0,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.8689272459790502
+            },
+            {
+              "repeated_Lun_rho": 0.5,
+              "mixed_rho": 0,
+              "non_Lun_rho": 0,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.9080238637638597
+            },
+            {
+              "repeated_Lun_rho": 0,
+              "mixed_rho": 0.15,
+              "non_Lun_rho": 0.1,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.8118099078460413
+            },
+            {
+              "repeated_Lun_rho": 0.1,
+              "mixed_rho": 0.15,
+              "non_Lun_rho": 0.1,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.8535268623991336
+            },
+            {
+              "repeated_Lun_rho": 0.2,
+              "mixed_rho": 0.15,
+              "non_Lun_rho": 0.1,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.8932977572997822
+            },
+            {
+              "repeated_Lun_rho": 0.3,
+              "mixed_rho": 0.15,
+              "non_Lun_rho": 0.1,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.9313719243979455
+            },
+            {
+              "repeated_Lun_rho": 0.4,
+              "mixed_rho": 0.15,
+              "non_Lun_rho": 0.1,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.967949606083211
+            },
+            {
+              "repeated_Lun_rho": 0.5,
+              "mixed_rho": 0.15,
+              "non_Lun_rho": 0.1,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 1.0031945067017436
+            },
+            {
+              "repeated_Lun_rho": 0,
+              "mixed_rho": 0.3,
+              "non_Lun_rho": 0.17,
+              "positive_semidefinite_for_all_cap8_5_blocks": false,
+              "expected_sandwich_se_pp": 0.9051117976742027
+            },
+            {
+              "repeated_Lun_rho": 0.1,
+              "mixed_rho": 0.3,
+              "non_Lun_rho": 0.17,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.9427089395189474
+            },
+            {
+              "repeated_Lun_rho": 0.2,
+              "mixed_rho": 0.3,
+              "non_Lun_rho": 0.17,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.978863076742018
+            },
+            {
+              "repeated_Lun_rho": 0.3,
+              "mixed_rho": 0.3,
+              "non_Lun_rho": 0.17,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 1.0137286132731782
+            },
+            {
+              "repeated_Lun_rho": 0.4,
+              "mixed_rho": 0.3,
+              "non_Lun_rho": 0.17,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 1.047434236469609
+            },
+            {
+              "repeated_Lun_rho": 0.5,
+              "mixed_rho": 0.3,
+              "non_Lun_rho": 0.17,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 1.080088541781915
+            },
+            {
+              "repeated_Lun_rho": 0,
+              "mixed_rho": 0.45,
+              "non_Lun_rho": 0.3,
+              "positive_semidefinite_for_all_cap8_5_blocks": false,
+              "expected_sandwich_se_pp": 1.011345187708337
+            },
+            {
+              "repeated_Lun_rho": 0.1,
+              "mixed_rho": 0.45,
+              "non_Lun_rho": 0.3,
+              "positive_semidefinite_for_all_cap8_5_blocks": false,
+              "expected_sandwich_se_pp": 1.0451276797888012
+            },
+            {
+              "repeated_Lun_rho": 0.2,
+              "mixed_rho": 0.45,
+              "non_Lun_rho": 0.3,
+              "positive_semidefinite_for_all_cap8_5_blocks": false,
+              "expected_sandwich_se_pp": 1.0778518661767182
+            },
+            {
+              "repeated_Lun_rho": 0.3,
+              "mixed_rho": 0.45,
+              "non_Lun_rho": 0.3,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 1.1096113841253363
+            },
+            {
+              "repeated_Lun_rho": 0.4,
+              "mixed_rho": 0.45,
+              "non_Lun_rho": 0.3,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 1.1404868268158368
+            },
+            {
+              "repeated_Lun_rho": 0.5,
+              "mixed_rho": 0.45,
+              "non_Lun_rho": 0.3,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 1.1705481538579983
+            }
+          ],
+          "maximum_common_rho_for_expected_sub1pp": 0.24336458117661758
+        },
+        "completed_ratio_influence": {
+          "independent_variance_sum": 929.8323863515358,
+          "allocation_mean_squared_sum": 160.63014116232347,
+          "pair_covariance_coefficients": {
+            "different_non_Lun": 1556.1061976544506,
+            "one_Lun": 1635.0680362175156,
+            "both_Lun": 1572.9991397533718
+          },
+          "common_rho_scenarios": [
+            {
+              "assumed_common_rho": 0,
+              "expected_sandwich_se_pp": 0.6883320706242977
+            },
+            {
+              "assumed_common_rho": 0.05,
+              "expected_sandwich_se_pp": 0.7598036781422046
+            },
+            {
+              "assumed_common_rho": 0.1,
+              "expected_sandwich_se_pp": 0.8251073985772477
+            },
+            {
+              "assumed_common_rho": 0.15,
+              "expected_sandwich_se_pp": 0.8856087223234665
+            },
+            {
+              "assumed_common_rho": 0.2,
+              "expected_sandwich_se_pp": 0.9422331977402905
+            },
+            {
+              "assumed_common_rho": 0.25,
+              "expected_sandwich_se_pp": 0.9956425004952243
+            },
+            {
+              "assumed_common_rho": 0.3,
+              "expected_sandwich_se_pp": 1.0463290967285928
+            },
+            {
+              "assumed_common_rho": 0.4,
+              "expected_sandwich_se_pp": 1.1409670277435071
+            }
+          ],
+          "pair_type_scenarios": [
+            {
+              "repeated_Lun_rho": 0,
+              "mixed_rho": 0,
+              "non_Lun_rho": 0,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.6883320706242976
+            },
+            {
+              "repeated_Lun_rho": 0.1,
+              "mixed_rho": 0,
+              "non_Lun_rho": 0,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.7363064179376634
+            },
+            {
+              "repeated_Lun_rho": 0.2,
+              "mixed_rho": 0,
+              "non_Lun_rho": 0,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.7813406700936878
+            },
+            {
+              "repeated_Lun_rho": 0.3,
+              "mixed_rho": 0,
+              "non_Lun_rho": 0,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.8239170737329777
+            },
+            {
+              "repeated_Lun_rho": 0.4,
+              "mixed_rho": 0,
+              "non_Lun_rho": 0,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.8643988928931902
+            },
+            {
+              "repeated_Lun_rho": 0.5,
+              "mixed_rho": 0,
+              "non_Lun_rho": 0,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.903067853309613
+            },
+            {
+              "repeated_Lun_rho": 0,
+              "mixed_rho": 0.15,
+              "non_Lun_rho": 0.1,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.8049705591587076
+            },
+            {
+              "repeated_Lun_rho": 0.1,
+              "mixed_rho": 0.15,
+              "non_Lun_rho": 0.1,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.846359086179467
+            },
+            {
+              "repeated_Lun_rho": 0.2,
+              "mixed_rho": 0.15,
+              "non_Lun_rho": 0.1,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.8858158975796283
+            },
+            {
+              "repeated_Lun_rho": 0.3,
+              "mixed_rho": 0.15,
+              "non_Lun_rho": 0.1,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.9235886021660631
+            },
+            {
+              "repeated_Lun_rho": 0.4,
+              "mixed_rho": 0.15,
+              "non_Lun_rho": 0.1,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.9598760376722206
+            },
+            {
+              "repeated_Lun_rho": 0.5,
+              "mixed_rho": 0.15,
+              "non_Lun_rho": 0.1,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.9948407457194255
+            },
+            {
+              "repeated_Lun_rho": 0,
+              "mixed_rho": 0.3,
+              "non_Lun_rho": 0.17,
+              "positive_semidefinite_for_all_cap8_5_blocks": false,
+              "expected_sandwich_se_pp": 0.8954722382577773
+            },
+            {
+              "repeated_Lun_rho": 0.1,
+              "mixed_rho": 0.3,
+              "non_Lun_rho": 0.17,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.9328540245593915
+            },
+            {
+              "repeated_Lun_rho": 0.2,
+              "mixed_rho": 0.3,
+              "non_Lun_rho": 0.17,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 0.9687944739638606
+            },
+            {
+              "repeated_Lun_rho": 0.3,
+              "mixed_rho": 0.3,
+              "non_Lun_rho": 0.17,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 1.0034484712376484
+            },
+            {
+              "repeated_Lun_rho": 0.4,
+              "mixed_rho": 0.3,
+              "non_Lun_rho": 0.17,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 1.0369450014708752
+            },
+            {
+              "repeated_Lun_rho": 0.5,
+              "mixed_rho": 0.3,
+              "non_Lun_rho": 0.17,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 1.0693928360156961
+            },
+            {
+              "repeated_Lun_rho": 0,
+              "mixed_rho": 0.45,
+              "non_Lun_rho": 0.3,
+              "positive_semidefinite_for_all_cap8_5_blocks": false,
+              "expected_sandwich_se_pp": 0.9981636761758972
+            },
+            {
+              "repeated_Lun_rho": 0.1,
+              "mixed_rho": 0.45,
+              "non_Lun_rho": 0.3,
+              "positive_semidefinite_for_all_cap8_5_blocks": false,
+              "expected_sandwich_se_pp": 1.0318317818730152
+            },
+            {
+              "repeated_Lun_rho": 0.2,
+              "mixed_rho": 0.45,
+              "non_Lun_rho": 0.3,
+              "positive_semidefinite_for_all_cap8_5_blocks": false,
+              "expected_sandwich_se_pp": 1.0644354972141343
+            },
+            {
+              "repeated_Lun_rho": 0.3,
+              "mixed_rho": 0.45,
+              "non_Lun_rho": 0.3,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 1.0960698104481124
+            },
+            {
+              "repeated_Lun_rho": 0.4,
+              "mixed_rho": 0.45,
+              "non_Lun_rho": 0.3,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 1.126816369699172
+            },
+            {
+              "repeated_Lun_rho": 0.5,
+              "mixed_rho": 0.45,
+              "non_Lun_rho": 0.3,
+              "positive_semidefinite_for_all_cap8_5_blocks": true,
+              "expected_sandwich_se_pp": 1.15674596721505
+            }
+          ],
+          "maximum_common_rho_for_expected_sub1pp": 0.2542009476557893
+        }
+      }
+    }
+  },
+  "opus_common_cap_option": {
+    "current_pilot06": {
+      "requests": 594,
+      "completed": 590,
+      "correct": 474,
+      "completed_correct": 474,
+      "statuses": {
+        "completed": 590,
+        "refused": 3,
+        "incomplete": 1
+      },
+      "completed_accuracy": 0.8033898305084746,
+      "all_request_accuracy": 0.797979797979798,
+      "completed_wilson_95": [
+        0.7694017470835491,
+        0.8334527600957743
+      ],
+      "missing_response_bounds": [
+        0.797979797979798,
+        0.8047138047138047
+      ],
+      "truncations": 1,
+      "families": 298
+    },
+    "usage16k": {
+      "n": 594,
+      "mean": 2205.66835016835,
+      "sd": 1759.6465360922407,
+      "quantiles": {
+        "0": 0.0,
+        "0.25": 973.75,
+        "0.5": 1870.5,
+        "0.75": 2780.5,
+        "0.9": 4041.7,
+        "0.95": 5131.400000000001,
+        "0.99": 8035.450000000017,
+        "1": 16384.0
+      }
+    },
+    "mean16k_cost_standardized_to_candidate": 0.022808220520829724,
+    "projected4800_cost_at_existing_usage": 109.47945849998267,
+    "remaining_after_settled_before_pending_confirmation": 811.384666,
+    "pending_fixed2400_maximum_total_reservation": 400.416,
+    "pending_fixed2400_naive_usage_forecast": 55.015512,
+    "common128k_cost_unmeasured": true,
+    "caveat": "No pilot07 rows read. Opus128k has not been run on this diagnostic;16k usage cannot establish128k accuracy, tail behavior, or whether the strongest-model target remains calibrated."
+  },
+  "protocol_options": [
+    {
+      "option": "Common65536 for both providers",
+      "recommendation": "Preferred prospective compromise for a separately approved final protocol.",
+      "reason": "Same ceiling for both references, four times the current primary cap, and3.185 times the largest observed128k diagnostic output. It reduces maximum-reservation pressure relative128k without choosing a cap to preserve low accuracy.",
+      "evidence_limit": "No actual65536 runs are observed. Replaying the observed token lengths would clip none, but models may react to the ceiling and reruns are stochastic. This is not an equivalence test or a guarantee of completion, cost, or strongest-model79–81 attainment.",
+      "cost_transport": "Use128k observed-usage forecasts only conditionally; mean and tail behavior at65536 are not measured.",
+      "verification": "Freeze cap, effort, prompt, fixed N, input order, stage membership and analyzer before final calls. Analyze actual all/usable/bounds and both-model precision at that protocol."
+    },
+    {
+      "option": "Common128000 for both providers",
+      "recommendation": "Defensible higher ceiling if worst-case staging and tail exposure are accepted.",
+      "reason": "The Astra diagnostic directly used128k and all60 completed; common ceiling keeps parity.",
+      "evidence_limit": "Opus128k remains untested; performance and costs are not guaranteed. At current residual headroom, small final transport chunks are needed for full maximum-cost reservations."
+    },
+    {
+      "option": "Astra128000/Opus16384",
+      "recommendation": "Useful sensitivity protocol; less attractive than a common higher ceiling for primary parity.",
+      "evidence_limit": "Only Astra has highcap evidence. Distinct limits must be explicit and cannot establish strongest-model equivalence."
+    },
+    {
+      "option": "Common16384",
+      "recommendation": "Do not treat as an adequately uncensored sole reference protocol.",
+      "reason": "Astra omitted10/60 diagnostic answers; recovered subset accuracy4/10 differs from40/50 baseline usable. Completed-only accuracy masks informative missingness."
+    }
+  ],
+  "recommendation": "Prefer a common65536-token ceiling prospectively if the coordinator funds and approves the complete fixed evaluation. It improves parity and gives substantial margin over observed usage while reducing worst-case reservations. N4800 remains plausible at observed mean costs but is not guaranteed to finish within caps or meet sub1pp precision. Do not spend another small Opus cap probe solely to certify equivalence: it would not resolve the narrow target, tail risk or Astra family covariance. Await the complete fixed2400 Opus confirmation, then make the explicit funding/protocol decision; preserve failed or incomplete evaluation outcomes.",
+  "limitations": [
+    "60 distinct diagnostic families provide no within-family highcap covariance. All rho values are assumptions, not transported estimates.",
+    "Coarse cells have2–18 observations; only26 of42 exact target cells are sampled. Sparse empirical zeros and a smoothed sensitivity are both reported.",
+    "Cost bootstrap conditions on observed support and transport of coarse moments; it cannot bound unobserved extreme token tails. Reported exceedance fractions are conditional simulation results, not guaranteed budget-risk probabilities.",
+    "Anchored correction assumes cap-cost increments transport within coarse cells; its family influence bootstrap includes overlap with baseline but does not solve unknown class/family composition.",
+    "Completion=.95 is a sensitivity near the zero-of60 one-sided upper missingness bound, not a forecast. The precision model assumes equal missing probability within coarse cells; actual informative missingness could be worse.",
+    "Expected sandwich values preserve the original estimator and actual candidate allocation; no estimator is selected to force a pass.",
+    "Both references need actual iid and family sandwich SE<1pp after complete fixed-N evaluation; scenario passage is not qualification.",
+    "Mean-token forecasts and small transport chunks cannot guarantee full fixed N within lifetime caps. Current final runner phases remain16384; any128k primary protocol requires explicit parent-owned versioning before freeze.",
+    "No partialpilot07 or final answer data were accessed. No frozen files, shared scripts or ledger were changed.",
+    "All128k-derived65536 forecasts are conditional transport scenarios;65536 is not an observed experiment. Parent alone can version the currently16384 final runner protocol."
+  ],
+  "paid_calls": 0,
+  "final_n_approved": false,
+  "final_membership_approved": false,
+  "benchmark_ready": false,
+  "supersedes_recommendation_only_from": "/Users/anish/Documents/git-repos/sanskrit/benchmarks/parallel-search-20261006/five_d/cap-protocol-assessment-01.json",
+  "source_assessment_sha256": "154caa93472c7c97808f99b1a29a054cc18474421e2ad5bbf439a1177ac6f7ec",
+  "prospective_reservations": [
+    {
+      "cap": 16384,
+      "common_provider_ceiling": true,
+      "observed_Astra_runs_at_this_cap": 480,
+      "observed_diagnostic_max_output_tokens": 20577,
+      "cap_to_observed_max_ratio": 0.7962287991446761,
+      "maximum_reserved_input_tokens": 1500,
+      "OpenAI_max_cost_per_task": 0.4171,
+      "Anthropic_max_cost_per_task": 0.16684,
+      "OpenAI_max_reservation_50": 20.855,
+      "OpenAI_max_reservation_100": 41.71,
+      "OpenAI_max_reservation_500": 208.55,
+      "Anthropic_max_reservation_500": 83.41999999999999,
+      "largest_OpenAI_chunk_with_all_current_remaining_funds": 3050,
+      "largest_last_chunk_at_observed4800_mean_and_headroom": 657,
+      "reservation_caveat": "Ignores other protected reserves and pending work; not payment authorization. Last-chunk calculation is conditional on the forecast mean and unchanged remaining budget.",
+      "extra_fraction_at_cap_task_cost_exhausting_point_headroom": 0.13690831078153645
+    },
+    {
+      "cap": 65536,
+      "common_provider_ceiling": true,
+      "observed_Astra_runs_at_this_cap": 0,
+      "observed_diagnostic_max_output_tokens": 20577,
+      "cap_to_observed_max_ratio": 3.1849151965787046,
+      "maximum_reserved_input_tokens": 1500,
+      "OpenAI_max_cost_per_task": 1.6459,
+      "Anthropic_max_cost_per_task": 0.65836,
+      "OpenAI_max_reservation_50": 82.295,
+      "OpenAI_max_reservation_100": 164.59,
+      "OpenAI_max_reservation_500": 822.9499999999999,
+      "Anthropic_max_reservation_500": 329.17999999999995,
+      "largest_OpenAI_chunk_with_all_current_remaining_funds": 773,
+      "largest_last_chunk_at_observed4800_mean_and_headroom": 82,
+      "reservation_caveat": "Ignores other protected reserves and pending work; not payment authorization. Last-chunk calculation is conditional on the forecast mean and unchanged remaining budget.",
+      "extra_fraction_at_cap_task_cost_exhausting_point_headroom": 0.01716112844159476
+    },
+    {
+      "cap": 128000,
+      "common_provider_ceiling": true,
+      "observed_Astra_runs_at_this_cap": 60,
+      "observed_diagnostic_max_output_tokens": 20577,
+      "cap_to_observed_max_ratio": 6.220537493317782,
+      "maximum_reserved_input_tokens": 1500,
+      "OpenAI_max_cost_per_task": 3.2075,
+      "Anthropic_max_cost_per_task": 1.283,
+      "OpenAI_max_reservation_50": 160.375,
+      "OpenAI_max_reservation_100": 320.75,
+      "OpenAI_max_reservation_500": 1603.75,
+      "Anthropic_max_reservation_500": 641.5,
+      "largest_OpenAI_chunk_with_all_current_remaining_funds": 396,
+      "largest_last_chunk_at_observed4800_mean_and_headroom": 39,
+      "reservation_caveat": "Ignores other protected reserves and pending work; not payment authorization. Last-chunk calculation is conditional on the forecast mean and unchanged remaining budget.",
+      "extra_fraction_at_cap_task_cost_exhausting_point_headroom": 0.008127314372177044
+    }
+  ],
+  "moment_uncertainty_sensitivity": {
+    "method": "Independent Jeffreys Beta(.5,.5) per coarse correctness cell,20k draws; actual candidate cell-pair matrix, fixed assumed rho and completion. Descriptive model-based sensitivity, not a frequentist confidence bound or measured final precision.",
+    "results": [
+      {
+        "assumed_completion": 1.0,
+        "metric": "all",
+        "assumed_common_rho": 0.1,
+        "conditional_expected_se_pp_median": 0.8070526233926367,
+        "conditional_expected_se_pp_interval95": [
+          0.6971627056491103,
+          0.8971322346949461
+        ],
+        "conditional_posterior_fraction_expected_se_above1pp": 0.0
+      },
+      {
+        "assumed_completion": 1.0,
+        "metric": "all",
+        "assumed_common_rho": 0.2,
+        "conditional_expected_se_pp_median": 0.9098117556073957,
+        "conditional_expected_se_pp_interval95": [
+          0.7857117234249061,
+          1.00063236798509
+        ],
+        "conditional_posterior_fraction_expected_se_above1pp": 0.02585
+      },
+      {
+        "assumed_completion": 1.0,
+        "metric": "all",
+        "assumed_common_rho": 0.3,
+        "conditional_expected_se_pp_median": 1.001216329210817,
+        "conditional_expected_se_pp_interval95": [
+          0.86423298768287,
+          1.100146377586259
+        ],
+        "conditional_posterior_fraction_expected_se_above1pp": 0.5089
+      },
+      {
+        "assumed_completion": 1.0,
+        "metric": "all",
+        "assumed_common_rho": 0.4,
+        "conditional_expected_se_pp_median": 1.084962370723478,
+        "conditional_expected_se_pp_interval95": [
+          0.934583645111864,
+          1.1946118657756815
+        ],
+        "conditional_posterior_fraction_expected_se_above1pp": 0.87575
+      },
+      {
+        "assumed_completion": 1.0,
+        "metric": "usable",
+        "assumed_common_rho": 0.1,
+        "conditional_expected_se_pp_median": 0.8070526233926366,
+        "conditional_expected_se_pp_interval95": [
+          0.6971627056491103,
+          0.8971322346949461
+        ],
+        "conditional_posterior_fraction_expected_se_above1pp": 0.0
+      },
+      {
+        "assumed_completion": 1.0,
+        "metric": "usable",
+        "assumed_common_rho": 0.2,
+        "conditional_expected_se_pp_median": 0.9098117556073957,
+        "conditional_expected_se_pp_interval95": [
+          0.7857117234249061,
+          1.00063236798509
+        ],
+        "conditional_posterior_fraction_expected_se_above1pp": 0.02585
+      },
+      {
+        "assumed_completion": 1.0,
+        "metric": "usable",
+        "assumed_common_rho": 0.3,
+        "conditional_expected_se_pp_median": 1.001216329210817,
+        "conditional_expected_se_pp_interval95": [
+          0.86423298768287,
+          1.100146377586259
+        ],
+        "conditional_posterior_fraction_expected_se_above1pp": 0.5089
+      },
+      {
+        "assumed_completion": 1.0,
+        "metric": "usable",
+        "assumed_common_rho": 0.4,
+        "conditional_expected_se_pp_median": 1.084962370723478,
+        "conditional_expected_se_pp_interval95": [
+          0.934583645111864,
+          1.1946118657756815
+        ],
+        "conditional_posterior_fraction_expected_se_above1pp": 0.87575
+      },
+      {
+        "assumed_completion": 0.95,
+        "metric": "all",
+        "assumed_common_rho": 0.1,
+        "conditional_expected_se_pp_median": 0.836065870305663,
+        "conditional_expected_se_pp_interval95": [
+          0.7517340254094739,
+          0.9092173421051527
+        ],
+        "conditional_posterior_fraction_expected_se_above1pp": 0.0
+      },
+      {
+        "assumed_completion": 0.95,
+        "metric": "all",
+        "assumed_common_rho": 0.2,
+        "conditional_expected_se_pp_median": 0.9487959553581602,
+        "conditional_expected_se_pp_interval95": [
+          0.8547759674773884,
+          1.0185554612766878
+        ],
+        "conditional_posterior_fraction_expected_se_above1pp": 0.0838
+      },
+      {
+        "assumed_completion": 0.95,
+        "metric": "all",
+        "assumed_common_rho": 0.3,
+        "conditional_expected_se_pp_median": 1.0487261917163713,
+        "conditional_expected_se_pp_interval95": [
+          0.9450683164536517,
+          1.121305305798682
+        ],
+        "conditional_posterior_fraction_expected_se_above1pp": 0.83485
+      },
+      {
+        "assumed_completion": 0.95,
+        "metric": "all",
+        "assumed_common_rho": 0.4,
+        "conditional_expected_se_pp_median": 1.1400408922351795,
+        "conditional_expected_se_pp_interval95": [
+          1.02702001409222,
+          1.219578891583567
+        ],
+        "conditional_posterior_fraction_expected_se_above1pp": 0.99105
+      },
+      {
+        "assumed_completion": 0.95,
+        "metric": "usable",
+        "assumed_common_rho": 0.1,
+        "conditional_expected_se_pp_median": 0.8287419716941871,
+        "conditional_expected_se_pp_interval95": [
+          0.7164341647423655,
+          0.9187838852703462
+        ],
+        "conditional_posterior_fraction_expected_se_above1pp": 0.0
+      },
+      {
+        "assumed_completion": 0.95,
+        "metric": "usable",
+        "assumed_common_rho": 0.2,
+        "conditional_expected_se_pp_median": 0.9359187772760917,
+        "conditional_expected_se_pp_interval95": [
+          0.8090296562371321,
+          1.027128239019093
+        ],
+        "conditional_posterior_fraction_expected_se_above1pp": 0.0981
+      },
+      {
+        "assumed_completion": 0.95,
+        "metric": "usable",
+        "assumed_common_rho": 0.3,
+        "conditional_expected_se_pp_median": 1.0311496100112676,
+        "conditional_expected_se_pp_interval95": [
+          0.8907683202883154,
+          1.1310829262600695
+        ],
+        "conditional_posterior_fraction_expected_se_above1pp": 0.68695
+      },
+      {
+        "assumed_completion": 0.95,
+        "metric": "usable",
+        "assumed_common_rho": 0.4,
+        "conditional_expected_se_pp_median": 1.1183009091839393,
+        "conditional_expected_se_pp_interval95": [
+          0.9643095582096227,
+          1.2287169839117138
+        ],
+        "conditional_posterior_fraction_expected_se_above1pp": 0.93795
+      }
+    ]
+  },
+  "budget_as_of_coordinator_request": {
+    "OpenAI_settled": 727.47815,
+    "Anthropic_settled": 188.615334,
+    "Anthropic_fixed2400_confirmation_pending": true,
+    "no_partial_confirmation_data_read": true
+  },
+  "additional_probe_decision": "No new paid request proposed. A second60-question cap comparison cannot certify a1pp target or identify within-family Astra dependence; it is not necessary solely to justify the common65536 ceiling."
+}
