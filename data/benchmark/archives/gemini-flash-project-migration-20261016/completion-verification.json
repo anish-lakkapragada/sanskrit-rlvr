@@ -1,0 +1,64 @@
+{
+  "finished_at": "2026-10-16T04:33:32.685339+00:00",
+  "email": "generatealt@gmail.com",
+  "project": "project-78252474-5587-44b3-93e",
+  "model": "gemini-3.8-flash",
+  "tasks": 20000,
+  "statuses": {
+    "completed": 19999,
+    "incomplete": 1
+  },
+  "original_successful_and_incomplete_rows_unchanged": 19883,
+  "infrastructure_tasks_recovered": 117,
+  "total_attempts": 20168,
+  "correct": 18476,
+  "strict_correct": 18473,
+  "known_cost_usd": 1133.7956841,
+  "unknown_cost_attempts": 10,
+  "known_cost_since_migration_usd": 8.6477784,
+  "raw_archive": {
+    "path": "data/benchmark/archives/gemini38-flash-high-v3.tar.gz",
+    "sha256": "9bd722d48efa28c4072f5a125504a34cc7d557d038c0084d207dcb4e1658c84e",
+    "bytes": 543896406,
+    "member_root": "gemini38-flash-high",
+    "contents": "Complete original execution files: all request/response/error journals, original manifests/schema, results, logs and controls."
+  },
+  "final_files": [
+    "README.md",
+    "krdanta.json",
+    "manifest.json",
+    "subanta.json",
+    "taddhitanta.json",
+    "tinanta.json"
+  ],
+  "final_verification": {
+    "at": "2026-10-16T04:34:03.436601+00:00",
+    "journal_replay": true,
+    "scoring": true,
+    "schema": true,
+    "source_order": true,
+    "result_files": [
+      {
+        "path": "data/benchmark/results/gemini38-flash-high/tinanta.json",
+        "sha256": "311a47f29191c2df9ed30a09af7124d12155e57bb9d4ca563e615ae6f451303b",
+        "bytes": 3945602
+      },
+      {
+        "path": "data/benchmark/results/gemini38-flash-high/taddhitanta.json",
+        "sha256": "8c9ac6828bea85fecd692a3de45c5cf8b3419783d1161aab9da6dd311ffb0570",
+        "bytes": 3977257
+      },
+      {
+        "path": "data/benchmark/results/gemini38-flash-high/krdanta.json",
+        "sha256": "e7b4c3d5409cf007bf868d89c49a7e1f167955925686cbefc74bafdf61526ee6",
+        "bytes": 3799971
+      },
+      {
+        "path": "data/benchmark/results/gemini38-flash-high/subanta.json",
+        "sha256": "554f84815d546762ec80e5209f4c7a68bb54d37e886b9fbfbb189b681b487e7c",
+        "bytes": 3953839
+      }
+    ],
+    "archive_verified_against_every_original_file": true
+  }
+}

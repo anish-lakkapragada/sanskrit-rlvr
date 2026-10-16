@@ -1,0 +1,19 @@
+--- original-v2
++++ shared_question
+@@ -1,14 +1,6 @@
+-You are an expert in Sanskrit grammar (vyakarana).
++What is the Sanskrit primary verbal derivative (krdanta) specified below?
+ 
+-Derive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root
+-(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers
+-included), its verb class (gana), its traditional meaning (artha), and the
+-required primary suffix (krt). Each Sanskrit grammatical term is glossed in
+-parentheses in English.
+-
+-For a noun or adjective, return the uninflected nominal stem (pratipadika),
+-without case or number endings. For an indeclinable (avyaya), return the
+-complete indeclinable form.
++Use the supplied Dhatupatha citation, including anubandha markers, verb class, traditional meaning, and any verbal prefixes. Apply the specified primary suffix and any participle coordinates. For a noun or adjective, give the uninflected stem without case or number endings. For an indeclinable, give the complete form.
+ 
+ Write ONLY the final form, in Devanagari script, inside exactly one
+ <answer></answer> block. If several forms are valid, give exactly one.

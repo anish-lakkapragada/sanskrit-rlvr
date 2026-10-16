@@ -1,9 +1,0 @@
-The finite-map review passes within its stated scope. It does not adopt the proposal as a training reward or alter the live evaluation policy.
-
-All 1,400 task-specific maps exactly match the previously reviewed ending-screen finite rule helper and a separate regular-expression reconstruction. The hash-bound scorer accepts all 2,518 canonical entries and 2,721 aliases. Checks for unknown IDs, cross-task answers, malformed/multiple-tag output, 1,400 unlisted mutations, 61 nasal-place mutations, 188 triple-final mutations and task/policy/extractor tampering pass. The negative cases verify whitelist boundaries, not exhaustive grammatical invalidity.
-
-All ten classes and tenses are represented by the saved controls. The 80 periphrastic-perfect tasks preserve 319 canonical forms and have 423 finite aliases. The same conditions operate on joined canonical strings; no new phonological rule, recursive closure, segmentation alternative or lexical branch was added. Fifty-seven tasks flag remaining cluster contexts. Neither those flags nor mechanical regeneration certify the complete spelling universe or every paradigm.
-
-Public prompts remain unchanged under private-key mutation. The original helper, source snapshots, task keys, saved verification receipt and all 44 live paid-run dependencies retain their hashes. No model responses, training or provider calls occurred.
-
-A usable answer outside the finite map returns `requires_source_adjudication`, not a settled linguistic-error judgment. An RL integration must not silently convert that state into automatic zero reward. Any future adoption should bind these exact task/policy/scorer hashes, preserve canonical and finite-map decisions separately, resolve unfamiliar usable outputs before final error treatment, and apply supported corrections consistently across training and evaluation. This integration remains a separate future step.

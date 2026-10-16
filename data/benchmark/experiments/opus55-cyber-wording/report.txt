@@ -1,0 +1,56 @@
+OPUS 5.5 xHIGH: SANSKRIT PROMPT WORDING EXPERIMENT
+
+Finished: 2026-10-14T21:25:40.303690+00:00
+Requests: 100 of 100 authorized. Known estimated API cost: $0.568684. No unknown-cost requests or API/transport failures.
+
+METHOD
+Seed 69. Freeze 40 unique previously cyber-refused benchmark tasks. Discovery: 10 tasks, each sent with the original prompt and three wording variants (40 requests). Select the changed variant with the fewest refusals, then completion/correctness tie-breaks. Holdout: 30 different tasks, each sent with the original and selected variant (60 requests). Randomized request order, concurrency 8. Same model, adaptive thinking, xhigh, 128000-token provider maximum; no tools or model fallback.
+The 40 tasks comprise 32 krdanta, 4 tinanta, and 4 taddhitanta. Subanta was not tested because no refusals were available when the experiment was prepared. Original benchmark result files and production templates were not modified.
+
+DISCOVERY: REFUSALS / REQUESTS
+original: 5/10; strict correct: 4/10
+linguistics_context: 9/10; strict correct: 1/10
+concise_instructions: 0/10; strict correct: 9/10
+dictionary_labels: 9/10; strict correct: 1/10
+
+HELD-OUT COMPARISON: REFUSALS / REQUESTS
+original: 17/30 (56.67%); strict correct: 13/30
+concise_instructions: 1/30 (3.33%); strict correct: 29/30
+krdanta: original 16/26; shorter instructions 0/26
+taddhitanta: original 0/2; shorter instructions 0/2
+tinanta: original 1/2; shorter instructions 1/2
+
+Paired outcomes: 16 tasks changed from refusal to a completed correct answer; 0 changed in the opposite direction; 13 completed under both, and 1 refused under both.
+Exploratory exact paired two-sided McNemar p-value: 0.00003052. See statistical caveats in verification.json.
+
+WHAT CHANGED
+Replace the introductory role/instruction prose with the concise family-specific instructions in candidate-templates/. Keep every task field byte-for-byte, all required grammatical constraints, and the exact answer-only format instruction. No encoding, disguised fields, changed Sanskrit spellings, supplied gold answers, or safety-override instructions.
+The combined introductory rewrite was tested; this experiment does not identify any single word as the cause of a classifier decision. Adding a linguistics preface or relabeling dictionary fields performed worse in discovery.
+
+INTERPRETATION
+The shorter instructions are a promising template candidate, especially for krdanta: 0/26 refusals on held-out krdanta versus 16/26 for the original. Tinanta still had 1/2 refusals for each wording; taddhitanta had 0/2 for each. The evidence for a benefit is therefore concentrated in krdanta, and the small nominal/verb-conjugation samples do not establish a general fix for those families.
+Across discovery and holdout, the shorter version had 1/40 refusals and 38/40 correct answers; the original had 22/40 refusals and 17/40 correct answers. Holdout alone is the cleaner comparison because it was not used for selection.
+These are deliberately selected previously refused tasks, so the observed rates do not estimate the full benchmark. Refusals were not fully eliminated. Unflagged tasks and subanta were not evaluated; a broader accuracy/refusal regression check would be needed before changing the shared production templates.
+The old benchmark keeps its pinned prompts and original outcomes. Candidate templates are reviewable files only, not replacements for the active run.
+
+ARTIFACTS
+manifest.json: settings, selection, budget, pinned code and input hashes.
+cases.json: selected tasks, original prompts, original refused outcomes.
+discovery-plan.json and holdout-plan.json: exact prompt for each experimental request.
+results.json: all 100 scored outcomes and request costs.
+summary.json: counts, paired outcomes, family breakdown, token usage.
+journals/requests.jsonl.gz: all request markers and full provider responses.
+verification.json: offline integrity checks and analysis caveats.
+candidate-templates/: the three concise template candidates.
+
+
+UPDATE: The shared candidate-templates directory was updated by round two. Its current files are described in candidate-templates/provenance.json. The original round-one candidate wording is preserved in ../opus55-cyber-wording-round2/candidate-templates-before/. Round-one results above remain historical and unchanged.
+
+
+ROUND THREE UPDATE: The shared candidate-templates directory now contains the round-three table-based taddhitanta prompt. See ../opus55-cyber-wording-round3/report.txt and candidate-templates/provenance.json in the original experiment directory. Historical results above remain unchanged; the round-two template is preserved in round-three candidate-templates-before/.
+
+
+USER-REQUESTED REVERT (2026-10-14 23:53:05 UTC): The shared candidate templates have been restored to their exact pre-round-three versions, including the plain-text taddhitanta layout. The round-three table prompt and its experimental results remain preserved in opus55-cyber-wording-round3/candidate-templates-after/ and the experiment artifacts. See the shared candidate-templates/provenance.json for the current state.
+
+LATER UNIFORM-TEMPLATE EXPERIMENT
+The current candidate templates are now the shared rules-before-table set from opus55-uniform-v2. This historical report and its outcomes are preserved; see ../opus55-uniform-v2/report.txt for the current evidence.

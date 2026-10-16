@@ -1,0 +1,60 @@
+OPUS 5.5 XHIGH WORDING EXPERIMENT: ROUND TWO
+
+Finished: 2026-10-14T22:33:09.685524+00:00
+Additional requests: 100/100. Estimated cost: $1.011340. All final usage known; no API or transport errors.
+
+OUTCOME
+The requested zero-refusal target was NOT achieved within the 100-request budget. Final confirmation had 1 cyber refusal in 20 requests, with 16 correct answers. The candidate templates have been updated in place with the tested final selections.
+
+METHOD
+Discovery: 40 calls comparing current wording with compact instructions, question-style instructions, and a dictionary-gloss preface. Four tinanta tasks and two tasks in each other category. All exact Sanskrit data fields and the answer-only instructions were retained.
+The initial selection retained current wording on refusal/correctness ties. Paired stage: 20 fresh tasks, five per category, called twice (40 requests). The control and selected prompts were identical in this stage. These duplicate calls exposed stochastic refusals: identical prompts sometimes produced different outcomes.
+After 80 calls, four paired-stage refusals on three tasks prompted an explicit protocol amendment. Tinanta switched to compact instructions; taddhitanta switched to question-style instructions. Krdanta and subanta retained their current wording. The original script, manifest and cases are preserved under protocol-history/.
+Final confirmation: 20 calls, five per category, frozen before submission. It included 16 fresh tasks plus the three newly refused tasks and the earlier persistent tinanta task. The paired stage was used for tuning and therefore is not an untouched final validation set.
+
+FINAL CONFIRMATION
+tinanta: 0/5 refusals; 5/5 strict correct.
+krdanta: 0/5 refusals; 5/5 strict correct.
+taddhitanta: 1/5 refusals; 2/5 strict correct.
+subanta: 0/5 refusals; 4/5 strict correct.
+
+EVERY ROUND-TWO REQUEST USING THE EXACT FINAL TEMPLATE
+This includes discovery and duplicate controls, so these are descriptive counts, not independent held-out estimates.
+tinanta: 0/9 refusals; 9/9 strict correct.
+krdanta: 0/17 refusals; 17/17 strict correct.
+taddhitanta: 1/7 refusals; 4/7 strict correct.
+subanta: 0/17 refusals; 16/17 strict correct.
+
+ALL EXPERIMENTAL CALLS
+Across all tested variants: 7/100 refusals; 83/100 strict correct. Rejected variants and failed attempts remain in results.json. No successful response replaced a failed response.
+
+REMAINING REFUSAL
+Task: taddhitanta:loqana:basic:Napumsaka:TAl; request ID: req_011Cg2vYkyZLSm13sQHBn22Q; category: cyber.
+The loqana + TAl task refused twice under the earlier concise wording in the paired stage and once under question-style wording in final confirmation. The experiment does not expose the classifier feature responsible.
+
+IN-PLACE CANDIDATE UPDATE
+vp_tinanta.txt: Replaced introduction with compact instructions.
+vp_taddhitanta.txt: Replaced introduction with question-style grammatical instructions.
+vp_krdanta.txt: Retained prior concise candidate.
+vp_subanta.txt: Added candidate file using original production wording, which performed best on ties.
+Before/after snapshots: candidate-templates-before/ and candidate-templates-after/. Original production prompts and all full-benchmark result rows remain unchanged.
+
+LIMITATIONS
+This is an adaptive small-sample study of previously refused tasks, with ordinary subanta controls. It does not establish a full-benchmark refusal rate or universal reliability. The final candidate wording still has a known taddhitanta refusal. Tinanta/krdanta/subanta zero counts in this sample are not guarantees of zero future refusals. The 100-request budget is exhausted; no additional model calls were made.
+
+ARTIFACTS
+manifest.json, cases.json: settings, selected cases, protocol amendment, hash-pinned inputs.
+discovery-plan.json, holdout-plan.json, confirmation-plan.json: all exact request prompts.
+results.json, summary.json: every output, score, usage, cost, and breakdown.
+journals/requests.jsonl.gz: full durable request/response records.
+verification.json: replay verification and counts for every request matching the final templates.
+remaining-refusal-prompt.txt: exact final prompt for the remaining failure.
+
+
+ROUND THREE UPDATE: The shared candidate-templates directory now contains the round-three table-based taddhitanta prompt. See ../opus55-cyber-wording-round3/report.txt and candidate-templates/provenance.json in the original experiment directory. Historical results above remain unchanged; the round-two template is preserved in round-three candidate-templates-before/.
+
+
+USER-REQUESTED REVERT (2026-10-14 23:53:05 UTC): The shared candidate templates have been restored to their exact pre-round-three versions, including the plain-text taddhitanta layout. The round-three table prompt and its experimental results remain preserved in opus55-cyber-wording-round3/candidate-templates-after/ and the experiment artifacts. See the shared candidate-templates/provenance.json for the current state.
+
+LATER UNIFORM-TEMPLATE EXPERIMENT
+The current candidate templates are now the shared rules-before-table set from opus55-uniform-v2. This historical report and its outcomes are preserved; see ../opus55-uniform-v2/report.txt for the current evidence.

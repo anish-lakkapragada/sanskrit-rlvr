@@ -1,0 +1,48 @@
+{
+  "at": "2026-10-16T01:09:27.666196+00:00",
+  "reason": "User requested 1.25x concurrency after each 200 completions and halving under capacity pressure. Replaces timed growth; persists across resumes and retry cleanup. 24 offline candidate tests passed, including actual 404-request mocked integration.",
+  "archive": "data/benchmark/archives/gemini-flash-v3-runtime/completion-scaling-20261015",
+  "previous_implementations": {
+    "runner": {
+      "path": "data/engine/evaluation/run_gemini_flash.py",
+      "sha256": "fc3a997902b5de855e2e24713c390ad231b7373abea14f790f3c83c71299a452",
+      "bytes": 41189
+    },
+    "retry_runner": {
+      "path": "data/engine/evaluation/retry_gemini_flash.py",
+      "sha256": "eefd05fe97115c72ab306e3625a9576f546afc014bfbae0757314ffd1903702b",
+      "bytes": 10262
+    }
+  },
+  "new_runner": {
+    "path": "data/engine/evaluation/run_gemini_flash.py",
+    "sha256": "fe0df93f727a46bce8de542f300900e7b0da277803efa2daadf57d83a437bf71",
+    "bytes": 41935
+  },
+  "new_retry_runner": {
+    "path": "data/engine/evaluation/retry_gemini_flash.py",
+    "sha256": "008567d0043c251918fd9b74b169f8c50fc321b1fb96333eaaf3137181567573",
+    "bytes": 12041
+  },
+  "new_supervisor": {
+    "path": "data/engine/evaluation/supervise_gemini_flash.py",
+    "sha256": "cd803ccfeba57ba68146c106e5ab3fa071f0a1576f903c4a4a237d078ecfa7b5",
+    "bytes": 10995
+  },
+  "policy": {
+    "kind": "completion_growth",
+    "interval": 200,
+    "multiplier": 1.25,
+    "counted_status": "completed",
+    "baseline": 13752,
+    "completed": 13752,
+    "next_boost_at": 13952,
+    "concurrency": 34,
+    "maximum": 512,
+    "pressure_count": 0,
+    "cooldown_until_unix": 0
+  },
+  "request_settings_changed": false,
+  "budget_changed": false,
+  "results_replayed_before_installation": 13837
+}

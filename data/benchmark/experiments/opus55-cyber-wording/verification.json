@@ -1,0 +1,18 @@
+{
+  "verified_at": "2026-10-14T21:25:40.303690+00:00",
+  "verified_requests": 100,
+  "unique_tasks": 40,
+  "disjoint_task_holdout": true,
+  "provider_model": "claude-opus-5-5",
+  "effort": "xhigh",
+  "automatic_retries": 0,
+  "all_usage_known": true,
+  "templates_and_benchmark_inputs_unchanged": true,
+  "holdout_paired_counts": {
+    "control_refused_variant_completed": 16,
+    "both_completed": 13,
+    "both_refused": 1
+  },
+  "holdout_exact_two_sided_mcnemar_p": 3.0517578125e-05,
+  "statistical_caveat": "Exploratory evidence on a deliberately selected refusal set; requests may share roots and provider conditions. This is not a full-benchmark refusal-rate estimate."
+}

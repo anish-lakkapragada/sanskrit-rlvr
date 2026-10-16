@@ -1,0 +1,29 @@
+FROZEN OPUS CANDIDATE VALIDATION
+
+Model: claude-opus-5-5, adaptive thinking, xhigh; maximum output allowance=128000.
+No model tools, Internet, fallback, automatic retries, or prompt tuning.
+Estimated usage-based cost: $2.003068; unknown-cost reserve: $0.000000; budget ceiling: $3.00.
+Stopping reason: Target reached.
+
+Family       Requests Correct Strict-correct Refusals Truncated
+tinanta            61      58             58        0         0
+krdanta            62      60             60        0         0
+taddhitanta        61      53             53        0         0
+subanta            62      60             60        0         0
+TOTAL             246     231            231        0         0
+
+Actual requested output allowances: 50110–128000 tokens. Largest observed output: 2480 tokens.
+This run enforces a remaining-dollar output ceiling when necessary; it is not an identical-output-limit replication of the earlier fixed-128000 runs. xHigh effort and the prompt templates remain unchanged.
+Seed 69, sampling without replacement, approximately equal family counts. Every reserved task from every earlier wording experiment was excluded, including unused plans.
+Tasks come from the existing 5000-per-family benchmark; previous correctness/refusal outcomes were not used in sample selection. This is validation on tasks fresh to prompt experiments, not tasks unseen in the original benchmark.
+Budget admissions retain the full configured output reserve, so actual spending can stop below the target. Every admitted request is retained and included in accuracy denominators.
+Accuracy and refusal Wilson 95% intervals are in summary.json. A zero observed refusal count does not prove a zero population rate.
+Output setting: User raised the allowance to $3. Target approximately $2 actual spend with a strict $3 ceiling; use the largest output allowance fitting remaining dollars, up to 128000. Keep xhigh, frozen prompts, and all request settings otherwise unchanged. Disclose the actual per-request output allowances and any truncation.
+All prompts, responses, accepted answers, model settings, token usage, costs, and failure details are preserved in plan.json, manifest.json, results.json, and journals/requests.jsonl.gz.
+
+SAME TASKS WITH THE ORIGINAL PROMPTS (EARLIER FULL RUN)
+Original strict correct: 233/246; candidate strict correct: 231/246.
+Original refusals: 1; candidate refusals: 0.
+Original status counts: {'completed': 245, 'refused': 1}; candidate status counts: {'completed': 246}.
+Descriptive comparison on identical tasks. Call dates, model randomness, and output ceilings differ; this does not isolate a causal prompt effect. Sampling stopped by cost; confidence intervals are descriptive binomial estimates.
+paired-comparison.json includes category counts and source hashes. failures.json preserves every non-correct result and its accepted answers.

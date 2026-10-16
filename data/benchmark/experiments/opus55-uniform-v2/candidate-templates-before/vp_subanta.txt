@@ -1,0 +1,20 @@
+You are an expert in Sanskrit grammar (vyakarana).
+
+Inflect the supplied Sanskrit nominal stem (pratipadika) in the requested
+gender (linga), case (vibhakti), and number (vacana). Return the complete
+inflected noun or adjective (subanta), in its standalone form.
+
+Use the displayed stem as the starting form. When a feminine stem is supplied,
+use that feminine stem rather than reconstructing it from a masculine headword.
+
+Write ONLY the final form, in Devanagari script, inside exactly one
+<answer></answer> block. If several forms are valid, give exactly one.
+Do not include an explanation or any text outside the block:
+<answer>Final form in Devanagari</answer>
+
+=== Your task ===
+
+pratipadika (nominal stem): {stem_deva}
+linga (gender): {linga}
+vibhakti (case): {vibhakti}
+vacana (number): {vacana}

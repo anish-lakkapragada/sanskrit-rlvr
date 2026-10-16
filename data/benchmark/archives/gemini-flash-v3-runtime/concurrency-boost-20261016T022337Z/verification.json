@@ -1,0 +1,104 @@
+{
+  "at": "2026-10-16T02:27:36.243070+00:00",
+  "replay": {
+    "state": "paused",
+    "unresolved": 0,
+    "updated_at": "2026-10-16T02:27:36.018189+00:00",
+    "planned": 20000,
+    "started": 15116,
+    "settled": 15116,
+    "unsettled": 0,
+    "not_started": 4884,
+    "known_cost_usd": 845.8412844,
+    "unknown_cost_attempts": 5,
+    "projected_full_run_cost_usd": null,
+    "families": {
+      "tinanta": {
+        "settled": 3779,
+        "statuses": {
+          "completed": 3747,
+          "api_error": 29,
+          "transport_error": 3
+        },
+        "correct": 3378,
+        "format_ok": 3747,
+        "strict_correct": 3378,
+        "known_cost_usd": 304.8564654,
+        "unknown_cost_attempts": 3,
+        "input_tokens": 856222,
+        "output_tokens": 40451992,
+        "mean_output_tokens": 10795.83
+      },
+      "taddhitanta": {
+        "settled": 3779,
+        "statuses": {
+          "completed": 3756,
+          "api_error": 20,
+          "incomplete": 1,
+          "transport_error": 2
+        },
+        "correct": 3272,
+        "format_ok": 3755,
+        "strict_correct": 3271,
+        "known_cost_usd": 327.9323889,
+        "unknown_cost_attempts": 2,
+        "input_tokens": 656563,
+        "output_tokens": 43572164,
+        "mean_output_tokens": 11597.59
+      },
+      "krdanta": {
+        "settled": 3779,
+        "statuses": {
+          "completed": 3758,
+          "api_error": 21
+        },
+        "correct": 3536,
+        "format_ok": 3757,
+        "strict_correct": 3535,
+        "known_cost_usd": 192.5038176,
+        "unknown_cost_attempts": 0,
+        "input_tokens": 883986,
+        "output_tokens": 25487818,
+        "mean_output_tokens": 6782.28
+      },
+      "subanta": {
+        "settled": 3779,
+        "statuses": {
+          "completed": 3767,
+          "api_error": 12
+        },
+        "correct": 3707,
+        "format_ok": 3767,
+        "strict_correct": 3707,
+        "known_cost_usd": 20.5486125,
+        "unknown_cost_attempts": 0,
+        "input_tokens": 625965,
+        "output_tokens": 2614622,
+        "mean_output_tokens": 694.09
+      }
+    },
+    "attempts_started": 15116,
+    "attempts_settled": 15116,
+    "unsettled_attempts": 0,
+    "retry_attempts": 0
+  },
+  "result_sha256": {
+    "tinanta": "c498e698424b138b560aa1a5940bd84f530b9268ff78b1b06ae2ab8aa2a66091",
+    "taddhitanta": "08de2e4931a58970409b776cef0ecd81c682bd0e96bef0b319170531d4d31465",
+    "krdanta": "4140d5c642355e7a1c2606d0749477249d3429d749b662771f692a64f8773144",
+    "subanta": "010e67c1fdab80abbfe376271ca4578d32a048e9ef1d2deaba85817fb9f61255"
+  },
+  "result_bytes_unchanged": true,
+  "adjustment": {
+    "at": "2026-10-16T02:27:36.040094+00:00",
+    "reason": "User requested immediate acceleration beyond gradual recovery",
+    "previous_concurrency": 18,
+    "concurrency": 256,
+    "ceiling": 512,
+    "completed": 15028,
+    "next_boost_at": 15152,
+    "policy": "Retain 1.25x per 200 completed responses and halving on capacity errors",
+    "request_parameters_changed": false,
+    "archive": "data/benchmark/archives/gemini-flash-v3-runtime/concurrency-boost-20261016T022337Z"
+  }
+}

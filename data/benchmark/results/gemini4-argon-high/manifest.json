@@ -1,0 +1,4219 @@
+{
+  "schema_version": 2,
+  "planned_tasks": 20000,
+  "planned_primary_requests": 20000,
+  "path_conventions": {
+    "inputs_and_code": "repository-relative",
+    "results_and_journals": "run-directory-relative"
+  },
+  "sampling_seed": 69,
+  "sampling_seed_scope": "Dataset selection only; not a model-generation seed.",
+  "rendering_dependencies": {
+    "python": "3.11+",
+    "vidyut": "0.4.0"
+  },
+  "tasks": [
+    {
+      "family": "tinanta",
+      "dataset": {
+        "path": "data/benchmark/tinanta/tinanta.json",
+        "sha256": "e5f1b8b6332d820ef3ffd11d28e73c25df300c253816ad374f716fb2b537d151",
+        "bytes": 1921409,
+        "records": 5000
+      },
+      "sampling_manifest": {
+        "path": "data/benchmark/tinanta/tinanta.manifest.json",
+        "sha256": "81269026a8089ec36db118ad7772fd718af7ccc1acab3207e76925951f45e5cf",
+        "bytes": 92353
+      },
+      "prompt_template": {
+        "path": "data/engine/prompts/v3/vp_tinanta.txt",
+        "sha256": "f9cbade9eb13c9356c4c303bbf15b3c9938d5c50486adda0ff696c3844038b26",
+        "bytes": 902,
+        "text": "Form the Sanskrit conjugated verb form described in this table.\n\nUse the supplied Dhatupatha citation, including anubandha markers, verb class, traditional meaning, and any verbal prefixes. Apply the specified tense or mood, voice, person, and number.\n\n| Grammatical input | Value |\n| --- | --- |\n| Verb in Dhatupatha citation form | {aupadeshika_deva}   (Dhatupatha citation form, anubandha markers included) |\n| Verb class | {gana} ({gana_en}) |\n| Traditional meaning | {artha_deva} |\n| Tense or mood | {lakara} ({lakara_en}) |\n| Voice | {prayoga} ({prayoga_en}) |\n| Person | {purusha} ({purusha_en}) |\n| Number | {vacana} ({vacana_en}) |\n\n{prefixes_block}\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n"
+      },
+      "renderer": {
+        "path": "data/engine/tinanta/common.py",
+        "sha256": "c6288776af494cf3e592aac2ff58cf820c16ff74dda6aec23a31de6f993df15c",
+        "bytes": 3455,
+        "callable": "data.engine.tinanta.common.render_task"
+      },
+      "result_file": "tinanta.json",
+      "order": "benchmark source row order; one selected attempt per task",
+      "journal_archive_member": "gemini4-argon-high/journals/tinanta.jsonl.gz"
+    },
+    {
+      "family": "taddhitanta",
+      "dataset": {
+        "path": "data/benchmark/taddhitanta/taddhitanta.json",
+        "sha256": "ae3f1084be43b8296fe7a5cc3c1264ea84ea1293fc72c0644b02ce9e6f036c3b",
+        "bytes": 1504917,
+        "records": 5000
+      },
+      "sampling_manifest": {
+        "path": "data/benchmark/taddhitanta/taddhitanta.manifest.json",
+        "sha256": "db7829c9ed5bbb71557c38f112f3a32dac2eb86dbfcd1ca1e00ca75c93903a0e",
+        "bytes": 80493
+      },
+      "prompt_template": {
+        "path": "data/engine/prompts/v3/vp_taddhitanta.txt",
+        "sha256": "74cc9e85bd0e85658499baac703636b097c30b210e031274d6f7c026637f3f70",
+        "bytes": 665,
+        "text": "Form the Sanskrit taddhita derivative described in this table.\n\nGive the derived nominal stem or complete indeclinable without adding case or number endings. Any meaning licensed for this affix is acceptable.\n\n| Grammatical input | Value |\n| --- | --- |\n| Nominal stem | {stem_deva} |\n| Interpretation of the stem | {base_interpretation} |\n| Taddhita affix | {suffix_deva} |\n| Technical identifier in SLP1 | {suffix_id} |\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n"
+      },
+      "renderer": {
+        "path": "data/engine/taddhitanta/common.py",
+        "sha256": "f885e3528e6ccd5651a65dfe029fc909808a0063886018a3a67fc6cd77b3e1d8",
+        "bytes": 6310,
+        "callable": "data.engine.taddhitanta.common.render_task"
+      },
+      "result_file": "taddhitanta.json",
+      "order": "benchmark source row order; one selected attempt per task",
+      "journal_archive_member": "gemini4-argon-high/journals/taddhitanta.jsonl.gz"
+    },
+    {
+      "family": "krdanta",
+      "dataset": {
+        "path": "data/benchmark/krdanta/krdanta.json",
+        "sha256": "ec5fcaa3ee7d05ff79d391d0015b26e896bd01873a720cc94bff26bf5970e762",
+        "bytes": 1325917,
+        "records": 5000
+      },
+      "sampling_manifest": {
+        "path": "data/benchmark/krdanta/krdanta.manifest.json",
+        "sha256": "29fd8d97fac7abe062672bdc5b0379256487d771b80cc57e347af062ee1a1a49",
+        "bytes": 55482
+      },
+      "prompt_template": {
+        "path": "data/engine/prompts/v3/vp_krdanta.txt",
+        "sha256": "4dc79d2804882a6a04ea5f5e94b5b928d24e03cd4c14025aab7dc01cab5a71a8",
+        "bytes": 980,
+        "text": "Form the Sanskrit krt derivative described in this table.\n\nUse the supplied Dhatupatha citation, including anubandha markers, verb class, traditional meaning, and any verbal prefixes. Apply the specified primary suffix and any participle coordinates. For a noun or adjective, give the uninflected stem without case or number endings. For an indeclinable, give the complete form.\n\n| Grammatical input | Value |\n| --- | --- |\n| Verb in Dhatupatha citation form | {aupadeshika_deva}   (Dhatupatha citation form, anubandha markers included) |\n| Verb class | {gana} ({gana_en}) |\n| Traditional meaning | {artha_deva} |\n| Primary suffix | {krt_deva} ({krt_en}; citation form, anubandha markers included) |\n\n{prefixes_block}\n{participle_block}\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n"
+      },
+      "renderer": {
+        "path": "data/engine/krdanta/common.py",
+        "sha256": "dc669ce8492d3ea74c335a4e484ecce77dbe416e7480d51e7e523a1ddc830196",
+        "bytes": 8267,
+        "callable": "data.engine.krdanta.common.render_task"
+      },
+      "result_file": "krdanta.json",
+      "order": "benchmark source row order; one selected attempt per task",
+      "journal_archive_member": "gemini4-argon-high/journals/krdanta.jsonl.gz"
+    },
+    {
+      "family": "subanta",
+      "dataset": {
+        "path": "data/benchmark/subanta/subanta.json",
+        "sha256": "83bc5976715a52f6b09535d7a8a50a629072e2e6e19fdf1281c682126a994d53",
+        "bytes": 1347028,
+        "records": 5000
+      },
+      "sampling_manifest": {
+        "path": "data/benchmark/subanta/subanta.manifest.json",
+        "sha256": "259098b1940ddd13ea642840762dd612f0088fbb3eb3a0a29595976e911d0849",
+        "bytes": 65913
+      },
+      "prompt_template": {
+        "path": "data/engine/prompts/v3/vp_subanta.txt",
+        "sha256": "8453c565b2581a1dc2c832a6253f51dd825b57049a242f847d520969397217dd",
+        "bytes": 684,
+        "text": "Form the Sanskrit inflected nominal form described in this table.\n\nUse the supplied nominal stem with the specified gender, case, and number. Give the complete standalone noun or adjective form. When a feminine stem is supplied, use that stem rather than reconstructing it from a masculine headword.\n\n| Grammatical input | Value |\n| --- | --- |\n| Nominal stem | {stem_deva} |\n| Gender | {linga} |\n| Case | {vibhakti} |\n| Number | {vacana} |\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n"
+      },
+      "renderer": {
+        "path": "data/engine/subanta/common.py",
+        "sha256": "041800da26cb92a514e54dd314d8cf7f85f500f5b4d4c4f48133e2879d2d6ded",
+        "bytes": 15734,
+        "callable": "data.engine.subanta.common.render_task"
+      },
+      "result_file": "subanta.json",
+      "order": "benchmark source row order; one selected attempt per task",
+      "journal_archive_member": "gemini4-argon-high/journals/subanta.jsonl.gz"
+    }
+  ],
+  "scoring": {
+    "version": "answer-membership-v1",
+    "implementation": {
+      "path": "data/engine/evaluation/scoring.py",
+      "sha256": "b98632eee2b1435e9a362927658000052da1b8a36bffec90647f3924e95f6121",
+      "bytes": 1318
+    },
+    "answer_extraction": "Extract exactly one well-formed literal <answer>...</answer> block and strip outer answer whitespace. No Unicode or orthographic normalization. Original text stays in output_text.",
+    "correct": "For completed responses: answer is not null and answer in the source task.gold_devanagari list, joined by task_id. Otherwise null.",
+    "format_ok": "Exactly one nonempty answer block, no nested markup, and only whitespace outside the block.",
+    "strict_accuracy": "Derived when reporting: correct is true and format_ok. Not duplicated in result rows.",
+    "primary_attempt": 1,
+    "reporting": "Report correctness and format separately, plus strict accuracy over all 20,000 tasks using the latest explicitly authorized settled attempt per task. Report refusals/incomplete/errors separately; never drop tasks from the denominator. Preserve first-attempt results in journals for separate analysis."
+  },
+  "preservation": {
+    "journal_path_pattern": "journals/{family}.jsonl",
+    "completed_archive_pattern": "journals/{family}.jsonl.gz",
+    "journal_count": 4,
+    "journal_key": [
+      "task_id",
+      "attempt_number"
+    ],
+    "events": {
+      "started": "Before sending, append and fsync task_id, attempt_number, timestamp, client_request_id and exact request JSON including the hydrated prompt.",
+      "response": "Before scoring, append and fsync task_id, attempt_number, request_id, elapsed_ms, timestamp and the complete unmodified terminal response.",
+      "error": "Append task_id, attempt_number, request_id, timestamp, elapsed_ms, HTTP status, provider/client error details and available partial output; exclude credentials."
+    },
+    "per_request_files": false,
+    "save_full_stream_events": false,
+    "stream_handling": "Non-streaming generateContent, exactly as requested. Preserve the complete response before scoring; no stream or continuation loop.",
+    "result_encoding": "Compact UTF-8 JSON arrays; one compact record per line.",
+    "shared_metadata": "Dataset/gold stay in pinned benchmark files. Model/settings/templates/rates/scoring version stay in this manifest; family comes from the result filename.",
+    "write_order": "Durable started journal entry before send; durable response/error entry before scoring; atomically update family results after each settled attempt.",
+    "compression": "Gzip each completed journal; remove the plain copy only after verifying the archive. Retain one archive per family.",
+    "recovery": "Replay journals to rebuild results and reprice/rescore offline. Read completed .jsonl.gz archives as needed; do not resend completed attempts.",
+    "selected_results": "One result row per task; latest explicitly authorized settled attempt. Journals retain every attempt and all costs.",
+    "public_layout": "README.md, manifest.json, and four family result arrays. The embedded schema and raw archive replace execution sidecars.",
+    "execution_metadata": "Journal paths in historical execution metadata are relative to the archived execution directory."
+  },
+  "run_id": "gemini4-argon-high",
+  "model": "gemini-4-argon",
+  "prompt_version": "v3",
+  "status": "completed",
+  "created_at": "2026-10-15T05:54:47.339799+00:00",
+  "started_at": "2026-10-15T05:55:08.492395+00:00",
+  "finished_at": "2026-10-15T23:40:17.042032+00:00",
+  "submitted_requests": 20641,
+  "provider": "google_vertex_ai",
+  "api": {
+    "method": "POST",
+    "url": "https://aiplatform.googleapis.com/v1/projects/project-416ce809-5ce8-43c4-85e/locations/global/publishers/google/models/gemini-4-argon:generateContent",
+    "project": "project-416ce809-5ce8-43c4-85e",
+    "location": "global",
+    "headers_without_credentials": {
+      "Content-Type": "application/json",
+      "X-Goog-User-Project": "project-416ce809-5ce8-43c4-85e",
+      "X-Vertex-AI-LLM-Request-Type": "shared",
+      "X-Vertex-AI-LLM-Shared-Request-Type": "priority"
+    }
+  },
+  "authentication": {
+    "method": "Application Default Credentials",
+    "command": [
+      "/Users/anish/google-cloud-sdk/bin/gcloud",
+      "auth",
+      "application-default",
+      "print-access-token"
+    ],
+    "refresh_interval_seconds": 2700,
+    "token_storage": "Process memory only; never in files, logs, shell arguments, manifests or journals.",
+    "verified_adc_email": "anishsanskrit@gmail.com",
+    "identity_verified_at": "2026-10-15T20:30:41.687987+00:00"
+  },
+  "request_defaults": {
+    "generationConfig": {
+      "thinkingConfig": {
+        "thinkingLevel": "HIGH"
+      }
+    }
+  },
+  "request_input": "Exact hydrated v3 prompt as the sole user text part; no system instruction, history, tools, search, grounding or fallback model.",
+  "output_limit": {
+    "benchmark_cap": null,
+    "maxOutputTokens_parameter": "omitted",
+    "thinkingBudget_parameter": "omitted",
+    "documented_model_max_output_tokens": 32768,
+    "provider_limit_scope": "Default single non-streaming direct HTTP generation on v1, including thinking and answer tokens.",
+    "unified_model_context_tokens": 1048576,
+    "meaning": "No benchmark-specified output limit. Follow the user's exact v1 request. Google's default 32768-token per-request ceiling applies. Long decodes require a different v1beta1 API and explicit continuation configuration; these are not enabled.",
+    "source": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/guides/gemini-4-argon?hl=en"
+  },
+  "omitted_request_parameters": [
+    "maxOutputTokens",
+    "thinkingBudget",
+    "includeThoughts",
+    "systemInstruction",
+    "tools",
+    "toolConfig",
+    "safetySettings",
+    "temperature",
+    "topP",
+    "topK",
+    "candidateCount",
+    "continuationToken",
+    "cachedContent",
+    "seed"
+  ],
+  "comparison_run": {
+    "path": "data/benchmark/results/v2/astra-xhigh/manifest.json",
+    "sha256": "ae50a8863b344052621e9435e1e94a772e96e33619a742f0a5cbed3ad82b594f",
+    "bytes": 51684,
+    "meaning": "Same sampled tasks and scorer; v3 templates match the ongoing OpenAI and completed Anthropic v3 runs."
+  },
+  "result_schema": {
+    "storage": "embedded",
+    "schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "title": "Compact Gemini 4 Argon HIGH results (schema v2, prompts v3)",
+      "description": "One array per family; one row per task, selecting the latest explicitly authorized settled attempt. All earlier attempts remain in the journals.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/result"
+      },
+      "$defs": {
+        "result": {
+          "type": "object",
+          "properties": {
+            "task_id": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Join to the original benchmark row for inputs and accepted answers."
+            },
+            "attempt_number": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "status": {
+              "enum": [
+                "completed",
+                "refused",
+                "incomplete",
+                "api_error",
+                "transport_error",
+                "unknown"
+              ]
+            },
+            "output_text": {
+              "type": "string",
+              "description": "Unmodified visible response text, including any available partial text."
+            },
+            "answer": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "correct": {
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "description": "Exact membership in the source gold list for completed responses; null for other outcomes."
+            },
+            "format_ok": {
+              "type": "boolean",
+              "description": "One nonempty answer block; only whitespace outside; no nested markup."
+            },
+            "usage": {
+              "type": [
+                "object",
+                "null"
+              ],
+              "description": "Full provider usage. Output length is usage.output_tokens; reasoning is its subset. Null when unavailable.",
+              "properties": {
+                "input_tokens": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "output_tokens": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "total_tokens": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "input_tokens_details": {
+                  "type": "object",
+                  "additionalProperties": true
+                },
+                "output_tokens_details": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              },
+              "required": [
+                "input_tokens",
+                "output_tokens"
+              ],
+              "additionalProperties": true
+            },
+            "cost_usd": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0,
+              "description": "Gross usage-based estimate; null when unknown. Zero without usage only for confirmed non-200 responses or requests never sent."
+            },
+            "request_id": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "response_id": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "elapsed_ms": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "error": {
+              "type": [
+                "object",
+                "null"
+              ],
+              "additionalProperties": true,
+              "description": "Null on normal success; otherwise compact error/refusal/incomplete or unknown-cost details, preserving provider codes/messages."
+            }
+          },
+          "required": [
+            "task_id",
+            "attempt_number",
+            "status",
+            "output_text",
+            "answer",
+            "correct",
+            "format_ok",
+            "usage",
+            "cost_usd",
+            "request_id",
+            "response_id",
+            "elapsed_ms",
+            "error"
+          ],
+          "additionalProperties": false,
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "status": {
+                    "const": "completed"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "correct": {
+                    "type": "boolean"
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "correct": {
+                    "type": "null"
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "usage": {
+                    "type": "null"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "cost_usd": {
+                    "enum": [
+                      null,
+                      0
+                    ]
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "original_file_sha256": "4d23418cfee297b91c3702bb90b99470dbaa3f850ab73f2dad9d51b9c25b5966"
+  },
+  "pricing": {
+    "verified_date": "2026-10-15",
+    "currency": "USD",
+    "tier": "per_response_standard_or_priority",
+    "endpoint": "Vertex AI global direct generateContent",
+    "cost_usd_basis": "Gross charges for the actual response trafficType, before promotional credits, taxes or account-specific discounts.",
+    "rates_usd_per_million_tokens": {
+      "uncached_input": 4,
+      "cached_input": 0.2,
+      "cache_write_input": 4,
+      "output": 20
+    },
+    "priority_rates_usd_per_million_tokens": {
+      "uncached_input": 7.2,
+      "cached_input": 0.36,
+      "cache_write_input": 7.2,
+      "output": 36
+    },
+    "introductory_credit": {
+      "through_date": "2026-11-30",
+      "estimated_credit_fraction": 0.5,
+      "effective_rates_usd_per_million_tokens": {
+        "uncached_input": 2,
+        "cached_input": 0.1,
+        "output": 10
+      },
+      "priority_effective_rates_usd_per_million_tokens": {
+        "uncached_input": 3.6,
+        "cached_input": 0.18,
+        "output": 18
+      },
+      "meaning": "Google documents 50% credits back on eligible net spend. Record gross charges in cost_usd; estimated discounted totals are separate and are not an invoice or confirmation of project eligibility."
+    },
+    "formula": "((promptTokenCount - cachedContentTokenCount) * input_rate + cachedContentTokenCount * cached_input_rate + (candidatesTokenCount + thoughtsTokenCount) * output_rate) / 1000000",
+    "rules": [
+      "candidatesTokenCount excludes thoughtsTokenCount: add both once to obtain output_tokens.",
+      "cachedContentTokenCount is a subset of promptTokenCount; implicit cache writes use ordinary input pricing.",
+      "Only HTTP 200 requests incur input/output charges according to Google's pricing page. Confirmed non-200 responses cost zero; transport failures without a status have unknown cost.",
+      "Retain full provider usage metadata alongside normalized cross-provider token counters.",
+      "ON_DEMAND_PRIORITY uses priority rates; ON_DEMAND uses standard rates, including provider downgrades. Historical standard requests retain their original costs.",
+      "Priority headers change scheduling only. No grounding, tools, explicit cache storage or batch pricing.",
+      "An unknown returned model, unsupported modalities, or inconsistent usage counters pauses the run for inspection."
+    ],
+    "sources": [
+      "https://cloud.google.com/gemini-enterprise-agent-platform/generative-ai/pricing",
+      "https://docs.cloud.google.com/gemini-enterprise-agent-platform/reference/rest/v1/GenerateContentResponse",
+      "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/context-cache/context-cache-overview",
+      "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/priority-paygo"
+    ]
+  },
+  "execution": {
+    "state": "completed",
+    "runner_implemented": true,
+    "pid": null,
+    "runner": {
+      "path": "data/engine/evaluation/run_gemini.py",
+      "sha256": "12c528d0ff82e869ba61fcbe3fa2d1d04add890bac361a033ebff1b40d27d0bb",
+      "bytes": 41108
+    },
+    "automatic_retries": 0,
+    "model_fallbacks": [],
+    "concurrency": 1,
+    "max_concurrency": 512,
+    "budget_usd": 2000,
+    "budget_scope": "Gross Google Cloud charges only; local execution ceiling raised from $1000 to $2000 for user-authorized Priority PayGo. Separate from OpenAI funding; reserve the full provider default output allowance at priority rates.",
+    "resume": "Completed compact export. Extract the raw archive into a separate directory to inspect or replay; do not resend completed requests.",
+    "failure_handling": "Paced admission; halve concurrency on capacity errors, honor Retry-After and exponential backoff, then recover gradually after healthy traffic. Isolated connection failures remain recorded for later explicit retries and do not suspend unrelated requests. Stop after five consecutive transient failures.",
+    "stopped_reason": null,
+    "reservation_usd_per_inflight_request": 1.1961864,
+    "runtime_versions": {
+      "python": "3.11.13",
+      "httpx": "0.28.1",
+      "vidyut": "0.4.0",
+      "jsonschema": "4.23.0"
+    },
+    "progress": {
+      "updated_at": "2026-10-15T23:40:20.511705+00:00",
+      "planned": 20000,
+      "started": 20000,
+      "settled": 20000,
+      "unsettled": 0,
+      "not_started": 0,
+      "known_cost_usd": 666.5928184,
+      "unknown_cost_attempts": 1,
+      "projected_full_run_cost_usd": null,
+      "families": {
+        "tinanta": {
+          "settled": 5000,
+          "statuses": {
+            "completed": 5000
+          },
+          "correct": 4708,
+          "format_ok": 4998,
+          "strict_correct": 4707,
+          "known_cost_usd": 224.080192,
+          "unknown_cost_attempts": 1,
+          "input_tokens": 1268748,
+          "output_tokens": 10950260,
+          "mean_output_tokens": 2190.05
+        },
+        "taddhitanta": {
+          "settled": 5000,
+          "statuses": {
+            "completed": 4997,
+            "incomplete": 3
+          },
+          "correct": 4570,
+          "format_ok": 4997,
+          "strict_correct": 4570,
+          "known_cost_usd": 247.76892,
+          "unknown_cost_attempts": 0,
+          "input_tokens": 1009516,
+          "output_tokens": 12185758,
+          "mean_output_tokens": 2437.15
+        },
+        "krdanta": {
+          "settled": 5000,
+          "statuses": {
+            "completed": 4998,
+            "incomplete": 2
+          },
+          "correct": 4850,
+          "format_ok": 4998,
+          "strict_correct": 4850,
+          "known_cost_usd": 152.3598816,
+          "unknown_cost_attempts": 0,
+          "input_tokens": 1309346,
+          "output_tokens": 7355190,
+          "mean_output_tokens": 1471.04
+        },
+        "subanta": {
+          "settled": 5000,
+          "statuses": {
+            "completed": 4999,
+            "incomplete": 1
+          },
+          "correct": 4935,
+          "format_ok": 4999,
+          "strict_correct": 4935,
+          "known_cost_usd": 42.3838248,
+          "unknown_cost_attempts": 0,
+          "input_tokens": 960248,
+          "output_tokens": 1926709,
+          "mean_output_tokens": 385.34
+        }
+      },
+      "attempts_started": 20641,
+      "attempts_settled": 20641,
+      "unsettled_attempts": 0,
+      "retry_attempts": 641,
+      "unknown_cost_reserve_usd": 1.1961864
+    },
+    "submission_state": "completed",
+    "implementation_revisions": [
+      {
+        "at": "2026-10-15T06:08:57.044290+00:00",
+        "reason": "Allow confirmed zero-cost Vertex errors without usage counters; recover saved responses after three HTTP 429 responses exposed the inherited null-only schema constraint. Six offline tests passed, including quota-error replay/retry and preservation of unknown transport charges.",
+        "previous": {
+          "runner": {
+            "path": "data/engine/evaluation/run_gemini.py",
+            "sha256": "7ebaa228a718a14ff019c24a5c30369757332b404f9328764aff2948b3fe2aa2",
+            "bytes": 35845
+          },
+          "result_schema": {
+            "path": "result.schema.json",
+            "sha256": "28531e6934c8ab34eb05b00ba2db1c4a69f48763f68a319368566a513b0fa11b"
+          }
+        },
+        "archive": "data/benchmark/archives/gemini-v3-runtime/quota-schema-repair-20261015",
+        "request_settings_changed": false
+      },
+      {
+        "at": "2026-10-15T06:53:20.381932+00:00",
+        "reason": "User-authorized speed increase; updated budgets and adaptive admission only.",
+        "previous_runner": {
+          "path": "data/engine/evaluation/run_gemini.py",
+          "sha256": "06b9c68ec833c766a56e475d2bc62ba1b21a1666d2c7a36e41a18e2ad3207897",
+          "bytes": 36412
+        },
+        "previous_budget_usd": 1000,
+        "new_budget_usd": 1000,
+        "concurrency_ceiling": 64,
+        "request_settings_changed": false,
+        "archive": "data/benchmark/archives/speed-increase-20261015",
+        "validation": "14 offline tests passed; all saved requests and results reverified against pinned prompts and journals before resume."
+      },
+      {
+        "at": "2026-10-15T07:29:01.048611+00:00",
+        "reason": "Add Priority PayGo routing and per-response trafficType billing; verify header-only change and mixed-tier replay. Eight offline Gemini tests passed.",
+        "previous_runner": {
+          "path": "data/engine/evaluation/run_gemini.py",
+          "sha256": "451b65548f12f8153fc838a306cc454361604a17101bbbc46391041fdbf52649",
+          "bytes": 36524
+        },
+        "archive": "data/benchmark/archives/gemini-priority-20261015",
+        "previous_budget_usd": 1000,
+        "new_budget_usd": 2000,
+        "request_body_changed": false
+      },
+      {
+        "at": "2026-10-15T20:34:44.818879+00:00",
+        "reason": "User-authorized ADC/project migration with historical route replay and exact-attempt billing-error recovery. 27 offline tests passed.",
+        "previous_runner": {
+          "path": "data/engine/evaluation/run_gemini.py",
+          "sha256": "6fda765ec2ff41e3cb9d770b172cd5d79c77e8cf073d13d78c6c5b8c527aaf7f",
+          "bytes": 39292
+        },
+        "new_runner": {
+          "path": "data/engine/evaluation/run_gemini.py",
+          "sha256": "12c528d0ff82e869ba61fcbe3fa2d1d04add890bac361a033ebff1b40d27d0bb",
+          "bytes": 41108
+        },
+        "archive": "data/benchmark/archives/gemini-project-migration-20261015",
+        "request_body_changed": false,
+        "endpoint_changed": true,
+        "budget_changed": false
+      }
+    ],
+    "concurrency_ceiling": 64,
+    "project_migrations": [
+      {
+        "at": "2026-10-15T20:34:44.818879+00:00",
+        "authorization": "User supplied the new ADC account/project and requested finishing both existing benchmark runs.",
+        "previous_api": {
+          "method": "POST",
+          "url": "https://aiplatform.googleapis.com/v1/projects/sanskrit-project-511705/locations/global/publishers/google/models/gemini-4-argon:generateContent",
+          "project": "sanskrit-project-511705",
+          "location": "global",
+          "headers_without_credentials": {
+            "Content-Type": "application/json",
+            "X-Goog-User-Project": "sanskrit-project-511705",
+            "X-Vertex-AI-LLM-Request-Type": "shared",
+            "X-Vertex-AI-LLM-Shared-Request-Type": "priority"
+          }
+        },
+        "new_api": {
+          "method": "POST",
+          "url": "https://aiplatform.googleapis.com/v1/projects/project-416ce809-5ce8-43c4-85e/locations/global/publishers/google/models/gemini-4-argon:generateContent",
+          "project": "project-416ce809-5ce8-43c4-85e",
+          "location": "global",
+          "headers_without_credentials": {
+            "Content-Type": "application/json",
+            "X-Goog-User-Project": "project-416ce809-5ce8-43c4-85e",
+            "X-Vertex-AI-LLM-Request-Type": "shared",
+            "X-Vertex-AI-LLM-Shared-Request-Type": "priority"
+          }
+        },
+        "verified_new_adc_email": "anishsanskrit@gmail.com",
+        "previous_project_primary_attempts": 17340,
+        "previous_project_gross_known_cost_usd": 556.065204,
+        "previous_project_unknown_cost_attempts": 0,
+        "archive": "data/benchmark/archives/gemini-project-migration-20261015",
+        "access_check": {
+          "path": "data/benchmark/archives/gemini-project-migration-20261015/gemini4-argon-high.access-result.json",
+          "sha256": "7ee5f431f86047e87184ba9c9ebb419dac6550e1df8819933e51671b766ba88b",
+          "bytes": 2254
+        },
+        "access_check_cost_usd_excluded_from_scored_benchmark": 0.0027,
+        "request_body_changed": false,
+        "output_history_changed": false,
+        "attribution": "Each journal attempt retains its original X-Goog-User-Project. All attempts before this checkpoint use previous_api; subsequent attempts use new_api."
+      }
+    ],
+    "reviewed_infrastructure_failures": [],
+    "retry_runner": {
+      "path": "data/engine/evaluation/retry_gemini.py",
+      "sha256": "73bc84bc62a76b217f347d4bcc30ba80d600faff9e8555ba5b495e88408466d1"
+    },
+    "retry_batches": [
+      {
+        "id": "v3-infrastructure-recovery-1",
+        "authorized_at": "2026-10-15T22:05:31.014178+00:00",
+        "authorization": "User requested the same completed benchmark workflow for Gemini 4 Argon, including infrastructure failure recovery. No retries of completed answers or refusals.",
+        "targets": [
+          {
+            "family": "tinanta",
+            "task_id": "09.0064:Lrt:Kartari:Prathama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0176:Lot:Karmani:Madhyama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "10.0327:Lan:Kartari:Uttama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "02.0077:Lit:Karmani:Uttama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0376:Lot:Kartari:Madhyama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "10.0250:Lun:Karmani:Madhyama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0099:AshirLin:Kartari:Madhyama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.1146:Lrt:Kartari:Prathama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "04.0028:Lrt:Karmani:Madhyama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0326:Lrt:Kartari:Prathama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.1100:Lit:Karmani:Madhyama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0550:AshirLin:Kartari:Prathama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0587:Lot:Kartari:Prathama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0133:Lot:Kartari:Uttama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0751:Lut:Karmani:Prathama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0567:VidhiLin:Kartari:Uttama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0284:VidhiLin:Kartari:Prathama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0613:VidhiLin:Karmani:Madhyama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "10.0331:Lrn:Kartari:Uttama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "10.0400:VidhiLin:Karmani:Prathama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "02.0011:Lrn:Kartari:Madhyama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0807:Lat:Karmani:Madhyama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "10.0401:Lit:Kartari:Uttama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.1162:Lun:Kartari:Madhyama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "10.0069:Lun:Karmani:Prathama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "04.0065:Lrn:Karmani:Prathama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "06.0053:Lat:Kartari:Madhyama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "06.0135:Lrn:Karmani:Madhyama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0117:Lat:Karmani:Uttama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "10.0403:Lit:Kartari:Madhyama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0299:Lrt:Karmani:Uttama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "10.0419:Lrt:Kartari:Madhyama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "04.0133:Lun:Kartari:Madhyama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "10.0311:Lrn:Kartari:Madhyama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0362:Lrn:Bhave:Prathama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0701:Lrt:Kartari:Prathama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "10.0156:AshirLin:Kartari:Uttama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0915:Lrt:Kartari:Uttama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0071:Lot:Kartari:Madhyama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "06.0070:Lan:Kartari:Madhyama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0788:Lat:Karmani:Prathama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "10.0385:Lun:Karmani:Uttama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "10.0100:VidhiLin:Karmani:Uttama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "03.0022:Lat:Kartari:Madhyama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0147:Lit:Karmani:Madhyama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0112:Lat:Kartari:Prathama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "10.0191:Lan:Karmani:Prathama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "03.0026:Lit:Kartari:Prathama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "10.0022:Lrn:Kartari:Prathama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0880:AshirLin:Karmani:Prathama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0755:Lrt:Kartari:Uttama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0235:Lrt:Kartari:Madhyama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0863:Lrt:Kartari:Uttama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "02.0026:Lat:Kartari:Uttama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0771:Lit:Karmani:Madhyama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "04.0046:Lan:Karmani:Uttama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "02.0058:Lat:Kartari:Uttama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "07.0017:Lrn:Kartari:Uttama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "05.0005:Lot:Karmani:Madhyama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.1109:Lit:Karmani:Madhyama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "10.0139:Lat:Karmani:Madhyama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0199:Lut:Bhave:Prathama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0014:Lat:Karmani:Uttama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "10.0065:Lun:Karmani:Madhyama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "04.0107:Lun:Karmani:Uttama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "10.0422:Lrn:Kartari:Uttama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0989:Lun:Bhave:Prathama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0349:Lit:Karmani:Uttama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0853:Lit:Karmani:Uttama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0170:Lat:Kartari:Madhyama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0720:Lrn:Kartari:Prathama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "10.0247:VidhiLin:Kartari:Prathama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "10.0122:Lrn:Kartari:Prathama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "10.0466:Lat:Karmani:Uttama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "02.0008:VidhiLin:Karmani:Prathama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "02.0067:Lun:Kartari:Prathama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "05.0029:Lut:Karmani:Prathama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "04.0077:Lrn:Karmani:Prathama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "09.0051:Lit:Kartari:Uttama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0217:Lat:Karmani:Madhyama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "10.0491:AshirLin:Kartari:Uttama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "10.0028:VidhiLin:Kartari:Uttama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "09.0033:Lat:Kartari:Madhyama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "06.0031:Lan:Karmani:Madhyama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "10.0424:Lit:Bhave:Prathama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "02.0054:Lot:Karmani:Prathama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0752:Lun:Karmani:Madhyama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0416:Lan:Kartari:Prathama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0081:Lat:Kartari:Uttama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "10.0087:Lrt:Karmani:Madhyama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0453:AshirLin:Kartari:Prathama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0579:Lut:Karmani:Uttama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0413:VidhiLin:Karmani:Uttama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0393:Lat:Karmani:Prathama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "10.0423:Lrt:Karmani:Madhyama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0110:Lut:Karmani:Uttama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.1060:AshirLin:Karmani:Madhyama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "03.0024:Lot:Kartari:Prathama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "10.0280:Lat:Karmani:Madhyama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "04.0017:Lut:Kartari:Prathama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "02.0057:Lat:Karmani:Prathama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.1050:Lat:Kartari:Prathama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0664:Lun:Kartari:Madhyama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "04.0014:Lut:Karmani:Madhyama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "04.0150:Lot:Kartari:Prathama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "10.0428:Lit:Kartari:Prathama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "04.0118:Lat:Kartari:Uttama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "09.0007:Lut:Kartari:Uttama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.1088:AshirLin:Kartari:Prathama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "10.0269:Lan:Kartari:Uttama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0180:Lot:Kartari:Prathama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0095:Lot:Kartari:Prathama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "06.0081:Lut:Karmani:Prathama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0130:Lut:Karmani:Prathama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0815:Lat:Kartari:Uttama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "10.0235:VidhiLin:Karmani:Madhyama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.1111:Lrt:Karmani:Uttama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0872:Lrt:Karmani:Prathama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "04.0106:VidhiLin:Karmani:Uttama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "10.0318:Lit:Karmani:Prathama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "10.0003:AshirLin:Kartari:Prathama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0970:Lot:Bhave:Prathama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0163:Lit:Kartari:Uttama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0478:Lan:Kartari:Madhyama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "10.0291:Lot:Karmani:Uttama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0232:AshirLin:Kartari:Uttama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "04.0128:Lrn:Karmani:Madhyama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0455:Lit:Karmani:Uttama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0020:Lut:Karmani:Prathama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "06.0121:VidhiLin:Kartari:Prathama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "05.0018:Lut:Karmani:Prathama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "10.0387:Lot:Kartari:Madhyama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0948:Lrn:Kartari:Prathama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0881:VidhiLin:Kartari:Prathama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "10.0318:Lit:Kartari:Prathama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "02.0030:Lut:Karmani:Prathama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "06.0061:Lun:Kartari:Prathama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.1092:Lot:Karmani:Uttama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0668:Lut:Kartari:Uttama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "10.0150:Lut:Kartari:Uttama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "10.0045:Lit:Karmani:Madhyama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0137:Lan:Kartari:Prathama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0454:Lat:Kartari:Prathama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "10.0100:Lan:Karmani:Madhyama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "10.0108:Lot:Karmani:Prathama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "10.0016:Lrn:Karmani:Prathama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0463:Lit:Karmani:Prathama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "05.0013:Lrt:Karmani:Madhyama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "10.0158:VidhiLin:Karmani:Uttama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0342:Lut:Kartari:Madhyama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "09.0046:Lrt:Karmani:Prathama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0977:Lun:Kartari:Uttama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "10.0250:Lat:Karmani:Uttama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0879:Lun:Kartari:Prathama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0454:Lit:Karmani:Madhyama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0299:Lrn:Kartari:Prathama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "06.0024:Lit:Karmani:Uttama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "10.0197:Lut:Karmani:Prathama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0858:Lut:Kartari:Madhyama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "10.0138:Lat:Kartari:Madhyama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "10.0237:Lot:Kartari:Prathama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0074:Lan:Karmani:Madhyama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0188:Lrt:Karmani:Prathama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "10.0237:Lrn:Karmani:Madhyama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "tinanta",
+            "task_id": "01.0878:AshirLin:Kartari:Madhyama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:sAMketika:basic:Pum:aR",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:akzaryA:nyap:Stri:caRap",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:padAntara:basic:Napumsaka:caRap",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:vargya:basic:Napumsaka:Sas",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:pipAsita:basic:Napumsaka:ka",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:DUrRi:basic:Stri:Wak",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:tEttirIya:basic:Pum:tarap",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:kAlAyasa:basic:Pum:mayaw",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:baja:basic:Pum:deSya",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:nAryaNga:basic:Pum:matup",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:vargIyA:nyap:Stri:tva",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:saru:basic:Pum:daGnac",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:kusUla:basic:Pum:bahuc",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:liNginI:nyap:Stri:tasi",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:jIri:basic:Pum:YyaN",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:vAhika:basic:Pum:YyaN",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:gaRanA:nyap:Stri:sAti",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:ASitf:basic:Pum:PiY",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:Butopasfzwa:basic:Napumsaka:jAhac",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:kAmASoka:basic:Pum:Sas",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:yAdura:basic:Pum:Sas",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:paruzyA:nyap:Stri:jAhac",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:vidmanApas:basic:Pum:jAtIyar",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:sedDavya:basic:Pum:Ca",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:ekIya:basic:Pum:TAl",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:BANgila:basic:Napumsaka:trA",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:galita:basic:Napumsaka:caRap",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:mOYjya:basic:Pum:pASap",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:mandasAna:basic:Napumsaka:tarap",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:pArasvatI:nyap:Stri:kuRap",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:sUryAtmaja:basic:Pum:ini",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:yOvarAjya:basic:Napumsaka:jAhac",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:svAsfka:basic:Pum:aR",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:raktopala:basic:Napumsaka:sAti",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:hAta:basic:Napumsaka:ka",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:venya:basic:Pum:rUpap",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:vEhaMgA:nyap:Stri:rUpap",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:sArDa:basic:Napumsaka:pASap",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:patAkikA:nyap:Stri:kuRap",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:pArzRa:basic:Pum:Iyasun",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:SESireya:basic:Pum:ka",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:mAtrArDa:basic:Napumsaka:bahuc",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:janAtigA:nyap:Stri:mayaw",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:cyAvitA:nyap:Stri:yat",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:prodita:basic:Pum:caraw",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:upAdika:basic:Pum:matup",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:paYcAbdAKyA:nyap:Stri:caraw",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:badDAnanda:basic:Napumsaka:Wan",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:sOparvA:nyap:Stri:Ca",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:SAKANga:basic:Napumsaka:jAhac",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:SabdopAtta:basic:Napumsaka:caRap",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:avakAdA:nyap:Stri:Ca",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:taranta:basic:Pum:tamap",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:AruRI:nyap:Stri:mayaw",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:muzitaka:basic:Pum:valac",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:SaNkitavya:basic:Napumsaka:caraw",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:vEvasvatIya:basic:Napumsaka:Iyasun",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:cavikA:nyap:Stri:caRap",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:trEDAtuka:basic:Napumsaka:pASap",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:taruSa:basic:Pum:tamap",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:pluzwA:nyap:Stri:caraw",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:DftAmBas:basic:Pum:caRap",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:jYapta:basic:Napumsaka:rUpya",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:samAnodarya:basic:Pum:kan",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:KAtra:basic:Napumsaka:rUpap",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:mApakA:nyap:Stri:izWan",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:kukkura:basic:Pum:Tamu",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:gArhasTya:basic:Pum:TAl",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:vAlikAyana:basic:Pum:caRap",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:anyedyuzka:basic:Pum:Ca",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:kuSI:nyap:Stri:tasi",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:gAloqitA:nyap:Stri:ka",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:SArNgazwA:nyap:Stri:TAl",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:gOlmika:basic:Napumsaka:deSya",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:dantolUKala:basic:Napumsaka:jAtIyar",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:mohana:basic:Pum:Yyaw",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:kzapaka:basic:Napumsaka:KaY",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:stfta:basic:Pum:deSIyar",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:rasa:basic:Pum:mAtrac",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:mArtaRqa:basic:Pum:tamap",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:kApAla:basic:Pum:tal",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:susmUrzamARa:basic:Napumsaka:mAtrac",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:atarkitopapannA:nyap:Stri:cvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:AnuzUka:basic:Pum:kuRap",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:nindin:basic:Pum:tal",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:vAvaya:basic:Pum:tamap",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:jImUtAzwamI:nyap:Stri:TAl",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:vEdiSa:basic:Pum:pASap",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:maRqanArha:basic:Napumsaka:aR",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:SaNkAkula:basic:Napumsaka:matup",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:hiMsanIya:basic:Pum:ini",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:sAmyAvasTA:nyap:Stri:tarap",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:hutASin:basic:Napumsaka:cvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:sadfka:basic:Pum:daGnac",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:vidyA:nyap:Stri:dvayasac",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:yAzwIka:basic:Napumsaka:caRap",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:dyUta:basic:Napumsaka:astAti",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:vizvadrIcIna:basic:Pum:jAtIyar",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:krAntA:nyap:Stri:tarap",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:kuWAku:basic:Pum:TAl",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:Odavraja:basic:Pum:aY",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:ullApika:basic:Napumsaka:tva",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:pEppalAdaka:basic:Pum:tarap",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:SAkAyanya:basic:Pum:ka",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:uttamottama:basic:Pum:sAti",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:avAvan:basic:Napumsaka:tal",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:svotTitA:nyap:Stri:Qak",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:fRAntaka:basic:Pum:kuRap",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:gUrti:basic:Stri:tarap",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:kAmAvasAyin:basic:Pum:kalpap",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:jaGanyAyus:basic:Pum:kalpap",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:savyADarA:nyap:Stri:Yyaw",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:dasmya:basic:Napumsaka:aR",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:diDizu:basic:Stri:cvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:ramBABisAra:basic:Pum:rUpya",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:itvarI:nyap:Stri:rUpya",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:hemAlaMkAra:basic:Pum:rUpap",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:sOnAmi:basic:Pum:Sas",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:CikkA:nyap:Stri:Yyaw",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:rucizyA:nyap:Stri:TAl",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:veDinI:nyap:Stri:trA",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:pASupatI:nyap:Stri:Tamu",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:sureSa:basic:Pum:KaY",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:Satin:basic:Pum:kan",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:panayAyya:basic:Pum:caraw",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:BUtArta:basic:Pum:ka",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:rAspinA:nyap:Stri:ka",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:ropin:basic:Pum:yat",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:kzurANga:basic:Pum:TAl",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:kArttikika:basic:Pum:daGnac",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:prezaRIya:basic:Pum:bahuc",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:yaTotsAha:basic:Pum:valac",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:sIlanDra:basic:Pum:trA",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:pattrita:basic:Napumsaka:sAti",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:bADyA:nyap:Stri:aY",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:varuRANgaruha:basic:Pum:tva",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:hasita:basic:Pum:matup",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:trEvarzika:basic:Pum:Wak",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:paYcAkza:basic:Pum:Iyasun",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:leQf:basic:Pum:Sas",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:vaYcanIya:basic:Napumsaka:pASap",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:nArIkelI:nyap:Stri:aR",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:nimittAvftti:basic:Stri:Rya",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:dARqAjinikI:nyap:Stri:jAtIyar",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:SAdvalita:basic:Napumsaka:Wak",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:suzupARa:basic:Pum:pASap",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:kfzRAYji:basic:Napumsaka:mayaw",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:balAbalA:nyap:Stri:lac",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:asUya:basic:Pum:kuRap",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:Anaquhaka:basic:Napumsaka:deSya",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:tunna:basic:Pum:iY",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:vAsavopama:basic:Pum:mAtrac",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:SamakA:nyap:Stri:cvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:cetakA:nyap:Stri:cvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:vEDarmikA:nyap:Stri:tva",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:vrataka:basic:Napumsaka:jAhac",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:sahAvasTita:basic:Napumsaka:tva",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:dru:basic:Stri:daGnac",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:pippalASana:basic:Pum:jAtIyar",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:yajYAvakIrRa:basic:Pum:bahuc",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:kzapaka:basic:Pum:jAhac",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:suKyA:nyap:Stri:jAtIyar",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:ekAyanA:nyap:Stri:tamap",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.1149:tfc",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.1121:anIyar",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0459:tavya",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.1011:kta",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0976:anIyar",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:10.0390:yat",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:10.0031:tavyat",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0089:tfc",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0423:kta",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:10.0318:tavyat",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:06.0159:Satf",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:04.0035:anIyar",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0947:tfc",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0856:ktvA",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0179:Satf",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0068:Ryat",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:02.0036:ktvA",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.1059:tumun",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0478:Ryat",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:10.0315:tfc",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:10.0056:kta",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0730:tavya",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0361:Ryat",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.1141:Rvul",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:10.0097:anIyar",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:06.0151:kta",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:04.0071:Ryat",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0633:lyuw",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:10.0352:tavya",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:10.0223:kta",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0862:SAnac",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.1043:ktvA",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0387:tavya",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.1006:tfc",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0649:ktavatu",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:10.0084:ktvA",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:10.0103:kta",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:09.0005:ktvA",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:06.0013:ktvA",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0065:Satf",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0337:Ryat",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0708:ktvA",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:10.0433:lyuw",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:06.0023:Ryat",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.1106:lyuw",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:10.0208:Rvul",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0439:Ryat",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0437:SAnac",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0264:Ryat",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:03.0010:SAnac",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0360:tavyat",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.1051:lyuw",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:09.0034:tfc",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:10.0265:Rvul",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0634:ktvA",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:10.0279:Rvul",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0746:Rvul",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0093:anIyar",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0494:anIyar",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0481:Ryat",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0766:tavyat",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.1064:kta",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0369:Satf",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0112:kta",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:04.0139:tavya",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:02.0074:ktvA",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:10.0371:tumun",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:10.0038:ktvA",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.1021:ktvA",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:06.0095:ktavatu",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0310:ktvA",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0623:ktavatu",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0329:Satf",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:04.0067:Rvul",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0709:tavya",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:06.0041:kta",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:04.0049:kta",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0823:Ryat",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:03.0017:Ryat",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:10.0404:Rvul",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0746:lyuw",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0771:ktavatu",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0867:tfc",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:10.0137:SAnac",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:10.0233:tavyat",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.1001:kta",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.1017:tavya",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0180:tavya",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:04.0123:tumun",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:09.0069:ktavatu",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0776:Satf",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0549:ktavatu",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:06.0150:tumun",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0282:Ryat",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0568:lyuw",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0329:lyuw",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0035:tavya",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:10.0291:tfc",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:10.0470:kta",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:06.0108:ktvA",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.1044:tavyat",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:10.0034:Rvul",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:06.0021:kta",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:05.0007:tumun",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:06.0106:tumun",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:04.0047:lyuw",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0092:lyuw",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:10.0267:Ryat",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:04.0016:tavya",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:10.0122:tfc",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0101:Ryat",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0411:tfc",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0764:tumun",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0742:ktvA",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:10.0200:tumun",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:10.0133:Satf",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:09.0057:lyuw",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0763:tfc",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0061:tavya",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0802:ktvA",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0989:tavyat",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.1079:tavyat",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:10.0045:tavyat",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0241:kta",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0802:ktavatu",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0508:ktvA",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:06.0086:Rvul",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.1019:tavyat",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:10.0348:kta",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0178:kta",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:10.0048:lyuw",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:07.0010:Satf",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0981:ktavatu",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0913:anIyar",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:10.0055:tavya",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:09.0011:tavyat",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0801:kta",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:10.0469:tavya",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:10.0038:tavyat",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0372:Ryat",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0007:ktavatu",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:10.0150:lyuw",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.1016:Satf",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:07.0003:tumun",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0917:tavya",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:10.0488:Rvul",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0515:kta",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:10.0262:SAnac",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:10.0246:Rvul",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0891:tfc",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0440:tumun",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0680:Satf",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:10.0097:lyuw",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:04.0025:ktavatu",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0906:tfc",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:06.0094:Satf",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.1037:tavyat",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:06.0148:kta",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0545:Rvul",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.1031:kta",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:09.0028:Rvul",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:04.0134:tfc",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:saptata:basic:Pum:Caturthi:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:nfti:basic:Stri:Sasthi:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:hAsyA:nyap:Stri:Prathama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:vfkza:basic:Pum:Sasthi:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:savyApagrahaRA:nyap:Stri:Dvitiya:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:DanizWa:basic:Napumsaka:Panchami:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:karmABiDAyin:basic:Napumsaka:Caturthi:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:Opavastra:basic:Napumsaka:Trtiya:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:vEdyakA:nyap:Stri:Trtiya:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:haraRAharaRa:basic:Napumsaka:Trtiya:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:sTAsaka:basic:Napumsaka:Caturthi:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:rakza:basic:Pum:Trtiya:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:zuduvadIna:basic:Pum:Prathama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:sOvIrikA:nyap:Stri:Trtiya:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:procCUna:basic:Pum:Sambodhana:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:Bavitf:basic:Pum:Caturthi:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:dohada:basic:Pum:Sambodhana:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:proha:basic:Pum:Dvitiya:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:kiYjala:basic:Pum:Sasthi:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:mArIcopapurARa:basic:Napumsaka:Sambodhana:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:SlAGitA:nyap:Stri:Sambodhana:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:sOmAgna:basic:Napumsaka:Caturthi:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:elAvali:basic:Stri:Trtiya:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:gleya:basic:Pum:Sambodhana:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:vraRin:basic:Pum:Dvitiya:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:kamitf:basic:Napumsaka:Trtiya:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:tvezya:basic:Napumsaka:Prathama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:pUrvopArjita:basic:Pum:Saptami:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:maRqalitA:nyap:Stri:Sasthi:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:SadvalA:nyap:Stri:Prathama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:cUrRita:basic:Napumsaka:Prathama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:sahasrArha:basic:Pum:Sambodhana:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:pAWya:basic:Napumsaka:Trtiya:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:GuRa:basic:Pum:Sambodhana:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:SUdrocCizwa:basic:Napumsaka:Prathama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:eta:basic:Pum:Sasthi:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:marmAvin:basic:Pum:Trtiya:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:BallAta:basic:Napumsaka:Panchami:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:BadrAkfti:basic:Pum:Trtiya:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:Aspada:basic:Napumsaka:Sasthi:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:AntarAgArika:basic:Pum:Prathama:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:keSAntikA:nyap:Stri:Saptami:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:Siloraska:basic:Napumsaka:Sasthi:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:kOSI:nyap:Stri:Sambodhana:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:mandAkza:basic:Napumsaka:Sasthi:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:pAnasI:nyap:Stri:Prathama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:aSvatTa:basic:Napumsaka:Panchami:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:vivandizA:nyap:Stri:Panchami:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:taqAga:basic:Napumsaka:Saptami:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:nagAwana:basic:Pum:Saptami:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:yugalAyita:basic:Napumsaka:Panchami:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:GftAnvakta:basic:Pum:Panchami:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:jAradvfkzA:nyap:Stri:Dvitiya:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:nAmaka:basic:Napumsaka:Sasthi:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:azAQin:basic:Napumsaka:Trtiya:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:acirABA:nyap:Stri:Panchami:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:vazwi:basic:Stri:Prathama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:somendra:basic:Napumsaka:Panchami:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:SaNkila:basic:Pum:Sambodhana:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:samAnodarya:basic:Pum:Panchami:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:SAKIya:basic:Pum:Sasthi:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:KAditA:nyap:Stri:Saptami:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:karmin:basic:Napumsaka:Sambodhana:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:AwA:nyap:Stri:Panchami:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:sfjAna:basic:Napumsaka:Sasthi:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:nEvArA:nyap:Stri:Prathama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:prAyopaveSin:basic:Napumsaka:Sambodhana:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:GarGarya:basic:Napumsaka:Dvitiya:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:nityAnubadDa:basic:Napumsaka:Panchami:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:vAnAyu:basic:Pum:Sasthi:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:divyopapAduka:basic:Pum:Sambodhana:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:hitAhitA:nyap:Stri:Sambodhana:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:naqa:basic:Napumsaka:Saptami:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:tanti:basic:Stri:Panchami:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:viSvAyana:basic:Napumsaka:Panchami:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:lohitaka:basic:Napumsaka:Caturthi:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:vfzwi:basic:Pum:Trtiya:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:pfzWAnuga:basic:Napumsaka:Trtiya:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:dehAvaraRa:basic:Napumsaka:Caturthi:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:aDvanya:basic:Pum:Dvitiya:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:lAlasaka:basic:Napumsaka:Sasthi:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:sata:basic:Pum:Dvitiya:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:sawvA:nyap:Stri:Sasthi:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:kfSASA:nyap:Stri:Caturthi:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:avApti:basic:Stri:Sambodhana:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:BUHKAra:basic:Napumsaka:Panchami:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:BOmyA:nyap:Stri:Trtiya:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:catita:basic:Napumsaka:Sambodhana:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:niwilAkza:basic:Pum:Dvitiya:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:rAzwrIyA:nyap:Stri:Prathama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:SiloYCin:basic:Napumsaka:Prathama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:karAlaka:basic:Napumsaka:Saptami:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:sTapanI:nyap:Stri:Sambodhana:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:vEpraSnika:basic:Pum:Dvitiya:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:suKArohaRa:basic:Pum:Saptami:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:vetAlAKyAyikA:nyap:Stri:Saptami:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:knUyitf:basic:Pum:Dvitiya:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:ADArin:basic:Napumsaka:Trtiya:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:vacA:nyap:Stri:Dvitiya:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:tavasya:basic:Napumsaka:Sambodhana:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:anugeya:basic:Napumsaka:Sasthi:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:adyatanIyA:nyap:Stri:Sasthi:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:nEcASAKa:basic:Napumsaka:Sambodhana:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:atyantIna:basic:Pum:Saptami:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:SApeyin:basic:Pum:Sambodhana:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:udIritendriya:basic:Napumsaka:Sasthi:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:gUhitavya:basic:Pum:Prathama:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:kAkocika:basic:Pum:Trtiya:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:arawva:basic:Napumsaka:Saptami:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:pezaRIyA:nyap:Stri:Panchami:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:vEkftika:basic:Pum:Dvitiya:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:aRu:basic:Pum:Trtiya:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:kArmukin:basic:Pum:Saptami:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:cAraRa:basic:Pum:Saptami:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:pattrA:nyap:Stri:Caturthi:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:dolAndolana:basic:Napumsaka:Dvitiya:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:OzWa:basic:Pum:Saptami:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:aSvatTilA:nyap:Stri:Trtiya:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:riPita:basic:Pum:Sasthi:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:kOtsa:basic:Napumsaka:Dvitiya:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:mahodAra:basic:Pum:Trtiya:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:pUrvottara:basic:Napumsaka:Sasthi:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:piRqin:basic:Pum:Sambodhana:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:yuzmAka:basic:Napumsaka:Panchami:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:pUrvotTitA:nyap:Stri:Saptami:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:taRqula:basic:Pum:Sasthi:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:kzema:basic:Pum:Panchami:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:padanIya:basic:Pum:Trtiya:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:sarvAnukramaRikA:nyap:Stri:Panchami:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:Srotu:basic:Pum:Trtiya:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:pOzyA:nyap:Stri:Caturthi:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:hiMsIra:basic:Napumsaka:Caturthi:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:BAvAnuga:basic:Napumsaka:Sambodhana:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:sahantama:basic:Napumsaka:Dvitiya:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:ambaka:basic:Pum:Sasthi:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:sAha:basic:Napumsaka:Trtiya:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:kftAgama:basic:Pum:Sasthi:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:balopeta:basic:Pum:Trtiya:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:aryamiya:basic:Pum:Prathama:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:suKanIya:basic:Napumsaka:Sasthi:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:sAgarApANgI:nyap:Stri:Caturthi:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:asanikA:nyap:Stri:Sasthi:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:BadAka:basic:Napumsaka:Panchami:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:piRqItaka:basic:Pum:Dvitiya:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:muKyArTa:basic:Napumsaka:Sasthi:Dvi",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:Dikka:basic:Pum:Sasthi:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:Satin:basic:Pum:Panchami:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:SOna:basic:Pum:Saptami:Bahu",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:ayAnvita:basic:Napumsaka:Caturthi:Eka",
+            "attempt_number": 2
+          },
+          {
+            "family": "subanta",
+            "task_id": "subanta:tAreya:basic:Pum:Saptami:Bahu",
+            "attempt_number": 2
+          }
+        ],
+        "state": "completed",
+        "started_at": "2026-10-15T22:05:32.083863+00:00",
+        "finished_at": "2026-10-15T23:34:08.652246+00:00",
+        "submitted": 640,
+        "settled": 640
+      },
+      {
+        "id": "v3-infrastructure-recovery-2",
+        "authorized_at": "2026-10-15T23:39:21.365021+00:00",
+        "authorization": "User requested the same completed benchmark workflow for Gemini 4 Argon, including infrastructure failure recovery. No retries of completed answers or refusals.",
+        "targets": [
+          {
+            "family": "subanta",
+            "task_id": "subanta:rAzwrIyA:nyap:Stri:Prathama:Dvi",
+            "attempt_number": 3
+          }
+        ],
+        "state": "completed",
+        "started_at": "2026-10-15T23:39:22.051843+00:00",
+        "finished_at": "2026-10-15T23:40:17.042032+00:00",
+        "submitted": 1,
+        "settled": 1
+      }
+    ],
+    "active_retry_batch": "v3-infrastructure-recovery-2",
+    "explicit_retries": "Explicitly authorized infrastructure retries replace the selected row in place. All attempts and charges remain in journals; no automatic retries.",
+    "last_verification": {
+      "at": "2026-10-15T23:40:20.497443+00:00",
+      "passed": true,
+      "tasks": 20000,
+      "attempts": 20641
+    }
+  },
+  "implementation_dependencies": [
+    {
+      "path": "data/engine/evaluation/run_astra.py",
+      "sha256": "d8d2fc791f64015d267cbcbf37a413bc15921faa7176c7412cb0e2c3c31e1f2d",
+      "bytes": 32231
+    },
+    {
+      "path": "data/engine/evaluation/scaffold_astra.py",
+      "sha256": "75bb17f85890a344b410b782d7f79f68b0e4ec75d42745ded8c57fc380e5cd9e",
+      "bytes": 12969
+    },
+    {
+      "path": "data/engine/evaluation/admission.py",
+      "sha256": "e34fd64332b1a3e6bd46a1c4f6d6a4b1e94ef8d882d59f7877d2178aa4289f41",
+      "bytes": 2534
+    }
+  ],
+  "official_references": [
+    "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/guides/gemini-4-argon?hl=en",
+    "https://docs.cloud.google.com/gemini-enterprise-agent-platform/reference/rest/v1/GenerateContentResponse"
+  ],
+  "preflight_verification": {
+    "at": "2026-10-15T05:56:58.277342+00:00",
+    "tasks": 4,
+    "categories": [
+      "tinanta",
+      "taddhitanta",
+      "krdanta",
+      "subanta"
+    ],
+    "returned_model": "gemini-4-argon",
+    "all_http_200": true,
+    "request_body_matches_user_example": true,
+    "maxOutputTokens_present": false,
+    "thinkingBudget_present": false,
+    "thinkingLevel": "HIGH",
+    "all_outputs_scored_and_schema_validated": true,
+    "gross_cost_usd": 0.068384,
+    "credentials_exposed": false
+  },
+  "routing_changes": [
+    {
+      "at": "2026-10-15T07:29:01.048432+00:00",
+      "from": "Standard PayGo",
+      "to": "Priority PayGo",
+      "previous_request_headers": {
+        "Content-Type": "application/json",
+        "X-Goog-User-Project": "sanskrit-project-511705"
+      },
+      "request_headers": {
+        "Content-Type": "application/json",
+        "X-Goog-User-Project": "sanskrit-project-511705",
+        "X-Vertex-AI-LLM-Request-Type": "shared",
+        "X-Vertex-AI-LLM-Shared-Request-Type": "priority"
+      },
+      "primary_tasks_already_settled": 2836,
+      "reason": "User requested maximum speed and said not to worry about costs. Official documentation confirms Gemini 4 Argon supports Priority PayGo on global v1.",
+      "request_body_changed": false,
+      "model_changed": false,
+      "rates_selected_by": "usageMetadata.trafficType",
+      "standard_requests_keep_original_costs": true,
+      "source": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/priority-paygo"
+    }
+  ],
+  "priority_preflight_verification": {
+    "at": "2026-10-15T07:35:08.994985+00:00",
+    "requests": [
+      {
+        "family": "tinanta",
+        "task_id": "01.1068:Lun:Karmani:Uttama:Bahu",
+        "http_status": 200,
+        "status": "completed",
+        "traffic_type": "ON_DEMAND",
+        "cost_usd": 0.037508,
+        "elapsed_ms": 28536.549
+      },
+      {
+        "family": "taddhitanta",
+        "task_id": "taddhitanta:SvAnI:nyap:Stri:astAti",
+        "http_status": 200,
+        "status": "completed",
+        "traffic_type": "ON_DEMAND",
+        "cost_usd": 0.087736,
+        "elapsed_ms": 55000.776
+      },
+      {
+        "family": "krdanta",
+        "task_id": "krdanta:01.1054:tumun",
+        "http_status": 200,
+        "status": "completed",
+        "traffic_type": "ON_DEMAND",
+        "cost_usd": 0.011724,
+        "elapsed_ms": 12266.256
+      },
+      {
+        "family": "subanta",
+        "task_id": "subanta:SuRWi:basic:Stri:Prathama:Dvi",
+        "http_status": 200,
+        "status": "completed",
+        "traffic_type": "ON_DEMAND",
+        "cost_usd": 0.009912,
+        "elapsed_ms": 8331.864
+      }
+    ],
+    "request_body_unchanged": true,
+    "requested_headers": {
+      "Content-Type": "application/json",
+      "X-Goog-User-Project": "sanskrit-project-511705",
+      "X-Vertex-AI-LLM-Request-Type": "shared",
+      "X-Vertex-AI-LLM-Shared-Request-Type": "priority"
+    },
+    "priority_processing_confirmed": false,
+    "note": "All four responses reported ON_DEMAND despite requested Priority headers; charged standard rates. Continue requesting Priority and use each actual returned traffic type for accounting.",
+    "offline_tests_passed": 8,
+    "journal_replay_verified": true
+  },
+  "artifact_layout": "six-file-v1",
+  "summary": {
+    "state": "completed",
+    "unresolved": 0,
+    "updated_at": "2026-10-15T23:40:24.197737+00:00",
+    "planned": 20000,
+    "started": 20000,
+    "settled": 20000,
+    "unsettled": 0,
+    "not_started": 0,
+    "known_cost_usd": 666.5928184,
+    "unknown_cost_attempts": 1,
+    "projected_full_run_cost_usd": null,
+    "families": {
+      "tinanta": {
+        "settled": 5000,
+        "statuses": {
+          "completed": 5000
+        },
+        "correct": 4708,
+        "format_ok": 4998,
+        "strict_correct": 4707,
+        "known_cost_usd": 224.080192,
+        "unknown_cost_attempts": 1,
+        "input_tokens": 1268748,
+        "output_tokens": 10950260,
+        "mean_output_tokens": 2190.05
+      },
+      "taddhitanta": {
+        "settled": 5000,
+        "statuses": {
+          "completed": 4997,
+          "incomplete": 3
+        },
+        "correct": 4570,
+        "format_ok": 4997,
+        "strict_correct": 4570,
+        "known_cost_usd": 247.76892,
+        "unknown_cost_attempts": 0,
+        "input_tokens": 1009516,
+        "output_tokens": 12185758,
+        "mean_output_tokens": 2437.15
+      },
+      "krdanta": {
+        "settled": 5000,
+        "statuses": {
+          "completed": 4998,
+          "incomplete": 2
+        },
+        "correct": 4850,
+        "format_ok": 4998,
+        "strict_correct": 4850,
+        "known_cost_usd": 152.3598816,
+        "unknown_cost_attempts": 0,
+        "input_tokens": 1309346,
+        "output_tokens": 7355190,
+        "mean_output_tokens": 1471.04
+      },
+      "subanta": {
+        "settled": 5000,
+        "statuses": {
+          "completed": 4999,
+          "incomplete": 1
+        },
+        "correct": 4935,
+        "format_ok": 4999,
+        "strict_correct": 4935,
+        "known_cost_usd": 42.3838248,
+        "unknown_cost_attempts": 0,
+        "input_tokens": 960248,
+        "output_tokens": 1926709,
+        "mean_output_tokens": 385.34
+      }
+    },
+    "attempts_started": 20641,
+    "attempts_settled": 20641,
+    "unsettled_attempts": 0,
+    "retry_attempts": 641
+  },
+  "refusal_monitor": {
+    "checked_at": "2026-10-15T23:40:27.817960+00:00",
+    "settled_results_scanned": 20000,
+    "total_refusals": 0,
+    "refusals": [],
+    "other_noncompleted_results": [
+      {
+        "family": "taddhitanta",
+        "task_id": "taddhitanta:laGu:basic:Stri:caraw",
+        "status": "incomplete"
+      },
+      {
+        "family": "taddhitanta",
+        "task_id": "taddhitanta:kORqapAyinA:nyap:Stri:caRap",
+        "status": "incomplete"
+      },
+      {
+        "family": "taddhitanta",
+        "task_id": "taddhitanta:SArkarIDAnA:nyap:Stri:jAtIyar",
+        "status": "incomplete"
+      },
+      {
+        "family": "krdanta",
+        "task_id": "krdanta:10.0316:Ryat",
+        "status": "incomplete"
+      },
+      {
+        "family": "krdanta",
+        "task_id": "krdanta:10.0488:tfc",
+        "status": "incomplete"
+      },
+      {
+        "family": "subanta",
+        "task_id": "subanta:jagannu:basic:Pum:Panchami:Eka",
+        "status": "incomplete"
+      }
+    ],
+    "meaning": "Provider-reported promptFeedback blocks and candidate finish reasons; preserve all supplied safety ratings."
+  },
+  "raw_run_archive": {
+    "path": "data/benchmark/archives/gemini4-argon-high-v3.tar.gz",
+    "sha256": "d2c51c06e6a043a9ecd35aea7ad09e4c770e6022de74e5810bae9219a0b861c0",
+    "bytes": 126421344,
+    "member_root": "gemini4-argon-high",
+    "contents": "Complete original execution files: all request/response/error journals, original manifests/schema, results, logs and controls."
+  },
+  "verification": {
+    "at": "2026-10-15T23:40:27.866076+00:00",
+    "journal_replay": true,
+    "scoring": true,
+    "schema": true,
+    "source_order": true,
+    "result_files": [
+      {
+        "path": "data/benchmark/results/gemini4-argon-high/tinanta.json",
+        "sha256": "b87cf52d37410c15017a4e5c39ba6e6b7a1ef3f05548b0da8e43b1c24b833f55",
+        "bytes": 3926009
+      },
+      {
+        "path": "data/benchmark/results/gemini4-argon-high/taddhitanta.json",
+        "sha256": "3e7e170494e0f8b7b152df710aceda87bb8add9d7cb7d2d164f744ed6bd939c2",
+        "bytes": 3953801
+      },
+      {
+        "path": "data/benchmark/results/gemini4-argon-high/krdanta.json",
+        "sha256": "23804236e790ad64156c91ec9d93faad5f2efecb7e7be26e541f61661e99164e",
+        "bytes": 3788851
+      },
+      {
+        "path": "data/benchmark/results/gemini4-argon-high/subanta.json",
+        "sha256": "5420ef8397b55df4264cb46594b7e71c7f92338f2447606197123ddab2d62f05",
+        "bytes": 3950711
+      }
+    ],
+    "archive_verified_against_every_original_file": true
+  },
+  "promotional_cost_estimate": {
+    "gross_known_cost_usd": 666.5928184,
+    "estimated_cost_after_50_percent_credit_usd": 333.2964092,
+    "meaning": "Conditional estimate for October 2026 promotional eligibility; not confirmed billing credits or an invoice."
+  }
+}

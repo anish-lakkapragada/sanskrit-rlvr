@@ -1,0 +1,8 @@
+# Large generated datasets and preserved evaluation archives.
+data/benchmark/archives/*.tar.gz filter=lfs diff=lfs merge=lfs -text
+data/datasets/*/full.json filter=lfs diff=lfs merge=lfs -text
+data/datasets/subanta/source_rows.json filter=lfs diff=lfs merge=lfs -text
+data/datasets/taddhitanta/attempts.json filter=lfs diff=lfs merge=lfs -text
+data/datasets/taddhitanta/source_rows.json filter=lfs diff=lfs merge=lfs -text
+data/engine/files/shared-nominal-stems.audit.json filter=lfs diff=lfs merge=lfs -text
+data/engine/files/shared-nominal-stems.vp-exclusions.json filter=lfs diff=lfs merge=lfs -text

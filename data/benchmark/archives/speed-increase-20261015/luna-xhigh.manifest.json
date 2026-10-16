@@ -1,0 +1,393 @@
+{
+  "schema_version": 2,
+  "planned_tasks": 20000,
+  "planned_primary_requests": 20000,
+  "path_conventions": {
+    "inputs_and_code": "repository-relative",
+    "results_and_journals": "run-directory-relative"
+  },
+  "sampling_seed": 69,
+  "sampling_seed_scope": "Dataset selection only; not a model-generation seed.",
+  "rendering_dependencies": {
+    "python": "3.11+",
+    "vidyut": "0.4.0"
+  },
+  "tasks": [
+    {
+      "family": "tinanta",
+      "dataset": {
+        "path": "data/benchmark/tinanta/tinanta.json",
+        "sha256": "e5f1b8b6332d820ef3ffd11d28e73c25df300c253816ad374f716fb2b537d151",
+        "bytes": 1921409,
+        "records": 5000
+      },
+      "sampling_manifest": {
+        "path": "data/benchmark/tinanta/tinanta.manifest.json",
+        "sha256": "81269026a8089ec36db118ad7772fd718af7ccc1acab3207e76925951f45e5cf",
+        "bytes": 92353
+      },
+      "prompt_template": {
+        "path": "data/engine/prompts/v3/vp_tinanta.txt",
+        "sha256": "f9cbade9eb13c9356c4c303bbf15b3c9938d5c50486adda0ff696c3844038b26",
+        "bytes": 902,
+        "text": "Form the Sanskrit conjugated verb form described in this table.\n\nUse the supplied Dhatupatha citation, including anubandha markers, verb class, traditional meaning, and any verbal prefixes. Apply the specified tense or mood, voice, person, and number.\n\n| Grammatical input | Value |\n| --- | --- |\n| Verb in Dhatupatha citation form | {aupadeshika_deva}   (Dhatupatha citation form, anubandha markers included) |\n| Verb class | {gana} ({gana_en}) |\n| Traditional meaning | {artha_deva} |\n| Tense or mood | {lakara} ({lakara_en}) |\n| Voice | {prayoga} ({prayoga_en}) |\n| Person | {purusha} ({purusha_en}) |\n| Number | {vacana} ({vacana_en}) |\n\n{prefixes_block}\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n"
+      },
+      "renderer": {
+        "path": "data/engine/tinanta/common.py",
+        "sha256": "c6288776af494cf3e592aac2ff58cf820c16ff74dda6aec23a31de6f993df15c",
+        "bytes": 3455,
+        "callable": "data.engine.tinanta.common.render_task"
+      },
+      "result_file": "tinanta.json",
+      "journal_file": "journals/tinanta.jsonl",
+      "order": "benchmark source row order; one selected attempt per task"
+    },
+    {
+      "family": "taddhitanta",
+      "dataset": {
+        "path": "data/benchmark/taddhitanta/taddhitanta.json",
+        "sha256": "ae3f1084be43b8296fe7a5cc3c1264ea84ea1293fc72c0644b02ce9e6f036c3b",
+        "bytes": 1504917,
+        "records": 5000
+      },
+      "sampling_manifest": {
+        "path": "data/benchmark/taddhitanta/taddhitanta.manifest.json",
+        "sha256": "db7829c9ed5bbb71557c38f112f3a32dac2eb86dbfcd1ca1e00ca75c93903a0e",
+        "bytes": 80493
+      },
+      "prompt_template": {
+        "path": "data/engine/prompts/v3/vp_taddhitanta.txt",
+        "sha256": "74cc9e85bd0e85658499baac703636b097c30b210e031274d6f7c026637f3f70",
+        "bytes": 665,
+        "text": "Form the Sanskrit taddhita derivative described in this table.\n\nGive the derived nominal stem or complete indeclinable without adding case or number endings. Any meaning licensed for this affix is acceptable.\n\n| Grammatical input | Value |\n| --- | --- |\n| Nominal stem | {stem_deva} |\n| Interpretation of the stem | {base_interpretation} |\n| Taddhita affix | {suffix_deva} |\n| Technical identifier in SLP1 | {suffix_id} |\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n"
+      },
+      "renderer": {
+        "path": "data/engine/taddhitanta/common.py",
+        "sha256": "f885e3528e6ccd5651a65dfe029fc909808a0063886018a3a67fc6cd77b3e1d8",
+        "bytes": 6310,
+        "callable": "data.engine.taddhitanta.common.render_task"
+      },
+      "result_file": "taddhitanta.json",
+      "journal_file": "journals/taddhitanta.jsonl",
+      "order": "benchmark source row order; one selected attempt per task"
+    },
+    {
+      "family": "krdanta",
+      "dataset": {
+        "path": "data/benchmark/krdanta/krdanta.json",
+        "sha256": "ec5fcaa3ee7d05ff79d391d0015b26e896bd01873a720cc94bff26bf5970e762",
+        "bytes": 1325917,
+        "records": 5000
+      },
+      "sampling_manifest": {
+        "path": "data/benchmark/krdanta/krdanta.manifest.json",
+        "sha256": "29fd8d97fac7abe062672bdc5b0379256487d771b80cc57e347af062ee1a1a49",
+        "bytes": 55482
+      },
+      "prompt_template": {
+        "path": "data/engine/prompts/v3/vp_krdanta.txt",
+        "sha256": "4dc79d2804882a6a04ea5f5e94b5b928d24e03cd4c14025aab7dc01cab5a71a8",
+        "bytes": 980,
+        "text": "Form the Sanskrit krt derivative described in this table.\n\nUse the supplied Dhatupatha citation, including anubandha markers, verb class, traditional meaning, and any verbal prefixes. Apply the specified primary suffix and any participle coordinates. For a noun or adjective, give the uninflected stem without case or number endings. For an indeclinable, give the complete form.\n\n| Grammatical input | Value |\n| --- | --- |\n| Verb in Dhatupatha citation form | {aupadeshika_deva}   (Dhatupatha citation form, anubandha markers included) |\n| Verb class | {gana} ({gana_en}) |\n| Traditional meaning | {artha_deva} |\n| Primary suffix | {krt_deva} ({krt_en}; citation form, anubandha markers included) |\n\n{prefixes_block}\n{participle_block}\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n"
+      },
+      "renderer": {
+        "path": "data/engine/krdanta/common.py",
+        "sha256": "dc669ce8492d3ea74c335a4e484ecce77dbe416e7480d51e7e523a1ddc830196",
+        "bytes": 8267,
+        "callable": "data.engine.krdanta.common.render_task"
+      },
+      "result_file": "krdanta.json",
+      "journal_file": "journals/krdanta.jsonl",
+      "order": "benchmark source row order; one selected attempt per task"
+    },
+    {
+      "family": "subanta",
+      "dataset": {
+        "path": "data/benchmark/subanta/subanta.json",
+        "sha256": "83bc5976715a52f6b09535d7a8a50a629072e2e6e19fdf1281c682126a994d53",
+        "bytes": 1347028,
+        "records": 5000
+      },
+      "sampling_manifest": {
+        "path": "data/benchmark/subanta/subanta.manifest.json",
+        "sha256": "259098b1940ddd13ea642840762dd612f0088fbb3eb3a0a29595976e911d0849",
+        "bytes": 65913
+      },
+      "prompt_template": {
+        "path": "data/engine/prompts/v3/vp_subanta.txt",
+        "sha256": "8453c565b2581a1dc2c832a6253f51dd825b57049a242f847d520969397217dd",
+        "bytes": 684,
+        "text": "Form the Sanskrit inflected nominal form described in this table.\n\nUse the supplied nominal stem with the specified gender, case, and number. Give the complete standalone noun or adjective form. When a feminine stem is supplied, use that stem rather than reconstructing it from a masculine headword.\n\n| Grammatical input | Value |\n| --- | --- |\n| Nominal stem | {stem_deva} |\n| Gender | {linga} |\n| Case | {vibhakti} |\n| Number | {vacana} |\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n"
+      },
+      "renderer": {
+        "path": "data/engine/subanta/common.py",
+        "sha256": "041800da26cb92a514e54dd314d8cf7f85f500f5b4d4c4f48133e2879d2d6ded",
+        "bytes": 15734,
+        "callable": "data.engine.subanta.common.render_task"
+      },
+      "result_file": "subanta.json",
+      "journal_file": "journals/subanta.jsonl",
+      "order": "benchmark source row order; one selected attempt per task"
+    }
+  ],
+  "scoring": {
+    "version": "answer-membership-v1",
+    "implementation": {
+      "path": "data/engine/evaluation/scoring.py",
+      "sha256": "b98632eee2b1435e9a362927658000052da1b8a36bffec90647f3924e95f6121",
+      "bytes": 1318
+    },
+    "answer_extraction": "Extract exactly one well-formed literal <answer>...</answer> block and strip outer answer whitespace. No Unicode or orthographic normalization. Original text stays in output_text.",
+    "correct": "For completed responses: answer is not null and answer in the source task.gold_devanagari list, joined by task_id. Otherwise null.",
+    "format_ok": "Exactly one nonempty answer block, no nested markup, and only whitespace outside the block.",
+    "strict_accuracy": "Derived when reporting: correct is true and format_ok. Not duplicated in result rows.",
+    "primary_attempt": 1,
+    "reporting": "Report correctness and format separately, plus strict accuracy over all 20,000 tasks using the latest explicitly authorized settled attempt per task. Report refusals/incomplete/errors separately; never drop tasks from the denominator. Preserve first-attempt results in journals for separate analysis."
+  },
+  "preservation": {
+    "journal_path_pattern": "journals/{family}.jsonl",
+    "completed_archive_pattern": "journals/{family}.jsonl.gz",
+    "journal_count": 4,
+    "journal_key": [
+      "task_id",
+      "attempt_number"
+    ],
+    "events": {
+      "started": "Before sending, append and fsync task_id, attempt_number, timestamp, client_request_id and exact request JSON including the hydrated prompt.",
+      "response": "Before scoring, append and fsync task_id, attempt_number, request_id, elapsed_ms, timestamp and the complete unmodified terminal response.",
+      "error": "Append task_id, attempt_number, request_id, timestamp, elapsed_ms, HTTP status, provider/client error details and available partial output; exclude credentials."
+    },
+    "per_request_files": false,
+    "save_full_stream_events": false,
+    "stream_handling": "Consume events in memory. Preserve available partial text on handled interruption; do not permanently log individual events.",
+    "result_encoding": "Compact UTF-8 JSON arrays; one compact record per line.",
+    "shared_metadata": "Dataset/gold stay in pinned benchmark files. Model/settings/templates/rates/scoring version stay in this manifest; family comes from the result filename.",
+    "write_order": "Durable started journal entry before send; durable response/error entry before scoring; atomically update family results after each settled attempt.",
+    "compression": "Gzip each completed journal; remove the plain copy only after verifying the archive. Retain one archive per family.",
+    "recovery": "Replay journals to rebuild results and reprice/rescore offline. Read completed .jsonl.gz archives as needed; do not resend completed attempts.",
+    "selected_results": "One result row per task; latest explicitly authorized settled attempt. Journals retain every attempt and all costs."
+  },
+  "run_id": "luna-xhigh",
+  "prompt_version": "v3",
+  "status": "running",
+  "created_at": "2026-10-15T05:10:11.562337+00:00",
+  "started_at": "2026-10-15T05:10:19.408685+00:00",
+  "finished_at": null,
+  "submitted_requests": 17274,
+  "provider": "openai",
+  "api": {
+    "method": "POST",
+    "url": "https://api.openai.com/v1/responses"
+  },
+  "request_defaults": {
+    "model": "gpt-6-luna",
+    "reasoning": {
+      "effort": "xhigh"
+    },
+    "service_tier": "default",
+    "store": false,
+    "stream": true
+  },
+  "request_input": "Exact rendered prompt as request.input; independent requests; no extra instructions, history, tools, web, or model fallbacks.",
+  "output_limit": {
+    "benchmark_cap": null,
+    "max_output_tokens_parameter": "omitted",
+    "documented_model_max_output_tokens": 128000,
+    "meaning": "No benchmark output cap; provider/model limits still apply. Output includes reasoning."
+  },
+  "omitted_request_parameters": [
+    "max_output_tokens",
+    "instructions",
+    "tools",
+    "tool_choice",
+    "previous_response_id",
+    "temperature",
+    "top_p",
+    "seed"
+  ],
+  "comparison_run": {
+    "path": "data/benchmark/results/v2/astra-xhigh/manifest.json",
+    "sha256": "ae50a8863b344052621e9435e1e94a772e96e33619a742f0a5cbed3ad82b594f",
+    "bytes": 51684,
+    "meaning": "Same benchmark tasks and scorer as prior Astra v2; these runs use the v3 templates shared with Anthropic."
+  },
+  "result_schema": {
+    "path": "result.schema.json",
+    "sha256": "b4656990f081105e4d92e8a23e74cbed2a09b416fc835d5f0d58246f43d0b5b6"
+  },
+  "pricing": {
+    "verified_date": "2026-10-14",
+    "currency": "USD",
+    "tier": "standard",
+    "endpoint": "global direct OpenAI",
+    "rates_usd_per_million_tokens": {
+      "uncached_input": 0.1,
+      "cached_input": 0.01,
+      "cache_write_input": 0.125,
+      "output": 0.5
+    },
+    "long_context_threshold_input_tokens": 272000,
+    "long_context_rates_usd_per_million_tokens": {
+      "uncached_input": 0.2,
+      "cached_input": 0.02,
+      "cache_write_input": 0.25,
+      "output": 0.75
+    },
+    "formula": "((input_tokens - cached_tokens - cache_write_tokens) * uncached_input_rate + cached_tokens * cached_input_rate + cache_write_tokens * cache_write_input_rate + output_tokens * output_rate) / 1000000",
+    "rules": [
+      "Cache counters are subsets of input_tokens.",
+      "Output usage already includes hidden reasoning; never add reasoning tokens twice.",
+      "Unknown final usage retains a full request reserve; never count unknown charges as zero.",
+      "All attempts, including refusals and infrastructure failures, remain in the cost ledger.",
+      "Rates above 272000 input tokens apply to the entire request.",
+      "Estimates exclude taxes, credits and invoice adjustments."
+    ],
+    "sources": [
+      "https://developers.openai.com/api/docs/models/gpt-6-luna",
+      "https://developers.openai.com/api/docs/pricing"
+    ]
+  },
+  "budget_accounting": {
+    "overall_openai_target_usd": 3000,
+    "prior_astra_known_cost_usd": 1156.9801,
+    "prior_astra_unknown_cost_reserve_usd": 45.016825,
+    "combined_new_run_ceiling_usd": 1750,
+    "other_prior_pilot_buffer_usd": 48.003075,
+    "allocations_usd": {
+      "astra-xhigh": 1250,
+      "sol-xhigh": 450,
+      "luna-xhigh": 50
+    },
+    "scope": "Local usage accounting, not an account balance. Prior pilot invoices unavailable; remaining $48.003075 is held as a buffer. Reserve all in-flight requests at the full provider output maximum."
+  },
+  "execution": {
+    "state": "running",
+    "runner_implemented": true,
+    "pid": 16088,
+    "runner": {
+      "path": "data/engine/evaluation/run_openai.py",
+      "sha256": "db84b0b281a935a31b300c4035aa794da42428665b0c8c5a141ec38c4ff1af11",
+      "bytes": 26646
+    },
+    "automatic_retries": 0,
+    "model_fallbacks": [],
+    "concurrency": 192,
+    "concurrency_control_file": "run-control.json",
+    "max_concurrency": 512,
+    "budget_usd": 50,
+    "resume": "Replay durable records; submit only tasks without a started marker. Unresolved attempts block resume.",
+    "failure_handling": "Retain transient failures; cool down and reduce concurrency on rate limits. Explicit later batches may retry infrastructure errors, never wrong answers or refusals.",
+    "stopped_reason": null,
+    "reservation_usd_per_inflight_request": 0.064287125,
+    "runtime_versions": {
+      "python": "3.11.13",
+      "httpx": "0.28.1",
+      "python-dotenv": "1.1.1",
+      "vidyut": "0.4.0",
+      "jsonschema": "4.23.0"
+    },
+    "progress": {
+      "updated_at": "2026-10-15T06:49:25.437846+00:00",
+      "planned": 20000,
+      "started": 17274,
+      "settled": 17146,
+      "unsettled": 128,
+      "not_started": 2726,
+      "known_cost_usd": 40.066918,
+      "unknown_cost_attempts": 25,
+      "projected_full_run_cost_usd": null,
+      "families": {
+        "tinanta": {
+          "settled": 4270,
+          "statuses": {
+            "completed": 4262,
+            "transport_error": 8
+          },
+          "correct": 2210,
+          "format_ok": 4263,
+          "strict_correct": 2210,
+          "known_cost_usd": 13.4802337,
+          "unknown_cost_attempts": 8,
+          "input_tokens": 968892,
+          "output_tokens": 26766689,
+          "mean_output_tokens": 6280.31
+        },
+        "taddhitanta": {
+          "settled": 4266,
+          "statuses": {
+            "completed": 4262,
+            "transport_error": 4
+          },
+          "correct": 2639,
+          "format_ok": 4262,
+          "strict_correct": 2639,
+          "known_cost_usd": 16.7442797,
+          "unknown_cost_attempts": 4,
+          "input_tokens": 753267,
+          "output_tokens": 33337906,
+          "mean_output_tokens": 7822.13
+        },
+        "krdanta": {
+          "settled": 4293,
+          "statuses": {
+            "completed": 4285,
+            "transport_error": 8
+          },
+          "correct": 2543,
+          "format_ok": 4285,
+          "strict_correct": 2543,
+          "known_cost_usd": 9.2521067,
+          "unknown_cost_attempts": 8,
+          "input_tokens": 1020517,
+          "output_tokens": 18300110,
+          "mean_output_tokens": 4270.74
+        },
+        "subanta": {
+          "settled": 4317,
+          "statuses": {
+            "completed": 4312,
+            "transport_error": 5
+          },
+          "correct": 4127,
+          "format_ok": 4312,
+          "strict_correct": 4127,
+          "known_cost_usd": 0.5902979,
+          "unknown_cost_attempts": 5,
+          "input_tokens": 711844,
+          "output_tokens": 1038227,
+          "mean_output_tokens": 240.78
+        }
+      },
+      "unknown_cost_reserve_usd": 1.60717812
+    },
+    "submission_state": "submitting"
+  },
+  "implementation_dependencies": [
+    {
+      "path": "data/engine/evaluation/run_astra.py",
+      "sha256": "d8d2fc791f64015d267cbcbf37a413bc15921faa7176c7412cb0e2c3c31e1f2d",
+      "bytes": 32231
+    },
+    {
+      "path": "data/engine/evaluation/scaffold_astra.py",
+      "sha256": "75bb17f85890a344b410b782d7f79f68b0e4ec75d42745ded8c57fc380e5cd9e",
+      "bytes": 12969
+    }
+  ],
+  "official_references": [
+    "https://developers.openai.com/api/reference/resources/responses/methods/create",
+    "https://developers.openai.com/api/docs/guides/reasoning"
+  ],
+  "model_access_check": {
+    "checked_at": "2026-10-15T05:10:11.751391+00:00",
+    "model": "gpt-6-luna",
+    "http_status": 200,
+    "response": {
+      "id": "gpt-6-luna",
+      "object": "model",
+      "created": 1789406102,
+      "owned_by": "system",
+      "shutdown_date": null
+    }
+  }
+}

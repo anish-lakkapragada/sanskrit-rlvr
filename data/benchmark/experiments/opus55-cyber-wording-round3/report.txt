@@ -1,0 +1,55 @@
+OPUS 5.5 XHIGH WORDING EXPERIMENT: ROUND THREE
+
+Finished: 2026-10-14T23:09:08.025277+00:00
+Additional requests: 100/100. Estimated API cost: $0.898796. All usage known; no API or transport errors.
+
+OUTCOME
+Zero observed refusals in the final 20-request confirmation: five requests per category, 19 correct answers. The final check contained 16 fresh tasks and four challenge calls (three repetitions of loqana + TAl, one persistent tinanta). The 16 fresh tasks returned 15 correct answers and no refusals.
+The successful taddhitanta candidate presents the nominal stem, base interpretation, affix and SLP1 identifier in a Markdown table, followed by the semantic/output constraints and the existing answer-only rule. No Sanskrit value, grammatical interpretation, or accepted answer was changed. The other three candidate templates retained their wording.
+
+METHOD AND ADAPTATION
+First 40 calls: current prompt plus four variants (positive answer-format instruction, clarified semantic scope, quoted fields, data first). Each variant was tested three times on the persistent taddhitanta failure and once on five cross-task checks. Every variant refused the persistent case at least once.
+The protocol was explicitly amended after 40 calls. The next 40 compared the current taddhitanta template with full sentences, a table, compact fields, and an integrated question, using the same cases and repeated hard-case tests. Other categories used identical current-template controls. The stage called validation in the raw files therefore represents further tuning, not untouched validation. Prior code, manifest and case list are preserved in protocol-history/.
+The table variant had 0/5 refusals in the layout stage, including 3/3 correct replies to the persistent task. The same-stage current template refused that task 3/3 times. The table was selected before the final confirmation calls.
+The final 20 calls used 16 previously untested tasks and four challenge calls. The persistent taddhitanta returned 3/3 correct answers again. Across tuning and confirmation the exact table template answered that case correctly 6/6 times.
+
+FINAL CONFIRMATION (PROSPECTIVELY FROZEN)
+tinanta: 0/5 refusals; 5/5 strict correct.
+krdanta: 0/5 refusals; 5/5 strict correct.
+taddhitanta: 0/5 refusals; 4/5 strict correct.
+subanta: 0/5 refusals; 5/5 strict correct.
+
+EVERY REQUEST IN THIS ROUND MATCHING THE FINAL TEMPLATES
+These counts include tuning data and repeated prompts. They are not independent held-out estimates.
+tinanta: 0/11 refusals; 11/11 strict correct.
+krdanta: 0/11 refusals; 11/11 strict correct.
+taddhitanta: 0/10 refusals; 7/10 strict correct.
+subanta: 0/12 refusals; 12/12 strict correct.
+
+Total matching final templates: 0/44 refusals and 41/44 strict correct.
+
+All 100 exploratory calls, including rejected variants: 19 refusals and 63 strict correct. No failures were deleted, replaced by successful retries, or excluded from results.json.
+
+LIMITS
+This is a small adaptive study on selected hard cases and ordinary controls, not a full benchmark rerun. The unchanged template also sometimes succeeded on the same case, demonstrating variability. The final result is evidence that the table layout is promising; it does not establish the classifier cause or guarantee zero future refusals. Taddhitanta still had grammatical errors: refusal avoidance and correctness are tracked separately.
+
+CANDIDATE UPDATE
+Updated vp_taddhitanta.txt in place. Kept the existing tinanta, krdanta and subanta candidate wording. All four are present in the shared candidate-templates directory; provenance.json points to this report. Before/after snapshots are retained. Production templates and benchmark results were not modified.
+
+VERIFICATION
+Replayed all 100 request/response records, checked request plans and hashes, validated result schemas, verified the returned model/final usage, and checked 36 candidate hydrations against the exact tested prompts. No tools or model fallback were configured.
+
+ARTIFACTS
+manifest.json, cases.json: request settings, sampled tasks, source hashes and protocol amendment.
+discovery-plan.json, validation-plan.json, stress-plan.json: exact prompt for every call.
+results.json, summary.json: all outputs, correctness/format scores, usage, costs and counts.
+journals/requests.jsonl.gz: durable full request/response records.
+verification.json: replay checks and all exact-final-template outcomes.
+successful-challenge-prompt.txt: exact table prompt that answered the recurring failure.
+candidate-templates-before/ and candidate-templates-after/: historical template snapshots.
+
+
+USER-REQUESTED REVERT (2026-10-14 23:53:05 UTC): The shared candidate templates have been restored to their exact pre-round-three versions, including the plain-text taddhitanta layout. The round-three table prompt and its experimental results remain preserved in opus55-cyber-wording-round3/candidate-templates-after/ and the experiment artifacts. See the shared candidate-templates/provenance.json for the current state.
+
+LATER UNIFORM-TEMPLATE EXPERIMENT
+The current candidate templates are now the shared rules-before-table set from opus55-uniform-v2. This historical report and its outcomes are preserved; see ../opus55-uniform-v2/report.txt for the current evidence.

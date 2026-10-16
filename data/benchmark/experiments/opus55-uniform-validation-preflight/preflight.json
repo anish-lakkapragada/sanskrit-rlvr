@@ -1,0 +1,84 @@
+{
+  "created_at": "2026-10-15T00:54:27.996354+00:00",
+  "state": "launched",
+  "requests_sent": null,
+  "spend_usd": null,
+  "sample_size": 400,
+  "family_counts": {
+    "taddhitanta": 100,
+    "krdanta": 100,
+    "subanta": 100,
+    "tinanta": 100
+  },
+  "seed": 69,
+  "excluded_prior_task_count": 267,
+  "exclusion_sources": [
+    {
+      "path": "data/benchmark/experiments/opus55-cyber-wording/cases.json",
+      "sha256": "458e13df3b915e363541ed68d70be54d0f50526a87b21f7b58f2d08cb63215cb",
+      "bytes": 123257
+    },
+    {
+      "path": "data/benchmark/experiments/opus55-cyber-wording-round2/cases.json",
+      "sha256": "5e02ef4e49a01ec4ae57489331ed03bb97d2842b04751c7b1a90750d7937ef88",
+      "bytes": 194153
+    },
+    {
+      "path": "data/benchmark/experiments/opus55-cyber-wording-round3/cases.json",
+      "sha256": "80beac6f24f9b9ec14d84c7c70063931e6dc46fa16952595880a9941f7b14905",
+      "bytes": 137380
+    },
+    {
+      "path": "data/benchmark/experiments/opus55-uniform-v2/cases.json",
+      "sha256": "327f91d67c5931de141cc5ff0f97a1c9d1ab337165d7d2f1093dd12b62e1896d",
+      "bytes": 298739
+    }
+  ],
+  "templates": {
+    "tinanta": {
+      "path": "data/benchmark/experiments/opus55-cyber-wording/candidate-templates/vp_tinanta.txt",
+      "sha256": "f9cbade9eb13c9356c4c303bbf15b3c9938d5c50486adda0ff696c3844038b26",
+      "bytes": 902
+    },
+    "krdanta": {
+      "path": "data/benchmark/experiments/opus55-cyber-wording/candidate-templates/vp_krdanta.txt",
+      "sha256": "4dc79d2804882a6a04ea5f5e94b5b928d24e03cd4c14025aab7dc01cab5a71a8",
+      "bytes": 980
+    },
+    "taddhitanta": {
+      "path": "data/benchmark/experiments/opus55-cyber-wording/candidate-templates/vp_taddhitanta.txt",
+      "sha256": "74cc9e85bd0e85658499baac703636b097c30b210e031274d6f7c026637f3f70",
+      "bytes": 665
+    },
+    "subanta": {
+      "path": "data/benchmark/experiments/opus55-cyber-wording/candidate-templates/vp_subanta.txt",
+      "sha256": "8453c565b2581a1dc2c832a6253f51dd825b57049a242f847d520969397217dd",
+      "bytes": 684
+    }
+  },
+  "sample_sha256": "4c1d6dd75f7cef6b048b094770443e909778a6e43bf08d63e21c5ac66fc37c0b",
+  "tested_output_configurations": [
+    {
+      "max_tokens": 16000,
+      "strict_budget_usd": 2,
+      "target_spend_usd": 2
+    },
+    {
+      "max_tokens": 128000,
+      "strict_budget_usd": 5,
+      "target_spend_usd": 2
+    }
+  ],
+  "reason_for_choice": "Earlier preference was full 128000 output allowance. At $20/M output, its output-only worst case is $2.56, exceeding the newly requested $2 spending ceiling.",
+  "offline_tests_passed": 5,
+  "resolved_at": "2026-10-15T01:02:50.080045+00:00",
+  "user_authorization": "You can use $2.56 don't worry or $3",
+  "actual_configuration": {
+    "budget_usd": 3,
+    "target_spend_usd": 2,
+    "max_tokens_ceiling": 128000,
+    "output_budget_policy": "remaining_dollars"
+  },
+  "manifest": "data/benchmark/experiments/opus55-uniform-validation/manifest.json",
+  "progress_location": "Current request count and spend are in the linked manifest; this is an offline preflight record."
+}

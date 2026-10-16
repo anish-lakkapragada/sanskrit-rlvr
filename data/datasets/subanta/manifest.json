@@ -1,0 +1,165 @@
+{
+  "schema_version": 2,
+  "dataset": "vp-subanta-shared-nominals-v2",
+  "generation_complete": true,
+  "source": {
+    "path": "data/engine/files/shared-nominal-stems.json",
+    "sha256": "7a3b204962d04c02b915a3291abe29584ae6ee064771b98011dfcac30c6d0f71",
+    "manifest_sha256": "5c5544a3b03d6b6d3e59a2335d047b4edac4ad716f767409e5e9ff63dbeff300",
+    "audit_sha256": "82c2abf77db088984a4cfbad3b79f704d4054a4ad671694b9399ae031ff49d0d",
+    "lexical_sources": [
+      "MWlexnorm"
+    ],
+    "upstream": {
+      "path": "data/engine/files/mw-lexnorm/nominal-entries.csv",
+      "sha256": "84797688cfbc3e82260567cf7cca86353acc14b6898f45f279e5a92b4c2b07cc",
+      "repository": "https://github.com/funderburkjim/MWlexnorm",
+      "revision": "34e51125583b1f5026d44e6ef1e44d2a88b73670"
+    },
+    "rows": 197652,
+    "stem_gender_pairs": 74193,
+    "encoding": "SLP1"
+  },
+  "engine": {
+    "package": "vidyut",
+    "version": "0.4.0",
+    "options": {
+      "log_steps": false,
+      "is_chandasi": false,
+      "use_svaras": false,
+      "nlp_mode": false
+    },
+    "request": "Pada.Subanta(Pratipadika.basic/nyap(stem), Linga, Vibhakti, Vacana)"
+  },
+  "generator": {
+    "data/engine/subanta/common.py": "041800da26cb92a514e54dd314d8cf7f85f500f5b4d4c4f48133e2879d2d6ded",
+    "data/engine/subanta/generate.py": "34af4c74b13b9afb177e2d3ee26b066b6bb0044e58110254fbfe3a2a7e064d77",
+    "data/engine/nominal_stems/inventory.py": "43d482ccb5539f25c8d2e8a685a9ef402d00ded86ce54c2ce7f463a8aea2bf36",
+    "data/engine/nominal_stems/vp_support.py": "2fdece29a9ca48e2a5000cb4b5af9942396cf6c7f5e1bd4bd1ab9119fbbd005a"
+  },
+  "prompt": {
+    "path": "data/engine/prompts/v2/vp_subanta.txt",
+    "sha256": "5f1994d552931b07ea75beb39bdb31f3889da7fc5df4c395f6c7fc7fd1b589fb",
+    "rendered_sequence_sha256": "67e6f6612cba82e7cd3304716eaf40032f4904f63f6784fd824cbdb1525286a1",
+    "sequence_format": "compact UTF-8 JSON [id,prompt] plus newline for each row",
+    "metadata_refreshed_at": "2026-10-14T06:37:21.540912+00:00"
+  },
+  "scope": {
+    "cases": [
+      "Prathama",
+      "Dvitiya",
+      "Trtiya",
+      "Caturthi",
+      "Panchami",
+      "Sasthi",
+      "Saptami",
+      "Sambodhana"
+    ],
+    "numbers": [
+      "Eka",
+      "Dvi",
+      "Bahu"
+    ],
+    "tasks_per_stem_gender": 24,
+    "stem_classes": [
+      "a/i/u/r vowel stems",
+      "resolved feminine A/I/U stems",
+      "polysyllabic masculine A",
+      "masculine/neuter an/in",
+      "as/is/us except vas/Iyas",
+      "go/nau"
+    ],
+    "input_policy": "Only shared-nominal-stems.json; reuse its resolved spellings and source genders.",
+    "source_exclusion_reasons": "See shared-nominal-stems.manifest.json",
+    "task_exclusion_reasons": {
+      "no_forms": "VP produced no derivation.",
+      "invalid_gold_encoding": "Gold cannot round-trip through Devanagari."
+    },
+    "deduplication": "Resolved SLP1 stem, basic/nyap constructor, gender, case, number; retain all MW IDs.",
+    "row_counts": "exported_tasks includes shared tasks; new_unique_tasks assigns each task to its first source row.",
+    "fairness_checks": [
+      "reviewed_basic_stem_scope",
+      "resolved_feminine_stem_visible",
+      "no_hidden_constructor_conflict",
+      "nonempty_complete_engine_gold",
+      "gold_transliteration_roundtrip"
+    ],
+    "limits": "Exhaustive within the adapter's supported scope, not all MWlexnorm entries. Engine-backed forms are not independently certified Sanskrit judgments."
+  },
+  "enumeration_order": "paradigm ID ascending, then listed case and number order",
+  "gold_order": "sorted unique SLP1, with paired NFC Devanagari",
+  "sampling": null,
+  "splits": null,
+  "counts": {
+    "stem_gender_pairs": 74193,
+    "candidates": 1780632,
+    "full": 1780632,
+    "engine_errors": 0,
+    "excluded_tasks": 0,
+    "excluded_by_reason": {},
+    "per_gender": {
+      "Napumsaka": 522288,
+      "Pum": 747096,
+      "Stri": 511248
+    },
+    "gold_forms_per_task": {
+      "1": 1723806,
+      "2": 56741,
+      "3": 26,
+      "4": 59
+    },
+    "source_rows": {
+      "rows": 197652,
+      "rows_with_tasks": 54947,
+      "row_status": {
+        "excluded": 142705,
+        "included": 52937,
+        "partial": 2010
+      },
+      "exclusion_events": {
+        "indeclinable": 5638,
+        "invalid_headword_encoding": 193,
+        "special_lexical_metadata": 371,
+        "unresolved_feminine_stem": 7819,
+        "unresolved_stem_hint": 264,
+        "unsupported_descriptor": 3,
+        "vp_unsupported_input": 217750
+      },
+      "candidate_tasks_per_row": {
+        "0": 142705,
+        "24": 37701,
+        "48": 3587,
+        "72": 13521,
+        "96": 136,
+        "120": 2
+      },
+      "exported_tasks_per_row": {
+        "0": 142705,
+        "24": 37701,
+        "48": 3587,
+        "72": 13521,
+        "96": 136,
+        "120": 2
+      },
+      "new_unique_tasks": 1780632
+    }
+  },
+  "files": {
+    "full.json": {
+      "sha256": "1e8672ed9f1324388bcb77cea48902e28c3cc980f68277924401ba2ef72c03a4",
+      "bytes": 479042674
+    },
+    "stems.json": {
+      "sha256": "d6c409014cdaaee3b6412b3a96c68aea91372231dcc3621a3e05ab7077f0adb1",
+      "bytes": 15560568
+    },
+    "source_rows.json": {
+      "sha256": "14d5f87e29cfe7300c41ae5a9d336cd986e0d3774dbefd8c5adeb33218cbfc36",
+      "bytes": 75434281
+    },
+    "excluded_tasks.json": {
+      "sha256": "3fbbd4c6d76130399b0c79cdf41758669224a91e05b7b216953f0c9728750865",
+      "bytes": 4
+    }
+  }
+}

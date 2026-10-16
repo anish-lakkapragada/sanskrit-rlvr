@@ -1,0 +1,62 @@
+UNIFORM ORIGINAL-V2 PROMPT EXPERIMENT
+
+Finished: 2026-10-15T00:35:15.350505+00:00
+Model: claude-opus-5-5; adaptive thinking; xhigh effort; standard tier.
+No tools, system prompt, fallback model, automatic retries, or Internet access in model requests.
+Output allowance: full provider maximum, 128000 tokens including thinking; no smaller benchmark cap.
+New requests: 280. Estimated usage-based cost: $2.311720 of the $5 ceiling.
+Unknown-cost requests: 0. Full-output dollar reservations checked before every call.
+
+SELECTED TEMPLATE SET
+All four templates use: one parallel task sentence, task-specific grammatical rules, a two-column input table, and the same answer-only instruction.
+All original v2 hydration fields and grammatical inputs are preserved. Optional prefix and participle fields remain renderer-compatible.
+Only candidate templates were updated. Production v2 templates, hydrated production samples, and benchmark results are unchanged.
+Candidate folder: data/benchmark/experiments/opus55-cyber-wording/candidate-templates/
+
+Requests matching the final templates (includes selection trials and repeated tasks):
+Family       Requests   Refusals   Strict-correct   Unique tasks
+tinanta            18          0               18             16
+krdanta            19          0               19             17
+taddhitanta        25          0               23             17
+subanta            18          0               18             16
+Total              80          0               78             66
+
+Untouched final confirmation: 0/60 refusals, 58/60 strict correct; 15 tasks per family.
+Final repeated challenges: 0/12 refusals, 12/12 strict correct.
+Each hard taddhitanta case was tested twice during final-variant selection and three more times after selection.
+
+ALL EXPLORATORY RESULTS ARE RETAINED
+Stage / variant                        Requests   Refusals   Strict-correct
+challenge/uniform_table                   20          0               20
+discovery/no_role                         12          6                5
+discovery/original                        12          7                3
+discovery/shared_exercise                 12          5                6
+discovery/shared_question                 12          3                7
+discovery/shared_sentences                12          8                4
+final_confirmation/table_rules_first               60          0               58
+final_stress/table_rules_first               12          0               12
+followup/table_exercise                   8          4                4
+followup/table_question                   8          4                4
+followup/table_rules_first                8          0                8
+layouts/uniform_table                   12          0               10
+layouts/uniform_table_technical         12          2                8
+validation/uniform_table                   80          1               77
+
+The first table variant refused miraPa + Iyasun once during the 80-task validation stage. That failure prompted additional tuning; it was not erased or replaced by a successful retry.
+The original 80-task confirmation plan was superseded before any request was sent. Final confirmation used the first 15 prospectively selected tasks per family, chosen before seeing their outcomes, to leave room for full-output dollar reservations.
+Discovery tasks deliberately included known refusals and repetitions. Validation was fresh but enriched for earlier benchmark refusals. It became tuning data after the new failure. Final confirmation tasks were disjoint from all tuning and prior wording experiments.
+Zero observed refusals is a finite test result, not a guarantee of zero future refusal probability or a benchmark-wide population estimate.
+
+REPRODUCIBILITY
+manifest.json: model settings, pinned sources, template texts, budgets, prospective samples, stage decisions.
+cases.json and *-plan.json: exact tasks and every sent prompt; unsent historical plans are labeled in the manifest.
+results.json and journals/requests.jsonl.gz: every outcome, provider response, token usage and cost, including failures.
+verification.json: schema, journal replay, prompt hydration, provider settings, dollar admissions, production source hashes.
+candidate-templates-before/ and candidate-templates-after/: complete candidate snapshots.
+tested-templates/: all candidate wording and initial diffs.
+
+Pricing source: https://platform.claude.com/docs/en/models/opus-5-5/overview (verified 2026-10-14).
+Costs use provider usage at $4/M input and $20/M output; no-output cyber refusals are unbilled under the provider policy. Invoice taxes, credits and adjustments are excluded.
+
+FRESH FROZEN-TEMPLATE VALIDATION
+246 further fresh tasks: 231 strict correct; 0 refusals. See ../opus55-uniform-validation/report.txt for costs, output allowances, and full results. These results are additional evidence; the exploratory results above are unchanged.

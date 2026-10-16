@@ -1,0 +1,631 @@
+{
+  "created_at": "2026-10-12T07:06:44.171323+00:00",
+  "seed": 3128140816676358090,
+  "sampling": "Five distinct eligible records per family; dataset entries specify initial sampling and replacement policy.",
+  "families_in_draw_order": [
+    "krdanta",
+    "subanta",
+    "taddhitanta",
+    "tinanta"
+  ],
+  "vidyut_version": "0.4.0",
+  "datasets": {
+    "krdanta": {
+      "source": "data/datasets/krdanta/full.json",
+      "source_sha256": "4b268040dff206c5763d9cc1a39a34bec3150392d9ed64f915cb804dfdf00aa1",
+      "source_records": 27470,
+      "template": "data/engine/prompts/v2/vp_krdanta.txt",
+      "template_sha256": "37f6afac2d5ccc9041c6c84a4db477bb52d84fd449e6d688e09f37a70d97257e",
+      "samples": [
+        {
+          "path": "krdanta/01/prompt.txt",
+          "record_index": 14031,
+          "task_id": "krdanta:02.0007:Rvul",
+          "inputs": {
+            "dhatu": {
+              "code": "02.0007",
+              "aupadeshika": "ca\\kzi~\\N",
+              "gana": "Adadi",
+              "artha": "vyaktAyAM vAci",
+              "antargana": null,
+              "prefixes": [],
+              "sanadi": []
+            },
+            "morphology": {
+              "krt": "Rvul"
+            }
+          },
+          "warnings": [],
+          "prompt_sha256": "d5c80be62b53f27852441f5c052fd8d981e99f0c0af9d6aaeab81428e9d3f176",
+          "answer_path": "krdanta/01/answer.json",
+          "answer_sha256": "206400763556eab07a7802fafa16a877054776dad7c13c04a71337aef648e847"
+        },
+        {
+          "path": "krdanta/02/prompt.txt",
+          "record_index": 22308,
+          "task_id": "krdanta:10.0101:kta",
+          "inputs": {
+            "dhatu": {
+              "code": "10.0101",
+              "aupadeshika": "Sulba~",
+              "gana": "Curadi",
+              "artha": "mAne",
+              "antargana": null,
+              "prefixes": [],
+              "sanadi": []
+            },
+            "morphology": {
+              "krt": "kta"
+            }
+          },
+          "warnings": [],
+          "prompt_sha256": "906c8fdfa7957ea10b6f9c2428ce29e36a1fe4db5f87f6b8fb151db2cfae9a22",
+          "answer_path": "krdanta/02/answer.json",
+          "answer_sha256": "f2d21941278e1b914c51a6d16dad1c4c21a5a25cd7ee6f443e50e86a2a716041"
+        },
+        {
+          "path": "krdanta/03/prompt.txt",
+          "record_index": 14113,
+          "task_id": "krdanta:02.0014:ktavatu",
+          "inputs": {
+            "dhatu": {
+              "code": "02.0014",
+              "aupadeshika": "kasi~\\",
+              "gana": "Adadi",
+              "artha": "gatiSAsanayoH",
+              "antargana": null,
+              "prefixes": [],
+              "sanadi": []
+            },
+            "morphology": {
+              "krt": "ktavatu"
+            }
+          },
+          "warnings": [],
+          "prompt_sha256": "e1fd67871f83186d04dd60df1e52124b300e2c87cf5707ff5ac0b7aee0e23102",
+          "answer_path": "krdanta/03/answer.json",
+          "answer_sha256": "57d11705cce5517a57b4b4f963d950b5b6d9b631d5a4262a902bc4e49f9c4771"
+        },
+        {
+          "path": "krdanta/04/prompt.txt",
+          "record_index": 23409,
+          "task_id": "krdanta:10.0184:tfc",
+          "inputs": {
+            "dhatu": {
+              "code": "10.0184",
+              "aupadeshika": "jasu~",
+              "gana": "Curadi",
+              "artha": "hiMsAyAm",
+              "antargana": null,
+              "prefixes": [],
+              "sanadi": []
+            },
+            "morphology": {
+              "krt": "tfc"
+            }
+          },
+          "warnings": [],
+          "prompt_sha256": "dd49486c1963f960f2f22cb85f62751eea240af39a0300e9e93e1b16ecadc996",
+          "answer_path": "krdanta/04/answer.json",
+          "answer_sha256": "f2b9d17687457cc7cabd080dec2bf1d3db164a7990880801517b3b1c5f78a65d"
+        },
+        {
+          "path": "krdanta/05/prompt.txt",
+          "record_index": 14081,
+          "task_id": "krdanta:02.0011:ktvA",
+          "inputs": {
+            "dhatu": {
+              "code": "02.0011",
+              "aupadeshika": "Asa~\\",
+              "gana": "Adadi",
+              "artha": "upaveSane",
+              "antargana": null,
+              "prefixes": [],
+              "sanadi": []
+            },
+            "morphology": {
+              "krt": "ktvA"
+            }
+          },
+          "warnings": [],
+          "prompt_sha256": "e904272ef596b8dca48b7b623f0be09d1fd6afca939693e2cc020afb0867bbd0",
+          "answer_path": "krdanta/05/answer.json",
+          "answer_sha256": "e4c79192d553aebf2cbca99872870b13a1c6b96b6adf729051210e58e4df5b52"
+        }
+      ],
+      "sampling": "Preserve previously sampled IDs still present; replace removed IDs by seeded uniform draws without replacement.",
+      "engine": {
+        "package": "vidyut",
+        "version": "0.4.0",
+        "options": {
+          "log_steps": false,
+          "is_chandasi": false,
+          "use_svaras": false,
+          "nlp_mode": false
+        },
+        "request": "Pratipadika.krdanta(loaded_dhatu, Krt)",
+        "source_distribution_url": "https://files.pythonhosted.org/packages/69/b5/6876b3f807ac38812c6e29eb43738d28a6a21c2aed456486e654997efcdd/vidyut-0.4.0.tar.gz",
+        "source_distribution_sha256": "fb776ec751e66c8d44bd94ef71008f9ea05284f51055aa009cfaef33ccf5f454"
+      },
+      "sampling_seed": "3128140816676358090:krdanta:4b268040dff206c5763d9cc1a39a34bec3150392d9ed64f915cb804dfdf00aa1:eligible-replacements"
+    },
+    "subanta": {
+      "source": "data/datasets/subanta/full.json",
+      "source_sha256": "1e8672ed9f1324388bcb77cea48902e28c3cc980f68277924401ba2ef72c03a4",
+      "source_records": 1780632,
+      "template": "data/engine/prompts/v2/vp_subanta.txt",
+      "template_sha256": "5f1994d552931b07ea75beb39bdb31f3889da7fc5df4c395f6c7fc7fd1b589fb",
+      "engine": {
+        "package": "vidyut",
+        "version": "0.4.0",
+        "options": {
+          "log_steps": false,
+          "is_chandasi": false,
+          "use_svaras": false,
+          "nlp_mode": false
+        },
+        "request": "Pada.Subanta(Pratipadika.basic/nyap(stem), Linga, Vibhakti, Vacana)"
+      },
+      "sampling": "Preserve previously sampled IDs still present; replace removed IDs by seeded uniform draws without replacement.",
+      "sampling_seed": "3128140816676358090:subanta:1e8672ed9f1324388bcb77cea48902e28c3cc980f68277924401ba2ef72c03a4:eligible-replacements",
+      "samples": [
+        {
+          "path": "subanta/01/prompt.txt",
+          "record_index": 538856,
+          "task_id": "subanta:dozala:basic:Pum:Trtiya:Bahu",
+          "inputs": {
+            "pratipadika": {
+              "stem": "dozala",
+              "is_nyap": false,
+              "mw_ids": [
+                "97090"
+              ]
+            },
+            "morphology": {
+              "linga": "Pum",
+              "vibhakti": "Trtiya",
+              "vacana": "Bahu"
+            }
+          },
+          "warnings": [],
+          "prompt_sha256": "9e13f443a180ce192b8aa4475a0d7a7b9d46444d7b4bfd635df5ea44d62ead6a",
+          "answer_path": "subanta/01/answer.json",
+          "answer_sha256": "19cacd144e357a915884dab3a36adcf6ca9f7a3d42f4363a44ba57d45abb6ec6"
+        },
+        {
+          "path": "subanta/02/prompt.txt",
+          "record_index": 135388,
+          "task_id": "subanta:DfzARa:basic:Pum:Dvitiya:Dvi",
+          "inputs": {
+            "pratipadika": {
+              "stem": "DfzARa",
+              "is_nyap": false,
+              "mw_ids": [
+                "101939.1"
+              ]
+            },
+            "morphology": {
+              "linga": "Pum",
+              "vibhakti": "Dvitiya",
+              "vacana": "Dvi"
+            }
+          },
+          "warnings": [],
+          "prompt_sha256": "eab2edc934a3726e270ba660dcf26cb1acb843bfc6e07f90733584733be08a93",
+          "answer_path": "subanta/02/answer.json",
+          "answer_sha256": "4b7eb7185d1f1040223e7f9207096456737c3d92deb762091559531988dcb214"
+        },
+        {
+          "path": "subanta/03/prompt.txt",
+          "record_index": 1719957,
+          "task_id": "subanta:viTura:basic:Pum:Sambodhana:Eka",
+          "inputs": {
+            "pratipadika": {
+              "stem": "viTura",
+              "is_nyap": false,
+              "mw_ids": [
+                "195621"
+              ]
+            },
+            "morphology": {
+              "linga": "Pum",
+              "vibhakti": "Sambodhana",
+              "vacana": "Eka"
+            }
+          },
+          "warnings": [],
+          "prompt_sha256": "d907b67dc1ea9c80ce4c4a8f5f506f493a618d8071f3dbc4df5f65986322d457",
+          "answer_path": "subanta/03/answer.json",
+          "answer_sha256": "8f178f672f4884de076a0062fbde1d1095dfab7adf6136eb71d4ba3efb9f104a"
+        },
+        {
+          "path": "subanta/04/prompt.txt",
+          "record_index": 1634952,
+          "task_id": "subanta:vEdagDI:nyap:Stri:Prathama:Eka",
+          "inputs": {
+            "pratipadika": {
+              "stem": "vEdagDI",
+              "is_nyap": true,
+              "mw_ids": [
+                "206941"
+              ]
+            },
+            "morphology": {
+              "linga": "Stri",
+              "vibhakti": "Prathama",
+              "vacana": "Eka"
+            }
+          },
+          "warnings": [],
+          "prompt_sha256": "0b3ee35b67908e266f59c34fb79c4524c7bc016da1d846c206da83e87035adda",
+          "answer_path": "subanta/04/answer.json",
+          "answer_sha256": "caef7ff2b91d7862d568046dd998f77453ff5ffe09c828213fb1f34e58ec7e77"
+        },
+        {
+          "path": "subanta/05/prompt.txt",
+          "record_index": 1634527,
+          "task_id": "subanta:vEcyuta:basic:Pum:Trtiya:Dvi",
+          "inputs": {
+            "pratipadika": {
+              "stem": "vEcyuta",
+              "is_nyap": false,
+              "mw_ids": [
+                "206744"
+              ]
+            },
+            "morphology": {
+              "linga": "Pum",
+              "vibhakti": "Trtiya",
+              "vacana": "Dvi"
+            }
+          },
+          "warnings": [],
+          "prompt_sha256": "9dc9f8067ee2a8819c606e5d51f5d201196e73393f97d4c02b68e84485b460eb",
+          "answer_path": "subanta/05/answer.json",
+          "answer_sha256": "03551425d760addb7481fb24e43587b899a7be0b8863203cf01e16d2609b70c6"
+        }
+      ]
+    },
+    "taddhitanta": {
+      "source": "data/datasets/taddhitanta/full.json",
+      "source_sha256": "8489ae047d37babac4a4cdce22e650e24180835d6562e130734057dab398f38a",
+      "source_records": 3342776,
+      "template": "data/engine/prompts/v2/vp_taddhitanta.txt",
+      "template_sha256": "cb30d5d23f910bf1e2f2893e61ac078ae88f8021c644794badff811034b4e08e",
+      "engine": {
+        "package": "vidyut",
+        "version": "0.4.0",
+        "options": {
+          "log_steps": false,
+          "is_chandasi": false,
+          "use_svaras": false,
+          "nlp_mode": false
+        },
+        "request": "Taddhitanta(base, suffix).with_stem_linga(source_gender)",
+        "artha": null,
+        "compatibility_build": {
+          "sdist_url": "https://files.pythonhosted.org/packages/69/b5/6876b3f807ac38812c6e29eb43738d28a6a21c2aed456486e654997efcdd/vidyut-0.4.0.tar.gz",
+          "sdist_sha256": "fb776ec751e66c8d44bd94ef71008f9ea05284f51055aa009cfaef33ccf5f454",
+          "cargo_lock_sha256": "7c367a191109398605148508a393411ee020c2b76745e8a4440196ea871f7da0",
+          "adapted_engine_cargo_sha256": "25591f6727559c9915755e563273e523a1a4058235f8c5e2b5ec71c3f7146411",
+          "rustc": "rustc 1.95.0 (59807616e 2026-04-14)",
+          "rustflags": "--cap-lints=allow (old WASM macro compatibility; native probe)",
+          "engine_source_changes": "Opt-in nominal-input.patch: source gender on base term; remove empty nyap marker for taddhita input only.",
+          "adapter_files": {
+            "adapter.py": "ae8a8e5f050c7c4dbf24962f7e8125bb432bb1c5c818b91df15979f87b79ca3e",
+            "adapter.rs": "b4e6ae3a649156c521d6c98cd1e84fffe27752b464636e8b9f086dbdd5e02939",
+            "nominal-input.patch": "f7574a266b6a29608eaf995b9cacd5052539a5e0e2f373a810aebf1c1cdc3888",
+            "rust_probe.py": "cd920deb5a39a8bb1c8eee4678d4aee23710961cadce9b47a1d3ee94a9e595ef",
+            "probe.rs": "720d5c603ef1589d817a1a7ef298d5e8a98850ae9d9952144d45058bf05c12e6",
+            "probe.Cargo.lock": "7c367a191109398605148508a393411ee020c2b76745e8a4440196ea871f7da0"
+          },
+          "patched_engine_files": {
+            "src/args/taddhita.rs": "6ac4bd8659c73de6ccf6747f4a880fee7ed34241fbf737638543b230a8ccff1f",
+            "src/ashtadhyayi.rs": "b97bf0d04a5f6cadaac6b6ee838fd591bad07dfd84f131af3580cd23ead3b8c9"
+          }
+        }
+      },
+      "sampling": "Preserve previously sampled IDs still present; replace removed IDs by seeded uniform draws without replacement.",
+      "sampling_seed": "3128140816676358090:taddhitanta:8489ae047d37babac4a4cdce22e650e24180835d6562e130734057dab398f38a:eligible-replacements",
+      "samples": [
+        {
+          "path": "taddhitanta/01/prompt.txt",
+          "record_index": 1926584,
+          "task_id": "taddhitanta:mftotTita:basic:Pum:kuRap",
+          "inputs": {
+            "pratipadika": {
+              "stem": "mftotTita",
+              "is_nyap": false,
+              "linga": "Pum",
+              "nominal_id": "nominal:mftotTita:masculine",
+              "mw_ids": [
+                "166688"
+              ]
+            },
+            "morphology": {
+              "taddhita": "kuRap",
+              "artha": null
+            }
+          },
+          "warnings": [],
+          "prompt_sha256": "2fef3ed78d92a9aa93103c232b52ca14c895599117989aa161cb8f98e11ba7b6",
+          "answer_path": "taddhitanta/01/answer.json",
+          "answer_sha256": "f8bff9f288c2a3b9dd681f69e35bd50adbd956677108503bb6d918f54007fd86"
+        },
+        {
+          "path": "taddhitanta/02/prompt.txt",
+          "record_index": 2696561,
+          "task_id": "taddhitanta:sella:basic:Pum:cuYcup",
+          "inputs": {
+            "pratipadika": {
+              "stem": "sella",
+              "is_nyap": false,
+              "linga": "Pum",
+              "nominal_id": "nominal:sella:masculine",
+              "mw_ids": [
+                "252256"
+              ]
+            },
+            "morphology": {
+              "taddhita": "cuYcup",
+              "artha": null
+            }
+          },
+          "warnings": [],
+          "prompt_sha256": "d028ed44898ffd33ddc6a41a0d2d7c4257f1c21138d1b8a15c133deac3d65cea",
+          "answer_path": "taddhitanta/02/answer.json",
+          "answer_sha256": "d61ce19e3666d88e7cff9d93ec15c169b39903726a70cecae6fb4893e38757f4"
+        },
+        {
+          "path": "taddhitanta/03/prompt.txt",
+          "record_index": 2048177,
+          "task_id": "taddhitanta:nitambin:basic:Pum:kuRap",
+          "inputs": {
+            "pratipadika": {
+              "stem": "nitambin",
+              "is_nyap": false,
+              "linga": "Pum",
+              "nominal_id": "nominal:nitambin:masculine",
+              "mw_ids": [
+                "108317"
+              ]
+            },
+            "morphology": {
+              "taddhita": "kuRap",
+              "artha": null
+            }
+          },
+          "warnings": [],
+          "prompt_sha256": "700cb09b38bbd5da0dc52ff540231c3a9f5369247172565a6d63d23a9b3596bc",
+          "answer_path": "taddhitanta/03/answer.json",
+          "answer_sha256": "72a112074dd4d642b83fd0f7b0b9d1d204315165526214c69622a3e7834898a2"
+        },
+        {
+          "path": "taddhitanta/04/prompt.txt",
+          "record_index": 3153669,
+          "task_id": "taddhitanta:vaqabin:basic:Pum:KaY",
+          "inputs": {
+            "pratipadika": {
+              "stem": "vaqabin",
+              "is_nyap": false,
+              "linga": "Pum",
+              "nominal_id": "nominal:vaqabin:masculine",
+              "mw_ids": [
+                "185288"
+              ]
+            },
+            "morphology": {
+              "taddhita": "KaY",
+              "artha": null
+            }
+          },
+          "warnings": [],
+          "prompt_sha256": "576e70d3148575c3968e6023da68bfc69e82a79a42395b08d3ae82f0985d6a9c",
+          "answer_path": "taddhitanta/04/answer.json",
+          "answer_sha256": "103a604a6338a04f505812ff2521428a05e8afdf502574df6290315b938ede90"
+        },
+        {
+          "path": "taddhitanta/05/prompt.txt",
+          "record_index": 334363,
+          "task_id": "taddhitanta:KallikA:nyap:Stri:deSya",
+          "inputs": {
+            "pratipadika": {
+              "stem": "KallikA",
+              "is_nyap": true,
+              "linga": "Stri",
+              "nominal_id": "nominal:KallikA:feminine",
+              "mw_ids": [
+                "61679"
+              ]
+            },
+            "morphology": {
+              "taddhita": "deSya",
+              "artha": null
+            }
+          },
+          "warnings": [],
+          "prompt_sha256": "9857f2e55fa7bf4f28849eb977110f176650e344d6cdc1bc168fbcfa0f23ea2a",
+          "answer_path": "taddhitanta/05/answer.json",
+          "answer_sha256": "0161f8fab3e1b37d872e519b8eaed86184896cc43effe57cf7c6a800602abe91"
+        }
+      ]
+    },
+    "tinanta": {
+      "source": "data/datasets/tinanta/full.json",
+      "source_sha256": "20678ddfbfb2e63f8f594ad2ba3fdd777c6de22a697e6670989bff61f8b59c77",
+      "source_records": 423324,
+      "template": "data/engine/prompts/v2/vp_tinanta.txt",
+      "template_sha256": "5bf6c717bd0582ca85672d368fdc44ec3de751a1d06c222a40f1588989d118e9",
+      "samples": [
+        {
+          "path": "tinanta/01/prompt.txt",
+          "record_index": 16095,
+          "task_id": "01.0085:AshirLin:Kartari:Prathama:Bahu",
+          "inputs": {
+            "dhatu": {
+              "code": "01.0085",
+              "aupadeshika": "rekf~\\",
+              "gana": "Bhvadi",
+              "artha": "SaNkAyAm",
+              "antargana": null,
+              "prefixes": [],
+              "sanadi": []
+            },
+            "morphology": {
+              "lakara": "AshirLin",
+              "prayoga": "Kartari",
+              "purusha": "Prathama",
+              "vacana": "Bahu"
+            }
+          },
+          "warnings": [],
+          "prompt_sha256": "0aeb9978ddef3e0ff155f3581a4782441e4db212e693c096a3520f39c4a57e5c",
+          "answer_path": "tinanta/01/answer.json",
+          "answer_sha256": "f76fc26372e3a8620cf7273c22f1d2add09002acc55c7e0546e60fa8ab87bf53"
+        },
+        {
+          "path": "tinanta/02/prompt.txt",
+          "record_index": 217497,
+          "task_id": "01.1155:AshirLin:Kartari:Madhyama:Dvi",
+          "inputs": {
+            "dhatu": {
+              "code": "01.1155",
+              "aupadeshika": "Sa\\pa~^",
+              "gana": "Bhvadi",
+              "artha": "AkroSe",
+              "antargana": null,
+              "prefixes": [],
+              "sanadi": []
+            },
+            "morphology": {
+              "lakara": "AshirLin",
+              "prayoga": "Kartari",
+              "purusha": "Madhyama",
+              "vacana": "Dvi"
+            }
+          },
+          "warnings": [],
+          "prompt_sha256": "773e62795d292d636e0a94ce16d8962ab8930af9b4dce82f5ef7a16d1da79338",
+          "answer_path": "tinanta/02/answer.json",
+          "answer_sha256": "138c5fc331ebeb81d05ca938e12f584dc0d6c7d3a58821df7067b21dd2af37e0"
+        },
+        {
+          "path": "tinanta/03/prompt.txt",
+          "record_index": 164531,
+          "task_id": "01.0866:Lrn:Karmani:Prathama:Dvi",
+          "inputs": {
+            "dhatu": {
+              "code": "01.0866",
+              "aupadeshika": "kfpU~\\",
+              "gana": "Bhvadi",
+              "artha": "sAmarTye",
+              "antargana": null,
+              "prefixes": [],
+              "sanadi": []
+            },
+            "morphology": {
+              "lakara": "Lrn",
+              "prayoga": "Karmani",
+              "purusha": "Prathama",
+              "vacana": "Dvi"
+            }
+          },
+          "warnings": [],
+          "prompt_sha256": "2791b7f51a3a57d6d053dcba9812ebc7cb0ef9761d4eaf79bdbdaa5dc1881e91",
+          "answer_path": "tinanta/03/answer.json",
+          "answer_sha256": "9adc7473e8f9345976d0d3b46a5d4614bac7a23d709c79b2e12b2a44f5a30e20"
+        },
+        {
+          "path": "tinanta/04/prompt.txt",
+          "record_index": 91914,
+          "task_id": "01.0484:AshirLin:Karmani:Prathama:Bahu",
+          "inputs": {
+            "dhatu": {
+              "code": "01.0484",
+              "aupadeshika": "barba~",
+              "gana": "Bhvadi",
+              "artha": "gatO",
+              "antargana": null,
+              "prefixes": [],
+              "sanadi": []
+            },
+            "morphology": {
+              "lakara": "AshirLin",
+              "prayoga": "Karmani",
+              "purusha": "Prathama",
+              "vacana": "Bahu"
+            }
+          },
+          "warnings": [],
+          "prompt_sha256": "a7b8427d79af580487c76bcd42c962b7cf60bb695301473cd2d8a12309523e05",
+          "answer_path": "tinanta/04/answer.json",
+          "answer_sha256": "b8ae2c747c1e451145a17180fb6695acee012278235d260d3e38f8f16def1698"
+        },
+        {
+          "path": "tinanta/05/prompt.txt",
+          "record_index": 30630,
+          "task_id": "01.0162:Lut:Kartari:Prathama:Bahu",
+          "inputs": {
+            "dhatu": {
+              "code": "01.0162",
+              "aupadeshika": "Slagi~",
+              "gana": "Bhvadi",
+              "artha": "gatO",
+              "antargana": null,
+              "prefixes": [],
+              "sanadi": []
+            },
+            "morphology": {
+              "lakara": "Lut",
+              "prayoga": "Kartari",
+              "purusha": "Prathama",
+              "vacana": "Bahu"
+            }
+          },
+          "warnings": [],
+          "prompt_sha256": "b752fc4f1c8468b71f4ea4f4c1d7d69a9d0963468329f891c3eb980436a3a59b",
+          "answer_path": "tinanta/05/answer.json",
+          "answer_sha256": "e2fdc1275d5abac430660a707e00610a6971ada7720e2a68dc0fa3eb39beed8b"
+        }
+      ],
+      "sampling": "Preserve previously sampled IDs still present; replace removed IDs by seeded uniform draws without replacement.",
+      "engine": {
+        "package": "vidyut",
+        "version": "0.4.0",
+        "options": {
+          "log_steps": false,
+          "is_chandasi": false,
+          "use_svaras": false,
+          "nlp_mode": false
+        },
+        "dhatu_loader": "Data.load_dhatu_entries",
+        "fixed_request_options": {
+          "additional_prefixes": [],
+          "additional_sanadi": [],
+          "dhatu_pada": null,
+          "skip_at_agama": false
+        }
+      },
+      "sampling_seed": "3128140816676358090:tinanta:20678ddfbfb2e63f8f594ad2ba3fdd777c6de22a697e6670989bff61f8b59c77:eligible-replacements"
+    }
+  },
+  "updated_at": "2026-10-14T06:38:11.381436+00:00",
+  "last_refresh": {
+    "tinanta": {
+      "preserved": 5,
+      "replaced": []
+    },
+    "krdanta": {
+      "preserved": 5,
+      "replaced": []
+    },
+    "subanta": {
+      "preserved": 5,
+      "replaced": []
+    },
+    "taddhitanta": {
+      "preserved": 5,
+      "replaced": []
+    }
+  }
+}

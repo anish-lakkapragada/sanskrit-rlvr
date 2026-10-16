@@ -1,0 +1,80 @@
+--- a/src/args/taddhita.rs
++++ b/src/args/taddhita.rs
+@@ -1,5 +1,5 @@
+ use crate::args::macros::sanskrit_enum;
+-use crate::args::{Anubandha, Pratipadika};
++use crate::args::{Anubandha, Linga, Pratipadika};
+ use crate::core::errors::*;
+ use crate::it_samjna;
+ use wasm_bindgen::prelude::wasm_bindgen;
+@@ -890,6 +890,7 @@
+ #[derive(Clone, Debug, Eq, Hash, Ord, PartialEq, PartialOrd)]
+ #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+ pub struct Taddhitanta {
++    stem_linga: Option<Linga>,
+     pratipadika: Pratipadika,
+     taddhita: Taddhita,
+     artha: Option<TaddhitaArtha>,
+@@ -897,11 +898,24 @@
+ }
+ 
+ impl Taddhitanta {
++    /// Opt in to the resolved single-term nominal adapter, with source gender.
++    /// This is not a request for the gender of the derived word.
++    pub fn with_stem_linga(mut self, linga: Linga) -> Self {
++        self.stem_linga = Some(linga);
++        self
++    }
++
++    /// The lexical gender of the input nominal, when supplied by the adapter.
++    pub fn stem_linga(&self) -> Option<Linga> {
++        self.stem_linga
++    }
++
+     /// Defines a simple `Taddhitanta`.
+     ///
+     /// For more options, use `Taddhitanta::builder()` instead.
+     pub fn new(pratipadika: Pratipadika, taddhita: Taddhita) -> Self {
+         Self {
++            stem_linga: None,
+             pratipadika,
+             taddhita,
+             artha: None,
+@@ -979,6 +993,7 @@
+     /// `build()` will fail if any args are missing.
+     pub fn build(&self) -> Result<Taddhitanta> {
+         Ok(Taddhitanta {
++            stem_linga: None,
+             pratipadika: match &self.pratipadika {
+                 Some(x) => x.clone(),
+                 _ => return Err(Error::missing_required_field("pratipadika")),
+--- a/src/ashtadhyayi.rs
++++ b/src/ashtadhyayi.rs
+@@ -369,6 +369,27 @@
+     let taddhita = args.taddhita();
+ 
+     prepare_pratipadika(p, args.pratipadika())?;
++    if let Some(linga) = args.stem_linga() {
++        use crate::args::Linga;
++        use crate::core::Tag as T;
++        // This adapter accepts resolved basic/nyap stems, not nested derivations.
++        assert!(matches!(args.pratipadika(), Pratipadika::Basic(_)));
++        if args.pratipadika().is_nyap() {
++            assert_eq!(linga, Linga::Stri);
++            // add_basic already stores the complete spelling and StriNyap tag
++            // on the base. Its trailing empty suffix is an inflection workaround;
++            // leaving it here makes taddhita::utils select it as the nominal base.
++            let marker = p.terms_mut().pop().expect("nyap marker");
++            assert!(marker.is_empty() && marker.has_tag(T::StriNyap));
++        }
++        let i = p.terms().len() - 1;
++        p.set(i, |t| t.add_tag(match linga {
++            Linga::Pum => T::Pum,
++            Linga::Stri => T::Stri,
++            Linga::Napumsaka => T::Napumsaka,
++        }));
++        // Do not set PrakriyaTag::Stri: that would request a feminine OUTPUT.
++    }
+     samjna::run(p);
+ 
+     // If defined, set the meaning condition that this prakriya must follow.

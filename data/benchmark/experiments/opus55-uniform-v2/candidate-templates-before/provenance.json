@@ -1,0 +1,46 @@
+{
+  "updated_at": "2026-10-14T22:33:09.685524+00:00",
+  "source_experiment": "data/benchmark/experiments/opus55-cyber-wording-round2",
+  "report": "data/benchmark/experiments/opus55-cyber-wording-round2/report.txt",
+  "additional_requests": 100,
+  "total_estimated_cost_usd": 1.01134,
+  "changes": {
+    "tinanta": "Replaced introduction with compact instructions.",
+    "taddhitanta": "Replaced introduction with question-style grammatical instructions.",
+    "krdanta": "Retained prior concise candidate.",
+    "subanta": "Added candidate file using original production wording, which performed best on ties."
+  },
+  "confirmation_refusals": 1,
+  "confirmation_requests": 20,
+  "zero_refusals_achieved": false,
+  "remaining_tasks": [
+    "taddhitanta:loqana:basic:Napumsaka:TAl"
+  ],
+  "files": {
+    "tinanta": {
+      "path": "data/benchmark/experiments/opus55-cyber-wording/candidate-templates/vp_tinanta.txt",
+      "sha256": "48ba2f0a30f2186a4835d43ccaae53b9bdd466ce211b41eb31a19959d5f96230",
+      "bytes": 860
+    },
+    "krdanta": {
+      "path": "data/benchmark/experiments/opus55-cyber-wording/candidate-templates/vp_krdanta.txt",
+      "sha256": "b8d750a68a19a638eb559e6e1e86e950792952a42a14ce03db886a59c72e12d4",
+      "bytes": 1007
+    },
+    "taddhitanta": {
+      "path": "data/benchmark/experiments/opus55-cyber-wording/candidate-templates/vp_taddhitanta.txt",
+      "sha256": "583e4eab17ef3e4172d79df828c261e04da79e5fb0f5668f27f6c4d2374f1531",
+      "bytes": 749
+    },
+    "subanta": {
+      "path": "data/benchmark/experiments/opus55-cyber-wording/candidate-templates/vp_subanta.txt",
+      "sha256": "5f1994d552931b07ea75beb39bdb31f3889da7fc5df4c395f6c7fc7fd1b589fb",
+      "bytes": 804
+    }
+  },
+  "scope": "Only candidate templates updated. Production prompts and benchmark results unchanged. Saved before/after copies in round-two experiment.",
+  "restored_at": "2026-10-14 23:53:05 UTC",
+  "current_action": "Restored the exact candidate templates from before round three at the user's request for a uniform plain-text layout.",
+  "reverted_experiment": "data/benchmark/experiments/opus55-cyber-wording-round3",
+  "historical_table_template": "data/benchmark/experiments/opus55-cyber-wording-round3/candidate-templates-after/vp_taddhitanta.txt"
+}

@@ -1,0 +1,473 @@
+{
+  "total": {
+    "requests": 100,
+    "statuses": {
+      "refused": 41,
+      "completed": 59
+    },
+    "refusals": 41,
+    "refusal_rate": 0.41,
+    "refusal_categories": {
+      "cyber": 41
+    },
+    "correct": 57,
+    "strict_correct": 57,
+    "format_ok": 59,
+    "known_cost_usd": 0.568684,
+    "unknown_cost_requests": 0,
+    "output_tokens": 23509
+  },
+  "phases": {
+    "discovery": {
+      "variants": {
+        "original": {
+          "requests": 10,
+          "statuses": {
+            "refused": 5,
+            "completed": 5
+          },
+          "refusals": 5,
+          "refusal_rate": 0.5,
+          "refusal_categories": {
+            "cyber": 5
+          },
+          "correct": 4,
+          "strict_correct": 4,
+          "format_ok": 5,
+          "known_cost_usd": 0.070656,
+          "unknown_cost_requests": 0,
+          "output_tokens": 3059
+        },
+        "linguistics_context": {
+          "requests": 10,
+          "statuses": {
+            "refused": 9,
+            "completed": 1
+          },
+          "refusals": 9,
+          "refusal_rate": 0.9,
+          "refusal_categories": {
+            "cyber": 9
+          },
+          "correct": 1,
+          "strict_correct": 1,
+          "format_ok": 1,
+          "known_cost_usd": 0.01106,
+          "unknown_cost_requests": 0,
+          "output_tokens": 274
+        },
+        "concise_instructions": {
+          "requests": 10,
+          "statuses": {
+            "completed": 10
+          },
+          "refusals": 0,
+          "refusal_rate": 0.0,
+          "refusal_categories": {},
+          "correct": 9,
+          "strict_correct": 9,
+          "format_ok": 10,
+          "known_cost_usd": 0.116304,
+          "unknown_cost_requests": 0,
+          "output_tokens": 5126
+        },
+        "dictionary_labels": {
+          "requests": 10,
+          "statuses": {
+            "refused": 9,
+            "completed": 1
+          },
+          "refusals": 9,
+          "refusal_rate": 0.9,
+          "refusal_categories": {
+            "cyber": 9
+          },
+          "correct": 1,
+          "strict_correct": 1,
+          "format_ok": 1,
+          "known_cost_usd": 0.015532,
+          "unknown_cost_requests": 0,
+          "output_tokens": 617
+        }
+      },
+      "paired_outcomes": {
+        "dictionary_labels": {
+          "control_completed_variant_refused": 4,
+          "both_refused": 5,
+          "both_completed": 1
+        },
+        "linguistics_context": {
+          "both_refused": 5,
+          "control_completed_variant_refused": 4,
+          "both_completed": 1
+        },
+        "concise_instructions": {
+          "control_refused_variant_completed": 5,
+          "both_completed": 5
+        }
+      },
+      "families": {
+        "krdanta": {
+          "original": {
+            "requests": 6,
+            "statuses": {
+              "refused": 4,
+              "completed": 2
+            },
+            "refusals": 4,
+            "refusal_rate": 0.6666666666666666,
+            "refusal_categories": {
+              "cyber": 4
+            },
+            "correct": 2,
+            "strict_correct": 2,
+            "format_ok": 2,
+            "known_cost_usd": 0.01534,
+            "unknown_cost_requests": 0,
+            "output_tokens": 507
+          },
+          "linguistics_context": {
+            "requests": 6,
+            "statuses": {
+              "completed": 1,
+              "refused": 5
+            },
+            "refusals": 5,
+            "refusal_rate": 0.8333333333333334,
+            "refusal_categories": {
+              "cyber": 5
+            },
+            "correct": 1,
+            "strict_correct": 1,
+            "format_ok": 1,
+            "known_cost_usd": 0.008604,
+            "unknown_cost_requests": 0,
+            "output_tokens": 231
+          },
+          "concise_instructions": {
+            "requests": 6,
+            "statuses": {
+              "completed": 6
+            },
+            "refusals": 0,
+            "refusal_rate": 0.0,
+            "refusal_categories": {},
+            "correct": 6,
+            "strict_correct": 6,
+            "format_ok": 6,
+            "known_cost_usd": 0.05084,
+            "unknown_cost_requests": 0,
+            "output_tokens": 2106
+          },
+          "dictionary_labels": {
+            "requests": 6,
+            "statuses": {
+              "refused": 6
+            },
+            "refusals": 6,
+            "refusal_rate": 1.0,
+            "refusal_categories": {
+              "cyber": 6
+            },
+            "correct": 0,
+            "strict_correct": 0,
+            "format_ok": 0,
+            "known_cost_usd": 0,
+            "unknown_cost_requests": 0,
+            "output_tokens": 0
+          }
+        },
+        "taddhitanta": {
+          "original": {
+            "requests": 2,
+            "statuses": {
+              "completed": 2
+            },
+            "refusals": 0,
+            "refusal_rate": 0.0,
+            "refusal_categories": {},
+            "correct": 1,
+            "strict_correct": 1,
+            "format_ok": 2,
+            "known_cost_usd": 0.036328,
+            "unknown_cost_requests": 0,
+            "output_tokens": 1686
+          },
+          "linguistics_context": {
+            "requests": 2,
+            "statuses": {
+              "refused": 2
+            },
+            "refusals": 2,
+            "refusal_rate": 1.0,
+            "refusal_categories": {
+              "cyber": 2
+            },
+            "correct": 0,
+            "strict_correct": 0,
+            "format_ok": 0,
+            "known_cost_usd": 0.002456,
+            "unknown_cost_requests": 0,
+            "output_tokens": 43
+          },
+          "concise_instructions": {
+            "requests": 2,
+            "statuses": {
+              "completed": 2
+            },
+            "refusals": 0,
+            "refusal_rate": 0.0,
+            "refusal_categories": {},
+            "correct": 1,
+            "strict_correct": 1,
+            "format_ok": 2,
+            "known_cost_usd": 0.026568,
+            "unknown_cost_requests": 0,
+            "output_tokens": 1216
+          },
+          "dictionary_labels": {
+            "requests": 2,
+            "statuses": {
+              "refused": 2
+            },
+            "refusals": 2,
+            "refusal_rate": 1.0,
+            "refusal_categories": {
+              "cyber": 2
+            },
+            "correct": 0,
+            "strict_correct": 0,
+            "format_ok": 0,
+            "known_cost_usd": 0.0019,
+            "unknown_cost_requests": 0,
+            "output_tokens": 26
+          }
+        },
+        "tinanta": {
+          "original": {
+            "requests": 2,
+            "statuses": {
+              "refused": 1,
+              "completed": 1
+            },
+            "refusals": 1,
+            "refusal_rate": 0.5,
+            "refusal_categories": {
+              "cyber": 1
+            },
+            "correct": 1,
+            "strict_correct": 1,
+            "format_ok": 1,
+            "known_cost_usd": 0.018988,
+            "unknown_cost_requests": 0,
+            "output_tokens": 866
+          },
+          "linguistics_context": {
+            "requests": 2,
+            "statuses": {
+              "refused": 2
+            },
+            "refusals": 2,
+            "refusal_rate": 1.0,
+            "refusal_categories": {
+              "cyber": 2
+            },
+            "correct": 0,
+            "strict_correct": 0,
+            "format_ok": 0,
+            "known_cost_usd": 0,
+            "unknown_cost_requests": 0,
+            "output_tokens": 0
+          },
+          "concise_instructions": {
+            "requests": 2,
+            "statuses": {
+              "completed": 2
+            },
+            "refusals": 0,
+            "refusal_rate": 0.0,
+            "refusal_categories": {},
+            "correct": 2,
+            "strict_correct": 2,
+            "format_ok": 2,
+            "known_cost_usd": 0.038896,
+            "unknown_cost_requests": 0,
+            "output_tokens": 1804
+          },
+          "dictionary_labels": {
+            "requests": 2,
+            "statuses": {
+              "refused": 1,
+              "completed": 1
+            },
+            "refusals": 1,
+            "refusal_rate": 0.5,
+            "refusal_categories": {
+              "cyber": 1
+            },
+            "correct": 1,
+            "strict_correct": 1,
+            "format_ok": 1,
+            "known_cost_usd": 0.013632,
+            "unknown_cost_requests": 0,
+            "output_tokens": 591
+          }
+        }
+      }
+    },
+    "holdout": {
+      "variants": {
+        "original": {
+          "requests": 30,
+          "statuses": {
+            "refused": 17,
+            "completed": 13
+          },
+          "refusals": 17,
+          "refusal_rate": 0.5666666666666667,
+          "refusal_categories": {
+            "cyber": 17
+          },
+          "correct": 13,
+          "strict_correct": 13,
+          "format_ok": 13,
+          "known_cost_usd": 0.127332,
+          "unknown_cost_requests": 0,
+          "output_tokens": 5196
+        },
+        "concise_instructions": {
+          "requests": 30,
+          "statuses": {
+            "completed": 29,
+            "refused": 1
+          },
+          "refusals": 1,
+          "refusal_rate": 0.03333333333333333,
+          "refusal_categories": {
+            "cyber": 1
+          },
+          "correct": 29,
+          "strict_correct": 29,
+          "format_ok": 29,
+          "known_cost_usd": 0.2278,
+          "unknown_cost_requests": 0,
+          "output_tokens": 9237
+        }
+      },
+      "paired_outcomes": {
+        "concise_instructions": {
+          "control_refused_variant_completed": 16,
+          "both_completed": 13,
+          "both_refused": 1
+        }
+      },
+      "families": {
+        "krdanta": {
+          "original": {
+            "requests": 26,
+            "statuses": {
+              "refused": 16,
+              "completed": 10
+            },
+            "refusals": 16,
+            "refusal_rate": 0.6153846153846154,
+            "refusal_categories": {
+              "cyber": 16
+            },
+            "correct": 10,
+            "strict_correct": 10,
+            "format_ok": 10,
+            "known_cost_usd": 0.063332,
+            "unknown_cost_requests": 0,
+            "output_tokens": 2300
+          },
+          "concise_instructions": {
+            "requests": 26,
+            "statuses": {
+              "completed": 26
+            },
+            "refusals": 0,
+            "refusal_rate": 0.0,
+            "refusal_categories": {},
+            "correct": 26,
+            "strict_correct": 26,
+            "format_ok": 26,
+            "known_cost_usd": 0.178592,
+            "unknown_cost_requests": 0,
+            "output_tokens": 7037
+          }
+        },
+        "taddhitanta": {
+          "original": {
+            "requests": 2,
+            "statuses": {
+              "completed": 2
+            },
+            "refusals": 0,
+            "refusal_rate": 0.0,
+            "refusal_categories": {},
+            "correct": 2,
+            "strict_correct": 2,
+            "format_ok": 2,
+            "known_cost_usd": 0.041984,
+            "unknown_cost_requests": 0,
+            "output_tokens": 1964
+          },
+          "concise_instructions": {
+            "requests": 2,
+            "statuses": {
+              "completed": 2
+            },
+            "refusals": 0,
+            "refusal_rate": 0.0,
+            "refusal_categories": {},
+            "correct": 2,
+            "strict_correct": 2,
+            "format_ok": 2,
+            "known_cost_usd": 0.032624,
+            "unknown_cost_requests": 0,
+            "output_tokens": 1514
+          }
+        },
+        "tinanta": {
+          "original": {
+            "requests": 2,
+            "statuses": {
+              "completed": 1,
+              "refused": 1
+            },
+            "refusals": 1,
+            "refusal_rate": 0.5,
+            "refusal_categories": {
+              "cyber": 1
+            },
+            "correct": 1,
+            "strict_correct": 1,
+            "format_ok": 1,
+            "known_cost_usd": 0.022016,
+            "unknown_cost_requests": 0,
+            "output_tokens": 932
+          },
+          "concise_instructions": {
+            "requests": 2,
+            "statuses": {
+              "completed": 1,
+              "refused": 1
+            },
+            "refusals": 1,
+            "refusal_rate": 0.5,
+            "refusal_categories": {
+              "cyber": 1
+            },
+            "correct": 1,
+            "strict_correct": 1,
+            "format_ok": 1,
+            "known_cost_usd": 0.016584,
+            "unknown_cost_requests": 0,
+            "output_tokens": 686
+          }
+        }
+      }
+    }
+  }
+}

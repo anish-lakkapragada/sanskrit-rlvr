@@ -1,0 +1,226 @@
+{
+  "schema_version": 2,
+  "dataset": "vp-tinanta-reviewed-v2",
+  "generation_complete": true,
+  "has_engine_errors": false,
+  "source": {
+    "path": "data/engine/files/vidyut_dhatupatha_5.tsv",
+    "sha256": "c6c494a6c534130b2d8e8f344d2f5e3ffbc64ed45b390e2a4e35e526f1cecd09",
+    "rows": 2259,
+    "placeholders_excluded": 30,
+    "roots": 2229,
+    "loader_supplied_prefixes": {
+      "02.0012": [
+        "AN"
+      ],
+      "02.0041": [
+        "aDi"
+      ],
+      "02.0042": [
+        "aDi"
+      ],
+      "10.0368": [
+        "AN"
+      ]
+    }
+  },
+  "generator": {
+    "path": "data/engine/tinanta/generate.py",
+    "sha256": "ca4f042758add5dbff7c2eba85448787dd0947f99a7e994786b0c8c1835bc01d"
+  },
+  "eligibility_and_rendering": {
+    "path": "data/engine/tinanta/common.py",
+    "sha256": "c6288776af494cf3e592aac2ff58cf820c16ff74dda6aec23a31de6f993df15c"
+  },
+  "prompt": {
+    "path": "data/engine/prompts/v2/vp_tinanta.txt",
+    "sha256": "5bf6c717bd0582ca85672d368fdc44ec3de751a1d06c222a40f1588989d118e9",
+    "rendered_sequence_sha256": "fcadbf0855392061c979d6e4dccfd728a4789d6771992e72377ad7d9a5ec33d5",
+    "sequence_format": "compact UTF-8 JSON [id,prompt] plus newline per record",
+    "metadata_refreshed_at": "2026-10-14T06:37:11.177963+00:00"
+  },
+  "engine": {
+    "package": "vidyut",
+    "version": "0.4.0",
+    "options": {
+      "log_steps": false,
+      "is_chandasi": false,
+      "use_svaras": false,
+      "nlp_mode": false
+    },
+    "dhatu_loader": "Data.load_dhatu_entries",
+    "fixed_request_options": {
+      "additional_prefixes": [],
+      "additional_sanadi": [],
+      "dhatu_pada": null,
+      "skip_at_agama": false
+    }
+  },
+  "coordinate_space": {
+    "lakara": [
+      "Lat",
+      "Lit",
+      "Lut",
+      "Lrt",
+      "Lot",
+      "Lan",
+      "VidhiLin",
+      "AshirLin",
+      "Lun",
+      "Lrn"
+    ],
+    "prayoga": [
+      "Kartari",
+      "Karmani",
+      "Bhave"
+    ],
+    "purusha": [
+      "Prathama",
+      "Madhyama",
+      "Uttama"
+    ],
+    "vacana": [
+      "Eka",
+      "Dvi",
+      "Bahu"
+    ]
+  },
+  "enumeration_order": "dictionary code ascending; lakara, prayoga, purusha, vacana in listed order",
+  "gold_order": "unique SLP1 forms sorted lexicographically; paired NFC Devanagari forms",
+  "sampling": null,
+  "splits": null,
+  "counts": {
+    "roots": 2229,
+    "candidate_coordinates_per_root": 270,
+    "coordinates_per_root": 190,
+    "candidates": 601830,
+    "attempted": 423510,
+    "all": 423324,
+    "full": 423324,
+    "answerable": 423324,
+    "excluded_tasks": 178506,
+    "excluded_by_reason": {
+      "bhave_requires_third_person_singular": 178320,
+      "no_forms": 0,
+      "invalid_gold_encoding": 0,
+      "ambiguous_prompt": 186
+    },
+    "status": {
+      "ok": 423324,
+      "no_forms": 0,
+      "error": 0
+    },
+    "warnings": {},
+    "gold_forms_per_task": {
+      "1": 305605,
+      "2": 80374,
+      "3": 24856,
+      "4": 7938,
+      "5": 3031,
+      "6": 741,
+      "7": 518,
+      "8": 130,
+      "9": 71,
+      "10": 29,
+      "11": 18,
+      "12": 8,
+      "13": 3,
+      "14": 1,
+      "17": 1
+    }
+  },
+  "by_lakara": {
+    "Lat": {
+      "ok": 42333,
+      "no_forms": 0,
+      "error": 0
+    },
+    "Lit": {
+      "ok": 42313,
+      "no_forms": 0,
+      "error": 0
+    },
+    "Lut": {
+      "ok": 42333,
+      "no_forms": 0,
+      "error": 0
+    },
+    "Lrt": {
+      "ok": 42333,
+      "no_forms": 0,
+      "error": 0
+    },
+    "Lot": {
+      "ok": 42333,
+      "no_forms": 0,
+      "error": 0
+    },
+    "Lan": {
+      "ok": 42333,
+      "no_forms": 0,
+      "error": 0
+    },
+    "VidhiLin": {
+      "ok": 42333,
+      "no_forms": 0,
+      "error": 0
+    },
+    "AshirLin": {
+      "ok": 42349,
+      "no_forms": 0,
+      "error": 0
+    },
+    "Lun": {
+      "ok": 42331,
+      "no_forms": 0,
+      "error": 0
+    },
+    "Lrn": {
+      "ok": 42333,
+      "no_forms": 0,
+      "error": 0
+    }
+  },
+  "by_prayoga": {
+    "Kartari": {
+      "ok": 200448,
+      "no_forms": 0,
+      "error": 0
+    },
+    "Karmani": {
+      "ok": 200588,
+      "no_forms": 0,
+      "error": 0
+    },
+    "Bhave": {
+      "ok": 22288,
+      "no_forms": 0,
+      "error": 0
+    }
+  },
+  "status_definitions": {
+    "ok": "VP returned at least one surface form; not independent linguistic validation",
+    "no_forms": "VP completed normally and returned no forms",
+    "error": "VP request or derivation raised an exception; abort publication"
+  },
+  "exclusion_definitions": {
+    "bhave_requires_third_person_singular": "Bhāve requires third-person singular; exclude incompatible person/number before calling VP.",
+    "no_forms": "VP returned no forms.",
+    "invalid_gold_encoding": "A gold form does not round-trip losslessly through Devanagari.",
+    "ambiguous_prompt": "Identical visible prompts have different gold sets because of hidden lexical metadata; exclude every conflicting record."
+  },
+  "answerable_filter": "Eligible bhave coordinates; nonempty, lossless gold; no conflicting identical prompts. Exclusions are audited separately.",
+  "scope_limits": "These checks remove known representation and coordinate problems; VP output is not independent grammatical certification.",
+  "files": {
+    "full.json": {
+      "records": 423324,
+      "bytes": 162515230,
+      "sha256": "20678ddfbfb2e63f8f594ad2ba3fdd777c6de22a697e6670989bff61f8b59c77"
+    },
+    "excluded_tasks.json": {
+      "records": 178506,
+      "bytes": 15995179,
+      "sha256": "6910c06a0f736eca96e9fdc890682869da234d769ee7c2bffec065a89a8fafe3"
+    }
+  }
+}

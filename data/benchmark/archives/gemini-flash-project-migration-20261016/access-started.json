@@ -1,0 +1,30 @@
+{
+  "at": "2026-10-16T04:20:18.615357+00:00",
+  "email": "generatealt@gmail.com",
+  "project": "project-78252474-5587-44b3-93e",
+  "endpoint": "https://aiplatform.googleapis.com/v1/projects/project-78252474-5587-44b3-93e/locations/global/publishers/google/models/gemini-3.8-flash:generateContent",
+  "headers_without_credentials": {
+    "Content-Type": "application/json",
+    "X-Goog-User-Project": "project-78252474-5587-44b3-93e",
+    "X-Vertex-AI-LLM-Request-Type": "shared",
+    "X-Vertex-AI-LLM-Shared-Request-Type": "priority"
+  },
+  "body": {
+    "contents": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "text": "Reply with the single word SUCCESS."
+          }
+        ]
+      }
+    ],
+    "generationConfig": {
+      "thinkingConfig": {
+        "thinkingLevel": "HIGH"
+      }
+    }
+  },
+  "benchmark_task": false
+}

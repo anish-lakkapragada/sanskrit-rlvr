@@ -1,0 +1,18 @@
+Conjugate the supplied Sanskrit verb for the specified tense or mood, voice, person, and number. The verb is supplied in its traditional Dhatupatha citation spelling, including grammatical anubandha notation. Use the supplied verb class, dictionary meaning, and any verbal prefixes.
+
+Write ONLY the final form, in Devanagari script, inside exactly one
+<answer></answer> block. If several forms are valid, give exactly one.
+Do not include an explanation or any text outside the block:
+<answer>Final form in Devanagari</answer>
+
+=== Your task ===
+
+dhatu (Sanskrit verbal root): {aupadeshika_deva}   (Dhatupatha citation form, anubandha markers included)
+gana (verb class): {gana} ({gana_en})
+artha (traditional meaning): {artha_deva}
+{prefixes_block}
+Required form:
+- lakara (tense/mood): {lakara} ({lakara_en})
+- prayoga (voice): {prayoga} ({prayoga_en})
+- purusha (person): {purusha} ({purusha_en})
+- vacana (number): {vacana} ({vacana_en})

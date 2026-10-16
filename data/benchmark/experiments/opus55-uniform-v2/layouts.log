@@ -1,0 +1,147 @@
+{"stage":"layouts","settled":61,"last":"layouts:004:uniform_table","status":"completed","correct":false,"cost_usd":0.432496,"stop":null}
+{"stage":"layouts","settled":62,"last":"layouts:003:uniform_table_technical","status":"completed","correct":false,"cost_usd":0.442328,"stop":null}
+{"stage":"layouts","settled":63,"last":"layouts:000:uniform_table","status":"completed","correct":true,"cost_usd":0.450888,"stop":null}
+{"stage":"layouts","settled":64,"last":"layouts:008:uniform_table","status":"completed","correct":true,"cost_usd":0.462864,"stop":null}
+{"stage":"layouts","settled":65,"last":"layouts:006:uniform_table_technical","status":"completed","correct":true,"cost_usd":0.47192,"stop":null}
+{"stage":"layouts","settled":66,"last":"layouts:001:uniform_table","status":"completed","correct":true,"cost_usd":0.47972,"stop":null}
+{"stage":"layouts","settled":67,"last":"layouts:011:uniform_table","status":"completed","correct":true,"cost_usd":0.48296,"stop":null}
+{"stage":"layouts","settled":68,"last":"layouts:002:uniform_table_technical","status":"completed","correct":true,"cost_usd":0.494836,"stop":null}
+{"stage":"layouts","settled":69,"last":"layouts:000:uniform_table_technical","status":"refused","correct":null,"cost_usd":0.494836,"stop":null}
+{"stage":"layouts","settled":70,"last":"layouts:010:uniform_table","status":"completed","correct":true,"cost_usd":0.5022,"stop":null}
+{"stage":"layouts","settled":71,"last":"layouts:008:uniform_table_technical","status":"completed","correct":true,"cost_usd":0.52026,"stop":null}
+{"stage":"layouts","settled":72,"last":"layouts:006:uniform_table","status":"completed","correct":true,"cost_usd":0.528976,"stop":null}
+{"stage":"layouts","settled":73,"last":"layouts:007:uniform_table_technical","status":"completed","correct":true,"cost_usd":0.54062,"stop":null}
+{"stage":"layouts","settled":74,"last":"layouts:009:uniform_table","status":"completed","correct":true,"cost_usd":0.545764,"stop":null}
+{"stage":"layouts","settled":75,"last":"layouts:005:uniform_table_technical","status":"completed","correct":true,"cost_usd":0.559056,"stop":null}
+{"stage":"layouts","settled":76,"last":"layouts:003:uniform_table","status":"completed","correct":false,"cost_usd":0.571192,"stop":null}
+{"stage":"layouts","settled":77,"last":"layouts:009:uniform_table_technical","status":"completed","correct":true,"cost_usd":0.57746,"stop":null}
+{"stage":"layouts","settled":78,"last":"layouts:011:uniform_table_technical","status":"completed","correct":true,"cost_usd":0.581236,"stop":null}
+{"stage":"layouts","settled":79,"last":"layouts:005:uniform_table","status":"completed","correct":true,"cost_usd":0.597468,"stop":null}
+{"stage":"layouts","settled":80,"last":"layouts:002:uniform_table","status":"completed","correct":true,"cost_usd":0.608088,"stop":null}
+{"stage":"layouts","settled":81,"last":"layouts:010:uniform_table_technical","status":"completed","correct":true,"cost_usd":0.613496,"stop":null}
+{"stage":"layouts","settled":82,"last":"layouts:007:uniform_table","status":"completed","correct":true,"cost_usd":0.62658,"stop":null}
+{"stage":"layouts","settled":83,"last":"layouts:004:uniform_table_technical","status":"completed","correct":false,"cost_usd":0.642388,"stop":null}
+{"stage":"layouts","settled":84,"last":"layouts:001:uniform_table_technical","status":"refused","correct":null,"cost_usd":0.642388,"stop":null}
+{
+  "status": "layouts_complete",
+  "total": {
+    "requests": 84,
+    "statuses": {
+      "refused": 31,
+      "completed": 53
+    },
+    "refusals": 31,
+    "refusal_rate": 0.36904761904761907,
+    "refusal_categories": {
+      "cyber": 31
+    },
+    "correct": 43,
+    "strict_correct": 43,
+    "format_ok": 53,
+    "known_cost_usd": 0.642388,
+    "unknown_cost_requests": 0,
+    "output_tokens": 27961
+  },
+  "stage": {
+    "variants": {
+      "uniform_table": {
+        "requests": 12,
+        "statuses": {
+          "completed": 12
+        },
+        "refusals": 0,
+        "refusal_rate": 0.0,
+        "refusal_categories": {},
+        "correct": 10,
+        "strict_correct": 10,
+        "format_ok": 12,
+        "known_cost_usd": 0.116624,
+        "unknown_cost_requests": 0,
+        "output_tokens": 5091
+      },
+      "uniform_table_technical": {
+        "requests": 12,
+        "statuses": {
+          "completed": 10,
+          "refused": 2
+        },
+        "refusals": 2,
+        "refusal_rate": 0.16666666666666666,
+        "refusal_categories": {
+          "cyber": 2
+        },
+        "correct": 8,
+        "strict_correct": 8,
+        "format_ok": 10,
+        "known_cost_usd": 0.10502,
+        "unknown_cost_requests": 0,
+        "output_tokens": 4572
+      }
+    },
+    "families": {
+      "tinanta": {
+        "requests": 6,
+        "statuses": {
+          "completed": 6
+        },
+        "refusals": 0,
+        "refusal_rate": 0.0,
+        "refusal_categories": {},
+        "correct": 6,
+        "strict_correct": 6,
+        "format_ok": 6,
+        "known_cost_usd": 0.072024,
+        "unknown_cost_requests": 0,
+        "output_tokens": 3173
+      },
+      "krdanta": {
+        "requests": 6,
+        "statuses": {
+          "completed": 6
+        },
+        "refusals": 0,
+        "refusal_rate": 0.0,
+        "refusal_categories": {},
+        "correct": 6,
+        "strict_correct": 6,
+        "format_ok": 6,
+        "known_cost_usd": 0.05422,
+        "unknown_cost_requests": 0,
+        "output_tokens": 2284
+      },
+      "taddhitanta": {
+        "requests": 10,
+        "statuses": {
+          "completed": 8,
+          "refused": 2
+        },
+        "refusals": 2,
+        "refusal_rate": 0.2,
+        "refusal_categories": {
+          "cyber": 2
+        },
+        "correct": 4,
+        "strict_correct": 4,
+        "format_ok": 8,
+        "known_cost_usd": 0.088384,
+        "unknown_cost_requests": 0,
+        "output_tokens": 3959
+      },
+      "subanta": {
+        "requests": 2,
+        "statuses": {
+          "completed": 2
+        },
+        "refusals": 0,
+        "refusal_rate": 0.0,
+        "refusal_categories": {},
+        "correct": 2,
+        "strict_correct": 2,
+        "format_ok": 2,
+        "known_cost_usd": 0.007016,
+        "unknown_cost_requests": 0,
+        "output_tokens": 247
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sanskrit benchmark evaluation costs</title>
+</head>
+<body>
+<h1>Evaluation cost calculator</h1>
+<p>Select models, then choose how many tasks of each kind to evaluate. Every selected model gets the same tasks, with one response per task at xHigh. All prices are USD.</p>
+<p><strong>No extra output cap.</strong> Estimates include both reasoning and response tokens. Actual output lengths vary: the totals below are estimates, not spending limits. This page runs locally and makes no model requests.</p>
+
+<h2>1. Models</h2>
+<p><button type="button" data-model-group="all">All six</button> <button type="button" data-model-group="OpenAI">OpenAI only</button> <button type="button" data-model-group="Anthropic">Anthropic only</button> <button type="button" data-model-group="none">None</button></p>
+<table border="1" cellpadding="6">
+<caption>Uncached input and output prices per 1 million tokens; verified October 13, 2026</caption>
+<thead><tr><th scope="col">Include model</th><th scope="col">Provider</th><th scope="col">Input / 1M</th><th scope="col">Output / 1M</th><th scope="col">Output usage multiplier</th><th scope="col">Usage evidence</th><th scope="col">Source</th></tr></thead>
+<tbody>@@MODELS@@</tbody>
+</table>
+<p>Astra and Opus have separate measurements on the current answer-only prompts. Sol and Luna use Astra’s token usage as a proxy; Sonnet and Haiku use Opus’s. Those four models remain unmeasured. Change a model’s multiplier to explore longer or shorter output; 2 means twice the estimated output tokens.</p>
+<p><label for="processing">Processing: </label><select id="processing"><option value="1">Standard API</option><option value="0.5">Batch API (50% token-price discount)</option></select></p>
+
+<h2>2. Tasks per selected model</h2>
+<p><label for="slider-range">Slider range: </label><select id="slider-range"><option value="10000">0–10,000 tasks</option><option value="100000">0–100,000 tasks</option><option value="all">Entire inventory</option></select> Exact counts can also be typed. Lowering the range caps the selected counts; typing a larger count expands it. Each family is bounded by its available tasks.</p>
+<p><button type="button" data-preset="0">Zero</button> <button type="button" data-preset="1000">1,000 each</button> <button type="button" data-preset="5000">5,000 each</button> <button type="button" data-preset="all">All tasks</button></p>
+<table border="1" cellpadding="6">
+<thead><tr><th scope="col">Task family</th><th scope="col">Slider</th><th scope="col">Tasks per model</th><th scope="col">Available</th><th scope="col">Share selected</th></tr></thead>
+<tbody>@@TASKS@@</tbody>
+</table>
+<p id="request-count" role="status" aria-live="polite"></p>
+
+<h2>3. Budgets and estimated spend</h2>
+<p><label for="budget-OpenAI">OpenAI budget: $</label><input id="budget-OpenAI" type="number" min="0" step="1" value="3000"> <label for="budget-Anthropic">Anthropic budget: $</label><input id="budget-Anthropic" type="number" min="0" step="1" value="1500"></p>
+<p>OpenAI means GPT-6 Astra, Sol, and Luna. Anthropic means Opus, Sonnet, and Haiku. These budgets cover the new run; historical calibration spend is not deducted.</p>
+<p><button type="button" id="fit-mean">Fit equal task counts to both budgets</button> <button type="button" id="fit-stress">Fit equal counts with 2× output headroom</button></p>
+<p id="fit-note" role="status" aria-live="polite">Fit sets the same count for each family using the selected models and current usage multipliers.</p>
+<table border="1" cellpadding="6" aria-label="Provider budgets">
+<thead><tr><th scope="col">Provider</th><th scope="col">Selected models</th><th scope="col">Budget</th><th scope="col">Estimated spend</th><th scope="col">Remaining / over budget</th><th scope="col">Spend if output doubles</th><th scope="col">2× scenario status</th></tr></thead>
+<tbody id="budget-results"></tbody>
+</table>
+<p><strong id="grand-total"></strong></p>
+<p>The 2× column doubles output usage on top of each model’s multiplier; input usage stays the same. It is a sensitivity scenario, not a confidence interval or maximum bill.</p>
+
+<h2>Cost by model and task</h2>
+<table border="1" cellpadding="6" aria-label="Cost by model and task">
+<thead><tr><th scope="col">Selected model</th><th scope="col">Tiṅanta</th><th scope="col">Kṛdanta</th><th scope="col">Subanta</th><th scope="col">Taddhitānta</th><th scope="col">Total</th><th scope="col">If output doubles</th></tr></thead>
+<tbody id="model-results"></tbody>
+<tfoot id="family-totals"></tfoot>
+</table>
+<p>Cost = tasks × (mean input tokens × input price + mean output tokens × output multiplier × output price) ÷ 1,000,000. Batch multiplies the result by 0.5. Intermediate calculations are not rounded.</p>
+<details>
+<summary>Cost per single task under the current assumptions</summary>
+<table border="1" cellpadding="6"><thead><tr><th scope="col">Selected model</th><th scope="col">Tiṅanta</th><th scope="col">Kṛdanta</th><th scope="col">Subanta</th><th scope="col">Taddhitānta</th></tr></thead><tbody id="unit-results"></tbody></table>
+</details>
+
+<h2>Where the token estimates come from</h2>
+<table border="1" cellpadding="6">
+<thead><tr><th scope="col">Measured model</th><th scope="col">Family</th><th scope="col">Mean input tokens</th><th scope="col">Mean billed output tokens</th><th scope="col">Nonrefused / attempted</th><th scope="col">Refusals</th><th scope="col">Largest observed output</th><th scope="col">Observed cost / attempt</th><th scope="col">Cost / nonrefused response</th></tr></thead>
+<tbody>@@TOKENS@@</tbody>
+</table>
+<p>The pilot sent the same 25 randomly selected tasks per family to both models: 100 requests each, 200 total, at xHigh with no additional output cap. All four templates request only an <code>&lt;answer&gt;</code> block. Input and output counts come from provider usage, including API framing and hidden reasoning. Reasoning is already included in output tokens and is counted once.</p>
+<p>The calculator uses completed, nonrefused responses for each model and family. Refusals remain in the observed cost per attempt above, including Anthropic’s documented exemption for cyber refusals before any output. They are excluded from the usage baseline so the forecast does not assume future refusals will reduce spend. The same 100 task IDs were used in the earlier thinking-block pilot, which remains archived separately.</p>
+<p>These are small pilot samples. They do not establish the average of the full dataset, the longest possible response, or how much an unmeasured model will think. No automatic retries or model fallbacks were used.</p>
+<p><a href="answer-only-pilot-20261013/report.html">Answer-only pilot results</a> · <a href="answer-only-pilot-20261013/results.json">Provider usage and scores</a> · <a href="answer-only-pilot-20261013/verification.json">Receipt verification</a> · <a href="../datasets/token-costs.json">10,000-prompt tokenizer cross-check</a> · <a href="pricing-data.json">Calculator inputs and source hashes</a></p>
+
+<details>
+<summary>What “no output limit” means here</summary>
+<p>There is no smaller benchmark-specific cap. For the OpenAI Responses API, the calibration omitted <code>max_output_tokens</code>. Anthropic’s Messages API requires <code>max_tokens</code>; allowing the documented regular maximum means setting it to 128,000. Provider limits still apply, and actual token usage determines the bill.</p>
+<p>All six models support xHigh. Select <code>reasoning.effort: "xhigh"</code> for OpenAI and <code>output_config.effort: "xhigh"</code> with adaptive thinking for Anthropic. The calculator prices usage at that effort; it does not impose a thinking-token budget.</p>
+<p>Rates assume standard global endpoints, short prompts, no caching, tools, retries, taxes, or regional premiums. Haiku’s displayed rates apply to prompts up to 100,000 input tokens; these prompts are only a few hundred tokens. Batch pricing is optional and uses the documented 50% discount; this calculator does not assume expanded beta output limits.</p>
+<p><a href="https://developers.openai.com/api/docs/guides/reasoning">OpenAI reasoning and token accounting</a> · <a href="https://platform.claude.com/docs/en/build-with-claude/effort">Anthropic effort support</a> · <a href="https://platform.claude.com/docs/en/api/messages/create">Anthropic output-token parameter</a></p>
+</details>
+<p><a href="../datasets/distribution.html">Dataset distribution</a> · <a href="../engine/prompts/v2/samples/samples.html">Current prompt samples</a> · <a href="../datasets/validity-audit.json">Dataset eligibility audit</a></p>
+<noscript><p>Enable JavaScript for interactive estimates. Prices and measured token inputs remain visible above.</p></noscript>
+<script type="application/json" id="pricing-data">@@CONFIG@@</script>
+<script>@@SCRIPT@@</script>
+</body>
+</html>

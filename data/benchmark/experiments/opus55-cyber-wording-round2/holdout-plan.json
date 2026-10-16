@@ -1,0 +1,402 @@
+[
+  {
+    "request_key": "holdout:case_30:selected",
+    "case_id": "case_30",
+    "family": "taddhitanta",
+    "task_id": "taddhitanta:selaga:basic:Pum:Sas",
+    "phase": "holdout",
+    "variant": "selected",
+    "transformation": "current",
+    "prompt": "Apply the specified taddhita affix to the supplied Sanskrit nominal base, respecting its stated grammatical interpretation. Give the derived nominal stem or complete indeclinable without case or number endings. No particular meaning is required; use a meaning under which the affix applies.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\npratipadika (nominal base): सेलग\nbase interpretation: source gender: masculine; the supplied spelling treated as a basic nominal stem, without a nyap suffix\ntaddhita (technical affix): शस् (SLP1: Sas)\nartha (meaning): unrestricted\n"
+  },
+  {
+    "request_key": "holdout:case_05:selected",
+    "case_id": "case_05",
+    "family": "tinanta",
+    "task_id": "10.0489:Lun:Karmani:Uttama:Eka",
+    "phase": "holdout",
+    "variant": "selected",
+    "transformation": "current",
+    "prompt": "Conjugate the supplied Sanskrit verb for the specified tense or mood, voice, person, and number. The verb is supplied in its traditional Dhatupatha citation spelling, including grammatical anubandha notation. Use the supplied verb class, dictionary meaning, and any verbal prefixes.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): तुत्थ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): आवरणे\n\nRequired form:\n- lakara (tense/mood): Lun (aorist)\n- prayoga (voice): Karmani (passive)\n- purusha (person): Uttama (first person)\n- vacana (number): Eka (singular)\n"
+  },
+  {
+    "request_key": "holdout:case_21:selected",
+    "case_id": "case_21",
+    "family": "krdanta",
+    "task_id": "krdanta:10.0405:tumun",
+    "phase": "holdout",
+    "variant": "selected",
+    "transformation": "current",
+    "prompt": "Form the Sanskrit derivative specified by the primary suffix (krt). The verb is supplied in its traditional Dhatupatha citation spelling, including grammatical anubandha notation. Use the supplied verb class, dictionary meaning, any verbal prefixes, and any participle coordinates. For a noun or adjective, give the uninflected nominal stem without case or number endings. For an indeclinable, give its complete form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): चह   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): परिकल्कने\n\nRequired form:\n- krt (primary suffix): तुमुँन् (infinitive; citation form, anubandha markers included)\n"
+  },
+  {
+    "request_key": "holdout:case_45:control",
+    "case_id": "case_45",
+    "family": "subanta",
+    "task_id": "subanta:OttaNkI:nyap:Stri:Dvitiya:Eka",
+    "phase": "holdout",
+    "variant": "control",
+    "transformation": "current",
+    "prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nInflect the supplied Sanskrit nominal stem (pratipadika) in the requested\ngender (linga), case (vibhakti), and number (vacana). Return the complete\ninflected noun or adjective (subanta), in its standalone form.\n\nUse the displayed stem as the starting form. When a feminine stem is supplied,\nuse that feminine stem rather than reconstructing it from a masculine headword.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\npratipadika (nominal stem): औत्तङ्की\nlinga (gender): feminine\nvibhakti (case): accusative (second case)\nvacana (number): singular\n"
+  },
+  {
+    "request_key": "holdout:case_44:selected",
+    "case_id": "case_44",
+    "family": "subanta",
+    "task_id": "subanta:DarmASritA:nyap:Stri:Prathama:Eka",
+    "phase": "holdout",
+    "variant": "selected",
+    "transformation": "current",
+    "prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nInflect the supplied Sanskrit nominal stem (pratipadika) in the requested\ngender (linga), case (vibhakti), and number (vacana). Return the complete\ninflected noun or adjective (subanta), in its standalone form.\n\nUse the displayed stem as the starting form. When a feminine stem is supplied,\nuse that feminine stem rather than reconstructing it from a masculine headword.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\npratipadika (nominal stem): धर्माश्रिता\nlinga (gender): feminine\nvibhakti (case): nominative (first case)\nvacana (number): singular\n"
+  },
+  {
+    "request_key": "holdout:case_42:control",
+    "case_id": "case_42",
+    "family": "subanta",
+    "task_id": "subanta:yojayitf:basic:Pum:Saptami:Eka",
+    "phase": "holdout",
+    "variant": "control",
+    "transformation": "current",
+    "prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nInflect the supplied Sanskrit nominal stem (pratipadika) in the requested\ngender (linga), case (vibhakti), and number (vacana). Return the complete\ninflected noun or adjective (subanta), in its standalone form.\n\nUse the displayed stem as the starting form. When a feminine stem is supplied,\nuse that feminine stem rather than reconstructing it from a masculine headword.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\npratipadika (nominal stem): योजयितृ\nlinga (gender): masculine\nvibhakti (case): locative (seventh case)\nvacana (number): singular\n"
+  },
+  {
+    "request_key": "holdout:case_42:selected",
+    "case_id": "case_42",
+    "family": "subanta",
+    "task_id": "subanta:yojayitf:basic:Pum:Saptami:Eka",
+    "phase": "holdout",
+    "variant": "selected",
+    "transformation": "current",
+    "prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nInflect the supplied Sanskrit nominal stem (pratipadika) in the requested\ngender (linga), case (vibhakti), and number (vacana). Return the complete\ninflected noun or adjective (subanta), in its standalone form.\n\nUse the displayed stem as the starting form. When a feminine stem is supplied,\nuse that feminine stem rather than reconstructing it from a masculine headword.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\npratipadika (nominal stem): योजयितृ\nlinga (gender): masculine\nvibhakti (case): locative (seventh case)\nvacana (number): singular\n"
+  },
+  {
+    "request_key": "holdout:case_44:control",
+    "case_id": "case_44",
+    "family": "subanta",
+    "task_id": "subanta:DarmASritA:nyap:Stri:Prathama:Eka",
+    "phase": "holdout",
+    "variant": "control",
+    "transformation": "current",
+    "prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nInflect the supplied Sanskrit nominal stem (pratipadika) in the requested\ngender (linga), case (vibhakti), and number (vacana). Return the complete\ninflected noun or adjective (subanta), in its standalone form.\n\nUse the displayed stem as the starting form. When a feminine stem is supplied,\nuse that feminine stem rather than reconstructing it from a masculine headword.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\npratipadika (nominal stem): धर्माश्रिता\nlinga (gender): feminine\nvibhakti (case): nominative (first case)\nvacana (number): singular\n"
+  },
+  {
+    "request_key": "holdout:case_17:selected",
+    "case_id": "case_17",
+    "family": "krdanta",
+    "task_id": "krdanta:10.0044:kta",
+    "phase": "holdout",
+    "variant": "selected",
+    "transformation": "current",
+    "prompt": "Form the Sanskrit derivative specified by the primary suffix (krt). The verb is supplied in its traditional Dhatupatha citation spelling, including grammatical anubandha notation. Use the supplied verb class, dictionary meaning, any verbal prefixes, and any participle coordinates. For a noun or adjective, give the uninflected nominal stem without case or number endings. For an indeclinable, give its complete form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): तुजँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): हिंसाबलादाननिकेतनेषु\n\nRequired form:\n- krt (primary suffix): क्त (past participle; citation form, anubandha markers included)\n"
+  },
+  {
+    "request_key": "holdout:case_20:selected",
+    "case_id": "case_20",
+    "family": "krdanta",
+    "task_id": "krdanta:10.0049:ktvA",
+    "phase": "holdout",
+    "variant": "selected",
+    "transformation": "current",
+    "prompt": "Form the Sanskrit derivative specified by the primary suffix (krt). The verb is supplied in its traditional Dhatupatha citation spelling, including grammatical anubandha notation. Use the supplied verb class, dictionary meaning, any verbal prefixes, and any participle coordinates. For a noun or adjective, give the uninflected nominal stem without case or number endings. For an indeclinable, give its complete form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): लुजिँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): हिंसाबलादाननिकेतनेषु\n\nRequired form:\n- krt (primary suffix): क्त्वा (absolutive; having performed the action; citation form, anubandha markers included)\n"
+  },
+  {
+    "request_key": "holdout:case_19:selected",
+    "case_id": "case_19",
+    "family": "krdanta",
+    "task_id": "krdanta:10.0056:tavya",
+    "phase": "holdout",
+    "variant": "selected",
+    "transformation": "current",
+    "prompt": "Form the Sanskrit derivative specified by the primary suffix (krt). The verb is supplied in its traditional Dhatupatha citation spelling, including grammatical anubandha notation. Use the supplied verb class, dictionary meaning, any verbal prefixes, and any participle coordinates. For a noun or adjective, give the uninflected nominal stem without case or number endings. For an indeclinable, give its complete form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): स्फिटँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): हिंसायाम्\n\nRequired form:\n- krt (primary suffix): तव्य (gerundive; necessity or possibility; citation form, anubandha markers included)\n"
+  },
+  {
+    "request_key": "holdout:case_07:control",
+    "case_id": "case_07",
+    "family": "tinanta",
+    "task_id": "10.0304:Lut:Kartari:Uttama:Eka",
+    "phase": "holdout",
+    "variant": "control",
+    "transformation": "current",
+    "prompt": "Conjugate the supplied Sanskrit verb for the specified tense or mood, voice, person, and number. The verb is supplied in its traditional Dhatupatha citation spelling, including grammatical anubandha notation. Use the supplied verb class, dictionary meaning, and any verbal prefixes.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): विछँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): भाषायाम्\n\nRequired form:\n- lakara (tense/mood): Lut (periphrastic future)\n- prayoga (voice): Kartari (active)\n- purusha (person): Uttama (first person)\n- vacana (number): Eka (singular)\n"
+  },
+  {
+    "request_key": "holdout:case_07:selected",
+    "case_id": "case_07",
+    "family": "tinanta",
+    "task_id": "10.0304:Lut:Kartari:Uttama:Eka",
+    "phase": "holdout",
+    "variant": "selected",
+    "transformation": "current",
+    "prompt": "Conjugate the supplied Sanskrit verb for the specified tense or mood, voice, person, and number. The verb is supplied in its traditional Dhatupatha citation spelling, including grammatical anubandha notation. Use the supplied verb class, dictionary meaning, and any verbal prefixes.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): विछँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): भाषायाम्\n\nRequired form:\n- lakara (tense/mood): Lut (periphrastic future)\n- prayoga (voice): Kartari (active)\n- purusha (person): Uttama (first person)\n- vacana (number): Eka (singular)\n"
+  },
+  {
+    "request_key": "holdout:case_32:selected",
+    "case_id": "case_32",
+    "family": "taddhitanta",
+    "task_id": "taddhitanta:sTirANGripa:basic:Pum:tasi",
+    "phase": "holdout",
+    "variant": "selected",
+    "transformation": "current",
+    "prompt": "Apply the specified taddhita affix to the supplied Sanskrit nominal base, respecting its stated grammatical interpretation. Give the derived nominal stem or complete indeclinable without case or number endings. No particular meaning is required; use a meaning under which the affix applies.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\npratipadika (nominal base): स्थिराङ्घ्रिप\nbase interpretation: source gender: masculine; the supplied spelling treated as a basic nominal stem, without a nyap suffix\ntaddhita (technical affix): तसि (SLP1: tasi)\nartha (meaning): unrestricted\n"
+  },
+  {
+    "request_key": "holdout:case_05:control",
+    "case_id": "case_05",
+    "family": "tinanta",
+    "task_id": "10.0489:Lun:Karmani:Uttama:Eka",
+    "phase": "holdout",
+    "variant": "control",
+    "transformation": "current",
+    "prompt": "Conjugate the supplied Sanskrit verb for the specified tense or mood, voice, person, and number. The verb is supplied in its traditional Dhatupatha citation spelling, including grammatical anubandha notation. Use the supplied verb class, dictionary meaning, and any verbal prefixes.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): तुत्थ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): आवरणे\n\nRequired form:\n- lakara (tense/mood): Lun (aorist)\n- prayoga (voice): Karmani (passive)\n- purusha (person): Uttama (first person)\n- vacana (number): Eka (singular)\n"
+  },
+  {
+    "request_key": "holdout:case_41:control",
+    "case_id": "case_41",
+    "family": "subanta",
+    "task_id": "subanta:kamalIkA:nyap:Stri:Sambodhana:Dvi",
+    "phase": "holdout",
+    "variant": "control",
+    "transformation": "current",
+    "prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nInflect the supplied Sanskrit nominal stem (pratipadika) in the requested\ngender (linga), case (vibhakti), and number (vacana). Return the complete\ninflected noun or adjective (subanta), in its standalone form.\n\nUse the displayed stem as the starting form. When a feminine stem is supplied,\nuse that feminine stem rather than reconstructing it from a masculine headword.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\npratipadika (nominal stem): कमलीका\nlinga (gender): feminine\nvibhakti (case): vocative (address)\nvacana (number): dual\n"
+  },
+  {
+    "request_key": "holdout:case_06:selected",
+    "case_id": "case_06",
+    "family": "tinanta",
+    "task_id": "01.0855:AshirLin:Kartari:Uttama:Eka",
+    "phase": "holdout",
+    "variant": "selected",
+    "transformation": "current",
+    "prompt": "Conjugate the supplied Sanskrit verb for the specified tense or mood, voice, person, and number. The verb is supplied in its traditional Dhatupatha citation spelling, including grammatical anubandha notation. Use the supplied verb class, dictionary meaning, and any verbal prefixes.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): णभँ॒   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Bhvadi (class 1)\nartha (traditional meaning): हिंसायाम् अभावे च\n\nRequired form:\n- lakara (tense/mood): AshirLin (benedictive)\n- prayoga (voice): Kartari (active)\n- purusha (person): Uttama (first person)\n- vacana (number): Eka (singular)\n"
+  },
+  {
+    "request_key": "holdout:case_19:control",
+    "case_id": "case_19",
+    "family": "krdanta",
+    "task_id": "krdanta:10.0056:tavya",
+    "phase": "holdout",
+    "variant": "control",
+    "transformation": "current",
+    "prompt": "Form the Sanskrit derivative specified by the primary suffix (krt). The verb is supplied in its traditional Dhatupatha citation spelling, including grammatical anubandha notation. Use the supplied verb class, dictionary meaning, any verbal prefixes, and any participle coordinates. For a noun or adjective, give the uninflected nominal stem without case or number endings. For an indeclinable, give its complete form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): स्फिटँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): हिंसायाम्\n\nRequired form:\n- krt (primary suffix): तव्य (gerundive; necessity or possibility; citation form, anubandha markers included)\n"
+  },
+  {
+    "request_key": "holdout:case_31:control",
+    "case_id": "case_31",
+    "family": "taddhitanta",
+    "task_id": "taddhitanta:yantrApIqa:basic:Napumsaka:valac",
+    "phase": "holdout",
+    "variant": "control",
+    "transformation": "current",
+    "prompt": "Apply the specified taddhita affix to the supplied Sanskrit nominal base, respecting its stated grammatical interpretation. Give the derived nominal stem or complete indeclinable without case or number endings. No particular meaning is required; use a meaning under which the affix applies.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\npratipadika (nominal base): यन्त्रापीड\nbase interpretation: source gender: neuter; the supplied spelling treated as a basic nominal stem, without a nyap suffix\ntaddhita (technical affix): वलच् (SLP1: valac)\nartha (meaning): unrestricted\n"
+  },
+  {
+    "request_key": "holdout:case_43:selected",
+    "case_id": "case_43",
+    "family": "subanta",
+    "task_id": "subanta:nimnonnata:basic:Napumsaka:Panchami:Dvi",
+    "phase": "holdout",
+    "variant": "selected",
+    "transformation": "current",
+    "prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nInflect the supplied Sanskrit nominal stem (pratipadika) in the requested\ngender (linga), case (vibhakti), and number (vacana). Return the complete\ninflected noun or adjective (subanta), in its standalone form.\n\nUse the displayed stem as the starting form. When a feminine stem is supplied,\nuse that feminine stem rather than reconstructing it from a masculine headword.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\npratipadika (nominal stem): निम्नोन्नत\nlinga (gender): neuter\nvibhakti (case): ablative (fifth case)\nvacana (number): dual\n"
+  },
+  {
+    "request_key": "holdout:case_17:control",
+    "case_id": "case_17",
+    "family": "krdanta",
+    "task_id": "krdanta:10.0044:kta",
+    "phase": "holdout",
+    "variant": "control",
+    "transformation": "current",
+    "prompt": "Form the Sanskrit derivative specified by the primary suffix (krt). The verb is supplied in its traditional Dhatupatha citation spelling, including grammatical anubandha notation. Use the supplied verb class, dictionary meaning, any verbal prefixes, and any participle coordinates. For a noun or adjective, give the uninflected nominal stem without case or number endings. For an indeclinable, give its complete form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): तुजँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): हिंसाबलादाननिकेतनेषु\n\nRequired form:\n- krt (primary suffix): क्त (past participle; citation form, anubandha markers included)\n"
+  },
+  {
+    "request_key": "holdout:case_20:control",
+    "case_id": "case_20",
+    "family": "krdanta",
+    "task_id": "krdanta:10.0049:ktvA",
+    "phase": "holdout",
+    "variant": "control",
+    "transformation": "current",
+    "prompt": "Form the Sanskrit derivative specified by the primary suffix (krt). The verb is supplied in its traditional Dhatupatha citation spelling, including grammatical anubandha notation. Use the supplied verb class, dictionary meaning, any verbal prefixes, and any participle coordinates. For a noun or adjective, give the uninflected nominal stem without case or number endings. For an indeclinable, give its complete form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): लुजिँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): हिंसाबलादाननिकेतनेषु\n\nRequired form:\n- krt (primary suffix): क्त्वा (absolutive; having performed the action; citation form, anubandha markers included)\n"
+  },
+  {
+    "request_key": "holdout:case_06:control",
+    "case_id": "case_06",
+    "family": "tinanta",
+    "task_id": "01.0855:AshirLin:Kartari:Uttama:Eka",
+    "phase": "holdout",
+    "variant": "control",
+    "transformation": "current",
+    "prompt": "Conjugate the supplied Sanskrit verb for the specified tense or mood, voice, person, and number. The verb is supplied in its traditional Dhatupatha citation spelling, including grammatical anubandha notation. Use the supplied verb class, dictionary meaning, and any verbal prefixes.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): णभँ॒   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Bhvadi (class 1)\nartha (traditional meaning): हिंसायाम् अभावे च\n\nRequired form:\n- lakara (tense/mood): AshirLin (benedictive)\n- prayoga (voice): Kartari (active)\n- purusha (person): Uttama (first person)\n- vacana (number): Eka (singular)\n"
+  },
+  {
+    "request_key": "holdout:case_43:control",
+    "case_id": "case_43",
+    "family": "subanta",
+    "task_id": "subanta:nimnonnata:basic:Napumsaka:Panchami:Dvi",
+    "phase": "holdout",
+    "variant": "control",
+    "transformation": "current",
+    "prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nInflect the supplied Sanskrit nominal stem (pratipadika) in the requested\ngender (linga), case (vibhakti), and number (vacana). Return the complete\ninflected noun or adjective (subanta), in its standalone form.\n\nUse the displayed stem as the starting form. When a feminine stem is supplied,\nuse that feminine stem rather than reconstructing it from a masculine headword.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\npratipadika (nominal stem): निम्नोन्नत\nlinga (gender): neuter\nvibhakti (case): ablative (fifth case)\nvacana (number): dual\n"
+  },
+  {
+    "request_key": "holdout:case_32:control",
+    "case_id": "case_32",
+    "family": "taddhitanta",
+    "task_id": "taddhitanta:sTirANGripa:basic:Pum:tasi",
+    "phase": "holdout",
+    "variant": "control",
+    "transformation": "current",
+    "prompt": "Apply the specified taddhita affix to the supplied Sanskrit nominal base, respecting its stated grammatical interpretation. Give the derived nominal stem or complete indeclinable without case or number endings. No particular meaning is required; use a meaning under which the affix applies.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\npratipadika (nominal base): स्थिराङ्घ्रिप\nbase interpretation: source gender: masculine; the supplied spelling treated as a basic nominal stem, without a nyap suffix\ntaddhita (technical affix): तसि (SLP1: tasi)\nartha (meaning): unrestricted\n"
+  },
+  {
+    "request_key": "holdout:case_45:selected",
+    "case_id": "case_45",
+    "family": "subanta",
+    "task_id": "subanta:OttaNkI:nyap:Stri:Dvitiya:Eka",
+    "phase": "holdout",
+    "variant": "selected",
+    "transformation": "current",
+    "prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nInflect the supplied Sanskrit nominal stem (pratipadika) in the requested\ngender (linga), case (vibhakti), and number (vacana). Return the complete\ninflected noun or adjective (subanta), in its standalone form.\n\nUse the displayed stem as the starting form. When a feminine stem is supplied,\nuse that feminine stem rather than reconstructing it from a masculine headword.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\npratipadika (nominal stem): औत्तङ्की\nlinga (gender): feminine\nvibhakti (case): accusative (second case)\nvacana (number): singular\n"
+  },
+  {
+    "request_key": "holdout:case_18:control",
+    "case_id": "case_18",
+    "family": "krdanta",
+    "task_id": "krdanta:04.0126:tavyat",
+    "phase": "holdout",
+    "variant": "control",
+    "transformation": "current",
+    "prompt": "Form the Sanskrit derivative specified by the primary suffix (krt). The verb is supplied in its traditional Dhatupatha citation spelling, including grammatical anubandha notation. Use the supplied verb class, dictionary meaning, any verbal prefixes, and any participle coordinates. For a noun or adjective, give the uninflected nominal stem without case or number endings. For an indeclinable, give its complete form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): कुशँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Divadi (class 4)\nartha (traditional meaning): संश्लेषणे\n\nRequired form:\n- krt (primary suffix): तव्यत् (gerundive; necessity or possibility; citation form, anubandha markers included)\n"
+  },
+  {
+    "request_key": "holdout:case_31:selected",
+    "case_id": "case_31",
+    "family": "taddhitanta",
+    "task_id": "taddhitanta:yantrApIqa:basic:Napumsaka:valac",
+    "phase": "holdout",
+    "variant": "selected",
+    "transformation": "current",
+    "prompt": "Apply the specified taddhita affix to the supplied Sanskrit nominal base, respecting its stated grammatical interpretation. Give the derived nominal stem or complete indeclinable without case or number endings. No particular meaning is required; use a meaning under which the affix applies.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\npratipadika (nominal base): यन्त्रापीड\nbase interpretation: source gender: neuter; the supplied spelling treated as a basic nominal stem, without a nyap suffix\ntaddhita (technical affix): वलच् (SLP1: valac)\nartha (meaning): unrestricted\n"
+  },
+  {
+    "request_key": "holdout:case_41:selected",
+    "case_id": "case_41",
+    "family": "subanta",
+    "task_id": "subanta:kamalIkA:nyap:Stri:Sambodhana:Dvi",
+    "phase": "holdout",
+    "variant": "selected",
+    "transformation": "current",
+    "prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nInflect the supplied Sanskrit nominal stem (pratipadika) in the requested\ngender (linga), case (vibhakti), and number (vacana). Return the complete\ninflected noun or adjective (subanta), in its standalone form.\n\nUse the displayed stem as the starting form. When a feminine stem is supplied,\nuse that feminine stem rather than reconstructing it from a masculine headword.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\npratipadika (nominal stem): कमलीका\nlinga (gender): feminine\nvibhakti (case): vocative (address)\nvacana (number): dual\n"
+  },
+  {
+    "request_key": "holdout:case_29:selected",
+    "case_id": "case_29",
+    "family": "taddhitanta",
+    "task_id": "taddhitanta:gatADi:basic:Pum:Sas",
+    "phase": "holdout",
+    "variant": "selected",
+    "transformation": "current",
+    "prompt": "Apply the specified taddhita affix to the supplied Sanskrit nominal base, respecting its stated grammatical interpretation. Give the derived nominal stem or complete indeclinable without case or number endings. No particular meaning is required; use a meaning under which the affix applies.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\npratipadika (nominal base): गताधि\nbase interpretation: source gender: masculine; the supplied spelling treated as a basic nominal stem, without a nyap suffix\ntaddhita (technical affix): शस् (SLP1: Sas)\nartha (meaning): unrestricted\n"
+  },
+  {
+    "request_key": "holdout:case_30:control",
+    "case_id": "case_30",
+    "family": "taddhitanta",
+    "task_id": "taddhitanta:selaga:basic:Pum:Sas",
+    "phase": "holdout",
+    "variant": "control",
+    "transformation": "current",
+    "prompt": "Apply the specified taddhita affix to the supplied Sanskrit nominal base, respecting its stated grammatical interpretation. Give the derived nominal stem or complete indeclinable without case or number endings. No particular meaning is required; use a meaning under which the affix applies.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\npratipadika (nominal base): सेलग\nbase interpretation: source gender: masculine; the supplied spelling treated as a basic nominal stem, without a nyap suffix\ntaddhita (technical affix): शस् (SLP1: Sas)\nartha (meaning): unrestricted\n"
+  },
+  {
+    "request_key": "holdout:case_18:selected",
+    "case_id": "case_18",
+    "family": "krdanta",
+    "task_id": "krdanta:04.0126:tavyat",
+    "phase": "holdout",
+    "variant": "selected",
+    "transformation": "current",
+    "prompt": "Form the Sanskrit derivative specified by the primary suffix (krt). The verb is supplied in its traditional Dhatupatha citation spelling, including grammatical anubandha notation. Use the supplied verb class, dictionary meaning, any verbal prefixes, and any participle coordinates. For a noun or adjective, give the uninflected nominal stem without case or number endings. For an indeclinable, give its complete form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): कुशँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Divadi (class 4)\nartha (traditional meaning): संश्लेषणे\n\nRequired form:\n- krt (primary suffix): तव्यत् (gerundive; necessity or possibility; citation form, anubandha markers included)\n"
+  },
+  {
+    "request_key": "holdout:case_09:selected",
+    "case_id": "case_09",
+    "family": "tinanta",
+    "task_id": "01.0477:AshirLin:Karmani:Madhyama:Bahu",
+    "phase": "holdout",
+    "variant": "selected",
+    "transformation": "current",
+    "prompt": "Conjugate the supplied Sanskrit verb for the specified tense or mood, voice, person, and number. The verb is supplied in its traditional Dhatupatha citation spelling, including grammatical anubandha notation. Use the supplied verb class, dictionary meaning, and any verbal prefixes.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): त्रुन्फँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Bhvadi (class 1)\nartha (traditional meaning): हिंसायाम्\n\nRequired form:\n- lakara (tense/mood): AshirLin (benedictive)\n- prayoga (voice): Karmani (passive)\n- purusha (person): Madhyama (second person)\n- vacana (number): Bahu (plural)\n"
+  },
+  {
+    "request_key": "holdout:case_08:control",
+    "case_id": "case_08",
+    "family": "tinanta",
+    "task_id": "10.0056:Lrt:Karmani:Madhyama:Bahu",
+    "phase": "holdout",
+    "variant": "control",
+    "transformation": "current",
+    "prompt": "Conjugate the supplied Sanskrit verb for the specified tense or mood, voice, person, and number. The verb is supplied in its traditional Dhatupatha citation spelling, including grammatical anubandha notation. Use the supplied verb class, dictionary meaning, and any verbal prefixes.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): स्फिटँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): हिंसायाम्\n\nRequired form:\n- lakara (tense/mood): Lrt (simple future)\n- prayoga (voice): Karmani (passive)\n- purusha (person): Madhyama (second person)\n- vacana (number): Bahu (plural)\n"
+  },
+  {
+    "request_key": "holdout:case_29:control",
+    "case_id": "case_29",
+    "family": "taddhitanta",
+    "task_id": "taddhitanta:gatADi:basic:Pum:Sas",
+    "phase": "holdout",
+    "variant": "control",
+    "transformation": "current",
+    "prompt": "Apply the specified taddhita affix to the supplied Sanskrit nominal base, respecting its stated grammatical interpretation. Give the derived nominal stem or complete indeclinable without case or number endings. No particular meaning is required; use a meaning under which the affix applies.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\npratipadika (nominal base): गताधि\nbase interpretation: source gender: masculine; the supplied spelling treated as a basic nominal stem, without a nyap suffix\ntaddhita (technical affix): शस् (SLP1: Sas)\nartha (meaning): unrestricted\n"
+  },
+  {
+    "request_key": "holdout:case_09:control",
+    "case_id": "case_09",
+    "family": "tinanta",
+    "task_id": "01.0477:AshirLin:Karmani:Madhyama:Bahu",
+    "phase": "holdout",
+    "variant": "control",
+    "transformation": "current",
+    "prompt": "Conjugate the supplied Sanskrit verb for the specified tense or mood, voice, person, and number. The verb is supplied in its traditional Dhatupatha citation spelling, including grammatical anubandha notation. Use the supplied verb class, dictionary meaning, and any verbal prefixes.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): त्रुन्फँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Bhvadi (class 1)\nartha (traditional meaning): हिंसायाम्\n\nRequired form:\n- lakara (tense/mood): AshirLin (benedictive)\n- prayoga (voice): Karmani (passive)\n- purusha (person): Madhyama (second person)\n- vacana (number): Bahu (plural)\n"
+  },
+  {
+    "request_key": "holdout:case_33:control",
+    "case_id": "case_33",
+    "family": "taddhitanta",
+    "task_id": "taddhitanta:loqana:basic:Napumsaka:TAl",
+    "phase": "holdout",
+    "variant": "control",
+    "transformation": "current",
+    "prompt": "Apply the specified taddhita affix to the supplied Sanskrit nominal base, respecting its stated grammatical interpretation. Give the derived nominal stem or complete indeclinable without case or number endings. No particular meaning is required; use a meaning under which the affix applies.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\npratipadika (nominal base): लोडन\nbase interpretation: source gender: neuter; the supplied spelling treated as a basic nominal stem, without a nyap suffix\ntaddhita (technical affix): थाल् (SLP1: TAl)\nartha (meaning): unrestricted\n"
+  },
+  {
+    "request_key": "holdout:case_33:selected",
+    "case_id": "case_33",
+    "family": "taddhitanta",
+    "task_id": "taddhitanta:loqana:basic:Napumsaka:TAl",
+    "phase": "holdout",
+    "variant": "selected",
+    "transformation": "current",
+    "prompt": "Apply the specified taddhita affix to the supplied Sanskrit nominal base, respecting its stated grammatical interpretation. Give the derived nominal stem or complete indeclinable without case or number endings. No particular meaning is required; use a meaning under which the affix applies.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\npratipadika (nominal base): लोडन\nbase interpretation: source gender: neuter; the supplied spelling treated as a basic nominal stem, without a nyap suffix\ntaddhita (technical affix): थाल् (SLP1: TAl)\nartha (meaning): unrestricted\n"
+  },
+  {
+    "request_key": "holdout:case_21:control",
+    "case_id": "case_21",
+    "family": "krdanta",
+    "task_id": "krdanta:10.0405:tumun",
+    "phase": "holdout",
+    "variant": "control",
+    "transformation": "current",
+    "prompt": "Form the Sanskrit derivative specified by the primary suffix (krt). The verb is supplied in its traditional Dhatupatha citation spelling, including grammatical anubandha notation. Use the supplied verb class, dictionary meaning, any verbal prefixes, and any participle coordinates. For a noun or adjective, give the uninflected nominal stem without case or number endings. For an indeclinable, give its complete form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): चह   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): परिकल्कने\n\nRequired form:\n- krt (primary suffix): तुमुँन् (infinitive; citation form, anubandha markers included)\n"
+  },
+  {
+    "request_key": "holdout:case_08:selected",
+    "case_id": "case_08",
+    "family": "tinanta",
+    "task_id": "10.0056:Lrt:Karmani:Madhyama:Bahu",
+    "phase": "holdout",
+    "variant": "selected",
+    "transformation": "current",
+    "prompt": "Conjugate the supplied Sanskrit verb for the specified tense or mood, voice, person, and number. The verb is supplied in its traditional Dhatupatha citation spelling, including grammatical anubandha notation. Use the supplied verb class, dictionary meaning, and any verbal prefixes.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): स्फिटँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): हिंसायाम्\n\nRequired form:\n- lakara (tense/mood): Lrt (simple future)\n- prayoga (voice): Karmani (passive)\n- purusha (person): Madhyama (second person)\n- vacana (number): Bahu (plural)\n"
+  }
+]

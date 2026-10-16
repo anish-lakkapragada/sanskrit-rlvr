@@ -1,0 +1,168 @@
+{"stage":"followup","settled":185,"last":"followup:004:table_rules_first","status":"completed","correct":true,"cost_usd":1.612928,"stop":null}
+{"stage":"followup","settled":186,"last":"followup:007:table_rules_first","status":"completed","correct":true,"cost_usd":1.616408,"stop":null}
+{"stage":"followup","settled":187,"last":"followup:005:table_rules_first","status":"completed","correct":true,"cost_usd":1.627644,"stop":null}
+{"stage":"followup","settled":188,"last":"followup:000:table_question","status":"refused","correct":null,"cost_usd":1.627644,"stop":null}
+{"stage":"followup","settled":189,"last":"followup:006:table_question","status":"completed","correct":true,"cost_usd":1.634392,"stop":null}
+{"stage":"followup","settled":190,"last":"followup:007:table_exercise","status":"completed","correct":true,"cost_usd":1.638024,"stop":null}
+{"stage":"followup","settled":191,"last":"followup:006:table_rules_first","status":"completed","correct":true,"cost_usd":1.641608,"stop":null}
+{"stage":"followup","settled":192,"last":"followup:000:table_rules_first","status":"completed","correct":true,"cost_usd":1.650228,"stop":null}
+{"stage":"followup","settled":193,"last":"followup:005:table_question","status":"completed","correct":true,"cost_usd":1.669128,"stop":null}
+{"stage":"followup","settled":194,"last":"followup:001:table_exercise","status":"refused","correct":null,"cost_usd":1.669128,"stop":null}
+{"stage":"followup","settled":195,"last":"followup:002:table_rules_first","status":"completed","correct":true,"cost_usd":1.676572,"stop":null}
+{"stage":"followup","settled":196,"last":"followup:004:table_exercise","status":"refused","correct":null,"cost_usd":1.678716,"stop":null}
+{"stage":"followup","settled":197,"last":"followup:004:table_question","status":"completed","correct":true,"cost_usd":1.691652,"stop":null}
+{"stage":"followup","settled":198,"last":"followup:002:table_exercise","status":"refused","correct":null,"cost_usd":1.693688,"stop":null}
+{"stage":"followup","settled":199,"last":"followup:000:table_exercise","status":"refused","correct":null,"cost_usd":1.693688,"stop":null}
+{"stage":"followup","settled":200,"last":"followup:003:table_rules_first","status":"completed","correct":true,"cost_usd":1.699312,"stop":null}
+{"stage":"followup","settled":201,"last":"followup:002:table_question","status":"refused","correct":null,"cost_usd":1.699312,"stop":null}
+{"stage":"followup","settled":202,"last":"followup:001:table_rules_first","status":"completed","correct":true,"cost_usd":1.712612,"stop":null}
+{"stage":"followup","settled":203,"last":"followup:003:table_question","status":"refused","correct":null,"cost_usd":1.712612,"stop":null}
+{"stage":"followup","settled":204,"last":"followup:007:table_question","status":"completed","correct":true,"cost_usd":1.716036,"stop":null}
+{"stage":"followup","settled":205,"last":"followup:003:table_exercise","status":"completed","correct":true,"cost_usd":1.721432,"stop":null}
+{"stage":"followup","settled":206,"last":"followup:001:table_question","status":"refused","correct":null,"cost_usd":1.721432,"stop":null}
+{"stage":"followup","settled":207,"last":"followup:005:table_exercise","status":"completed","correct":true,"cost_usd":1.73586,"stop":null}
+{"stage":"followup","settled":208,"last":"followup:006:table_exercise","status":"completed","correct":true,"cost_usd":1.741916,"stop":null}
+{
+  "status": "followup_complete",
+  "total": {
+    "requests": 208,
+    "statuses": {
+      "refused": 40,
+      "completed": 168
+    },
+    "refusals": 40,
+    "refusal_rate": 0.19230769230769232,
+    "refusal_categories": {
+      "cyber": 40
+    },
+    "correct": 156,
+    "strict_correct": 156,
+    "format_ok": 168,
+    "known_cost_usd": 1.741916,
+    "unknown_cost_requests": 0,
+    "output_tokens": 75745
+  },
+  "stage": {
+    "variants": {
+      "table_exercise": {
+        "requests": 8,
+        "statuses": {
+          "completed": 4,
+          "refused": 4
+        },
+        "refusals": 4,
+        "refusal_rate": 0.5,
+        "refusal_categories": {
+          "cyber": 4
+        },
+        "correct": 4,
+        "strict_correct": 4,
+        "format_ok": 4,
+        "known_cost_usd": 0.033692,
+        "unknown_cost_requests": 0,
+        "output_tokens": 1311
+      },
+      "table_question": {
+        "requests": 8,
+        "statuses": {
+          "refused": 4,
+          "completed": 4
+        },
+        "refusals": 4,
+        "refusal_rate": 0.5,
+        "refusal_categories": {
+          "cyber": 4
+        },
+        "correct": 4,
+        "strict_correct": 4,
+        "format_ok": 4,
+        "known_cost_usd": 0.042008,
+        "unknown_cost_requests": 0,
+        "output_tokens": 1838
+      },
+      "table_rules_first": {
+        "requests": 8,
+        "statuses": {
+          "completed": 8
+        },
+        "refusals": 0,
+        "refusal_rate": 0.0,
+        "refusal_categories": {},
+        "correct": 8,
+        "strict_correct": 8,
+        "format_ok": 8,
+        "known_cost_usd": 0.06782,
+        "unknown_cost_requests": 0,
+        "output_tokens": 2911
+      }
+    },
+    "families": {
+      "tinanta": {
+        "requests": 3,
+        "statuses": {
+          "completed": 2,
+          "refused": 1
+        },
+        "refusals": 1,
+        "refusal_rate": 0.3333333333333333,
+        "refusal_categories": {
+          "cyber": 1
+        },
+        "correct": 2,
+        "strict_correct": 2,
+        "format_ok": 2,
+        "known_cost_usd": 0.029612,
+        "unknown_cost_requests": 0,
+        "output_tokens": 1273
+      },
+      "krdanta": {
+        "requests": 6,
+        "statuses": {
+          "completed": 6
+        },
+        "refusals": 0,
+        "refusal_rate": 0.0,
+        "refusal_categories": {},
+        "correct": 6,
+        "strict_correct": 6,
+        "format_ok": 6,
+        "known_cost_usd": 0.060952,
+        "unknown_cost_requests": 0,
+        "output_tokens": 2627
+      },
+      "taddhitanta": {
+        "requests": 12,
+        "statuses": {
+          "refused": 7,
+          "completed": 5
+        },
+        "refusals": 7,
+        "refusal_rate": 0.5833333333333334,
+        "refusal_categories": {
+          "cyber": 7
+        },
+        "correct": 5,
+        "strict_correct": 5,
+        "format_ok": 5,
+        "known_cost_usd": 0.04242,
+        "unknown_cost_requests": 0,
+        "output_tokens": 1785
+      },
+      "subanta": {
+        "requests": 3,
+        "statuses": {
+          "completed": 3
+        },
+        "refusals": 0,
+        "refusal_rate": 0.0,
+        "refusal_categories": {},
+        "correct": 3,
+        "strict_correct": 3,
+        "format_ok": 3,
+        "known_cost_usd": 0.010536,
+        "unknown_cost_requests": 0,
+        "output_tokens": 375
+      }
+    }
+  }
+}

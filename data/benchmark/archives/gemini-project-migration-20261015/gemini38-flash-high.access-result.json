@@ -1,0 +1,72 @@
+{
+  "at": "2026-10-15T20:30:59.630705+00:00",
+  "model": "gemini-3.8-flash",
+  "adc_email": "anishsanskrit@gmail.com",
+  "url": "https://aiplatform.googleapis.com/v1/projects/project-416ce809-5ce8-43c4-85e/locations/global/publishers/google/models/gemini-3.8-flash:generateContent",
+  "headers_without_credentials": {
+    "Content-Type": "application/json",
+    "X-Goog-User-Project": "project-416ce809-5ce8-43c4-85e",
+    "X-Vertex-AI-LLM-Request-Type": "shared",
+    "X-Vertex-AI-LLM-Shared-Request-Type": "priority"
+  },
+  "request": {
+    "contents": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "text": "Reply with SUCCESS."
+          }
+        ]
+      }
+    ],
+    "generationConfig": {
+      "thinkingConfig": {
+        "thinkingLevel": "HIGH"
+      }
+    }
+  },
+  "purpose": "Access check, outside the scored benchmark",
+  "http_status": 200,
+  "response": {
+    "candidates": [
+      {
+        "content": {
+          "role": "model",
+          "parts": [
+            {
+              "text": "SUCCESS",
+              "thoughtSignature": "AY89a1/jhAuIgrGCt85ziiAaSdx3Dc508FZRGHMIlKJEpzb7qgniLrg0v3uQLhvI4UCcTJcLCa+QyR+ly1xELzCZQGSDINM4vEZLiq/jc2mZZORMDObv7J6VxY8WM+dLiv+EINet9TBBJu46F44W+aUzLnMdDeINTb2a8f3N94eTeIbmnCSQzjww8D3gOeBtsgqgrsYmMRbyqADaQREZdSNpa8OteZ8wTafv+2sYMkit4LBkQpPEWZCKFSeAd+706w7SrMknzlKYIFYHPlwe7XRPf/LCsAMiZoxoGxB9RQbiPrhF/s3xKMLvOYF2yQp6EBdOwKPo0PfXP3y/0L7rV8q3hKMQ0hpgzBGfVhnPii6bqf0fvw+11IjiVdUz6Zm6Bh0o5HpJivKTcBxXU39RPUFecHvTB1Rl1y+g8XEcQJxlNG4YVu+CiJ/+7TvAa+QpQAA9u3+8sJjE3LMwY4kev0Pwl+jmGAdE9o4xG/ONQXLv8yhb6K02ZXL7IFSLJWkDK/P3OnOQntXDb/cXQsxUBQ=="
+            }
+          ]
+        },
+        "finishReason": "STOP"
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 4,
+      "candidatesTokenCount": 1,
+      "totalTokenCount": 76,
+      "trafficType": "ON_DEMAND_PRIORITY",
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 4
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1
+        }
+      ],
+      "thoughtsTokenCount": 71
+    },
+    "modelVersion": "gemini-3.8-flash",
+    "createTime": "2026-10-15T20:30:59.868745Z",
+    "responseId": "AzjRaomDNceTq8YP7oivkAk"
+  },
+  "cost_usd": 0.0009828,
+  "cost_error": null,
+  "elapsed_seconds": 2.971
+}

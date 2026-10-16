@@ -1,0 +1,163 @@
+{
+  "at": "2026-10-16T04:34:29.923046+00:00",
+  "astra_target_ceiling": 512,
+  "runs": [
+    {
+      "run": "astra-xhigh",
+      "status": "completed",
+      "published": true,
+      "pid": null,
+      "worker_alive": false,
+      "submission_state": "completed",
+      "processed": 20000,
+      "planned": 20000,
+      "statuses": {
+        "completed": 20000
+      },
+      "cost_usd": 1277.79127,
+      "unknown_cost_attempts": 56,
+      "updated_at": "2026-10-15T07:55:18.120911+00:00",
+      "concurrency": 32,
+      "control_target": null,
+      "stopped_reason": null,
+      "in_flight": 0,
+      "supervision": null,
+      "retry_batch": null
+    },
+    {
+      "run": "sol-xhigh",
+      "status": "completed",
+      "published": true,
+      "pid": null,
+      "worker_alive": false,
+      "submission_state": "completed",
+      "processed": 20000,
+      "planned": 20000,
+      "statuses": {
+        "completed": 19999,
+        "incomplete": 1
+      },
+      "cost_usd": 451.111834,
+      "unknown_cost_attempts": 46,
+      "updated_at": "2026-10-15T07:12:32.045835+00:00",
+      "concurrency": 4,
+      "control_target": null,
+      "stopped_reason": null,
+      "in_flight": 0,
+      "supervision": null,
+      "retry_batch": null
+    },
+    {
+      "run": "luna-xhigh",
+      "status": "completed",
+      "published": true,
+      "pid": null,
+      "worker_alive": false,
+      "submission_state": "completed",
+      "processed": 20000,
+      "planned": 20000,
+      "statuses": {
+        "completed": 20000
+      },
+      "cost_usd": 47.5742807,
+      "unknown_cost_attempts": 29,
+      "updated_at": "2026-10-15T07:20:28.065088+00:00",
+      "concurrency": 4,
+      "control_target": null,
+      "stopped_reason": null,
+      "in_flight": 0,
+      "supervision": null,
+      "retry_batch": null
+    },
+    {
+      "run": "gemini4-argon-high",
+      "status": "completed",
+      "published": true,
+      "pid": null,
+      "worker_alive": false,
+      "submission_state": "completed",
+      "processed": 20000,
+      "planned": 20000,
+      "statuses": {
+        "completed": 19994,
+        "incomplete": 6
+      },
+      "cost_usd": 666.5928184,
+      "unknown_cost_attempts": 1,
+      "updated_at": "2026-10-15T23:40:20.511705+00:00",
+      "concurrency": 1,
+      "control_target": null,
+      "stopped_reason": null,
+      "in_flight": 0,
+      "supervision": {
+        "at": "2026-10-15T23:40:27.891582+00:00",
+        "model": "gemini4-argon-high",
+        "state": "completed",
+        "supervisor_pid": 20552,
+        "result": {
+          "model": "gemini4-argon-high",
+          "tasks": 20000,
+          "correct": 19063,
+          "strict_correct": 19062,
+          "cost_usd": 666.5928184,
+          "refusals": 0,
+          "archive": "data/benchmark/archives/gemini4-argon-high-v3.tar.gz",
+          "files": [
+            "README.md",
+            "krdanta.json",
+            "manifest.json",
+            "subanta.json",
+            "taddhitanta.json",
+            "tinanta.json"
+          ]
+        }
+      },
+      "retry_batch": null
+    },
+    {
+      "run": "gemini38-flash-high",
+      "status": "completed",
+      "published": true,
+      "pid": null,
+      "worker_alive": false,
+      "submission_state": "completed",
+      "processed": 20000,
+      "planned": 20000,
+      "statuses": {
+        "completed": 19999,
+        "incomplete": 1
+      },
+      "cost_usd": 1133.7956841,
+      "unknown_cost_attempts": 10,
+      "updated_at": "2026-10-16T04:33:45.868356+00:00",
+      "concurrency": 80,
+      "control_target": null,
+      "stopped_reason": null,
+      "in_flight": 0,
+      "supervision": {
+        "at": "2026-10-16T04:34:03.526647+00:00",
+        "model": "gemini38-flash-high",
+        "state": "completed",
+        "supervisor_pid": 55902,
+        "result": {
+          "model": "gemini38-flash-high",
+          "tasks": 20000,
+          "correct": 18476,
+          "strict_correct": 18473,
+          "cost_usd": 1133.7956841,
+          "refusals": 0,
+          "archive": "data/benchmark/archives/gemini38-flash-high-v3.tar.gz",
+          "files": [
+            "README.md",
+            "krdanta.json",
+            "manifest.json",
+            "subanta.json",
+            "taddhitanta.json",
+            "tinanta.json"
+          ]
+        }
+      },
+      "retry_batch": null
+    }
+  ]
+}

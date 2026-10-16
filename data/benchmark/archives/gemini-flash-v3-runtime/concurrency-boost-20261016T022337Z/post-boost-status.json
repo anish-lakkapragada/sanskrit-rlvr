@@ -1,0 +1,35 @@
+{
+  "at": "2026-10-15T19:31:07.762283-07:00",
+  "status": "running",
+  "submission_state": "submitting",
+  "settled": 15764,
+  "new_processed_since_boost": 648,
+  "minutes_since_boost": 3.53,
+  "processed_per_minute_since_boost": 183.8,
+  "first_pass_minutes_if_rate_holds": 23.0,
+  "remaining_first_pass": 4236,
+  "statuses": {
+    "completed": 15675,
+    "api_error": 83,
+    "transport_error": 5,
+    "incomplete": 1
+  },
+  "concurrency": 250,
+  "in_flight": 249,
+  "known_cost_usd": 869.8088307,
+  "policy": {
+    "kind": "completion_growth",
+    "interval": 200,
+    "multiplier": 1.25,
+    "counted_status": "completed",
+    "baseline": 13752,
+    "completed": 15675,
+    "next_boost_at": 15752,
+    "concurrency": 250,
+    "maximum": 512,
+    "pressure_count": 0,
+    "cooldown_until_unix": 0
+  },
+  "worker_alive": true,
+  "supervisor_alive": true
+}

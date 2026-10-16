@@ -1,0 +1,129 @@
+{
+  "verified_at": "2026-10-14T22:33:09.685524+00:00",
+  "verified_requests": 100,
+  "updated_templates": {
+    "tinanta": {
+      "path": "data/benchmark/experiments/opus55-cyber-wording/candidate-templates/vp_tinanta.txt",
+      "sha256": "48ba2f0a30f2186a4835d43ccaae53b9bdd466ce211b41eb31a19959d5f96230",
+      "bytes": 860
+    },
+    "krdanta": {
+      "path": "data/benchmark/experiments/opus55-cyber-wording/candidate-templates/vp_krdanta.txt",
+      "sha256": "b8d750a68a19a638eb559e6e1e86e950792952a42a14ce03db886a59c72e12d4",
+      "bytes": 1007
+    },
+    "taddhitanta": {
+      "path": "data/benchmark/experiments/opus55-cyber-wording/candidate-templates/vp_taddhitanta.txt",
+      "sha256": "583e4eab17ef3e4172d79df828c261e04da79e5fb0f5668f27f6c4d2374f1531",
+      "bytes": 749
+    },
+    "subanta": {
+      "path": "data/benchmark/experiments/opus55-cyber-wording/candidate-templates/vp_subanta.txt",
+      "sha256": "5f1994d552931b07ea75beb39bdb31f3889da7fc5df4c395f6c7fc7fd1b589fb",
+      "bytes": 804
+    }
+  },
+  "confirmation_outcomes": {
+    "requests": 20,
+    "statuses": {
+      "completed": 19,
+      "refused": 1
+    },
+    "refusals": 1,
+    "refusal_rate": 0.05,
+    "refusal_categories": {
+      "cyber": 1
+    },
+    "correct": 16,
+    "strict_correct": 16,
+    "format_ok": 19,
+    "known_cost_usd": 0.20956,
+    "unknown_cost_requests": 0,
+    "output_tokens": 9178
+  },
+  "final_template_outcomes_all_phases": {
+    "requests": 50,
+    "statuses": {
+      "completed": 49,
+      "refused": 1
+    },
+    "refusals": 1,
+    "refusal_rate": 0.02,
+    "refusal_categories": {
+      "cyber": 1
+    },
+    "correct": 46,
+    "strict_correct": 46,
+    "format_ok": 49,
+    "known_cost_usd": 0.400656,
+    "unknown_cost_requests": 0,
+    "output_tokens": 16729
+  },
+  "final_template_outcomes_by_family": {
+    "tinanta": {
+      "requests": 9,
+      "statuses": {
+        "completed": 9
+      },
+      "refusals": 0,
+      "refusal_rate": 0.0,
+      "refusal_categories": {},
+      "correct": 9,
+      "strict_correct": 9,
+      "format_ok": 9,
+      "known_cost_usd": 0.127688,
+      "unknown_cost_requests": 0,
+      "output_tokens": 5781
+    },
+    "krdanta": {
+      "requests": 17,
+      "statuses": {
+        "completed": 17
+      },
+      "refusals": 0,
+      "refusal_rate": 0.0,
+      "refusal_categories": {},
+      "correct": 17,
+      "strict_correct": 17,
+      "format_ok": 17,
+      "known_cost_usd": 0.1349,
+      "unknown_cost_requests": 0,
+      "output_tokens": 5505
+    },
+    "taddhitanta": {
+      "requests": 7,
+      "statuses": {
+        "completed": 6,
+        "refused": 1
+      },
+      "refusals": 1,
+      "refusal_rate": 0.14285714285714285,
+      "refusal_categories": {
+        "cyber": 1
+      },
+      "correct": 4,
+      "strict_correct": 4,
+      "format_ok": 6,
+      "known_cost_usd": 0.098224,
+      "unknown_cost_requests": 0,
+      "output_tokens": 4504
+    },
+    "subanta": {
+      "requests": 17,
+      "statuses": {
+        "completed": 17
+      },
+      "refusals": 0,
+      "refusal_rate": 0.0,
+      "refusal_categories": {},
+      "correct": 16,
+      "strict_correct": 16,
+      "format_ok": 17,
+      "known_cost_usd": 0.039844,
+      "unknown_cost_requests": 0,
+      "output_tokens": 939
+    }
+  },
+  "zero_observed_final_template_refusals": false,
+  "scope": "Confirmation: 16 fresh tasks and four known challenges. The all-phases count includes every request matching the final templates exactly, including duplicate controls; discovery/paired outcomes used for selection are not independent validation."
+}

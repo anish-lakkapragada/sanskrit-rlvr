@@ -1,0 +1,459 @@
+{
+  "schema_version": 2,
+  "planned_tasks": 20000,
+  "planned_primary_requests": 20000,
+  "path_conventions": {
+    "inputs_and_code": "repository-relative",
+    "results_and_journals": "run-directory-relative"
+  },
+  "sampling_seed": 69,
+  "sampling_seed_scope": "Dataset selection only; not a model-generation seed.",
+  "rendering_dependencies": {
+    "python": "3.11+",
+    "vidyut": "0.4.0"
+  },
+  "tasks": [
+    {
+      "family": "tinanta",
+      "dataset": {
+        "path": "data/benchmark/tinanta/tinanta.json",
+        "sha256": "e5f1b8b6332d820ef3ffd11d28e73c25df300c253816ad374f716fb2b537d151",
+        "bytes": 1921409,
+        "records": 5000
+      },
+      "sampling_manifest": {
+        "path": "data/benchmark/tinanta/tinanta.manifest.json",
+        "sha256": "81269026a8089ec36db118ad7772fd718af7ccc1acab3207e76925951f45e5cf",
+        "bytes": 92353
+      },
+      "prompt_template": {
+        "path": "data/engine/prompts/v3/vp_tinanta.txt",
+        "sha256": "f9cbade9eb13c9356c4c303bbf15b3c9938d5c50486adda0ff696c3844038b26",
+        "bytes": 902,
+        "text": "Form the Sanskrit conjugated verb form described in this table.\n\nUse the supplied Dhatupatha citation, including anubandha markers, verb class, traditional meaning, and any verbal prefixes. Apply the specified tense or mood, voice, person, and number.\n\n| Grammatical input | Value |\n| --- | --- |\n| Verb in Dhatupatha citation form | {aupadeshika_deva}   (Dhatupatha citation form, anubandha markers included) |\n| Verb class | {gana} ({gana_en}) |\n| Traditional meaning | {artha_deva} |\n| Tense or mood | {lakara} ({lakara_en}) |\n| Voice | {prayoga} ({prayoga_en}) |\n| Person | {purusha} ({purusha_en}) |\n| Number | {vacana} ({vacana_en}) |\n\n{prefixes_block}\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n"
+      },
+      "renderer": {
+        "path": "data/engine/tinanta/common.py",
+        "sha256": "c6288776af494cf3e592aac2ff58cf820c16ff74dda6aec23a31de6f993df15c",
+        "bytes": 3455,
+        "callable": "data.engine.tinanta.common.render_task"
+      },
+      "result_file": "tinanta.json",
+      "journal_file": "journals/tinanta.jsonl",
+      "order": "benchmark source row order; one selected attempt per task"
+    },
+    {
+      "family": "taddhitanta",
+      "dataset": {
+        "path": "data/benchmark/taddhitanta/taddhitanta.json",
+        "sha256": "ae3f1084be43b8296fe7a5cc3c1264ea84ea1293fc72c0644b02ce9e6f036c3b",
+        "bytes": 1504917,
+        "records": 5000
+      },
+      "sampling_manifest": {
+        "path": "data/benchmark/taddhitanta/taddhitanta.manifest.json",
+        "sha256": "db7829c9ed5bbb71557c38f112f3a32dac2eb86dbfcd1ca1e00ca75c93903a0e",
+        "bytes": 80493
+      },
+      "prompt_template": {
+        "path": "data/engine/prompts/v3/vp_taddhitanta.txt",
+        "sha256": "74cc9e85bd0e85658499baac703636b097c30b210e031274d6f7c026637f3f70",
+        "bytes": 665,
+        "text": "Form the Sanskrit taddhita derivative described in this table.\n\nGive the derived nominal stem or complete indeclinable without adding case or number endings. Any meaning licensed for this affix is acceptable.\n\n| Grammatical input | Value |\n| --- | --- |\n| Nominal stem | {stem_deva} |\n| Interpretation of the stem | {base_interpretation} |\n| Taddhita affix | {suffix_deva} |\n| Technical identifier in SLP1 | {suffix_id} |\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n"
+      },
+      "renderer": {
+        "path": "data/engine/taddhitanta/common.py",
+        "sha256": "f885e3528e6ccd5651a65dfe029fc909808a0063886018a3a67fc6cd77b3e1d8",
+        "bytes": 6310,
+        "callable": "data.engine.taddhitanta.common.render_task"
+      },
+      "result_file": "taddhitanta.json",
+      "journal_file": "journals/taddhitanta.jsonl",
+      "order": "benchmark source row order; one selected attempt per task"
+    },
+    {
+      "family": "krdanta",
+      "dataset": {
+        "path": "data/benchmark/krdanta/krdanta.json",
+        "sha256": "ec5fcaa3ee7d05ff79d391d0015b26e896bd01873a720cc94bff26bf5970e762",
+        "bytes": 1325917,
+        "records": 5000
+      },
+      "sampling_manifest": {
+        "path": "data/benchmark/krdanta/krdanta.manifest.json",
+        "sha256": "29fd8d97fac7abe062672bdc5b0379256487d771b80cc57e347af062ee1a1a49",
+        "bytes": 55482
+      },
+      "prompt_template": {
+        "path": "data/engine/prompts/v3/vp_krdanta.txt",
+        "sha256": "4dc79d2804882a6a04ea5f5e94b5b928d24e03cd4c14025aab7dc01cab5a71a8",
+        "bytes": 980,
+        "text": "Form the Sanskrit krt derivative described in this table.\n\nUse the supplied Dhatupatha citation, including anubandha markers, verb class, traditional meaning, and any verbal prefixes. Apply the specified primary suffix and any participle coordinates. For a noun or adjective, give the uninflected stem without case or number endings. For an indeclinable, give the complete form.\n\n| Grammatical input | Value |\n| --- | --- |\n| Verb in Dhatupatha citation form | {aupadeshika_deva}   (Dhatupatha citation form, anubandha markers included) |\n| Verb class | {gana} ({gana_en}) |\n| Traditional meaning | {artha_deva} |\n| Primary suffix | {krt_deva} ({krt_en}; citation form, anubandha markers included) |\n\n{prefixes_block}\n{participle_block}\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n"
+      },
+      "renderer": {
+        "path": "data/engine/krdanta/common.py",
+        "sha256": "dc669ce8492d3ea74c335a4e484ecce77dbe416e7480d51e7e523a1ddc830196",
+        "bytes": 8267,
+        "callable": "data.engine.krdanta.common.render_task"
+      },
+      "result_file": "krdanta.json",
+      "journal_file": "journals/krdanta.jsonl",
+      "order": "benchmark source row order; one selected attempt per task"
+    },
+    {
+      "family": "subanta",
+      "dataset": {
+        "path": "data/benchmark/subanta/subanta.json",
+        "sha256": "83bc5976715a52f6b09535d7a8a50a629072e2e6e19fdf1281c682126a994d53",
+        "bytes": 1347028,
+        "records": 5000
+      },
+      "sampling_manifest": {
+        "path": "data/benchmark/subanta/subanta.manifest.json",
+        "sha256": "259098b1940ddd13ea642840762dd612f0088fbb3eb3a0a29595976e911d0849",
+        "bytes": 65913
+      },
+      "prompt_template": {
+        "path": "data/engine/prompts/v3/vp_subanta.txt",
+        "sha256": "8453c565b2581a1dc2c832a6253f51dd825b57049a242f847d520969397217dd",
+        "bytes": 684,
+        "text": "Form the Sanskrit inflected nominal form described in this table.\n\nUse the supplied nominal stem with the specified gender, case, and number. Give the complete standalone noun or adjective form. When a feminine stem is supplied, use that stem rather than reconstructing it from a masculine headword.\n\n| Grammatical input | Value |\n| --- | --- |\n| Nominal stem | {stem_deva} |\n| Gender | {linga} |\n| Case | {vibhakti} |\n| Number | {vacana} |\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n"
+      },
+      "renderer": {
+        "path": "data/engine/subanta/common.py",
+        "sha256": "041800da26cb92a514e54dd314d8cf7f85f500f5b4d4c4f48133e2879d2d6ded",
+        "bytes": 15734,
+        "callable": "data.engine.subanta.common.render_task"
+      },
+      "result_file": "subanta.json",
+      "journal_file": "journals/subanta.jsonl",
+      "order": "benchmark source row order; one selected attempt per task"
+    }
+  ],
+  "scoring": {
+    "version": "answer-membership-v1",
+    "implementation": {
+      "path": "data/engine/evaluation/scoring.py",
+      "sha256": "b98632eee2b1435e9a362927658000052da1b8a36bffec90647f3924e95f6121",
+      "bytes": 1318
+    },
+    "answer_extraction": "Extract exactly one well-formed literal <answer>...</answer> block and strip outer answer whitespace. No Unicode or orthographic normalization. Original text stays in output_text.",
+    "correct": "For completed responses: answer is not null and answer in the source task.gold_devanagari list, joined by task_id. Otherwise null.",
+    "format_ok": "Exactly one nonempty answer block, no nested markup, and only whitespace outside the block.",
+    "strict_accuracy": "Derived when reporting: correct is true and format_ok. Not duplicated in result rows.",
+    "primary_attempt": 1,
+    "reporting": "Report correctness and format separately, plus strict accuracy over all 20,000 tasks using the latest explicitly authorized settled attempt per task. Report refusals/incomplete/errors separately; never drop tasks from the denominator. Preserve first-attempt results in journals for separate analysis."
+  },
+  "preservation": {
+    "journal_path_pattern": "journals/{family}.jsonl",
+    "completed_archive_pattern": "journals/{family}.jsonl.gz",
+    "journal_count": 4,
+    "journal_key": [
+      "task_id",
+      "attempt_number"
+    ],
+    "events": {
+      "started": "Before sending, append and fsync task_id, attempt_number, timestamp, client_request_id and exact request JSON including the hydrated prompt.",
+      "response": "Before scoring, append and fsync task_id, attempt_number, request_id, elapsed_ms, timestamp and the complete unmodified terminal response.",
+      "error": "Append task_id, attempt_number, request_id, timestamp, elapsed_ms, HTTP status, provider/client error details and available partial output; exclude credentials."
+    },
+    "per_request_files": false,
+    "save_full_stream_events": false,
+    "stream_handling": "Non-streaming generateContent, exactly as requested. Preserve the complete response before scoring; no stream or continuation loop.",
+    "result_encoding": "Compact UTF-8 JSON arrays; one compact record per line.",
+    "shared_metadata": "Dataset/gold stay in pinned benchmark files. Model/settings/templates/rates/scoring version stay in this manifest; family comes from the result filename.",
+    "write_order": "Durable started journal entry before send; durable response/error entry before scoring; atomically update family results after each settled attempt.",
+    "compression": "Gzip each completed journal; remove the plain copy only after verifying the archive. Retain one archive per family.",
+    "recovery": "Replay journals to rebuild results and reprice/rescore offline. Read completed .jsonl.gz archives as needed; do not resend completed attempts.",
+    "selected_results": "One result row per task; latest explicitly authorized settled attempt. Journals retain every attempt and all costs."
+  },
+  "run_id": "gemini4-argon-high",
+  "model": "gemini-4-argon",
+  "prompt_version": "v3",
+  "status": "paused",
+  "created_at": "2026-10-15T05:54:47.339799+00:00",
+  "started_at": "2026-10-15T05:55:08.492395+00:00",
+  "finished_at": null,
+  "submitted_requests": 2836,
+  "provider": "google_vertex_ai",
+  "api": {
+    "method": "POST",
+    "url": "https://aiplatform.googleapis.com/v1/projects/sanskrit-project-511705/locations/global/publishers/google/models/gemini-4-argon:generateContent",
+    "project": "sanskrit-project-511705",
+    "location": "global",
+    "headers_without_credentials": {
+      "Content-Type": "application/json",
+      "X-Goog-User-Project": "sanskrit-project-511705"
+    }
+  },
+  "authentication": {
+    "method": "Application Default Credentials",
+    "command": [
+      "/Users/anish/google-cloud-sdk/bin/gcloud",
+      "auth",
+      "application-default",
+      "print-access-token"
+    ],
+    "refresh_interval_seconds": 2700,
+    "token_storage": "Process memory only; never in files, logs, shell arguments, manifests or journals."
+  },
+  "request_defaults": {
+    "generationConfig": {
+      "thinkingConfig": {
+        "thinkingLevel": "HIGH"
+      }
+    }
+  },
+  "request_input": "Exact hydrated v3 prompt as the sole user text part; no system instruction, history, tools, search, grounding or fallback model.",
+  "output_limit": {
+    "benchmark_cap": null,
+    "maxOutputTokens_parameter": "omitted",
+    "thinkingBudget_parameter": "omitted",
+    "documented_model_max_output_tokens": 32768,
+    "provider_limit_scope": "Default single non-streaming direct HTTP generation on v1, including thinking and answer tokens.",
+    "unified_model_context_tokens": 1048576,
+    "meaning": "No benchmark-specified output limit. Follow the user's exact v1 request. Google's default 32768-token per-request ceiling applies. Long decodes require a different v1beta1 API and explicit continuation configuration; these are not enabled.",
+    "source": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/guides/gemini-4-argon?hl=en"
+  },
+  "omitted_request_parameters": [
+    "maxOutputTokens",
+    "thinkingBudget",
+    "includeThoughts",
+    "systemInstruction",
+    "tools",
+    "toolConfig",
+    "safetySettings",
+    "temperature",
+    "topP",
+    "topK",
+    "candidateCount",
+    "continuationToken",
+    "cachedContent",
+    "seed"
+  ],
+  "comparison_run": {
+    "path": "data/benchmark/results/v2/astra-xhigh/manifest.json",
+    "sha256": "ae50a8863b344052621e9435e1e94a772e96e33619a742f0a5cbed3ad82b594f",
+    "bytes": 51684,
+    "meaning": "Same sampled tasks and scorer; v3 templates match the ongoing OpenAI and completed Anthropic v3 runs."
+  },
+  "result_schema": {
+    "path": "result.schema.json",
+    "sha256": "4d23418cfee297b91c3702bb90b99470dbaa3f850ab73f2dad9d51b9c25b5966"
+  },
+  "pricing": {
+    "verified_date": "2026-10-15",
+    "currency": "USD",
+    "tier": "standard",
+    "endpoint": "Vertex AI global direct generateContent",
+    "cost_usd_basis": "Gross standard charges before promotional credits, taxes or account-specific discounts.",
+    "rates_usd_per_million_tokens": {
+      "uncached_input": 4,
+      "cached_input": 0.2,
+      "cache_write_input": 4,
+      "output": 20
+    },
+    "introductory_credit": {
+      "through_date": "2026-11-30",
+      "estimated_credit_fraction": 0.5,
+      "effective_rates_usd_per_million_tokens": {
+        "uncached_input": 2,
+        "cached_input": 0.1,
+        "output": 10
+      },
+      "meaning": "Google documents 50% credits back on eligible net spend. Record gross charges in cost_usd; estimated discounted totals are separate and are not an invoice or confirmation of project eligibility."
+    },
+    "formula": "((promptTokenCount - cachedContentTokenCount) * input_rate + cachedContentTokenCount * cached_input_rate + (candidatesTokenCount + thoughtsTokenCount) * output_rate) / 1000000",
+    "rules": [
+      "candidatesTokenCount excludes thoughtsTokenCount: add both once to obtain output_tokens.",
+      "cachedContentTokenCount is a subset of promptTokenCount; implicit cache writes use ordinary input pricing.",
+      "Only HTTP 200 requests incur input/output charges according to Google's pricing page. Confirmed non-200 responses cost zero; transport failures without a status have unknown cost.",
+      "Retain full provider usage metadata alongside normalized cross-provider token counters.",
+      "No grounding, tools, explicit cache storage, priority tier or batch pricing.",
+      "An unknown returned model, unsupported modalities, or inconsistent usage counters pauses the run for inspection."
+    ],
+    "sources": [
+      "https://cloud.google.com/gemini-enterprise-agent-platform/generative-ai/pricing",
+      "https://docs.cloud.google.com/gemini-enterprise-agent-platform/reference/rest/v1/GenerateContentResponse",
+      "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/context-cache/context-cache-overview"
+    ]
+  },
+  "execution": {
+    "state": "paused",
+    "runner_implemented": true,
+    "pid": null,
+    "runner": {
+      "path": "data/engine/evaluation/run_gemini.py",
+      "sha256": "451b65548f12f8153fc838a306cc454361604a17101bbbc46391041fdbf52649",
+      "bytes": 36524
+    },
+    "automatic_retries": 0,
+    "model_fallbacks": [],
+    "concurrency": 12,
+    "concurrency_control_file": "run-control.json",
+    "max_concurrency": 512,
+    "budget_usd": 1000,
+    "budget_scope": "Gross Google Cloud charges only; separate from the existing OpenAI and Anthropic budgets. Operational ceiling chosen for this run, not an asserted user budget. Reserve the full provider default output allowance for each active/unknown request.",
+    "resume": "Replay durable journals; submit only tasks without started markers. Unresolved attempts block resume.",
+    "failure_handling": "Paced admission; halve concurrency on capacity errors, honor Retry-After and exponential backoff, then recover gradually after healthy traffic. Isolated connection failures remain recorded for later explicit retries and do not suspend unrelated requests. Stop after five consecutive transient failures.",
+    "stopped_reason": "Received signal 15; finish in-flight requests and pause",
+    "reservation_usd_per_inflight_request": 0.664548,
+    "runtime_versions": {
+      "python": "3.11.13",
+      "httpx": "0.28.1",
+      "vidyut": "0.4.0",
+      "jsonschema": "4.23.0"
+    },
+    "progress": {
+      "updated_at": "2026-10-15T07:25:29.669212+00:00",
+      "planned": 20000,
+      "started": 2836,
+      "settled": 2836,
+      "unsettled": 0,
+      "not_started": 17164,
+      "known_cost_usd": 92.898952,
+      "unknown_cost_attempts": 0,
+      "projected_full_run_cost_usd": 655.14,
+      "families": {
+        "tinanta": {
+          "settled": 709,
+          "statuses": {
+            "completed": 699,
+            "api_error": 10
+          },
+          "correct": 663,
+          "format_ok": 697,
+          "strict_correct": 662,
+          "known_cost_usd": 29.457748,
+          "unknown_cost_attempts": 0,
+          "input_tokens": 177437,
+          "output_tokens": 1437400,
+          "mean_output_tokens": 2056.37
+        },
+        "taddhitanta": {
+          "settled": 709,
+          "statuses": {
+            "completed": 700,
+            "api_error": 9
+          },
+          "correct": 640,
+          "format_ok": 700,
+          "strict_correct": 640,
+          "known_cost_usd": 36.0954,
+          "unknown_cost_attempts": 0,
+          "input_tokens": 141375,
+          "output_tokens": 1776495,
+          "mean_output_tokens": 2537.85
+        },
+        "krdanta": {
+          "settled": 709,
+          "statuses": {
+            "completed": 697,
+            "api_error": 11,
+            "incomplete": 1
+          },
+          "correct": 676,
+          "format_ok": 697,
+          "strict_correct": 676,
+          "known_cost_usd": 20.98618,
+          "unknown_cost_attempts": 0,
+          "input_tokens": 182725,
+          "output_tokens": 1012764,
+          "mean_output_tokens": 1450.95
+        },
+        "subanta": {
+          "settled": 709,
+          "statuses": {
+            "completed": 700,
+            "api_error": 9
+          },
+          "correct": 691,
+          "format_ok": 700,
+          "strict_correct": 691,
+          "known_cost_usd": 6.359624,
+          "unknown_cost_attempts": 0,
+          "input_tokens": 134431,
+          "output_tokens": 291095,
+          "mean_output_tokens": 415.85
+        }
+      },
+      "unknown_cost_reserve_usd": 0.0
+    },
+    "submission_state": "paused",
+    "implementation_revisions": [
+      {
+        "at": "2026-10-15T06:08:57.044290+00:00",
+        "reason": "Allow confirmed zero-cost Vertex errors without usage counters; recover saved responses after three HTTP 429 responses exposed the inherited null-only schema constraint. Six offline tests passed, including quota-error replay/retry and preservation of unknown transport charges.",
+        "previous": {
+          "runner": {
+            "path": "data/engine/evaluation/run_gemini.py",
+            "sha256": "7ebaa228a718a14ff019c24a5c30369757332b404f9328764aff2948b3fe2aa2",
+            "bytes": 35845
+          },
+          "result_schema": {
+            "path": "result.schema.json",
+            "sha256": "28531e6934c8ab34eb05b00ba2db1c4a69f48763f68a319368566a513b0fa11b"
+          }
+        },
+        "archive": "data/benchmark/archives/gemini-v3-runtime/quota-schema-repair-20261015",
+        "request_settings_changed": false
+      },
+      {
+        "at": "2026-10-15T06:53:20.381932+00:00",
+        "reason": "User-authorized speed increase; updated budgets and adaptive admission only.",
+        "previous_runner": {
+          "path": "data/engine/evaluation/run_gemini.py",
+          "sha256": "06b9c68ec833c766a56e475d2bc62ba1b21a1666d2c7a36e41a18e2ad3207897",
+          "bytes": 36412
+        },
+        "previous_budget_usd": 1000,
+        "new_budget_usd": 1000,
+        "concurrency_ceiling": 64,
+        "request_settings_changed": false,
+        "archive": "data/benchmark/archives/speed-increase-20261015",
+        "validation": "14 offline tests passed; all saved requests and results reverified against pinned prompts and journals before resume."
+      }
+    ],
+    "concurrency_ceiling": 64
+  },
+  "implementation_dependencies": [
+    {
+      "path": "data/engine/evaluation/run_astra.py",
+      "sha256": "d8d2fc791f64015d267cbcbf37a413bc15921faa7176c7412cb0e2c3c31e1f2d",
+      "bytes": 32231
+    },
+    {
+      "path": "data/engine/evaluation/scaffold_astra.py",
+      "sha256": "75bb17f85890a344b410b782d7f79f68b0e4ec75d42745ded8c57fc380e5cd9e",
+      "bytes": 12969
+    },
+    {
+      "path": "data/engine/evaluation/admission.py",
+      "sha256": "e34fd64332b1a3e6bd46a1c4f6d6a4b1e94ef8d882d59f7877d2178aa4289f41",
+      "bytes": 2534
+    }
+  ],
+  "official_references": [
+    "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/guides/gemini-4-argon?hl=en",
+    "https://docs.cloud.google.com/gemini-enterprise-agent-platform/reference/rest/v1/GenerateContentResponse"
+  ],
+  "preflight_verification": {
+    "at": "2026-10-15T05:56:58.277342+00:00",
+    "tasks": 4,
+    "categories": [
+      "tinanta",
+      "taddhitanta",
+      "krdanta",
+      "subanta"
+    ],
+    "returned_model": "gemini-4-argon",
+    "all_http_200": true,
+    "request_body_matches_user_example": true,
+    "maxOutputTokens_present": false,
+    "thinkingBudget_present": false,
+    "thinkingLevel": "HIGH",
+    "all_outputs_scored_and_schema_validated": true,
+    "gross_cost_usd": 0.068384,
+    "credentials_exposed": false
+  }
+}

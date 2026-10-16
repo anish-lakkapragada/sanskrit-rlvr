@@ -1,0 +1,306 @@
+{
+  "experiment": "opus55-cyber-wording-round3",
+  "created_at": "2026-10-14T23:04:06.914047+00:00",
+  "status": "completed",
+  "request_budget": 100,
+  "submitted_requests": 100,
+  "seed": 69,
+  "request_defaults": {
+    "model": "claude-opus-5-5",
+    "thinking": {
+      "type": "adaptive"
+    },
+    "output_config": {
+      "effort": "xhigh"
+    },
+    "max_tokens": 128000,
+    "service_tier": "standard_only",
+    "stream": true
+  },
+  "pricing": {
+    "verified_date": "2026-10-14",
+    "currency": "USD",
+    "tier": "standard",
+    "endpoint": "global direct Anthropic",
+    "rates_usd_per_million_tokens": {
+      "uncached_input": 4,
+      "cached_input": 0.2,
+      "cache_write_input": 8,
+      "cache_write_5m_input": 5,
+      "cache_write_1h_input": 8,
+      "output": 20
+    },
+    "formula": "(input_tokens*4 + cache_read_input_tokens*0.2 + cache_creation_5m_tokens*5 + cache_creation_1h_tokens*8 + output_tokens*20)/1000000",
+    "rules": [
+      "Anthropic cache counters are additional to input_tokens, not subsets.",
+      "Output usage includes hidden thinking; never add thinking tokens twice.",
+      "No-output refusals with empty content are unbilled except bio, frontier_llm and reasoning_extraction; mid-stream refusals are billed normally.",
+      "Interrupted streams have unknown final usage/cost, even when partial usage exists. Reserve their full possible charge.",
+      "Usage estimates exclude taxes, credits and invoice adjustments."
+    ],
+    "sources": [
+      "https://platform.claude.com/docs/en/models/opus-5-5/overview",
+      "https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+    ]
+  },
+  "source_tasks": [
+    {
+      "family": "tinanta",
+      "dataset": {
+        "path": "data/benchmark/tinanta/tinanta.json",
+        "sha256": "e5f1b8b6332d820ef3ffd11d28e73c25df300c253816ad374f716fb2b537d151",
+        "bytes": 1921409,
+        "records": 5000
+      },
+      "sampling_manifest": {
+        "path": "data/benchmark/tinanta/tinanta.manifest.json",
+        "sha256": "81269026a8089ec36db118ad7772fd718af7ccc1acab3207e76925951f45e5cf",
+        "bytes": 92353
+      },
+      "prompt_template": {
+        "path": "data/engine/prompts/v2/vp_tinanta.txt",
+        "sha256": "5bf6c717bd0582ca85672d368fdc44ec3de751a1d06c222a40f1588989d118e9",
+        "bytes": 1091,
+        "text": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested conjugated verb form from the Sanskrit verbal root (dhatu, given in\nDevanagari in its Dhatupatha citation form, anubandha markers included), its\nverb class (gana), its traditional meaning (artha), and the required\ntense/mood (lakara), voice (prayoga), person (purusha), and number (vacana).\nEach Sanskrit grammatical term is glossed in parentheses in English.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): {aupadeshika_deva}   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): {gana} ({gana_en})\nartha (traditional meaning): {artha_deva}\n{prefixes_block}\nRequired form:\n- lakara (tense/mood): {lakara} ({lakara_en})\n- prayoga (voice): {prayoga} ({prayoga_en})\n- purusha (person): {purusha} ({purusha_en})\n- vacana (number): {vacana} ({vacana_en})\n"
+      },
+      "renderer": {
+        "path": "data/engine/tinanta/common.py",
+        "sha256": "c6288776af494cf3e592aac2ff58cf820c16ff74dda6aec23a31de6f993df15c",
+        "bytes": 3455,
+        "callable": "data.engine.tinanta.common.render_task"
+      },
+      "result_file": "tinanta.json",
+      "journal_file": "journals/tinanta.jsonl",
+      "order": "benchmark source row order; one selected attempt per task"
+    },
+    {
+      "family": "taddhitanta",
+      "dataset": {
+        "path": "data/benchmark/taddhitanta/taddhitanta.json",
+        "sha256": "ae3f1084be43b8296fe7a5cc3c1264ea84ea1293fc72c0644b02ce9e6f036c3b",
+        "bytes": 1504917,
+        "records": 5000
+      },
+      "sampling_manifest": {
+        "path": "data/benchmark/taddhitanta/taddhitanta.manifest.json",
+        "sha256": "db7829c9ed5bbb71557c38f112f3a32dac2eb86dbfcd1ca1e00ca75c93903a0e",
+        "bytes": 80493
+      },
+      "prompt_template": {
+        "path": "data/engine/prompts/v2/vp_taddhitanta.txt",
+        "sha256": "cb30d5d23f910bf1e2f2893e61ac078ae88f8021c644794badff811034b4e08e",
+        "bytes": 827,
+        "text": "You are an expert in Sanskrit grammar (vyakarana).\n\nApply the requested taddhita affix to the supplied Sanskrit nominal base.\nReturn the resulting derived nominal stem or complete indeclinable, without\nadding case or number endings.\n\nUse the displayed base with its stated grammatical interpretation. No specific\nartha (meaning) is imposed: use a meaning under which this affix can apply.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\npratipadika (nominal base): {stem_deva}\nbase interpretation: {base_interpretation}\ntaddhita (technical affix): {suffix_deva} (SLP1: {suffix_id})\nartha (meaning): unrestricted\n"
+      },
+      "renderer": {
+        "path": "data/engine/taddhitanta/common.py",
+        "sha256": "f885e3528e6ccd5651a65dfe029fc909808a0063886018a3a67fc6cd77b3e1d8",
+        "bytes": 6310,
+        "callable": "data.engine.taddhitanta.common.render_task"
+      },
+      "result_file": "taddhitanta.json",
+      "journal_file": "journals/taddhitanta.jsonl",
+      "order": "benchmark source row order; one selected attempt per task"
+    },
+    {
+      "family": "krdanta",
+      "dataset": {
+        "path": "data/benchmark/krdanta/krdanta.json",
+        "sha256": "ec5fcaa3ee7d05ff79d391d0015b26e896bd01873a720cc94bff26bf5970e762",
+        "bytes": 1325917,
+        "records": 5000
+      },
+      "sampling_manifest": {
+        "path": "data/benchmark/krdanta/krdanta.manifest.json",
+        "sha256": "29fd8d97fac7abe062672bdc5b0379256487d771b80cc57e347af062ee1a1a49",
+        "bytes": 55482
+      },
+      "prompt_template": {
+        "path": "data/engine/prompts/v2/vp_krdanta.txt",
+        "sha256": "37f6afac2d5ccc9041c6c84a4db477bb52d84fd449e6d688e09f37a70d97257e",
+        "bytes": 1162,
+        "text": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired primary suffix (krt). Each Sanskrit grammatical term is glossed in\nparentheses in English.\n\nFor a noun or adjective, return the uninflected nominal stem (pratipadika),\nwithout case or number endings. For an indeclinable (avyaya), return the\ncomplete indeclinable form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): {aupadeshika_deva}   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): {gana} ({gana_en})\nartha (traditional meaning): {artha_deva}\n{prefixes_block}\nRequired form:\n- krt (primary suffix): {krt_deva} ({krt_en}; citation form, anubandha markers included)\n{participle_block}\n"
+      },
+      "renderer": {
+        "path": "data/engine/krdanta/common.py",
+        "sha256": "dc669ce8492d3ea74c335a4e484ecce77dbe416e7480d51e7e523a1ddc830196",
+        "bytes": 8267,
+        "callable": "data.engine.krdanta.common.render_task"
+      },
+      "result_file": "krdanta.json",
+      "journal_file": "journals/krdanta.jsonl",
+      "order": "benchmark source row order; one selected attempt per task"
+    },
+    {
+      "family": "subanta",
+      "dataset": {
+        "path": "data/benchmark/subanta/subanta.json",
+        "sha256": "83bc5976715a52f6b09535d7a8a50a629072e2e6e19fdf1281c682126a994d53",
+        "bytes": 1347028,
+        "records": 5000
+      },
+      "sampling_manifest": {
+        "path": "data/benchmark/subanta/subanta.manifest.json",
+        "sha256": "259098b1940ddd13ea642840762dd612f0088fbb3eb3a0a29595976e911d0849",
+        "bytes": 65913
+      },
+      "prompt_template": {
+        "path": "data/engine/prompts/v2/vp_subanta.txt",
+        "sha256": "5f1994d552931b07ea75beb39bdb31f3889da7fc5df4c395f6c7fc7fd1b589fb",
+        "bytes": 804,
+        "text": "You are an expert in Sanskrit grammar (vyakarana).\n\nInflect the supplied Sanskrit nominal stem (pratipadika) in the requested\ngender (linga), case (vibhakti), and number (vacana). Return the complete\ninflected noun or adjective (subanta), in its standalone form.\n\nUse the displayed stem as the starting form. When a feminine stem is supplied,\nuse that feminine stem rather than reconstructing it from a masculine headword.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\npratipadika (nominal stem): {stem_deva}\nlinga (gender): {linga}\nvibhakti (case): {vibhakti}\nvacana (number): {vacana}\n"
+      },
+      "renderer": {
+        "path": "data/engine/subanta/common.py",
+        "sha256": "041800da26cb92a514e54dd314d8cf7f85f500f5b4d4c4f48133e2879d2d6ded",
+        "bytes": 15734,
+        "callable": "data.engine.subanta.common.render_task"
+      },
+      "result_file": "subanta.json",
+      "journal_file": "journals/subanta.jsonl",
+      "order": "benchmark source row order; one selected attempt per task"
+    }
+  ],
+  "baseline_templates": {
+    "tinanta": "Give the Sanskrit conjugated form specified below. Read the dhatu as a Dhatupatha citation with anubandhas; use its gana, artha and any prefixes, then the requested lakara, prayoga, purusha and vacana.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): {aupadeshika_deva}   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): {gana} ({gana_en})\nartha (traditional meaning): {artha_deva}\n{prefixes_block}\nRequired form:\n- lakara (tense/mood): {lakara} ({lakara_en})\n- prayoga (voice): {prayoga} ({prayoga_en})\n- purusha (person): {purusha} ({purusha_en})\n- vacana (number): {vacana} ({vacana_en})\n",
+    "krdanta": "Form the Sanskrit derivative specified by the primary suffix (krt). The verb is supplied in its traditional Dhatupatha citation spelling, including grammatical anubandha notation. Use the supplied verb class, dictionary meaning, any verbal prefixes, and any participle coordinates. For a noun or adjective, give the uninflected nominal stem without case or number endings. For an indeclinable, give its complete form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): {aupadeshika_deva}   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): {gana} ({gana_en})\nartha (traditional meaning): {artha_deva}\n{prefixes_block}\nRequired form:\n- krt (primary suffix): {krt_deva} ({krt_en}; citation form, anubandha markers included)\n{participle_block}\n",
+    "taddhitanta": "What Sanskrit word results from applying the specified taddhita affix to the given nominal base? Use the displayed spelling and stated grammatical interpretation. Any grammatical meaning licensed for that affix is allowed. Give the derived nominal stem or complete indeclinable, without case or number endings.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\npratipadika (nominal base): {stem_deva}\nbase interpretation: {base_interpretation}\ntaddhita (technical affix): {suffix_deva} (SLP1: {suffix_id})\nartha (meaning): unrestricted\n",
+    "subanta": "You are an expert in Sanskrit grammar (vyakarana).\n\nInflect the supplied Sanskrit nominal stem (pratipadika) in the requested\ngender (linga), case (vibhakti), and number (vacana). Return the complete\ninflected noun or adjective (subanta), in its standalone form.\n\nUse the displayed stem as the starting form. When a feminine stem is supplied,\nuse that feminine stem rather than reconstructing it from a masculine headword.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\npratipadika (nominal stem): {stem_deva}\nlinga (gender): {linga}\nvibhakti (case): {vibhakti}\nvacana (number): {vacana}\n"
+  },
+  "cases_sha256": "2f55685e623b4b50e8e920c6fb94c9bfe3e70527ace18192e63ba2f340fef12c",
+  "script": {
+    "path": "data/engine/evaluation/experiment_opus_wording_round3.py",
+    "sha256": "924bfeef1982c8347ccf9fbb3f41860b65d9296289b86e0dac1f071b6c453cb7",
+    "bytes": 25871
+  },
+  "dependencies": [
+    {
+      "path": "data/engine/evaluation/experiment_opus_wording.py",
+      "sha256": "3646e5e0ba1975b10dd8e4ec8eab80f2f3320348f8e85473b814a7b94273044d",
+      "bytes": 17664
+    },
+    {
+      "path": "data/engine/evaluation/run_opus.py",
+      "sha256": "6659636940b1a7bf3c6b1c25c6d12fd295fb4053a5967660c7ff2c2032ab8045",
+      "bytes": 28122
+    },
+    {
+      "path": "data/engine/evaluation/run_astra.py",
+      "sha256": "d8d2fc791f64015d267cbcbf37a413bc15921faa7176c7412cb0e2c3c31e1f2d",
+      "bytes": 32231
+    },
+    {
+      "path": "data/engine/evaluation/scoring.py",
+      "sha256": "b98632eee2b1435e9a362927658000052da1b8a36bffec90647f3924e95f6121",
+      "bytes": 1318
+    }
+  ],
+  "stages": {
+    "discovery": {
+      "requests": 40,
+      "status": "completed",
+      "plan_sha256": "fce485730bdc0488aa7aafa731c198c0f6b040c7c5e8f51950df9d6c08fc976d"
+    },
+    "validation": {
+      "requests": 40,
+      "status": "completed",
+      "plan_sha256": "05ebe4f22ce46343f4e19c70d521a678ecfc63f9f48211df94a665b28de1d34c"
+    },
+    "stress": {
+      "requests": 20,
+      "status": "completed",
+      "selection": {
+        "tinanta": "current",
+        "krdanta": "current",
+        "taddhitanta": "table",
+        "subanta": "current"
+      },
+      "selected_at": "2026-10-14T23:08:22.043478+00:00",
+      "plan_sha256": "52784af817ab42442360384dd1a252268fedbdbc0cb4b9eb9069987d567d60f5"
+    }
+  },
+  "validation_sampling": {
+    "tinanta": {
+      "fresh_previously_refused": 5,
+      "fresh_previously_completed": 5
+    },
+    "krdanta": {
+      "fresh_previously_refused": 5,
+      "fresh_previously_completed": 5
+    },
+    "taddhitanta": {
+      "fresh_previously_refused": 3,
+      "fresh_previously_completed": 7
+    },
+    "subanta": {
+      "fresh_previously_refused": 0,
+      "fresh_previously_completed": 10
+    }
+  },
+  "variants": {
+    "current": "Current candidate control.",
+    "positive_format": "Express the same answer contract as one positive instruction.",
+    "semantic_scope": "Clarify unspecified semantic relation and dictionary-gloss labels; keep lexical values.",
+    "quoted_fields": "Put unchanged grammatical data in a readable text block.",
+    "data_first": "Put the same task fields before the instructions."
+  },
+  "selection_rule": "Per family: lowest hard-case refusal rate, lowest overall refusal rate, highest strict accuracy. Prefer current on ties except taddhitanta, where prefer a changed variant because current has known prior failures. After validation, reconsider only families with refusals using all recorded observations. Freeze the final selection before stress checks.",
+  "design": "40 initial wording comparisons, 40 additional layout comparisons on the same cases, then 20 prospectively selected confirmation calls (16 fresh, four challenge calls). Stage named validation is now further tuning, not an independent holdout.",
+  "preservation": "100 additional requests maximum; no automatic retries or fallbacks. Preserve all outcomes, including repeated identical prompts. Only candidate templates may change. All Sanskrit inputs, lexical meanings, grammatical coordinates and the one-answer contract remain explicit. A finite zero count is not a guarantee.",
+  "updated_at": "2026-10-14T23:08:45.432067+00:00",
+  "stopped_reason": null,
+  "protocol_amendment": {
+    "at": "2026-10-14T23:07:21.544843+00:00",
+    "after_requests": 40,
+    "reason": "Every first-stage variant refused the persistent case at least once in three calls. Use the next 40 for four new layouts plus a current-template control; preserve 20 calls for final confirmation.",
+    "layouts": [
+      "current",
+      "sentences",
+      "table",
+      "compact_fields",
+      "sentence_question"
+    ],
+    "selection": "For taddhitanta: fewest persistent-case refusals, fewest total refusals, most strict correct. Prefer changed layouts on ties. Other families keep current templates because their layout-stage requests are identical controls.",
+    "final_confirmation": "16 fresh tasks plus three persistent taddhitanta repeats and one persistent tinanta. Five calls per category.",
+    "prior_script": {
+      "path": "data/benchmark/experiments/opus55-cyber-wording-round3/protocol-history/runner-before-layout-tests.py",
+      "sha256": "bb2a933be5b659b93a193e53aff8992bd6c48b9efa64448ee7a0f2d848369fb6",
+      "bytes": 18906
+    },
+    "prior_manifest": {
+      "path": "data/benchmark/experiments/opus55-cyber-wording-round3/protocol-history/manifest-before-layout-tests.json",
+      "sha256": "c728b28a1d8902388fd6683502cf02ae97c2675f1629715694651760ac398741",
+      "bytes": 16976
+    },
+    "prior_cases": {
+      "path": "data/benchmark/experiments/opus55-cyber-wording-round3/protocol-history/cases-before-layout-tests.json",
+      "sha256": "0946ecde1aef7066215bb2ec599c1cf26bd3bdb1b4311c7785abfd581ee7d278",
+      "bytes": 254842
+    }
+  },
+  "candidate_update": {
+    "at": "2026-10-14T23:09:08.025277+00:00",
+    "files": {
+      "tinanta": {
+        "path": "data/benchmark/experiments/opus55-cyber-wording/candidate-templates/vp_tinanta.txt",
+        "sha256": "48ba2f0a30f2186a4835d43ccaae53b9bdd466ce211b41eb31a19959d5f96230",
+        "bytes": 860
+      },
+      "krdanta": {
+        "path": "data/benchmark/experiments/opus55-cyber-wording/candidate-templates/vp_krdanta.txt",
+        "sha256": "b8d750a68a19a638eb559e6e1e86e950792952a42a14ce03db886a59c72e12d4",
+        "bytes": 1007
+      },
+      "taddhitanta": {
+        "path": "data/benchmark/experiments/opus55-cyber-wording/candidate-templates/vp_taddhitanta.txt",
+        "sha256": "e4be768194835b6fe8a24ef6a1b9ecdaef2256e85f31ee793ac3d3812fc76232",
+        "bytes": 665
+      },
+      "subanta": {
+        "path": "data/benchmark/experiments/opus55-cyber-wording/candidate-templates/vp_subanta.txt",
+        "sha256": "5f1994d552931b07ea75beb39bdb31f3889da7fc5df4c395f6c7fc7fd1b589fb",
+        "bytes": 804
+      }
+    }
+  }
+}

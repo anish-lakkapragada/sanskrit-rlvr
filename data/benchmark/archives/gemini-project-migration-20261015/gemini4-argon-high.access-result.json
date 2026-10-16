@@ -1,0 +1,72 @@
+{
+  "at": "2026-10-15T20:30:59.630129+00:00",
+  "model": "gemini-4-argon",
+  "adc_email": "anishsanskrit@gmail.com",
+  "url": "https://aiplatform.googleapis.com/v1/projects/project-416ce809-5ce8-43c4-85e/locations/global/publishers/google/models/gemini-4-argon:generateContent",
+  "headers_without_credentials": {
+    "Content-Type": "application/json",
+    "X-Goog-User-Project": "project-416ce809-5ce8-43c4-85e",
+    "X-Vertex-AI-LLM-Request-Type": "shared",
+    "X-Vertex-AI-LLM-Shared-Request-Type": "priority"
+  },
+  "request": {
+    "contents": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "text": "Reply with SUCCESS."
+          }
+        ]
+      }
+    ],
+    "generationConfig": {
+      "thinkingConfig": {
+        "thinkingLevel": "HIGH"
+      }
+    }
+  },
+  "purpose": "Access check, outside the scored benchmark",
+  "http_status": 200,
+  "response": {
+    "candidates": [
+      {
+        "content": {
+          "role": "model",
+          "parts": [
+            {
+              "text": "SUCCESS",
+              "thoughtSignature": "AY89a1/eSZ1xPKFmwg21Ewt5QHWpY/KomBowvumOt2ePl8JoXx+A1WSXtPwFFvm+j6QrOWJNGZ7WclfBIM8m4VMCJkD2ERI5CxPKvVyHTpFOBQpZgirX3KD+B0Y+82t6wysXaOZuU7FyqCNM94GzpMWjGnEXb62b9AKkPfyJXkHlC6So+2L4WjsdsFPZxsSogj0mYMgBCxt0ZM0f+PJCFSpSKmUpF5ejp0Gi5ecZnEM4UtfkfNfJigLsEqKpC17mgfy6sofzITmrwEmARMojXHM87cfpX5/7xovdeI73x/8fyfqN131j8ojiSkvopNeZnhYJwX4ctvzesi1EU2vPrGTIrUf2j1DfFu0GTGWpWZWnuK9ucBncQN2VSeaywM/fti5veK7vRisuVcYdsEV43D/KMmmLjTAMCcxdl5G1QIOXyy1Ld9DBvo8OkAxene6zFA=="
+            }
+          ]
+        },
+        "finishReason": "STOP"
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 35,
+      "candidatesTokenCount": 5,
+      "totalTokenCount": 103,
+      "trafficType": "ON_DEMAND_PRIORITY",
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 35
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 5
+        }
+      ],
+      "thoughtsTokenCount": 63
+    },
+    "modelVersion": "gemini-4-argon",
+    "createTime": "2026-10-15T20:30:59.872167Z",
+    "responseId": "AzjRauedNabAodAPjYi8oAk"
+  },
+  "cost_usd": 0.0027,
+  "cost_error": null,
+  "elapsed_seconds": 2.756
+}

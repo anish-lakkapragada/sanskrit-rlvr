@@ -1,0 +1,31 @@
+{
+  "reason": "Independent Gemini 3.8 Flash HIGH run derived from the validated Argon workflow; leave the active Argon implementation and pinned artifacts intact.",
+  "derived_files": [
+    {
+      "source": "data/engine/evaluation/run_gemini.py",
+      "source_sha256": "6fda765ec2ff41e3cb9d770b172cd5d79c77e8cf073d13d78c6c5b8c527aaf7f",
+      "derived_file": "data/engine/evaluation/run_gemini_flash.py"
+    },
+    {
+      "source": "data/engine/evaluation/retry_gemini.py",
+      "source_sha256": "6e9f1c46605dc08a2d89097da50584d954d53f4eed8ae15bea9cd9ed58017918",
+      "derived_file": "data/engine/evaluation/retry_gemini_flash.py"
+    },
+    {
+      "source": "data/engine/evaluation/publish_gemini.py",
+      "source_sha256": "abc2e5aa228a8e83dce1e5f4de4dc924b871258b2f012bd7eba5fa11dc74d95e",
+      "derived_file": "data/engine/evaluation/publish_gemini_flash.py"
+    },
+    {
+      "source": "data/engine/evaluation/supervise_gemini.py",
+      "source_sha256": "a8ea38f5ce74b95ff71d91a91ff32b97dea50699f5a8f93804af4d3f13c2f398",
+      "derived_file": "data/engine/evaluation/supervise_gemini_flash.py"
+    }
+  ],
+  "model": "gemini-3.8-flash",
+  "reasoning": "HIGH",
+  "tasks": 20000,
+  "prompt_version": "v3",
+  "gross_execution_ceiling_usd": 1000,
+  "output_limit_parameter": "omitted"
+}

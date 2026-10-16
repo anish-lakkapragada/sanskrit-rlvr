@@ -1,9 +1,0 @@
-The independent offline export review passes. All 1,400 prescribed IDs, coordinate tuples, positions and order match the existing strict-citation metadata. All 56 blocks retain 13 short-adanta non-aorists, two other-adanta aorists and ten broad questions. The export has 332 families: nine hard-short, 15 other-aorist and 308 broad families.
-
-Every task passed fresh full canonical regeneration under the same shared/local/source policy as the final candidate. All 2,518 canonical task/form entries, union hashes, variant counts and prompt hashes match the original metadata. The separate public and gold JSONL files align exactly by ID and position. Public records contain no gold, alias or derivation-trace fields; replacing private gold, campaign, alias and dictionary-code fields does not change any rendered prompt. The learner should consume only the explicit `prompt` field, not the entire inspection task or audit metadata record.
-
-The audit independently finds zero overlap with the final 1,800 input tasks by declared root family, raw citation, rendered citation, family-coordinate tuple and exact prompt. Training citations also do not overlap any master development/test citation. These are exact inventory checks, not claims about related stems, meanings or pretraining knowledge.
-
-All 44 live execution dependency hashes remain unchanged. No final model response, ledger, provider or trainer was accessed. Existing export and curriculum artifacts were preserved.
-
-The finite spelling proposal is reviewed separately in `spelling-policy-proposal/independent-review.json` and remains **unadopted as a training reward**. The export is usable data with an answer-union key; it is not a trained model or evidence of improvement. Before actual training, the reward path must preserve all accepted variants and explicitly handle unfamiliar usable spellings pending source adjudication. Nine hard training families remain a substantive coverage limit.

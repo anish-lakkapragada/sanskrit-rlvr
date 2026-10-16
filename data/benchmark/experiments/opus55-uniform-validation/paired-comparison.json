@@ -1,0 +1,107 @@
+{
+  "created_at": "2026-10-15T01:26:23.397754+00:00",
+  "source_results": {
+    "tinanta": {
+      "path": "data/benchmark/results/opus55-xhigh/tinanta.json",
+      "sha256": "a58a5236e1768d0924b68c14e116bef93d9704243848be7508901eaf3f20abeb",
+      "bytes": 3274105
+    },
+    "krdanta": {
+      "path": "data/benchmark/results/opus55-xhigh/krdanta.json",
+      "sha256": "81c9bb771e99b4d5c8047f80a5d6885bd07269ba9552682a55755c5400ef8837",
+      "bytes": 3222896
+    },
+    "taddhitanta": {
+      "path": "data/benchmark/results/opus55-xhigh/taddhitanta.json",
+      "sha256": "774347b06eb94aac3065f527f97a37545e60c448f1ba738bbbfa6cee28406d66",
+      "bytes": 3306346
+    },
+    "subanta": {
+      "path": "data/benchmark/results/opus55-xhigh/subanta.json",
+      "sha256": "3eccf84b5c2f6af9f1e02bc43ad035006b8cf0615d2218b9de825d4b5a7d2d0b",
+      "bytes": 3305597
+    }
+  },
+  "families": {
+    "tinanta": {
+      "requests": 61,
+      "candidate_correct": 58,
+      "original_correct": 59,
+      "candidate_refusals": 0,
+      "original_refusals": 0,
+      "candidate_statuses": {
+        "completed": 61
+      },
+      "original_statuses": {
+        "completed": 61
+      },
+      "candidate_mean_cost_usd": 0.009628852459016393,
+      "candidate_mean_output_tokens": 412.78688524590166
+    },
+    "krdanta": {
+      "requests": 62,
+      "candidate_correct": 60,
+      "original_correct": 60,
+      "candidate_refusals": 0,
+      "original_refusals": 1,
+      "candidate_statuses": {
+        "completed": 62
+      },
+      "original_statuses": {
+        "completed": 61,
+        "refused": 1
+      },
+      "candidate_mean_cost_usd": 0.007891677419354839,
+      "candidate_mean_output_tokens": 323.1290322580645
+    },
+    "taddhitanta": {
+      "requests": 61,
+      "candidate_correct": 53,
+      "original_correct": 54,
+      "candidate_refusals": 0,
+      "original_refusals": 0,
+      "candidate_statuses": {
+        "completed": 61
+      },
+      "original_statuses": {
+        "completed": 61
+      },
+      "candidate_mean_cost_usd": 0.012432524590163934,
+      "candidate_mean_output_tokens": 566.4918032786885
+    },
+    "subanta": {
+      "requests": 62,
+      "candidate_correct": 60,
+      "original_correct": 60,
+      "candidate_refusals": 0,
+      "original_refusals": 0,
+      "candidate_statuses": {
+        "completed": 62
+      },
+      "original_statuses": {
+        "completed": 62
+      },
+      "candidate_mean_cost_usd": 0.002710322580645161,
+      "candidate_mean_output_tokens": 84.69354838709677
+    }
+  },
+  "paired_correctness": {
+    "both_correct": 229,
+    "original_only_correct": 4,
+    "neither_correct": 11,
+    "candidate_only_correct": 2
+  },
+  "original_strict_correct": 233,
+  "candidate_strict_correct": 231,
+  "original_refusals": 1,
+  "candidate_refusals": 0,
+  "original_statuses": {
+    "completed": 245,
+    "refused": 1
+  },
+  "candidate_statuses": {
+    "completed": 246
+  },
+  "requests": 246,
+  "caveat": "Descriptive comparison on identical tasks. Call dates, model randomness, and output ceilings differ; this does not isolate a causal prompt effect. Sampling stopped by cost; confidence intervals are descriptive binomial estimates."
+}

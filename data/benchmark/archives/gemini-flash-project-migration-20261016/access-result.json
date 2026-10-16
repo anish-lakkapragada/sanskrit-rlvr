@@ -1,0 +1,72 @@
+{
+  "at": "2026-10-16T04:20:18.615357+00:00",
+  "email": "generatealt@gmail.com",
+  "project": "project-78252474-5587-44b3-93e",
+  "endpoint": "https://aiplatform.googleapis.com/v1/projects/project-78252474-5587-44b3-93e/locations/global/publishers/google/models/gemini-3.8-flash:generateContent",
+  "headers_without_credentials": {
+    "Content-Type": "application/json",
+    "X-Goog-User-Project": "project-78252474-5587-44b3-93e",
+    "X-Vertex-AI-LLM-Request-Type": "shared",
+    "X-Vertex-AI-LLM-Shared-Request-Type": "priority"
+  },
+  "body": {
+    "contents": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "text": "Reply with the single word SUCCESS."
+          }
+        ]
+      }
+    ],
+    "generationConfig": {
+      "thinkingConfig": {
+        "thinkingLevel": "HIGH"
+      }
+    }
+  },
+  "benchmark_task": false,
+  "http_status": 200,
+  "elapsed_ms": 2982.124,
+  "response": {
+    "candidates": [
+      {
+        "content": {
+          "role": "model",
+          "parts": [
+            {
+              "text": "SUCCESS",
+              "thoughtSignature": "AY89a1+B8GSnIIP6DzGUvoPQEhMRDab0wL/PmJUc3DZf0WE+T8HMvJdzuxrs6IKzWMs6PoaHGCv0FMx1q0FQp6+fWup9BRGqvkaq38YTtsS+hA/9kjtknFtwwVa8m+6wG5ubDDt6U1LOzWW8glAZyjEoz0k6lC1MZgtq+No3+dJ0ucTQ2tedbGDYwzD8ZxMtUPklAeNOcyicnEU/w96S3/5lACEwsHPfiTu0qVU7wbBjy+tqR6xRcLona0FJtakt4zrliMH2HvlAnAGfpXwIil0PHvTotgHIBDecodje3LyQXEy6eUaoG41B3dpBZY4N2arWxgaPCqghybCyd9RavuKs2/o+E05V8uL05XPU7yznQwkU4hL+ZfkoLlECZxNJneefN7pcpAMZLX2htREdApgYRb5aIGPwQ3TS0nhgTXsq/lU3rw4Vi5zpahLLr3BsD+BDcsj6d9tVvpQpfQBQD17rcMOKJ1lppy/OHPp8uDS9QHaFsDJrE1wHysjG4TgCEOrxh2PFEp+hBiO32fD3ydd4eOSCGpovXfvdOzAI0Eo/M+PEuHMFFkC5xVg5/SSn7o72F7esubiYkfnI7DGJenOXOj35nzxIk/GEVQw5CN0aPHYgALu52FxjvuK72R/a6k9OaF+r+vcHOdeoT5Hhf7R6zjOpBbZdv3paZcYUrYqCHB+MwooUjxkSYGV6VE4EnDP1c650GBfj"
+            }
+          ]
+        },
+        "finishReason": "STOP"
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 7,
+      "candidatesTokenCount": 1,
+      "totalTokenCount": 126,
+      "trafficType": "ON_DEMAND_PRIORITY",
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 7
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1
+        }
+      ],
+      "thoughtsTokenCount": 118
+    },
+    "modelVersion": "gemini-3.8-flash",
+    "createTime": "2026-10-16T04:20:18.818477Z",
+    "responseId": "AqbRaq36McXf998P1Yr9sA8"
+  },
+  "known_cost_usd": 0.0016254,
+  "cost_error": null
+}

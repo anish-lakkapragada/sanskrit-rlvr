@@ -1,0 +1,265 @@
+{
+  "experiment": "opus55-uniform-validation",
+  "created_at": "2026-10-15T01:02:06.159544+00:00",
+  "status": "finished",
+  "budget_usd": 3.0,
+  "target_spend_usd": 2.0,
+  "submitted_requests": 246,
+  "request_defaults": {
+    "model": "claude-opus-5-5",
+    "thinking": {
+      "type": "adaptive"
+    },
+    "output_config": {
+      "effort": "xhigh"
+    },
+    "max_tokens": 128000,
+    "service_tier": "standard_only",
+    "stream": true
+  },
+  "configuration_rationale": "User raised the allowance to $3. Target approximately $2 actual spend with a strict $3 ceiling; use the largest output allowance fitting remaining dollars, up to 128000. Keep xhigh, frozen prompts, and all request settings otherwise unchanged. Disclose the actual per-request output allowances and any truncation.",
+  "output_budget_policy": "remaining_dollars",
+  "pricing": {
+    "verified_date": "2026-10-14",
+    "currency": "USD",
+    "tier": "standard",
+    "endpoint": "global direct Anthropic",
+    "rates_usd_per_million_tokens": {
+      "uncached_input": 4,
+      "cached_input": 0.2,
+      "cache_write_input": 8,
+      "cache_write_5m_input": 5,
+      "cache_write_1h_input": 8,
+      "output": 20
+    },
+    "formula": "(input_tokens*4 + cache_read_input_tokens*0.2 + cache_creation_5m_tokens*5 + cache_creation_1h_tokens*8 + output_tokens*20)/1000000",
+    "rules": [
+      "Anthropic cache counters are additional to input_tokens, not subsets.",
+      "Output usage includes hidden thinking; never add thinking tokens twice.",
+      "No-output refusals with empty content are unbilled except bio, frontier_llm and reasoning_extraction; mid-stream refusals are billed normally.",
+      "Interrupted streams have unknown final usage/cost, even when partial usage exists. Reserve their full possible charge.",
+      "Usage estimates exclude taxes, credits and invoice adjustments."
+    ],
+    "sources": [
+      "https://platform.claude.com/docs/en/models/opus-5-5/overview",
+      "https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+    ]
+  },
+  "source_tasks": [
+    {
+      "family": "tinanta",
+      "dataset": {
+        "path": "data/benchmark/tinanta/tinanta.json",
+        "sha256": "e5f1b8b6332d820ef3ffd11d28e73c25df300c253816ad374f716fb2b537d151",
+        "bytes": 1921409,
+        "records": 5000
+      },
+      "sampling_manifest": {
+        "path": "data/benchmark/tinanta/tinanta.manifest.json",
+        "sha256": "81269026a8089ec36db118ad7772fd718af7ccc1acab3207e76925951f45e5cf",
+        "bytes": 92353
+      },
+      "prompt_template": {
+        "path": "data/engine/prompts/v2/vp_tinanta.txt",
+        "sha256": "5bf6c717bd0582ca85672d368fdc44ec3de751a1d06c222a40f1588989d118e9",
+        "bytes": 1091,
+        "text": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested conjugated verb form from the Sanskrit verbal root (dhatu, given in\nDevanagari in its Dhatupatha citation form, anubandha markers included), its\nverb class (gana), its traditional meaning (artha), and the required\ntense/mood (lakara), voice (prayoga), person (purusha), and number (vacana).\nEach Sanskrit grammatical term is glossed in parentheses in English.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): {aupadeshika_deva}   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): {gana} ({gana_en})\nartha (traditional meaning): {artha_deva}\n{prefixes_block}\nRequired form:\n- lakara (tense/mood): {lakara} ({lakara_en})\n- prayoga (voice): {prayoga} ({prayoga_en})\n- purusha (person): {purusha} ({purusha_en})\n- vacana (number): {vacana} ({vacana_en})\n"
+      },
+      "renderer": {
+        "path": "data/engine/tinanta/common.py",
+        "sha256": "c6288776af494cf3e592aac2ff58cf820c16ff74dda6aec23a31de6f993df15c",
+        "bytes": 3455,
+        "callable": "data.engine.tinanta.common.render_task"
+      },
+      "result_file": "tinanta.json",
+      "journal_file": "journals/tinanta.jsonl",
+      "order": "benchmark source row order; one selected attempt per task"
+    },
+    {
+      "family": "taddhitanta",
+      "dataset": {
+        "path": "data/benchmark/taddhitanta/taddhitanta.json",
+        "sha256": "ae3f1084be43b8296fe7a5cc3c1264ea84ea1293fc72c0644b02ce9e6f036c3b",
+        "bytes": 1504917,
+        "records": 5000
+      },
+      "sampling_manifest": {
+        "path": "data/benchmark/taddhitanta/taddhitanta.manifest.json",
+        "sha256": "db7829c9ed5bbb71557c38f112f3a32dac2eb86dbfcd1ca1e00ca75c93903a0e",
+        "bytes": 80493
+      },
+      "prompt_template": {
+        "path": "data/engine/prompts/v2/vp_taddhitanta.txt",
+        "sha256": "cb30d5d23f910bf1e2f2893e61ac078ae88f8021c644794badff811034b4e08e",
+        "bytes": 827,
+        "text": "You are an expert in Sanskrit grammar (vyakarana).\n\nApply the requested taddhita affix to the supplied Sanskrit nominal base.\nReturn the resulting derived nominal stem or complete indeclinable, without\nadding case or number endings.\n\nUse the displayed base with its stated grammatical interpretation. No specific\nartha (meaning) is imposed: use a meaning under which this affix can apply.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\npratipadika (nominal base): {stem_deva}\nbase interpretation: {base_interpretation}\ntaddhita (technical affix): {suffix_deva} (SLP1: {suffix_id})\nartha (meaning): unrestricted\n"
+      },
+      "renderer": {
+        "path": "data/engine/taddhitanta/common.py",
+        "sha256": "f885e3528e6ccd5651a65dfe029fc909808a0063886018a3a67fc6cd77b3e1d8",
+        "bytes": 6310,
+        "callable": "data.engine.taddhitanta.common.render_task"
+      },
+      "result_file": "taddhitanta.json",
+      "journal_file": "journals/taddhitanta.jsonl",
+      "order": "benchmark source row order; one selected attempt per task"
+    },
+    {
+      "family": "krdanta",
+      "dataset": {
+        "path": "data/benchmark/krdanta/krdanta.json",
+        "sha256": "ec5fcaa3ee7d05ff79d391d0015b26e896bd01873a720cc94bff26bf5970e762",
+        "bytes": 1325917,
+        "records": 5000
+      },
+      "sampling_manifest": {
+        "path": "data/benchmark/krdanta/krdanta.manifest.json",
+        "sha256": "29fd8d97fac7abe062672bdc5b0379256487d771b80cc57e347af062ee1a1a49",
+        "bytes": 55482
+      },
+      "prompt_template": {
+        "path": "data/engine/prompts/v2/vp_krdanta.txt",
+        "sha256": "37f6afac2d5ccc9041c6c84a4db477bb52d84fd449e6d688e09f37a70d97257e",
+        "bytes": 1162,
+        "text": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired primary suffix (krt). Each Sanskrit grammatical term is glossed in\nparentheses in English.\n\nFor a noun or adjective, return the uninflected nominal stem (pratipadika),\nwithout case or number endings. For an indeclinable (avyaya), return the\ncomplete indeclinable form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): {aupadeshika_deva}   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): {gana} ({gana_en})\nartha (traditional meaning): {artha_deva}\n{prefixes_block}\nRequired form:\n- krt (primary suffix): {krt_deva} ({krt_en}; citation form, anubandha markers included)\n{participle_block}\n"
+      },
+      "renderer": {
+        "path": "data/engine/krdanta/common.py",
+        "sha256": "dc669ce8492d3ea74c335a4e484ecce77dbe416e7480d51e7e523a1ddc830196",
+        "bytes": 8267,
+        "callable": "data.engine.krdanta.common.render_task"
+      },
+      "result_file": "krdanta.json",
+      "journal_file": "journals/krdanta.jsonl",
+      "order": "benchmark source row order; one selected attempt per task"
+    },
+    {
+      "family": "subanta",
+      "dataset": {
+        "path": "data/benchmark/subanta/subanta.json",
+        "sha256": "83bc5976715a52f6b09535d7a8a50a629072e2e6e19fdf1281c682126a994d53",
+        "bytes": 1347028,
+        "records": 5000
+      },
+      "sampling_manifest": {
+        "path": "data/benchmark/subanta/subanta.manifest.json",
+        "sha256": "259098b1940ddd13ea642840762dd612f0088fbb3eb3a0a29595976e911d0849",
+        "bytes": 65913
+      },
+      "prompt_template": {
+        "path": "data/engine/prompts/v2/vp_subanta.txt",
+        "sha256": "5f1994d552931b07ea75beb39bdb31f3889da7fc5df4c395f6c7fc7fd1b589fb",
+        "bytes": 804,
+        "text": "You are an expert in Sanskrit grammar (vyakarana).\n\nInflect the supplied Sanskrit nominal stem (pratipadika) in the requested\ngender (linga), case (vibhakti), and number (vacana). Return the complete\ninflected noun or adjective (subanta), in its standalone form.\n\nUse the displayed stem as the starting form. When a feminine stem is supplied,\nuse that feminine stem rather than reconstructing it from a masculine headword.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\npratipadika (nominal stem): {stem_deva}\nlinga (gender): {linga}\nvibhakti (case): {vibhakti}\nvacana (number): {vacana}\n"
+      },
+      "renderer": {
+        "path": "data/engine/subanta/common.py",
+        "sha256": "041800da26cb92a514e54dd314d8cf7f85f500f5b4d4c4f48133e2879d2d6ded",
+        "bytes": 15734,
+        "callable": "data.engine.subanta.common.render_task"
+      },
+      "result_file": "subanta.json",
+      "journal_file": "journals/subanta.jsonl",
+      "order": "benchmark source row order; one selected attempt per task"
+    }
+  ],
+  "template_sources": {
+    "tinanta": {
+      "path": "data/benchmark/experiments/opus55-cyber-wording/candidate-templates/vp_tinanta.txt",
+      "sha256": "f9cbade9eb13c9356c4c303bbf15b3c9938d5c50486adda0ff696c3844038b26",
+      "bytes": 902
+    },
+    "krdanta": {
+      "path": "data/benchmark/experiments/opus55-cyber-wording/candidate-templates/vp_krdanta.txt",
+      "sha256": "4dc79d2804882a6a04ea5f5e94b5b928d24e03cd4c14025aab7dc01cab5a71a8",
+      "bytes": 980
+    },
+    "taddhitanta": {
+      "path": "data/benchmark/experiments/opus55-cyber-wording/candidate-templates/vp_taddhitanta.txt",
+      "sha256": "74cc9e85bd0e85658499baac703636b097c30b210e031274d6f7c026637f3f70",
+      "bytes": 665
+    },
+    "subanta": {
+      "path": "data/benchmark/experiments/opus55-cyber-wording/candidate-templates/vp_subanta.txt",
+      "sha256": "8453c565b2581a1dc2c832a6253f51dd825b57049a242f847d520969397217dd",
+      "bytes": 684
+    }
+  },
+  "template_text": {
+    "tinanta": "Form the Sanskrit conjugated verb form described in this table.\n\nUse the supplied Dhatupatha citation, including anubandha markers, verb class, traditional meaning, and any verbal prefixes. Apply the specified tense or mood, voice, person, and number.\n\n| Grammatical input | Value |\n| --- | --- |\n| Verb in Dhatupatha citation form | {aupadeshika_deva}   (Dhatupatha citation form, anubandha markers included) |\n| Verb class | {gana} ({gana_en}) |\n| Traditional meaning | {artha_deva} |\n| Tense or mood | {lakara} ({lakara_en}) |\n| Voice | {prayoga} ({prayoga_en}) |\n| Person | {purusha} ({purusha_en}) |\n| Number | {vacana} ({vacana_en}) |\n\n{prefixes_block}\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n",
+    "krdanta": "Form the Sanskrit krt derivative described in this table.\n\nUse the supplied Dhatupatha citation, including anubandha markers, verb class, traditional meaning, and any verbal prefixes. Apply the specified primary suffix and any participle coordinates. For a noun or adjective, give the uninflected stem without case or number endings. For an indeclinable, give the complete form.\n\n| Grammatical input | Value |\n| --- | --- |\n| Verb in Dhatupatha citation form | {aupadeshika_deva}   (Dhatupatha citation form, anubandha markers included) |\n| Verb class | {gana} ({gana_en}) |\n| Traditional meaning | {artha_deva} |\n| Primary suffix | {krt_deva} ({krt_en}; citation form, anubandha markers included) |\n\n{prefixes_block}\n{participle_block}\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n",
+    "taddhitanta": "Form the Sanskrit taddhita derivative described in this table.\n\nGive the derived nominal stem or complete indeclinable without adding case or number endings. Any meaning licensed for this affix is acceptable.\n\n| Grammatical input | Value |\n| --- | --- |\n| Nominal stem | {stem_deva} |\n| Interpretation of the stem | {base_interpretation} |\n| Taddhita affix | {suffix_deva} |\n| Technical identifier in SLP1 | {suffix_id} |\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n",
+    "subanta": "Form the Sanskrit inflected nominal form described in this table.\n\nUse the supplied nominal stem with the specified gender, case, and number. Give the complete standalone noun or adjective form. When a feminine stem is supplied, use that stem rather than reconstructing it from a masculine headword.\n\n| Grammatical input | Value |\n| --- | --- |\n| Nominal stem | {stem_deva} |\n| Gender | {linga} |\n| Case | {vibhakti} |\n| Number | {vacana} |\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n"
+  },
+  "exclusion_sources": [
+    {
+      "path": "data/benchmark/experiments/opus55-cyber-wording/cases.json",
+      "sha256": "458e13df3b915e363541ed68d70be54d0f50526a87b21f7b58f2d08cb63215cb",
+      "bytes": 123257
+    },
+    {
+      "path": "data/benchmark/experiments/opus55-cyber-wording-round2/cases.json",
+      "sha256": "5e02ef4e49a01ec4ae57489331ed03bb97d2842b04751c7b1a90750d7937ef88",
+      "bytes": 194153
+    },
+    {
+      "path": "data/benchmark/experiments/opus55-cyber-wording-round3/cases.json",
+      "sha256": "80beac6f24f9b9ec14d84c7c70063931e6dc46fa16952595880a9941f7b14905",
+      "bytes": 137380
+    },
+    {
+      "path": "data/benchmark/experiments/opus55-uniform-v2/cases.json",
+      "sha256": "327f91d67c5931de141cc5ff0f97a1c9d1ab337165d7d2f1093dd12b62e1896d",
+      "bytes": 298739
+    }
+  ],
+  "excluded_tasks": 267,
+  "sampling": {
+    "seed": 69,
+    "planned_per_family": 100,
+    "planned_requests": 400,
+    "method": "Uniform sample without replacement from each 5000-task benchmark, excluding every task reserved in all prior wording experiments. Interleaved family order keeps a budget-limited prefix approximately balanced. No selection by previous correctness or refusal status."
+  },
+  "plan_sha256": "e71b254186be0658f1b7c2bd5d966bb424a4176b6e9706bbc0bf22d7537116f5",
+  "script": {
+    "path": "data/engine/evaluation/validate_opus_candidates.py",
+    "sha256": "ae4fb404af7a9983a95d29a0d6a8034696578ffab7f660c6ffdd8301435627e1",
+    "bytes": 22059
+  },
+  "dependencies": [
+    {
+      "path": "data/engine/evaluation/experiment_opus_uniform.py",
+      "sha256": "d9869e8b77d915a3edd1e24e689316565671791092cca4df58a7242750cdc5dc",
+      "bytes": 23497
+    },
+    {
+      "path": "data/engine/evaluation/experiment_opus_wording.py",
+      "sha256": "3646e5e0ba1975b10dd8e4ec8eab80f2f3320348f8e85473b814a7b94273044d",
+      "bytes": 17664
+    },
+    {
+      "path": "data/engine/evaluation/run_opus.py",
+      "sha256": "6659636940b1a7bf3c6b1c25c6d12fd295fb4053a5967660c7ff2c2032ab8045",
+      "bytes": 28122
+    },
+    {
+      "path": "data/engine/evaluation/run_astra.py",
+      "sha256": "d8d2fc791f64015d267cbcbf37a413bc15921faa7176c7412cb0e2c3c31e1f2d",
+      "bytes": 32231
+    },
+    {
+      "path": "data/engine/evaluation/scoring.py",
+      "sha256": "b98632eee2b1435e9a362927658000052da1b8a36bffec90647f3924e95f6121",
+      "bytes": 1318
+    }
+  ],
+  "budget_policy": "Before each request, reserve its full actual output allowance and a conservative input estimate. In remaining_dollars mode, send sequentially and choose the largest allowance (up to 128000) fitting the remaining ceiling; stop around the $2 target, leaving roughly $1 headroom. Retain full reserves for unknown costs. No retries. Fixed mode uses its configured allowance unchanged.",
+  "evaluation": "Exact accepted-answer membership; strict accuracy additionally requires precisely one answer block and no outside text. All requested tasks enter accuracy denominators, including refusals, incomplete responses and infrastructure failures.",
+  "scope": "Frozen-template validation; never edit templates in response to these results. Fresh means unused in prompt experiments, not unseen in the original full benchmark. Report family-specific rates and intervals; zero observed refusals does not establish a zero population rate.",
+  "started_at": "2026-10-15T01:02:06.284166+00:00",
+  "updated_at": "2026-10-15T01:25:57.703354+00:00",
+  "stopped_reason": "Target reached",
+  "known_cost_usd": 2.003068,
+  "unknown_cost_reserve_usd": 0,
+  "finished_at": "2026-10-15T01:25:57.702886+00:00"
+}

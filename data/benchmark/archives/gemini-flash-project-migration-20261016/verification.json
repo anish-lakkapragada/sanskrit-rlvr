@@ -1,0 +1,145 @@
+{
+  "at": "2026-10-16T04:22:40.960697+00:00",
+  "replay": {
+    "state": "paused",
+    "unresolved": 0,
+    "updated_at": "2026-10-16T04:22:46.038036+00:00",
+    "planned": 20000,
+    "started": 20000,
+    "settled": 20000,
+    "unsettled": 0,
+    "not_started": 0,
+    "known_cost_usd": 1125.1479057,
+    "unknown_cost_attempts": 10,
+    "projected_full_run_cost_usd": null,
+    "families": {
+      "tinanta": {
+        "settled": 5000,
+        "statuses": {
+          "completed": 4968,
+          "api_error": 32
+        },
+        "correct": 4483,
+        "format_ok": 4968,
+        "strict_correct": 4483,
+        "known_cost_usd": 404.3617278,
+        "unknown_cost_attempts": 6,
+        "input_tokens": 1135248,
+        "output_tokens": 53636146,
+        "mean_output_tokens": 10796.33
+      },
+      "taddhitanta": {
+        "settled": 5000,
+        "statuses": {
+          "completed": 4966,
+          "api_error": 31,
+          "incomplete": 1,
+          "transport_error": 2
+        },
+        "correct": 4331,
+        "format_ok": 4964,
+        "strict_correct": 4329,
+        "known_cost_usd": 435.2041689,
+        "unknown_cost_attempts": 3,
+        "input_tokens": 868048,
+        "output_tokens": 57832771,
+        "mean_output_tokens": 11643.4
+      },
+      "krdanta": {
+        "settled": 5000,
+        "statuses": {
+          "completed": 4968,
+          "api_error": 31,
+          "transport_error": 1
+        },
+        "correct": 4660,
+        "format_ok": 4967,
+        "strict_correct": 4659,
+        "known_cost_usd": 257.9947605,
+        "unknown_cost_attempts": 1,
+        "input_tokens": 1169158,
+        "output_tokens": 34139233,
+        "mean_output_tokens": 6871.83
+      },
+      "subanta": {
+        "settled": 5000,
+        "statuses": {
+          "completed": 4980,
+          "api_error": 20
+        },
+        "correct": 4897,
+        "format_ok": 4979,
+        "strict_correct": 4897,
+        "known_cost_usd": 27.5872485,
+        "unknown_cost_attempts": 0,
+        "input_tokens": 827515,
+        "output_tokens": 3508240,
+        "mean_output_tokens": 704.47
+      }
+    },
+    "attempts_started": 20050,
+    "attempts_settled": 20050,
+    "unsettled_attempts": 0,
+    "retry_attempts": 50
+  },
+  "newly_reviewed_billing_errors": 40,
+  "remaining_infrastructure_failures": 117,
+  "saved_result_and_journal_bytes_unchanged": true,
+  "tests_passed": 25,
+  "migration": {
+    "at": "2026-10-16T04:22:40.960697+00:00",
+    "authorization": "User supplied project-78252474-5587-44b3-93e, authenticated generatealt@gmail.com, and requested finishing gemini-3.8-flash with this authentication.",
+    "previous_api": {
+      "method": "POST",
+      "url": "https://aiplatform.googleapis.com/v1/projects/project-416ce809-5ce8-43c4-85e/locations/global/publishers/google/models/gemini-3.8-flash:generateContent",
+      "project": "project-416ce809-5ce8-43c4-85e",
+      "location": "global",
+      "headers_without_credentials": {
+        "Content-Type": "application/json",
+        "X-Goog-User-Project": "project-416ce809-5ce8-43c4-85e",
+        "X-Vertex-AI-LLM-Request-Type": "shared",
+        "X-Vertex-AI-LLM-Shared-Request-Type": "priority"
+      }
+    },
+    "new_api": {
+      "method": "POST",
+      "url": "https://aiplatform.googleapis.com/v1/projects/project-78252474-5587-44b3-93e/locations/global/publishers/google/models/gemini-3.8-flash:generateContent",
+      "project": "project-78252474-5587-44b3-93e",
+      "location": "global",
+      "headers_without_credentials": {
+        "Content-Type": "application/json",
+        "X-Goog-User-Project": "project-78252474-5587-44b3-93e",
+        "X-Vertex-AI-LLM-Request-Type": "shared",
+        "X-Vertex-AI-LLM-Shared-Request-Type": "priority"
+      }
+    },
+    "previous_authentication": {
+      "method": "Application Default Credentials",
+      "command": [
+        "/Users/anish/google-cloud-sdk/bin/gcloud",
+        "auth",
+        "application-default",
+        "print-access-token"
+      ],
+      "refresh_interval_seconds": 2700,
+      "token_storage": "Process memory only; never in files, logs, shell arguments, manifests or journals.",
+      "verified_adc_email": "anishsanskrit@gmail.com",
+      "identity_verified_at": "2026-10-15T20:30:41.687987+00:00"
+    },
+    "verified_new_adc_email": "generatealt@gmail.com",
+    "previous_checkpoint_tasks": 20000,
+    "previous_checkpoint_attempts": 20050,
+    "previous_checkpoint_known_cost_usd": 1125.1479057,
+    "previous_checkpoint_unknown_cost_attempts": 10,
+    "archive": "data/benchmark/archives/gemini-flash-project-migration-20261016",
+    "access_check": {
+      "path": "data/benchmark/archives/gemini-flash-project-migration-20261016/access-result.json",
+      "sha256": "dcf6b020a0432fc04525c841ad4dc65aff6d9266e31e24508355122183ae6655",
+      "bytes": 2526
+    },
+    "access_check_cost_usd_excluded_from_scored_benchmark": 0.0016254,
+    "request_body_changed": false,
+    "output_history_changed": false,
+    "attribution": "Each journal attempt retains its original X-Goog-User-Project. Prior routes remain recorded in project_migrations; subsequent attempts use new_api."
+  }
+}

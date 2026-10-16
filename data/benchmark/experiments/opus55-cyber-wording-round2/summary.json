@@ -1,0 +1,621 @@
+{
+  "total": {
+    "requests": 100,
+    "statuses": {
+      "completed": 93,
+      "refused": 7
+    },
+    "refusals": 7,
+    "refusal_rate": 0.07,
+    "refusal_categories": {
+      "cyber": 7
+    },
+    "correct": 83,
+    "strict_correct": 83,
+    "format_ok": 93,
+    "known_cost_usd": 1.01134,
+    "unknown_cost_requests": 0,
+    "output_tokens": 44042
+  },
+  "phases": {
+    "discovery": {
+      "arms": {
+        "compact": {
+          "requests": 10,
+          "statuses": {
+            "completed": 10
+          },
+          "refusals": 0,
+          "refusal_rate": 0.0,
+          "refusal_categories": {},
+          "correct": 9,
+          "strict_correct": 9,
+          "format_ok": 10,
+          "known_cost_usd": 0.078404,
+          "unknown_cost_requests": 0,
+          "output_tokens": 3326
+        },
+        "current": {
+          "requests": 10,
+          "statuses": {
+            "completed": 10
+          },
+          "refusals": 0,
+          "refusal_rate": 0.0,
+          "refusal_categories": {},
+          "correct": 10,
+          "strict_correct": 10,
+          "format_ok": 10,
+          "known_cost_usd": 0.079412,
+          "unknown_cost_requests": 0,
+          "output_tokens": 3302
+        },
+        "dictionary_gloss": {
+          "requests": 10,
+          "statuses": {
+            "completed": 8,
+            "refused": 2
+          },
+          "refusals": 2,
+          "refusal_rate": 0.2,
+          "refusal_categories": {
+            "cyber": 2
+          },
+          "correct": 8,
+          "strict_correct": 8,
+          "format_ok": 8,
+          "known_cost_usd": 0.062128,
+          "unknown_cost_requests": 0,
+          "output_tokens": 2408
+        },
+        "question": {
+          "requests": 10,
+          "statuses": {
+            "completed": 10
+          },
+          "refusals": 0,
+          "refusal_rate": 0.0,
+          "refusal_categories": {},
+          "correct": 10,
+          "strict_correct": 10,
+          "format_ok": 10,
+          "known_cost_usd": 0.087236,
+          "unknown_cost_requests": 0,
+          "output_tokens": 3740
+        }
+      },
+      "families": {
+        "tinanta": {
+          "compact": {
+            "requests": 4,
+            "statuses": {
+              "completed": 4
+            },
+            "refusals": 0,
+            "refusal_rate": 0.0,
+            "refusal_categories": {},
+            "correct": 4,
+            "strict_correct": 4,
+            "format_ok": 4,
+            "known_cost_usd": 0.043096,
+            "unknown_cost_requests": 0,
+            "output_tokens": 1883
+          },
+          "current": {
+            "requests": 4,
+            "statuses": {
+              "completed": 4
+            },
+            "refusals": 0,
+            "refusal_rate": 0.0,
+            "refusal_categories": {},
+            "correct": 4,
+            "strict_correct": 4,
+            "format_ok": 4,
+            "known_cost_usd": 0.044428,
+            "unknown_cost_requests": 0,
+            "output_tokens": 1932
+          },
+          "dictionary_gloss": {
+            "requests": 4,
+            "statuses": {
+              "refused": 2,
+              "completed": 2
+            },
+            "refusals": 2,
+            "refusal_rate": 0.5,
+            "refusal_categories": {
+              "cyber": 2
+            },
+            "correct": 2,
+            "strict_correct": 2,
+            "format_ok": 2,
+            "known_cost_usd": 0.02368,
+            "unknown_cost_requests": 0,
+            "output_tokens": 932
+          },
+          "question": {
+            "requests": 4,
+            "statuses": {
+              "completed": 4
+            },
+            "refusals": 0,
+            "refusal_rate": 0.0,
+            "refusal_categories": {},
+            "correct": 4,
+            "strict_correct": 4,
+            "format_ok": 4,
+            "known_cost_usd": 0.042148,
+            "unknown_cost_requests": 0,
+            "output_tokens": 1822
+          }
+        },
+        "krdanta": {
+          "compact": {
+            "requests": 2,
+            "statuses": {
+              "completed": 2
+            },
+            "refusals": 0,
+            "refusal_rate": 0.0,
+            "refusal_categories": {},
+            "correct": 2,
+            "strict_correct": 2,
+            "format_ok": 2,
+            "known_cost_usd": 0.01514,
+            "unknown_cost_requests": 0,
+            "output_tokens": 630
+          },
+          "current": {
+            "requests": 2,
+            "statuses": {
+              "completed": 2
+            },
+            "refusals": 0,
+            "refusal_rate": 0.0,
+            "refusal_categories": {},
+            "correct": 2,
+            "strict_correct": 2,
+            "format_ok": 2,
+            "known_cost_usd": 0.011056,
+            "unknown_cost_requests": 0,
+            "output_tokens": 409
+          },
+          "dictionary_gloss": {
+            "requests": 2,
+            "statuses": {
+              "completed": 2
+            },
+            "refusals": 0,
+            "refusal_rate": 0.0,
+            "refusal_categories": {},
+            "correct": 2,
+            "strict_correct": 2,
+            "format_ok": 2,
+            "known_cost_usd": 0.011684,
+            "unknown_cost_requests": 0,
+            "output_tokens": 418
+          },
+          "question": {
+            "requests": 2,
+            "statuses": {
+              "completed": 2
+            },
+            "refusals": 0,
+            "refusal_rate": 0.0,
+            "refusal_categories": {},
+            "correct": 2,
+            "strict_correct": 2,
+            "format_ok": 2,
+            "known_cost_usd": 0.01104,
+            "unknown_cost_requests": 0,
+            "output_tokens": 419
+          }
+        },
+        "taddhitanta": {
+          "compact": {
+            "requests": 2,
+            "statuses": {
+              "completed": 2
+            },
+            "refusals": 0,
+            "refusal_rate": 0.0,
+            "refusal_categories": {},
+            "correct": 1,
+            "strict_correct": 1,
+            "format_ok": 2,
+            "known_cost_usd": 0.016788,
+            "unknown_cost_requests": 0,
+            "output_tokens": 728
+          },
+          "current": {
+            "requests": 2,
+            "statuses": {
+              "completed": 2
+            },
+            "refusals": 0,
+            "refusal_rate": 0.0,
+            "refusal_categories": {},
+            "correct": 2,
+            "strict_correct": 2,
+            "format_ok": 2,
+            "known_cost_usd": 0.020264,
+            "unknown_cost_requests": 0,
+            "output_tokens": 901
+          },
+          "dictionary_gloss": {
+            "requests": 2,
+            "statuses": {
+              "completed": 2
+            },
+            "refusals": 0,
+            "refusal_rate": 0.0,
+            "refusal_categories": {},
+            "correct": 2,
+            "strict_correct": 2,
+            "format_ok": 2,
+            "known_cost_usd": 0.022652,
+            "unknown_cost_requests": 0,
+            "output_tokens": 998
+          },
+          "question": {
+            "requests": 2,
+            "statuses": {
+              "completed": 2
+            },
+            "refusals": 0,
+            "refusal_rate": 0.0,
+            "refusal_categories": {},
+            "correct": 2,
+            "strict_correct": 2,
+            "format_ok": 2,
+            "known_cost_usd": 0.03108,
+            "unknown_cost_requests": 0,
+            "output_tokens": 1439
+          }
+        },
+        "subanta": {
+          "compact": {
+            "requests": 2,
+            "statuses": {
+              "completed": 2
+            },
+            "refusals": 0,
+            "refusal_rate": 0.0,
+            "refusal_categories": {},
+            "correct": 2,
+            "strict_correct": 2,
+            "format_ok": 2,
+            "known_cost_usd": 0.00338,
+            "unknown_cost_requests": 0,
+            "output_tokens": 85
+          },
+          "current": {
+            "requests": 2,
+            "statuses": {
+              "completed": 2
+            },
+            "refusals": 0,
+            "refusal_rate": 0.0,
+            "refusal_categories": {},
+            "correct": 2,
+            "strict_correct": 2,
+            "format_ok": 2,
+            "known_cost_usd": 0.003664,
+            "unknown_cost_requests": 0,
+            "output_tokens": 60
+          },
+          "dictionary_gloss": {
+            "requests": 2,
+            "statuses": {
+              "completed": 2
+            },
+            "refusals": 0,
+            "refusal_rate": 0.0,
+            "refusal_categories": {},
+            "correct": 2,
+            "strict_correct": 2,
+            "format_ok": 2,
+            "known_cost_usd": 0.004112,
+            "unknown_cost_requests": 0,
+            "output_tokens": 60
+          },
+          "question": {
+            "requests": 2,
+            "statuses": {
+              "completed": 2
+            },
+            "refusals": 0,
+            "refusal_rate": 0.0,
+            "refusal_categories": {},
+            "correct": 2,
+            "strict_correct": 2,
+            "format_ok": 2,
+            "known_cost_usd": 0.002968,
+            "unknown_cost_requests": 0,
+            "output_tokens": 60
+          }
+        }
+      }
+    },
+    "holdout": {
+      "arms": {
+        "control": {
+          "requests": 20,
+          "statuses": {
+            "completed": 17,
+            "refused": 3
+          },
+          "refusals": 3,
+          "refusal_rate": 0.15,
+          "refusal_categories": {
+            "cyber": 3
+          },
+          "correct": 15,
+          "strict_correct": 15,
+          "format_ok": 17,
+          "known_cost_usd": 0.19458,
+          "unknown_cost_requests": 0,
+          "output_tokens": 8408
+        },
+        "selected": {
+          "requests": 20,
+          "statuses": {
+            "completed": 19,
+            "refused": 1
+          },
+          "refusals": 1,
+          "refusal_rate": 0.05,
+          "refusal_categories": {
+            "cyber": 1
+          },
+          "correct": 15,
+          "strict_correct": 15,
+          "format_ok": 19,
+          "known_cost_usd": 0.30002,
+          "unknown_cost_requests": 0,
+          "output_tokens": 13680
+        }
+      },
+      "families": {
+        "tinanta": {
+          "control": {
+            "requests": 5,
+            "statuses": {
+              "refused": 1,
+              "completed": 4
+            },
+            "refusals": 1,
+            "refusal_rate": 0.2,
+            "refusal_categories": {
+              "cyber": 1
+            },
+            "correct": 4,
+            "strict_correct": 4,
+            "format_ok": 4,
+            "known_cost_usd": 0.083316,
+            "unknown_cost_requests": 0,
+            "output_tokens": 3808
+          },
+          "selected": {
+            "requests": 5,
+            "statuses": {
+              "completed": 5
+            },
+            "refusals": 0,
+            "refusal_rate": 0.0,
+            "refusal_categories": {},
+            "correct": 5,
+            "strict_correct": 5,
+            "format_ok": 5,
+            "known_cost_usd": 0.103276,
+            "unknown_cost_requests": 0,
+            "output_tokens": 4806
+          }
+        },
+        "krdanta": {
+          "control": {
+            "requests": 5,
+            "statuses": {
+              "completed": 5
+            },
+            "refusals": 0,
+            "refusal_rate": 0.0,
+            "refusal_categories": {},
+            "correct": 5,
+            "strict_correct": 5,
+            "format_ok": 5,
+            "known_cost_usd": 0.034804,
+            "unknown_cost_requests": 0,
+            "output_tokens": 1375
+          },
+          "selected": {
+            "requests": 5,
+            "statuses": {
+              "completed": 5
+            },
+            "refusals": 0,
+            "refusal_rate": 0.0,
+            "refusal_categories": {},
+            "correct": 5,
+            "strict_correct": 5,
+            "format_ok": 5,
+            "known_cost_usd": 0.044404,
+            "unknown_cost_requests": 0,
+            "output_tokens": 1855
+          }
+        },
+        "taddhitanta": {
+          "control": {
+            "requests": 5,
+            "statuses": {
+              "refused": 2,
+              "completed": 3
+            },
+            "refusals": 2,
+            "refusal_rate": 0.4,
+            "refusal_categories": {
+              "cyber": 2
+            },
+            "correct": 1,
+            "strict_correct": 1,
+            "format_ok": 3,
+            "known_cost_usd": 0.064704,
+            "unknown_cost_requests": 0,
+            "output_tokens": 2947
+          },
+          "selected": {
+            "requests": 5,
+            "statuses": {
+              "completed": 4,
+              "refused": 1
+            },
+            "refusals": 1,
+            "refusal_rate": 0.2,
+            "refusal_categories": {
+              "cyber": 1
+            },
+            "correct": 0,
+            "strict_correct": 0,
+            "format_ok": 4,
+            "known_cost_usd": 0.141104,
+            "unknown_cost_requests": 0,
+            "output_tokens": 6767
+          }
+        },
+        "subanta": {
+          "control": {
+            "requests": 5,
+            "statuses": {
+              "completed": 5
+            },
+            "refusals": 0,
+            "refusal_rate": 0.0,
+            "refusal_categories": {},
+            "correct": 5,
+            "strict_correct": 5,
+            "format_ok": 5,
+            "known_cost_usd": 0.011756,
+            "unknown_cost_requests": 0,
+            "output_tokens": 278
+          },
+          "selected": {
+            "requests": 5,
+            "statuses": {
+              "completed": 5
+            },
+            "refusals": 0,
+            "refusal_rate": 0.0,
+            "refusal_categories": {},
+            "correct": 5,
+            "strict_correct": 5,
+            "format_ok": 5,
+            "known_cost_usd": 0.011236,
+            "unknown_cost_requests": 0,
+            "output_tokens": 252
+          }
+        }
+      },
+      "paired_outcomes": {
+        "control_completed_selected_completed": 17,
+        "control_refused_selected_completed": 2,
+        "control_refused_selected_refused": 1
+      }
+    },
+    "confirmation": {
+      "arms": {
+        "selected": {
+          "requests": 20,
+          "statuses": {
+            "completed": 19,
+            "refused": 1
+          },
+          "refusals": 1,
+          "refusal_rate": 0.05,
+          "refusal_categories": {
+            "cyber": 1
+          },
+          "correct": 16,
+          "strict_correct": 16,
+          "format_ok": 19,
+          "known_cost_usd": 0.20956,
+          "unknown_cost_requests": 0,
+          "output_tokens": 9178
+        }
+      },
+      "families": {
+        "tinanta": {
+          "selected": {
+            "requests": 5,
+            "statuses": {
+              "completed": 5
+            },
+            "refusals": 0,
+            "refusal_rate": 0.0,
+            "refusal_categories": {},
+            "correct": 5,
+            "strict_correct": 5,
+            "format_ok": 5,
+            "known_cost_usd": 0.084592,
+            "unknown_cost_requests": 0,
+            "output_tokens": 3898
+          }
+        },
+        "krdanta": {
+          "selected": {
+            "requests": 5,
+            "statuses": {
+              "completed": 5
+            },
+            "refusals": 0,
+            "refusal_rate": 0.0,
+            "refusal_categories": {},
+            "correct": 5,
+            "strict_correct": 5,
+            "format_ok": 5,
+            "known_cost_usd": 0.044636,
+            "unknown_cost_requests": 0,
+            "output_tokens": 1866
+          }
+        },
+        "taddhitanta": {
+          "selected": {
+            "requests": 5,
+            "statuses": {
+              "completed": 4,
+              "refused": 1
+            },
+            "refusals": 1,
+            "refusal_rate": 0.2,
+            "refusal_categories": {
+              "cyber": 1
+            },
+            "correct": 2,
+            "strict_correct": 2,
+            "format_ok": 4,
+            "known_cost_usd": 0.067144,
+            "unknown_cost_requests": 0,
+            "output_tokens": 3065
+          }
+        },
+        "subanta": {
+          "selected": {
+            "requests": 5,
+            "statuses": {
+              "completed": 5
+            },
+            "refusals": 0,
+            "refusal_rate": 0.0,
+            "refusal_categories": {},
+            "correct": 4,
+            "strict_correct": 4,
+            "format_ok": 5,
+            "known_cost_usd": 0.013188,
+            "unknown_cost_requests": 0,
+            "output_tokens": 349
+          }
+        }
+      }
+    }
+  }
+}

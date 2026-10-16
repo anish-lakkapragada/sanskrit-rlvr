@@ -1,0 +1,2484 @@
+[
+  {
+    "case_id": "case_01",
+    "family": "tinanta",
+    "phase": "discovery",
+    "task": {
+      "id": "01.0371:Lat:Kartari:Uttama:Bahu",
+      "dhatu": {
+        "code": "01.0371",
+        "aupadeshika": "ruwi~",
+        "gana": "Bhvadi",
+        "artha": "steye",
+        "antargana": null,
+        "prefixes": [],
+        "sanadi": []
+      },
+      "morphology": {
+        "lakara": "Lat",
+        "prayoga": "Kartari",
+        "purusha": "Uttama",
+        "vacana": "Bahu"
+      },
+      "gold_slp1": [
+        "ruRwAmaH"
+      ],
+      "gold_devanagari": [
+        "रुण्टामः"
+      ],
+      "status": "ok",
+      "warnings": []
+    },
+    "original_prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested conjugated verb form from the Sanskrit verbal root (dhatu, given in\nDevanagari in its Dhatupatha citation form, anubandha markers included), its\nverb class (gana), its traditional meaning (artha), and the required\ntense/mood (lakara), voice (prayoga), person (purusha), and number (vacana).\nEach Sanskrit grammatical term is glossed in parentheses in English.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): रुटिँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Bhvadi (class 1)\nartha (traditional meaning): स्तेये\n\nRequired form:\n- lakara (tense/mood): Lat (present)\n- prayoga (voice): Kartari (active)\n- purusha (person): Uttama (first person)\n- vacana (number): Bahu (plural)\n",
+    "original_benchmark_result": {
+      "task_id": "01.0371:Lat:Kartari:Uttama:Bahu",
+      "attempt_number": 1,
+      "status": "refused",
+      "output_text": "",
+      "answer": null,
+      "correct": null,
+      "format_ok": false,
+      "usage": {
+        "input_tokens": 415,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 0,
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "cost_usd": 0.0,
+      "request_id": "req_011Cg2pYmMSAVVL4wbJ5MRoL",
+      "response_id": "msg_011Cg2pYma518nFYFsBYnveA",
+      "elapsed_ms": 1606.534,
+      "error": {
+        "stop_reason": "refusal",
+        "stop_details": {
+          "type": "refusal",
+          "category": "cyber",
+          "explanation": "This request triggered restrictions on violative cyber content and was blocked under Anthropic's Usage Policy. To learn more, see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback. API integrators: you can reduce refusals for your users by configuring a fallback model — see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+        }
+      }
+    }
+  },
+  {
+    "case_id": "case_02",
+    "family": "tinanta",
+    "phase": "discovery",
+    "task": {
+      "id": "10.0304:Lit:Karmani:Madhyama:Bahu",
+      "dhatu": {
+        "code": "10.0304",
+        "aupadeshika": "viCa~",
+        "gana": "Curadi",
+        "artha": "BAzAyAm",
+        "antargana": "Asvadiya",
+        "prefixes": [],
+        "sanadi": []
+      },
+      "morphology": {
+        "lakara": "Lit",
+        "prayoga": "Karmani",
+        "purusha": "Madhyama",
+        "vacana": "Bahu"
+      },
+      "gold_slp1": [
+        "vicCAyAYcakfQve",
+        "vicCAyAmAsiDve",
+        "vicCAyAmbaBUviQve",
+        "vicCayAYcakfQve",
+        "vicCayAmAsiDve",
+        "vicCayAmbaBUviQve",
+        "vivicCiDve"
+      ],
+      "gold_devanagari": [
+        "विच्छायाञ्चकृढ्वे",
+        "विच्छायामासिध्वे",
+        "विच्छायाम्बभूविढ्वे",
+        "विच्छयाञ्चकृढ्वे",
+        "विच्छयामासिध्वे",
+        "विच्छयाम्बभूविढ्वे",
+        "विविच्छिध्वे"
+      ],
+      "status": "ok",
+      "warnings": []
+    },
+    "original_prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested conjugated verb form from the Sanskrit verbal root (dhatu, given in\nDevanagari in its Dhatupatha citation form, anubandha markers included), its\nverb class (gana), its traditional meaning (artha), and the required\ntense/mood (lakara), voice (prayoga), person (purusha), and number (vacana).\nEach Sanskrit grammatical term is glossed in parentheses in English.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): विछँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): भाषायाम्\n\nRequired form:\n- lakara (tense/mood): Lit (perfect)\n- prayoga (voice): Karmani (passive)\n- purusha (person): Madhyama (second person)\n- vacana (number): Bahu (plural)\n",
+    "original_benchmark_result": {
+      "task_id": "10.0304:Lit:Karmani:Madhyama:Bahu",
+      "attempt_number": 1,
+      "status": "refused",
+      "output_text": "",
+      "answer": null,
+      "correct": null,
+      "format_ok": false,
+      "usage": {
+        "input_tokens": 417,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 759,
+        "service_tier": "standard",
+        "inference_geo": "global",
+        "output_tokens_details": {
+          "thinking_tokens": 759
+        }
+      },
+      "cost_usd": 0.016848,
+      "request_id": "req_011Cg2pcKBgcKjTa74pgJ3Sc",
+      "response_id": "msg_011Cg2pcKP6HSiz5YPX4HMk4",
+      "elapsed_ms": 11302.728,
+      "error": {
+        "stop_reason": "refusal",
+        "stop_details": {
+          "type": "refusal",
+          "category": "cyber",
+          "explanation": "This request triggered restrictions on violative cyber content and was blocked under Anthropic's Usage Policy. To learn more, see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback. API integrators: you can reduce refusals for your users by configuring a fallback model — see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+        }
+      }
+    }
+  },
+  {
+    "case_id": "case_03",
+    "family": "tinanta",
+    "phase": "holdout",
+    "task": {
+      "id": "10.0013:Lot:Kartari:Madhyama:Dvi",
+      "dhatu": {
+        "code": "10.0013",
+        "aupadeshika": "o~laqi~",
+        "gana": "Curadi",
+        "artha": "utkzepaRe",
+        "antargana": null,
+        "prefixes": [],
+        "sanadi": []
+      },
+      "morphology": {
+        "lakara": "Lot",
+        "prayoga": "Kartari",
+        "purusha": "Madhyama",
+        "vacana": "Dvi"
+      },
+      "gold_slp1": [
+        "laRqatam",
+        "laRqayatam",
+        "laRqayeTAm"
+      ],
+      "gold_devanagari": [
+        "लण्डतम्",
+        "लण्डयतम्",
+        "लण्डयेथाम्"
+      ],
+      "status": "ok",
+      "warnings": []
+    },
+    "original_prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested conjugated verb form from the Sanskrit verbal root (dhatu, given in\nDevanagari in its Dhatupatha citation form, anubandha markers included), its\nverb class (gana), its traditional meaning (artha), and the required\ntense/mood (lakara), voice (prayoga), person (purusha), and number (vacana).\nEach Sanskrit grammatical term is glossed in parentheses in English.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): ओँलडिँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): उत्क्षेपणे\n\nRequired form:\n- lakara (tense/mood): Lot (imperative)\n- prayoga (voice): Kartari (active)\n- purusha (person): Madhyama (second person)\n- vacana (number): Dvi (dual)\n",
+    "original_benchmark_result": {
+      "task_id": "10.0013:Lot:Kartari:Madhyama:Dvi",
+      "attempt_number": 1,
+      "status": "refused",
+      "output_text": "",
+      "answer": null,
+      "correct": null,
+      "format_ok": false,
+      "usage": {
+        "input_tokens": 423,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 200,
+        "service_tier": "standard",
+        "inference_geo": "global",
+        "output_tokens_details": {
+          "thinking_tokens": 199
+        }
+      },
+      "cost_usd": 0.005692,
+      "request_id": "req_011Cg2pbT1hAiyioyjzpwp8t",
+      "response_id": "msg_011Cg2pbTE6iwHNFW4vgKBHX",
+      "elapsed_ms": 3789.763,
+      "error": {
+        "stop_reason": "refusal",
+        "stop_details": {
+          "type": "refusal",
+          "category": "cyber",
+          "explanation": "This request triggered restrictions on violative cyber content and was blocked under Anthropic's Usage Policy. To learn more, see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback. API integrators: you can reduce refusals for your users by configuring a fallback model — see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+        }
+      }
+    }
+  },
+  {
+    "case_id": "case_04",
+    "family": "tinanta",
+    "phase": "holdout",
+    "task": {
+      "id": "06.0035:Lan:Kartari:Uttama:Bahu",
+      "dhatu": {
+        "code": "06.0035",
+        "aupadeshika": "tunPa~",
+        "gana": "Tudadi",
+        "artha": "hiMsAyAm",
+        "antargana": null,
+        "prefixes": [],
+        "sanadi": []
+      },
+      "morphology": {
+        "lakara": "Lan",
+        "prayoga": "Kartari",
+        "purusha": "Uttama",
+        "vacana": "Bahu"
+      },
+      "gold_slp1": [
+        "atumPAma"
+      ],
+      "gold_devanagari": [
+        "अतुम्फाम"
+      ],
+      "status": "ok",
+      "warnings": []
+    },
+    "original_prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested conjugated verb form from the Sanskrit verbal root (dhatu, given in\nDevanagari in its Dhatupatha citation form, anubandha markers included), its\nverb class (gana), its traditional meaning (artha), and the required\ntense/mood (lakara), voice (prayoga), person (purusha), and number (vacana).\nEach Sanskrit grammatical term is glossed in parentheses in English.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): तुन्फँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Tudadi (class 6)\nartha (traditional meaning): हिंसायाम्\n\nRequired form:\n- lakara (tense/mood): Lan (imperfect)\n- prayoga (voice): Kartari (active)\n- purusha (person): Uttama (first person)\n- vacana (number): Bahu (plural)\n",
+    "original_benchmark_result": {
+      "task_id": "06.0035:Lan:Kartari:Uttama:Bahu",
+      "attempt_number": 1,
+      "status": "refused",
+      "output_text": "",
+      "answer": null,
+      "correct": null,
+      "format_ok": false,
+      "usage": {
+        "input_tokens": 421,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 215,
+        "service_tier": "standard",
+        "inference_geo": "global",
+        "output_tokens_details": {
+          "thinking_tokens": 215
+        }
+      },
+      "cost_usd": 0.005984,
+      "request_id": "req_011Cg2qAabXKXFvfWKbsJT9Q",
+      "response_id": "msg_011Cg2qAaquzx8pcsASm8Wge",
+      "elapsed_ms": 4428.681,
+      "error": {
+        "stop_reason": "refusal",
+        "stop_details": {
+          "type": "refusal",
+          "category": "cyber",
+          "explanation": "This request triggered restrictions on violative cyber content and was blocked under Anthropic's Usage Policy. To learn more, see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback. API integrators: you can reduce refusals for your users by configuring a fallback model — see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+        }
+      }
+    }
+  },
+  {
+    "case_id": "case_05",
+    "family": "taddhitanta",
+    "phase": "discovery",
+    "task": {
+      "id": "taddhitanta:sUtTAna:basic:Pum:Wak",
+      "pratipadika": {
+        "stem": "sUtTAna",
+        "is_nyap": false,
+        "linga": "Pum",
+        "nominal_id": "nominal:sUtTAna:masculine",
+        "mw_ids": [
+          "251179",
+          "251180"
+        ]
+      },
+      "morphology": {
+        "taddhita": "Wak",
+        "artha": null
+      },
+      "gold_slp1": [
+        "sOtTAnika"
+      ],
+      "gold_devanagari": [
+        "सौत्थानिक"
+      ]
+    },
+    "original_prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nApply the requested taddhita affix to the supplied Sanskrit nominal base.\nReturn the resulting derived nominal stem or complete indeclinable, without\nadding case or number endings.\n\nUse the displayed base with its stated grammatical interpretation. No specific\nartha (meaning) is imposed: use a meaning under which this affix can apply.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\npratipadika (nominal base): सूत्थान\nbase interpretation: source gender: masculine; the supplied spelling treated as a basic nominal stem, without a nyap suffix\ntaddhita (technical affix): ठक् (SLP1: Wak)\nartha (meaning): unrestricted\n",
+    "original_benchmark_result": {
+      "task_id": "taddhitanta:sUtTAna:basic:Pum:Wak",
+      "attempt_number": 1,
+      "status": "refused",
+      "output_text": "",
+      "answer": null,
+      "correct": null,
+      "format_ok": false,
+      "usage": {
+        "input_tokens": 333,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 503,
+        "service_tier": "standard",
+        "inference_geo": "global",
+        "output_tokens_details": {
+          "thinking_tokens": 503
+        }
+      },
+      "cost_usd": 0.011392,
+      "request_id": "req_011Cg2pdJRKZ9QXTn2yyeTAV",
+      "response_id": "msg_011Cg2pdKouwZhpSWGCtamTA",
+      "elapsed_ms": 8272.725,
+      "error": {
+        "stop_reason": "refusal",
+        "stop_details": {
+          "type": "refusal",
+          "category": "cyber",
+          "explanation": "This request triggered restrictions on violative cyber content and was blocked under Anthropic's Usage Policy. To learn more, see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback. API integrators: you can reduce refusals for your users by configuring a fallback model — see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+        }
+      }
+    }
+  },
+  {
+    "case_id": "case_06",
+    "family": "taddhitanta",
+    "phase": "discovery",
+    "task": {
+      "id": "taddhitanta:malanA:nyap:Stri:Sas",
+      "pratipadika": {
+        "stem": "malanA",
+        "is_nyap": true,
+        "linga": "Stri",
+        "nominal_id": "nominal:malanA:feminine",
+        "mw_ids": [
+          "158769"
+        ]
+      },
+      "morphology": {
+        "taddhita": "Sas",
+        "artha": null
+      },
+      "gold_slp1": [
+        "malanASa"
+      ],
+      "gold_devanagari": [
+        "मलनाश"
+      ]
+    },
+    "original_prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nApply the requested taddhita affix to the supplied Sanskrit nominal base.\nReturn the resulting derived nominal stem or complete indeclinable, without\nadding case or number endings.\n\nUse the displayed base with its stated grammatical interpretation. No specific\nartha (meaning) is imposed: use a meaning under which this affix can apply.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\npratipadika (nominal base): मलना\nbase interpretation: source gender: feminine; a stem already ending in a nyap feminine suffix\ntaddhita (technical affix): शस् (SLP1: Sas)\nartha (meaning): unrestricted\n",
+    "original_benchmark_result": {
+      "task_id": "taddhitanta:malanA:nyap:Stri:Sas",
+      "attempt_number": 1,
+      "status": "refused",
+      "output_text": "",
+      "answer": null,
+      "correct": null,
+      "format_ok": false,
+      "usage": {
+        "input_tokens": 319,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 744,
+        "service_tier": "standard",
+        "inference_geo": "global",
+        "output_tokens_details": {
+          "thinking_tokens": 744
+        }
+      },
+      "cost_usd": 0.016156,
+      "request_id": "req_011Cg2paCCw6Nc17Qnp4iUGe",
+      "response_id": "msg_011Cg2paCQbLrsVL6v8cHtsJ",
+      "elapsed_ms": 11384.194,
+      "error": {
+        "stop_reason": "refusal",
+        "stop_details": {
+          "type": "refusal",
+          "category": "cyber",
+          "explanation": "This request triggered restrictions on violative cyber content and was blocked under Anthropic's Usage Policy. To learn more, see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback. API integrators: you can reduce refusals for your users by configuring a fallback model — see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+        }
+      }
+    }
+  },
+  {
+    "case_id": "case_07",
+    "family": "taddhitanta",
+    "phase": "holdout",
+    "task": {
+      "id": "taddhitanta:ujJitf:basic:Napumsaka:deSya",
+      "pratipadika": {
+        "stem": "ujJitf",
+        "is_nyap": false,
+        "linga": "Napumsaka",
+        "nominal_id": "nominal:ujJitf:neuter",
+        "mw_ids": [
+          "30612"
+        ]
+      },
+      "morphology": {
+        "taddhita": "deSya",
+        "artha": null
+      },
+      "gold_slp1": [
+        "ujJitfdeSya"
+      ],
+      "gold_devanagari": [
+        "उज्झितृदेश्य"
+      ]
+    },
+    "original_prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nApply the requested taddhita affix to the supplied Sanskrit nominal base.\nReturn the resulting derived nominal stem or complete indeclinable, without\nadding case or number endings.\n\nUse the displayed base with its stated grammatical interpretation. No specific\nartha (meaning) is imposed: use a meaning under which this affix can apply.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\npratipadika (nominal base): उज्झितृ\nbase interpretation: source gender: neuter; the supplied spelling treated as a basic nominal stem, without a nyap suffix\ntaddhita (technical affix): देश्य (SLP1: deSya)\nartha (meaning): unrestricted\n",
+    "original_benchmark_result": {
+      "task_id": "taddhitanta:ujJitf:basic:Napumsaka:deSya",
+      "attempt_number": 1,
+      "status": "refused",
+      "output_text": "",
+      "answer": null,
+      "correct": null,
+      "format_ok": false,
+      "usage": {
+        "input_tokens": 334,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 265,
+        "service_tier": "standard",
+        "inference_geo": "global",
+        "output_tokens_details": {
+          "thinking_tokens": 265
+        }
+      },
+      "cost_usd": 0.006636,
+      "request_id": "req_011Cg2pdFyUp8LhN8DWJD77o",
+      "response_id": "msg_011Cg2pdGErnC8RtBJCYctYG",
+      "elapsed_ms": 5192.913,
+      "error": {
+        "stop_reason": "refusal",
+        "stop_details": {
+          "type": "refusal",
+          "category": "cyber",
+          "explanation": "This request triggered restrictions on violative cyber content and was blocked under Anthropic's Usage Policy. To learn more, see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback. API integrators: you can reduce refusals for your users by configuring a fallback model — see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+        }
+      }
+    }
+  },
+  {
+    "case_id": "case_08",
+    "family": "taddhitanta",
+    "phase": "holdout",
+    "task": {
+      "id": "taddhitanta:pAttrikya:basic:Napumsaka:YyaN",
+      "pratipadika": {
+        "stem": "pAttrikya",
+        "is_nyap": false,
+        "linga": "Napumsaka",
+        "nominal_id": "nominal:pAttrikya:neuter",
+        "mw_ids": [
+          "121827"
+        ]
+      },
+      "morphology": {
+        "taddhita": "YyaN",
+        "artha": null
+      },
+      "gold_slp1": [
+        "pAttrikya",
+        "pAttrikyya"
+      ],
+      "gold_devanagari": [
+        "पात्त्रिक्य",
+        "पात्त्रिक्य्य"
+      ]
+    },
+    "original_prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nApply the requested taddhita affix to the supplied Sanskrit nominal base.\nReturn the resulting derived nominal stem or complete indeclinable, without\nadding case or number endings.\n\nUse the displayed base with its stated grammatical interpretation. No specific\nartha (meaning) is imposed: use a meaning under which this affix can apply.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\npratipadika (nominal base): पात्त्रिक्य\nbase interpretation: source gender: neuter; the supplied spelling treated as a basic nominal stem, without a nyap suffix\ntaddhita (technical affix): ञ्यङ् (SLP1: YyaN)\nartha (meaning): unrestricted\n",
+    "original_benchmark_result": {
+      "task_id": "taddhitanta:pAttrikya:basic:Napumsaka:YyaN",
+      "attempt_number": 1,
+      "status": "refused",
+      "output_text": "",
+      "answer": null,
+      "correct": null,
+      "format_ok": false,
+      "usage": {
+        "input_tokens": 342,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 556,
+        "service_tier": "standard",
+        "inference_geo": "global",
+        "output_tokens_details": {
+          "thinking_tokens": 556
+        }
+      },
+      "cost_usd": 0.012488,
+      "request_id": "req_011Cg2pcDDknrfDUJASVCQXq",
+      "response_id": "msg_011Cg2pcDVd41HwbnKQCMBuD",
+      "elapsed_ms": 7085.381,
+      "error": {
+        "stop_reason": "refusal",
+        "stop_details": {
+          "type": "refusal",
+          "category": "cyber",
+          "explanation": "This request triggered restrictions on violative cyber content and was blocked under Anthropic's Usage Policy. To learn more, see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback. API integrators: you can reduce refusals for your users by configuring a fallback model — see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+        }
+      }
+    }
+  },
+  {
+    "case_id": "case_09",
+    "family": "krdanta",
+    "phase": "discovery",
+    "task": {
+      "id": "krdanta:10.0126:tavyat",
+      "dhatu": {
+        "code": "10.0126",
+        "aupadeshika": "musta~",
+        "gana": "Curadi",
+        "artha": "saNGAte",
+        "antargana": null,
+        "prefixes": [],
+        "sanadi": []
+      },
+      "morphology": {
+        "krt": "tavyat"
+      },
+      "gold_slp1": [
+        "mustayitavya"
+      ],
+      "gold_devanagari": [
+        "मुस्तयितव्य"
+      ]
+    },
+    "original_prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired primary suffix (krt). Each Sanskrit grammatical term is glossed in\nparentheses in English.\n\nFor a noun or adjective, return the uninflected nominal stem (pratipadika),\nwithout case or number endings. For an indeclinable (avyaya), return the\ncomplete indeclinable form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): मुस्तँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): सङ्घाते\n\nRequired form:\n- krt (primary suffix): तव्यत् (gerundive; necessity or possibility; citation form, anubandha markers included)\n",
+    "original_benchmark_result": {
+      "task_id": "krdanta:10.0126:tavyat",
+      "attempt_number": 1,
+      "status": "refused",
+      "output_text": "",
+      "answer": null,
+      "correct": null,
+      "format_ok": false,
+      "usage": {
+        "input_tokens": 438,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 0,
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "cost_usd": 0.0,
+      "request_id": "req_011Cg2peNh5Ac9LXZMxp3YH2",
+      "response_id": "msg_011Cg2peNsyyQfk9ZG4hcMpB",
+      "elapsed_ms": 1018.455,
+      "error": {
+        "stop_reason": "refusal",
+        "stop_details": {
+          "type": "refusal",
+          "category": "cyber",
+          "explanation": "This request triggered restrictions on violative cyber content and was blocked under Anthropic's Usage Policy. To learn more, see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback. API integrators: you can reduce refusals for your users by configuring a fallback model — see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+        }
+      }
+    }
+  },
+  {
+    "case_id": "case_10",
+    "family": "krdanta",
+    "phase": "discovery",
+    "task": {
+      "id": "krdanta:10.0206:tumun",
+      "dhatu": {
+        "code": "10.0206",
+        "aupadeshika": "pila~",
+        "gana": "Curadi",
+        "artha": "kzepe",
+        "antargana": "Akusmiya",
+        "prefixes": [],
+        "sanadi": []
+      },
+      "morphology": {
+        "krt": "tumun"
+      },
+      "gold_slp1": [
+        "pelayitum"
+      ],
+      "gold_devanagari": [
+        "पेलयितुम्"
+      ]
+    },
+    "original_prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired primary suffix (krt). Each Sanskrit grammatical term is glossed in\nparentheses in English.\n\nFor a noun or adjective, return the uninflected nominal stem (pratipadika),\nwithout case or number endings. For an indeclinable (avyaya), return the\ncomplete indeclinable form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): पिलँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): क्षेपे\n\nRequired form:\n- krt (primary suffix): तुमुँन् (infinitive; citation form, anubandha markers included)\n",
+    "original_benchmark_result": {
+      "task_id": "krdanta:10.0206:tumun",
+      "attempt_number": 1,
+      "status": "refused",
+      "output_text": "",
+      "answer": null,
+      "correct": null,
+      "format_ok": false,
+      "usage": {
+        "input_tokens": 428,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 0,
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "cost_usd": 0.0,
+      "request_id": "req_011Cg2pshpdTyraruVLZNyVo",
+      "response_id": "msg_011Cg2psi2n2d4Hn1Fg97woV",
+      "elapsed_ms": 1335.589,
+      "error": {
+        "stop_reason": "refusal",
+        "stop_details": {
+          "type": "refusal",
+          "category": "cyber",
+          "explanation": "This request triggered restrictions on violative cyber content and was blocked under Anthropic's Usage Policy. To learn more, see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback. API integrators: you can reduce refusals for your users by configuring a fallback model — see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+        }
+      }
+    }
+  },
+  {
+    "case_id": "case_11",
+    "family": "krdanta",
+    "phase": "discovery",
+    "task": {
+      "id": "krdanta:10.0148:tavya",
+      "dhatu": {
+        "code": "10.0148",
+        "aupadeshika": "juqa~",
+        "gana": "Curadi",
+        "artha": "preraRe",
+        "antargana": null,
+        "prefixes": [],
+        "sanadi": []
+      },
+      "morphology": {
+        "krt": "tavya"
+      },
+      "gold_slp1": [
+        "joqayitavya"
+      ],
+      "gold_devanagari": [
+        "जोडयितव्य"
+      ]
+    },
+    "original_prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired primary suffix (krt). Each Sanskrit grammatical term is glossed in\nparentheses in English.\n\nFor a noun or adjective, return the uninflected nominal stem (pratipadika),\nwithout case or number endings. For an indeclinable (avyaya), return the\ncomplete indeclinable form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): जुडँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): प्रेरणे\n\nRequired form:\n- krt (primary suffix): तव्य (gerundive; necessity or possibility; citation form, anubandha markers included)\n",
+    "original_benchmark_result": {
+      "task_id": "krdanta:10.0148:tavya",
+      "attempt_number": 1,
+      "status": "refused",
+      "output_text": "",
+      "answer": null,
+      "correct": null,
+      "format_ok": false,
+      "usage": {
+        "input_tokens": 434,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 0,
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "cost_usd": 0.0,
+      "request_id": "req_011Cg2pk6KkbpurigrvTb31B",
+      "response_id": "msg_011Cg2pk6gLLcE5AZ6HCJTTa",
+      "elapsed_ms": 1729.07,
+      "error": {
+        "stop_reason": "refusal",
+        "stop_details": {
+          "type": "refusal",
+          "category": "cyber",
+          "explanation": "This request triggered restrictions on violative cyber content and was blocked under Anthropic's Usage Policy. To learn more, see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback. API integrators: you can reduce refusals for your users by configuring a fallback model — see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+        }
+      }
+    }
+  },
+  {
+    "case_id": "case_12",
+    "family": "krdanta",
+    "phase": "discovery",
+    "task": {
+      "id": "krdanta:10.0359:tavya",
+      "dhatu": {
+        "code": "10.0359",
+        "aupadeshika": "lawa~",
+        "gana": "Curadi",
+        "artha": "BAzAyAm",
+        "antargana": "Adhrshiya",
+        "prefixes": [],
+        "sanadi": []
+      },
+      "morphology": {
+        "krt": "tavya"
+      },
+      "gold_slp1": [
+        "lAwayitavya",
+        "lawitavya"
+      ],
+      "gold_devanagari": [
+        "लाटयितव्य",
+        "लटितव्य"
+      ]
+    },
+    "original_prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired primary suffix (krt). Each Sanskrit grammatical term is glossed in\nparentheses in English.\n\nFor a noun or adjective, return the uninflected nominal stem (pratipadika),\nwithout case or number endings. For an indeclinable (avyaya), return the\ncomplete indeclinable form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): लटँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): भाषायाम्\n\nRequired form:\n- krt (primary suffix): तव्य (gerundive; necessity or possibility; citation form, anubandha markers included)\n",
+    "original_benchmark_result": {
+      "task_id": "krdanta:10.0359:tavya",
+      "attempt_number": 1,
+      "status": "refused",
+      "output_text": "",
+      "answer": null,
+      "correct": null,
+      "format_ok": false,
+      "usage": {
+        "input_tokens": 433,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 0,
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "cost_usd": 0.0,
+      "request_id": "req_011Cg2pzvChqw1udZDPuviSU",
+      "response_id": "msg_011Cg2pzvQMpjihVkwwiaJ7K",
+      "elapsed_ms": 1183.606,
+      "error": {
+        "stop_reason": "refusal",
+        "stop_details": {
+          "type": "refusal",
+          "category": "cyber",
+          "explanation": "This request triggered restrictions on violative cyber content and was blocked under Anthropic's Usage Policy. To learn more, see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback. API integrators: you can reduce refusals for your users by configuring a fallback model — see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+        }
+      }
+    }
+  },
+  {
+    "case_id": "case_13",
+    "family": "krdanta",
+    "phase": "discovery",
+    "task": {
+      "id": "krdanta:10.0186:yat",
+      "dhatu": {
+        "code": "10.0186",
+        "aupadeshika": "parTa~",
+        "gana": "Curadi",
+        "artha": "prakzepe",
+        "antargana": null,
+        "prefixes": [],
+        "sanadi": []
+      },
+      "morphology": {
+        "krt": "yat"
+      },
+      "gold_slp1": [
+        "parTya"
+      ],
+      "gold_devanagari": [
+        "पर्थ्य"
+      ]
+    },
+    "original_prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired primary suffix (krt). Each Sanskrit grammatical term is glossed in\nparentheses in English.\n\nFor a noun or adjective, return the uninflected nominal stem (pratipadika),\nwithout case or number endings. For an indeclinable (avyaya), return the\ncomplete indeclinable form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): पर्थँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): प्रक्षेपे\n\nRequired form:\n- krt (primary suffix): यत् (gerundive; necessity or possibility; citation form, anubandha markers included)\n",
+    "original_benchmark_result": {
+      "task_id": "krdanta:10.0186:yat",
+      "attempt_number": 1,
+      "status": "refused",
+      "output_text": "",
+      "answer": null,
+      "correct": null,
+      "format_ok": false,
+      "usage": {
+        "input_tokens": 436,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 0,
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "cost_usd": 0.0,
+      "request_id": "req_011Cg2phho7JtkhvLMpReiN7",
+      "response_id": "msg_011Cg2phi2WVPqqbqmdjzehH",
+      "elapsed_ms": 1099.168,
+      "error": {
+        "stop_reason": "refusal",
+        "stop_details": {
+          "type": "refusal",
+          "category": "cyber",
+          "explanation": "This request triggered restrictions on violative cyber content and was blocked under Anthropic's Usage Policy. To learn more, see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback. API integrators: you can reduce refusals for your users by configuring a fallback model — see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+        }
+      }
+    }
+  },
+  {
+    "case_id": "case_14",
+    "family": "krdanta",
+    "phase": "discovery",
+    "task": {
+      "id": "krdanta:10.0286:anIyar",
+      "dhatu": {
+        "code": "10.0286",
+        "aupadeshika": "miji~",
+        "gana": "Curadi",
+        "artha": "BAzAyAm",
+        "antargana": "Asvadiya",
+        "prefixes": [],
+        "sanadi": []
+      },
+      "morphology": {
+        "krt": "anIyar"
+      },
+      "gold_slp1": [
+        "miYjanIya"
+      ],
+      "gold_devanagari": [
+        "मिञ्जनीय"
+      ]
+    },
+    "original_prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired primary suffix (krt). Each Sanskrit grammatical term is glossed in\nparentheses in English.\n\nFor a noun or adjective, return the uninflected nominal stem (pratipadika),\nwithout case or number endings. For an indeclinable (avyaya), return the\ncomplete indeclinable form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): मिजिँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): भाषायाम्\n\nRequired form:\n- krt (primary suffix): अनीयर् (gerundive; necessity or possibility; citation form, anubandha markers included)\n",
+    "original_benchmark_result": {
+      "task_id": "krdanta:10.0286:anIyar",
+      "attempt_number": 1,
+      "status": "refused",
+      "output_text": "",
+      "answer": null,
+      "correct": null,
+      "format_ok": false,
+      "usage": {
+        "input_tokens": 437,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 0,
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "cost_usd": 0.0,
+      "request_id": "req_011Cg2pjyNnM9zqvxNvkTCRh",
+      "response_id": "msg_011Cg2pjyawdJZSaNEQupeik",
+      "elapsed_ms": 817.231,
+      "error": {
+        "stop_reason": "refusal",
+        "stop_details": {
+          "type": "refusal",
+          "category": "cyber",
+          "explanation": "This request triggered restrictions on violative cyber content and was blocked under Anthropic's Usage Policy. To learn more, see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback. API integrators: you can reduce refusals for your users by configuring a fallback model — see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+        }
+      }
+    }
+  },
+  {
+    "case_id": "case_15",
+    "family": "krdanta",
+    "phase": "holdout",
+    "task": {
+      "id": "krdanta:10.0038:tumun",
+      "dhatu": {
+        "code": "10.0038",
+        "aupadeshika": "zuwwa~",
+        "gana": "Curadi",
+        "artha": "anAdare",
+        "antargana": null,
+        "prefixes": [],
+        "sanadi": []
+      },
+      "morphology": {
+        "krt": "tumun"
+      },
+      "gold_slp1": [
+        "suwwayitum"
+      ],
+      "gold_devanagari": [
+        "सुट्टयितुम्"
+      ]
+    },
+    "original_prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired primary suffix (krt). Each Sanskrit grammatical term is glossed in\nparentheses in English.\n\nFor a noun or adjective, return the uninflected nominal stem (pratipadika),\nwithout case or number endings. For an indeclinable (avyaya), return the\ncomplete indeclinable form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): षुट्टँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): अनादरे\n\nRequired form:\n- krt (primary suffix): तुमुँन् (infinitive; citation form, anubandha markers included)\n",
+    "original_benchmark_result": {
+      "task_id": "krdanta:10.0038:tumun",
+      "attempt_number": 1,
+      "status": "refused",
+      "output_text": "",
+      "answer": null,
+      "correct": null,
+      "format_ok": false,
+      "usage": {
+        "input_tokens": 429,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 0,
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "cost_usd": 0.0,
+      "request_id": "req_011Cg2q1ku9Fw9YnzvVYd7rb",
+      "response_id": "msg_011Cg2q1m7YWG7wHYekc9JVQ",
+      "elapsed_ms": 2068.075,
+      "error": {
+        "stop_reason": "refusal",
+        "stop_details": {
+          "type": "refusal",
+          "category": "cyber",
+          "explanation": "This request triggered restrictions on violative cyber content and was blocked under Anthropic's Usage Policy. To learn more, see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback. API integrators: you can reduce refusals for your users by configuring a fallback model — see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+        }
+      }
+    }
+  },
+  {
+    "case_id": "case_16",
+    "family": "krdanta",
+    "phase": "holdout",
+    "task": {
+      "id": "krdanta:10.0345:tumun",
+      "dhatu": {
+        "code": "10.0345",
+        "aupadeshika": "vfY",
+        "gana": "Curadi",
+        "artha": "AvaraRe",
+        "antargana": "Adhrshiya",
+        "prefixes": [],
+        "sanadi": []
+      },
+      "morphology": {
+        "krt": "tumun"
+      },
+      "gold_slp1": [
+        "vArayitum",
+        "varItum",
+        "varitum"
+      ],
+      "gold_devanagari": [
+        "वारयितुम्",
+        "वरीतुम्",
+        "वरितुम्"
+      ]
+    },
+    "original_prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired primary suffix (krt). Each Sanskrit grammatical term is glossed in\nparentheses in English.\n\nFor a noun or adjective, return the uninflected nominal stem (pratipadika),\nwithout case or number endings. For an indeclinable (avyaya), return the\ncomplete indeclinable form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): वृञ्   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): आवरणे\n\nRequired form:\n- krt (primary suffix): तुमुँन् (infinitive; citation form, anubandha markers included)\n",
+    "original_benchmark_result": {
+      "task_id": "krdanta:10.0345:tumun",
+      "attempt_number": 1,
+      "status": "refused",
+      "output_text": "",
+      "answer": null,
+      "correct": null,
+      "format_ok": false,
+      "usage": {
+        "input_tokens": 427,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 0,
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "cost_usd": 0.0,
+      "request_id": "req_011Cg2pxBcaTdRviCdgzrewc",
+      "response_id": "msg_011Cg2pxBqUTHpSdwzyxKeMN",
+      "elapsed_ms": 1699.472,
+      "error": {
+        "stop_reason": "refusal",
+        "stop_details": {
+          "type": "refusal",
+          "category": "cyber",
+          "explanation": "This request triggered restrictions on violative cyber content and was blocked under Anthropic's Usage Policy. To learn more, see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback. API integrators: you can reduce refusals for your users by configuring a fallback model — see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+        }
+      }
+    }
+  },
+  {
+    "case_id": "case_17",
+    "family": "krdanta",
+    "phase": "holdout",
+    "task": {
+      "id": "krdanta:10.0345:anIyar",
+      "dhatu": {
+        "code": "10.0345",
+        "aupadeshika": "vfY",
+        "gana": "Curadi",
+        "artha": "AvaraRe",
+        "antargana": "Adhrshiya",
+        "prefixes": [],
+        "sanadi": []
+      },
+      "morphology": {
+        "krt": "anIyar"
+      },
+      "gold_slp1": [
+        "vAraRIya",
+        "varaRIya"
+      ],
+      "gold_devanagari": [
+        "वारणीय",
+        "वरणीय"
+      ]
+    },
+    "original_prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired primary suffix (krt). Each Sanskrit grammatical term is glossed in\nparentheses in English.\n\nFor a noun or adjective, return the uninflected nominal stem (pratipadika),\nwithout case or number endings. For an indeclinable (avyaya), return the\ncomplete indeclinable form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): वृञ्   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): आवरणे\n\nRequired form:\n- krt (primary suffix): अनीयर् (gerundive; necessity or possibility; citation form, anubandha markers included)\n",
+    "original_benchmark_result": {
+      "task_id": "krdanta:10.0345:anIyar",
+      "attempt_number": 1,
+      "status": "refused",
+      "output_text": "",
+      "answer": null,
+      "correct": null,
+      "format_ok": false,
+      "usage": {
+        "input_tokens": 434,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 0,
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "cost_usd": 0.0,
+      "request_id": "req_011Cg2paKRGj82MkPEVxzepq",
+      "response_id": "msg_011Cg2paKeACro9heYFXf878",
+      "elapsed_ms": 1636.622,
+      "error": {
+        "stop_reason": "refusal",
+        "stop_details": {
+          "type": "refusal",
+          "category": "cyber",
+          "explanation": "This request triggered restrictions on violative cyber content and was blocked under Anthropic's Usage Policy. To learn more, see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback. API integrators: you can reduce refusals for your users by configuring a fallback model — see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+        }
+      }
+    }
+  },
+  {
+    "case_id": "case_18",
+    "family": "krdanta",
+    "phase": "holdout",
+    "task": {
+      "id": "krdanta:10.0457:tavya",
+      "dhatu": {
+        "code": "10.0457",
+        "aupadeshika": "karta~",
+        "gana": "Curadi",
+        "artha": "SETilye",
+        "antargana": null,
+        "prefixes": [],
+        "sanadi": []
+      },
+      "morphology": {
+        "krt": "tavya"
+      },
+      "gold_slp1": [
+        "kartayitavya"
+      ],
+      "gold_devanagari": [
+        "कर्तयितव्य"
+      ]
+    },
+    "original_prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired primary suffix (krt). Each Sanskrit grammatical term is glossed in\nparentheses in English.\n\nFor a noun or adjective, return the uninflected nominal stem (pratipadika),\nwithout case or number endings. For an indeclinable (avyaya), return the\ncomplete indeclinable form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): कर्तँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): शैथिल्ये\n\nRequired form:\n- krt (primary suffix): तव्य (gerundive; necessity or possibility; citation form, anubandha markers included)\n",
+    "original_benchmark_result": {
+      "task_id": "krdanta:10.0457:tavya",
+      "attempt_number": 1,
+      "status": "refused",
+      "output_text": "",
+      "answer": null,
+      "correct": null,
+      "format_ok": false,
+      "usage": {
+        "input_tokens": 436,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 0,
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "cost_usd": 0.0,
+      "request_id": "req_011Cg2pbLGtHGU3rn5GYTzL2",
+      "response_id": "msg_011Cg2pbLUYmEXv6eS8CteAL",
+      "elapsed_ms": 1230.536,
+      "error": {
+        "stop_reason": "refusal",
+        "stop_details": {
+          "type": "refusal",
+          "category": "cyber",
+          "explanation": "This request triggered restrictions on violative cyber content and was blocked under Anthropic's Usage Policy. To learn more, see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback. API integrators: you can reduce refusals for your users by configuring a fallback model — see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+        }
+      }
+    }
+  },
+  {
+    "case_id": "case_19",
+    "family": "krdanta",
+    "phase": "holdout",
+    "task": {
+      "id": "krdanta:01.0782:tumun",
+      "dhatu": {
+        "code": "01.0782",
+        "aupadeshika": "Kaza~",
+        "gana": "Bhvadi",
+        "artha": "hiMsAyAm",
+        "antargana": null,
+        "prefixes": [],
+        "sanadi": []
+      },
+      "morphology": {
+        "krt": "tumun"
+      },
+      "gold_slp1": [
+        "Kazitum"
+      ],
+      "gold_devanagari": [
+        "खषितुम्"
+      ]
+    },
+    "original_prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired primary suffix (krt). Each Sanskrit grammatical term is glossed in\nparentheses in English.\n\nFor a noun or adjective, return the uninflected nominal stem (pratipadika),\nwithout case or number endings. For an indeclinable (avyaya), return the\ncomplete indeclinable form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): खषँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Bhvadi (class 1)\nartha (traditional meaning): हिंसायाम्\n\nRequired form:\n- krt (primary suffix): तुमुँन् (infinitive; citation form, anubandha markers included)\n",
+    "original_benchmark_result": {
+      "task_id": "krdanta:01.0782:tumun",
+      "attempt_number": 1,
+      "status": "refused",
+      "output_text": "",
+      "answer": null,
+      "correct": null,
+      "format_ok": false,
+      "usage": {
+        "input_tokens": 431,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 0,
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "cost_usd": 0.0,
+      "request_id": "req_011Cg2pqnKSuMzF9VgyHvp7o",
+      "response_id": "msg_011Cg2pqnX6zWSvmvpN8XiRF",
+      "elapsed_ms": 1147.55,
+      "error": {
+        "stop_reason": "refusal",
+        "stop_details": {
+          "type": "refusal",
+          "category": "cyber",
+          "explanation": "This request triggered restrictions on violative cyber content and was blocked under Anthropic's Usage Policy. To learn more, see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback. API integrators: you can reduce refusals for your users by configuring a fallback model — see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+        }
+      }
+    }
+  },
+  {
+    "case_id": "case_20",
+    "family": "krdanta",
+    "phase": "holdout",
+    "task": {
+      "id": "krdanta:10.0115:ktvA",
+      "dhatu": {
+        "code": "10.0115",
+        "aupadeshika": "Svarta~",
+        "gana": "Curadi",
+        "artha": "gatyAm",
+        "antargana": null,
+        "prefixes": [],
+        "sanadi": []
+      },
+      "morphology": {
+        "krt": "ktvA"
+      },
+      "gold_slp1": [
+        "SvartayitvA"
+      ],
+      "gold_devanagari": [
+        "श्वर्तयित्वा"
+      ]
+    },
+    "original_prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired primary suffix (krt). Each Sanskrit grammatical term is glossed in\nparentheses in English.\n\nFor a noun or adjective, return the uninflected nominal stem (pratipadika),\nwithout case or number endings. For an indeclinable (avyaya), return the\ncomplete indeclinable form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): श्वर्तँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): गत्याम्\n\nRequired form:\n- krt (primary suffix): क्त्वा (absolutive; having performed the action; citation form, anubandha markers included)\n",
+    "original_benchmark_result": {
+      "task_id": "krdanta:10.0115:ktvA",
+      "attempt_number": 1,
+      "status": "refused",
+      "output_text": "",
+      "answer": null,
+      "correct": null,
+      "format_ok": false,
+      "usage": {
+        "input_tokens": 436,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 0,
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "cost_usd": 0.0,
+      "request_id": "req_011Cg2paLUWofriB1Qc8tkTZ",
+      "response_id": "msg_011Cg2paLhQUAPtYwiHWZKgC",
+      "elapsed_ms": 1303.578,
+      "error": {
+        "stop_reason": "refusal",
+        "stop_details": {
+          "type": "refusal",
+          "category": "cyber",
+          "explanation": "This request triggered restrictions on violative cyber content and was blocked under Anthropic's Usage Policy. To learn more, see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback. API integrators: you can reduce refusals for your users by configuring a fallback model — see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+        }
+      }
+    }
+  },
+  {
+    "case_id": "case_21",
+    "family": "krdanta",
+    "phase": "holdout",
+    "task": {
+      "id": "krdanta:10.0103:tavya",
+      "dhatu": {
+        "code": "10.0103",
+        "aupadeshika": "cuwa~",
+        "gana": "Curadi",
+        "artha": "Cedane",
+        "antargana": null,
+        "prefixes": [],
+        "sanadi": []
+      },
+      "morphology": {
+        "krt": "tavya"
+      },
+      "gold_slp1": [
+        "cowayitavya"
+      ],
+      "gold_devanagari": [
+        "चोटयितव्य"
+      ]
+    },
+    "original_prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired primary suffix (krt). Each Sanskrit grammatical term is glossed in\nparentheses in English.\n\nFor a noun or adjective, return the uninflected nominal stem (pratipadika),\nwithout case or number endings. For an indeclinable (avyaya), return the\ncomplete indeclinable form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): चुटँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): छेदने\n\nRequired form:\n- krt (primary suffix): तव्य (gerundive; necessity or possibility; citation form, anubandha markers included)\n",
+    "original_benchmark_result": {
+      "task_id": "krdanta:10.0103:tavya",
+      "attempt_number": 1,
+      "status": "refused",
+      "output_text": "",
+      "answer": null,
+      "correct": null,
+      "format_ok": false,
+      "usage": {
+        "input_tokens": 431,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 0,
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "cost_usd": 0.0,
+      "request_id": "req_011Cg2pkUz1jwEUYDB87EKuN",
+      "response_id": "msg_011Cg2pkVBRf7MFYSPDTwfD7",
+      "elapsed_ms": 1228.706,
+      "error": {
+        "stop_reason": "refusal",
+        "stop_details": {
+          "type": "refusal",
+          "category": "cyber",
+          "explanation": "This request triggered restrictions on violative cyber content and was blocked under Anthropic's Usage Policy. To learn more, see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback. API integrators: you can reduce refusals for your users by configuring a fallback model — see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+        }
+      }
+    }
+  },
+  {
+    "case_id": "case_22",
+    "family": "krdanta",
+    "phase": "holdout",
+    "task": {
+      "id": "krdanta:01.0368:tumun",
+      "dhatu": {
+        "code": "01.0368",
+        "aupadeshika": "cuqi~",
+        "gana": "Bhvadi",
+        "artha": "alpIBAve",
+        "antargana": null,
+        "prefixes": [],
+        "sanadi": []
+      },
+      "morphology": {
+        "krt": "tumun"
+      },
+      "gold_slp1": [
+        "cuRqitum"
+      ],
+      "gold_devanagari": [
+        "चुण्डितुम्"
+      ]
+    },
+    "original_prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired primary suffix (krt). Each Sanskrit grammatical term is glossed in\nparentheses in English.\n\nFor a noun or adjective, return the uninflected nominal stem (pratipadika),\nwithout case or number endings. For an indeclinable (avyaya), return the\ncomplete indeclinable form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): चुडिँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Bhvadi (class 1)\nartha (traditional meaning): अल्पीभावे\n\nRequired form:\n- krt (primary suffix): तुमुँन् (infinitive; citation form, anubandha markers included)\n",
+    "original_benchmark_result": {
+      "task_id": "krdanta:01.0368:tumun",
+      "attempt_number": 1,
+      "status": "refused",
+      "output_text": "",
+      "answer": null,
+      "correct": null,
+      "format_ok": false,
+      "usage": {
+        "input_tokens": 433,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 0,
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "cost_usd": 0.0,
+      "request_id": "req_011Cg2q34e1kB69LgrFeJqv4",
+      "response_id": "msg_011Cg2q34pvvqTAcTcrDiwrc",
+      "elapsed_ms": 1150.731,
+      "error": {
+        "stop_reason": "refusal",
+        "stop_details": {
+          "type": "refusal",
+          "category": "cyber",
+          "explanation": "This request triggered restrictions on violative cyber content and was blocked under Anthropic's Usage Policy. To learn more, see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback. API integrators: you can reduce refusals for your users by configuring a fallback model — see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+        }
+      }
+    }
+  },
+  {
+    "case_id": "case_23",
+    "family": "krdanta",
+    "phase": "holdout",
+    "task": {
+      "id": "krdanta:10.0486:yat",
+      "dhatu": {
+        "code": "10.0486",
+        "aupadeshika": "vizka",
+        "gana": "Curadi",
+        "artha": "darSane",
+        "antargana": null,
+        "prefixes": [],
+        "sanadi": []
+      },
+      "morphology": {
+        "krt": "yat"
+      },
+      "gold_slp1": [
+        "vizkya"
+      ],
+      "gold_devanagari": [
+        "विष्क्य"
+      ]
+    },
+    "original_prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired primary suffix (krt). Each Sanskrit grammatical term is glossed in\nparentheses in English.\n\nFor a noun or adjective, return the uninflected nominal stem (pratipadika),\nwithout case or number endings. For an indeclinable (avyaya), return the\ncomplete indeclinable form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): विष्क   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): दर्शने\n\nRequired form:\n- krt (primary suffix): यत् (gerundive; necessity or possibility; citation form, anubandha markers included)\n",
+    "original_benchmark_result": {
+      "task_id": "krdanta:10.0486:yat",
+      "attempt_number": 1,
+      "status": "refused",
+      "output_text": "",
+      "answer": null,
+      "correct": null,
+      "format_ok": false,
+      "usage": {
+        "input_tokens": 430,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 0,
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "cost_usd": 0.0,
+      "request_id": "req_011Cg2ppbDgEAvEJXETwyWk8",
+      "response_id": "msg_011Cg2ppbTKU88vXDhUHhbHA",
+      "elapsed_ms": 1105.009,
+      "error": {
+        "stop_reason": "refusal",
+        "stop_details": {
+          "type": "refusal",
+          "category": "cyber",
+          "explanation": "This request triggered restrictions on violative cyber content and was blocked under Anthropic's Usage Policy. To learn more, see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback. API integrators: you can reduce refusals for your users by configuring a fallback model — see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+        }
+      }
+    }
+  },
+  {
+    "case_id": "case_24",
+    "family": "krdanta",
+    "phase": "holdout",
+    "task": {
+      "id": "krdanta:10.0004:ktvA",
+      "dhatu": {
+        "code": "10.0004",
+        "aupadeshika": "sPuqi~",
+        "gana": "Curadi",
+        "artha": "parihAse",
+        "antargana": null,
+        "prefixes": [],
+        "sanadi": []
+      },
+      "morphology": {
+        "krt": "ktvA"
+      },
+      "gold_slp1": [
+        "sPuRqayitvA",
+        "sPuRqitvA"
+      ],
+      "gold_devanagari": [
+        "स्फुण्डयित्वा",
+        "स्फुण्डित्वा"
+      ]
+    },
+    "original_prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired primary suffix (krt). Each Sanskrit grammatical term is glossed in\nparentheses in English.\n\nFor a noun or adjective, return the uninflected nominal stem (pratipadika),\nwithout case or number endings. For an indeclinable (avyaya), return the\ncomplete indeclinable form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): स्फुडिँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): परिहासे\n\nRequired form:\n- krt (primary suffix): क्त्वा (absolutive; having performed the action; citation form, anubandha markers included)\n",
+    "original_benchmark_result": {
+      "task_id": "krdanta:10.0004:ktvA",
+      "attempt_number": 1,
+      "status": "refused",
+      "output_text": "",
+      "answer": null,
+      "correct": null,
+      "format_ok": false,
+      "usage": {
+        "input_tokens": 435,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 0,
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "cost_usd": 0.0,
+      "request_id": "req_011Cg2puPytTUTrweXHBsmqJ",
+      "response_id": "msg_011Cg2puQBnmT3PgzRNqDD5e",
+      "elapsed_ms": 1179.543,
+      "error": {
+        "stop_reason": "refusal",
+        "stop_details": {
+          "type": "refusal",
+          "category": "cyber",
+          "explanation": "This request triggered restrictions on violative cyber content and was blocked under Anthropic's Usage Policy. To learn more, see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback. API integrators: you can reduce refusals for your users by configuring a fallback model — see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+        }
+      }
+    }
+  },
+  {
+    "case_id": "case_25",
+    "family": "krdanta",
+    "phase": "holdout",
+    "task": {
+      "id": "krdanta:10.0314:kta",
+      "dhatu": {
+        "code": "10.0314",
+        "aupadeshika": "ruwa~",
+        "gana": "Curadi",
+        "artha": "BAzAyAm",
+        "antargana": "Asvadiya",
+        "prefixes": [],
+        "sanadi": []
+      },
+      "morphology": {
+        "krt": "kta"
+      },
+      "gold_slp1": [
+        "rowita",
+        "ruwita"
+      ],
+      "gold_devanagari": [
+        "रोटित",
+        "रुटित"
+      ]
+    },
+    "original_prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired primary suffix (krt). Each Sanskrit grammatical term is glossed in\nparentheses in English.\n\nFor a noun or adjective, return the uninflected nominal stem (pratipadika),\nwithout case or number endings. For an indeclinable (avyaya), return the\ncomplete indeclinable form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): रुटँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): भाषायाम्\n\nRequired form:\n- krt (primary suffix): क्त (past participle; citation form, anubandha markers included)\n",
+    "original_benchmark_result": {
+      "task_id": "krdanta:10.0314:kta",
+      "attempt_number": 1,
+      "status": "refused",
+      "output_text": "",
+      "answer": null,
+      "correct": null,
+      "format_ok": false,
+      "usage": {
+        "input_tokens": 424,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 0,
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "cost_usd": 0.0,
+      "request_id": "req_011Cg2qDZBXpxP3KLUG8i74H",
+      "response_id": "msg_011Cg2qDZSQiZJra2nionYd1",
+      "elapsed_ms": 1162.658,
+      "error": {
+        "stop_reason": "refusal",
+        "stop_details": {
+          "type": "refusal",
+          "category": "cyber",
+          "explanation": "This request triggered restrictions on violative cyber content and was blocked under Anthropic's Usage Policy. To learn more, see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback. API integrators: you can reduce refusals for your users by configuring a fallback model — see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+        }
+      }
+    }
+  },
+  {
+    "case_id": "case_26",
+    "family": "krdanta",
+    "phase": "holdout",
+    "task": {
+      "id": "krdanta:01.0413:Ryat",
+      "dhatu": {
+        "code": "01.0413",
+        "aupadeshika": "loqf~",
+        "gana": "Bhvadi",
+        "artha": "unmAde",
+        "antargana": null,
+        "prefixes": [],
+        "sanadi": []
+      },
+      "morphology": {
+        "krt": "Ryat"
+      },
+      "gold_slp1": [
+        "loqya"
+      ],
+      "gold_devanagari": [
+        "लोड्य"
+      ]
+    },
+    "original_prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired primary suffix (krt). Each Sanskrit grammatical term is glossed in\nparentheses in English.\n\nFor a noun or adjective, return the uninflected nominal stem (pratipadika),\nwithout case or number endings. For an indeclinable (avyaya), return the\ncomplete indeclinable form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): लोडृँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Bhvadi (class 1)\nartha (traditional meaning): उन्मादे\n\nRequired form:\n- krt (primary suffix): ण्यत् (gerundive; necessity or possibility; citation form, anubandha markers included)\n",
+    "original_benchmark_result": {
+      "task_id": "krdanta:01.0413:Ryat",
+      "attempt_number": 1,
+      "status": "refused",
+      "output_text": "",
+      "answer": null,
+      "correct": null,
+      "format_ok": false,
+      "usage": {
+        "input_tokens": 438,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 0,
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "cost_usd": 0.0,
+      "request_id": "req_011Cg2psgYyeUgaqvWbo4DWW",
+      "response_id": "msg_011Cg2psgn7oiAcJynkWFPoJ",
+      "elapsed_ms": 1089.587,
+      "error": {
+        "stop_reason": "refusal",
+        "stop_details": {
+          "type": "refusal",
+          "category": "cyber",
+          "explanation": "This request triggered restrictions on violative cyber content and was blocked under Anthropic's Usage Policy. To learn more, see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback. API integrators: you can reduce refusals for your users by configuring a fallback model — see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+        }
+      }
+    }
+  },
+  {
+    "case_id": "case_27",
+    "family": "krdanta",
+    "phase": "holdout",
+    "task": {
+      "id": "krdanta:01.0371:Ryat",
+      "dhatu": {
+        "code": "01.0371",
+        "aupadeshika": "ruwi~",
+        "gana": "Bhvadi",
+        "artha": "steye",
+        "antargana": null,
+        "prefixes": [],
+        "sanadi": []
+      },
+      "morphology": {
+        "krt": "Ryat"
+      },
+      "gold_slp1": [
+        "ruRwya"
+      ],
+      "gold_devanagari": [
+        "रुण्ट्य"
+      ]
+    },
+    "original_prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired primary suffix (krt). Each Sanskrit grammatical term is glossed in\nparentheses in English.\n\nFor a noun or adjective, return the uninflected nominal stem (pratipadika),\nwithout case or number endings. For an indeclinable (avyaya), return the\ncomplete indeclinable form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): रुटिँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Bhvadi (class 1)\nartha (traditional meaning): स्तेये\n\nRequired form:\n- krt (primary suffix): ण्यत् (gerundive; necessity or possibility; citation form, anubandha markers included)\n",
+    "original_benchmark_result": {
+      "task_id": "krdanta:01.0371:Ryat",
+      "attempt_number": 1,
+      "status": "refused",
+      "output_text": "",
+      "answer": null,
+      "correct": null,
+      "format_ok": false,
+      "usage": {
+        "input_tokens": 437,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 0,
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "cost_usd": 0.0,
+      "request_id": "req_011Cg2q4TvmBaQ8qVWNxsG3H",
+      "response_id": "msg_011Cg2q4UAQAec8sT632QSV3",
+      "elapsed_ms": 1211.785,
+      "error": {
+        "stop_reason": "refusal",
+        "stop_details": {
+          "type": "refusal",
+          "category": "cyber",
+          "explanation": "This request triggered restrictions on violative cyber content and was blocked under Anthropic's Usage Policy. To learn more, see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback. API integrators: you can reduce refusals for your users by configuring a fallback model — see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+        }
+      }
+    }
+  },
+  {
+    "case_id": "case_28",
+    "family": "krdanta",
+    "phase": "holdout",
+    "task": {
+      "id": "krdanta:01.0787:tumun",
+      "dhatu": {
+        "code": "01.0787",
+        "aupadeshika": "vaza~",
+        "gana": "Bhvadi",
+        "artha": "hiMsAyAm",
+        "antargana": null,
+        "prefixes": [],
+        "sanadi": []
+      },
+      "morphology": {
+        "krt": "tumun"
+      },
+      "gold_slp1": [
+        "vazitum"
+      ],
+      "gold_devanagari": [
+        "वषितुम्"
+      ]
+    },
+    "original_prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired primary suffix (krt). Each Sanskrit grammatical term is glossed in\nparentheses in English.\n\nFor a noun or adjective, return the uninflected nominal stem (pratipadika),\nwithout case or number endings. For an indeclinable (avyaya), return the\ncomplete indeclinable form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): वषँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Bhvadi (class 1)\nartha (traditional meaning): हिंसायाम्\n\nRequired form:\n- krt (primary suffix): तुमुँन् (infinitive; citation form, anubandha markers included)\n",
+    "original_benchmark_result": {
+      "task_id": "krdanta:01.0787:tumun",
+      "attempt_number": 1,
+      "status": "refused",
+      "output_text": "",
+      "answer": null,
+      "correct": null,
+      "format_ok": false,
+      "usage": {
+        "input_tokens": 431,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 0,
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "cost_usd": 0.0,
+      "request_id": "req_011Cg2qAfafZfiKRZ3fMrRat",
+      "response_id": "msg_011Cg2qAfnp3oUjmZiKhJqm2",
+      "elapsed_ms": 1207.053,
+      "error": {
+        "stop_reason": "refusal",
+        "stop_details": {
+          "type": "refusal",
+          "category": "cyber",
+          "explanation": "This request triggered restrictions on violative cyber content and was blocked under Anthropic's Usage Policy. To learn more, see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback. API integrators: you can reduce refusals for your users by configuring a fallback model — see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+        }
+      }
+    }
+  },
+  {
+    "case_id": "case_29",
+    "family": "krdanta",
+    "phase": "holdout",
+    "task": {
+      "id": "krdanta:01.0475:Satf",
+      "dhatu": {
+        "code": "01.0475",
+        "aupadeshika": "tunPa~",
+        "gana": "Bhvadi",
+        "artha": "hiMsAyAm",
+        "antargana": null,
+        "prefixes": [],
+        "sanadi": []
+      },
+      "morphology": {
+        "krt": "Satf",
+        "lakara": "Lat",
+        "prayoga": "Kartari"
+      },
+      "gold_slp1": [
+        "tumPat"
+      ],
+      "gold_devanagari": [
+        "तुम्फत्"
+      ]
+    },
+    "original_prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired primary suffix (krt). Each Sanskrit grammatical term is glossed in\nparentheses in English.\n\nFor a noun or adjective, return the uninflected nominal stem (pratipadika),\nwithout case or number endings. For an indeclinable (avyaya), return the\ncomplete indeclinable form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): तुन्फँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Bhvadi (class 1)\nartha (traditional meaning): हिंसायाम्\n\nRequired form:\n- krt (primary suffix): शतृँ (present active participle with parasmaipada formation; citation form, anubandha markers included)\n- lakara (tense): Lat (present)\n- prayoga (voice): Kartari (active)\n",
+    "original_benchmark_result": {
+      "task_id": "krdanta:01.0475:Satf",
+      "attempt_number": 1,
+      "status": "refused",
+      "output_text": "",
+      "answer": null,
+      "correct": null,
+      "format_ok": false,
+      "usage": {
+        "input_tokens": 473,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 0,
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "cost_usd": 0.0,
+      "request_id": "req_011Cg2pqiJ6Q6yHmn2ghepAe",
+      "response_id": "msg_011Cg2pqiWFHTR1FCRa9ENHE",
+      "elapsed_ms": 1244.706,
+      "error": {
+        "stop_reason": "refusal",
+        "stop_details": {
+          "type": "refusal",
+          "category": "cyber",
+          "explanation": "This request triggered restrictions on violative cyber content and was blocked under Anthropic's Usage Policy. To learn more, see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback. API integrators: you can reduce refusals for your users by configuring a fallback model — see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+        }
+      }
+    }
+  },
+  {
+    "case_id": "case_30",
+    "family": "krdanta",
+    "phase": "holdout",
+    "task": {
+      "id": "krdanta:10.0044:tfc",
+      "dhatu": {
+        "code": "10.0044",
+        "aupadeshika": "tuja~",
+        "gana": "Curadi",
+        "artha": "hiMsAbalAdAnaniketanezu",
+        "antargana": null,
+        "prefixes": [],
+        "sanadi": []
+      },
+      "morphology": {
+        "krt": "tfc"
+      },
+      "gold_slp1": [
+        "tojayitf"
+      ],
+      "gold_devanagari": [
+        "तोजयितृ"
+      ]
+    },
+    "original_prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired primary suffix (krt). Each Sanskrit grammatical term is glossed in\nparentheses in English.\n\nFor a noun or adjective, return the uninflected nominal stem (pratipadika),\nwithout case or number endings. For an indeclinable (avyaya), return the\ncomplete indeclinable form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): तुजँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): हिंसाबलादाननिकेतनेषु\n\nRequired form:\n- krt (primary suffix): तृच् (agent noun; citation form, anubandha markers included)\n",
+    "original_benchmark_result": {
+      "task_id": "krdanta:10.0044:tfc",
+      "attempt_number": 1,
+      "status": "refused",
+      "output_text": "",
+      "answer": null,
+      "correct": null,
+      "format_ok": false,
+      "usage": {
+        "input_tokens": 437,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 0,
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "cost_usd": 0.0,
+      "request_id": "req_011Cg2pnWufZEzsEw2Jkt4fp",
+      "response_id": "msg_011Cg2pnX6pVQK7tqy2HsdFc",
+      "elapsed_ms": 1111.518,
+      "error": {
+        "stop_reason": "refusal",
+        "stop_details": {
+          "type": "refusal",
+          "category": "cyber",
+          "explanation": "This request triggered restrictions on violative cyber content and was blocked under Anthropic's Usage Policy. To learn more, see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback. API integrators: you can reduce refusals for your users by configuring a fallback model — see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+        }
+      }
+    }
+  },
+  {
+    "case_id": "case_31",
+    "family": "krdanta",
+    "phase": "holdout",
+    "task": {
+      "id": "krdanta:10.0039:tumun",
+      "dhatu": {
+        "code": "10.0039",
+        "aupadeshika": "lunwa~",
+        "gana": "Curadi",
+        "artha": "steye",
+        "antargana": null,
+        "prefixes": [],
+        "sanadi": []
+      },
+      "morphology": {
+        "krt": "tumun"
+      },
+      "gold_slp1": [
+        "luRwayitum"
+      ],
+      "gold_devanagari": [
+        "लुण्टयितुम्"
+      ]
+    },
+    "original_prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired primary suffix (krt). Each Sanskrit grammatical term is glossed in\nparentheses in English.\n\nFor a noun or adjective, return the uninflected nominal stem (pratipadika),\nwithout case or number endings. For an indeclinable (avyaya), return the\ncomplete indeclinable form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): लुन्टँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): स्तेये\n\nRequired form:\n- krt (primary suffix): तुमुँन् (infinitive; citation form, anubandha markers included)\n",
+    "original_benchmark_result": {
+      "task_id": "krdanta:10.0039:tumun",
+      "attempt_number": 1,
+      "status": "refused",
+      "output_text": "",
+      "answer": null,
+      "correct": null,
+      "format_ok": false,
+      "usage": {
+        "input_tokens": 429,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 0,
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "cost_usd": 0.0,
+      "request_id": "req_011Cg2pymgDdTtpgQs9e8tHr",
+      "response_id": "msg_011Cg2pymtsNrcd4G1u1zpJ3",
+      "elapsed_ms": 1771.133,
+      "error": {
+        "stop_reason": "refusal",
+        "stop_details": {
+          "type": "refusal",
+          "category": "cyber",
+          "explanation": "This request triggered restrictions on violative cyber content and was blocked under Anthropic's Usage Policy. To learn more, see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback. API integrators: you can reduce refusals for your users by configuring a fallback model — see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+        }
+      }
+    }
+  },
+  {
+    "case_id": "case_32",
+    "family": "krdanta",
+    "phase": "holdout",
+    "task": {
+      "id": "krdanta:10.0089:tumun",
+      "dhatu": {
+        "code": "10.0089",
+        "aupadeshika": "dula~",
+        "gana": "Curadi",
+        "artha": "utkzepe",
+        "antargana": null,
+        "prefixes": [],
+        "sanadi": []
+      },
+      "morphology": {
+        "krt": "tumun"
+      },
+      "gold_slp1": [
+        "dolayitum"
+      ],
+      "gold_devanagari": [
+        "दोलयितुम्"
+      ]
+    },
+    "original_prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired primary suffix (krt). Each Sanskrit grammatical term is glossed in\nparentheses in English.\n\nFor a noun or adjective, return the uninflected nominal stem (pratipadika),\nwithout case or number endings. For an indeclinable (avyaya), return the\ncomplete indeclinable form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): दुलँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): उत्क्षेपे\n\nRequired form:\n- krt (primary suffix): तुमुँन् (infinitive; citation form, anubandha markers included)\n",
+    "original_benchmark_result": {
+      "task_id": "krdanta:10.0089:tumun",
+      "attempt_number": 1,
+      "status": "refused",
+      "output_text": "",
+      "answer": null,
+      "correct": null,
+      "format_ok": false,
+      "usage": {
+        "input_tokens": 431,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 0,
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "cost_usd": 0.0,
+      "request_id": "req_011Cg2pxUKAJpgXQPfVWXwm6",
+      "response_id": "msg_011Cg2pxUdGwRw3Ho6uboXFM",
+      "elapsed_ms": 1224.555,
+      "error": {
+        "stop_reason": "refusal",
+        "stop_details": {
+          "type": "refusal",
+          "category": "cyber",
+          "explanation": "This request triggered restrictions on violative cyber content and was blocked under Anthropic's Usage Policy. To learn more, see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback. API integrators: you can reduce refusals for your users by configuring a fallback model — see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+        }
+      }
+    }
+  },
+  {
+    "case_id": "case_33",
+    "family": "krdanta",
+    "phase": "holdout",
+    "task": {
+      "id": "krdanta:10.0047:tavya",
+      "dhatu": {
+        "code": "10.0047",
+        "aupadeshika": "piji~",
+        "gana": "Curadi",
+        "artha": "hiMsAbalAdAnaniketanezu",
+        "antargana": null,
+        "prefixes": [],
+        "sanadi": []
+      },
+      "morphology": {
+        "krt": "tavya"
+      },
+      "gold_slp1": [
+        "piYjayitavya",
+        "piYjitavya"
+      ],
+      "gold_devanagari": [
+        "पिञ्जयितव्य",
+        "पिञ्जितव्य"
+      ]
+    },
+    "original_prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired primary suffix (krt). Each Sanskrit grammatical term is glossed in\nparentheses in English.\n\nFor a noun or adjective, return the uninflected nominal stem (pratipadika),\nwithout case or number endings. For an indeclinable (avyaya), return the\ncomplete indeclinable form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): पिजिँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): हिंसाबलादाननिकेतनेषु\n\nRequired form:\n- krt (primary suffix): तव्य (gerundive; necessity or possibility; citation form, anubandha markers included)\n",
+    "original_benchmark_result": {
+      "task_id": "krdanta:10.0047:tavya",
+      "attempt_number": 1,
+      "status": "refused",
+      "output_text": "",
+      "answer": null,
+      "correct": null,
+      "format_ok": false,
+      "usage": {
+        "input_tokens": 446,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 0,
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "cost_usd": 0.0,
+      "request_id": "req_011Cg2qCcVgtyP9QFfEv4U47",
+      "response_id": "msg_011Cg2qCciL3k1QdZ4GHuRhm",
+      "elapsed_ms": 1146.316,
+      "error": {
+        "stop_reason": "refusal",
+        "stop_details": {
+          "type": "refusal",
+          "category": "cyber",
+          "explanation": "This request triggered restrictions on violative cyber content and was blocked under Anthropic's Usage Policy. To learn more, see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback. API integrators: you can reduce refusals for your users by configuring a fallback model — see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+        }
+      }
+    }
+  },
+  {
+    "case_id": "case_34",
+    "family": "krdanta",
+    "phase": "holdout",
+    "task": {
+      "id": "krdanta:08.0003:ktvA",
+      "dhatu": {
+        "code": "08.0003",
+        "aupadeshika": "kzaRu~^",
+        "gana": "Tanadi",
+        "artha": "hiMsAyAm",
+        "antargana": null,
+        "prefixes": [],
+        "sanadi": []
+      },
+      "morphology": {
+        "krt": "ktvA"
+      },
+      "gold_slp1": [
+        "kzaRitvA",
+        "kzatvA"
+      ],
+      "gold_devanagari": [
+        "क्षणित्वा",
+        "क्षत्वा"
+      ]
+    },
+    "original_prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired primary suffix (krt). Each Sanskrit grammatical term is glossed in\nparentheses in English.\n\nFor a noun or adjective, return the uninflected nominal stem (pratipadika),\nwithout case or number endings. For an indeclinable (avyaya), return the\ncomplete indeclinable form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): क्षणुँ॑   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Tanadi (class 8)\nartha (traditional meaning): हिंसायाम्\n\nRequired form:\n- krt (primary suffix): क्त्वा (absolutive; having performed the action; citation form, anubandha markers included)\n",
+    "original_benchmark_result": {
+      "task_id": "krdanta:08.0003:ktvA",
+      "attempt_number": 1,
+      "status": "refused",
+      "output_text": "",
+      "answer": null,
+      "correct": null,
+      "format_ok": false,
+      "usage": {
+        "input_tokens": 440,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 0,
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "cost_usd": 0.0,
+      "request_id": "req_011Cg2pz65zaM6Xux6QSU2C2",
+      "response_id": "msg_011Cg2pz6KQ6CBNcqfsJ6XK7",
+      "elapsed_ms": 1218.585,
+      "error": {
+        "stop_reason": "refusal",
+        "stop_details": {
+          "type": "refusal",
+          "category": "cyber",
+          "explanation": "This request triggered restrictions on violative cyber content and was blocked under Anthropic's Usage Policy. To learn more, see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback. API integrators: you can reduce refusals for your users by configuring a fallback model — see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+        }
+      }
+    }
+  },
+  {
+    "case_id": "case_35",
+    "family": "krdanta",
+    "phase": "holdout",
+    "task": {
+      "id": "krdanta:10.0302:Rvul",
+      "dhatu": {
+        "code": "10.0302",
+        "aupadeshika": "gupa~",
+        "gana": "Curadi",
+        "artha": "BAzAyAm",
+        "antargana": "Asvadiya",
+        "prefixes": [],
+        "sanadi": []
+      },
+      "morphology": {
+        "krt": "Rvul"
+      },
+      "gold_slp1": [
+        "gopaka"
+      ],
+      "gold_devanagari": [
+        "गोपक"
+      ]
+    },
+    "original_prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired primary suffix (krt). Each Sanskrit grammatical term is glossed in\nparentheses in English.\n\nFor a noun or adjective, return the uninflected nominal stem (pratipadika),\nwithout case or number endings. For an indeclinable (avyaya), return the\ncomplete indeclinable form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): गुपँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): भाषायाम्\n\nRequired form:\n- krt (primary suffix): ण्वुँल् (agent noun; citation form, anubandha markers included)\n",
+    "original_benchmark_result": {
+      "task_id": "krdanta:10.0302:Rvul",
+      "attempt_number": 1,
+      "status": "refused",
+      "output_text": "",
+      "answer": null,
+      "correct": null,
+      "format_ok": false,
+      "usage": {
+        "input_tokens": 430,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 0,
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "cost_usd": 0.0,
+      "request_id": "req_011Cg2poJBi9A8xcBfd3cKLq",
+      "response_id": "msg_011Cg2poJNt1rys5zCRtLfRG",
+      "elapsed_ms": 1207.808,
+      "error": {
+        "stop_reason": "refusal",
+        "stop_details": {
+          "type": "refusal",
+          "category": "cyber",
+          "explanation": "This request triggered restrictions on violative cyber content and was blocked under Anthropic's Usage Policy. To learn more, see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback. API integrators: you can reduce refusals for your users by configuring a fallback model — see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+        }
+      }
+    }
+  },
+  {
+    "case_id": "case_36",
+    "family": "krdanta",
+    "phase": "holdout",
+    "task": {
+      "id": "krdanta:10.0480:ktvA",
+      "dhatu": {
+        "code": "10.0480",
+        "aupadeshika": "Ceda",
+        "gana": "Curadi",
+        "artha": "dvEDIkaraRe",
+        "antargana": null,
+        "prefixes": [],
+        "sanadi": []
+      },
+      "morphology": {
+        "krt": "ktvA"
+      },
+      "gold_slp1": [
+        "CedayitvA"
+      ],
+      "gold_devanagari": [
+        "छेदयित्वा"
+      ]
+    },
+    "original_prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired primary suffix (krt). Each Sanskrit grammatical term is glossed in\nparentheses in English.\n\nFor a noun or adjective, return the uninflected nominal stem (pratipadika),\nwithout case or number endings. For an indeclinable (avyaya), return the\ncomplete indeclinable form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): छेद   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): द्वैधीकरणे\n\nRequired form:\n- krt (primary suffix): क्त्वा (absolutive; having performed the action; citation form, anubandha markers included)\n",
+    "original_benchmark_result": {
+      "task_id": "krdanta:10.0480:ktvA",
+      "attempt_number": 1,
+      "status": "refused",
+      "output_text": "",
+      "answer": null,
+      "correct": null,
+      "format_ok": false,
+      "usage": {
+        "input_tokens": 435,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 0,
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "cost_usd": 0.0,
+      "request_id": "req_011Cg2pptob72HHWvu7pjnRe",
+      "response_id": "msg_011Cg2ppu2EYYRYmo1C6Mf2u",
+      "elapsed_ms": 1710.52,
+      "error": {
+        "stop_reason": "refusal",
+        "stop_details": {
+          "type": "refusal",
+          "category": "cyber",
+          "explanation": "This request triggered restrictions on violative cyber content and was blocked under Anthropic's Usage Policy. To learn more, see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback. API integrators: you can reduce refusals for your users by configuring a fallback model — see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+        }
+      }
+    }
+  },
+  {
+    "case_id": "case_37",
+    "family": "krdanta",
+    "phase": "holdout",
+    "task": {
+      "id": "krdanta:01.0363:tavya",
+      "dhatu": {
+        "code": "01.0363",
+        "aupadeshika": "kuWi~",
+        "gana": "Bhvadi",
+        "artha": "vEkalye",
+        "antargana": null,
+        "prefixes": [],
+        "sanadi": []
+      },
+      "morphology": {
+        "krt": "tavya"
+      },
+      "gold_slp1": [
+        "kuRWitavya"
+      ],
+      "gold_devanagari": [
+        "कुण्ठितव्य"
+      ]
+    },
+    "original_prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired primary suffix (krt). Each Sanskrit grammatical term is glossed in\nparentheses in English.\n\nFor a noun or adjective, return the uninflected nominal stem (pratipadika),\nwithout case or number endings. For an indeclinable (avyaya), return the\ncomplete indeclinable form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): कुठिँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Bhvadi (class 1)\nartha (traditional meaning): वैकल्ये\n\nRequired form:\n- krt (primary suffix): तव्य (gerundive; necessity or possibility; citation form, anubandha markers included)\n",
+    "original_benchmark_result": {
+      "task_id": "krdanta:01.0363:tavya",
+      "attempt_number": 1,
+      "status": "refused",
+      "output_text": "",
+      "answer": null,
+      "correct": null,
+      "format_ok": false,
+      "usage": {
+        "input_tokens": 437,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 0,
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "cost_usd": 0.0,
+      "request_id": "req_011Cg2pon6kN1uMdpbNHcLcb",
+      "response_id": "msg_011Cg2ponT5DESWXVtMz1K5K",
+      "elapsed_ms": 1259.577,
+      "error": {
+        "stop_reason": "refusal",
+        "stop_details": {
+          "type": "refusal",
+          "category": "cyber",
+          "explanation": "This request triggered restrictions on violative cyber content and was blocked under Anthropic's Usage Policy. To learn more, see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback. API integrators: you can reduce refusals for your users by configuring a fallback model — see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+        }
+      }
+    }
+  },
+  {
+    "case_id": "case_38",
+    "family": "krdanta",
+    "phase": "holdout",
+    "task": {
+      "id": "krdanta:10.0106:yat",
+      "dhatu": {
+        "code": "10.0106",
+        "aupadeshika": "paqi~",
+        "gana": "Curadi",
+        "artha": "nASane",
+        "antargana": null,
+        "prefixes": [],
+        "sanadi": []
+      },
+      "morphology": {
+        "krt": "yat"
+      },
+      "gold_slp1": [
+        "paRqya"
+      ],
+      "gold_devanagari": [
+        "पण्ड्य"
+      ]
+    },
+    "original_prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired primary suffix (krt). Each Sanskrit grammatical term is glossed in\nparentheses in English.\n\nFor a noun or adjective, return the uninflected nominal stem (pratipadika),\nwithout case or number endings. For an indeclinable (avyaya), return the\ncomplete indeclinable form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): पडिँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): नाशने\n\nRequired form:\n- krt (primary suffix): यत् (gerundive; necessity or possibility; citation form, anubandha markers included)\n",
+    "original_benchmark_result": {
+      "task_id": "krdanta:10.0106:yat",
+      "attempt_number": 1,
+      "status": "refused",
+      "output_text": "",
+      "answer": null,
+      "correct": null,
+      "format_ok": false,
+      "usage": {
+        "input_tokens": 430,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 0,
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "cost_usd": 0.0,
+      "request_id": "req_011Cg2qAMN3grXC9H7MJR8fd",
+      "response_id": "msg_011Cg2qAMZwtvUv8sQr7AXCy",
+      "elapsed_ms": 954.098,
+      "error": {
+        "stop_reason": "refusal",
+        "stop_details": {
+          "type": "refusal",
+          "category": "cyber",
+          "explanation": "This request triggered restrictions on violative cyber content and was blocked under Anthropic's Usage Policy. To learn more, see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback. API integrators: you can reduce refusals for your users by configuring a fallback model — see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+        }
+      }
+    }
+  },
+  {
+    "case_id": "case_39",
+    "family": "krdanta",
+    "phase": "holdout",
+    "task": {
+      "id": "krdanta:04.0126:anIyar",
+      "dhatu": {
+        "code": "04.0126",
+        "aupadeshika": "kuSa~",
+        "gana": "Divadi",
+        "artha": "saMSlezaRe",
+        "antargana": null,
+        "prefixes": [],
+        "sanadi": []
+      },
+      "morphology": {
+        "krt": "anIyar"
+      },
+      "gold_slp1": [
+        "koSanIya"
+      ],
+      "gold_devanagari": [
+        "कोशनीय"
+      ]
+    },
+    "original_prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired primary suffix (krt). Each Sanskrit grammatical term is glossed in\nparentheses in English.\n\nFor a noun or adjective, return the uninflected nominal stem (pratipadika),\nwithout case or number endings. For an indeclinable (avyaya), return the\ncomplete indeclinable form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): कुशँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Divadi (class 4)\nartha (traditional meaning): संश्लेषणे\n\nRequired form:\n- krt (primary suffix): अनीयर् (gerundive; necessity or possibility; citation form, anubandha markers included)\n",
+    "original_benchmark_result": {
+      "task_id": "krdanta:04.0126:anIyar",
+      "attempt_number": 1,
+      "status": "refused",
+      "output_text": "",
+      "answer": null,
+      "correct": null,
+      "format_ok": false,
+      "usage": {
+        "input_tokens": 437,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 0,
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "cost_usd": 0.0,
+      "request_id": "req_011Cg2pnrYrYEX6DLEpvcpgZ",
+      "response_id": "msg_011Cg2pnrmk6eoMASfg7EyXS",
+      "elapsed_ms": 1169.541,
+      "error": {
+        "stop_reason": "refusal",
+        "stop_details": {
+          "type": "refusal",
+          "category": "cyber",
+          "explanation": "This request triggered restrictions on violative cyber content and was blocked under Anthropic's Usage Policy. To learn more, see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback. API integrators: you can reduce refusals for your users by configuring a fallback model — see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+        }
+      }
+    }
+  },
+  {
+    "case_id": "case_40",
+    "family": "krdanta",
+    "phase": "holdout",
+    "task": {
+      "id": "krdanta:10.0035:tumun",
+      "dhatu": {
+        "code": "10.0035",
+        "aupadeshika": "puwwa~",
+        "gana": "Curadi",
+        "artha": "alpIBAve",
+        "antargana": null,
+        "prefixes": [],
+        "sanadi": []
+      },
+      "morphology": {
+        "krt": "tumun"
+      },
+      "gold_slp1": [
+        "puwwayitum"
+      ],
+      "gold_devanagari": [
+        "पुट्टयितुम्"
+      ]
+    },
+    "original_prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired primary suffix (krt). Each Sanskrit grammatical term is glossed in\nparentheses in English.\n\nFor a noun or adjective, return the uninflected nominal stem (pratipadika),\nwithout case or number endings. For an indeclinable (avyaya), return the\ncomplete indeclinable form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): पुट्टँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): अल्पीभावे\n\nRequired form:\n- krt (primary suffix): तुमुँन् (infinitive; citation form, anubandha markers included)\n",
+    "original_benchmark_result": {
+      "task_id": "krdanta:10.0035:tumun",
+      "attempt_number": 1,
+      "status": "refused",
+      "output_text": "",
+      "answer": null,
+      "correct": null,
+      "format_ok": false,
+      "usage": {
+        "input_tokens": 432,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 0,
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "cost_usd": 0.0,
+      "request_id": "req_011Cg2pxefm3QuYi9HebLvcJ",
+      "response_id": "msg_011Cg2pxeu9REr5etJGopSJD",
+      "elapsed_ms": 941.351,
+      "error": {
+        "stop_reason": "refusal",
+        "stop_details": {
+          "type": "refusal",
+          "category": "cyber",
+          "explanation": "This request triggered restrictions on violative cyber content and was blocked under Anthropic's Usage Policy. To learn more, see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback. API integrators: you can reduce refusals for your users by configuring a fallback model — see https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+        }
+      }
+    }
+  }
+]

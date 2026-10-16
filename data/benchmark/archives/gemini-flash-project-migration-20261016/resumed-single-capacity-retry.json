@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-16T04:32:52.631265+00:00",
+  "reason": "One isolated 429 remains; provider admission backoff expired while the other requests drained. Honor speed priority by resuming the one remaining infrastructure retry without an additional fixed five-minute delay. Subsequent failures retain normal unattended backoff.",
+  "previous_supervisor": {
+    "at": "2026-10-16T04:32:51.816748+00:00",
+    "model": "gemini38-flash-high",
+    "state": "cooling_down",
+    "supervisor_pid": 49447,
+    "reason": "Infrastructure failures remain after retry batch",
+    "seconds": 300,
+    "resume_at": "2026-10-16T04:37:51.816705+00:00"
+  },
+  "remaining_tasks": 1,
+  "task_id": "06.0078:Lat:Kartari:Uttama:Bahu",
+  "supervisor_pid": 55902,
+  "sleep_guard_pid": 55903
+}

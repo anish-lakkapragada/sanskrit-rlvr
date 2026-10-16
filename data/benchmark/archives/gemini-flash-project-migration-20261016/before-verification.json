@@ -1,0 +1,99 @@
+{
+  "at": "2026-10-16T04:20:49.067275+00:00",
+  "report": {
+    "state": "paused",
+    "unresolved": 0,
+    "updated_at": "2026-10-16T04:20:48.640730+00:00",
+    "planned": 20000,
+    "started": 20000,
+    "settled": 20000,
+    "unsettled": 0,
+    "not_started": 0,
+    "known_cost_usd": 1125.1479057,
+    "unknown_cost_attempts": 10,
+    "projected_full_run_cost_usd": null,
+    "families": {
+      "tinanta": {
+        "settled": 5000,
+        "statuses": {
+          "completed": 4968,
+          "api_error": 32
+        },
+        "correct": 4483,
+        "format_ok": 4968,
+        "strict_correct": 4483,
+        "known_cost_usd": 404.3617278,
+        "unknown_cost_attempts": 6,
+        "input_tokens": 1135248,
+        "output_tokens": 53636146,
+        "mean_output_tokens": 10796.33
+      },
+      "taddhitanta": {
+        "settled": 5000,
+        "statuses": {
+          "completed": 4966,
+          "api_error": 31,
+          "incomplete": 1,
+          "transport_error": 2
+        },
+        "correct": 4331,
+        "format_ok": 4964,
+        "strict_correct": 4329,
+        "known_cost_usd": 435.2041689,
+        "unknown_cost_attempts": 3,
+        "input_tokens": 868048,
+        "output_tokens": 57832771,
+        "mean_output_tokens": 11643.4
+      },
+      "krdanta": {
+        "settled": 5000,
+        "statuses": {
+          "completed": 4968,
+          "api_error": 31,
+          "transport_error": 1
+        },
+        "correct": 4660,
+        "format_ok": 4967,
+        "strict_correct": 4659,
+        "known_cost_usd": 257.9947605,
+        "unknown_cost_attempts": 1,
+        "input_tokens": 1169158,
+        "output_tokens": 34139233,
+        "mean_output_tokens": 6871.83
+      },
+      "subanta": {
+        "settled": 5000,
+        "statuses": {
+          "completed": 4980,
+          "api_error": 20
+        },
+        "correct": 4897,
+        "format_ok": 4979,
+        "strict_correct": 4897,
+        "known_cost_usd": 27.5872485,
+        "unknown_cost_attempts": 0,
+        "input_tokens": 827515,
+        "output_tokens": 3508240,
+        "mean_output_tokens": 704.47
+      }
+    },
+    "attempts_started": 20050,
+    "attempts_settled": 20050,
+    "unsettled_attempts": 0,
+    "retry_attempts": 50
+  },
+  "file_sha256": {
+    "taddhitanta.json": "c15fadb8f6e924fd0e8a6a5c57c2c35e4ecedc8a967f511cd54a6bbac777cc36",
+    "run-control.json": "80e4635ad641e5ba904387c498c24548e420f44739061f062fc40d535dcec428",
+    "tinanta.json": "65f6594d67108139fc4de2751ed6a89b212592d605676247fd90ad78793300ca",
+    "krdanta.json": "a37218c2cb4e557d0cdabb7ec951e9def946fbd0291bf54ecceeed4c9bd5abdb",
+    "README.md": "a3ab9d9ee91cdb5e5e3ec5b81e0d1ee2c5d7dcd73e55dc2a91bb32db38dbaab6",
+    "subanta.json": "8e3bf53154c382640c2f8218ef5e5b1c413be6b91b6bfc9691858afc8bfeb55b",
+    "manifest.json": "398b3008577952d8a22e564c257e2bd89bf6064976e5ccf656e1c342b71c5e9b",
+    "result.schema.json": "64e9e0a8ad4c3f599d436f3bea977dc442cc8815f798231ffe7ba7fbaf408d30",
+    "journals/subanta.jsonl.gz": "2091d6c43caaa36af4328c90090d2bda869acedc8a7a90e97c4080b8eabfd690",
+    "journals/taddhitanta.jsonl": "f07e8ecf48b6f3aea33cdcd2eed54135bf4587aba37e331b32054b81dbc788cc",
+    "journals/tinanta.jsonl": "f8365d19b9f7265335b6cfcbfaf7638c19f63f5624e209315f16c9c04bde31ec",
+    "journals/krdanta.jsonl.gz": "5b168c47fda5b283e77e7f97eb5ac1d8c025df8ef3422f819e580ed4212d17ac"
+  }
+}

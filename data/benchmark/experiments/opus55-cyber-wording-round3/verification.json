@@ -1,0 +1,172 @@
+{
+  "verified_at": "2026-10-14T23:09:08.025277+00:00",
+  "verified_requests": 100,
+  "final_selection": {
+    "tinanta": "current",
+    "krdanta": "current",
+    "taddhitanta": "table",
+    "subanta": "current"
+  },
+  "updated_templates": {
+    "tinanta": {
+      "path": "data/benchmark/experiments/opus55-cyber-wording/candidate-templates/vp_tinanta.txt",
+      "sha256": "48ba2f0a30f2186a4835d43ccaae53b9bdd466ce211b41eb31a19959d5f96230",
+      "bytes": 860
+    },
+    "krdanta": {
+      "path": "data/benchmark/experiments/opus55-cyber-wording/candidate-templates/vp_krdanta.txt",
+      "sha256": "b8d750a68a19a638eb559e6e1e86e950792952a42a14ce03db886a59c72e12d4",
+      "bytes": 1007
+    },
+    "taddhitanta": {
+      "path": "data/benchmark/experiments/opus55-cyber-wording/candidate-templates/vp_taddhitanta.txt",
+      "sha256": "e4be768194835b6fe8a24ef6a1b9ecdaef2256e85f31ee793ac3d3812fc76232",
+      "bytes": 665
+    },
+    "subanta": {
+      "path": "data/benchmark/experiments/opus55-cyber-wording/candidate-templates/vp_subanta.txt",
+      "sha256": "5f1994d552931b07ea75beb39bdb31f3889da7fc5df4c395f6c7fc7fd1b589fb",
+      "bytes": 804
+    }
+  },
+  "stress": {
+    "requests": 20,
+    "statuses": {
+      "completed": 20
+    },
+    "refusals": 0,
+    "refusal_rate": 0.0,
+    "refusal_categories": {},
+    "correct": 19,
+    "strict_correct": 19,
+    "format_ok": 20,
+    "known_cost_usd": 0.1745,
+    "unknown_cost_requests": 0,
+    "output_tokens": 7445
+  },
+  "matching_final_template_all_phases": {
+    "requests": 44,
+    "statuses": {
+      "completed": 44
+    },
+    "refusals": 0,
+    "refusal_rate": 0.0,
+    "refusal_categories": {},
+    "correct": 41,
+    "strict_correct": 41,
+    "format_ok": 44,
+    "known_cost_usd": 0.385484,
+    "unknown_cost_requests": 0,
+    "output_tokens": 16434
+  },
+  "matching_final_template_by_family": {
+    "tinanta": {
+      "requests": 11,
+      "statuses": {
+        "completed": 11
+      },
+      "refusals": 0,
+      "refusal_rate": 0.0,
+      "refusal_categories": {},
+      "correct": 11,
+      "strict_correct": 11,
+      "format_ok": 11,
+      "known_cost_usd": 0.159012,
+      "unknown_cost_requests": 0,
+      "output_tokens": 7214
+    },
+    "krdanta": {
+      "requests": 11,
+      "statuses": {
+        "completed": 11
+      },
+      "refusals": 0,
+      "refusal_rate": 0.0,
+      "refusal_categories": {},
+      "correct": 11,
+      "strict_correct": 11,
+      "format_ok": 11,
+      "known_cost_usd": 0.063868,
+      "unknown_cost_requests": 0,
+      "output_tokens": 2376
+    },
+    "taddhitanta": {
+      "requests": 10,
+      "statuses": {
+        "completed": 10
+      },
+      "refusals": 0,
+      "refusal_rate": 0.0,
+      "refusal_categories": {},
+      "correct": 7,
+      "strict_correct": 7,
+      "format_ok": 10,
+      "known_cost_usd": 0.13692,
+      "unknown_cost_requests": 0,
+      "output_tokens": 6302
+    },
+    "subanta": {
+      "requests": 12,
+      "statuses": {
+        "completed": 12
+      },
+      "refusals": 0,
+      "refusal_rate": 0.0,
+      "refusal_categories": {},
+      "correct": 12,
+      "strict_correct": 12,
+      "format_ok": 12,
+      "known_cost_usd": 0.025684,
+      "unknown_cost_requests": 0,
+      "output_tokens": 542
+    }
+  },
+  "layout_stage_matching_final_template": {
+    "requests": 20,
+    "statuses": {
+      "completed": 20
+    },
+    "refusals": 0,
+    "refusal_rate": 0.0,
+    "refusal_categories": {},
+    "correct": 18,
+    "strict_correct": 18,
+    "format_ok": 20,
+    "known_cost_usd": 0.192168,
+    "unknown_cost_requests": 0,
+    "output_tokens": 8314
+  },
+  "fresh_confirmation_matching_final_template": {
+    "requests": 16,
+    "statuses": {
+      "completed": 16
+    },
+    "refusals": 0,
+    "refusal_rate": 0.0,
+    "refusal_categories": {},
+    "correct": 15,
+    "strict_correct": 15,
+    "format_ok": 16,
+    "known_cost_usd": 0.11718,
+    "unknown_cost_requests": 0,
+    "output_tokens": 4811
+  },
+  "persistent_case_matching_final_template": {
+    "requests": 6,
+    "statuses": {
+      "completed": 6
+    },
+    "refusals": 0,
+    "refusal_rate": 0.0,
+    "refusal_categories": {},
+    "correct": 6,
+    "strict_correct": 6,
+    "format_ok": 6,
+    "known_cost_usd": 0.0627,
+    "unknown_cost_requests": 0,
+    "output_tokens": 2805
+  },
+  "zero_observed_matching_final_template_refusals": true,
+  "caveat": "Includes selection data and repeated identical prompts. Stress was prospectively frozen; a finite zero count does not establish zero future refusal probability.",
+  "candidate_hydrations_verified": 36
+}

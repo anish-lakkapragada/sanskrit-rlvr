@@ -1,0 +1,1388 @@
+{
+  "schema_version": 2,
+  "dataset": "vp-taddhitanta-shared-nominals-v2",
+  "generation_complete": true,
+  "source": {
+    "path": "data/engine/files/shared-nominal-stems.json",
+    "sha256": "7a3b204962d04c02b915a3291abe29584ae6ee064771b98011dfcac30c6d0f71",
+    "manifest_sha256": "5c5544a3b03d6b6d3e59a2335d047b4edac4ad716f767409e5e9ff63dbeff300",
+    "audit_sha256": "82c2abf77db088984a4cfbad3b79f704d4054a4ad671694b9399ae031ff49d0d",
+    "lexical_sources": [
+      "MWlexnorm"
+    ],
+    "upstream": {
+      "path": "data/engine/files/mw-lexnorm/nominal-entries.csv",
+      "sha256": "84797688cfbc3e82260567cf7cca86353acc14b6898f45f279e5a92b4c2b07cc",
+      "repository": "https://github.com/funderburkjim/MWlexnorm",
+      "revision": "34e51125583b1f5026d44e6ef1e44d2a88b73670"
+    },
+    "rows": 197652,
+    "stem_gender_pairs": 74193,
+    "encoding": "SLP1",
+    "bases": 74193,
+    "nyap_bases": 19056,
+    "source_rows": 197652,
+    "gender_policy": "preserve each source-listed gender"
+  },
+  "engine": {
+    "package": "vidyut",
+    "version": "0.4.0",
+    "options": {
+      "log_steps": false,
+      "is_chandasi": false,
+      "use_svaras": false,
+      "nlp_mode": false
+    },
+    "request": "Taddhitanta(base, suffix).with_stem_linga(source_gender)",
+    "artha": null,
+    "compatibility_build": {
+      "sdist_url": "https://files.pythonhosted.org/packages/69/b5/6876b3f807ac38812c6e29eb43738d28a6a21c2aed456486e654997efcdd/vidyut-0.4.0.tar.gz",
+      "sdist_sha256": "fb776ec751e66c8d44bd94ef71008f9ea05284f51055aa009cfaef33ccf5f454",
+      "cargo_lock_sha256": "7c367a191109398605148508a393411ee020c2b76745e8a4440196ea871f7da0",
+      "adapted_engine_cargo_sha256": "25591f6727559c9915755e563273e523a1a4058235f8c5e2b5ec71c3f7146411",
+      "rustc": "rustc 1.95.0 (59807616e 2026-04-14)",
+      "rustflags": "--cap-lints=allow (old WASM macro compatibility; native probe)",
+      "engine_source_changes": "Opt-in nominal-input.patch: source gender on base term; remove empty nyap marker for taddhita input only.",
+      "adapter_files": {
+        "adapter.py": "ae8a8e5f050c7c4dbf24962f7e8125bb432bb1c5c818b91df15979f87b79ca3e",
+        "adapter.rs": "b4e6ae3a649156c521d6c98cd1e84fffe27752b464636e8b9f086dbdd5e02939",
+        "nominal-input.patch": "f7574a266b6a29608eaf995b9cacd5052539a5e0e2f373a810aebf1c1cdc3888",
+        "rust_probe.py": "cd920deb5a39a8bb1c8eee4678d4aee23710961cadce9b47a1d3ee94a9e595ef",
+        "probe.rs": "720d5c603ef1589d817a1a7ef298d5e8a98850ae9d9952144d45058bf05c12e6",
+        "probe.Cargo.lock": "7c367a191109398605148508a393411ee020c2b76745e8a4440196ea871f7da0"
+      },
+      "patched_engine_files": {
+        "src/args/taddhita.rs": "6ac4bd8659c73de6ccf6747f4a880fee7ed34241fbf737638543b230a8ccff1f",
+        "src/ashtadhyayi.rs": "b97bf0d04a5f6cadaac6b6ee838fd591bad07dfd84f131af3580cd23ead3b8c9"
+      }
+    }
+  },
+  "generator": {
+    "data/engine/taddhitanta/common.py": "f885e3528e6ccd5651a65dfe029fc909808a0063886018a3a67fc6cd77b3e1d8",
+    "data/engine/taddhitanta/generate.py": "513d9c2ae7800f6b25853e2dd9354ae46c85d6891fe836cf6d676f3410e66ebc",
+    "data/engine/subanta/common.py": "041800da26cb92a514e54dd314d8cf7f85f500f5b4d4c4f48133e2879d2d6ded",
+    "data/engine/nominal_stems/inventory.py": "43d482ccb5539f25c8d2e8a685a9ef402d00ded86ce54c2ce7f463a8aea2bf36",
+    "data/engine/nominal_stems/vp_support.py": "2fdece29a9ca48e2a5000cb4b5af9942396cf6c7f5e1bd4bd1ab9119fbbd005a",
+    "data/engine/taddhitanta/adapter.py": "ae8a8e5f050c7c4dbf24962f7e8125bb432bb1c5c818b91df15979f87b79ca3e",
+    "data/engine/taddhitanta/adapter.rs": "b4e6ae3a649156c521d6c98cd1e84fffe27752b464636e8b9f086dbdd5e02939",
+    "data/engine/taddhitanta/nominal-input.patch": "f7574a266b6a29608eaf995b9cacd5052539a5e0e2f373a810aebf1c1cdc3888",
+    "data/engine/taddhitanta/rust_probe.py": "cd920deb5a39a8bb1c8eee4678d4aee23710961cadce9b47a1d3ee94a9e595ef",
+    "data/engine/taddhitanta/probe.rs": "720d5c603ef1589d817a1a7ef298d5e8a98850ae9d9952144d45058bf05c12e6",
+    "data/engine/taddhitanta/probe.Cargo.lock": "7c367a191109398605148508a393411ee020c2b76745e8a4440196ea871f7da0"
+  },
+  "prompt": {
+    "path": "data/engine/prompts/v2/vp_taddhitanta.txt",
+    "sha256": "cb30d5d23f910bf1e2f2893e61ac078ae88f8021c644794badff811034b4e08e",
+    "rendered_sequence_sha256": "7c628f8849fe9588accb01984a6bba5ba061031dd41d0c4caf719c5baef93493",
+    "sequence_format": "compact UTF-8 JSON [id,prompt] plus newline per record",
+    "metadata_refreshed_at": "2026-10-14T06:37:39.595234+00:00"
+  },
+  "scope": {
+    "suffixes": [
+      "Akinic",
+      "Arak",
+      "Baktal",
+      "Brawac",
+      "Ca",
+      "CaR",
+      "Cas",
+      "DA",
+      "Erak",
+      "Ga",
+      "Gac",
+      "Gan",
+      "Gas",
+      "Ikak",
+      "Ikan",
+      "Iyasun",
+      "Ka",
+      "KaY",
+      "PaY",
+      "Pak",
+      "PiY",
+      "Qa",
+      "QaY",
+      "Qak",
+      "QakaY",
+      "Qinuk",
+      "Qrak",
+      "Ra",
+      "Rini",
+      "Rya",
+      "SAlac",
+      "Sa",
+      "SaNkawac",
+      "Sas",
+      "TAl",
+      "Tamu",
+      "Tyan",
+      "WaY",
+      "Wac",
+      "Wak",
+      "Wan",
+      "Wap",
+      "Ya",
+      "YiWa",
+      "Yya",
+      "YyaN",
+      "Yyaw",
+      "a",
+      "aR",
+      "aWac",
+      "aY",
+      "ac",
+      "akac",
+      "anic",
+      "ap",
+      "asic",
+      "astAti",
+      "at",
+      "atasuc",
+      "bahuc",
+      "biqac",
+      "birIsac",
+      "cPaY",
+      "caRap",
+      "caraw",
+      "cuYcup",
+      "cvi",
+      "dA",
+      "dAnIm",
+      "daGnac",
+      "deSIyar",
+      "deSya",
+      "dvayasac",
+      "eRya",
+      "ha",
+      "iY",
+      "ila",
+      "ilac",
+      "imanic",
+      "inac",
+      "ini",
+      "itac",
+      "izWan",
+      "jAhac",
+      "jAtIyar",
+      "ka",
+      "kak",
+      "kalpap",
+      "kan",
+      "kap",
+      "kawac",
+      "kftvasuc",
+      "kuRap",
+      "kuwArac",
+      "lac",
+      "mAtrac",
+      "ma",
+      "map",
+      "matup",
+      "mayaw",
+      "nAwac",
+      "na",
+      "naY",
+      "pASap",
+      "piwac",
+      "qatamac",
+      "qatarac",
+      "qati",
+      "qaw",
+      "qmatup",
+      "qupac",
+      "qvalac",
+      "qvun",
+      "qyaR",
+      "rUpap",
+      "rUpya",
+      "ra",
+      "rhil",
+      "sAti",
+      "sa",
+      "sna",
+      "snaY",
+      "suc",
+      "tIya",
+      "tal",
+      "tamap",
+      "tarap",
+      "tasi",
+      "tasil",
+      "tayap",
+      "ti",
+      "tikan",
+      "trA",
+      "tral",
+      "tva",
+      "tyak",
+      "tyakan",
+      "tyap",
+      "tyu",
+      "tyul",
+      "valac",
+      "vati",
+      "vatup",
+      "vaya",
+      "viDal",
+      "vini",
+      "vuY",
+      "vuk",
+      "vun",
+      "vyan",
+      "vyat",
+      "wIwac",
+      "wac",
+      "waq",
+      "weRyaR",
+      "wiWan",
+      "wlaY",
+      "wyaR",
+      "wyu",
+      "wyul",
+      "ya",
+      "yaY",
+      "yak",
+      "yan",
+      "yat",
+      "yus",
+      "zPak",
+      "zWac",
+      "zWal",
+      "zWan",
+      "za",
+      "zkan",
+      "zwarac",
+      "zyaN",
+      "zyaY"
+    ],
+    "suffix_filter": null,
+    "meaning_filter": null,
+    "headword_policy": "Use only shared-nominal-stems.json; do not re-read or union raw headwords.",
+    "additional_inputs": null,
+    "pilot_exclusions_applied": false,
+    "output_policy": "Retain every nonempty, losslessly renderable engine result; audit all remaining attempted coordinates.",
+    "task_identity": "stem + constructor + source gender + suffix; artha=null",
+    "attempt_audit": "One row per base partitions all 175 suffixes into exported, no_forms, invalid_gold_encoding, engine_error.",
+    "limits": "All 175 suffixes attempted. Engine-backed answers are not independent linguistic certification. Explicit-meaning coverage is not claimed."
+  },
+  "enumeration_order": "base ID ascending, then suffix ID ascending",
+  "gold_order": "sorted unique SLP1, aligned NFC Devanagari",
+  "sampling": null,
+  "splits": null,
+  "counts": {
+    "bases": 74193,
+    "suffixes": 175,
+    "candidates": 12983775,
+    "full": 3342776,
+    "no_forms": 9640999,
+    "invalid_gold_encoding": 0,
+    "engine_errors": 0,
+    "per_suffix": {
+      "Akinic": {
+        "exported": 0,
+        "no_forms": 74193,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "Arak": {
+        "exported": 1,
+        "no_forms": 74192,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "Baktal": {
+        "exported": 28,
+        "no_forms": 74165,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "Brawac": {
+        "exported": 1,
+        "no_forms": 74192,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "Ca": {
+        "exported": 71738,
+        "no_forms": 2455,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "CaR": {
+        "exported": 4,
+        "no_forms": 74189,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "Cas": {
+        "exported": 0,
+        "no_forms": 74193,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "DA": {
+        "exported": 5,
+        "no_forms": 74188,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "Erak": {
+        "exported": 2,
+        "no_forms": 74191,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "Ga": {
+        "exported": 5,
+        "no_forms": 74188,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "Gac": {
+        "exported": 0,
+        "no_forms": 74193,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "Gan": {
+        "exported": 4,
+        "no_forms": 74189,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "Gas": {
+        "exported": 2,
+        "no_forms": 74191,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "Ikak": {
+        "exported": 8,
+        "no_forms": 74185,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "Ikan": {
+        "exported": 1,
+        "no_forms": 74192,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "Iyasun": {
+        "exported": 74193,
+        "no_forms": 0,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "Ka": {
+        "exported": 87,
+        "no_forms": 74106,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "KaY": {
+        "exported": 74193,
+        "no_forms": 0,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "PaY": {
+        "exported": 87,
+        "no_forms": 74106,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "Pak": {
+        "exported": 100,
+        "no_forms": 74093,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "PiY": {
+        "exported": 24308,
+        "no_forms": 49885,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "Qa": {
+        "exported": 1,
+        "no_forms": 74192,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "QaY": {
+        "exported": 37,
+        "no_forms": 74156,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "Qak": {
+        "exported": 22080,
+        "no_forms": 52113,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "QakaY": {
+        "exported": 18,
+        "no_forms": 74175,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "Qinuk": {
+        "exported": 1,
+        "no_forms": 74192,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "Qrak": {
+        "exported": 1,
+        "no_forms": 74192,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "Ra": {
+        "exported": 21,
+        "no_forms": 74172,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "Rini": {
+        "exported": 9,
+        "no_forms": 74184,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "Rya": {
+        "exported": 2092,
+        "no_forms": 72101,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "SAlac": {
+        "exported": 2,
+        "no_forms": 74191,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "Sa": {
+        "exported": 19,
+        "no_forms": 74174,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "SaNkawac": {
+        "exported": 2,
+        "no_forms": 74191,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "Sas": {
+        "exported": 74193,
+        "no_forms": 0,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "TAl": {
+        "exported": 74193,
+        "no_forms": 0,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "Tamu": {
+        "exported": 74193,
+        "no_forms": 0,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "Tyan": {
+        "exported": 3,
+        "no_forms": 74190,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "WaY": {
+        "exported": 53,
+        "no_forms": 74140,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "Wac": {
+        "exported": 0,
+        "no_forms": 74193,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "Wak": {
+        "exported": 74193,
+        "no_forms": 0,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "Wan": {
+        "exported": 51435,
+        "no_forms": 22758,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "Wap": {
+        "exported": 0,
+        "no_forms": 74193,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "Ya": {
+        "exported": 15,
+        "no_forms": 74178,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "YiWa": {
+        "exported": 19,
+        "no_forms": 74174,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "Yya": {
+        "exported": 21,
+        "no_forms": 74172,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "YyaN": {
+        "exported": 26193,
+        "no_forms": 48000,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "Yyaw": {
+        "exported": 74172,
+        "no_forms": 21,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "a": {
+        "exported": 0,
+        "no_forms": 74193,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "aR": {
+        "exported": 74193,
+        "no_forms": 0,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "aWac": {
+        "exported": 2,
+        "no_forms": 74191,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "aY": {
+        "exported": 74193,
+        "no_forms": 0,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "ac": {
+        "exported": 0,
+        "no_forms": 74193,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "akac": {
+        "exported": 0,
+        "no_forms": 74193,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "anic": {
+        "exported": 0,
+        "no_forms": 74193,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "ap": {
+        "exported": 0,
+        "no_forms": 74193,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "asic": {
+        "exported": 0,
+        "no_forms": 74193,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "astAti": {
+        "exported": 74193,
+        "no_forms": 0,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "at": {
+        "exported": 0,
+        "no_forms": 74193,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "atasuc": {
+        "exported": 0,
+        "no_forms": 74193,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "bahuc": {
+        "exported": 74193,
+        "no_forms": 0,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "biqac": {
+        "exported": 3,
+        "no_forms": 74190,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "birIsac": {
+        "exported": 3,
+        "no_forms": 74190,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "cPaY": {
+        "exported": 20,
+        "no_forms": 74173,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "caRap": {
+        "exported": 74193,
+        "no_forms": 0,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "caraw": {
+        "exported": 74193,
+        "no_forms": 0,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "cuYcup": {
+        "exported": 74193,
+        "no_forms": 0,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "cvi": {
+        "exported": 74193,
+        "no_forms": 0,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "dA": {
+        "exported": 0,
+        "no_forms": 74193,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "dAnIm": {
+        "exported": 0,
+        "no_forms": 74193,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "daGnac": {
+        "exported": 74193,
+        "no_forms": 0,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "deSIyar": {
+        "exported": 74193,
+        "no_forms": 0,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "deSya": {
+        "exported": 74193,
+        "no_forms": 0,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "dvayasac": {
+        "exported": 74193,
+        "no_forms": 0,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "eRya": {
+        "exported": 0,
+        "no_forms": 74193,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "ha": {
+        "exported": 3,
+        "no_forms": 74190,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "iY": {
+        "exported": 43209,
+        "no_forms": 30984,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "ila": {
+        "exported": 0,
+        "no_forms": 74193,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "ilac": {
+        "exported": 18,
+        "no_forms": 74175,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "imanic": {
+        "exported": 62,
+        "no_forms": 74131,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "inac": {
+        "exported": 3,
+        "no_forms": 74190,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "ini": {
+        "exported": 43348,
+        "no_forms": 30845,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "itac": {
+        "exported": 110,
+        "no_forms": 74083,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "izWan": {
+        "exported": 74193,
+        "no_forms": 0,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "jAhac": {
+        "exported": 74193,
+        "no_forms": 0,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "jAtIyar": {
+        "exported": 74183,
+        "no_forms": 10,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "ka": {
+        "exported": 74193,
+        "no_forms": 0,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "kak": {
+        "exported": 0,
+        "no_forms": 74193,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "kalpap": {
+        "exported": 74193,
+        "no_forms": 0,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "kan": {
+        "exported": 74193,
+        "no_forms": 0,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "kap": {
+        "exported": 0,
+        "no_forms": 74193,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "kawac": {
+        "exported": 9,
+        "no_forms": 74184,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "kftvasuc": {
+        "exported": 5,
+        "no_forms": 74188,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "kuRap": {
+        "exported": 74193,
+        "no_forms": 0,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "kuwArac": {
+        "exported": 1,
+        "no_forms": 74192,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "lac": {
+        "exported": 14848,
+        "no_forms": 59345,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "mAtrac": {
+        "exported": 74193,
+        "no_forms": 0,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "ma": {
+        "exported": 0,
+        "no_forms": 74193,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "map": {
+        "exported": 0,
+        "no_forms": 74193,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "matup": {
+        "exported": 74193,
+        "no_forms": 0,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "mayaw": {
+        "exported": 74193,
+        "no_forms": 0,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "nAwac": {
+        "exported": 1,
+        "no_forms": 74192,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "na": {
+        "exported": 15,
+        "no_forms": 74178,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "naY": {
+        "exported": 1,
+        "no_forms": 74192,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "pASap": {
+        "exported": 74193,
+        "no_forms": 0,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "piwac": {
+        "exported": 3,
+        "no_forms": 74190,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "qatamac": {
+        "exported": 0,
+        "no_forms": 74193,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "qatarac": {
+        "exported": 0,
+        "no_forms": 74193,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "qati": {
+        "exported": 0,
+        "no_forms": 74193,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "qaw": {
+        "exported": 5,
+        "no_forms": 74188,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "qmatup": {
+        "exported": 4,
+        "no_forms": 74189,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "qupac": {
+        "exported": 1,
+        "no_forms": 74192,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "qvalac": {
+        "exported": 0,
+        "no_forms": 74193,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "qvun": {
+        "exported": 0,
+        "no_forms": 74193,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "qyaR": {
+        "exported": 0,
+        "no_forms": 74193,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "rUpap": {
+        "exported": 74193,
+        "no_forms": 0,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "rUpya": {
+        "exported": 74193,
+        "no_forms": 0,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "ra": {
+        "exported": 3,
+        "no_forms": 74190,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "rhil": {
+        "exported": 0,
+        "no_forms": 74193,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "sAti": {
+        "exported": 74193,
+        "no_forms": 0,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "sa": {
+        "exported": 0,
+        "no_forms": 74193,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "sna": {
+        "exported": 0,
+        "no_forms": 74193,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "snaY": {
+        "exported": 0,
+        "no_forms": 74193,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "suc": {
+        "exported": 0,
+        "no_forms": 74193,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "tIya": {
+        "exported": 0,
+        "no_forms": 74193,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "tal": {
+        "exported": 74193,
+        "no_forms": 0,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "tamap": {
+        "exported": 74193,
+        "no_forms": 0,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "tarap": {
+        "exported": 74193,
+        "no_forms": 0,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "tasi": {
+        "exported": 74193,
+        "no_forms": 0,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "tasil": {
+        "exported": 3,
+        "no_forms": 74190,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "tayap": {
+        "exported": 5,
+        "no_forms": 74188,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "ti": {
+        "exported": 2,
+        "no_forms": 74191,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "tikan": {
+        "exported": 0,
+        "no_forms": 74193,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "trA": {
+        "exported": 74193,
+        "no_forms": 0,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "tral": {
+        "exported": 3,
+        "no_forms": 74190,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "tva": {
+        "exported": 74193,
+        "no_forms": 0,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "tyak": {
+        "exported": 1,
+        "no_forms": 74192,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "tyakan": {
+        "exported": 2,
+        "no_forms": 74191,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "tyap": {
+        "exported": 0,
+        "no_forms": 74193,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "tyu": {
+        "exported": 0,
+        "no_forms": 74193,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "tyul": {
+        "exported": 0,
+        "no_forms": 74193,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "valac": {
+        "exported": 74193,
+        "no_forms": 0,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "vati": {
+        "exported": 0,
+        "no_forms": 74193,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "vatup": {
+        "exported": 0,
+        "no_forms": 74193,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "vaya": {
+        "exported": 3,
+        "no_forms": 74190,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "viDal": {
+        "exported": 8,
+        "no_forms": 74185,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "vini": {
+        "exported": 492,
+        "no_forms": 73701,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "vuY": {
+        "exported": 62,
+        "no_forms": 74131,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "vuk": {
+        "exported": 1,
+        "no_forms": 74192,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "vun": {
+        "exported": 22,
+        "no_forms": 74171,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "vyan": {
+        "exported": 1,
+        "no_forms": 74192,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "vyat": {
+        "exported": 1,
+        "no_forms": 74192,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "wIwac": {
+        "exported": 1,
+        "no_forms": 74192,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "wac": {
+        "exported": 0,
+        "no_forms": 74193,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "waq": {
+        "exported": 0,
+        "no_forms": 74193,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "weRyaR": {
+        "exported": 1,
+        "no_forms": 74192,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "wiWan": {
+        "exported": 4,
+        "no_forms": 74189,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "wlaY": {
+        "exported": 1,
+        "no_forms": 74192,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "wyaR": {
+        "exported": 2,
+        "no_forms": 74191,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "wyu": {
+        "exported": 2,
+        "no_forms": 74191,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "wyul": {
+        "exported": 2,
+        "no_forms": 74191,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "ya": {
+        "exported": 31,
+        "no_forms": 74162,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "yaY": {
+        "exported": 118,
+        "no_forms": 74075,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "yak": {
+        "exported": 1,
+        "no_forms": 74192,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "yan": {
+        "exported": 4,
+        "no_forms": 74189,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "yat": {
+        "exported": 74193,
+        "no_forms": 0,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "yus": {
+        "exported": 1,
+        "no_forms": 74192,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "zPak": {
+        "exported": 2,
+        "no_forms": 74191,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "zWac": {
+        "exported": 0,
+        "no_forms": 74193,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "zWal": {
+        "exported": 0,
+        "no_forms": 74193,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "zWan": {
+        "exported": 29,
+        "no_forms": 74164,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "za": {
+        "exported": 0,
+        "no_forms": 74193,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "zkan": {
+        "exported": 1,
+        "no_forms": 74192,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "zwarac": {
+        "exported": 8,
+        "no_forms": 74185,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "zyaN": {
+        "exported": 0,
+        "no_forms": 74193,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      },
+      "zyaY": {
+        "exported": 0,
+        "no_forms": 74193,
+        "invalid_gold_encoding": 0,
+        "engine_error": 0
+      }
+    },
+    "gold_forms_per_task": {
+      "1": 3321164,
+      "2": 21577,
+      "4": 35
+    },
+    "tasks_per_base": {
+      "41": 1161,
+      "42": 3060,
+      "43": 4657,
+      "44": 11015,
+      "45": 32328,
+      "46": 5917,
+      "47": 15869,
+      "48": 164,
+      "49": 14,
+      "50": 7,
+      "51": 1
+    },
+    "source_rows": {
+      "rows": 197652,
+      "rows_attempted": 54947,
+      "rows_with_tasks": 54947,
+      "new_unique_tasks": 3342776,
+      "input_exclusion_events": {
+        "vp_unsupported_input": 137004,
+        "special_lexical_metadata": 371,
+        "unresolved_feminine_stem": 7819,
+        "indeclinable": 5638,
+        "invalid_headword_encoding": 94,
+        "unresolved_stem_hint": 231,
+        "unsupported_descriptor": 3
+      }
+    }
+  },
+  "files": {
+    "full.json": {
+      "sha256": "8489ae047d37babac4a4cdce22e650e24180835d6562e130734057dab398f38a",
+      "bytes": 1004972727
+    },
+    "attempts.json": {
+      "sha256": "78a081eaf69411acec69aa4ddd421a76ae1af215e8464ab4107807103f771a02",
+      "bytes": 99291139
+    },
+    "bases.json": {
+      "sha256": "26c159dba8b96d6c01f8646747337d1622e3242addc7e82008c2b4c984ea7fa4",
+      "bytes": 15931533
+    },
+    "source_rows.json": {
+      "sha256": "19203b7370dd0ba0d3f2fa2426c8ee965cd20fcedb1c526cdd67a4fb6fd0f5af",
+      "bytes": 83923253
+    },
+    "suffixes.json": {
+      "sha256": "28f7eb3b4147b18b43e7323566bf5afdd2d5e7c774be317604bea64bb12967ee",
+      "bytes": 18282
+    }
+  }
+}

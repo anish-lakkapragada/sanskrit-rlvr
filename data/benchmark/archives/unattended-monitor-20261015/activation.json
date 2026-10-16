@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-15T07:53:06.728399+00:00",
+  "authorization": "User requested unattended monitoring, automatic infrastructure recovery, and current progress.",
+  "gemini_supervisor_pid": 50629,
+  "tracker_pid": 50633,
+  "draining_worker_pid": 49163,
+  "unattended": true,
+  "gemini_start_concurrency": 4,
+  "gemini_concurrency_ceiling": 64,
+  "capacity_cooldowns_seconds": [
+    300,
+    600,
+    1200,
+    1800
+  ],
+  "budget_changed": false,
+  "request_settings_changed": false,
+  "offline_supervision_tests_passed": 4,
+  "progress_page": "data/benchmark/archives/live-progress/progress.html",
+  "notification_channel": "macOS local notifications and completion beep"
+}

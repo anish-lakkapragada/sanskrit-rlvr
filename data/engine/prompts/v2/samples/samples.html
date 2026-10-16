@@ -1,0 +1,1003 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hydrated Sanskrit prompt samples and accepted answers</title>
+</head>
+<body>
+<header>
+<h1>Prompt samples and accepted answers</h1>
+<p>Five samples per task. Each prompt is shown beside every accepted answer from its answer.json file.</p>
+<nav id="sample-index" aria-label="Tasks and samples"><ul>
+<li><a href="#krdanta">Kṛdanta</a>: <a href="#krdanta-01">Sample 1</a> | <a href="#krdanta-02">Sample 2</a> | <a href="#krdanta-03">Sample 3</a> | <a href="#krdanta-04">Sample 4</a> | <a href="#krdanta-05">Sample 5</a></li>
+<li><a href="#subanta">Subanta</a>: <a href="#subanta-01">Sample 1</a> | <a href="#subanta-02">Sample 2</a> | <a href="#subanta-03">Sample 3</a> | <a href="#subanta-04">Sample 4</a> | <a href="#subanta-05">Sample 5</a></li>
+<li><a href="#taddhitanta">Taddhitānta</a>: <a href="#taddhitanta-01">Sample 1</a> | <a href="#taddhitanta-02">Sample 2</a> | <a href="#taddhitanta-03">Sample 3</a> | <a href="#taddhitanta-04">Sample 4</a> | <a href="#taddhitanta-05">Sample 5</a></li>
+<li><a href="#tinanta">Tiṅanta</a>: <a href="#tinanta-01">Sample 1</a> | <a href="#tinanta-02">Sample 2</a> | <a href="#tinanta-03">Sample 3</a> | <a href="#tinanta-04">Sample 4</a> | <a href="#tinanta-05">Sample 5</a></li>
+</ul></nav>
+</header>
+<main>
+<section id="krdanta" aria-labelledby="krdanta-title">
+<h2 id="krdanta-title">Kṛdanta</h2>
+<article id="krdanta-01">
+<h3>Sample 1</h3>
+<nav aria-label="Kṛdanta sample navigation"><p>Samples: <a href="#krdanta-01" aria-current="location"><strong>1</strong></a> | <a href="#krdanta-02">2</a> | <a href="#krdanta-03">3</a> | <a href="#krdanta-04">4</a> | <a href="#krdanta-05">5</a> · <a href="#sample-index">All categories</a></p></nav>
+<p><button type="button" data-copy-prompt>Copy prompt</button> <span data-copy-status role="status" aria-live="polite"></span></p>
+<p>Task ID: <code>krdanta:02.0007:Rvul</code></p>
+<table border="1" cellpadding="8" aria-label="Kṛdanta sample 1: prompt and accepted answers">
+<thead><tr>
+<th scope="col"><a href="krdanta/01/prompt.txt">prompt.txt</a></th>
+<th scope="col"><a href="krdanta/01/answer.json">answer.json</a></th>
+</tr></thead><tbody><tr>
+<td valign="top"><pre data-kind="prompt"><code>```text
+You are an expert in Sanskrit grammar (vyakarana).
+
+Derive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root
+(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers
+included), its verb class (gana), its traditional meaning (artha), and the
+required primary suffix (krt). Each Sanskrit grammatical term is glossed in
+parentheses in English.
+
+For a noun or adjective, return the uninflected nominal stem (pratipadika),
+without case or number endings. For an indeclinable (avyaya), return the
+complete indeclinable form.
+
+Write ONLY the final form, in Devanagari script, inside exactly one
+&lt;answer&gt;&lt;/answer&gt; block. If several forms are valid, give exactly one.
+Do not include an explanation or any text outside the block:
+&lt;answer&gt;Final form in Devanagari&lt;/answer&gt;
+
+=== Your task ===
+
+dhatu (Sanskrit verbal root): च॒क्षिँ॒ङ्   (Dhatupatha citation form, anubandha markers included)
+gana (verb class): Adadi (class 2)
+artha (traditional meaning): व्यक्तायां वाचि
+
+Required form:
+- krt (primary suffix): ण्वुँल् (agent noun; citation form, anubandha markers included)
+```</code></pre></td>
+<td valign="top"><pre data-kind="answers"><code>{
+  <font color="#0000aa">&quot;id&quot;</font>: <font color="#006400">&quot;krdanta:02.0007:Rvul&quot;</font>,
+  <font color="#0000aa">&quot;gold_slp1&quot;</font>: [
+    <font color="#006400">&quot;cakzaka&quot;</font>
+  ],
+  <font color="#0000aa">&quot;gold_devanagari&quot;</font>: [
+    <font color="#006400">&quot;चक्षक&quot;</font>
+  ]
+}</code></pre></td>
+</tr></tbody></table>
+</article>
+<article id="krdanta-02">
+<h3>Sample 2</h3>
+<nav aria-label="Kṛdanta sample navigation"><p>Samples: <a href="#krdanta-01">1</a> | <a href="#krdanta-02" aria-current="location"><strong>2</strong></a> | <a href="#krdanta-03">3</a> | <a href="#krdanta-04">4</a> | <a href="#krdanta-05">5</a> · <a href="#sample-index">All categories</a></p></nav>
+<p><button type="button" data-copy-prompt>Copy prompt</button> <span data-copy-status role="status" aria-live="polite"></span></p>
+<p>Task ID: <code>krdanta:10.0101:kta</code></p>
+<table border="1" cellpadding="8" aria-label="Kṛdanta sample 2: prompt and accepted answers">
+<thead><tr>
+<th scope="col"><a href="krdanta/02/prompt.txt">prompt.txt</a></th>
+<th scope="col"><a href="krdanta/02/answer.json">answer.json</a></th>
+</tr></thead><tbody><tr>
+<td valign="top"><pre data-kind="prompt"><code>```text
+You are an expert in Sanskrit grammar (vyakarana).
+
+Derive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root
+(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers
+included), its verb class (gana), its traditional meaning (artha), and the
+required primary suffix (krt). Each Sanskrit grammatical term is glossed in
+parentheses in English.
+
+For a noun or adjective, return the uninflected nominal stem (pratipadika),
+without case or number endings. For an indeclinable (avyaya), return the
+complete indeclinable form.
+
+Write ONLY the final form, in Devanagari script, inside exactly one
+&lt;answer&gt;&lt;/answer&gt; block. If several forms are valid, give exactly one.
+Do not include an explanation or any text outside the block:
+&lt;answer&gt;Final form in Devanagari&lt;/answer&gt;
+
+=== Your task ===
+
+dhatu (Sanskrit verbal root): शुल्बँ   (Dhatupatha citation form, anubandha markers included)
+gana (verb class): Curadi (class 10)
+artha (traditional meaning): माने
+
+Required form:
+- krt (primary suffix): क्त (past participle; citation form, anubandha markers included)
+```</code></pre></td>
+<td valign="top"><pre data-kind="answers"><code>{
+  <font color="#0000aa">&quot;id&quot;</font>: <font color="#006400">&quot;krdanta:10.0101:kta&quot;</font>,
+  <font color="#0000aa">&quot;gold_slp1&quot;</font>: [
+    <font color="#006400">&quot;Sulbita&quot;</font>
+  ],
+  <font color="#0000aa">&quot;gold_devanagari&quot;</font>: [
+    <font color="#006400">&quot;शुल्बित&quot;</font>
+  ]
+}</code></pre></td>
+</tr></tbody></table>
+</article>
+<article id="krdanta-03">
+<h3>Sample 3</h3>
+<nav aria-label="Kṛdanta sample navigation"><p>Samples: <a href="#krdanta-01">1</a> | <a href="#krdanta-02">2</a> | <a href="#krdanta-03" aria-current="location"><strong>3</strong></a> | <a href="#krdanta-04">4</a> | <a href="#krdanta-05">5</a> · <a href="#sample-index">All categories</a></p></nav>
+<p><button type="button" data-copy-prompt>Copy prompt</button> <span data-copy-status role="status" aria-live="polite"></span></p>
+<p>Task ID: <code>krdanta:02.0014:ktavatu</code></p>
+<table border="1" cellpadding="8" aria-label="Kṛdanta sample 3: prompt and accepted answers">
+<thead><tr>
+<th scope="col"><a href="krdanta/03/prompt.txt">prompt.txt</a></th>
+<th scope="col"><a href="krdanta/03/answer.json">answer.json</a></th>
+</tr></thead><tbody><tr>
+<td valign="top"><pre data-kind="prompt"><code>```text
+You are an expert in Sanskrit grammar (vyakarana).
+
+Derive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root
+(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers
+included), its verb class (gana), its traditional meaning (artha), and the
+required primary suffix (krt). Each Sanskrit grammatical term is glossed in
+parentheses in English.
+
+For a noun or adjective, return the uninflected nominal stem (pratipadika),
+without case or number endings. For an indeclinable (avyaya), return the
+complete indeclinable form.
+
+Write ONLY the final form, in Devanagari script, inside exactly one
+&lt;answer&gt;&lt;/answer&gt; block. If several forms are valid, give exactly one.
+Do not include an explanation or any text outside the block:
+&lt;answer&gt;Final form in Devanagari&lt;/answer&gt;
+
+=== Your task ===
+
+dhatu (Sanskrit verbal root): कसिँ॒   (Dhatupatha citation form, anubandha markers included)
+gana (verb class): Adadi (class 2)
+artha (traditional meaning): गतिशासनयोः
+
+Required form:
+- krt (primary suffix): क्तवतुँ (past active participle; citation form, anubandha markers included)
+```</code></pre></td>
+<td valign="top"><pre data-kind="answers"><code>{
+  <font color="#0000aa">&quot;id&quot;</font>: <font color="#006400">&quot;krdanta:02.0014:ktavatu&quot;</font>,
+  <font color="#0000aa">&quot;gold_slp1&quot;</font>: [
+    <font color="#006400">&quot;kaMsitavat&quot;</font>
+  ],
+  <font color="#0000aa">&quot;gold_devanagari&quot;</font>: [
+    <font color="#006400">&quot;कंसितवत्&quot;</font>
+  ]
+}</code></pre></td>
+</tr></tbody></table>
+</article>
+<article id="krdanta-04">
+<h3>Sample 4</h3>
+<nav aria-label="Kṛdanta sample navigation"><p>Samples: <a href="#krdanta-01">1</a> | <a href="#krdanta-02">2</a> | <a href="#krdanta-03">3</a> | <a href="#krdanta-04" aria-current="location"><strong>4</strong></a> | <a href="#krdanta-05">5</a> · <a href="#sample-index">All categories</a></p></nav>
+<p><button type="button" data-copy-prompt>Copy prompt</button> <span data-copy-status role="status" aria-live="polite"></span></p>
+<p>Task ID: <code>krdanta:10.0184:tfc</code></p>
+<table border="1" cellpadding="8" aria-label="Kṛdanta sample 4: prompt and accepted answers">
+<thead><tr>
+<th scope="col"><a href="krdanta/04/prompt.txt">prompt.txt</a></th>
+<th scope="col"><a href="krdanta/04/answer.json">answer.json</a></th>
+</tr></thead><tbody><tr>
+<td valign="top"><pre data-kind="prompt"><code>```text
+You are an expert in Sanskrit grammar (vyakarana).
+
+Derive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root
+(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers
+included), its verb class (gana), its traditional meaning (artha), and the
+required primary suffix (krt). Each Sanskrit grammatical term is glossed in
+parentheses in English.
+
+For a noun or adjective, return the uninflected nominal stem (pratipadika),
+without case or number endings. For an indeclinable (avyaya), return the
+complete indeclinable form.
+
+Write ONLY the final form, in Devanagari script, inside exactly one
+&lt;answer&gt;&lt;/answer&gt; block. If several forms are valid, give exactly one.
+Do not include an explanation or any text outside the block:
+&lt;answer&gt;Final form in Devanagari&lt;/answer&gt;
+
+=== Your task ===
+
+dhatu (Sanskrit verbal root): जसुँ   (Dhatupatha citation form, anubandha markers included)
+gana (verb class): Curadi (class 10)
+artha (traditional meaning): हिंसायाम्
+
+Required form:
+- krt (primary suffix): तृच् (agent noun; citation form, anubandha markers included)
+```</code></pre></td>
+<td valign="top"><pre data-kind="answers"><code>{
+  <font color="#0000aa">&quot;id&quot;</font>: <font color="#006400">&quot;krdanta:10.0184:tfc&quot;</font>,
+  <font color="#0000aa">&quot;gold_slp1&quot;</font>: [
+    <font color="#006400">&quot;jAsayitf&quot;</font>,
+    <font color="#006400">&quot;jasitf&quot;</font>
+  ],
+  <font color="#0000aa">&quot;gold_devanagari&quot;</font>: [
+    <font color="#006400">&quot;जासयितृ&quot;</font>,
+    <font color="#006400">&quot;जसितृ&quot;</font>
+  ]
+}</code></pre></td>
+</tr></tbody></table>
+</article>
+<article id="krdanta-05">
+<h3>Sample 5</h3>
+<nav aria-label="Kṛdanta sample navigation"><p>Samples: <a href="#krdanta-01">1</a> | <a href="#krdanta-02">2</a> | <a href="#krdanta-03">3</a> | <a href="#krdanta-04">4</a> | <a href="#krdanta-05" aria-current="location"><strong>5</strong></a> · <a href="#sample-index">All categories</a></p></nav>
+<p><button type="button" data-copy-prompt>Copy prompt</button> <span data-copy-status role="status" aria-live="polite"></span></p>
+<p>Task ID: <code>krdanta:02.0011:ktvA</code></p>
+<table border="1" cellpadding="8" aria-label="Kṛdanta sample 5: prompt and accepted answers">
+<thead><tr>
+<th scope="col"><a href="krdanta/05/prompt.txt">prompt.txt</a></th>
+<th scope="col"><a href="krdanta/05/answer.json">answer.json</a></th>
+</tr></thead><tbody><tr>
+<td valign="top"><pre data-kind="prompt"><code>```text
+You are an expert in Sanskrit grammar (vyakarana).
+
+Derive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root
+(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers
+included), its verb class (gana), its traditional meaning (artha), and the
+required primary suffix (krt). Each Sanskrit grammatical term is glossed in
+parentheses in English.
+
+For a noun or adjective, return the uninflected nominal stem (pratipadika),
+without case or number endings. For an indeclinable (avyaya), return the
+complete indeclinable form.
+
+Write ONLY the final form, in Devanagari script, inside exactly one
+&lt;answer&gt;&lt;/answer&gt; block. If several forms are valid, give exactly one.
+Do not include an explanation or any text outside the block:
+&lt;answer&gt;Final form in Devanagari&lt;/answer&gt;
+
+=== Your task ===
+
+dhatu (Sanskrit verbal root): आसँ॒   (Dhatupatha citation form, anubandha markers included)
+gana (verb class): Adadi (class 2)
+artha (traditional meaning): उपवेशने
+
+Required form:
+- krt (primary suffix): क्त्वा (absolutive; having performed the action; citation form, anubandha markers included)
+```</code></pre></td>
+<td valign="top"><pre data-kind="answers"><code>{
+  <font color="#0000aa">&quot;id&quot;</font>: <font color="#006400">&quot;krdanta:02.0011:ktvA&quot;</font>,
+  <font color="#0000aa">&quot;gold_slp1&quot;</font>: [
+    <font color="#006400">&quot;AsitvA&quot;</font>
+  ],
+  <font color="#0000aa">&quot;gold_devanagari&quot;</font>: [
+    <font color="#006400">&quot;आसित्वा&quot;</font>
+  ]
+}</code></pre></td>
+</tr></tbody></table>
+</article>
+</section>
+<section id="subanta" aria-labelledby="subanta-title">
+<h2 id="subanta-title">Subanta</h2>
+<article id="subanta-01">
+<h3>Sample 1</h3>
+<nav aria-label="Subanta sample navigation"><p>Samples: <a href="#subanta-01" aria-current="location"><strong>1</strong></a> | <a href="#subanta-02">2</a> | <a href="#subanta-03">3</a> | <a href="#subanta-04">4</a> | <a href="#subanta-05">5</a> · <a href="#sample-index">All categories</a></p></nav>
+<p><button type="button" data-copy-prompt>Copy prompt</button> <span data-copy-status role="status" aria-live="polite"></span></p>
+<p>Task ID: <code>subanta:dozala:basic:Pum:Trtiya:Bahu</code></p>
+<table border="1" cellpadding="8" aria-label="Subanta sample 1: prompt and accepted answers">
+<thead><tr>
+<th scope="col"><a href="subanta/01/prompt.txt">prompt.txt</a></th>
+<th scope="col"><a href="subanta/01/answer.json">answer.json</a></th>
+</tr></thead><tbody><tr>
+<td valign="top"><pre data-kind="prompt"><code>```text
+You are an expert in Sanskrit grammar (vyakarana).
+
+Inflect the supplied Sanskrit nominal stem (pratipadika) in the requested
+gender (linga), case (vibhakti), and number (vacana). Return the complete
+inflected noun or adjective (subanta), in its standalone form.
+
+Use the displayed stem as the starting form. When a feminine stem is supplied,
+use that feminine stem rather than reconstructing it from a masculine headword.
+
+Write ONLY the final form, in Devanagari script, inside exactly one
+&lt;answer&gt;&lt;/answer&gt; block. If several forms are valid, give exactly one.
+Do not include an explanation or any text outside the block:
+&lt;answer&gt;Final form in Devanagari&lt;/answer&gt;
+
+=== Your task ===
+
+pratipadika (nominal stem): दोषल
+linga (gender): masculine
+vibhakti (case): instrumental (third case)
+vacana (number): plural
+```</code></pre></td>
+<td valign="top"><pre data-kind="answers"><code>{
+  <font color="#0000aa">&quot;id&quot;</font>: <font color="#006400">&quot;subanta:dozala:basic:Pum:Trtiya:Bahu&quot;</font>,
+  <font color="#0000aa">&quot;gold_slp1&quot;</font>: [
+    <font color="#006400">&quot;dozalEH&quot;</font>
+  ],
+  <font color="#0000aa">&quot;gold_devanagari&quot;</font>: [
+    <font color="#006400">&quot;दोषलैः&quot;</font>
+  ]
+}</code></pre></td>
+</tr></tbody></table>
+</article>
+<article id="subanta-02">
+<h3>Sample 2</h3>
+<nav aria-label="Subanta sample navigation"><p>Samples: <a href="#subanta-01">1</a> | <a href="#subanta-02" aria-current="location"><strong>2</strong></a> | <a href="#subanta-03">3</a> | <a href="#subanta-04">4</a> | <a href="#subanta-05">5</a> · <a href="#sample-index">All categories</a></p></nav>
+<p><button type="button" data-copy-prompt>Copy prompt</button> <span data-copy-status role="status" aria-live="polite"></span></p>
+<p>Task ID: <code>subanta:DfzARa:basic:Pum:Dvitiya:Dvi</code></p>
+<table border="1" cellpadding="8" aria-label="Subanta sample 2: prompt and accepted answers">
+<thead><tr>
+<th scope="col"><a href="subanta/02/prompt.txt">prompt.txt</a></th>
+<th scope="col"><a href="subanta/02/answer.json">answer.json</a></th>
+</tr></thead><tbody><tr>
+<td valign="top"><pre data-kind="prompt"><code>```text
+You are an expert in Sanskrit grammar (vyakarana).
+
+Inflect the supplied Sanskrit nominal stem (pratipadika) in the requested
+gender (linga), case (vibhakti), and number (vacana). Return the complete
+inflected noun or adjective (subanta), in its standalone form.
+
+Use the displayed stem as the starting form. When a feminine stem is supplied,
+use that feminine stem rather than reconstructing it from a masculine headword.
+
+Write ONLY the final form, in Devanagari script, inside exactly one
+&lt;answer&gt;&lt;/answer&gt; block. If several forms are valid, give exactly one.
+Do not include an explanation or any text outside the block:
+&lt;answer&gt;Final form in Devanagari&lt;/answer&gt;
+
+=== Your task ===
+
+pratipadika (nominal stem): धृषाण
+linga (gender): masculine
+vibhakti (case): accusative (second case)
+vacana (number): dual
+```</code></pre></td>
+<td valign="top"><pre data-kind="answers"><code>{
+  <font color="#0000aa">&quot;id&quot;</font>: <font color="#006400">&quot;subanta:DfzARa:basic:Pum:Dvitiya:Dvi&quot;</font>,
+  <font color="#0000aa">&quot;gold_slp1&quot;</font>: [
+    <font color="#006400">&quot;DfzARO&quot;</font>
+  ],
+  <font color="#0000aa">&quot;gold_devanagari&quot;</font>: [
+    <font color="#006400">&quot;धृषाणौ&quot;</font>
+  ]
+}</code></pre></td>
+</tr></tbody></table>
+</article>
+<article id="subanta-03">
+<h3>Sample 3</h3>
+<nav aria-label="Subanta sample navigation"><p>Samples: <a href="#subanta-01">1</a> | <a href="#subanta-02">2</a> | <a href="#subanta-03" aria-current="location"><strong>3</strong></a> | <a href="#subanta-04">4</a> | <a href="#subanta-05">5</a> · <a href="#sample-index">All categories</a></p></nav>
+<p><button type="button" data-copy-prompt>Copy prompt</button> <span data-copy-status role="status" aria-live="polite"></span></p>
+<p>Task ID: <code>subanta:viTura:basic:Pum:Sambodhana:Eka</code></p>
+<table border="1" cellpadding="8" aria-label="Subanta sample 3: prompt and accepted answers">
+<thead><tr>
+<th scope="col"><a href="subanta/03/prompt.txt">prompt.txt</a></th>
+<th scope="col"><a href="subanta/03/answer.json">answer.json</a></th>
+</tr></thead><tbody><tr>
+<td valign="top"><pre data-kind="prompt"><code>```text
+You are an expert in Sanskrit grammar (vyakarana).
+
+Inflect the supplied Sanskrit nominal stem (pratipadika) in the requested
+gender (linga), case (vibhakti), and number (vacana). Return the complete
+inflected noun or adjective (subanta), in its standalone form.
+
+Use the displayed stem as the starting form. When a feminine stem is supplied,
+use that feminine stem rather than reconstructing it from a masculine headword.
+
+Write ONLY the final form, in Devanagari script, inside exactly one
+&lt;answer&gt;&lt;/answer&gt; block. If several forms are valid, give exactly one.
+Do not include an explanation or any text outside the block:
+&lt;answer&gt;Final form in Devanagari&lt;/answer&gt;
+
+=== Your task ===
+
+pratipadika (nominal stem): विथुर
+linga (gender): masculine
+vibhakti (case): vocative (address)
+vacana (number): singular
+```</code></pre></td>
+<td valign="top"><pre data-kind="answers"><code>{
+  <font color="#0000aa">&quot;id&quot;</font>: <font color="#006400">&quot;subanta:viTura:basic:Pum:Sambodhana:Eka&quot;</font>,
+  <font color="#0000aa">&quot;gold_slp1&quot;</font>: [
+    <font color="#006400">&quot;viTura&quot;</font>
+  ],
+  <font color="#0000aa">&quot;gold_devanagari&quot;</font>: [
+    <font color="#006400">&quot;विथुर&quot;</font>
+  ]
+}</code></pre></td>
+</tr></tbody></table>
+</article>
+<article id="subanta-04">
+<h3>Sample 4</h3>
+<nav aria-label="Subanta sample navigation"><p>Samples: <a href="#subanta-01">1</a> | <a href="#subanta-02">2</a> | <a href="#subanta-03">3</a> | <a href="#subanta-04" aria-current="location"><strong>4</strong></a> | <a href="#subanta-05">5</a> · <a href="#sample-index">All categories</a></p></nav>
+<p><button type="button" data-copy-prompt>Copy prompt</button> <span data-copy-status role="status" aria-live="polite"></span></p>
+<p>Task ID: <code>subanta:vEdagDI:nyap:Stri:Prathama:Eka</code></p>
+<table border="1" cellpadding="8" aria-label="Subanta sample 4: prompt and accepted answers">
+<thead><tr>
+<th scope="col"><a href="subanta/04/prompt.txt">prompt.txt</a></th>
+<th scope="col"><a href="subanta/04/answer.json">answer.json</a></th>
+</tr></thead><tbody><tr>
+<td valign="top"><pre data-kind="prompt"><code>```text
+You are an expert in Sanskrit grammar (vyakarana).
+
+Inflect the supplied Sanskrit nominal stem (pratipadika) in the requested
+gender (linga), case (vibhakti), and number (vacana). Return the complete
+inflected noun or adjective (subanta), in its standalone form.
+
+Use the displayed stem as the starting form. When a feminine stem is supplied,
+use that feminine stem rather than reconstructing it from a masculine headword.
+
+Write ONLY the final form, in Devanagari script, inside exactly one
+&lt;answer&gt;&lt;/answer&gt; block. If several forms are valid, give exactly one.
+Do not include an explanation or any text outside the block:
+&lt;answer&gt;Final form in Devanagari&lt;/answer&gt;
+
+=== Your task ===
+
+pratipadika (nominal stem): वैदग्धी
+linga (gender): feminine
+vibhakti (case): nominative (first case)
+vacana (number): singular
+```</code></pre></td>
+<td valign="top"><pre data-kind="answers"><code>{
+  <font color="#0000aa">&quot;id&quot;</font>: <font color="#006400">&quot;subanta:vEdagDI:nyap:Stri:Prathama:Eka&quot;</font>,
+  <font color="#0000aa">&quot;gold_slp1&quot;</font>: [
+    <font color="#006400">&quot;vEdagDI&quot;</font>
+  ],
+  <font color="#0000aa">&quot;gold_devanagari&quot;</font>: [
+    <font color="#006400">&quot;वैदग्धी&quot;</font>
+  ]
+}</code></pre></td>
+</tr></tbody></table>
+</article>
+<article id="subanta-05">
+<h3>Sample 5</h3>
+<nav aria-label="Subanta sample navigation"><p>Samples: <a href="#subanta-01">1</a> | <a href="#subanta-02">2</a> | <a href="#subanta-03">3</a> | <a href="#subanta-04">4</a> | <a href="#subanta-05" aria-current="location"><strong>5</strong></a> · <a href="#sample-index">All categories</a></p></nav>
+<p><button type="button" data-copy-prompt>Copy prompt</button> <span data-copy-status role="status" aria-live="polite"></span></p>
+<p>Task ID: <code>subanta:vEcyuta:basic:Pum:Trtiya:Dvi</code></p>
+<table border="1" cellpadding="8" aria-label="Subanta sample 5: prompt and accepted answers">
+<thead><tr>
+<th scope="col"><a href="subanta/05/prompt.txt">prompt.txt</a></th>
+<th scope="col"><a href="subanta/05/answer.json">answer.json</a></th>
+</tr></thead><tbody><tr>
+<td valign="top"><pre data-kind="prompt"><code>```text
+You are an expert in Sanskrit grammar (vyakarana).
+
+Inflect the supplied Sanskrit nominal stem (pratipadika) in the requested
+gender (linga), case (vibhakti), and number (vacana). Return the complete
+inflected noun or adjective (subanta), in its standalone form.
+
+Use the displayed stem as the starting form. When a feminine stem is supplied,
+use that feminine stem rather than reconstructing it from a masculine headword.
+
+Write ONLY the final form, in Devanagari script, inside exactly one
+&lt;answer&gt;&lt;/answer&gt; block. If several forms are valid, give exactly one.
+Do not include an explanation or any text outside the block:
+&lt;answer&gt;Final form in Devanagari&lt;/answer&gt;
+
+=== Your task ===
+
+pratipadika (nominal stem): वैच्युत
+linga (gender): masculine
+vibhakti (case): instrumental (third case)
+vacana (number): dual
+```</code></pre></td>
+<td valign="top"><pre data-kind="answers"><code>{
+  <font color="#0000aa">&quot;id&quot;</font>: <font color="#006400">&quot;subanta:vEcyuta:basic:Pum:Trtiya:Dvi&quot;</font>,
+  <font color="#0000aa">&quot;gold_slp1&quot;</font>: [
+    <font color="#006400">&quot;vEcyutAByAm&quot;</font>
+  ],
+  <font color="#0000aa">&quot;gold_devanagari&quot;</font>: [
+    <font color="#006400">&quot;वैच्युताभ्याम्&quot;</font>
+  ]
+}</code></pre></td>
+</tr></tbody></table>
+</article>
+</section>
+<section id="taddhitanta" aria-labelledby="taddhitanta-title">
+<h2 id="taddhitanta-title">Taddhitānta</h2>
+<article id="taddhitanta-01">
+<h3>Sample 1</h3>
+<nav aria-label="Taddhitānta sample navigation"><p>Samples: <a href="#taddhitanta-01" aria-current="location"><strong>1</strong></a> | <a href="#taddhitanta-02">2</a> | <a href="#taddhitanta-03">3</a> | <a href="#taddhitanta-04">4</a> | <a href="#taddhitanta-05">5</a> · <a href="#sample-index">All categories</a></p></nav>
+<p><button type="button" data-copy-prompt>Copy prompt</button> <span data-copy-status role="status" aria-live="polite"></span></p>
+<p>Task ID: <code>taddhitanta:mftotTita:basic:Pum:kuRap</code></p>
+<table border="1" cellpadding="8" aria-label="Taddhitānta sample 1: prompt and accepted answers">
+<thead><tr>
+<th scope="col"><a href="taddhitanta/01/prompt.txt">prompt.txt</a></th>
+<th scope="col"><a href="taddhitanta/01/answer.json">answer.json</a></th>
+</tr></thead><tbody><tr>
+<td valign="top"><pre data-kind="prompt"><code>```text
+You are an expert in Sanskrit grammar (vyakarana).
+
+Apply the requested taddhita affix to the supplied Sanskrit nominal base.
+Return the resulting derived nominal stem or complete indeclinable, without
+adding case or number endings.
+
+Use the displayed base with its stated grammatical interpretation. No specific
+artha (meaning) is imposed: use a meaning under which this affix can apply.
+
+Write ONLY the final form, in Devanagari script, inside exactly one
+&lt;answer&gt;&lt;/answer&gt; block. If several forms are valid, give exactly one.
+Do not include an explanation or any text outside the block:
+&lt;answer&gt;Final form in Devanagari&lt;/answer&gt;
+
+=== Your task ===
+
+pratipadika (nominal base): मृतोत्थित
+base interpretation: source gender: masculine; the supplied spelling treated as a basic nominal stem, without a nyap suffix
+taddhita (technical affix): कुणप् (SLP1: kuRap)
+artha (meaning): unrestricted
+```</code></pre></td>
+<td valign="top"><pre data-kind="answers"><code>{
+  <font color="#0000aa">&quot;id&quot;</font>: <font color="#006400">&quot;taddhitanta:mftotTita:basic:Pum:kuRap&quot;</font>,
+  <font color="#0000aa">&quot;gold_slp1&quot;</font>: [
+    <font color="#006400">&quot;mftotTitakuRa&quot;</font>
+  ],
+  <font color="#0000aa">&quot;gold_devanagari&quot;</font>: [
+    <font color="#006400">&quot;मृतोत्थितकुण&quot;</font>
+  ]
+}</code></pre></td>
+</tr></tbody></table>
+</article>
+<article id="taddhitanta-02">
+<h3>Sample 2</h3>
+<nav aria-label="Taddhitānta sample navigation"><p>Samples: <a href="#taddhitanta-01">1</a> | <a href="#taddhitanta-02" aria-current="location"><strong>2</strong></a> | <a href="#taddhitanta-03">3</a> | <a href="#taddhitanta-04">4</a> | <a href="#taddhitanta-05">5</a> · <a href="#sample-index">All categories</a></p></nav>
+<p><button type="button" data-copy-prompt>Copy prompt</button> <span data-copy-status role="status" aria-live="polite"></span></p>
+<p>Task ID: <code>taddhitanta:sella:basic:Pum:cuYcup</code></p>
+<table border="1" cellpadding="8" aria-label="Taddhitānta sample 2: prompt and accepted answers">
+<thead><tr>
+<th scope="col"><a href="taddhitanta/02/prompt.txt">prompt.txt</a></th>
+<th scope="col"><a href="taddhitanta/02/answer.json">answer.json</a></th>
+</tr></thead><tbody><tr>
+<td valign="top"><pre data-kind="prompt"><code>```text
+You are an expert in Sanskrit grammar (vyakarana).
+
+Apply the requested taddhita affix to the supplied Sanskrit nominal base.
+Return the resulting derived nominal stem or complete indeclinable, without
+adding case or number endings.
+
+Use the displayed base with its stated grammatical interpretation. No specific
+artha (meaning) is imposed: use a meaning under which this affix can apply.
+
+Write ONLY the final form, in Devanagari script, inside exactly one
+&lt;answer&gt;&lt;/answer&gt; block. If several forms are valid, give exactly one.
+Do not include an explanation or any text outside the block:
+&lt;answer&gt;Final form in Devanagari&lt;/answer&gt;
+
+=== Your task ===
+
+pratipadika (nominal base): सेल्ल
+base interpretation: source gender: masculine; the supplied spelling treated as a basic nominal stem, without a nyap suffix
+taddhita (technical affix): चुञ्चुप् (SLP1: cuYcup)
+artha (meaning): unrestricted
+```</code></pre></td>
+<td valign="top"><pre data-kind="answers"><code>{
+  <font color="#0000aa">&quot;id&quot;</font>: <font color="#006400">&quot;taddhitanta:sella:basic:Pum:cuYcup&quot;</font>,
+  <font color="#0000aa">&quot;gold_slp1&quot;</font>: [
+    <font color="#006400">&quot;sellacuYcu&quot;</font>
+  ],
+  <font color="#0000aa">&quot;gold_devanagari&quot;</font>: [
+    <font color="#006400">&quot;सेल्लचुञ्चु&quot;</font>
+  ]
+}</code></pre></td>
+</tr></tbody></table>
+</article>
+<article id="taddhitanta-03">
+<h3>Sample 3</h3>
+<nav aria-label="Taddhitānta sample navigation"><p>Samples: <a href="#taddhitanta-01">1</a> | <a href="#taddhitanta-02">2</a> | <a href="#taddhitanta-03" aria-current="location"><strong>3</strong></a> | <a href="#taddhitanta-04">4</a> | <a href="#taddhitanta-05">5</a> · <a href="#sample-index">All categories</a></p></nav>
+<p><button type="button" data-copy-prompt>Copy prompt</button> <span data-copy-status role="status" aria-live="polite"></span></p>
+<p>Task ID: <code>taddhitanta:nitambin:basic:Pum:kuRap</code></p>
+<table border="1" cellpadding="8" aria-label="Taddhitānta sample 3: prompt and accepted answers">
+<thead><tr>
+<th scope="col"><a href="taddhitanta/03/prompt.txt">prompt.txt</a></th>
+<th scope="col"><a href="taddhitanta/03/answer.json">answer.json</a></th>
+</tr></thead><tbody><tr>
+<td valign="top"><pre data-kind="prompt"><code>```text
+You are an expert in Sanskrit grammar (vyakarana).
+
+Apply the requested taddhita affix to the supplied Sanskrit nominal base.
+Return the resulting derived nominal stem or complete indeclinable, without
+adding case or number endings.
+
+Use the displayed base with its stated grammatical interpretation. No specific
+artha (meaning) is imposed: use a meaning under which this affix can apply.
+
+Write ONLY the final form, in Devanagari script, inside exactly one
+&lt;answer&gt;&lt;/answer&gt; block. If several forms are valid, give exactly one.
+Do not include an explanation or any text outside the block:
+&lt;answer&gt;Final form in Devanagari&lt;/answer&gt;
+
+=== Your task ===
+
+pratipadika (nominal base): नितम्बिन्
+base interpretation: source gender: masculine; the supplied spelling treated as a basic nominal stem, without a nyap suffix
+taddhita (technical affix): कुणप् (SLP1: kuRap)
+artha (meaning): unrestricted
+```</code></pre></td>
+<td valign="top"><pre data-kind="answers"><code>{
+  <font color="#0000aa">&quot;id&quot;</font>: <font color="#006400">&quot;taddhitanta:nitambin:basic:Pum:kuRap&quot;</font>,
+  <font color="#0000aa">&quot;gold_slp1&quot;</font>: [
+    <font color="#006400">&quot;nitambikuRa&quot;</font>
+  ],
+  <font color="#0000aa">&quot;gold_devanagari&quot;</font>: [
+    <font color="#006400">&quot;नितम्बिकुण&quot;</font>
+  ]
+}</code></pre></td>
+</tr></tbody></table>
+</article>
+<article id="taddhitanta-04">
+<h3>Sample 4</h3>
+<nav aria-label="Taddhitānta sample navigation"><p>Samples: <a href="#taddhitanta-01">1</a> | <a href="#taddhitanta-02">2</a> | <a href="#taddhitanta-03">3</a> | <a href="#taddhitanta-04" aria-current="location"><strong>4</strong></a> | <a href="#taddhitanta-05">5</a> · <a href="#sample-index">All categories</a></p></nav>
+<p><button type="button" data-copy-prompt>Copy prompt</button> <span data-copy-status role="status" aria-live="polite"></span></p>
+<p>Task ID: <code>taddhitanta:vaqabin:basic:Pum:KaY</code></p>
+<table border="1" cellpadding="8" aria-label="Taddhitānta sample 4: prompt and accepted answers">
+<thead><tr>
+<th scope="col"><a href="taddhitanta/04/prompt.txt">prompt.txt</a></th>
+<th scope="col"><a href="taddhitanta/04/answer.json">answer.json</a></th>
+</tr></thead><tbody><tr>
+<td valign="top"><pre data-kind="prompt"><code>```text
+You are an expert in Sanskrit grammar (vyakarana).
+
+Apply the requested taddhita affix to the supplied Sanskrit nominal base.
+Return the resulting derived nominal stem or complete indeclinable, without
+adding case or number endings.
+
+Use the displayed base with its stated grammatical interpretation. No specific
+artha (meaning) is imposed: use a meaning under which this affix can apply.
+
+Write ONLY the final form, in Devanagari script, inside exactly one
+&lt;answer&gt;&lt;/answer&gt; block. If several forms are valid, give exactly one.
+Do not include an explanation or any text outside the block:
+&lt;answer&gt;Final form in Devanagari&lt;/answer&gt;
+
+=== Your task ===
+
+pratipadika (nominal base): वडबिन्
+base interpretation: source gender: masculine; the supplied spelling treated as a basic nominal stem, without a nyap suffix
+taddhita (technical affix): खञ् (SLP1: KaY)
+artha (meaning): unrestricted
+```</code></pre></td>
+<td valign="top"><pre data-kind="answers"><code>{
+  <font color="#0000aa">&quot;id&quot;</font>: <font color="#006400">&quot;taddhitanta:vaqabin:basic:Pum:KaY&quot;</font>,
+  <font color="#0000aa">&quot;gold_slp1&quot;</font>: [
+    <font color="#006400">&quot;vAqabIna&quot;</font>
+  ],
+  <font color="#0000aa">&quot;gold_devanagari&quot;</font>: [
+    <font color="#006400">&quot;वाडबीन&quot;</font>
+  ]
+}</code></pre></td>
+</tr></tbody></table>
+</article>
+<article id="taddhitanta-05">
+<h3>Sample 5</h3>
+<nav aria-label="Taddhitānta sample navigation"><p>Samples: <a href="#taddhitanta-01">1</a> | <a href="#taddhitanta-02">2</a> | <a href="#taddhitanta-03">3</a> | <a href="#taddhitanta-04">4</a> | <a href="#taddhitanta-05" aria-current="location"><strong>5</strong></a> · <a href="#sample-index">All categories</a></p></nav>
+<p><button type="button" data-copy-prompt>Copy prompt</button> <span data-copy-status role="status" aria-live="polite"></span></p>
+<p>Task ID: <code>taddhitanta:KallikA:nyap:Stri:deSya</code></p>
+<table border="1" cellpadding="8" aria-label="Taddhitānta sample 5: prompt and accepted answers">
+<thead><tr>
+<th scope="col"><a href="taddhitanta/05/prompt.txt">prompt.txt</a></th>
+<th scope="col"><a href="taddhitanta/05/answer.json">answer.json</a></th>
+</tr></thead><tbody><tr>
+<td valign="top"><pre data-kind="prompt"><code>```text
+You are an expert in Sanskrit grammar (vyakarana).
+
+Apply the requested taddhita affix to the supplied Sanskrit nominal base.
+Return the resulting derived nominal stem or complete indeclinable, without
+adding case or number endings.
+
+Use the displayed base with its stated grammatical interpretation. No specific
+artha (meaning) is imposed: use a meaning under which this affix can apply.
+
+Write ONLY the final form, in Devanagari script, inside exactly one
+&lt;answer&gt;&lt;/answer&gt; block. If several forms are valid, give exactly one.
+Do not include an explanation or any text outside the block:
+&lt;answer&gt;Final form in Devanagari&lt;/answer&gt;
+
+=== Your task ===
+
+pratipadika (nominal base): खल्लिका
+base interpretation: source gender: feminine; a stem already ending in a nyap feminine suffix
+taddhita (technical affix): देश्य (SLP1: deSya)
+artha (meaning): unrestricted
+```</code></pre></td>
+<td valign="top"><pre data-kind="answers"><code>{
+  <font color="#0000aa">&quot;id&quot;</font>: <font color="#006400">&quot;taddhitanta:KallikA:nyap:Stri:deSya&quot;</font>,
+  <font color="#0000aa">&quot;gold_slp1&quot;</font>: [
+    <font color="#006400">&quot;KallikAdeSya&quot;</font>
+  ],
+  <font color="#0000aa">&quot;gold_devanagari&quot;</font>: [
+    <font color="#006400">&quot;खल्लिकादेश्य&quot;</font>
+  ]
+}</code></pre></td>
+</tr></tbody></table>
+</article>
+</section>
+<section id="tinanta" aria-labelledby="tinanta-title">
+<h2 id="tinanta-title">Tiṅanta</h2>
+<article id="tinanta-01">
+<h3>Sample 1</h3>
+<nav aria-label="Tiṅanta sample navigation"><p>Samples: <a href="#tinanta-01" aria-current="location"><strong>1</strong></a> | <a href="#tinanta-02">2</a> | <a href="#tinanta-03">3</a> | <a href="#tinanta-04">4</a> | <a href="#tinanta-05">5</a> · <a href="#sample-index">All categories</a></p></nav>
+<p><button type="button" data-copy-prompt>Copy prompt</button> <span data-copy-status role="status" aria-live="polite"></span></p>
+<p>Task ID: <code>01.0085:AshirLin:Kartari:Prathama:Bahu</code></p>
+<table border="1" cellpadding="8" aria-label="Tiṅanta sample 1: prompt and accepted answers">
+<thead><tr>
+<th scope="col"><a href="tinanta/01/prompt.txt">prompt.txt</a></th>
+<th scope="col"><a href="tinanta/01/answer.json">answer.json</a></th>
+</tr></thead><tbody><tr>
+<td valign="top"><pre data-kind="prompt"><code>```text
+You are an expert in Sanskrit grammar (vyakarana).
+
+Derive the requested conjugated verb form from the Sanskrit verbal root (dhatu, given in
+Devanagari in its Dhatupatha citation form, anubandha markers included), its
+verb class (gana), its traditional meaning (artha), and the required
+tense/mood (lakara), voice (prayoga), person (purusha), and number (vacana).
+Each Sanskrit grammatical term is glossed in parentheses in English.
+
+Write ONLY the final form, in Devanagari script, inside exactly one
+&lt;answer&gt;&lt;/answer&gt; block. If several forms are valid, give exactly one.
+Do not include an explanation or any text outside the block:
+&lt;answer&gt;Final form in Devanagari&lt;/answer&gt;
+
+=== Your task ===
+
+dhatu (Sanskrit verbal root): रेकृँ॒   (Dhatupatha citation form, anubandha markers included)
+gana (verb class): Bhvadi (class 1)
+artha (traditional meaning): शङ्कायाम्
+
+Required form:
+- lakara (tense/mood): AshirLin (benedictive)
+- prayoga (voice): Kartari (active)
+- purusha (person): Prathama (third person)
+- vacana (number): Bahu (plural)
+```</code></pre></td>
+<td valign="top"><pre data-kind="answers"><code>{
+  <font color="#0000aa">&quot;id&quot;</font>: <font color="#006400">&quot;01.0085:AshirLin:Kartari:Prathama:Bahu&quot;</font>,
+  <font color="#0000aa">&quot;gold_slp1&quot;</font>: [
+    <font color="#006400">&quot;rekizIran&quot;</font>
+  ],
+  <font color="#0000aa">&quot;gold_devanagari&quot;</font>: [
+    <font color="#006400">&quot;रेकिषीरन्&quot;</font>
+  ]
+}</code></pre></td>
+</tr></tbody></table>
+</article>
+<article id="tinanta-02">
+<h3>Sample 2</h3>
+<nav aria-label="Tiṅanta sample navigation"><p>Samples: <a href="#tinanta-01">1</a> | <a href="#tinanta-02" aria-current="location"><strong>2</strong></a> | <a href="#tinanta-03">3</a> | <a href="#tinanta-04">4</a> | <a href="#tinanta-05">5</a> · <a href="#sample-index">All categories</a></p></nav>
+<p><button type="button" data-copy-prompt>Copy prompt</button> <span data-copy-status role="status" aria-live="polite"></span></p>
+<p>Task ID: <code>01.1155:AshirLin:Kartari:Madhyama:Dvi</code></p>
+<table border="1" cellpadding="8" aria-label="Tiṅanta sample 2: prompt and accepted answers">
+<thead><tr>
+<th scope="col"><a href="tinanta/02/prompt.txt">prompt.txt</a></th>
+<th scope="col"><a href="tinanta/02/answer.json">answer.json</a></th>
+</tr></thead><tbody><tr>
+<td valign="top"><pre data-kind="prompt"><code>```text
+You are an expert in Sanskrit grammar (vyakarana).
+
+Derive the requested conjugated verb form from the Sanskrit verbal root (dhatu, given in
+Devanagari in its Dhatupatha citation form, anubandha markers included), its
+verb class (gana), its traditional meaning (artha), and the required
+tense/mood (lakara), voice (prayoga), person (purusha), and number (vacana).
+Each Sanskrit grammatical term is glossed in parentheses in English.
+
+Write ONLY the final form, in Devanagari script, inside exactly one
+&lt;answer&gt;&lt;/answer&gt; block. If several forms are valid, give exactly one.
+Do not include an explanation or any text outside the block:
+&lt;answer&gt;Final form in Devanagari&lt;/answer&gt;
+
+=== Your task ===
+
+dhatu (Sanskrit verbal root): श॒पँ॑   (Dhatupatha citation form, anubandha markers included)
+gana (verb class): Bhvadi (class 1)
+artha (traditional meaning): आक्रोशे
+
+Required form:
+- lakara (tense/mood): AshirLin (benedictive)
+- prayoga (voice): Kartari (active)
+- purusha (person): Madhyama (second person)
+- vacana (number): Dvi (dual)
+```</code></pre></td>
+<td valign="top"><pre data-kind="answers"><code>{
+  <font color="#0000aa">&quot;id&quot;</font>: <font color="#006400">&quot;01.1155:AshirLin:Kartari:Madhyama:Dvi&quot;</font>,
+  <font color="#0000aa">&quot;gold_slp1&quot;</font>: [
+    <font color="#006400">&quot;SapsIyAsTAm&quot;</font>,
+    <font color="#006400">&quot;SapyAstam&quot;</font>
+  ],
+  <font color="#0000aa">&quot;gold_devanagari&quot;</font>: [
+    <font color="#006400">&quot;शप्सीयास्थाम्&quot;</font>,
+    <font color="#006400">&quot;शप्यास्तम्&quot;</font>
+  ]
+}</code></pre></td>
+</tr></tbody></table>
+</article>
+<article id="tinanta-03">
+<h3>Sample 3</h3>
+<nav aria-label="Tiṅanta sample navigation"><p>Samples: <a href="#tinanta-01">1</a> | <a href="#tinanta-02">2</a> | <a href="#tinanta-03" aria-current="location"><strong>3</strong></a> | <a href="#tinanta-04">4</a> | <a href="#tinanta-05">5</a> · <a href="#sample-index">All categories</a></p></nav>
+<p><button type="button" data-copy-prompt>Copy prompt</button> <span data-copy-status role="status" aria-live="polite"></span></p>
+<p>Task ID: <code>01.0866:Lrn:Karmani:Prathama:Dvi</code></p>
+<table border="1" cellpadding="8" aria-label="Tiṅanta sample 3: prompt and accepted answers">
+<thead><tr>
+<th scope="col"><a href="tinanta/03/prompt.txt">prompt.txt</a></th>
+<th scope="col"><a href="tinanta/03/answer.json">answer.json</a></th>
+</tr></thead><tbody><tr>
+<td valign="top"><pre data-kind="prompt"><code>```text
+You are an expert in Sanskrit grammar (vyakarana).
+
+Derive the requested conjugated verb form from the Sanskrit verbal root (dhatu, given in
+Devanagari in its Dhatupatha citation form, anubandha markers included), its
+verb class (gana), its traditional meaning (artha), and the required
+tense/mood (lakara), voice (prayoga), person (purusha), and number (vacana).
+Each Sanskrit grammatical term is glossed in parentheses in English.
+
+Write ONLY the final form, in Devanagari script, inside exactly one
+&lt;answer&gt;&lt;/answer&gt; block. If several forms are valid, give exactly one.
+Do not include an explanation or any text outside the block:
+&lt;answer&gt;Final form in Devanagari&lt;/answer&gt;
+
+=== Your task ===
+
+dhatu (Sanskrit verbal root): कृपूँ॒   (Dhatupatha citation form, anubandha markers included)
+gana (verb class): Bhvadi (class 1)
+artha (traditional meaning): सामर्थ्ये
+
+Required form:
+- lakara (tense/mood): Lrn (conditional)
+- prayoga (voice): Karmani (passive)
+- purusha (person): Prathama (third person)
+- vacana (number): Dvi (dual)
+```</code></pre></td>
+<td valign="top"><pre data-kind="answers"><code>{
+  <font color="#0000aa">&quot;id&quot;</font>: <font color="#006400">&quot;01.0866:Lrn:Karmani:Prathama:Dvi&quot;</font>,
+  <font color="#0000aa">&quot;gold_slp1&quot;</font>: [
+    <font color="#006400">&quot;akalpizyetAm&quot;</font>,
+    <font color="#006400">&quot;akalpsyetAm&quot;</font>
+  ],
+  <font color="#0000aa">&quot;gold_devanagari&quot;</font>: [
+    <font color="#006400">&quot;अकल्पिष्येताम्&quot;</font>,
+    <font color="#006400">&quot;अकल्प्स्येताम्&quot;</font>
+  ]
+}</code></pre></td>
+</tr></tbody></table>
+</article>
+<article id="tinanta-04">
+<h3>Sample 4</h3>
+<nav aria-label="Tiṅanta sample navigation"><p>Samples: <a href="#tinanta-01">1</a> | <a href="#tinanta-02">2</a> | <a href="#tinanta-03">3</a> | <a href="#tinanta-04" aria-current="location"><strong>4</strong></a> | <a href="#tinanta-05">5</a> · <a href="#sample-index">All categories</a></p></nav>
+<p><button type="button" data-copy-prompt>Copy prompt</button> <span data-copy-status role="status" aria-live="polite"></span></p>
+<p>Task ID: <code>01.0484:AshirLin:Karmani:Prathama:Bahu</code></p>
+<table border="1" cellpadding="8" aria-label="Tiṅanta sample 4: prompt and accepted answers">
+<thead><tr>
+<th scope="col"><a href="tinanta/04/prompt.txt">prompt.txt</a></th>
+<th scope="col"><a href="tinanta/04/answer.json">answer.json</a></th>
+</tr></thead><tbody><tr>
+<td valign="top"><pre data-kind="prompt"><code>```text
+You are an expert in Sanskrit grammar (vyakarana).
+
+Derive the requested conjugated verb form from the Sanskrit verbal root (dhatu, given in
+Devanagari in its Dhatupatha citation form, anubandha markers included), its
+verb class (gana), its traditional meaning (artha), and the required
+tense/mood (lakara), voice (prayoga), person (purusha), and number (vacana).
+Each Sanskrit grammatical term is glossed in parentheses in English.
+
+Write ONLY the final form, in Devanagari script, inside exactly one
+&lt;answer&gt;&lt;/answer&gt; block. If several forms are valid, give exactly one.
+Do not include an explanation or any text outside the block:
+&lt;answer&gt;Final form in Devanagari&lt;/answer&gt;
+
+=== Your task ===
+
+dhatu (Sanskrit verbal root): बर्बँ   (Dhatupatha citation form, anubandha markers included)
+gana (verb class): Bhvadi (class 1)
+artha (traditional meaning): गतौ
+
+Required form:
+- lakara (tense/mood): AshirLin (benedictive)
+- prayoga (voice): Karmani (passive)
+- purusha (person): Prathama (third person)
+- vacana (number): Bahu (plural)
+```</code></pre></td>
+<td valign="top"><pre data-kind="answers"><code>{
+  <font color="#0000aa">&quot;id&quot;</font>: <font color="#006400">&quot;01.0484:AshirLin:Karmani:Prathama:Bahu&quot;</font>,
+  <font color="#0000aa">&quot;gold_slp1&quot;</font>: [
+    <font color="#006400">&quot;barbizIran&quot;</font>
+  ],
+  <font color="#0000aa">&quot;gold_devanagari&quot;</font>: [
+    <font color="#006400">&quot;बर्बिषीरन्&quot;</font>
+  ]
+}</code></pre></td>
+</tr></tbody></table>
+</article>
+<article id="tinanta-05">
+<h3>Sample 5</h3>
+<nav aria-label="Tiṅanta sample navigation"><p>Samples: <a href="#tinanta-01">1</a> | <a href="#tinanta-02">2</a> | <a href="#tinanta-03">3</a> | <a href="#tinanta-04">4</a> | <a href="#tinanta-05" aria-current="location"><strong>5</strong></a> · <a href="#sample-index">All categories</a></p></nav>
+<p><button type="button" data-copy-prompt>Copy prompt</button> <span data-copy-status role="status" aria-live="polite"></span></p>
+<p>Task ID: <code>01.0162:Lut:Kartari:Prathama:Bahu</code></p>
+<table border="1" cellpadding="8" aria-label="Tiṅanta sample 5: prompt and accepted answers">
+<thead><tr>
+<th scope="col"><a href="tinanta/05/prompt.txt">prompt.txt</a></th>
+<th scope="col"><a href="tinanta/05/answer.json">answer.json</a></th>
+</tr></thead><tbody><tr>
+<td valign="top"><pre data-kind="prompt"><code>```text
+You are an expert in Sanskrit grammar (vyakarana).
+
+Derive the requested conjugated verb form from the Sanskrit verbal root (dhatu, given in
+Devanagari in its Dhatupatha citation form, anubandha markers included), its
+verb class (gana), its traditional meaning (artha), and the required
+tense/mood (lakara), voice (prayoga), person (purusha), and number (vacana).
+Each Sanskrit grammatical term is glossed in parentheses in English.
+
+Write ONLY the final form, in Devanagari script, inside exactly one
+&lt;answer&gt;&lt;/answer&gt; block. If several forms are valid, give exactly one.
+Do not include an explanation or any text outside the block:
+&lt;answer&gt;Final form in Devanagari&lt;/answer&gt;
+
+=== Your task ===
+
+dhatu (Sanskrit verbal root): श्लगिँ   (Dhatupatha citation form, anubandha markers included)
+gana (verb class): Bhvadi (class 1)
+artha (traditional meaning): गतौ
+
+Required form:
+- lakara (tense/mood): Lut (periphrastic future)
+- prayoga (voice): Kartari (active)
+- purusha (person): Prathama (third person)
+- vacana (number): Bahu (plural)
+```</code></pre></td>
+<td valign="top"><pre data-kind="answers"><code>{
+  <font color="#0000aa">&quot;id&quot;</font>: <font color="#006400">&quot;01.0162:Lut:Kartari:Prathama:Bahu&quot;</font>,
+  <font color="#0000aa">&quot;gold_slp1&quot;</font>: [
+    <font color="#006400">&quot;SlaNgitAraH&quot;</font>
+  ],
+  <font color="#0000aa">&quot;gold_devanagari&quot;</font>: [
+    <font color="#006400">&quot;श्लङ्गितारः&quot;</font>
+  ]
+}</code></pre></td>
+</tr></tbody></table>
+</article>
+</section>
+</main>
+<footer><p><a href="manifest.json">Sample manifest and source task IDs</a></p></footer>
+<script>
+(() => {
+  function copyWithSelection(text, element) {
+    const selection = window.getSelection();
+    const savedRanges = [];
+    for (let i = 0; i < selection.rangeCount; i += 1) {
+      savedRanges.push(selection.getRangeAt(i).cloneRange());
+    }
+    const range = document.createRange();
+    range.selectNodeContents(element);
+    selection.removeAllRanges();
+    selection.addRange(range);
+    let copied = false;
+    function onCopy(event) {
+      if (!event.clipboardData) return;
+      event.clipboardData.setData('text/plain', text);
+      event.preventDefault();
+      copied = true;
+    }
+    document.addEventListener('copy', onCopy);
+    try {
+      return document.execCommand('copy') && copied;
+    } finally {
+      document.removeEventListener('copy', onCopy);
+      selection.removeAllRanges();
+      savedRanges.forEach(saved => selection.addRange(saved));
+    }
+  }
+
+  document.querySelectorAll('[data-copy-prompt]').forEach(button => {
+    button.addEventListener('click', async () => {
+      const article = button.closest('article');
+      const prompt = article.querySelector('[data-kind="prompt"]');
+      const status = article.querySelector('[data-copy-status]');
+      const displayed = prompt.textContent;
+      const text = displayed.slice('```text\n'.length, -'\n```'.length) + '\n';
+      status.textContent = 'Copying…';
+      button.disabled = true;
+      try {
+        try {
+          if (!navigator.clipboard || !navigator.clipboard.writeText) {
+            throw new Error('Clipboard API unavailable');
+          }
+          await navigator.clipboard.writeText(text);
+        } catch {
+          if (!copyWithSelection(text, prompt)) throw new Error('Copy failed');
+        }
+        status.textContent = 'Copied.';
+      } catch {
+        status.textContent = 'Copy failed. Select the prompt text and press Ctrl+C or ⌘C.';
+      } finally {
+        button.disabled = false;
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>

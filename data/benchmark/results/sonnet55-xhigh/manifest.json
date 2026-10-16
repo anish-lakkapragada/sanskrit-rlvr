@@ -1,0 +1,935 @@
+{
+  "schema_version": 2,
+  "planned_tasks": 20000,
+  "planned_primary_requests": 20000,
+  "path_conventions": {
+    "inputs_and_code": "repository-relative",
+    "result_files": "run-directory-relative",
+    "archive_member": "Member path inside raw_run_archive; historical snapshots retain paths as recorded at execution time."
+  },
+  "sampling_seed": 69,
+  "sampling_seed_scope": "Dataset selection only; not a model-generation seed.",
+  "rendering_dependencies": {
+    "python": "3.11+",
+    "vidyut": "0.4.0"
+  },
+  "tasks": [
+    {
+      "family": "tinanta",
+      "dataset": {
+        "path": "data/benchmark/tinanta/tinanta.json",
+        "sha256": "e5f1b8b6332d820ef3ffd11d28e73c25df300c253816ad374f716fb2b537d151",
+        "bytes": 1921409,
+        "records": 5000
+      },
+      "sampling_manifest": {
+        "path": "data/benchmark/tinanta/tinanta.manifest.json",
+        "sha256": "81269026a8089ec36db118ad7772fd718af7ccc1acab3207e76925951f45e5cf",
+        "bytes": 92353
+      },
+      "prompt_template": {
+        "path": "data/engine/prompts/v3/vp_tinanta.txt",
+        "sha256": "f9cbade9eb13c9356c4c303bbf15b3c9938d5c50486adda0ff696c3844038b26",
+        "bytes": 902,
+        "text": "Form the Sanskrit conjugated verb form described in this table.\n\nUse the supplied Dhatupatha citation, including anubandha markers, verb class, traditional meaning, and any verbal prefixes. Apply the specified tense or mood, voice, person, and number.\n\n| Grammatical input | Value |\n| --- | --- |\n| Verb in Dhatupatha citation form | {aupadeshika_deva}   (Dhatupatha citation form, anubandha markers included) |\n| Verb class | {gana} ({gana_en}) |\n| Traditional meaning | {artha_deva} |\n| Tense or mood | {lakara} ({lakara_en}) |\n| Voice | {prayoga} ({prayoga_en}) |\n| Person | {purusha} ({purusha_en}) |\n| Number | {vacana} ({vacana_en}) |\n\n{prefixes_block}\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n"
+      },
+      "renderer": {
+        "path": "data/engine/tinanta/common.py",
+        "sha256": "c6288776af494cf3e592aac2ff58cf820c16ff74dda6aec23a31de6f993df15c",
+        "bytes": 3455,
+        "callable": "data.engine.tinanta.common.render_task"
+      },
+      "result_file": "tinanta.json",
+      "order": "benchmark source row order; one selected attempt per task",
+      "journal_archive_member": "sonnet55-xhigh/journals/tinanta.jsonl.gz"
+    },
+    {
+      "family": "taddhitanta",
+      "dataset": {
+        "path": "data/benchmark/taddhitanta/taddhitanta.json",
+        "sha256": "ae3f1084be43b8296fe7a5cc3c1264ea84ea1293fc72c0644b02ce9e6f036c3b",
+        "bytes": 1504917,
+        "records": 5000
+      },
+      "sampling_manifest": {
+        "path": "data/benchmark/taddhitanta/taddhitanta.manifest.json",
+        "sha256": "db7829c9ed5bbb71557c38f112f3a32dac2eb86dbfcd1ca1e00ca75c93903a0e",
+        "bytes": 80493
+      },
+      "prompt_template": {
+        "path": "data/engine/prompts/v3/vp_taddhitanta.txt",
+        "sha256": "74cc9e85bd0e85658499baac703636b097c30b210e031274d6f7c026637f3f70",
+        "bytes": 665,
+        "text": "Form the Sanskrit taddhita derivative described in this table.\n\nGive the derived nominal stem or complete indeclinable without adding case or number endings. Any meaning licensed for this affix is acceptable.\n\n| Grammatical input | Value |\n| --- | --- |\n| Nominal stem | {stem_deva} |\n| Interpretation of the stem | {base_interpretation} |\n| Taddhita affix | {suffix_deva} |\n| Technical identifier in SLP1 | {suffix_id} |\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n"
+      },
+      "renderer": {
+        "path": "data/engine/taddhitanta/common.py",
+        "sha256": "f885e3528e6ccd5651a65dfe029fc909808a0063886018a3a67fc6cd77b3e1d8",
+        "bytes": 6310,
+        "callable": "data.engine.taddhitanta.common.render_task"
+      },
+      "result_file": "taddhitanta.json",
+      "order": "benchmark source row order; one selected attempt per task",
+      "journal_archive_member": "sonnet55-xhigh/journals/taddhitanta.jsonl.gz"
+    },
+    {
+      "family": "krdanta",
+      "dataset": {
+        "path": "data/benchmark/krdanta/krdanta.json",
+        "sha256": "ec5fcaa3ee7d05ff79d391d0015b26e896bd01873a720cc94bff26bf5970e762",
+        "bytes": 1325917,
+        "records": 5000
+      },
+      "sampling_manifest": {
+        "path": "data/benchmark/krdanta/krdanta.manifest.json",
+        "sha256": "29fd8d97fac7abe062672bdc5b0379256487d771b80cc57e347af062ee1a1a49",
+        "bytes": 55482
+      },
+      "prompt_template": {
+        "path": "data/engine/prompts/v3/vp_krdanta.txt",
+        "sha256": "4dc79d2804882a6a04ea5f5e94b5b928d24e03cd4c14025aab7dc01cab5a71a8",
+        "bytes": 980,
+        "text": "Form the Sanskrit krt derivative described in this table.\n\nUse the supplied Dhatupatha citation, including anubandha markers, verb class, traditional meaning, and any verbal prefixes. Apply the specified primary suffix and any participle coordinates. For a noun or adjective, give the uninflected stem without case or number endings. For an indeclinable, give the complete form.\n\n| Grammatical input | Value |\n| --- | --- |\n| Verb in Dhatupatha citation form | {aupadeshika_deva}   (Dhatupatha citation form, anubandha markers included) |\n| Verb class | {gana} ({gana_en}) |\n| Traditional meaning | {artha_deva} |\n| Primary suffix | {krt_deva} ({krt_en}; citation form, anubandha markers included) |\n\n{prefixes_block}\n{participle_block}\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n"
+      },
+      "renderer": {
+        "path": "data/engine/krdanta/common.py",
+        "sha256": "dc669ce8492d3ea74c335a4e484ecce77dbe416e7480d51e7e523a1ddc830196",
+        "bytes": 8267,
+        "callable": "data.engine.krdanta.common.render_task"
+      },
+      "result_file": "krdanta.json",
+      "order": "benchmark source row order; one selected attempt per task",
+      "journal_archive_member": "sonnet55-xhigh/journals/krdanta.jsonl.gz"
+    },
+    {
+      "family": "subanta",
+      "dataset": {
+        "path": "data/benchmark/subanta/subanta.json",
+        "sha256": "83bc5976715a52f6b09535d7a8a50a629072e2e6e19fdf1281c682126a994d53",
+        "bytes": 1347028,
+        "records": 5000
+      },
+      "sampling_manifest": {
+        "path": "data/benchmark/subanta/subanta.manifest.json",
+        "sha256": "259098b1940ddd13ea642840762dd612f0088fbb3eb3a0a29595976e911d0849",
+        "bytes": 65913
+      },
+      "prompt_template": {
+        "path": "data/engine/prompts/v3/vp_subanta.txt",
+        "sha256": "8453c565b2581a1dc2c832a6253f51dd825b57049a242f847d520969397217dd",
+        "bytes": 684,
+        "text": "Form the Sanskrit inflected nominal form described in this table.\n\nUse the supplied nominal stem with the specified gender, case, and number. Give the complete standalone noun or adjective form. When a feminine stem is supplied, use that stem rather than reconstructing it from a masculine headword.\n\n| Grammatical input | Value |\n| --- | --- |\n| Nominal stem | {stem_deva} |\n| Gender | {linga} |\n| Case | {vibhakti} |\n| Number | {vacana} |\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n"
+      },
+      "renderer": {
+        "path": "data/engine/subanta/common.py",
+        "sha256": "041800da26cb92a514e54dd314d8cf7f85f500f5b4d4c4f48133e2879d2d6ded",
+        "bytes": 15734,
+        "callable": "data.engine.subanta.common.render_task"
+      },
+      "result_file": "subanta.json",
+      "order": "benchmark source row order; one selected attempt per task",
+      "journal_archive_member": "sonnet55-xhigh/journals/subanta.jsonl.gz"
+    }
+  ],
+  "scoring": {
+    "version": "answer-membership-v1",
+    "implementation": {
+      "path": "data/engine/evaluation/scoring.py",
+      "sha256": "b98632eee2b1435e9a362927658000052da1b8a36bffec90647f3924e95f6121",
+      "bytes": 1318
+    },
+    "answer_extraction": "Extract exactly one well-formed literal <answer>...</answer> block and strip outer answer whitespace. No Unicode or orthographic normalization. Original text stays in output_text.",
+    "correct": "For completed responses: answer is not null and answer in the source task.gold_devanagari list, joined by task_id. Otherwise null.",
+    "format_ok": "Exactly one nonempty answer block, no nested markup, and only whitespace outside the block.",
+    "strict_accuracy": "Derived when reporting: correct is true and format_ok. Not duplicated in result rows.",
+    "primary_attempt": 1,
+    "reporting": "Report correctness and format separately, plus strict accuracy over all 20,000 tasks using the latest explicitly authorized settled attempt per task. Report refusals/incomplete/errors separately; never drop tasks from the denominator. Preserve first-attempt results in journals for separate analysis.",
+    "selected_attempt": "Latest explicitly authorized settled attempt; accuracy counts each task once and costs include all attempts."
+  },
+  "preservation": {
+    "result_encoding": "Compact UTF-8 JSON arrays, one selected row per task; bytes unchanged by cleanup.",
+    "selected_results": "Latest authorized settled attempt. All prior attempts and costs remain in the archive.",
+    "raw_responses": "Complete original journals, including request bodies, responses and original errors, are inside raw_run_archive.",
+    "recovery": "Extract raw_run_archive into a separate directory to use the original journal-based verifier. Its original manifest and schema are preserved.",
+    "manifest_history": "Historical manifest snapshots are retained verbatim; their paths describe the original execution layout."
+  },
+  "run_id": "sonnet55-xhigh",
+  "prompt_version": "v3",
+  "status": "completed",
+  "created_at": "2026-10-15T04:08:52.651724+00:00",
+  "started_at": "2026-10-15T04:08:53.401365+00:00",
+  "finished_at": "2026-10-15T04:32:42.303195+00:00",
+  "submitted_requests": 20000,
+  "provider": "anthropic",
+  "api": {
+    "method": "POST",
+    "url": "https://api.anthropic.com/v1/messages",
+    "anthropic_version": "2023-06-01"
+  },
+  "request_defaults": {
+    "model": "claude-sonnet-5-5",
+    "thinking": {
+      "type": "adaptive"
+    },
+    "output_config": {
+      "effort": "xhigh"
+    },
+    "max_tokens": 128000,
+    "service_tier": "standard_only",
+    "stream": true
+  },
+  "request_input": "Exact rendered prompt as one user message; no extra instructions, conversation history, tools, or model fallbacks.",
+  "output_limit": {
+    "benchmark_cap": null,
+    "max_tokens_parameter": 128000,
+    "documented_model_max_output_tokens": 128000,
+    "meaning": "Anthropic requires max_tokens. Use the full supported model maximum, including thinking and answer tokens; no smaller benchmark cap."
+  },
+  "omitted_request_parameters": [
+    "system",
+    "tools",
+    "tool_choice",
+    "fallbacks",
+    "temperature",
+    "top_p",
+    "stop_sequences",
+    "speed",
+    "cache_control"
+  ],
+  "comparison_run": {
+    "path": "data/benchmark/results/v2/astra-xhigh/manifest.json",
+    "sha256": "ae50a8863b344052621e9435e1e94a772e96e33619a742f0a5cbed3ad82b594f",
+    "bytes": 51684,
+    "meaning": "Same four benchmark inputs, renderers and exact membership scorer as the completed Astra run. Prompt templates are pinned separately in tasks; Astra used v2."
+  },
+  "result_schema": {
+    "storage": "embedded",
+    "schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "title": "Compact Sonnet 5.5 xHigh benchmark family results (v2)",
+      "description": "One array per family; one row per task, selecting the latest explicitly authorized settled attempt. All earlier attempts remain in the journals.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/result"
+      },
+      "$defs": {
+        "result": {
+          "type": "object",
+          "properties": {
+            "task_id": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Join to the original benchmark row for inputs and accepted answers."
+            },
+            "attempt_number": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "status": {
+              "enum": [
+                "completed",
+                "refused",
+                "incomplete",
+                "api_error",
+                "transport_error",
+                "unknown"
+              ]
+            },
+            "output_text": {
+              "type": "string",
+              "description": "Unmodified visible response text, including any available partial text."
+            },
+            "answer": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "correct": {
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "description": "Exact membership in the source gold list for completed responses; null for other outcomes."
+            },
+            "format_ok": {
+              "type": "boolean",
+              "description": "One nonempty answer block; only whitespace outside; no nested markup."
+            },
+            "usage": {
+              "type": [
+                "object",
+                "null"
+              ],
+              "description": "Full provider usage. Output length is usage.output_tokens; reasoning is its subset. Null when unavailable.",
+              "properties": {
+                "input_tokens": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "output_tokens": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "total_tokens": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "input_tokens_details": {
+                  "type": "object",
+                  "additionalProperties": true
+                },
+                "output_tokens_details": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              },
+              "required": [
+                "input_tokens",
+                "output_tokens"
+              ],
+              "additionalProperties": true
+            },
+            "cost_usd": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0,
+              "description": "Usage-based estimate using the manifest rates; null when unknown."
+            },
+            "request_id": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "response_id": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "elapsed_ms": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "error": {
+              "type": [
+                "object",
+                "null"
+              ],
+              "additionalProperties": true,
+              "description": "Null on normal success; otherwise compact error/refusal/incomplete or unknown-cost details, preserving provider codes/messages."
+            }
+          },
+          "required": [
+            "task_id",
+            "attempt_number",
+            "status",
+            "output_text",
+            "answer",
+            "correct",
+            "format_ok",
+            "usage",
+            "cost_usd",
+            "request_id",
+            "response_id",
+            "elapsed_ms",
+            "error"
+          ],
+          "additionalProperties": false,
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "status": {
+                    "const": "completed"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "correct": {
+                    "type": "boolean"
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "correct": {
+                    "type": "null"
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "usage": {
+                    "type": "null"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "cost_usd": {
+                    "type": "null"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "original_file_sha256": "4c5a68bded76dcb4d43f19e0264a68f880af33fa6d07df8f4bd519f04555b6b2"
+  },
+  "pricing": {
+    "verified_date": "2026-10-14",
+    "currency": "USD",
+    "tier": "standard",
+    "endpoint": "global direct Anthropic",
+    "rates_usd_per_million_tokens": {
+      "uncached_input": 2,
+      "cached_input": 0.1,
+      "cache_write_input": 4,
+      "cache_write_5m_input": 2.5,
+      "cache_write_1h_input": 4,
+      "output": 10
+    },
+    "max_prompt_tokens_for_rates": 1000000,
+    "formula": "Sum uncached input, cache reads, 5m/1h cache writes and output tokens multiplied by their respective rates, divided by 1000000.",
+    "rules": [
+      "Cache counters are additional to input_tokens, not subsets.",
+      "Output usage already includes hidden thinking; never add thinking tokens twice.",
+      "No-output empty-content refusals are unbilled except bio, frontier_llm and reasoning_extraction; mid-stream refusals are billed normally.",
+      "Interrupted streams have unknown final usage/cost; retain a full request reserve.",
+      "Haiku rates apply only at or below 100000 prompt tokens. All benchmark prompts are much shorter; unexpected longer usage stops the run for review.",
+      "Estimates exclude taxes, credits and invoice adjustments."
+    ],
+    "sources": [
+      "https://platform.claude.com/docs/en/models/sonnet-5-5/overview",
+      "https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+    ]
+  },
+  "execution": {
+    "state": "completed",
+    "runner_implemented": true,
+    "pid": null,
+    "runner": {
+      "path": "data/engine/evaluation/run_claude.py",
+      "sha256": "0a73bc386dfe6fada6a8dcdcea650650b059cb20802eb349d6da3619c93fef50",
+      "bytes": 27431
+    },
+    "automatic_retries": 0,
+    "model_fallbacks": [],
+    "concurrency": 192,
+    "max_concurrency": 512,
+    "budget_usd": 500,
+    "budget_scope": "Separate ceilings of $500 Sonnet and $100 Haiku ($600 combined), within the earlier $1500 Anthropic target after known prior runs. Not an account-balance measurement.",
+    "resume": "Completed compact result export. Use the archived original execution directory for journal-based verification or recovery.",
+    "failure_handling": "Preserve transient failures without retrying; cool down before sending unrelated tasks. Rate limits reduce admission concurrency. Five consecutive transient failures pause for inspection.",
+    "stopped_reason": null,
+    "reservation_usd_per_inflight_request": 1.289188,
+    "runtime_versions": {
+      "python": "3.11.13",
+      "httpx": "0.28.1",
+      "python-dotenv": "1.1.1",
+      "vidyut": "0.4.0",
+      "jsonschema": "4.23.0"
+    },
+    "progress": {
+      "state": "completed",
+      "unresolved": 0,
+      "updated_at": "2026-10-15T04:53:32.171728+00:00",
+      "planned": 20000,
+      "started": 20000,
+      "settled": 20000,
+      "unsettled": 0,
+      "not_started": 0,
+      "known_cost_usd": 216.917832,
+      "unknown_cost_attempts": 0,
+      "projected_full_run_cost_usd": 216.92,
+      "families": {
+        "tinanta": {
+          "settled": 5000,
+          "statuses": {
+            "completed": 5000
+          },
+          "correct": 4201,
+          "format_ok": 4889,
+          "strict_correct": 4143,
+          "known_cost_usd": 69.154152,
+          "unknown_cost_attempts": 0,
+          "input_tokens": 1714391,
+          "output_tokens": 6572537,
+          "mean_output_tokens": 1314.51
+        },
+        "taddhitanta": {
+          "settled": 5000,
+          "statuses": {
+            "completed": 4999,
+            "refused": 1
+          },
+          "correct": 4181,
+          "format_ok": 1348,
+          "strict_correct": 1162,
+          "known_cost_usd": 82.594456,
+          "unknown_cost_attempts": 0,
+          "input_tokens": 1379068,
+          "output_tokens": 7983632,
+          "mean_output_tokens": 1596.73
+        },
+        "krdanta": {
+          "settled": 5000,
+          "statuses": {
+            "completed": 4999,
+            "refused": 1
+          },
+          "correct": 4361,
+          "format_ok": 4443,
+          "strict_correct": 3971,
+          "known_cost_usd": 54.747472,
+          "unknown_cost_attempts": 0,
+          "input_tokens": 1792451,
+          "output_tokens": 5116257,
+          "mean_output_tokens": 1023.25
+        },
+        "subanta": {
+          "settled": 5000,
+          "statuses": {
+            "completed": 5000
+          },
+          "correct": 4889,
+          "format_ok": 4090,
+          "strict_correct": 4009,
+          "known_cost_usd": 10.421752,
+          "unknown_cost_attempts": 0,
+          "input_tokens": 1271171,
+          "output_tokens": 787941,
+          "mean_output_tokens": 157.59
+        }
+      },
+      "attempts_started": 20000,
+      "attempts_settled": 20000,
+      "unsettled_attempts": 0,
+      "retry_attempts": 0,
+      "run_id": "sonnet55-xhigh",
+      "model": "claude-sonnet-5-5",
+      "prompt_version": "v3",
+      "started_at": "2026-10-15T04:08:53.401365+00:00",
+      "finished_at": "2026-10-15T04:32:42.303195+00:00",
+      "strict_correct": 13285,
+      "format_failures": 5228,
+      "refusals": {
+        "total": 2,
+        "categories": {
+          "reasoning_extraction": 2
+        },
+        "attempts": [
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:cirABilazita:basic:Pum:jAhac",
+            "attempt_number": 1,
+            "category": "reasoning_extraction"
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.1017:ktvA",
+            "attempt_number": 1,
+            "category": "reasoning_extraction"
+          }
+        ]
+      },
+      "remaining_infrastructure_errors": 0,
+      "selected_statuses": {
+        "completed": 19998,
+        "refused": 2
+      },
+      "all_attempt_statuses": {
+        "completed": 19998,
+        "refused": 2
+      },
+      "max_output_tokens": 21182,
+      "retry_cost_usd": 0,
+      "answer_correct": 17632,
+      "answer_accuracy_percent": 88.16,
+      "strict_accuracy_percent": 66.425,
+      "unknown_cost_reserve_usd": 0.0
+    },
+    "submission_state": "completed",
+    "last_verification": {
+      "at": "2026-10-15T04:53:33.580303+00:00",
+      "passed": true,
+      "tasks": 20000,
+      "attempts": 20000
+    }
+  },
+  "implementation_dependencies": [
+    {
+      "path": "data/engine/evaluation/run_opus.py",
+      "sha256": "361b079ee7524cd61cbb62baa978dd9f69a67a0d92c2e4973f625fc13f44678e",
+      "bytes": 30820
+    },
+    {
+      "path": "data/engine/evaluation/run_astra.py",
+      "sha256": "d8d2fc791f64015d267cbcbf37a413bc15921faa7176c7412cb0e2c3c31e1f2d",
+      "bytes": 32231
+    },
+    {
+      "path": "data/engine/evaluation/scaffold_astra.py",
+      "sha256": "75bb17f85890a344b410b782d7f79f68b0e4ec75d42745ded8c57fc380e5cd9e",
+      "bytes": 12969
+    }
+  ],
+  "official_references": [
+    "https://platform.claude.com/docs/en/api/messages/create",
+    "https://platform.claude.com/docs/en/build-with-claude/streaming",
+    "https://platform.claude.com/docs/en/build-with-claude/effort"
+  ],
+  "model_capabilities": {
+    "storage": "embedded",
+    "data": {
+      "verified_at": "2026-10-15T04:08:52.873069+00:00",
+      "response": {
+        "type": "model",
+        "id": "claude-sonnet-5-5",
+        "display_name": "Claude Sonnet 5.5",
+        "created_at": "2026-09-28T00:00:00Z",
+        "line": "sonnet",
+        "max_input_tokens": 1000000,
+        "max_tokens": 128000,
+        "capabilities": {
+          "batch": {
+            "supported": true
+          },
+          "citations": {
+            "supported": true
+          },
+          "code_execution": {
+            "supported": true
+          },
+          "context_management": {
+            "supported": true,
+            "clear_tool_uses_20250919": {
+              "supported": true
+            },
+            "clear_thinking_20251015": {
+              "supported": true
+            },
+            "compact_20260112": {
+              "supported": true
+            }
+          },
+          "effort": {
+            "supported": true,
+            "low": {
+              "supported": true
+            },
+            "medium": {
+              "supported": true
+            },
+            "high": {
+              "supported": true
+            },
+            "xhigh": {
+              "supported": true
+            },
+            "max": {
+              "supported": true
+            }
+          },
+          "image_input": {
+            "supported": true
+          },
+          "pdf_input": {
+            "supported": true
+          },
+          "server_tools": {
+            "supported": true,
+            "code_execution": {
+              "supported": true
+            },
+            "web_search": {
+              "supported": true
+            }
+          },
+          "structured_outputs": {
+            "supported": true
+          },
+          "thinking": {
+            "supported": true,
+            "types": {
+              "enabled": {
+                "supported": false
+              },
+              "adaptive": {
+                "supported": true
+              },
+              "disabled": {
+                "supported": false
+              }
+            }
+          }
+        },
+        "lifecycle": "active",
+        "deprecated_at": null,
+        "retires_at": null
+      }
+    },
+    "original_file_sha256": "a60558c1268e05da25367030a3bc745fddc86f71bd02fe927c2b0b1992b03689"
+  },
+  "opus_comparison": {
+    "sha256": "7a5291b556525d707e1f056534a8eee1921136fa12186f5e2ca0e8236b804cbe",
+    "bytes": 57553,
+    "meaning": "All 20000 source tasks and rendered v3 prompts checked identical to the completed Opus run.",
+    "archive": {
+      "path": "data/benchmark/archives/opus55-xhigh-v3.tar.gz",
+      "sha256": "d1d96ee3cb00914f047f0515c5de6396651ab386acc2338436154fea954f4d36",
+      "bytes": 33986932
+    },
+    "archive_member": "opus55-xhigh/manifest.json"
+  },
+  "artifact_layout": "six-file-v1",
+  "raw_run_archive": {
+    "path": "data/benchmark/archives/sonnet55-xhigh-v3.tar.gz",
+    "sha256": "1fb48667565f690e31429d35aae7dd2e5e9de3542474f388bb8c31c72ed19094",
+    "bytes": 66815085,
+    "member_root": "sonnet55-xhigh",
+    "contents": "Complete original execution directory before cleanup, including manifests, summaries, schemas, raw journals, logs, model metadata and runner history."
+  },
+  "summary": {
+    "state": "completed",
+    "unresolved": 0,
+    "updated_at": "2026-10-15T04:53:32.171728+00:00",
+    "planned": 20000,
+    "started": 20000,
+    "settled": 20000,
+    "unsettled": 0,
+    "not_started": 0,
+    "known_cost_usd": 216.917832,
+    "unknown_cost_attempts": 0,
+    "projected_full_run_cost_usd": 216.92,
+    "families": {
+      "tinanta": {
+        "settled": 5000,
+        "statuses": {
+          "completed": 5000
+        },
+        "correct": 4201,
+        "format_ok": 4889,
+        "strict_correct": 4143,
+        "known_cost_usd": 69.154152,
+        "unknown_cost_attempts": 0,
+        "input_tokens": 1714391,
+        "output_tokens": 6572537,
+        "mean_output_tokens": 1314.51
+      },
+      "taddhitanta": {
+        "settled": 5000,
+        "statuses": {
+          "completed": 4999,
+          "refused": 1
+        },
+        "correct": 4181,
+        "format_ok": 1348,
+        "strict_correct": 1162,
+        "known_cost_usd": 82.594456,
+        "unknown_cost_attempts": 0,
+        "input_tokens": 1379068,
+        "output_tokens": 7983632,
+        "mean_output_tokens": 1596.73
+      },
+      "krdanta": {
+        "settled": 5000,
+        "statuses": {
+          "completed": 4999,
+          "refused": 1
+        },
+        "correct": 4361,
+        "format_ok": 4443,
+        "strict_correct": 3971,
+        "known_cost_usd": 54.747472,
+        "unknown_cost_attempts": 0,
+        "input_tokens": 1792451,
+        "output_tokens": 5116257,
+        "mean_output_tokens": 1023.25
+      },
+      "subanta": {
+        "settled": 5000,
+        "statuses": {
+          "completed": 5000
+        },
+        "correct": 4889,
+        "format_ok": 4090,
+        "strict_correct": 4009,
+        "known_cost_usd": 10.421752,
+        "unknown_cost_attempts": 0,
+        "input_tokens": 1271171,
+        "output_tokens": 787941,
+        "mean_output_tokens": 157.59
+      }
+    },
+    "attempts_started": 20000,
+    "attempts_settled": 20000,
+    "unsettled_attempts": 0,
+    "retry_attempts": 0,
+    "run_id": "sonnet55-xhigh",
+    "model": "claude-sonnet-5-5",
+    "prompt_version": "v3",
+    "started_at": "2026-10-15T04:08:53.401365+00:00",
+    "finished_at": "2026-10-15T04:32:42.303195+00:00",
+    "strict_correct": 13285,
+    "format_failures": 5228,
+    "refusals": {
+      "total": 2,
+      "categories": {
+        "reasoning_extraction": 2
+      },
+      "attempts": [
+        {
+          "family": "taddhitanta",
+          "task_id": "taddhitanta:cirABilazita:basic:Pum:jAhac",
+          "attempt_number": 1,
+          "category": "reasoning_extraction"
+        },
+        {
+          "family": "krdanta",
+          "task_id": "krdanta:01.1017:ktvA",
+          "attempt_number": 1,
+          "category": "reasoning_extraction"
+        }
+      ]
+    },
+    "remaining_infrastructure_errors": 0,
+    "selected_statuses": {
+      "completed": 19998,
+      "refused": 2
+    },
+    "all_attempt_statuses": {
+      "completed": 19998,
+      "refused": 2
+    },
+    "max_output_tokens": 21182,
+    "retry_cost_usd": 0,
+    "answer_correct": 17632,
+    "answer_accuracy_percent": 88.16,
+    "strict_accuracy_percent": 66.425,
+    "unknown_cost_reserve_usd": 0.0
+  },
+  "refusal_monitor": {
+    "checked_at": "2026-10-15T04:53:33.737897+00:00",
+    "settled_results_scanned": 20000,
+    "total_refusals": 2,
+    "cyber_refusals": 0,
+    "categories": {
+      "reasoning_extraction": 2
+    },
+    "first_cyber_notification_at": null,
+    "refusals": [
+      {
+        "family": "taddhitanta",
+        "task_id": "taddhitanta:cirABilazita:basic:Pum:jAhac",
+        "category": "reasoning_extraction",
+        "request_id": "req_011Cg3Ni2m748QLne4SdSgUC",
+        "response_id": "msg_011Cg3Ni2z1AJmoCAD9A7axn"
+      },
+      {
+        "family": "krdanta",
+        "task_id": "krdanta:01.1017:ktvA",
+        "category": "reasoning_extraction",
+        "request_id": "req_011Cg3NosUg5x1tBJLecP4En",
+        "response_id": "msg_011Cg3NosjYc8Uuvp9nm7Z8n"
+      }
+    ]
+  },
+  "verification": {
+    "verified_at": "2026-10-15T04:53:33.582009+00:00",
+    "manifest": {
+      "sha256": "6af2e30f6f1d6c6c97673f5cba4c62149a86367ed756be98f960d1596e2889ef",
+      "bytes": 20641,
+      "archive_member": "sonnet55-xhigh/manifest.json"
+    },
+    "summary": {
+      "sha256": "a31639a6bc3e00180dd249f110112d32bceca494a965e8783b34392775574882",
+      "bytes": 2950,
+      "archive_member": "sonnet55-xhigh/summary.json"
+    },
+    "all_request_bodies_match_pinned_v3_prompts_and_settings": true,
+    "all_results_match_journal_replay_and_schema": true,
+    "source_order_and_unique_task_ids_verified": true,
+    "attempts_verified": 20000,
+    "unresolved_requests": 0,
+    "all_attempt_costs_preserved": true,
+    "result_files": [
+      {
+        "path": "data/benchmark/results/sonnet55-xhigh/tinanta.json",
+        "sha256": "45553659876dc75e250c9ea3274227046b1aca999878d0524bf477c577861dec",
+        "bytes": 3339932
+      },
+      {
+        "path": "data/benchmark/results/sonnet55-xhigh/taddhitanta.json",
+        "sha256": "f984da050920a3c3d2a9380b0c90f2ba8521004bc04e6eae5264eb64eabd4cb2",
+        "bytes": 5186972
+      },
+      {
+        "path": "data/benchmark/results/sonnet55-xhigh/krdanta.json",
+        "sha256": "8a87afd56115fd9e0b0b0dbce6572f79fb3f4e2aacafb5e0f4fc8b67e3f9fd30",
+        "bytes": 3433557
+      },
+      {
+        "path": "data/benchmark/results/sonnet55-xhigh/subanta.json",
+        "sha256": "bb631df4156cfed0805ff3596e17a71abaeaff4e3909692fd13b4ef907378de8",
+        "bytes": 3551252
+      }
+    ],
+    "journal_archives": [
+      {
+        "sha256": "26a615f4077096dd9fc79f3b291f38e3d13e9592ab1d38b81fd826ecbd2c3dc9",
+        "bytes": 19416252,
+        "archive_member": "sonnet55-xhigh/journals/tinanta.jsonl.gz"
+      },
+      {
+        "sha256": "333ec4cbdbea0e76d737f24b674b5910b7f97138d9c283694b7a0a41f9a4f64a",
+        "bytes": 23123683,
+        "archive_member": "sonnet55-xhigh/journals/taddhitanta.jsonl.gz"
+      },
+      {
+        "sha256": "56f048afb38172700114376d548d49fc6b8c74a4ae3d85ee00fcdcbd30e17614",
+        "bytes": 16387282,
+        "archive_member": "sonnet55-xhigh/journals/krdanta.jsonl.gz"
+      },
+      {
+        "sha256": "757ae80167c26f5598a8b5460efed87455e805cbeb94cc9b78085a14973fd135",
+        "bytes": 4995013,
+        "archive_member": "sonnet55-xhigh/journals/subanta.jsonl.gz"
+      }
+    ],
+    "report_implementation": {
+      "path": "data/engine/evaluation/report_claude.py",
+      "sha256": "491ad3826f7439e1831d4b581f74190ae41251663b214ec0b1f4da7b133f7030",
+      "bytes": 10541
+    },
+    "scope": "Original journal-replay verification. Manifest, summary and journal descriptors identify original files inside raw_run_archive; result-file hashes still describe the unchanged live result files."
+  },
+  "cleanup_verification": {
+    "at": "2026-10-15T05:00:32.786888+00:00",
+    "reference_layout": "data/benchmark/results/v2/astra-xhigh",
+    "files": [
+      "README.md",
+      "krdanta.json",
+      "manifest.json",
+      "subanta.json",
+      "taddhitanta.json",
+      "tinanta.json"
+    ],
+    "all_original_files_archived_and_hash_verified": true,
+    "result_files_byte_for_byte_unchanged": true,
+    "tasks_validated": 20000,
+    "schema_source_order_and_exact_answer_scores_verified": true
+  }
+}

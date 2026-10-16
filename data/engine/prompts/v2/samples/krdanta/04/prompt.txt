@@ -1,0 +1,25 @@
+You are an expert in Sanskrit grammar (vyakarana).
+
+Derive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root
+(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers
+included), its verb class (gana), its traditional meaning (artha), and the
+required primary suffix (krt). Each Sanskrit grammatical term is glossed in
+parentheses in English.
+
+For a noun or adjective, return the uninflected nominal stem (pratipadika),
+without case or number endings. For an indeclinable (avyaya), return the
+complete indeclinable form.
+
+Write ONLY the final form, in Devanagari script, inside exactly one
+<answer></answer> block. If several forms are valid, give exactly one.
+Do not include an explanation or any text outside the block:
+<answer>Final form in Devanagari</answer>
+
+=== Your task ===
+
+dhatu (Sanskrit verbal root): जसुँ   (Dhatupatha citation form, anubandha markers included)
+gana (verb class): Curadi (class 10)
+artha (traditional meaning): हिंसायाम्
+
+Required form:
+- krt (primary suffix): तृच् (agent noun; citation form, anubandha markers included)

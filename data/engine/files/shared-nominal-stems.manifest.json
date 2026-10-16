@@ -1,0 +1,112 @@
+{
+  "schema_version": 2,
+  "inventory": "mwlexnorm-shared-nominal-stems",
+  "generation_complete": true,
+  "source": {
+    "path": "data/engine/files/mw-lexnorm/nominal-entries.csv",
+    "sha256": "84797688cfbc3e82260567cf7cca86353acc14b6898f45f279e5a92b4c2b07cc",
+    "repository": "https://github.com/funderburkjim/MWlexnorm",
+    "revision": "34e51125583b1f5026d44e6ef1e44d2a88b73670"
+  },
+  "generator": {
+    "path": "data/engine/nominal_stems/generate.py",
+    "sha256": "8269d495192864038c4e1c56bf37eab3bcef404959aa464b0e0ee56a2678f264"
+  },
+  "vp_filter_code": {
+    "path": "data/engine/nominal_stems/vp_support.py",
+    "sha256": "2fdece29a9ca48e2a5000cb4b5af9942396cf6c7f5e1bd4bd1ab9119fbbd005a"
+  },
+  "transliteration": {
+    "package": "vidyut",
+    "version": "0.4.0",
+    "input": "SLP1",
+    "output": "NFC Devanagari"
+  },
+  "policy": {
+    "unit": "One resolved stem spelling and source-listed gender; retain every contributing source analysis.",
+    "compound_handling": "Remove any row with a source-marked compound/derivational boundary; the current basic/nyap adapter does not represent it.",
+    "feminine_stems": "Resolve supported explicit hints and implicit a-to-A formation; audit unresolved formations.",
+    "engine_constructors": "Reviewed basic/nyap classes; every retained row is instantiated in VP 0.4.0 and checked for spelling, flags, and gender-enum mapping.",
+    "task_generation": "None. No case-number or 175-affix enumeration, derivations, answers, or prompts.",
+    "deduplication": "Stem and gender; a row is removed if any contributing source interpretation is unsupported. Retained rows are unchanged.",
+    "validation_limit": "Supported representation in the current adapter, not independent linguistic certification or a guarantee for every taddhita affix. Taddhitanta gender/meaning and known suffix-specific constructor behavior still need task-level validation."
+  },
+  "counts": {
+    "source_rows": 197652,
+    "source_row_status": {
+      "excluded": 142705,
+      "included": 52937,
+      "partial": 2010
+    },
+    "stem_gender_pairs": 74193,
+    "distinct_stem_spellings": 56285,
+    "pairs_by_gender": {
+      "feminine": 21302,
+      "masculine": 31129,
+      "neuter": 21762
+    },
+    "resolved_source_descriptors": 86035,
+    "source_rows_with_compound_boundaries": 139235,
+    "compound_rows_with_stems": 0,
+    "excluded_descriptors_by_reason": {
+      "indeclinable": 5638,
+      "invalid_headword_encoding": 193,
+      "special_lexical_metadata": 371,
+      "unresolved_feminine_stem": 7819,
+      "unresolved_stem_hint": 264,
+      "unsupported_descriptor": 3,
+      "vp_unsupported_input": 217750
+    },
+    "vp_filter": {
+      "lexical_candidate_pairs": 280889,
+      "retained_pairs": 74193,
+      "removed_pairs": 206696,
+      "retained_by_constructor": {
+        "basic": 55137,
+        "nyap": 19056
+      },
+      "removal_reason_events": {
+        "ambiguous_feminine_class": 5,
+        "compound_boundary": 204661,
+        "source_notation": 39,
+        "special_lexical_metadata": 138,
+        "unresolved_feminine_class": 701,
+        "unsupported_stem_class": 13413
+      },
+      "constructor_checks": 74193
+    }
+  },
+  "exclusion_reasons": {
+    "special_lexical_metadata": "LEXID/INFLECTID notation needs a separate interpretation of stems and genders.",
+    "indeclinable": "The source lists an indeclinable, not a masculine/feminine/neuter entry.",
+    "unsupported_descriptor": "The descriptor is outside the supported gender/hint notation.",
+    "invalid_headword_encoding": "The headword is not losslessly renderable SLP1.",
+    "unresolved_stem_hint": "The explicit stem hint has no supported replacement rule for this headword.",
+    "unresolved_feminine_stem": "This ending needs additional feminine-stem formation rules; do not copy the headword as the feminine stem.",
+    "invalid_stem_encoding": "The resolved stem is not losslessly renderable SLP1.",
+    "vp_unsupported_input": "The resolved row failed the supported VP representation checks; see vp_reasons and the VP exclusion file."
+  },
+  "vp_exclusion_reasons": {
+    "compound_boundary": "The current basic/nyap adapter does not represent the source's compound/derivational boundaries.",
+    "source_notation": "The extended source spelling needs interpretation beyond a bare headword.",
+    "special_lexical_metadata": "This headword also has LEXID/INFLECTID metadata requiring a richer grammatical representation.",
+    "ambiguous_feminine_class": "The source gives competing feminine inflection-class hints for this headword.",
+    "unresolved_feminine_class": "The feminine stem needs a richer constructor or an unreviewed interpretation.",
+    "unsupported_stem_class": "The stem falls outside the reviewed basic/nyap representation classes.",
+    "constructor_failure": "VP could not construct the selected representation while preserving its spelling and flags."
+  },
+  "files": {
+    "shared-nominal-stems.json": {
+      "sha256": "7a3b204962d04c02b915a3291abe29584ae6ee064771b98011dfcac30c6d0f71",
+      "bytes": 22232136
+    },
+    "shared-nominal-stems.audit.json": {
+      "sha256": "82c2abf77db088984a4cfbad3b79f704d4054a4ad671694b9399ae031ff49d0d",
+      "bytes": 62374615
+    },
+    "shared-nominal-stems.vp-exclusions.json": {
+      "sha256": "b1b8e2c289ae54391b8885c50e9dec5f7cb2b7d809dae5da6974cf6564c6cf44",
+      "bytes": 69661910
+    }
+  }
+}

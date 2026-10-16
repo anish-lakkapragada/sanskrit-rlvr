@@ -1,0 +1,30 @@
+{
+  "at": "2026-10-15T20:30:59.630129+00:00",
+  "model": "gemini-4-argon",
+  "adc_email": "anishsanskrit@gmail.com",
+  "url": "https://aiplatform.googleapis.com/v1/projects/project-416ce809-5ce8-43c4-85e/locations/global/publishers/google/models/gemini-4-argon:generateContent",
+  "headers_without_credentials": {
+    "Content-Type": "application/json",
+    "X-Goog-User-Project": "project-416ce809-5ce8-43c4-85e",
+    "X-Vertex-AI-LLM-Request-Type": "shared",
+    "X-Vertex-AI-LLM-Shared-Request-Type": "priority"
+  },
+  "request": {
+    "contents": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "text": "Reply with SUCCESS."
+          }
+        ]
+      }
+    ],
+    "generationConfig": {
+      "thinkingConfig": {
+        "thinkingLevel": "HIGH"
+      }
+    }
+  },
+  "purpose": "Access check, outside the scored benchmark"
+}

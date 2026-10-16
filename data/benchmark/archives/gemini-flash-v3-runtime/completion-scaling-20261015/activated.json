@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-16T01:10:47.566026+00:00",
+  "supervisor_pid": 87961,
+  "sleep_guard_pid": 87962,
+  "concurrency_ceiling": 512,
+  "initial_policy": {
+    "kind": "completion_growth",
+    "interval": 200,
+    "multiplier": 1.25,
+    "counted_status": "completed",
+    "baseline": 13752,
+    "completed": 13752,
+    "next_boost_at": 13952,
+    "concurrency": 34,
+    "maximum": 512,
+    "pressure_count": 0,
+    "cooldown_until_unix": 0
+  },
+  "model": "gemini38-flash-high"
+}

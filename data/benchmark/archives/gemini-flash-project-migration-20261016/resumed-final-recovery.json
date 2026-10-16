@@ -1,0 +1,16 @@
+{
+  "at": "2026-10-16T04:28:10.202348+00:00",
+  "reason": "All 77 retries on the new account succeeded. Remaining 40 errors are reviewed BILLING_DISABLED from the previous project; skip generic five-minute retry cooldown to honor user speed priority.",
+  "previous_supervisor": {
+    "at": "2026-10-16T04:27:48.980225+00:00",
+    "model": "gemini38-flash-high",
+    "state": "cooling_down",
+    "supervisor_pid": 42381,
+    "reason": "Infrastructure failures remain after retry batch",
+    "seconds": 300,
+    "resume_at": "2026-10-16T04:32:48.980181+00:00"
+  },
+  "remaining_tasks": 40,
+  "supervisor_pid": 49447,
+  "sleep_guard_pid": 49448
+}

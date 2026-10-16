@@ -1,0 +1,995 @@
+{
+  "schema_version": 2,
+  "run_id": "astra-xhigh",
+  "status": "completed",
+  "created_at": "2026-10-14T07:55:34.434680+00:00",
+  "started_at": "2026-10-14T08:19:26.425325+00:00",
+  "finished_at": "2026-10-14T20:53:19.697318+00:00",
+  "planned_tasks": 20000,
+  "planned_primary_requests": 20000,
+  "submitted_requests": 20007,
+  "path_conventions": {
+    "inputs_and_code": "repository-relative",
+    "results_and_journals": "run-directory-relative"
+  },
+  "provider": "openai",
+  "api": {
+    "method": "POST",
+    "url": "https://api.openai.com/v1/responses"
+  },
+  "request_defaults": {
+    "model": "gpt-6-astra",
+    "reasoning": {
+      "effort": "xhigh"
+    },
+    "service_tier": "default",
+    "store": false,
+    "stream": true
+  },
+  "request_input": "Exact rendered prompt as request.input; one independent request per task; no conversation history, extra instructions, or tools.",
+  "output_limit": {
+    "benchmark_cap": null,
+    "max_output_tokens_parameter": "omitted",
+    "meaning": "No benchmark-imposed token cap. Provider/model limits still apply.",
+    "documented_model_max_output_tokens": 128000
+  },
+  "omitted_request_parameters": [
+    "max_output_tokens",
+    "temperature",
+    "top_p",
+    "seed",
+    "instructions",
+    "previous_response_id",
+    "tools"
+  ],
+  "sampling_seed": 69,
+  "sampling_seed_scope": "Dataset selection only; not a model-generation seed.",
+  "rendering_dependencies": {
+    "python": "3.11+",
+    "vidyut": "0.4.0"
+  },
+  "tasks": [
+    {
+      "family": "tinanta",
+      "dataset": {
+        "path": "data/benchmark/tinanta/tinanta.json",
+        "sha256": "e5f1b8b6332d820ef3ffd11d28e73c25df300c253816ad374f716fb2b537d151",
+        "bytes": 1921409,
+        "records": 5000
+      },
+      "sampling_manifest": {
+        "path": "data/benchmark/tinanta/tinanta.manifest.json",
+        "sha256": "81269026a8089ec36db118ad7772fd718af7ccc1acab3207e76925951f45e5cf",
+        "bytes": 92353
+      },
+      "prompt_template": {
+        "path": "data/engine/prompts/v2/vp_tinanta.txt",
+        "sha256": "5bf6c717bd0582ca85672d368fdc44ec3de751a1d06c222a40f1588989d118e9",
+        "bytes": 1091,
+        "text": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested conjugated verb form from the Sanskrit verbal root (dhatu, given in\nDevanagari in its Dhatupatha citation form, anubandha markers included), its\nverb class (gana), its traditional meaning (artha), and the required\ntense/mood (lakara), voice (prayoga), person (purusha), and number (vacana).\nEach Sanskrit grammatical term is glossed in parentheses in English.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): {aupadeshika_deva}   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): {gana} ({gana_en})\nartha (traditional meaning): {artha_deva}\n{prefixes_block}\nRequired form:\n- lakara (tense/mood): {lakara} ({lakara_en})\n- prayoga (voice): {prayoga} ({prayoga_en})\n- purusha (person): {purusha} ({purusha_en})\n- vacana (number): {vacana} ({vacana_en})\n"
+      },
+      "renderer": {
+        "path": "data/engine/tinanta/common.py",
+        "sha256": "c6288776af494cf3e592aac2ff58cf820c16ff74dda6aec23a31de6f993df15c",
+        "bytes": 3455,
+        "callable": "data.engine.tinanta.common.render_task"
+      },
+      "result_file": "tinanta.json",
+      "journal_file": "journals/tinanta.jsonl",
+      "order": "benchmark source row order; one selected attempt per task"
+    },
+    {
+      "family": "taddhitanta",
+      "dataset": {
+        "path": "data/benchmark/taddhitanta/taddhitanta.json",
+        "sha256": "ae3f1084be43b8296fe7a5cc3c1264ea84ea1293fc72c0644b02ce9e6f036c3b",
+        "bytes": 1504917,
+        "records": 5000
+      },
+      "sampling_manifest": {
+        "path": "data/benchmark/taddhitanta/taddhitanta.manifest.json",
+        "sha256": "db7829c9ed5bbb71557c38f112f3a32dac2eb86dbfcd1ca1e00ca75c93903a0e",
+        "bytes": 80493
+      },
+      "prompt_template": {
+        "path": "data/engine/prompts/v2/vp_taddhitanta.txt",
+        "sha256": "cb30d5d23f910bf1e2f2893e61ac078ae88f8021c644794badff811034b4e08e",
+        "bytes": 827,
+        "text": "You are an expert in Sanskrit grammar (vyakarana).\n\nApply the requested taddhita affix to the supplied Sanskrit nominal base.\nReturn the resulting derived nominal stem or complete indeclinable, without\nadding case or number endings.\n\nUse the displayed base with its stated grammatical interpretation. No specific\nartha (meaning) is imposed: use a meaning under which this affix can apply.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\npratipadika (nominal base): {stem_deva}\nbase interpretation: {base_interpretation}\ntaddhita (technical affix): {suffix_deva} (SLP1: {suffix_id})\nartha (meaning): unrestricted\n"
+      },
+      "renderer": {
+        "path": "data/engine/taddhitanta/common.py",
+        "sha256": "f885e3528e6ccd5651a65dfe029fc909808a0063886018a3a67fc6cd77b3e1d8",
+        "bytes": 6310,
+        "callable": "data.engine.taddhitanta.common.render_task"
+      },
+      "result_file": "taddhitanta.json",
+      "journal_file": "journals/taddhitanta.jsonl",
+      "order": "benchmark source row order; one selected attempt per task"
+    },
+    {
+      "family": "krdanta",
+      "dataset": {
+        "path": "data/benchmark/krdanta/krdanta.json",
+        "sha256": "ec5fcaa3ee7d05ff79d391d0015b26e896bd01873a720cc94bff26bf5970e762",
+        "bytes": 1325917,
+        "records": 5000
+      },
+      "sampling_manifest": {
+        "path": "data/benchmark/krdanta/krdanta.manifest.json",
+        "sha256": "29fd8d97fac7abe062672bdc5b0379256487d771b80cc57e347af062ee1a1a49",
+        "bytes": 55482
+      },
+      "prompt_template": {
+        "path": "data/engine/prompts/v2/vp_krdanta.txt",
+        "sha256": "37f6afac2d5ccc9041c6c84a4db477bb52d84fd449e6d688e09f37a70d97257e",
+        "bytes": 1162,
+        "text": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired primary suffix (krt). Each Sanskrit grammatical term is glossed in\nparentheses in English.\n\nFor a noun or adjective, return the uninflected nominal stem (pratipadika),\nwithout case or number endings. For an indeclinable (avyaya), return the\ncomplete indeclinable form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): {aupadeshika_deva}   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): {gana} ({gana_en})\nartha (traditional meaning): {artha_deva}\n{prefixes_block}\nRequired form:\n- krt (primary suffix): {krt_deva} ({krt_en}; citation form, anubandha markers included)\n{participle_block}\n"
+      },
+      "renderer": {
+        "path": "data/engine/krdanta/common.py",
+        "sha256": "dc669ce8492d3ea74c335a4e484ecce77dbe416e7480d51e7e523a1ddc830196",
+        "bytes": 8267,
+        "callable": "data.engine.krdanta.common.render_task"
+      },
+      "result_file": "krdanta.json",
+      "journal_file": "journals/krdanta.jsonl",
+      "order": "benchmark source row order; one selected attempt per task"
+    },
+    {
+      "family": "subanta",
+      "dataset": {
+        "path": "data/benchmark/subanta/subanta.json",
+        "sha256": "83bc5976715a52f6b09535d7a8a50a629072e2e6e19fdf1281c682126a994d53",
+        "bytes": 1347028,
+        "records": 5000
+      },
+      "sampling_manifest": {
+        "path": "data/benchmark/subanta/subanta.manifest.json",
+        "sha256": "259098b1940ddd13ea642840762dd612f0088fbb3eb3a0a29595976e911d0849",
+        "bytes": 65913
+      },
+      "prompt_template": {
+        "path": "data/engine/prompts/v2/vp_subanta.txt",
+        "sha256": "5f1994d552931b07ea75beb39bdb31f3889da7fc5df4c395f6c7fc7fd1b589fb",
+        "bytes": 804,
+        "text": "You are an expert in Sanskrit grammar (vyakarana).\n\nInflect the supplied Sanskrit nominal stem (pratipadika) in the requested\ngender (linga), case (vibhakti), and number (vacana). Return the complete\ninflected noun or adjective (subanta), in its standalone form.\n\nUse the displayed stem as the starting form. When a feminine stem is supplied,\nuse that feminine stem rather than reconstructing it from a masculine headword.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\npratipadika (nominal stem): {stem_deva}\nlinga (gender): {linga}\nvibhakti (case): {vibhakti}\nvacana (number): {vacana}\n"
+      },
+      "renderer": {
+        "path": "data/engine/subanta/common.py",
+        "sha256": "041800da26cb92a514e54dd314d8cf7f85f500f5b4d4c4f48133e2879d2d6ded",
+        "bytes": 15734,
+        "callable": "data.engine.subanta.common.render_task"
+      },
+      "result_file": "subanta.json",
+      "journal_file": "journals/subanta.jsonl",
+      "order": "benchmark source row order; one selected attempt per task"
+    }
+  ],
+  "result_schema": {
+    "path": "result.schema.json",
+    "sha256": "9d477b2be595934bcd109992924978ed1a737162088436decf77a4524872f448"
+  },
+  "scoring": {
+    "version": "answer-membership-v1",
+    "implementation": {
+      "path": "data/engine/evaluation/scoring.py",
+      "sha256": "b98632eee2b1435e9a362927658000052da1b8a36bffec90647f3924e95f6121",
+      "bytes": 1318
+    },
+    "answer_extraction": "Extract exactly one well-formed literal <answer>...</answer> block and strip outer answer whitespace. No Unicode or orthographic normalization. Original text stays in output_text.",
+    "correct": "For completed responses: answer is not null and answer in the source task.gold_devanagari list, joined by task_id. Otherwise null.",
+    "format_ok": "Exactly one nonempty answer block, no nested markup, and only whitespace outside the block.",
+    "strict_accuracy": "Derived when reporting: correct is true and format_ok. Not duplicated in result rows.",
+    "primary_attempt": 1,
+    "reporting": "Report correctness and format separately, plus strict accuracy over all 20,000 tasks using the latest explicitly authorized settled attempt per task. Report refusals/incomplete/errors separately; never drop tasks from the denominator. Preserve first-attempt results in journals for separate analysis.",
+    "selected_attempt": "Latest settled, explicitly authorized attempt per task. User requested in-place replacement of infrastructure failures on 2026-10-14."
+  },
+  "pricing": {
+    "snapshot_id": "openai-astra-standard-2026-10-14",
+    "verified_date": "2026-10-14",
+    "currency": "USD",
+    "tier": "standard",
+    "endpoint": "global direct OpenAI",
+    "rates_usd_per_million_tokens": {
+      "uncached_input": 10,
+      "cached_input": 1,
+      "cache_write_input": 12.5,
+      "output": 50
+    },
+    "long_context_threshold_input_tokens": 272000,
+    "long_context_rates_usd_per_million_tokens": {
+      "uncached_input": 20,
+      "cached_input": 2,
+      "cache_write_input": 25,
+      "output": 75
+    },
+    "formula": "((input_tokens - cached_tokens - cache_write_tokens) * uncached_input_rate + cached_tokens * cached_input_rate + cache_write_tokens * cache_write_input_rate + output_tokens * output_rate) / 1000000",
+    "rules": [
+      "Output usage already includes reasoning tokens; do not bill them twice.",
+      "Preserve full usage; rates are stored once in this manifest. Check cache counters and the journal response tier before calculating.",
+      "Missing usage or unsupported billing details produce cost_usd=null with a reason; do not treat unknown cost as zero.",
+      "Cost is a token-usage estimate, not an invoice receipt; excludes credits, taxes and account-specific adjustments.",
+      "Aggregate cost across all attempts, including failed or refused attempts with usage and any explicit retries."
+    ],
+    "sources": [
+      "https://developers.openai.com/api/docs/models/gpt-6-astra",
+      "https://developers.openai.com/api/docs/pricing"
+    ]
+  },
+  "preservation": {
+    "journal_path_pattern": "journals/{family}.jsonl",
+    "completed_archive_pattern": "journals/{family}.jsonl.gz",
+    "journal_count": 4,
+    "journal_key": [
+      "task_id",
+      "attempt_number"
+    ],
+    "events": {
+      "started": "Before sending, append and fsync task_id, attempt_number, timestamp, client_request_id and exact request JSON including the hydrated prompt.",
+      "response": "Before scoring, append and fsync task_id, attempt_number, request_id, elapsed_ms, timestamp and the complete unmodified terminal response.",
+      "error": "Append task_id, attempt_number, request_id, timestamp, elapsed_ms, HTTP status, provider/client error details and available partial output; exclude credentials."
+    },
+    "per_request_files": false,
+    "save_full_stream_events": false,
+    "stream_handling": "Consume events in memory. Preserve available partial text on handled interruption; do not permanently log individual events.",
+    "result_encoding": "Compact UTF-8 JSON arrays; one compact record per line.",
+    "shared_metadata": "Dataset/gold stay in pinned benchmark files. Model/settings/templates/rates/scoring version stay in this manifest; family comes from the result filename.",
+    "write_order": "Durable started journal entry before send; durable response/error entry before scoring; atomically update family results after each settled attempt.",
+    "compression": "Gzip each completed journal; remove the plain copy only after verifying the archive. Retain one archive per family.",
+    "recovery": "Replay journals to rebuild results and reprice/rescore offline. Read completed .jsonl.gz archives as needed; do not resend completed attempts.",
+    "selected_results": "One result row per task; latest explicitly authorized settled attempt. Journals retain every attempt and all costs."
+  },
+  "execution": {
+    "state": "completed",
+    "runner_implemented": true,
+    "concurrency": 7,
+    "automatic_retries": 0,
+    "model_fallbacks": [],
+    "resume": "Reuse terminal journal entries. A started request without a response/error entry is unresolved and must not be automatically resent.",
+    "explicit_retries": "Explicitly authorized infrastructure retries replace the selected row in place. All attempts and charges remain in journals; no automatic retries.",
+    "preflight": "Validate dataset, template, renderer, scoring and schema hashes before sending; record runtime/library versions and runner hash when implemented.",
+    "runtime_versions": {
+      "python": "3.11.13",
+      "httpx": "0.28.1",
+      "python-dotenv": "1.1.1",
+      "vidyut": "0.4.0",
+      "jsonschema": "4.23.0"
+    },
+    "runner": {
+      "path": "data/engine/evaluation/run_astra.py",
+      "sha256": "d8d2fc791f64015d267cbcbf37a413bc15921faa7176c7412cb0e2c3c31e1f2d"
+    },
+    "pid": null,
+    "budget_usd": 3000.0,
+    "budget_scope": "This run only; account-wide remaining credit is not available from the local ledger.",
+    "reservation_usd_per_inflight_request": 6.430975,
+    "stopped_reason": null,
+    "progress": {
+      "updated_at": "2026-10-14T20:53:30.906878+00:00",
+      "planned": 20000,
+      "started": 20000,
+      "settled": 20000,
+      "unsettled": 0,
+      "not_started": 0,
+      "known_cost_usd": 1156.9801,
+      "unknown_cost_attempts": 7,
+      "projected_full_run_cost_usd": null,
+      "families": {
+        "tinanta": {
+          "settled": 5000,
+          "statuses": {
+            "completed": 5000
+          },
+          "correct": 4702,
+          "format_ok": 5000,
+          "strict_correct": 4702,
+          "known_cost_usd": 316.85068,
+          "unknown_cost_attempts": 0,
+          "input_tokens": 1411728,
+          "output_tokens": 6054668,
+          "mean_output_tokens": 1210.93
+        },
+        "taddhitanta": {
+          "settled": 5000,
+          "statuses": {
+            "completed": 5000
+          },
+          "correct": 4346,
+          "format_ok": 5000,
+          "strict_correct": 4346,
+          "known_cost_usd": 576.68678,
+          "unknown_cost_attempts": 4,
+          "input_tokens": 1058648,
+          "output_tokens": 11322006,
+          "mean_output_tokens": 2264.4
+        },
+        "krdanta": {
+          "settled": 5000,
+          "statuses": {
+            "completed": 5000
+          },
+          "correct": 4810,
+          "format_ok": 5000,
+          "strict_correct": 4810,
+          "known_cost_usd": 228.10635,
+          "unknown_cost_attempts": 3,
+          "input_tokens": 1466260,
+          "output_tokens": 4268875,
+          "mean_output_tokens": 853.77
+        },
+        "subanta": {
+          "settled": 5000,
+          "statuses": {
+            "completed": 5000
+          },
+          "correct": 4928,
+          "format_ok": 5000,
+          "strict_correct": 4928,
+          "known_cost_usd": 35.33629,
+          "unknown_cost_attempts": 0,
+          "input_tokens": 1025409,
+          "output_tokens": 501644,
+          "mean_output_tokens": 100.33
+        }
+      },
+      "attempts_started": 20007,
+      "attempts_settled": 20007,
+      "unsettled_attempts": 0,
+      "retry_attempts": 7,
+      "unknown_cost_reserve_usd": 45.016825
+    },
+    "runner_revisions": [
+      {
+        "path": "data/benchmark/results/astra-xhigh/runner-history/0b9355055533e92312dfc278bd3715743b322f5031caaf595bb4d9b5bb17362a.py",
+        "sha256": "0b9355055533e92312dfc278bd3715743b322f5031caaf595bb4d9b5bb17362a",
+        "original_path": "data/engine/evaluation/run_astra.py",
+        "concurrency": 96,
+        "retired_at": "2026-10-14T08:50:08.123339+00:00",
+        "reason": "User requested faster execution; upgrade connection pool and concurrency admission only."
+      },
+      {
+        "path": "data/benchmark/results/astra-xhigh/runner-history/3789119c92ab7eb131690f53c19d98f8e85f208ce179e6971559cf5808c00004.py",
+        "sha256": "3789119c92ab7eb131690f53c19d98f8e85f208ce179e6971559cf5808c00004",
+        "original_path": "data/engine/evaluation/run_astra.py",
+        "concurrency": 256,
+        "retired_at": "2026-10-14T19:36:13.946494+00:00",
+        "reason": "Allow unsent tasks to proceed after terminal server overloads, reserving unknown charges; never retry failed tasks."
+      },
+      {
+        "path": "data/benchmark/results/astra-xhigh/runner-history/df429fd7da1ada36759098cf435b6a912d3dd50f861fb9b92050bfc1d35751ac.py",
+        "sha256": "df429fd7da1ada36759098cf435b6a912d3dd50f861fb9b92050bfc1d35751ac",
+        "original_path": "data/engine/evaluation/run_astra.py",
+        "concurrency": 256,
+        "retired_at": "2026-10-14T19:56:01.892695+00:00",
+        "reason": "Retain interrupted streams without retrying; reserve unknown costs and continue unsent tasks after cooldown. Report draining state immediately."
+      },
+      {
+        "path": "data/benchmark/results/astra-xhigh/runner-history/e2117a4120167c15759c49e8f256699563b4304cad70a3594ff249126041fe51.py",
+        "sha256": "e2117a4120167c15759c49e8f256699563b4304cad70a3594ff249126041fe51",
+        "original_path": "data/engine/evaluation/run_astra.py",
+        "concurrency": 128,
+        "retired_at": "2026-10-14T20:47:39.420576+00:00",
+        "reason": "User explicitly requested retrying all seven infrastructure failures and replacing selected JSON rows; support attempt history and cumulative billing."
+      }
+    ],
+    "throughput_changes": [
+      {
+        "at": "2026-10-14T08:50:08.123478+00:00",
+        "from_concurrency": 96,
+        "to_concurrency": 256,
+        "settled_before_change": 1685,
+        "request_settings_unchanged": true
+      },
+      {
+        "at": "2026-10-14T19:56:01.892750+00:00",
+        "from_concurrency": 256,
+        "to_concurrency": 128,
+        "settled_before_change": 17282,
+        "request_settings_unchanged": true,
+        "reason": "Reduce concurrency after six interrupted response streams."
+      }
+    ],
+    "max_concurrency": 512,
+    "concurrency_control_file": "run-control.json",
+    "recovery_events": [
+      {
+        "at": "2026-10-14T19:36:13.946605+00:00",
+        "previous_stop_reason": "Inspect taddhitanta/taddhitanta:kzurI:nyap:Stri:caraw: api_error or unknown cost; no automatic retries",
+        "settled_before_resume": 13466,
+        "action": "Resume 6534 unsent tasks. Retain failed primary attempt and null cost; reserve full possible charge against budget."
+      },
+      {
+        "at": "2026-10-14T19:56:01.892736+00:00",
+        "previous_stop_reason": "Inspect taddhitanta/taddhitanta:kapawikA:nyap:Stri:Ca: transport_error or unknown cost; no automatic retries",
+        "settled_before_resume": 17282,
+        "action": "Resume unsent tasks at concurrency 128. Preserve interrupted primary attempts, partial output and null costs; reserve full possible charge for each unknown cost."
+      }
+    ],
+    "transient_failure_handling": "Retain failed attempts without retrying. Reserve a full possible request charge for missing usage; pause new submissions for 60 seconds after a terminal overload or recognized stream interruption, then continue unsent tasks. Five new transient failures in one invocation pause the run for inspection.",
+    "submission_state": "completed",
+    "primary_attempt_progress": {
+      "updated_at": "2026-10-14T20:20:04.401767+00:00",
+      "planned": 20000,
+      "started": 20000,
+      "settled": 20000,
+      "unsettled": 0,
+      "not_started": 0,
+      "known_cost_usd": 1155.65808,
+      "unknown_cost_attempts": 7,
+      "projected_full_run_cost_usd": null,
+      "families": {
+        "tinanta": {
+          "settled": 5000,
+          "statuses": {
+            "completed": 5000
+          },
+          "correct": 4702,
+          "format_ok": 5000,
+          "strict_correct": 4702,
+          "known_cost_usd": 316.85068,
+          "unknown_cost_attempts": 0,
+          "input_tokens": 1411728,
+          "output_tokens": 6054668,
+          "mean_output_tokens": 1210.93
+        },
+        "taddhitanta": {
+          "settled": 5000,
+          "statuses": {
+            "completed": 4996,
+            "api_error": 1,
+            "transport_error": 3
+          },
+          "correct": 4342,
+          "format_ok": 4996,
+          "strict_correct": 4342,
+          "known_cost_usd": 575.90086,
+          "unknown_cost_attempts": 4,
+          "input_tokens": 1057811,
+          "output_tokens": 11306455,
+          "mean_output_tokens": 2263.1
+        },
+        "krdanta": {
+          "settled": 5000,
+          "statuses": {
+            "completed": 4997,
+            "transport_error": 3
+          },
+          "correct": 4807,
+          "format_ok": 4997,
+          "strict_correct": 4807,
+          "known_cost_usd": 227.57025,
+          "unknown_cost_attempts": 3,
+          "input_tokens": 1465390,
+          "output_tokens": 4258327,
+          "mean_output_tokens": 852.18
+        },
+        "subanta": {
+          "settled": 5000,
+          "statuses": {
+            "completed": 5000
+          },
+          "correct": 4928,
+          "format_ok": 5000,
+          "strict_correct": 4928,
+          "known_cost_usd": 35.33629,
+          "unknown_cost_attempts": 0,
+          "input_tokens": 1025409,
+          "output_tokens": 501644,
+          "mean_output_tokens": 100.33
+        }
+      },
+      "unknown_cost_reserve_usd": 45.016825
+    },
+    "primary_finished_at": "2026-10-14T20:19:53.563966+00:00",
+    "retry_batches": [
+      {
+        "id": "infra-retry-20261014",
+        "authorized_at": "2026-10-14T20:48:18.983370+00:00",
+        "authorization": "Explicit user instruction to retry infrastructure failures and update selected result rows in place.",
+        "targets": [
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:kzurI:nyap:Stri:caraw",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:dAnti:basic:Stri:kuRap",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:SAstrita:basic:Pum:jAhac",
+            "attempt_number": 2
+          },
+          {
+            "family": "taddhitanta",
+            "task_id": "taddhitanta:kapawikA:nyap:Stri:Ca",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:01.0766:tfc",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:10.0137:tumun",
+            "attempt_number": 2
+          },
+          {
+            "family": "krdanta",
+            "task_id": "krdanta:06.0019:Ryat",
+            "attempt_number": 2
+          }
+        ],
+        "state": "completed",
+        "started_at": "2026-10-14T20:48:19.018650+00:00",
+        "finished_at": "2026-10-14T20:53:19.697318+00:00",
+        "submitted": 7,
+        "settled": 7,
+        "completed_responses": 7,
+        "correct": 7,
+        "known_cost_usd": 1.32202,
+        "unknown_cost_attempts": 0
+      }
+    ],
+    "retry_runner": {
+      "path": "data/engine/evaluation/retry_astra.py",
+      "sha256": "1c129258a97a890a932e645d0fc018c4c9bac4ec0f7b8cd9e9839aea2785fa5d"
+    },
+    "active_retry_batch": "infra-retry-20261014",
+    "last_verification": {
+      "at": "2026-10-14T20:54:25.700099+00:00",
+      "passed": true,
+      "tasks": 20000,
+      "attempts": 20007,
+      "replaced_rows": 7,
+      "unchanged_rows": 19993,
+      "retry_requests_equal_original": true,
+      "original_failures_preserved": true
+    }
+  },
+  "scaffold_generator": {
+    "path": "data/engine/evaluation/scaffold_astra.py",
+    "sha256": "75bb17f85890a344b410b782d7f79f68b0e4ec75d42745ded8c57fc380e5cd9e",
+    "bytes": 12969
+  },
+  "official_references": [
+    "https://developers.openai.com/api/reference/resources/responses/methods/create",
+    "https://developers.openai.com/api/docs/guides/token-counting"
+  ],
+  "artifact_revisions": [
+    {
+      "kind": "scaffold_generator",
+      "path": "data/benchmark/results/astra-xhigh/artifact-history/31ca230a0d9f10ef5e56ea7b4a2d4557260818584e31e7d0054edd89fd1d5300.py",
+      "sha256": "31ca230a0d9f10ef5e56ea7b4a2d4557260818584e31e7d0054edd89fd1d5300",
+      "retired_at": "2026-10-14T20:47:39.420576+00:00"
+    },
+    {
+      "kind": "result_schema",
+      "path": "data/benchmark/results/astra-xhigh/artifact-history/ef737e08b54907330db53aa1b807c6f87fc9947235790840504f94910a7cc58f.json",
+      "sha256": "ef737e08b54907330db53aa1b807c6f87fc9947235790840504f94910a7cc58f",
+      "retired_at": "2026-10-14T20:47:39.420576+00:00"
+    }
+  ],
+  "manifest_history": [
+    {
+      "stage": "before_retries",
+      "source_file": "manifest-before-retries.json",
+      "sha256": "27949ad0325660e3a3d6134a400372c8f6d16fbd98389474b453d37740e56ec7",
+      "merged_at": "2026-10-14T21:06:02.018662+00:00",
+      "manifest": {
+        "schema_version": 2,
+        "run_id": "astra-xhigh",
+        "status": "completed",
+        "created_at": "2026-10-14T07:55:34.434680+00:00",
+        "started_at": "2026-10-14T08:19:26.425325+00:00",
+        "finished_at": "2026-10-14T20:19:53.563966+00:00",
+        "planned_tasks": 20000,
+        "planned_primary_requests": 20000,
+        "submitted_requests": 20000,
+        "path_conventions": {
+          "inputs_and_code": "repository-relative",
+          "results_and_journals": "run-directory-relative"
+        },
+        "provider": "openai",
+        "api": {
+          "method": "POST",
+          "url": "https://api.openai.com/v1/responses"
+        },
+        "request_defaults": {
+          "model": "gpt-6-astra",
+          "reasoning": {
+            "effort": "xhigh"
+          },
+          "service_tier": "default",
+          "store": false,
+          "stream": true
+        },
+        "request_input": "Exact rendered prompt as request.input; one independent request per task; no conversation history, extra instructions, or tools.",
+        "output_limit": {
+          "benchmark_cap": null,
+          "max_output_tokens_parameter": "omitted",
+          "meaning": "No benchmark-imposed token cap. Provider/model limits still apply.",
+          "documented_model_max_output_tokens": 128000
+        },
+        "omitted_request_parameters": [
+          "max_output_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "instructions",
+          "previous_response_id",
+          "tools"
+        ],
+        "sampling_seed": 69,
+        "sampling_seed_scope": "Dataset selection only; not a model-generation seed.",
+        "rendering_dependencies": {
+          "python": "3.11+",
+          "vidyut": "0.4.0"
+        },
+        "tasks": [
+          {
+            "family": "tinanta",
+            "dataset": {
+              "path": "data/benchmark/tinanta/tinanta.json",
+              "sha256": "e5f1b8b6332d820ef3ffd11d28e73c25df300c253816ad374f716fb2b537d151",
+              "bytes": 1921409,
+              "records": 5000
+            },
+            "sampling_manifest": {
+              "path": "data/benchmark/tinanta/tinanta.manifest.json",
+              "sha256": "81269026a8089ec36db118ad7772fd718af7ccc1acab3207e76925951f45e5cf",
+              "bytes": 92353
+            },
+            "prompt_template": {
+              "path": "data/engine/prompts/v2/vp_tinanta.txt",
+              "sha256": "5bf6c717bd0582ca85672d368fdc44ec3de751a1d06c222a40f1588989d118e9",
+              "bytes": 1091,
+              "text": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested conjugated verb form from the Sanskrit verbal root (dhatu, given in\nDevanagari in its Dhatupatha citation form, anubandha markers included), its\nverb class (gana), its traditional meaning (artha), and the required\ntense/mood (lakara), voice (prayoga), person (purusha), and number (vacana).\nEach Sanskrit grammatical term is glossed in parentheses in English.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): {aupadeshika_deva}   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): {gana} ({gana_en})\nartha (traditional meaning): {artha_deva}\n{prefixes_block}\nRequired form:\n- lakara (tense/mood): {lakara} ({lakara_en})\n- prayoga (voice): {prayoga} ({prayoga_en})\n- purusha (person): {purusha} ({purusha_en})\n- vacana (number): {vacana} ({vacana_en})\n"
+            },
+            "renderer": {
+              "path": "data/engine/tinanta/common.py",
+              "sha256": "c6288776af494cf3e592aac2ff58cf820c16ff74dda6aec23a31de6f993df15c",
+              "bytes": 3455,
+              "callable": "data.engine.tinanta.common.render_task"
+            },
+            "result_file": "tinanta.json",
+            "journal_file": "journals/tinanta.jsonl",
+            "order": "benchmark source row order, then attempt_number"
+          },
+          {
+            "family": "taddhitanta",
+            "dataset": {
+              "path": "data/benchmark/taddhitanta/taddhitanta.json",
+              "sha256": "ae3f1084be43b8296fe7a5cc3c1264ea84ea1293fc72c0644b02ce9e6f036c3b",
+              "bytes": 1504917,
+              "records": 5000
+            },
+            "sampling_manifest": {
+              "path": "data/benchmark/taddhitanta/taddhitanta.manifest.json",
+              "sha256": "db7829c9ed5bbb71557c38f112f3a32dac2eb86dbfcd1ca1e00ca75c93903a0e",
+              "bytes": 80493
+            },
+            "prompt_template": {
+              "path": "data/engine/prompts/v2/vp_taddhitanta.txt",
+              "sha256": "cb30d5d23f910bf1e2f2893e61ac078ae88f8021c644794badff811034b4e08e",
+              "bytes": 827,
+              "text": "You are an expert in Sanskrit grammar (vyakarana).\n\nApply the requested taddhita affix to the supplied Sanskrit nominal base.\nReturn the resulting derived nominal stem or complete indeclinable, without\nadding case or number endings.\n\nUse the displayed base with its stated grammatical interpretation. No specific\nartha (meaning) is imposed: use a meaning under which this affix can apply.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\npratipadika (nominal base): {stem_deva}\nbase interpretation: {base_interpretation}\ntaddhita (technical affix): {suffix_deva} (SLP1: {suffix_id})\nartha (meaning): unrestricted\n"
+            },
+            "renderer": {
+              "path": "data/engine/taddhitanta/common.py",
+              "sha256": "f885e3528e6ccd5651a65dfe029fc909808a0063886018a3a67fc6cd77b3e1d8",
+              "bytes": 6310,
+              "callable": "data.engine.taddhitanta.common.render_task"
+            },
+            "result_file": "taddhitanta.json",
+            "journal_file": "journals/taddhitanta.jsonl",
+            "order": "benchmark source row order, then attempt_number"
+          },
+          {
+            "family": "krdanta",
+            "dataset": {
+              "path": "data/benchmark/krdanta/krdanta.json",
+              "sha256": "ec5fcaa3ee7d05ff79d391d0015b26e896bd01873a720cc94bff26bf5970e762",
+              "bytes": 1325917,
+              "records": 5000
+            },
+            "sampling_manifest": {
+              "path": "data/benchmark/krdanta/krdanta.manifest.json",
+              "sha256": "29fd8d97fac7abe062672bdc5b0379256487d771b80cc57e347af062ee1a1a49",
+              "bytes": 55482
+            },
+            "prompt_template": {
+              "path": "data/engine/prompts/v2/vp_krdanta.txt",
+              "sha256": "37f6afac2d5ccc9041c6c84a4db477bb52d84fd449e6d688e09f37a70d97257e",
+              "bytes": 1162,
+              "text": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired primary suffix (krt). Each Sanskrit grammatical term is glossed in\nparentheses in English.\n\nFor a noun or adjective, return the uninflected nominal stem (pratipadika),\nwithout case or number endings. For an indeclinable (avyaya), return the\ncomplete indeclinable form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): {aupadeshika_deva}   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): {gana} ({gana_en})\nartha (traditional meaning): {artha_deva}\n{prefixes_block}\nRequired form:\n- krt (primary suffix): {krt_deva} ({krt_en}; citation form, anubandha markers included)\n{participle_block}\n"
+            },
+            "renderer": {
+              "path": "data/engine/krdanta/common.py",
+              "sha256": "dc669ce8492d3ea74c335a4e484ecce77dbe416e7480d51e7e523a1ddc830196",
+              "bytes": 8267,
+              "callable": "data.engine.krdanta.common.render_task"
+            },
+            "result_file": "krdanta.json",
+            "journal_file": "journals/krdanta.jsonl",
+            "order": "benchmark source row order, then attempt_number"
+          },
+          {
+            "family": "subanta",
+            "dataset": {
+              "path": "data/benchmark/subanta/subanta.json",
+              "sha256": "83bc5976715a52f6b09535d7a8a50a629072e2e6e19fdf1281c682126a994d53",
+              "bytes": 1347028,
+              "records": 5000
+            },
+            "sampling_manifest": {
+              "path": "data/benchmark/subanta/subanta.manifest.json",
+              "sha256": "259098b1940ddd13ea642840762dd612f0088fbb3eb3a0a29595976e911d0849",
+              "bytes": 65913
+            },
+            "prompt_template": {
+              "path": "data/engine/prompts/v2/vp_subanta.txt",
+              "sha256": "5f1994d552931b07ea75beb39bdb31f3889da7fc5df4c395f6c7fc7fd1b589fb",
+              "bytes": 804,
+              "text": "You are an expert in Sanskrit grammar (vyakarana).\n\nInflect the supplied Sanskrit nominal stem (pratipadika) in the requested\ngender (linga), case (vibhakti), and number (vacana). Return the complete\ninflected noun or adjective (subanta), in its standalone form.\n\nUse the displayed stem as the starting form. When a feminine stem is supplied,\nuse that feminine stem rather than reconstructing it from a masculine headword.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\npratipadika (nominal stem): {stem_deva}\nlinga (gender): {linga}\nvibhakti (case): {vibhakti}\nvacana (number): {vacana}\n"
+            },
+            "renderer": {
+              "path": "data/engine/subanta/common.py",
+              "sha256": "041800da26cb92a514e54dd314d8cf7f85f500f5b4d4c4f48133e2879d2d6ded",
+              "bytes": 15734,
+              "callable": "data.engine.subanta.common.render_task"
+            },
+            "result_file": "subanta.json",
+            "journal_file": "journals/subanta.jsonl",
+            "order": "benchmark source row order, then attempt_number"
+          }
+        ],
+        "result_schema": {
+          "path": "result.schema.json",
+          "sha256": "ef737e08b54907330db53aa1b807c6f87fc9947235790840504f94910a7cc58f"
+        },
+        "scoring": {
+          "version": "answer-membership-v1",
+          "implementation": {
+            "path": "data/engine/evaluation/scoring.py",
+            "sha256": "b98632eee2b1435e9a362927658000052da1b8a36bffec90647f3924e95f6121",
+            "bytes": 1318
+          },
+          "answer_extraction": "Extract exactly one well-formed literal <answer>...</answer> block and strip outer answer whitespace. No Unicode or orthographic normalization. Original text stays in output_text.",
+          "correct": "For completed responses: answer is not null and answer in the source task.gold_devanagari list, joined by task_id. Otherwise null.",
+          "format_ok": "Exactly one nonempty answer block, no nested markup, and only whitespace outside the block.",
+          "strict_accuracy": "Derived when reporting: correct is true and format_ok. Not duplicated in result rows.",
+          "primary_attempt": 1,
+          "reporting": "Report correctness and format separately, plus strict accuracy over all 20,000 primary tasks. Report refusals/incomplete/errors separately; never silently drop them from the primary denominator. Retries do not replace primary scores."
+        },
+        "pricing": {
+          "snapshot_id": "openai-astra-standard-2026-10-14",
+          "verified_date": "2026-10-14",
+          "currency": "USD",
+          "tier": "standard",
+          "endpoint": "global direct OpenAI",
+          "rates_usd_per_million_tokens": {
+            "uncached_input": 10,
+            "cached_input": 1,
+            "cache_write_input": 12.5,
+            "output": 50
+          },
+          "long_context_threshold_input_tokens": 272000,
+          "long_context_rates_usd_per_million_tokens": {
+            "uncached_input": 20,
+            "cached_input": 2,
+            "cache_write_input": 25,
+            "output": 75
+          },
+          "formula": "((input_tokens - cached_tokens - cache_write_tokens) * uncached_input_rate + cached_tokens * cached_input_rate + cache_write_tokens * cache_write_input_rate + output_tokens * output_rate) / 1000000",
+          "rules": [
+            "Output usage already includes reasoning tokens; do not bill them twice.",
+            "Preserve full usage; rates are stored once in this manifest. Check cache counters and the journal response tier before calculating.",
+            "Missing usage or unsupported billing details produce cost_usd=null with a reason; do not treat unknown cost as zero.",
+            "Cost is a token-usage estimate, not an invoice receipt; excludes credits, taxes and account-specific adjustments.",
+            "Aggregate cost across all attempts, including failed or refused attempts with usage and any explicit retries."
+          ],
+          "sources": [
+            "https://developers.openai.com/api/docs/models/gpt-6-astra",
+            "https://developers.openai.com/api/docs/pricing"
+          ]
+        },
+        "preservation": {
+          "journal_path_pattern": "journals/{family}.jsonl",
+          "completed_archive_pattern": "journals/{family}.jsonl.gz",
+          "journal_count": 4,
+          "journal_key": [
+            "task_id",
+            "attempt_number"
+          ],
+          "events": {
+            "started": "Before sending, append and fsync task_id, attempt_number, timestamp, client_request_id and exact request JSON including the hydrated prompt.",
+            "response": "Before scoring, append and fsync task_id, attempt_number, request_id, elapsed_ms, timestamp and the complete unmodified terminal response.",
+            "error": "Append task_id, attempt_number, request_id, timestamp, elapsed_ms, HTTP status, provider/client error details and available partial output; exclude credentials."
+          },
+          "per_request_files": false,
+          "save_full_stream_events": false,
+          "stream_handling": "Consume events in memory. Preserve available partial text on handled interruption; do not permanently log individual events.",
+          "result_encoding": "Compact UTF-8 JSON arrays; one compact record per line.",
+          "shared_metadata": "Dataset/gold stay in pinned benchmark files. Model/settings/templates/rates/scoring version stay in this manifest; family comes from the result filename.",
+          "write_order": "Durable started journal entry before send; durable response/error entry before scoring; atomically update family results after each settled attempt.",
+          "compression": "Gzip each completed journal; remove the plain copy only after verifying the archive. Retain one archive per family.",
+          "recovery": "Replay journals to rebuild results and reprice/rescore offline. Read completed .jsonl.gz archives as needed; do not resend completed attempts."
+        },
+        "execution": {
+          "state": "completed",
+          "runner_implemented": true,
+          "concurrency": 128,
+          "automatic_retries": 0,
+          "model_fallbacks": [],
+          "resume": "Reuse terminal journal entries. A started request without a response/error entry is unresolved and must not be automatically resent.",
+          "explicit_retries": "Append a new attempt_number; retain earlier attempts and costs. Primary benchmark scores always use attempt 1.",
+          "preflight": "Validate dataset, template, renderer, scoring and schema hashes before sending; record runtime/library versions and runner hash when implemented.",
+          "runtime_versions": {
+            "python": "3.11.13",
+            "httpx": "0.28.1",
+            "python-dotenv": "1.1.1",
+            "vidyut": "0.4.0",
+            "jsonschema": "4.23.0"
+          },
+          "runner": {
+            "path": "data/engine/evaluation/run_astra.py",
+            "sha256": "e2117a4120167c15759c49e8f256699563b4304cad70a3594ff249126041fe51"
+          },
+          "pid": null,
+          "budget_usd": 3000.0,
+          "budget_scope": "This run only; account-wide remaining credit is not available from the local ledger.",
+          "reservation_usd_per_inflight_request": 6.430975,
+          "stopped_reason": null,
+          "progress": {
+            "updated_at": "2026-10-14T20:20:04.401767+00:00",
+            "planned": 20000,
+            "started": 20000,
+            "settled": 20000,
+            "unsettled": 0,
+            "not_started": 0,
+            "known_cost_usd": 1155.65808,
+            "unknown_cost_attempts": 7,
+            "projected_full_run_cost_usd": null,
+            "families": {
+              "tinanta": {
+                "settled": 5000,
+                "statuses": {
+                  "completed": 5000
+                },
+                "correct": 4702,
+                "format_ok": 5000,
+                "strict_correct": 4702,
+                "known_cost_usd": 316.85068,
+                "unknown_cost_attempts": 0,
+                "input_tokens": 1411728,
+                "output_tokens": 6054668,
+                "mean_output_tokens": 1210.93
+              },
+              "taddhitanta": {
+                "settled": 5000,
+                "statuses": {
+                  "completed": 4996,
+                  "api_error": 1,
+                  "transport_error": 3
+                },
+                "correct": 4342,
+                "format_ok": 4996,
+                "strict_correct": 4342,
+                "known_cost_usd": 575.90086,
+                "unknown_cost_attempts": 4,
+                "input_tokens": 1057811,
+                "output_tokens": 11306455,
+                "mean_output_tokens": 2263.1
+              },
+              "krdanta": {
+                "settled": 5000,
+                "statuses": {
+                  "completed": 4997,
+                  "transport_error": 3
+                },
+                "correct": 4807,
+                "format_ok": 4997,
+                "strict_correct": 4807,
+                "known_cost_usd": 227.57025,
+                "unknown_cost_attempts": 3,
+                "input_tokens": 1465390,
+                "output_tokens": 4258327,
+                "mean_output_tokens": 852.18
+              },
+              "subanta": {
+                "settled": 5000,
+                "statuses": {
+                  "completed": 5000
+                },
+                "correct": 4928,
+                "format_ok": 5000,
+                "strict_correct": 4928,
+                "known_cost_usd": 35.33629,
+                "unknown_cost_attempts": 0,
+                "input_tokens": 1025409,
+                "output_tokens": 501644,
+                "mean_output_tokens": 100.33
+              }
+            },
+            "unknown_cost_reserve_usd": 45.016825
+          },
+          "runner_revisions": [
+            {
+              "path": "data/benchmark/results/astra-xhigh/runner-history/0b9355055533e92312dfc278bd3715743b322f5031caaf595bb4d9b5bb17362a.py",
+              "sha256": "0b9355055533e92312dfc278bd3715743b322f5031caaf595bb4d9b5bb17362a",
+              "original_path": "data/engine/evaluation/run_astra.py",
+              "concurrency": 96,
+              "retired_at": "2026-10-14T08:50:08.123339+00:00",
+              "reason": "User requested faster execution; upgrade connection pool and concurrency admission only."
+            },
+            {
+              "path": "data/benchmark/results/astra-xhigh/runner-history/3789119c92ab7eb131690f53c19d98f8e85f208ce179e6971559cf5808c00004.py",
+              "sha256": "3789119c92ab7eb131690f53c19d98f8e85f208ce179e6971559cf5808c00004",
+              "original_path": "data/engine/evaluation/run_astra.py",
+              "concurrency": 256,
+              "retired_at": "2026-10-14T19:36:13.946494+00:00",
+              "reason": "Allow unsent tasks to proceed after terminal server overloads, reserving unknown charges; never retry failed tasks."
+            },
+            {
+              "path": "data/benchmark/results/astra-xhigh/runner-history/df429fd7da1ada36759098cf435b6a912d3dd50f861fb9b92050bfc1d35751ac.py",
+              "sha256": "df429fd7da1ada36759098cf435b6a912d3dd50f861fb9b92050bfc1d35751ac",
+              "original_path": "data/engine/evaluation/run_astra.py",
+              "concurrency": 256,
+              "retired_at": "2026-10-14T19:56:01.892695+00:00",
+              "reason": "Retain interrupted streams without retrying; reserve unknown costs and continue unsent tasks after cooldown. Report draining state immediately."
+            }
+          ],
+          "throughput_changes": [
+            {
+              "at": "2026-10-14T08:50:08.123478+00:00",
+              "from_concurrency": 96,
+              "to_concurrency": 256,
+              "settled_before_change": 1685,
+              "request_settings_unchanged": true
+            },
+            {
+              "at": "2026-10-14T19:56:01.892750+00:00",
+              "from_concurrency": 256,
+              "to_concurrency": 128,
+              "settled_before_change": 17282,
+              "request_settings_unchanged": true,
+              "reason": "Reduce concurrency after six interrupted response streams."
+            }
+          ],
+          "max_concurrency": 512,
+          "concurrency_control_file": "run-control.json",
+          "recovery_events": [
+            {
+              "at": "2026-10-14T19:36:13.946605+00:00",
+              "previous_stop_reason": "Inspect taddhitanta/taddhitanta:kzurI:nyap:Stri:caraw: api_error or unknown cost; no automatic retries",
+              "settled_before_resume": 13466,
+              "action": "Resume 6534 unsent tasks. Retain failed primary attempt and null cost; reserve full possible charge against budget."
+            },
+            {
+              "at": "2026-10-14T19:56:01.892736+00:00",
+              "previous_stop_reason": "Inspect taddhitanta/taddhitanta:kapawikA:nyap:Stri:Ca: transport_error or unknown cost; no automatic retries",
+              "settled_before_resume": 17282,
+              "action": "Resume unsent tasks at concurrency 128. Preserve interrupted primary attempts, partial output and null costs; reserve full possible charge for each unknown cost."
+            }
+          ],
+          "transient_failure_handling": "Retain failed attempts without retrying. Reserve a full possible request charge for missing usage; pause new submissions for 60 seconds after a terminal overload or recognized stream interruption, then continue unsent tasks. Five new transient failures in one invocation pause the run for inspection.",
+          "submission_state": "completed"
+        },
+        "scaffold_generator": {
+          "path": "data/engine/evaluation/scaffold_astra.py",
+          "sha256": "31ca230a0d9f10ef5e56ea7b4a2d4557260818584e31e7d0054edd89fd1d5300",
+          "bytes": 12776
+        },
+        "official_references": [
+          "https://developers.openai.com/api/reference/resources/responses/methods/create",
+          "https://developers.openai.com/api/docs/guides/token-counting"
+        ]
+      }
+    }
+  ]
+}

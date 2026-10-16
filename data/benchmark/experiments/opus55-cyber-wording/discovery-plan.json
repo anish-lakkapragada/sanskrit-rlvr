@@ -1,0 +1,362 @@
+[
+  {
+    "request_key": "discovery:case_02:linguistics_context",
+    "case_id": "case_02",
+    "family": "tinanta",
+    "task_id": "10.0304:Lit:Karmani:Madhyama:Bahu",
+    "phase": "discovery",
+    "variant": "linguistics_context",
+    "prompt": "This is a Sanskrit morphology exercise: forming words according to Sanskrit grammar. The entries below are dictionary forms and grammatical labels. The requested result is one Sanskrit word form.\n\nYou are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested conjugated verb form from the Sanskrit verbal root (dhatu, given in\nDevanagari in its Dhatupatha citation form, anubandha markers included), its\nverb class (gana), its traditional meaning (artha), and the required\ntense/mood (lakara), voice (prayoga), person (purusha), and number (vacana).\nEach Sanskrit grammatical term is glossed in parentheses in English.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): विछँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): भाषायाम्\n\nRequired form:\n- lakara (tense/mood): Lit (perfect)\n- prayoga (voice): Karmani (passive)\n- purusha (person): Madhyama (second person)\n- vacana (number): Bahu (plural)\n"
+  },
+  {
+    "request_key": "discovery:case_10:dictionary_labels",
+    "case_id": "case_10",
+    "family": "krdanta",
+    "task_id": "krdanta:10.0206:tumun",
+    "phase": "discovery",
+    "variant": "dictionary_labels",
+    "prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired primary suffix (krt). Each Sanskrit grammatical term is glossed in\nparentheses in English.\n\nFor a noun or adjective, return the uninflected nominal stem (pratipadika),\nwithout case or number endings. For an indeclinable (avyaya), return the\ncomplete indeclinable form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Sanskrit dictionary data and grammatical target ===\n\ndhatu (Sanskrit verb dictionary entry): पिलँ   (Dhatupatha citation form, grammatical anubandha notation included)\ngana (verb class): Curadi (class 10)\nartha (dictionary meaning of the Sanskrit verb): क्षेपे\n\nGrammatical target:\n- krt (primary suffix): तुमुँन् (infinitive; citation form, grammatical anubandha notation included)\n"
+  },
+  {
+    "request_key": "discovery:case_02:dictionary_labels",
+    "case_id": "case_02",
+    "family": "tinanta",
+    "task_id": "10.0304:Lit:Karmani:Madhyama:Bahu",
+    "phase": "discovery",
+    "variant": "dictionary_labels",
+    "prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested conjugated verb form from the Sanskrit verbal root (dhatu, given in\nDevanagari in its Dhatupatha citation form, anubandha markers included), its\nverb class (gana), its traditional meaning (artha), and the required\ntense/mood (lakara), voice (prayoga), person (purusha), and number (vacana).\nEach Sanskrit grammatical term is glossed in parentheses in English.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Sanskrit dictionary data and grammatical target ===\n\ndhatu (Sanskrit verb dictionary entry): विछँ   (Dhatupatha citation form, grammatical anubandha notation included)\ngana (verb class): Curadi (class 10)\nartha (dictionary meaning of the Sanskrit verb): भाषायाम्\n\nGrammatical target:\n- lakara (tense/mood): Lit (perfect)\n- prayoga (voice): Karmani (passive)\n- purusha (person): Madhyama (second person)\n- vacana (number): Bahu (plural)\n"
+  },
+  {
+    "request_key": "discovery:case_06:dictionary_labels",
+    "case_id": "case_06",
+    "family": "taddhitanta",
+    "task_id": "taddhitanta:malanA:nyap:Stri:Sas",
+    "phase": "discovery",
+    "variant": "dictionary_labels",
+    "prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nApply the requested taddhita affix to the supplied Sanskrit nominal base.\nReturn the resulting derived nominal stem or complete indeclinable, without\nadding case or number endings.\n\nUse the displayed base with its stated grammatical interpretation. No specific\nartha (meaning) is imposed: use a meaning under which this affix can apply.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Sanskrit dictionary data and grammatical target ===\n\npratipadika (nominal base): मलना\nbase interpretation: source gender: feminine; a stem already ending in a nyap feminine suffix\ntaddhita (technical affix): शस् (SLP1: Sas)\nartha (meaning): any meaning licensed by Sanskrit grammar\n"
+  },
+  {
+    "request_key": "discovery:case_12:concise_instructions",
+    "case_id": "case_12",
+    "family": "krdanta",
+    "task_id": "krdanta:10.0359:tavya",
+    "phase": "discovery",
+    "variant": "concise_instructions",
+    "prompt": "Form the Sanskrit derivative specified by the primary suffix (krt). The verb is supplied in its traditional Dhatupatha citation spelling, including grammatical anubandha notation. Use the supplied verb class, dictionary meaning, any verbal prefixes, and any participle coordinates. For a noun or adjective, give the uninflected nominal stem without case or number endings. For an indeclinable, give its complete form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): लटँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): भाषायाम्\n\nRequired form:\n- krt (primary suffix): तव्य (gerundive; necessity or possibility; citation form, anubandha markers included)\n"
+  },
+  {
+    "request_key": "discovery:case_11:original",
+    "case_id": "case_11",
+    "family": "krdanta",
+    "task_id": "krdanta:10.0148:tavya",
+    "phase": "discovery",
+    "variant": "original",
+    "prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired primary suffix (krt). Each Sanskrit grammatical term is glossed in\nparentheses in English.\n\nFor a noun or adjective, return the uninflected nominal stem (pratipadika),\nwithout case or number endings. For an indeclinable (avyaya), return the\ncomplete indeclinable form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): जुडँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): प्रेरणे\n\nRequired form:\n- krt (primary suffix): तव्य (gerundive; necessity or possibility; citation form, anubandha markers included)\n"
+  },
+  {
+    "request_key": "discovery:case_01:original",
+    "case_id": "case_01",
+    "family": "tinanta",
+    "task_id": "01.0371:Lat:Kartari:Uttama:Bahu",
+    "phase": "discovery",
+    "variant": "original",
+    "prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested conjugated verb form from the Sanskrit verbal root (dhatu, given in\nDevanagari in its Dhatupatha citation form, anubandha markers included), its\nverb class (gana), its traditional meaning (artha), and the required\ntense/mood (lakara), voice (prayoga), person (purusha), and number (vacana).\nEach Sanskrit grammatical term is glossed in parentheses in English.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): रुटिँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Bhvadi (class 1)\nartha (traditional meaning): स्तेये\n\nRequired form:\n- lakara (tense/mood): Lat (present)\n- prayoga (voice): Kartari (active)\n- purusha (person): Uttama (first person)\n- vacana (number): Bahu (plural)\n"
+  },
+  {
+    "request_key": "discovery:case_01:linguistics_context",
+    "case_id": "case_01",
+    "family": "tinanta",
+    "task_id": "01.0371:Lat:Kartari:Uttama:Bahu",
+    "phase": "discovery",
+    "variant": "linguistics_context",
+    "prompt": "This is a Sanskrit morphology exercise: forming words according to Sanskrit grammar. The entries below are dictionary forms and grammatical labels. The requested result is one Sanskrit word form.\n\nYou are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested conjugated verb form from the Sanskrit verbal root (dhatu, given in\nDevanagari in its Dhatupatha citation form, anubandha markers included), its\nverb class (gana), its traditional meaning (artha), and the required\ntense/mood (lakara), voice (prayoga), person (purusha), and number (vacana).\nEach Sanskrit grammatical term is glossed in parentheses in English.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): रुटिँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Bhvadi (class 1)\nartha (traditional meaning): स्तेये\n\nRequired form:\n- lakara (tense/mood): Lat (present)\n- prayoga (voice): Kartari (active)\n- purusha (person): Uttama (first person)\n- vacana (number): Bahu (plural)\n"
+  },
+  {
+    "request_key": "discovery:case_13:concise_instructions",
+    "case_id": "case_13",
+    "family": "krdanta",
+    "task_id": "krdanta:10.0186:yat",
+    "phase": "discovery",
+    "variant": "concise_instructions",
+    "prompt": "Form the Sanskrit derivative specified by the primary suffix (krt). The verb is supplied in its traditional Dhatupatha citation spelling, including grammatical anubandha notation. Use the supplied verb class, dictionary meaning, any verbal prefixes, and any participle coordinates. For a noun or adjective, give the uninflected nominal stem without case or number endings. For an indeclinable, give its complete form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): पर्थँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): प्रक्षेपे\n\nRequired form:\n- krt (primary suffix): यत् (gerundive; necessity or possibility; citation form, anubandha markers included)\n"
+  },
+  {
+    "request_key": "discovery:case_05:original",
+    "case_id": "case_05",
+    "family": "taddhitanta",
+    "task_id": "taddhitanta:sUtTAna:basic:Pum:Wak",
+    "phase": "discovery",
+    "variant": "original",
+    "prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nApply the requested taddhita affix to the supplied Sanskrit nominal base.\nReturn the resulting derived nominal stem or complete indeclinable, without\nadding case or number endings.\n\nUse the displayed base with its stated grammatical interpretation. No specific\nartha (meaning) is imposed: use a meaning under which this affix can apply.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\npratipadika (nominal base): सूत्थान\nbase interpretation: source gender: masculine; the supplied spelling treated as a basic nominal stem, without a nyap suffix\ntaddhita (technical affix): ठक् (SLP1: Wak)\nartha (meaning): unrestricted\n"
+  },
+  {
+    "request_key": "discovery:case_12:original",
+    "case_id": "case_12",
+    "family": "krdanta",
+    "task_id": "krdanta:10.0359:tavya",
+    "phase": "discovery",
+    "variant": "original",
+    "prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired primary suffix (krt). Each Sanskrit grammatical term is glossed in\nparentheses in English.\n\nFor a noun or adjective, return the uninflected nominal stem (pratipadika),\nwithout case or number endings. For an indeclinable (avyaya), return the\ncomplete indeclinable form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): लटँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): भाषायाम्\n\nRequired form:\n- krt (primary suffix): तव्य (gerundive; necessity or possibility; citation form, anubandha markers included)\n"
+  },
+  {
+    "request_key": "discovery:case_05:dictionary_labels",
+    "case_id": "case_05",
+    "family": "taddhitanta",
+    "task_id": "taddhitanta:sUtTAna:basic:Pum:Wak",
+    "phase": "discovery",
+    "variant": "dictionary_labels",
+    "prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nApply the requested taddhita affix to the supplied Sanskrit nominal base.\nReturn the resulting derived nominal stem or complete indeclinable, without\nadding case or number endings.\n\nUse the displayed base with its stated grammatical interpretation. No specific\nartha (meaning) is imposed: use a meaning under which this affix can apply.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Sanskrit dictionary data and grammatical target ===\n\npratipadika (nominal base): सूत्थान\nbase interpretation: source gender: masculine; the supplied spelling treated as a basic nominal stem, without a nyap suffix\ntaddhita (technical affix): ठक् (SLP1: Wak)\nartha (meaning): any meaning licensed by Sanskrit grammar\n"
+  },
+  {
+    "request_key": "discovery:case_01:dictionary_labels",
+    "case_id": "case_01",
+    "family": "tinanta",
+    "task_id": "01.0371:Lat:Kartari:Uttama:Bahu",
+    "phase": "discovery",
+    "variant": "dictionary_labels",
+    "prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested conjugated verb form from the Sanskrit verbal root (dhatu, given in\nDevanagari in its Dhatupatha citation form, anubandha markers included), its\nverb class (gana), its traditional meaning (artha), and the required\ntense/mood (lakara), voice (prayoga), person (purusha), and number (vacana).\nEach Sanskrit grammatical term is glossed in parentheses in English.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Sanskrit dictionary data and grammatical target ===\n\ndhatu (Sanskrit verb dictionary entry): रुटिँ   (Dhatupatha citation form, grammatical anubandha notation included)\ngana (verb class): Bhvadi (class 1)\nartha (dictionary meaning of the Sanskrit verb): स्तेये\n\nGrammatical target:\n- lakara (tense/mood): Lat (present)\n- prayoga (voice): Kartari (active)\n- purusha (person): Uttama (first person)\n- vacana (number): Bahu (plural)\n"
+  },
+  {
+    "request_key": "discovery:case_12:dictionary_labels",
+    "case_id": "case_12",
+    "family": "krdanta",
+    "task_id": "krdanta:10.0359:tavya",
+    "phase": "discovery",
+    "variant": "dictionary_labels",
+    "prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired primary suffix (krt). Each Sanskrit grammatical term is glossed in\nparentheses in English.\n\nFor a noun or adjective, return the uninflected nominal stem (pratipadika),\nwithout case or number endings. For an indeclinable (avyaya), return the\ncomplete indeclinable form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Sanskrit dictionary data and grammatical target ===\n\ndhatu (Sanskrit verb dictionary entry): लटँ   (Dhatupatha citation form, grammatical anubandha notation included)\ngana (verb class): Curadi (class 10)\nartha (dictionary meaning of the Sanskrit verb): भाषायाम्\n\nGrammatical target:\n- krt (primary suffix): तव्य (gerundive; necessity or possibility; citation form, grammatical anubandha notation included)\n"
+  },
+  {
+    "request_key": "discovery:case_09:dictionary_labels",
+    "case_id": "case_09",
+    "family": "krdanta",
+    "task_id": "krdanta:10.0126:tavyat",
+    "phase": "discovery",
+    "variant": "dictionary_labels",
+    "prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired primary suffix (krt). Each Sanskrit grammatical term is glossed in\nparentheses in English.\n\nFor a noun or adjective, return the uninflected nominal stem (pratipadika),\nwithout case or number endings. For an indeclinable (avyaya), return the\ncomplete indeclinable form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Sanskrit dictionary data and grammatical target ===\n\ndhatu (Sanskrit verb dictionary entry): मुस्तँ   (Dhatupatha citation form, grammatical anubandha notation included)\ngana (verb class): Curadi (class 10)\nartha (dictionary meaning of the Sanskrit verb): सङ्घाते\n\nGrammatical target:\n- krt (primary suffix): तव्यत् (gerundive; necessity or possibility; citation form, grammatical anubandha notation included)\n"
+  },
+  {
+    "request_key": "discovery:case_14:concise_instructions",
+    "case_id": "case_14",
+    "family": "krdanta",
+    "task_id": "krdanta:10.0286:anIyar",
+    "phase": "discovery",
+    "variant": "concise_instructions",
+    "prompt": "Form the Sanskrit derivative specified by the primary suffix (krt). The verb is supplied in its traditional Dhatupatha citation spelling, including grammatical anubandha notation. Use the supplied verb class, dictionary meaning, any verbal prefixes, and any participle coordinates. For a noun or adjective, give the uninflected nominal stem without case or number endings. For an indeclinable, give its complete form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): मिजिँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): भाषायाम्\n\nRequired form:\n- krt (primary suffix): अनीयर् (gerundive; necessity or possibility; citation form, anubandha markers included)\n"
+  },
+  {
+    "request_key": "discovery:case_13:dictionary_labels",
+    "case_id": "case_13",
+    "family": "krdanta",
+    "task_id": "krdanta:10.0186:yat",
+    "phase": "discovery",
+    "variant": "dictionary_labels",
+    "prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired primary suffix (krt). Each Sanskrit grammatical term is glossed in\nparentheses in English.\n\nFor a noun or adjective, return the uninflected nominal stem (pratipadika),\nwithout case or number endings. For an indeclinable (avyaya), return the\ncomplete indeclinable form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Sanskrit dictionary data and grammatical target ===\n\ndhatu (Sanskrit verb dictionary entry): पर्थँ   (Dhatupatha citation form, grammatical anubandha notation included)\ngana (verb class): Curadi (class 10)\nartha (dictionary meaning of the Sanskrit verb): प्रक्षेपे\n\nGrammatical target:\n- krt (primary suffix): यत् (gerundive; necessity or possibility; citation form, grammatical anubandha notation included)\n"
+  },
+  {
+    "request_key": "discovery:case_05:linguistics_context",
+    "case_id": "case_05",
+    "family": "taddhitanta",
+    "task_id": "taddhitanta:sUtTAna:basic:Pum:Wak",
+    "phase": "discovery",
+    "variant": "linguistics_context",
+    "prompt": "This is a Sanskrit morphology exercise: forming words according to Sanskrit grammar. The entries below are dictionary forms and grammatical labels. The requested result is one Sanskrit word form.\n\nYou are an expert in Sanskrit grammar (vyakarana).\n\nApply the requested taddhita affix to the supplied Sanskrit nominal base.\nReturn the resulting derived nominal stem or complete indeclinable, without\nadding case or number endings.\n\nUse the displayed base with its stated grammatical interpretation. No specific\nartha (meaning) is imposed: use a meaning under which this affix can apply.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\npratipadika (nominal base): सूत्थान\nbase interpretation: source gender: masculine; the supplied spelling treated as a basic nominal stem, without a nyap suffix\ntaddhita (technical affix): ठक् (SLP1: Wak)\nartha (meaning): unrestricted\n"
+  },
+  {
+    "request_key": "discovery:case_10:linguistics_context",
+    "case_id": "case_10",
+    "family": "krdanta",
+    "task_id": "krdanta:10.0206:tumun",
+    "phase": "discovery",
+    "variant": "linguistics_context",
+    "prompt": "This is a Sanskrit morphology exercise: forming words according to Sanskrit grammar. The entries below are dictionary forms and grammatical labels. The requested result is one Sanskrit word form.\n\nYou are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired primary suffix (krt). Each Sanskrit grammatical term is glossed in\nparentheses in English.\n\nFor a noun or adjective, return the uninflected nominal stem (pratipadika),\nwithout case or number endings. For an indeclinable (avyaya), return the\ncomplete indeclinable form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): पिलँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): क्षेपे\n\nRequired form:\n- krt (primary suffix): तुमुँन् (infinitive; citation form, anubandha markers included)\n"
+  },
+  {
+    "request_key": "discovery:case_14:dictionary_labels",
+    "case_id": "case_14",
+    "family": "krdanta",
+    "task_id": "krdanta:10.0286:anIyar",
+    "phase": "discovery",
+    "variant": "dictionary_labels",
+    "prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired primary suffix (krt). Each Sanskrit grammatical term is glossed in\nparentheses in English.\n\nFor a noun or adjective, return the uninflected nominal stem (pratipadika),\nwithout case or number endings. For an indeclinable (avyaya), return the\ncomplete indeclinable form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Sanskrit dictionary data and grammatical target ===\n\ndhatu (Sanskrit verb dictionary entry): मिजिँ   (Dhatupatha citation form, grammatical anubandha notation included)\ngana (verb class): Curadi (class 10)\nartha (dictionary meaning of the Sanskrit verb): भाषायाम्\n\nGrammatical target:\n- krt (primary suffix): अनीयर् (gerundive; necessity or possibility; citation form, grammatical anubandha notation included)\n"
+  },
+  {
+    "request_key": "discovery:case_06:original",
+    "case_id": "case_06",
+    "family": "taddhitanta",
+    "task_id": "taddhitanta:malanA:nyap:Stri:Sas",
+    "phase": "discovery",
+    "variant": "original",
+    "prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nApply the requested taddhita affix to the supplied Sanskrit nominal base.\nReturn the resulting derived nominal stem or complete indeclinable, without\nadding case or number endings.\n\nUse the displayed base with its stated grammatical interpretation. No specific\nartha (meaning) is imposed: use a meaning under which this affix can apply.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\npratipadika (nominal base): मलना\nbase interpretation: source gender: feminine; a stem already ending in a nyap feminine suffix\ntaddhita (technical affix): शस् (SLP1: Sas)\nartha (meaning): unrestricted\n"
+  },
+  {
+    "request_key": "discovery:case_06:linguistics_context",
+    "case_id": "case_06",
+    "family": "taddhitanta",
+    "task_id": "taddhitanta:malanA:nyap:Stri:Sas",
+    "phase": "discovery",
+    "variant": "linguistics_context",
+    "prompt": "This is a Sanskrit morphology exercise: forming words according to Sanskrit grammar. The entries below are dictionary forms and grammatical labels. The requested result is one Sanskrit word form.\n\nYou are an expert in Sanskrit grammar (vyakarana).\n\nApply the requested taddhita affix to the supplied Sanskrit nominal base.\nReturn the resulting derived nominal stem or complete indeclinable, without\nadding case or number endings.\n\nUse the displayed base with its stated grammatical interpretation. No specific\nartha (meaning) is imposed: use a meaning under which this affix can apply.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\npratipadika (nominal base): मलना\nbase interpretation: source gender: feminine; a stem already ending in a nyap feminine suffix\ntaddhita (technical affix): शस् (SLP1: Sas)\nartha (meaning): unrestricted\n"
+  },
+  {
+    "request_key": "discovery:case_14:original",
+    "case_id": "case_14",
+    "family": "krdanta",
+    "task_id": "krdanta:10.0286:anIyar",
+    "phase": "discovery",
+    "variant": "original",
+    "prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired primary suffix (krt). Each Sanskrit grammatical term is glossed in\nparentheses in English.\n\nFor a noun or adjective, return the uninflected nominal stem (pratipadika),\nwithout case or number endings. For an indeclinable (avyaya), return the\ncomplete indeclinable form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): मिजिँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): भाषायाम्\n\nRequired form:\n- krt (primary suffix): अनीयर् (gerundive; necessity or possibility; citation form, anubandha markers included)\n"
+  },
+  {
+    "request_key": "discovery:case_13:original",
+    "case_id": "case_13",
+    "family": "krdanta",
+    "task_id": "krdanta:10.0186:yat",
+    "phase": "discovery",
+    "variant": "original",
+    "prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired primary suffix (krt). Each Sanskrit grammatical term is glossed in\nparentheses in English.\n\nFor a noun or adjective, return the uninflected nominal stem (pratipadika),\nwithout case or number endings. For an indeclinable (avyaya), return the\ncomplete indeclinable form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): पर्थँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): प्रक्षेपे\n\nRequired form:\n- krt (primary suffix): यत् (gerundive; necessity or possibility; citation form, anubandha markers included)\n"
+  },
+  {
+    "request_key": "discovery:case_11:linguistics_context",
+    "case_id": "case_11",
+    "family": "krdanta",
+    "task_id": "krdanta:10.0148:tavya",
+    "phase": "discovery",
+    "variant": "linguistics_context",
+    "prompt": "This is a Sanskrit morphology exercise: forming words according to Sanskrit grammar. The entries below are dictionary forms and grammatical labels. The requested result is one Sanskrit word form.\n\nYou are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired primary suffix (krt). Each Sanskrit grammatical term is glossed in\nparentheses in English.\n\nFor a noun or adjective, return the uninflected nominal stem (pratipadika),\nwithout case or number endings. For an indeclinable (avyaya), return the\ncomplete indeclinable form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): जुडँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): प्रेरणे\n\nRequired form:\n- krt (primary suffix): तव्य (gerundive; necessity or possibility; citation form, anubandha markers included)\n"
+  },
+  {
+    "request_key": "discovery:case_09:linguistics_context",
+    "case_id": "case_09",
+    "family": "krdanta",
+    "task_id": "krdanta:10.0126:tavyat",
+    "phase": "discovery",
+    "variant": "linguistics_context",
+    "prompt": "This is a Sanskrit morphology exercise: forming words according to Sanskrit grammar. The entries below are dictionary forms and grammatical labels. The requested result is one Sanskrit word form.\n\nYou are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired primary suffix (krt). Each Sanskrit grammatical term is glossed in\nparentheses in English.\n\nFor a noun or adjective, return the uninflected nominal stem (pratipadika),\nwithout case or number endings. For an indeclinable (avyaya), return the\ncomplete indeclinable form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): मुस्तँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): सङ्घाते\n\nRequired form:\n- krt (primary suffix): तव्यत् (gerundive; necessity or possibility; citation form, anubandha markers included)\n"
+  },
+  {
+    "request_key": "discovery:case_14:linguistics_context",
+    "case_id": "case_14",
+    "family": "krdanta",
+    "task_id": "krdanta:10.0286:anIyar",
+    "phase": "discovery",
+    "variant": "linguistics_context",
+    "prompt": "This is a Sanskrit morphology exercise: forming words according to Sanskrit grammar. The entries below are dictionary forms and grammatical labels. The requested result is one Sanskrit word form.\n\nYou are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired primary suffix (krt). Each Sanskrit grammatical term is glossed in\nparentheses in English.\n\nFor a noun or adjective, return the uninflected nominal stem (pratipadika),\nwithout case or number endings. For an indeclinable (avyaya), return the\ncomplete indeclinable form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): मिजिँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): भाषायाम्\n\nRequired form:\n- krt (primary suffix): अनीयर् (gerundive; necessity or possibility; citation form, anubandha markers included)\n"
+  },
+  {
+    "request_key": "discovery:case_09:original",
+    "case_id": "case_09",
+    "family": "krdanta",
+    "task_id": "krdanta:10.0126:tavyat",
+    "phase": "discovery",
+    "variant": "original",
+    "prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired primary suffix (krt). Each Sanskrit grammatical term is glossed in\nparentheses in English.\n\nFor a noun or adjective, return the uninflected nominal stem (pratipadika),\nwithout case or number endings. For an indeclinable (avyaya), return the\ncomplete indeclinable form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): मुस्तँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): सङ्घाते\n\nRequired form:\n- krt (primary suffix): तव्यत् (gerundive; necessity or possibility; citation form, anubandha markers included)\n"
+  },
+  {
+    "request_key": "discovery:case_13:linguistics_context",
+    "case_id": "case_13",
+    "family": "krdanta",
+    "task_id": "krdanta:10.0186:yat",
+    "phase": "discovery",
+    "variant": "linguistics_context",
+    "prompt": "This is a Sanskrit morphology exercise: forming words according to Sanskrit grammar. The entries below are dictionary forms and grammatical labels. The requested result is one Sanskrit word form.\n\nYou are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired primary suffix (krt). Each Sanskrit grammatical term is glossed in\nparentheses in English.\n\nFor a noun or adjective, return the uninflected nominal stem (pratipadika),\nwithout case or number endings. For an indeclinable (avyaya), return the\ncomplete indeclinable form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): पर्थँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): प्रक्षेपे\n\nRequired form:\n- krt (primary suffix): यत् (gerundive; necessity or possibility; citation form, anubandha markers included)\n"
+  },
+  {
+    "request_key": "discovery:case_06:concise_instructions",
+    "case_id": "case_06",
+    "family": "taddhitanta",
+    "task_id": "taddhitanta:malanA:nyap:Stri:Sas",
+    "phase": "discovery",
+    "variant": "concise_instructions",
+    "prompt": "Apply the specified taddhita affix to the supplied Sanskrit nominal base, respecting its stated grammatical interpretation. Give the derived nominal stem or complete indeclinable without case or number endings. No particular meaning is required; use a meaning under which the affix applies.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\npratipadika (nominal base): मलना\nbase interpretation: source gender: feminine; a stem already ending in a nyap feminine suffix\ntaddhita (technical affix): शस् (SLP1: Sas)\nartha (meaning): unrestricted\n"
+  },
+  {
+    "request_key": "discovery:case_09:concise_instructions",
+    "case_id": "case_09",
+    "family": "krdanta",
+    "task_id": "krdanta:10.0126:tavyat",
+    "phase": "discovery",
+    "variant": "concise_instructions",
+    "prompt": "Form the Sanskrit derivative specified by the primary suffix (krt). The verb is supplied in its traditional Dhatupatha citation spelling, including grammatical anubandha notation. Use the supplied verb class, dictionary meaning, any verbal prefixes, and any participle coordinates. For a noun or adjective, give the uninflected nominal stem without case or number endings. For an indeclinable, give its complete form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): मुस्तँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): सङ्घाते\n\nRequired form:\n- krt (primary suffix): तव्यत् (gerundive; necessity or possibility; citation form, anubandha markers included)\n"
+  },
+  {
+    "request_key": "discovery:case_11:dictionary_labels",
+    "case_id": "case_11",
+    "family": "krdanta",
+    "task_id": "krdanta:10.0148:tavya",
+    "phase": "discovery",
+    "variant": "dictionary_labels",
+    "prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired primary suffix (krt). Each Sanskrit grammatical term is glossed in\nparentheses in English.\n\nFor a noun or adjective, return the uninflected nominal stem (pratipadika),\nwithout case or number endings. For an indeclinable (avyaya), return the\ncomplete indeclinable form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Sanskrit dictionary data and grammatical target ===\n\ndhatu (Sanskrit verb dictionary entry): जुडँ   (Dhatupatha citation form, grammatical anubandha notation included)\ngana (verb class): Curadi (class 10)\nartha (dictionary meaning of the Sanskrit verb): प्रेरणे\n\nGrammatical target:\n- krt (primary suffix): तव्य (gerundive; necessity or possibility; citation form, grammatical anubandha notation included)\n"
+  },
+  {
+    "request_key": "discovery:case_12:linguistics_context",
+    "case_id": "case_12",
+    "family": "krdanta",
+    "task_id": "krdanta:10.0359:tavya",
+    "phase": "discovery",
+    "variant": "linguistics_context",
+    "prompt": "This is a Sanskrit morphology exercise: forming words according to Sanskrit grammar. The entries below are dictionary forms and grammatical labels. The requested result is one Sanskrit word form.\n\nYou are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired primary suffix (krt). Each Sanskrit grammatical term is glossed in\nparentheses in English.\n\nFor a noun or adjective, return the uninflected nominal stem (pratipadika),\nwithout case or number endings. For an indeclinable (avyaya), return the\ncomplete indeclinable form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): लटँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): भाषायाम्\n\nRequired form:\n- krt (primary suffix): तव्य (gerundive; necessity or possibility; citation form, anubandha markers included)\n"
+  },
+  {
+    "request_key": "discovery:case_11:concise_instructions",
+    "case_id": "case_11",
+    "family": "krdanta",
+    "task_id": "krdanta:10.0148:tavya",
+    "phase": "discovery",
+    "variant": "concise_instructions",
+    "prompt": "Form the Sanskrit derivative specified by the primary suffix (krt). The verb is supplied in its traditional Dhatupatha citation spelling, including grammatical anubandha notation. Use the supplied verb class, dictionary meaning, any verbal prefixes, and any participle coordinates. For a noun or adjective, give the uninflected nominal stem without case or number endings. For an indeclinable, give its complete form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): जुडँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): प्रेरणे\n\nRequired form:\n- krt (primary suffix): तव्य (gerundive; necessity or possibility; citation form, anubandha markers included)\n"
+  },
+  {
+    "request_key": "discovery:case_10:original",
+    "case_id": "case_10",
+    "family": "krdanta",
+    "task_id": "krdanta:10.0206:tumun",
+    "phase": "discovery",
+    "variant": "original",
+    "prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested classical Sanskrit verbal derivative (krdanta) from the verbal root\n(dhatu, given in Devanagari in its Dhatupatha citation form, anubandha markers\nincluded), its verb class (gana), its traditional meaning (artha), and the\nrequired primary suffix (krt). Each Sanskrit grammatical term is glossed in\nparentheses in English.\n\nFor a noun or adjective, return the uninflected nominal stem (pratipadika),\nwithout case or number endings. For an indeclinable (avyaya), return the\ncomplete indeclinable form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): पिलँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): क्षेपे\n\nRequired form:\n- krt (primary suffix): तुमुँन् (infinitive; citation form, anubandha markers included)\n"
+  },
+  {
+    "request_key": "discovery:case_10:concise_instructions",
+    "case_id": "case_10",
+    "family": "krdanta",
+    "task_id": "krdanta:10.0206:tumun",
+    "phase": "discovery",
+    "variant": "concise_instructions",
+    "prompt": "Form the Sanskrit derivative specified by the primary suffix (krt). The verb is supplied in its traditional Dhatupatha citation spelling, including grammatical anubandha notation. Use the supplied verb class, dictionary meaning, any verbal prefixes, and any participle coordinates. For a noun or adjective, give the uninflected nominal stem without case or number endings. For an indeclinable, give its complete form.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): पिलँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): क्षेपे\n\nRequired form:\n- krt (primary suffix): तुमुँन् (infinitive; citation form, anubandha markers included)\n"
+  },
+  {
+    "request_key": "discovery:case_02:original",
+    "case_id": "case_02",
+    "family": "tinanta",
+    "task_id": "10.0304:Lit:Karmani:Madhyama:Bahu",
+    "phase": "discovery",
+    "variant": "original",
+    "prompt": "You are an expert in Sanskrit grammar (vyakarana).\n\nDerive the requested conjugated verb form from the Sanskrit verbal root (dhatu, given in\nDevanagari in its Dhatupatha citation form, anubandha markers included), its\nverb class (gana), its traditional meaning (artha), and the required\ntense/mood (lakara), voice (prayoga), person (purusha), and number (vacana).\nEach Sanskrit grammatical term is glossed in parentheses in English.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): विछँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): भाषायाम्\n\nRequired form:\n- lakara (tense/mood): Lit (perfect)\n- prayoga (voice): Karmani (passive)\n- purusha (person): Madhyama (second person)\n- vacana (number): Bahu (plural)\n"
+  },
+  {
+    "request_key": "discovery:case_05:concise_instructions",
+    "case_id": "case_05",
+    "family": "taddhitanta",
+    "task_id": "taddhitanta:sUtTAna:basic:Pum:Wak",
+    "phase": "discovery",
+    "variant": "concise_instructions",
+    "prompt": "Apply the specified taddhita affix to the supplied Sanskrit nominal base, respecting its stated grammatical interpretation. Give the derived nominal stem or complete indeclinable without case or number endings. No particular meaning is required; use a meaning under which the affix applies.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\npratipadika (nominal base): सूत्थान\nbase interpretation: source gender: masculine; the supplied spelling treated as a basic nominal stem, without a nyap suffix\ntaddhita (technical affix): ठक् (SLP1: Wak)\nartha (meaning): unrestricted\n"
+  },
+  {
+    "request_key": "discovery:case_02:concise_instructions",
+    "case_id": "case_02",
+    "family": "tinanta",
+    "task_id": "10.0304:Lit:Karmani:Madhyama:Bahu",
+    "phase": "discovery",
+    "variant": "concise_instructions",
+    "prompt": "Conjugate the supplied Sanskrit verb for the specified tense or mood, voice, person, and number. The verb is supplied in its traditional Dhatupatha citation spelling, including grammatical anubandha notation. Use the supplied verb class, dictionary meaning, and any verbal prefixes.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): विछँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Curadi (class 10)\nartha (traditional meaning): भाषायाम्\n\nRequired form:\n- lakara (tense/mood): Lit (perfect)\n- prayoga (voice): Karmani (passive)\n- purusha (person): Madhyama (second person)\n- vacana (number): Bahu (plural)\n"
+  },
+  {
+    "request_key": "discovery:case_01:concise_instructions",
+    "case_id": "case_01",
+    "family": "tinanta",
+    "task_id": "01.0371:Lat:Kartari:Uttama:Bahu",
+    "phase": "discovery",
+    "variant": "concise_instructions",
+    "prompt": "Conjugate the supplied Sanskrit verb for the specified tense or mood, voice, person, and number. The verb is supplied in its traditional Dhatupatha citation spelling, including grammatical anubandha notation. Use the supplied verb class, dictionary meaning, and any verbal prefixes.\n\nWrite ONLY the final form, in Devanagari script, inside exactly one\n<answer></answer> block. If several forms are valid, give exactly one.\nDo not include an explanation or any text outside the block:\n<answer>Final form in Devanagari</answer>\n\n=== Your task ===\n\ndhatu (Sanskrit verbal root): रुटिँ   (Dhatupatha citation form, anubandha markers included)\ngana (verb class): Bhvadi (class 1)\nartha (traditional meaning): स्तेये\n\nRequired form:\n- lakara (tense/mood): Lat (present)\n- prayoga (voice): Kartari (active)\n- purusha (person): Uttama (first person)\n- vacana (number): Bahu (plural)\n"
+  }
+]
